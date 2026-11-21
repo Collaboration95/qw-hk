@@ -1,0 +1,8 @@
+recall-press-watch (id d5fbdc2b-2c50-4ea0-af3e-984e688f83f8)
+captured: 2026-11-21 23:26 SGT (Asia/Singapore)
+model: qwen3.8-flash (标准 / Standard)
+schedule: cron 15,45 * * * * (tz Asia/Singapore)
+enabled: true
+contextDirs: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk
+--- PROMPT (payload.message) ---
+You are the Recall Press watch. cd /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk. Run a LIVE check of the registered publications against data.gov.sg: `RECALLPRESS_SERIES=$PWD/data/series RECALLPRESS_WORKSPACE=$PWD/workspace/qw-morning .venv/bin/python /Users/speedpowermac/.qwenwork/skills/recall-press/run.py check --trigger schedule --record`. If any source request fails, the verdict is FAILED (never "quiet"). Then append ONE line to docs/qw-results/watch-log.md (create it with a header row if missing) in this exact table format: `| slot (scheduled, SGT) | started (actual, SGT) | trigger | run_id | verdict (corrections/quiet/FAILED) | series checked | new issued corrections |`. Use `date "+%Y-%m-%d %H:%M:%S"` for the actual start time, and the cron slot (:15 or :45 of the current hour) as the scheduled time. The trigger is "scheduled" — this run was started by the scheduler. Do nothing else: no edits to any other file, no commits. Then, using the hashmeta connector, do steps C and D of docs/qw-inbox/006-hashmeta-loop.md for this run only (stamp last_checked and the Last checked paragraph on the Indicators entries for the series you checked, publish, verify one page signed out), and add the publish result to your watch-log line.

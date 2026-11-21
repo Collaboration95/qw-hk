@@ -1,0 +1,9 @@
+{
+  "name": "recall-desk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Recall Press correction Page with persisted editor decisions",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs" }
+}

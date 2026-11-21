@@ -1,0 +1,58 @@
+# before.txt — snapshot of Revisionpedia page id 3 "/cover-my-briefing" and form id 1
+# Captured via hashmeta get_page / get_form on 2026-11-21 before job 007 edits.
+# page updatedAt: 2026-11-21T08:19:37.890Z
+# page contentHash: 9e7ce60d68b5d6395fffa179d4e18b9d29585b0f
+# page _status: published
+# meta.title: Cover my briefing
+# meta.description: Ask Recall Press to cover a Singapore economic figure in your briefing, or report a correction to a Revisionpedia record.
+
+## Block 1: hero (id 6b014fa164950600078336ab)
+<div class="page-block-hero">
+  <section data-section="hero" class="container-narrow" aria-labelledby="hero-heading">
+    <div class="hero-head reveal">
+      <h1 id="hero-heading">Cover my briefing</h1>
+    </div>
+    <p class="lede reveal">Ask Recall Press to cover a figure in your briefing. Register the slide once. When a later official figure changes its meaning or number, the service prepares a corrected copy with the source for your review.</p>
+  </section>
+</div>
+# (plus the block's <style> rules as returned by get_page)
+
+## Block 2: how-coverage-works (id 6b014fa164950600078336ac)  -- NOT in md; kept unchanged (layout)
+<div class="page-block-how-coverage-works">
+  <section data-section="how-coverage-works" class="container-narrow reveal" aria-labelledby="how-coverage-works-heading">
+    <h2 id="how-coverage-works-heading">How coverage works</h2>
+    <ol class="steps">
+      <li class="step"><h3 class="step-title">Register the slide once</h3><p class="step-body">Register the slide once.</p></li>
+      <li class="step"><h3 class="step-title">A later official figure changes it</h3><p class="step-body">A later official figure changes it.</p></li>
+      <li class="step"><h3 class="step-title">You review a corrected copy with the source</h3><p class="step-body">You review a corrected copy with the source; the original is kept and you can apply, edit or skip.</p></li>
+    </ol>
+  </section>
+</div>
+
+## Block 3: price-note (id 6b014fa164950600078336ad)  <-- TO CHANGE (contains "Price placeholder")
+<div class="page-block-price-note">
+  <section data-section="price-note" class="container-narrow reveal" aria-label="Price note">
+    <aside class="note">
+      <p>Price placeholder — not yet validated. The fee will be agreed before coverage begins.</p>
+    </aside>
+  </section>
+</div>
+
+## Block 4: send-enquiry (id 6b014fa164950600078336ae)  <-- enquiry form, KEPT EXACTLY at <!-- enquiry-form -->
+# Heading: "Send an enquiry"  (matches md)
+# Instruction paragraph: "Choose “Cover my briefing” or “Report a correction”. Give the indicator or record, a reply address and a short note. For a correction, include the official source and the date that supports your change. You can describe a slide without uploading the deck."  (matches md)
+# Submit button label: "Send enquiry"
+# Full block HTML = the enquiry form + retired template + scripts, as returned by get_page (unchanged).
+
+## Block 5: reassurance (id 6b014fa164950600078336af)  <-- TO CHANGE (closing line)
+<div class="page-block-reassurance">
+  <section data-section="reassurance" class="container-narrow reveal" aria-label="Where your enquiry goes">
+    <p class="closing">Your enquiry goes to the directory editor for follow-up. Sending an enquiry does not enrol you in a paid plan.</p>
+  </section>
+</div>
+
+## Form id 1 (updatedAt 2026-11-21T08:01:19.636Z)
+# submitButtonLabel: Send enquiry
+# confirmationType: message
+# confirmationMessage (rawHtml):
+<p>Thank you. Your enquiry has been received and goes to the directory editor for follow-up. Sending an enquiry does not enrol you in a paid plan.</p>

@@ -1,0 +1,112 @@
+{
+  "captured_at": "2026-11-21T23:33:50 +08 (Asia/Singapore)",
+  "source": "qwenwork_cron_manage_job action=list (no get/show action available on the local scheduler)",
+  "tasks": {
+    "recall-press-bridge": {
+      "id": "028f2aa6-91bb-460f-9946-0a234139c362",
+      "name": "recall-press-bridge",
+      "description": "Unattended recall-press job runner: checks docs/qw-inbox every 10 minutes and runs pending job files.",
+      "enabled": true,
+      "schedule": {
+        "expr": "*/10 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Singapore"
+      },
+      "payload": {
+        "contextDirs": [
+          "/Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk"
+        ],
+        "kind": "agentTurn",
+        "message": "You are the recall-press job runner. Project folder: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk (cd there first; all paths below are relative to it). Look in docs/qw-inbox/ for job files (*.md). A job is pending if docs/qw-outbox/<job-file-name-without-.md>/ contains neither CLAIMED nor DONE. If no job is pending, reply \"idle\" and stop at once without any other tool calls. Otherwise take the pending job with the lowest number, create docs/qw-outbox/<job>/CLAIMED containing the current time, then carry out the job file's instructions completely and unattended (never ask questions; record failures and continue). Write every output the job asks for, then docs/qw-outbox/<job>/REPORT.md (what you did, PASS/PARTIAL/FAIL per item, output paths, model name, credits used if visible), then create docs/qw-outbox/<job>/DONE. Process one job per run. If a CLAIMED file is older than 90 minutes with no DONE, treat that job as pending again.",
+        "model": "qwen3.8-flash",
+        "modelDisplayName": "标准",
+        "version": 2,
+        "modelExecutionRoute": {
+          "version": 1,
+          "modeKey": "qwen3.8-flash",
+          "harness": "opencode",
+          "engineId": "opencode",
+          "modelId": "qwen3.8-flash",
+          "apiProtocol": "openai",
+          "source": "server",
+          "resolvedAt": "2026-11-21T15:27:53.193Z"
+        },
+        "modelExecutionRouteV2": {
+          "version": 2,
+          "modeKey": "qwen3.8-flash",
+          "harness": "opencode",
+          "engineId": "opencode",
+          "modelId": "qwen3.8-flash",
+          "apiProtocol": "openai",
+          "limits": {
+            "contextWindow": 1000000,
+            "maxInputTokens": 1000000,
+            "maxOutputTokens": 32768
+          },
+          "catalogVersion": "legacy:9a75c59cbc9632161b32e6e1e56d9e28425d6089f30f0d568fa825bee6cf008e",
+          "catalogScopeId": "e08560be6c3c9bc871e6f042cda9534d0fae282aad09e37fb15a489b60a18dc3",
+          "catalogProvider": "profile",
+          "routeSource": "server",
+          "catalogSource": "server",
+          "resolvedAt": "2026-11-21T15:27:53.193Z"
+        }
+      },
+      "nextRunAt": 1795275600000,
+      "lastRunAt": 1795275000000,
+      "lastRunStatus": "error"
+    },
+    "recall-press-watch": {
+      "id": "d5fbdc2b-2c50-4ea0-af3e-984e688f83f8",
+      "name": "recall-press-watch",
+      "description": "Recurring automatic watch: live data.gov.sg check every :15 and :45, appends to docs/qw-results/watch-log.md. Proves scheduler admits runs on time.",
+      "enabled": true,
+      "schedule": {
+        "expr": "15,45 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Singapore"
+      },
+      "payload": {
+        "contextDirs": [
+          "/Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk"
+        ],
+        "kind": "agentTurn",
+        "message": "You are the Recall Press watch, a QwenWork scheduled task. cd /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk. Never ask questions.\n1. Record START=$(date \"+%Y-%m-%d %H:%M:%S\") (Asia/Singapore).\n2. Run a LIVE check against data.gov.sg: `RECALLPRESS_SERIES=$PWD/data/series RECALLPRESS_WORKSPACE=$PWD/workspace/qw-morning .venv/bin/python /Users/speedpowermac/.qwenwork/skills/recall-press/run.py check --trigger schedule --record`. Read its JSON output: run_id, series_checked, changes, issued, message. If any source request fails, the verdict is FAILED (never quiet). Quiet checks on the same day reuse that day's record id; that is expected.\n3. Append ONE line to docs/qw-results/watch-log.md (keep the existing header): `| <cron slot :15 or :45 of this hour, SGT> | <START> | scheduled | <run_id> | <corrections/quiet/FAILED> | <series_checked> | <number of new issued corrections> | <hashmeta: published/failed/skipped> |`. If the header has 7 columns, add an 8th header cell \"hashmeta stamp\" (and a matching `---`) before appending.\n4. Using the hashmeta connector (direct tools only; site projectId 6b7c9fea-8970-469b-871a-1eb4f8db9601; Indicators templateId f8b3b501-eaf8-4edf-a676-eb7e48b9f750): for each Indicators entry whose slug is one of the series this check covered (the distinct series_id values in the run's verdicts), set `last_checked` to `<START as YYYY-MM-DD HH:MM> SGT`, and in body_html replace the whole paragraph that starts with `<p>Last checked` with `<p>Last checked <START as D Mon YYYY, HH:MM> SGT by the Recall Press watch, a QwenWork scheduled task: <\"no new revision\" if changes is empty, else \"new revision found, see the record pages\"> (run <run_id>).</p>`. Then build the collection pages and publish changes; wait for publish status to finish. If verdict is FAILED, skip this step and log hashmeta \"skipped\".\n5. Do nothing else: no other file edits, no commits.",
+        "model": "qwen3.8-flash",
+        "modelDisplayName": "标准",
+        "version": 2,
+        "modelExecutionRoute": {
+          "version": 1,
+          "modeKey": "qwen3.8-flash",
+          "harness": "opencode",
+          "engineId": "opencode",
+          "modelId": "qwen3.8-flash",
+          "apiProtocol": "openai",
+          "source": "server",
+          "resolvedAt": "2026-11-21T15:12:48.811Z"
+        },
+        "modelExecutionRouteV2": {
+          "version": 2,
+          "modeKey": "qwen3.8-flash",
+          "harness": "opencode",
+          "engineId": "opencode",
+          "modelId": "qwen3.8-flash",
+          "apiProtocol": "openai",
+          "limits": {
+            "contextWindow": 1000000,
+            "maxInputTokens": 1000000,
+            "maxOutputTokens": 32768
+          },
+          "catalogVersion": "legacy:9a75c59cbc9632161b32e6e1e56d9e28425d6089f30f0d568fa825bee6cf008e",
+          "catalogScopeId": "e08560be6c3c9bc871e6f042cda9534d0fae282aad09e37fb15a489b60a18dc3",
+          "catalogProvider": "profile",
+          "routeSource": "server",
+          "catalogSource": "server",
+          "resolvedAt": "2026-11-21T15:12:48.811Z"
+        }
+      },
+      "nextRunAt": 1795275900000,
+      "lastRunAt": 1795274124737,
+      "lastRunStatus": "ok"
+    }
+  }
+}

@@ -17,3 +17,21 @@ Prompt: exactly the runner prompt from the bridge instructions (checks docs/qw-i
 To stop: disable "recall-press-bridge" in Scheduled Tasks.
 
 Note: job 001 (001-acceptance-tests.md) was claimed and run by the setup task itself at 15:23 SGT so the bridge does not pick it up.
+
+---
+
+## Bridge 2 — 2026-11-21 23:35 SGT (job 012)
+
+The original `recall-press-bridge` (id `028f2aa6-91bb-460f-9946-0a234139c362`) was **disabled** (not deleted). It had shown "Task missed its scheduled execution time" (Failed, 0 s) on every slot since 22:10, even after its model was moved to Standard at 23:27. Meanwhile `recall-press-watch` (cron `15,45`, Standard) kept being admitted on time, so a replacement was created shaped exactly like the watch's working configuration.
+
+- **Task ID:** 21d91e81-89b1-477c-903f-3e3b113adabc
+- **Name:** recall-press-bridge-2
+- **Schedule:** cron `5,35 * * * *`, timezone Asia/Singapore (twice an hour, offset from the watch's `15,45`)
+- **Model:** qwen3.8-flash (Standard)
+- **Working folder (contextDirs):** /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk
+- **Execution location:** local (this Mac, QwenWork Desktop)
+- **Prompt:** identical to the old bridge's stored runner prompt
+- **Enabled:** true
+- **Next run at creation:** 2026-11-22 00:05 SGT (the 23:35 slot passed during creation and did not fire; nothing was run manually)
+
+To stop: disable "recall-press-bridge-2" in Scheduled Tasks. Full before/after definitions are in `docs/qw-outbox/012-rebuild-bridge/before.json` and `after.json`.

@@ -1,0 +1,64 @@
+{
+  "captured_at": "2026-11-21T23:35:21 +08 (Asia/Singapore)",
+  "source": "qwenwork_cron_manage_job action=list (read-back after creating recall-press-bridge-2)",
+  "recall-press-bridge-2": {
+    "id": "21d91e81-89b1-477c-903f-3e3b113adabc",
+    "name": "recall-press-bridge-2",
+    "description": "Unattended recall-press job runner (rebuilt): checks docs/qw-inbox at :05 and :35 and runs pending job files. Replaces the broken recall-press-bridge, shaped like recall-press-watch.",
+    "enabled": true,
+    "schedule": {
+      "expr": "5,35 * * * *",
+      "kind": "cron",
+      "tz": "Asia/Singapore"
+    },
+    "payload": {
+      "contextDirs": [
+        "/Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk"
+      ],
+      "kind": "agentTurn",
+      "message": "You are the recall-press job runner. Project folder: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk (cd there first; all paths below are relative to it). Look in docs/qw-inbox/ for job files (*.md). A job is pending if docs/qw-outbox/<job-file-name-without-.md>/ contains neither CLAIMED nor DONE. If no job is pending, reply \"idle\" and stop at once without any other tool calls. Otherwise take the pending job with the lowest number, create docs/qw-outbox/<job>/CLAIMED containing the current time, then carry out the job file's instructions completely and unattended (never ask questions; record failures and continue). Write every output the job asks for, then docs/qw-outbox/<job>/REPORT.md (what you did, PASS/PARTIAL/FAIL per item, output paths, model name, credits used if visible), then create docs/qw-outbox/<job>/DONE. Process one job per run. If a CLAIMED file is older than 90 minutes with no DONE, treat that job as pending again.",
+      "model": "qwen3.8-flash",
+      "modelDisplayName": "标准",
+      "version": 2,
+      "modelExecutionRoute": {
+        "version": 1,
+        "modeKey": "qwen3.8-flash",
+        "harness": "opencode",
+        "engineId": "opencode",
+        "modelId": "qwen3.8-flash",
+        "apiProtocol": "openai",
+        "source": "server",
+        "resolvedAt": "2026-11-21T15:33:41.273Z"
+      },
+      "modelExecutionRouteV2": {
+        "version": 2,
+        "modeKey": "qwen3.8-flash",
+        "harness": "opencode",
+        "engineId": "opencode",
+        "modelId": "qwen3.8-flash",
+        "apiProtocol": "openai",
+        "limits": {
+          "contextWindow": 1000000,
+          "maxInputTokens": 1000000,
+          "maxOutputTokens": 32768
+        },
+        "catalogVersion": "legacy:9a75c59cbc9632161b32e6e1e56d9e28425d6089f30f0d568fa825bee6cf008e",
+        "catalogScopeId": "e08560be6c3c9bc871e6f042cda9534d0fae282aad09e37fb15a489b60a18dc3",
+        "catalogProvider": "profile",
+        "routeSource": "server",
+        "catalogSource": "server",
+        "resolvedAt": "2026-11-21T15:33:41.273Z"
+      }
+    },
+    "nextRunAt": 1795277100000,
+    "nextRunAt_readable": "2026-11-22 00:05:00 +08 (Asia/Singapore)",
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "notes": "nextRunAt moved from 23:35 (add response) to 00:05 (read-back) because the :35 slot passed during creation; the :35 slot did NOT fire (lastRunAt null). No Run was pressed."
+  },
+  "recall-press-bridge_after_disable": {
+    "id": "028f2aa6-91bb-460f-9946-0a234139c362",
+    "enabled": false,
+    "note": "Old bridge now disabled (not deleted) as required. lastRunStatus still 'error' from prior missed slots."
+  }
+}

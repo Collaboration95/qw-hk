@@ -1,0 +1,14 @@
+recall-press-watch (id d5fbdc2b-2c50-4ea0-af3e-984e688f83f8)
+captured after update: 2026-11-21 23:27 SGT (Asia/Singapore)
+model: qwen3.8-flash (modelDisplayName 标准 / Standard)
+schedule: cron 15,45 * * * * (tz Asia/Singapore)
+enabled: true
+contextDirs: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk
+nextRunAt: 1795275900000  lastRunStatus: ok
+--- PROMPT (payload.message, read back from scheduler) ---
+You are the Recall Press watch, a QwenWork scheduled task. cd /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk. Never ask questions.
+1. Record START=$(date "+%Y-%m-%d %H:%M:%S") (Asia/Singapore).
+2. Run a LIVE check against data.gov.sg: `RECALLPRESS_SERIES=$PWD/data/series RECALLPRESS_WORKSPACE=$PWD/workspace/qw-morning .venv/bin/python /Users/speedpowermac/.qwenwork/skills/recall-press/run.py check --trigger schedule --record`. Read its JSON output: run_id, series_checked, changes, issued, message. If any source request fails, the verdict is FAILED (never quiet). Quiet checks on the same day reuse that day's record id; that is expected.
+3. Append ONE line to docs/qw-results/watch-log.md (keep the existing header): `| <cron slot :15 or :45 of this hour, SGT> | <START> | scheduled | <run_id> | <corrections/quiet/FAILED> | <series_checked> | <number of new issued corrections> | <hashmeta: published/failed/skipped> |`. If the header has 7 columns, add an 8th header cell "hashmeta stamp" (and a matching `---`) before appending.
+4. Using the hashmeta connector (direct tools only; site projectId 6b7c9fea-8970-469b-871a-1eb4f8db9601; Indicators templateId f8b3b501-eaf8-4edf-a676-eb7e48b9f750): for each Indicators entry whose slug is one of the series this check covered (the distinct series_id values in the run's verdicts), set `last_checked` to `<START as YYYY-MM-DD HH:MM> SGT`, and in body_html replace the whole paragraph that starts with `<p>Last checked` with `<p>Last checked <START as D Mon YYYY, HH:MM> SGT by the Recall Press watch, a QwenWork scheduled task: <"no new revision" if changes is empty, else "new revision found, see the record pages"> (run <run_id>).</p>`. Then build the collection pages and publish changes; wait for publish status to finish. If verdict is FAILED, skip this step and log hashmeta "skipped".
+5. Do nothing else: no other file edits, no commits.

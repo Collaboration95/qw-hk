@@ -1,0 +1,158 @@
+{
+  "note": "Independent first read of samples/fresh/chamber-outlook-2026q2.pptx, produced before running any recall-press rules. Archived values are the latest vintage published on or before the 2026-08-14 registration date.",
+  "deck_date": "2026-08-14",
+  "claims": [
+    {
+      "slide": 2,
+      "location": "body (Headline)",
+      "sentence": "Singapore\u2019s economy was 5.9% larger in the June quarter than a year earlier.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2026-Q2",
+      "value_as_stated": 5.9,
+      "archived_value_on_2026_08_14": 5.9,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "level", "detail": "5.9% year on year"}
+    },
+    {
+      "slide": 2,
+      "location": "notes",
+      "sentence": "After seasonal adjustment, real GDP rose 1.4% from the first quarter to the second.",
+      "series_id": "sg-gdp-overall-qoq",
+      "period": "2026-Q2",
+      "value_as_stated": 1.4,
+      "archived_value_on_2026_08_14": 1.4,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "level", "detail": "rose 1.4% quarter on quarter, seasonally adjusted"}
+    },
+    {
+      "slide": 3,
+      "location": "body (Factory customers)",
+      "sentence": "Manufacturing outpaced services on year-on-year growth in the second quarter.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2026-Q2",
+      "value_as_stated": "manufacturing > services (no explicit number)",
+      "archived_value_on_2026_08_14": 12.5,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "comparison_reference": {
+        "series_id": "sg-gdp-services-yoy",
+        "period": "2026-Q2",
+        "archived_value_on_2026_08_14": 4.9,
+        "archived_vintage_date": "2026-08-11"
+      },
+      "stance": "current",
+      "assertion": {"type": "comparison", "detail": "manufacturing outpaced services", "operator": ">"}
+    },
+    {
+      "slide": 3,
+      "location": "body (Service customers)",
+      "sentence": "Second-quarter services growth came in just below 5% year on year.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2026-Q2",
+      "value_as_stated": "just below 5%",
+      "archived_value_on_2026_08_14": 4.9,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "threshold", "detail": "below 5%", "operator": "<", "threshold": 5}
+    },
+    {
+      "slide": 4,
+      "location": "table r1,c1",
+      "sentence": "Construction output contracted from the March quarter on a seasonally adjusted basis.",
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2026-Q2",
+      "value_as_stated": "contracted (negative, no explicit number)",
+      "archived_value_on_2026_08_14": -2.5,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "direction", "detail": "down", "operator": "<", "threshold": 0}
+    },
+    {
+      "slide": 5,
+      "location": "body (Jobs)",
+      "sentence": "Total employment rose by 14,000 in the June quarter.",
+      "series_id": "sg-employment-change",
+      "period": "2026-Q2",
+      "value_as_stated": 14000,
+      "archived_value_on_2026_08_14": 14000.0,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "level", "detail": "rose by 14,000"}
+    },
+    {
+      "slide": 5,
+      "location": "body (Unemployment)",
+      "sentence": "At the end of June, the seasonally adjusted overall unemployment rate stood at 2.0%.",
+      "series_id": "sg-unemployment",
+      "period": "2026-Q2",
+      "value_as_stated": 2.0,
+      "archived_value_on_2026_08_14": 2.0,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2",
+      "stance": "current",
+      "assertion": {"type": "level", "detail": "stood at 2.0%"}
+    },
+    {
+      "slide": 6,
+      "location": "body (July estimate)",
+      "sentence": "MTI\u2019s advance estimate on 14 July 2026 put second-quarter manufacturing growth at 12.2% year on year.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2026-Q2",
+      "value_as_stated": 12.2,
+      "archived_value_on_2026_08_14": 12.5,
+      "archived_vintage_date": "2026-08-11",
+      "archived_release": "Economic Survey of Singapore \u2014 2026-Q2 (latest visible); the cited 12.2 is the 2026-07-14 Advance GDP estimate",
+      "stance": "dated",
+      "assertion": {"type": "level", "detail": "advance estimate of 12.2% on 14 July 2026"}
+    }
+  ],
+  "rejected": [
+    {
+      "slide": 1,
+      "sentence": "MEMBERS\u2019 BRIEFING / SECOND QUARTER 2026 (and folio/date lines on every slide)",
+      "reason": "Section labels, deck title and the 14 August 2026 folio; no checkable statistical figure."
+    },
+    {
+      "slide": 2,
+      "sentence": "For a capacity decision, compare that annual gain with the change since March.",
+      "reason": "Advice sentence; refers back to figures but states no checkable value."
+    },
+    {
+      "slide": 3,
+      "sentence": "Ask sales leads which customers have converted enquiries into purchase orders before reserving extra shifts.",
+      "reason": "Speaker-note advice; no official figure."
+    },
+    {
+      "slide": 4,
+      "sentence": "Ask the site manager to confirm the pouring schedule before booking trucks.",
+      "reason": "Operational advice; no official figure."
+    },
+    {
+      "slide": 6,
+      "sentence": "Keep the release date next to the figure when circulating the July minutes.",
+      "reason": "Process advice; no official figure."
+    },
+    {
+      "slide": 7,
+      "sentence": "Our freight scenario allows for a 7% rise in spot haulage quotes by September.",
+      "reason": "Chamber's own forward-looking planning scenario/forecast; no matching official series in the archive to check."
+    },
+    {
+      "slide": 7,
+      "sentence": "For custom components, the purchasing team is budgeting for a 24-day lead time.",
+      "reason": "Internal purchasing budget assumption; not an official statistic, no archive series."
+    },
+    {
+      "slide": 7,
+      "sentence": "Ask suppliers to price a split delivery before locking in the full order.",
+      "reason": "Advice; no figure."
+    }
+  ]
+}
