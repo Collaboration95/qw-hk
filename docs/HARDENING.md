@@ -2,7 +2,7 @@
 
 19 November 2026 · local macOS · Python 3.14.7
 
-Five new sample publications contained 40 labelled claims. The frozen rules surfaced **37**, gave **28 correct verdicts**, left **9** for an agent with a reason, and silently missed **3**. There were **zero confident errors** and zero extra candidates. All five dated statements in the batch kept their original wording.
+Five new sample publications contained 40 labelled claims. The frozen rules surfaced **37**, gave **28 correct verdicts**, left **9** for an agent with a reason, and silently missed **3**. There were **zero confident errors among 28 automatic verdicts** and zero extra candidates. All five dated statements in the batch kept their original wording.
 
 ## What the score measures
 

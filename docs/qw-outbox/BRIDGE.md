@@ -35,3 +35,7 @@ The original `recall-press-bridge` (id `028f2aa6-91bb-460f-9946-0a234139c362`) w
 - **Next run at creation:** 2026-11-22 00:05 SGT (the 23:35 slot passed during creation and did not fire; nothing was run manually)
 
 To stop: disable "recall-press-bridge-2" in Scheduled Tasks. Full before/after definitions are in `docs/qw-outbox/012-rebuild-bridge/before.json` and `after.json`.
+
+## 22 November 2026 · observed starts
+
+The original bridge claimed Job 002 automatically at 21:10 and missed every slot from 22:10. The replacement missed its 00:05 and 00:35 slots. The replacement slots reported “Task missed its scheduled execution time”. The owner’s automation now drives QwenWork Desktop to start each job as a Standard-tier task. An enabled schedule or a ping request alone does not establish that a job started automatically.

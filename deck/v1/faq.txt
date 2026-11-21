@@ -1,5 +1,5 @@
 Recall Press · judges' questions · short, truthful answers
-Source: docs/submission/pitch-qa.md (evidence as of 21 November). Replace an answer only with an observed result.
+Source: docs/submission/pitch-qa.md (evidence as of 22 November). Replace an answer only with an observed result.
 Appendix keys: 9 then 1-6 open the cards.
 
 1. Has anyone paid for coverage after seeing their own slide corrected?
@@ -9,13 +9,13 @@ Appendix keys: 9 then 1-6 open the cards.
    Yes. In Job 001 the Skill loaded in a QwenWork task; the agent read the briefing, registered its own claims, judged each with a reason and produced the corrected slide four (replay run 2025-11-21-8d43d94969a0).
 
 3. Did the clock run twice without the founder clicking?
-   No. Both scheduled checks missed their slots and were started with Run now. Both live checks worked: the first found two later revisions, the second was quiet and issued nothing twice. The inbox bridge did start on schedule later (21:10 SGT).
+   Two one-time slots missed. Run now found two earlier revisions, then a quiet repeat. The watch was configured for :15 and :45 SGT. The 21 Nov 23:15 slot started automatically at 23:16:37. It checked eight series and was quiet. The 23:45 slot missed. The watch log has one row. The owner’s automation now drives QwenWork Desktop to start each job as a Standard-tier task.
 
 4. Can the agent find a claim your rules missed on a different deck?
-   On one unseen sample deck, yes: the agent found four of four before opening the answer key; the rules found three. The Skill holds a worked example for the missed wording, so this is not a test on a customer deck. (Appendix 1: 40 unseen claims, 28 right, 9 handed to the agent with a reason, 3 not surfaced, 0 confidently wrong.)
+   On one independently written deck, QwenWork read eight claims and registered seven. Speaker notes were unsupported. Five of seven verdicts matched the key, including the one broken claim. The reader spotted “Manufacturing outpaced services” and the table cell about construction contracting. Both sentences still held, but the engine proposed adding numbers to both. Rules alone linked five claims in Job 010 and link five after the fixes. Given all eight claims from QwenWork’s read, the fixed verdict engine matches the key on 8/8 locally. As of Job 014, a QwenWork rerun was pending.
 
 5. Can I find that figure on a public page and trace its enquiry into CRM?
-   The public page, yes: revisionpedia.geo.hashmeta.tech has the record with every reading and source. The CRM trace, not yet: no test enquiry sent, no forwarding rule set.
+   Revisionpedia has each archived reading and source. One labelled API enquiry appeared in Hashmeta Forms with its originating record. Browser submission, forwarding, CRM follow-up and organic enquiries remain unverified.
 
 6. Why buy this if charts already refresh in PowerPoint?
    A refreshed chart can sit under a headline that still says "stalled". We find that sentence across registered briefings and hand the editor replacement wording and an editable file.
@@ -48,7 +48,7 @@ Appendix keys: 9 then 1-6 open the cards.
     We show the actual run record: when the data was checked and whether it succeeded. An unchanged figure gets a quiet result; a failed fetch gets a visible failure. The November 2025 example stays a dated historical replay.
 
 16. Is anyone still quoting old numbers?
-    Yes. A claim-specific screen on 19 November checked 48 records across 47 URLs: 2 still presented a superseded figure as current, 27 were still true. The 6 and 57 days are the gap from revision to the page's publication or update, not how long it stayed wrong. One case attributes the figure to "MTI said", which may describe an older statement. A screen, not a census. (Appendix 3.)
+    Of 48 records screened across 47 URLs, one clearly called a superseded figure the latest. A second attributed its figure to MTI and may accurately quote an earlier statement. The 6 and 57 days measure revision to publication or update.
 
 17. Where does the data come from?
     SingStat tables via data.gov.sg under the Singapore Open Data Licence v1.0; dated MTI and SingStat releases for earlier readings. (Appendix 4.)

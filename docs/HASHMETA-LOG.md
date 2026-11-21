@@ -31,7 +31,7 @@ Date: 2026-11-21 (SGT). Built through the hashmeta MCP. The owner approved the l
    - The data came from `site/collections/*.json`. The body was slimmed by dropping per-step row locators and the repeated terms links. Display strings ("0.0%", "+4.6 pp", "14,700 people") were pre-formatted, so templates never format numbers.
    - Imported with `save_collection_entries`: 60 + 10 entries. The read-back was compared field by field with the local data: **0 mismatches**.
    - `build_collection_pages`: 69 pages, **0 credits**. The site software is the older "platform-rendered" kind; site-rendering was not available.
-8. List pages /revisions/ and /indicators/ are raw HTML generated from the local data. Revisions are grouped by indicator, with first, current, change and a client-side filter that still works without JavaScript. Indicators are grouped into Annual growth / Quarterly growth / Labour market.
+8. List pages /revisions/ and /indicators/ are raw HTML generated from the local data. Revisions are grouped by indicator, with first, current, change and a client-side filter. Without JavaScript the list can be browsed unfiltered. Indicators are grouped into Annual growth / Quarterly growth / Labour market.
 9. Form: deploying moved the AI-built form into the live CMS as id 1. I redefined its fields as intent (coverage / correction), name, reply email, organisation, publication or briefing name, record, message, consent, and a hidden source. I rewrote the form markup on /cover-my-briefing/ to match, posting to `/api/form-submissions` with form 1 and prefilling `?intent=` and `?record=`.
 10. Knowledge base: 8 entries (brand, style, product, site facts, policy, 2 FAQs, audience) were added through `add_knowledge`. Generation added 9 more facts of its own.
 11. Meta titles were fixed so they no longer double the " | Revisionpedia" suffix, which the site appends. Home and record meta descriptions were set.
@@ -49,8 +49,8 @@ Date: 2026-11-21 (SGT). Built through the hashmeta MCP. The owner approved the l
 
 ## Not done or not verified
 
-- **Form submission and delivery are not tested.** No test enquiry was sent, because PUBLISH.md requires an owner-approved test route. Submissions should land in Form Submissions for form 1.
-- **No forwarding or CRM rule.** The email forwarding rule needs a destination address and none was supplied, by design. The owner should add one in the app or via `create_forwarding_rule` with their address.
+- One labelled API enquiry appeared in Hashmeta Forms with its originating record. Browser submission, forwarding, CRM follow-up and organic enquiries remain unverified.
+- Job 006 stamped eight indicators using the manual 15:56 check. Job 014 checked those series again and published a fresh stamp on all eight: “Last checked 22 Nov 2026, 00:56 SGT in a live check of the official data by Recall Press on QwenWork: no new revision.”
 - **Discovery files:** robots.txt is 200. sitemap.xml lists only 5 URLs, without the collection or list pages. llms.txt returns 404. These are platform-generated; they need the app's SEO settings or a support request.
 - **AI Visibility runs** (visibility-prompts.md) were not run. They are in-app only.
 - **No JSON-LD.** The structured-data templates in site/schema were not bound.

@@ -4,7 +4,7 @@
 
 - **Who it is for.** One editor of a recurring Singapore briefing, newsletter or board pack that quotes quarterly GDP or sector growth from the ten series Revisionpedia tracks.
 - **What they send.** One slide deck, Word note or Markdown page they have already published and expect to reuse, and the date it was published. A public file is enough; nothing confidential.
-- **What they get.** First, the list of sentences Recall Press linked, each with its series, quarter and dated source, plus any sentence it could not link. Then, after the next official release for those figures, either a note that nothing changed or a corrected editable copy with the reason, which the editor applies, skips or edits.
+- **What they get.** First, the list of sentences Recall Press linked, each with its series, quarter and dated source, plus the unlinked candidates it flagged for review. Then, after the next official release for those figures, either a note that nothing changed or a corrected editable copy with the reason, which the editor applies, skips or edits.
 - **When.** The linked-sentence list within two working days of receiving the file. The release result on the day of the next scheduled release for those figures; the next GDP release is 24 November 2026 at 08:00 SGT.
 - **Price.** None is set. Any fee for later editions is agreed with the editor before coverage continues.
 

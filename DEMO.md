@@ -1,11 +1,13 @@
 # Recall Press · 3-minute judge path
 
-Public links first. Nothing here needs a login or a checkout until the local replay at the end. The publications are samples; the figures, dates and sources are official.
+**[Try the live recall desk](https://j3jvce39.qwenwork.page/)** · sample run `2026-11-21-68013a314ad1`. Job 011 hosts the two corrections from Job 001’s manual 15:48 SGT check in Desktop session `mwq2wb75y5x1adbq`. The original hosted map labelled this afternoon check “Nightly run”.
+
+The desk, correction Page and Revisionpedia are public. The replay map, images and task reports require organiser access to the private repository. That access is unconfirmed.
 
 ## Watch
 
 <!-- TODO: add the YouTube link and runtime when the demo film is made in QwenWork (Sunday) -->
-Demo film: not made yet. It will be assembled inside QwenWork on Sunday 22 November 2026 and linked here.
+QwenWork generated opening and transition footage. The 50-second draft used local ffmpeg and speech synthesis. The final QwenWork product demo and submission link are pending.
 
 ## 1 · See the revision in public · 45 s
 
@@ -20,27 +22,27 @@ Open the [Q3 2025 manufacturing record on Revisionpedia](https://revisionpedia.g
 Open the [README](README.md#one-revision-two-answers) table and images.
 
 - The members’ briefing headline “Manufacturing stalled year on year in Q3 2025.” is now wrong. The corrected slide reads “Manufacturing grew 5.0% year on year in Q3 2025.”
-- The board paper sentence “As first reported in the October advance estimate, manufacturing output was flat year on year in Q3 2025.” is still true and is left alone.
+- In the multi-document local replay, the board paper sentence “As first reported in the October advance estimate, manufacturing output was flat year on year in Q3 2025.” is still true and is left alone.
 
 ## 3 · See what QwenWork ran · 60 s
 
 | Open | Look for |
 |---|---|
-| [Job 001 report](docs/qw-outbox/001-acceptance-tests/REPORT.md) | Session `mwq2wb75y5x1adbq`, Qwen4-Max. Skill loaded, slide corrected (replay run `2025-11-21-8d43d94969a0`), unseen deck read 4 of 4. The Skill includes a worked example for the zero-growth wording. |
+| [Job 001 report](docs/qw-outbox/001-acceptance-tests/REPORT.md) | Session `mwq2wb75y5x1adbq`, Qwen4-Max. Skill loaded, slide corrected (replay run `2025-11-21-8d43d94969a0`), expected edit supplied in the task, unseen deck read 4 of 4. The Skill includes a worked example for the zero-growth wording. |
 | [clock-1](docs/qw-results/clock-1.md) | Live data.gov.sg check `2026-11-21-68013a314ad1`: 8 series, 2 later revisions (services 0.6% → 0.7%; manufacturing now 4.6%), 2 corrected drafts. Started manually with Run now. |
 | [clock-2](docs/qw-results/clock-2.md) | Repeat check `2026-11-21-98bbcfe8ff96`: quiet, nothing issued twice. Also started with Run now. |
-| [Watch log](docs/qw-results/watch-log.md) | The first automatic run, scheduled for 23:15 on 21 Nov 2026, started at 23:16:37 SGT. The scheduler checked 8 live series without a manual trigger. The result was quiet. |
+| [Watch log](docs/qw-results/watch-log.md) | The watch was configured for :15 and :45 SGT. The 21 Nov 23:15 slot started automatically at 23:16:37. It checked eight series and was quiet. The 23:45 slot missed. The watch log has one row. The owner’s automation now drives QwenWork Desktop to start each job as a Standard-tier task. |
 | [Pitch Page](https://vtzcv3g2.qwenwork.page/) | The pitch deck, republished with corrected headlines by Job 009. |
 | Open the [correction Page](https://ka62nv48.qwenwork.page/) | Download the live correction. Slide 4 reads “Manufacturing grew 4.6% year on year in Q3 2025.” |
-| [Fresh deck report](docs/qw-outbox/010-fresh-deck-read/REPORT.md) · [answer key](docs/qw-results/fresh-deck-answer-key.json) | QwenWork found all 8 claims in about 6 minutes. Its verdicts matched 5 of 7 registrable claims. After the engine fix the rules match all 8. |
+| [Fresh deck report](docs/qw-outbox/010-fresh-deck-read/REPORT.md) · [answer key](docs/qw-results/fresh-deck-answer-key.json) | On one independently written deck, QwenWork read eight claims and registered seven. Speaker notes were unsupported. Five of seven verdicts matched the key, including the one broken claim. The reader spotted “Manufacturing outpaced services” and the table cell about construction contracting. Both sentences still held, but the engine proposed adding numbers to both. Rules alone linked five claims in Job 010 and link five after the fixes. Given all eight claims from QwenWork’s read, the fixed verdict engine matches the key on 8/8 locally. As of Job 014, a QwenWork rerun was pending. |
 
 ## 4 · Open the corrected file · 30 s
 
-Without a checkout: download [the Job 001 map](docs/qw-results/map-2025-11-21.html) and open it in a browser. Select the members’ briefing, then **Replacement PPTX**. Slide 4 carries the new headline and the November source line. The original October footer is still on the slide.
+With organiser repository access, download [the Job 001 map](docs/qw-results/map-2025-11-21.html) and open it in a browser. Select the members’ briefing, then **Replacement PPTX**. Slide 4 carries the new headline and the November source line. The original October footer is still on the slide.
 
 ## Try the recall desk
 
-Open the [recall desk](https://j3jvce39.qwenwork.page/), select the members’ briefing and click **Apply** on a correction. Reload the Page and reopen the briefing to see the saved decision.
+Open the members’ briefing in the public desk and inspect the labelled Apply decision. The desk accepts decisions for one sample run and two claims. Job 011 saved and read back one labelled Apply. A POST with the choice “delete” returned 400. Skip writes and the DELETE method were untested. The PPTX contains the proposed sentence and its April 2026 source. The October footer identifies the original reading. Browser edits save or export wording. A separate local rebuild applies it to a new file.
 
 ## Local replay · 3 minutes, needs Python 3.10+
 

@@ -12,12 +12,12 @@ Recall Press checks Singapore’s revised economic figures against a briefing an
 
 ## Links
 
+- Try the live recall desk: https://j3jvce39.qwenwork.page/ · sample run `2026-11-21-68013a314ad1`
 - Demo film: <!-- TODO: YouTube link when the film is made in QwenWork on Sunday -->
 - Live directory on Hashmeta: https://revisionpedia.geo.hashmeta.tech
 - Pitch, published as a QwenWork Page: https://vtzcv3g2.qwenwork.page/
 - Correction Page: https://ka62nv48.qwenwork.page/
-- Recall desk: https://j3jvce39.qwenwork.page/
-- Code: https://github.com/Collaboration95/qw-hk (access for organisers on request)
+- Code: https://github.com/Collaboration95/qw-hk (private task reports and replay files require organiser access, still unconfirmed)
 
 ## 50 words
 
@@ -29,7 +29,7 @@ On 14 October 2025 Singapore reported flat Q3 manufacturing. On 21 November the 
 
 Recall Press links the sentences in a registered briefing to a series, a quarter and a dated release. When the figure changes, it gives the editor the sentence, a verdict with a reason, and an editable corrected PPTX. The editor applies, skips or edits it.
 
-A QwenWork Skill read a briefing and corrected slide 4. It found all eight claims on an independently written deck. Two manual Run now checks followed missed slots. One found two later revisions. The repeat was quiet. Revisionpedia is live on Hashmeta with 60 revision records and sources. The first automatic run checked eight series and was quiet. There is no paying customer yet. Next step: one editor with one real slide.
+QwenWork corrected slide 4. On an independent sample it read eight claims, registered seven and matched the key on five of those seven. Two Run now checks followed missed slots. One found earlier revisions. The repeat was quiet. One automatic watch check was quiet. Later slots missed. The owner’s automation now starts QwenWork Desktop tasks. Revisionpedia publishes 60 revision records. No editor has paid for coverage.
 
 ## 300 words
 
@@ -37,7 +37,7 @@ A QwenWork Skill read a briefing and corrected slide 4. It found all eight claim
 
 Recall Press handles both cases. An editor registers a briefing once. Each sentence it can link to a figure gets a series, quarter and dated release. When the figure is revised, the editor gets the exact sentence, a verdict with a reason, and an editable corrected PowerPoint with the new source. The editor applies, skips or edits the proposal.
 
-In one Desktop task the recall-press Skill loaded, the agent registered its own claim list, replayed November 2025 and produced the corrected slide. On an independently written deck it found all eight claims, including a table cell and a speaker note. Two live checks against data.gov.sg ran in the same workspace. Both were started with Run now after missed slots. The first found two later revisions and drafted two corrections. The second was quiet and issued nothing twice. The first automatic run checked eight series and was quiet. The public correction Page has the editable deck. Slide 4 reports 4.6% growth.
+In QwenWork Desktop the agent registered its own claims and corrected slide 4 in a dated replay. On one independent deck it read eight claims, including a speaker note. It registered seven and matched the key on five of those seven. Rules alone linked five. With the eight read claims supplied, the fixed engine matches eight locally. As of Job 014, a Desktop rerun was pending. Two missed slots needed Run now. One check found two earlier revisions. Each draft changes one sentence. Slide 4 cites 4.6% from April 2026 and retains its original October footer. The repeat was quiet. One automatic check was quiet. Later slots missed. The owner’s automation now starts Standard-tier Desktop tasks.
 
 Revisionpedia, built on Hashmeta, is live. It has a page for each of 60 revision records and 10 indicators, each with dated sources, and a “Cover my briefing” form. A record shows why one quarter is quoted several ways. One labelled test enquiry was submitted to the live form endpoint and appeared in Hashmeta’s form submissions.
 
