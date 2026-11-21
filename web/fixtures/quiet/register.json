@@ -1,0 +1,10 @@
+{
+  "documents": [
+    {"document_id": "midyear-briefing-2026q2", "title": "Midyear economy briefing", "path": "../../../samples/midyear-briefing-2026q2.pptx", "registered": "2026-07-16"},
+    {"document_id": "committee-note-2026q2", "title": "Midyear committee note", "path": "../../../samples/committee-note-2026q2.md", "registered": "2026-07-16"}
+  ],
+  "claims": [
+    {"claim_id": "midyear-threshold", "document_id": "midyear-briefing-2026q2", "location": "slide 2, headline", "sentence": "GDP growth stayed under 6% in Q2 2026, at 5.7% year on year.", "series_id": "sg-gdp-overall-yoy", "period": "2026-Q2", "value_cited": 5.7, "vintage_cited": "2026-07-14", "stance": "current", "assertion": {"type": "threshold", "detail": "under 6%", "operator": "<", "threshold": 6}},
+    {"claim_id": "committee-dated", "document_id": "committee-note-2026q2", "location": "line 7", "sentence": "The July advance estimate put Q2 2026 GDP growth at 5.7% year on year.", "series_id": "sg-gdp-overall-yoy", "period": "2026-Q2", "value_cited": 5.7, "vintage_cited": "2026-07-14", "stance": "dated", "assertion": {"type": "level", "detail": "reported figure"}}
+  ]
+}

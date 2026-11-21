@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Indicators",
+      "item": "/indicators/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Total employment change",
+      "item": "/indicators/sg-employment-change/"
+    }
+  ]
+}

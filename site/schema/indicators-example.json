@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "url": "/indicators/sg-gdp-manufacturing-yoy/",
+  "name": "Manufacturing GDP · year on year",
+  "inLanguage": "en-SG",
+  "description": "It measures the change in real output for Singapore’s manufacturing sector compared with the same quarter a year earlier. The current figure differs from the first in 6 of 6 comparable quarters. Across those 6 quarters the absolute change averaged about 3.37 percentage points and reached 5.0 percentage points at most.",
+  "creditText": "Contains information from Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly (Singapore Department of Statistics), accessed on 19 Nov 2026 from data.gov.sg under the Singapore Open Data Licence v1.0.",
+  "variableMeasured": "Manufacturing GDP · year on year",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Singapore"
+  },
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly",
+    "url": "https://data.gov.sg/datasets/d_1506368f0e7928ac18e42f84d1c450a3/view",
+    "license": "https://data.gov.sg/open-data-licence",
+    "creator": {
+      "@type": "Organization",
+      "name": "Singapore Department of Statistics"
+    }
+  }
+}

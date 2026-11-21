@@ -1,0 +1,88 @@
+{
+  "case_id": "D1",
+  "title": "Quarterly output bulletin",
+  "registered_on": "2025-07-15",
+  "claims": [
+    {
+      "claim_id": "d1-1",
+      "sentence": "Manufacturing output grew by 0.1% quarter on quarter in Q2 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q2",
+      "value_cited": 0.1,
+      "vintage_cited": "2025-07-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    },
+    {
+      "claim_id": "d1-2",
+      "sentence": "Services output grew by 4.1% year on year in Q2 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q2",
+      "value_cited": 4.1,
+      "vintage_cited": "2025-07-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    },
+    {
+      "claim_id": "d1-3",
+      "sentence": "GDP expanded by 1.4% quarter on quarter in Q2 2025.",
+      "series_id": "sg-gdp-overall-qoq",
+      "period": "2025-Q2",
+      "value_cited": 1.4,
+      "vintage_cited": "2025-07-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    },
+    {
+      "claim_id": "d1-4",
+      "sentence": "The July advance estimate put annual construction growth at 4.9% in Q2 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 4.9,
+      "vintage_cited": "2025-07-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "level",
+        "detail": "reported figure"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2025-08-12",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "d1-1",
+          "status": "now_wrong",
+          "reason": "The revised quarterly change is a 0.4% contraction."
+        },
+        {
+          "claim_id": "d1-2",
+          "status": "number_only",
+          "reason": "The revised increase is 4.3%."
+        },
+        {
+          "claim_id": "d1-3",
+          "status": "unaffected",
+          "reason": "Both releases put quarterly growth at 1.4%."
+        },
+        {
+          "claim_id": "d1-4",
+          "status": "still_true",
+          "reason": "The July estimate remains a matter of record."
+        }
+      ]
+    }
+  ]
+}

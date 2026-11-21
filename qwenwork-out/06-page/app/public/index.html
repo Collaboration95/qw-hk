@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Recall Press · Control room</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="press">
+  <header class="masthead">
+    <div class="wordmark"><span class="press-mark" aria-hidden="true"><i></i><i></i><i></i></span>Recall Press</div>
+    <div class="masthead-right">
+      <p class="trigger" id="trigger-line">Watching the official statistics your publications cite</p>
+      <button type="button" id="btn-check">Run check</button>
+      <button type="button" id="btn-replay" class="primary">Replay demo</button>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Screens">
+    <a href="#/map" data-screen="map">Map</a>
+    <a href="#/publications" data-screen="publications">Publications</a>
+    <a href="#/series" data-screen="series">Series</a>
+    <a href="#/audit" data-screen="audit">Audit trail</a>
+    <a href="#/releases" data-screen="releases">Next releases</a>
+  </nav>
+  <div id="replay-banner" class="replay-banner" hidden></div>
+  <section class="screen" id="screen" aria-live="polite"></section>
+  <footer class="colophon">
+    Recall Press · QwenWork × Hashmeta One-Person Company hackathon · Figures parsed from official SingStat / MTI releases
+    (Singapore Open Data Licence v1.0) · Every original sentence is preserved; corrections are proposals until a human approves.
+  </footer>
+</main>
+<div id="toast" class="toast" hidden role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "case_id": "J",
+  "title": "Services advance estimate stays on the record",
+  "registered_on": "2025-10-20",
+  "claims": [
+    {
+      "claim_id": "j1",
+      "sentence": "The October advance estimate put services growth at 0.2% quarter on quarter in Q3 2025.",
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q3",
+      "value_cited": 0.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "level",
+        "detail": "reported figure"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2025-11-21",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "j1",
+          "status": "still_true",
+          "reason": "The November estimate of 0.4% leaves the dated October statement accurate."
+        }
+      ]
+    }
+  ]
+}

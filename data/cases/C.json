@@ -1,0 +1,37 @@
+{
+  "case_id": "C",
+  "title": "Quiet night after the October advance release",
+  "registered_on": "2026-10-15",
+  "claims": [
+    {
+      "claim_id": "c1",
+      "sentence": "GDP grew by 6.2% in Q2 2026.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2026-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2026-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2026-10-16",
+      "no_change": true,
+      "repeat": 2,
+      "expected": [
+        {
+          "claim_id": "c1",
+          "status": "unaffected",
+          "reason": "No new Q2 GDP vintage was published overnight."
+        }
+      ],
+      "expected_correction_files": 0,
+      "expected_duplicate_corrections": 0,
+      "expect_same_state_on_repeat": true
+    }
+  ]
+}

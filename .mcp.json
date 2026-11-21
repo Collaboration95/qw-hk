@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hashmeta": {
+      "type": "http",
+      "url": "https://app.hashmeta.ai/api/mcp"
+    }
+  }
+}

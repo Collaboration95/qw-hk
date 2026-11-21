@@ -1,0 +1,9 @@
+context/
+.DS_Store
+.env
+.env.*
+!.env.example
+workspace/
+.venv/
+__pycache__/
+*.pyc

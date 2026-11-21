@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "{{path}}",
+  "name": "{{title}}",
+  "inLanguage": "en-SG",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{title}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{answer}}"
+      }
+    }
+  ],
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "url": "{{first_url}}"
+    },
+    {
+      "@type": "CreativeWork",
+      "url": "{{current_url}}"
+    }
+  ]
+}

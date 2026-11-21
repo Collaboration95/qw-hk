@@ -1,0 +1,2716 @@
+{
+  "case_id": "eval-150",
+  "title": "Recall Press 150-sentence evaluation set — Q3 2025 manufacturing revision (0.0% -> 5.0%)",
+  "registered_on": "2025-10-20",
+  "claims": [
+    {
+      "claim_id": "c001",
+      "sentence": "Manufacturing output showed no year-on-year growth in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c002",
+      "sentence": "Singapore's manufacturing sector stagnated in the third quarter of 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c003",
+      "sentence": "Manufacturing came to a standstill in Q3 2025, with output level with a year earlier.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c004",
+      "sentence": "The manufacturing sector failed to expand in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c005",
+      "sentence": "Manufacturing output was unchanged from a year earlier in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c006",
+      "sentence": "Manufacturing went nowhere in the third quarter, ending level with Q3 2024.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c007",
+      "sentence": "The manufacturing sector marked time in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c008",
+      "sentence": "Manufacturing held steady in Q3 2025, neither growing nor shrinking year-on-year.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c009",
+      "sentence": "Factories flatlined in Q3: manufacturing output matched its year-earlier level.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c010",
+      "sentence": "There was no growth to speak of in manufacturing in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c011",
+      "sentence": "Manufacturing ended Q3 2025 exactly where it had been a year before.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c012",
+      "sentence": "The manufacturing engine idled in the third quarter of 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c013",
+      "sentence": "Manufacturing output treaded water in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c014",
+      "sentence": "Singapore's factories produced no more than a year ago in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c015",
+      "sentence": "Manufacturing growth came in at 0% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c016",
+      "sentence": "The manufacturing sector recorded nil year-on-year growth in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c017",
+      "sentence": "Manufacturing expanded by zero per cent in the third quarter of 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c018",
+      "sentence": "The year-on-year change in manufacturing output was 0.0 percentage points in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c019",
+      "sentence": "Manufacturing posted 0.0% growth against a year earlier in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c020",
+      "sentence": "Third-quarter manufacturing output was level with a year ago, a 0% change.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c021",
+      "sentence": "The Singapore economy grew 2.9% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "2.9% yoy"
+      }
+    },
+    {
+      "claim_id": "c022",
+      "sentence": "Services expanded 3.5% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "3.5% yoy"
+      }
+    },
+    {
+      "claim_id": "c023",
+      "sentence": "Construction grew 3.1% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "3.1% yoy"
+      }
+    },
+    {
+      "claim_id": "c024",
+      "sentence": "Manufacturing grew 5.0% year-on-year in Q2 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q2",
+      "value_cited": 5.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "5.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c025",
+      "sentence": "Services grew 3.8% year-on-year in Q1 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q1",
+      "value_cited": 3.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "3.8% yoy"
+      }
+    },
+    {
+      "claim_id": "c026",
+      "sentence": "Manufacturing output rose 6.1% quarter-on-quarter, seasonally adjusted, in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q3",
+      "value_cited": 6.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "6.1% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c027",
+      "sentence": "Manufacturing lagged services in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing < services (0.0 vs 3.5)"
+      }
+    },
+    {
+      "claim_id": "c028",
+      "sentence": "Manufacturing was the weakest sector in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing lowest of manufacturing/services/construction"
+      }
+    },
+    {
+      "claim_id": "c029",
+      "sentence": "Manufacturing underperformed construction in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing < construction (0.0 vs 3.1)"
+      }
+    },
+    {
+      "claim_id": "c030",
+      "sentence": "Services outpaced manufacturing in Q3 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "services > manufacturing (3.5 vs 0.0)"
+      }
+    },
+    {
+      "claim_id": "c031",
+      "sentence": "Construction grew faster than manufacturing in Q3 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "construction > manufacturing (3.1 vs 0.0)"
+      }
+    },
+    {
+      "claim_id": "c032",
+      "sentence": "Manufacturing lagged the overall economy in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing < overall GDP (0.0 vs 2.9)"
+      }
+    },
+    {
+      "claim_id": "c033",
+      "sentence": "Manufacturing outpaced construction in Q1 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing > construction (4.8 vs 4.3)"
+      }
+    },
+    {
+      "claim_id": "c034",
+      "sentence": "Manufacturing grew faster than services in Q1 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing > services (4.8 vs 3.8)"
+      }
+    },
+    {
+      "claim_id": "c035",
+      "sentence": "Construction was the fastest-growing of the three sectors in Q2 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "construction > manufacturing and services (6.2 vs 5.0, 4.5)"
+      }
+    },
+    {
+      "claim_id": "c036",
+      "sentence": "Manufacturing outpaced services in Q2 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q2",
+      "value_cited": 5.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing > services (5.0 vs 4.5)"
+      }
+    },
+    {
+      "claim_id": "c037",
+      "sentence": "Construction lagged services in Q3 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "construction < services (3.1 vs 3.5)"
+      }
+    },
+    {
+      "claim_id": "c038",
+      "sentence": "Manufacturing and services both lagged construction in Q2 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing, services < construction (5.0, 4.5 vs 6.2)"
+      }
+    },
+    {
+      "claim_id": "c039",
+      "sentence": "According to the advance estimate, manufacturing was flat year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c040",
+      "sentence": "As first reported in October, manufacturing output was flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c041",
+      "sentence": "At the time of writing in October, manufacturing showed no year-on-year growth in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c042",
+      "sentence": "The flash estimate showed manufacturing growth of 0.0% in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c043",
+      "sentence": "MTI's 14 October advance estimate put Q3 manufacturing growth at zero.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c044",
+      "sentence": "The October advance estimate had manufacturing unchanged year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c045",
+      "sentence": "When we published our October briefing, manufacturing had stalled in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c046",
+      "sentence": "The advance estimate released on 14 October 2025 showed overall GDP growth of 2.9% for Q3.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "2.9% yoy"
+      }
+    },
+    {
+      "claim_id": "c047",
+      "sentence": "As reported in the October flash data, services grew 3.5% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "3.5% yoy"
+      }
+    },
+    {
+      "claim_id": "c048",
+      "sentence": "The July advance estimate put manufacturing growth in Q2 2025 at 5.5%.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q2",
+      "value_cited": 5.5,
+      "vintage_cited": "2025-07-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "5.5% yoy"
+      }
+    },
+    {
+      "claim_id": "c049",
+      "sentence": "Back in May, the Economic Survey pegged Q1 manufacturing growth at 4.0%.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.0,
+      "vintage_cited": "2025-05-22",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "4.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c050",
+      "sentence": "The October advance estimate showed construction expanding 3.1% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "3.1% yoy"
+      }
+    },
+    {
+      "claim_id": "c051",
+      "sentence": "In our October deck, we noted that manufacturing had gone nowhere in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c052",
+      "sentence": "The flash estimate for Q3 2025 showed manufacturing output level with a year earlier.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c053",
+      "sentence": "Manufacturing is expected to stay flat in Q4 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (expected)"
+      }
+    },
+    {
+      "claim_id": "c054",
+      "sentence": "We expect manufacturing to remain flat for the rest of 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (expected)"
+      }
+    },
+    {
+      "claim_id": "c055",
+      "sentence": "Manufacturing is expected to stay flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (expected)"
+      }
+    },
+    {
+      "claim_id": "c056",
+      "sentence": "Analysts forecast that manufacturing will stagnate in the fourth quarter of 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (forecast)"
+      }
+    },
+    {
+      "claim_id": "c057",
+      "sentence": "In October, we expected manufacturing to stay flat through year-end.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (expected, as of October)"
+      }
+    },
+    {
+      "claim_id": "c058",
+      "sentence": "Manufacturing growth is projected to pick up to around 5% in Q4 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~5% projected"
+      }
+    },
+    {
+      "claim_id": "c059",
+      "sentence": "The economy is expected to grow about 3% year-on-year in Q4 2025.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q4",
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~3% expected"
+      }
+    },
+    {
+      "claim_id": "c060",
+      "sentence": "Barring surprises, manufacturing should remain flat in the coming quarters.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": 0.0,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (expected)"
+      }
+    },
+    {
+      "claim_id": "c061",
+      "sentence": "Our October outlook assumed manufacturing would stay flat in Q3 2025, and the advance estimate then confirmed 0.0% growth.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy (as expected in October)"
+      }
+    },
+    {
+      "claim_id": "c062",
+      "sentence": "Manufacturing is expected to keep pace with services in Q4 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q4",
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "forecast",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing ~= services (expected)"
+      }
+    },
+    {
+      "claim_id": "c063",
+      "sentence": "Economists said manufacturing stalled in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, unanchored)"
+      }
+    },
+    {
+      "claim_id": "c064",
+      "sentence": "Analysts say the manufacturing sector is stagnating.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, present tense)"
+      }
+    },
+    {
+      "claim_id": "c065",
+      "sentence": "Commenting on the October advance estimate, economists said manufacturing had stalled in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed to October release)"
+      }
+    },
+    {
+      "claim_id": "c066",
+      "sentence": "The CFO noted in the October board meeting that manufacturing had gone nowhere in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, October meeting)"
+      }
+    },
+    {
+      "claim_id": "c067",
+      "sentence": "According to our chief economist, writing after the flash estimate, manufacturing was flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, post-flash)"
+      }
+    },
+    {
+      "claim_id": "c068",
+      "sentence": "Some strategists still argue that manufacturing is flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, present tense)"
+      }
+    },
+    {
+      "claim_id": "c069",
+      "sentence": "The newsletter quoted analysts as saying manufacturing failed to expand in Q3 2025, based on the advance estimate.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed to advance estimate)"
+      }
+    },
+    {
+      "claim_id": "c070",
+      "sentence": "It is widely believed that manufacturing stagnated in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (hedged belief)"
+      }
+    },
+    {
+      "claim_id": "c071",
+      "sentence": "Our analysts described Q3 manufacturing as flat, citing the 14 October release.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed to 14 Oct release)"
+      }
+    },
+    {
+      "claim_id": "c072",
+      "sentence": "Sources close to the trade ministry say manufacturing remains flat.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "attributed",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (attributed, present tense)"
+      }
+    },
+    {
+      "claim_id": "c073",
+      "sentence": "Manufacturing was flat year-on-year in Q3 2025, while construction grew 6.2% in Q2.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q3 0.0% (revised); construction Q2 6.2% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c074",
+      "sentence": "The economy grew 2.9% year-on-year in Q3 2025, with construction up 6.2% in Q2.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "overall Q3 2.9% (revised); construction Q2 6.2% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c075",
+      "sentence": "Manufacturing grew 4.8% in Q1 2025 but was flat in Q3.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q1 4.8% (unchanged); Q3 0.0% (revised)"
+      }
+    },
+    {
+      "claim_id": "c076",
+      "sentence": "Overall GDP rose 4.1% in Q1 2025 and 2.9% in Q3.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "overall Q1 4.1% (unchanged); Q3 2.9% (revised)"
+      }
+    },
+    {
+      "claim_id": "c077",
+      "sentence": "Services grew 3.5% year-on-year in Q3 2025, while manufacturing expanded 4.8% in Q1.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "services Q3 3.5% (revised); manufacturing Q1 4.8% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c078",
+      "sentence": "Construction grew 3.1% year-on-year in Q3 2025 and 4.3% in Q1.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "construction Q3 3.1% (revised); Q1 4.3% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c079",
+      "sentence": "Manufacturing was flat in Q3 2025; services grew 0.6% quarter-on-quarter in Q1.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q3 yoy 0.0% (revised); services Q1 qoq 0.6% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c080",
+      "sentence": "Manufacturing output was unchanged year-on-year in Q3 2025, while overall GDP grew 4.1% in Q1.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q3 0.0% (revised); overall Q1 4.1% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c081",
+      "sentence": "Manufacturing grew 5.0% year-on-year in Q2 2025 and construction grew 6.2% in the same quarter.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q2",
+      "value_cited": 5.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q2 5.0% (revised to 5.1%); construction Q2 6.2% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c082",
+      "sentence": "Services expanded 4.5% year-on-year in Q2 2025, while construction grew 6.2%.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q2",
+      "value_cited": 4.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "services Q2 4.5% (revised to 4.7%); construction Q2 6.2% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c083",
+      "sentence": "Manufacturing was flat in Q3 2025, and construction contracted 2.5% quarter-on-quarter in Q1.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing Q3 yoy 0.0% (revised); construction Q1 qoq -2.5% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c084",
+      "sentence": "Overall GDP grew 4.5% year-on-year in Q2 2025, while manufacturing grew 4.8% in Q1.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q2",
+      "value_cited": 4.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "overall Q2 4.5% (revised to 4.7%); manufacturing Q1 4.8% (unchanged)"
+      }
+    },
+    {
+      "claim_id": "c085",
+      "sentence": "Chart title: Manufacturing flatlines — Q3 2025 YoY growth at 0.0%.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c086",
+      "sentence": "Chart title: Q3 2025 sector scorecard — manufacturing 0.0%, services 3.5%, construction 3.1%.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "manufacturing 0.0%, services 3.5%, construction 3.1% (all revised)"
+      }
+    },
+    {
+      "claim_id": "c087",
+      "sentence": "Table 2: Q3 2025 year-on-year growth — manufacturing 0.0%, overall GDP 2.9% (advance estimates).",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% and 2.9% labelled as advance estimates"
+      }
+    },
+    {
+      "claim_id": "c088",
+      "sentence": "Table 2: Q3 2025 YoY growth by sector (manufacturing 0.0%).",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy"
+      }
+    },
+    {
+      "claim_id": "c089",
+      "sentence": "Speaker note: Emphasise that manufacturing went nowhere in Q3 — the flat reading is the story.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c090",
+      "sentence": "Speaker note: If asked, the 0.0% manufacturing figure comes from the 14 October advance estimate.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% sourced to 14 Oct advance estimate"
+      }
+    },
+    {
+      "claim_id": "c091",
+      "sentence": "Chart title: Services steady at 0.6% QoQ in Q1 2025.",
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q1",
+      "value_cited": 0.6,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.6% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c092",
+      "sentence": "Chart title: Construction Q2 2025 — 6.2% YoY growth.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "6.2% yoy"
+      }
+    },
+    {
+      "claim_id": "c093",
+      "sentence": "Speaker note: Remember, manufacturing was flat in Q3, so don't oversell the industrial recovery.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "c094",
+      "sentence": "Table caption: Source: MTI advance GDP estimates, 14 October 2025. Manufacturing Q3 2025: 0.0% YoY.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "0.0% yoy, sourced to 14 Oct release"
+      }
+    },
+    {
+      "claim_id": "c095",
+      "sentence": "Chart title: Manufacturing Q1 2025: +4.8% YoY.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "4.8% yoy"
+      }
+    },
+    {
+      "claim_id": "c096",
+      "sentence": "Chart title: Overall GDP — 4.1% YoY in Q1 2025.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "4.1% yoy"
+      }
+    },
+    {
+      "claim_id": "c097",
+      "sentence": "Manufacturing did not grow year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (negated growth)"
+      }
+    },
+    {
+      "claim_id": "c098",
+      "sentence": "It is not the case that manufacturing expanded in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (negated expansion)"
+      }
+    },
+    {
+      "claim_id": "c099",
+      "sentence": "Manufacturing did not contract year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "not down (0.0 -> 5.0)"
+      }
+    },
+    {
+      "claim_id": "c100",
+      "sentence": "Manufacturing was not the fastest-growing sector we track in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing not highest (was lowest)"
+      }
+    },
+    {
+      "claim_id": "c101",
+      "sentence": "No tracked sector grew more slowly than manufacturing in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "manufacturing lowest"
+      }
+    },
+    {
+      "claim_id": "c102",
+      "sentence": "It would be wrong to say manufacturing outpaced services in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "NOT(manufacturing > services)"
+      }
+    },
+    {
+      "claim_id": "c103",
+      "sentence": "Manufacturing growth was not negative in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "not down (0.0 -> 5.0)"
+      }
+    },
+    {
+      "claim_id": "c104",
+      "sentence": "It is not the case that manufacturing was anything other than flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (double negative)"
+      }
+    },
+    {
+      "claim_id": "c105",
+      "sentence": "It is not true that manufacturing failed to grow in Q1 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up (double negative, 4.8%)"
+      }
+    },
+    {
+      "claim_id": "c106",
+      "sentence": "Construction did not outpace manufacturing in Q1 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.3,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "construction <= manufacturing (4.3 vs 4.8)"
+      }
+    },
+    {
+      "claim_id": "c107",
+      "sentence": "Singapore's manufacturing PMI stayed above the 50-point expansion mark in October, according to the private survey.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "manufacturing PMI (private survey, not tracked)"
+      }
+    },
+    {
+      "claim_id": "c108",
+      "sentence": "The manufacturing PMI slipped further into contraction territory in the third quarter.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "manufacturing PMI (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c109",
+      "sentence": "Singapore's industrial production index fell year-on-year in September.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "industrial production index (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c110",
+      "sentence": "The industrial production index for manufacturing posted a monthly decline in August.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "industrial production index (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c111",
+      "sentence": "Non-oil domestic exports declined year-on-year in September.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "NODX (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c112",
+      "sentence": "NODX to the US market weakened in the third quarter.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "NODX by destination (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c113",
+      "sentence": "Malaysia's manufacturing output expanded in the third quarter, according to its own statistics agency.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "Malaysia manufacturing (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c114",
+      "sentence": "Vietnam's manufacturing sector continued to grow strongly in Q3.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "Vietnam manufacturing (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c115",
+      "sentence": "China's factory output growth slowed in September, according to Beijing's statistics bureau.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "China industrial output (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c116",
+      "sentence": "The eurozone manufacturing PMI remained below 50 in October.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "eurozone manufacturing PMI (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c117",
+      "sentence": "US industrial production for manufacturing was little changed in September.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "US industrial production (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c118",
+      "sentence": "South Korea's manufacturing exports rose year-on-year in the third quarter.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "out_of_scope",
+        "detail": "South Korea manufacturing exports (not tracked)"
+      }
+    },
+    {
+      "claim_id": "c119",
+      "sentence": "Our manufacturing clients should revisit their FX hedging policy before year-end.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "advice, no statistical assertion"
+      }
+    },
+    {
+      "claim_id": "c120",
+      "sentence": "The board spent most of the meeting discussing the manufacturing outlook.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "meeting description"
+      }
+    },
+    {
+      "claim_id": "c121",
+      "sentence": "We are hosting a roundtable for manufacturing CFOs in November.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "event announcement"
+      }
+    },
+    {
+      "claim_id": "c122",
+      "sentence": "The manufacturing chapter of the briefing was rewritten by the research team.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "editorial note"
+      }
+    },
+    {
+      "claim_id": "c123",
+      "sentence": "Please send the manufacturing slide to the client before Friday.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "internal request"
+      }
+    },
+    {
+      "claim_id": "c124",
+      "sentence": "Manufacturing remains a key coverage sector for our sales team.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "business description"
+      }
+    },
+    {
+      "claim_id": "c125",
+      "sentence": "The newsletter's manufacturing section will move to page two next issue.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "layout note"
+      }
+    },
+    {
+      "claim_id": "c126",
+      "sentence": "Our new analyst covers manufacturing and logistics.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "staffing note"
+      }
+    },
+    {
+      "claim_id": "c127",
+      "sentence": "The manufacturing deck needs a compliance review before it goes out.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "process note"
+      }
+    },
+    {
+      "claim_id": "c128",
+      "sentence": "She joined the manufacturing research desk in September.",
+      "series_id": null,
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "not_a_claim",
+      "assertion": {
+        "type": "none",
+        "detail": "staffing note"
+      }
+    },
+    {
+      "claim_id": "c129",
+      "sentence": "Manufacturing grew 4.8% year-on-year in Q1 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.8,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "4.8% yoy"
+      }
+    },
+    {
+      "claim_id": "c130",
+      "sentence": "Construction expanded 6.2% year-on-year in Q2 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "6.2% yoy"
+      }
+    },
+    {
+      "claim_id": "c131",
+      "sentence": "Overall GDP grew 4.1% year-on-year in Q1 2025.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q1",
+      "value_cited": 4.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "4.1% yoy"
+      }
+    },
+    {
+      "claim_id": "c132",
+      "sentence": "Services output grew 0.6% quarter-on-quarter in Q1 2025.",
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q1",
+      "value_cited": 0.6,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.6% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c133",
+      "sentence": "Manufacturing output fell 5.1% quarter-on-quarter, seasonally adjusted, in Q1 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q1",
+      "value_cited": -5.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "-5.1% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c134",
+      "sentence": "Construction contracted 2.5% quarter-on-quarter in Q1 2025.",
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2025-Q1",
+      "value_cited": -2.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "-2.5% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c135",
+      "sentence": "Manufacturing grew about 5% year-on-year in Q2 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q2",
+      "value_cited": 5.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~5% yoy (5.0 -> 5.1)"
+      }
+    },
+    {
+      "claim_id": "c136",
+      "sentence": "Services grew roughly 3.5% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.5,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~3.5% yoy (3.5 -> 3.9)"
+      }
+    },
+    {
+      "claim_id": "c137",
+      "sentence": "The economy grew nearly 3% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~3% yoy (2.9 -> 4.2)"
+      }
+    },
+    {
+      "claim_id": "c138",
+      "sentence": "Construction expanded about 3% year-on-year in Q3 2025.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q3",
+      "value_cited": 3.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "approximation",
+        "detail": "~3% yoy (3.1 -> 3.6)"
+      }
+    },
+    {
+      "claim_id": "c139",
+      "sentence": "The economy grew 1.3% quarter-on-quarter, seasonally adjusted, in Q3 2025.",
+      "series_id": "sg-gdp-overall-qoq",
+      "period": "2025-Q3",
+      "value_cited": 1.3,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "1.3% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c140",
+      "sentence": "Services expanded 0.2% quarter-on-quarter in Q3 2025.",
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q3",
+      "value_cited": 0.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "0.2% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c141",
+      "sentence": "Construction output fell 1.2% quarter-on-quarter, seasonally adjusted, in Q3 2025.",
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2025-Q3",
+      "value_cited": -1.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "-1.2% qoq SA"
+      }
+    },
+    {
+      "claim_id": "c142",
+      "sentence": "Construction output declined on a seasonally adjusted quarter-on-quarter basis in Q3 2025.",
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2025-Q3",
+      "value_cited": -1.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "down (-1.2 -> -0.7)"
+      }
+    },
+    {
+      "claim_id": "c143",
+      "sentence": "Manufacturing rebounded strongly on the quarter in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q3",
+      "value_cited": 6.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up strongly (6.1 -> 11.3 qoq)"
+      }
+    },
+    {
+      "claim_id": "c144",
+      "sentence": "Construction grew 6.2% year-on-year in Q2 2025, outpacing manufacturing's 5.0%.",
+      "series_id": "sg-gdp-construction-yoy",
+      "period": "2025-Q2",
+      "value_cited": 6.2,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "construction 6.2% > manufacturing 5.0% (now 5.1%)"
+      }
+    },
+    {
+      "claim_id": "c145",
+      "sentence": "Manufacturing grew faster in Q2 2025 than in Q3.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "Q2 (5.0) > Q3 (0.0); now 5.1 > 5.0"
+      }
+    },
+    {
+      "claim_id": "c146",
+      "sentence": "Q3 2025 was manufacturing's weakest quarter of the year so far.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "comparison",
+        "detail": "Q3 lowest of Q1-Q3 (0.0 vs 4.8, 5.0)"
+      }
+    },
+    {
+      "claim_id": "c147",
+      "sentence": "The April advance estimate put Q1 2025 manufacturing growth at 5.0%.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q1",
+      "value_cited": 5.0,
+      "vintage_cited": "2025-04-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "value",
+        "detail": "5.0% yoy (14 Apr vintage)"
+      }
+    },
+    {
+      "claim_id": "c148",
+      "sentence": "Manufacturing is flat.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": null,
+      "value_cited": null,
+      "vintage_cited": null,
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat (period unspecified)"
+      }
+    },
+    {
+      "claim_id": "c149",
+      "sentence": "Overall GDP grew 2.9% year-on-year in Q3 2025, slower than in Q2.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2025-Q3",
+      "value_cited": 2.9,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "2.9% yoy; Q3 < Q2 (2.9 vs 4.5)"
+      }
+    },
+    {
+      "claim_id": "c150",
+      "sentence": "Manufacturing output dipped 0.7% quarter-on-quarter, seasonally adjusted, in Q2 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q2",
+      "value_cited": -0.7,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "value",
+        "detail": "-0.7% qoq SA"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2025-11-21",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "c001",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey puts Q3 manufacturing growth at 5.0%, so 'no year-on-year growth' is false."
+        },
+        {
+          "claim_id": "c002",
+          "status": "now_wrong",
+          "reason": "Q3 manufacturing grew 5.0% year on year in the 21 Nov survey, contradicting 'stagnated'."
+        },
+        {
+          "claim_id": "c003",
+          "status": "now_wrong",
+          "reason": "Output was 5.0% above a year earlier per the 21 Nov survey, not level."
+        },
+        {
+          "claim_id": "c004",
+          "status": "now_wrong",
+          "reason": "The sector expanded 5.0% year on year in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c005",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey shows output 5.0% higher than a year earlier."
+        },
+        {
+          "claim_id": "c006",
+          "status": "now_wrong",
+          "reason": "Q3 2025 output was 5.0% above Q3 2024 per the 21 Nov survey."
+        },
+        {
+          "claim_id": "c007",
+          "status": "now_wrong",
+          "reason": "'Marked time' restates the 0.0% advance estimate; the 21 Nov survey shows 5.0% growth."
+        },
+        {
+          "claim_id": "c008",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey shows 5.0% year-on-year growth, so 'neither growing nor shrinking' is false."
+        },
+        {
+          "claim_id": "c009",
+          "status": "now_wrong",
+          "reason": "Output exceeded its year-earlier level by 5.0% per the 21 Nov survey."
+        },
+        {
+          "claim_id": "c010",
+          "status": "now_wrong",
+          "reason": "5.0% year-on-year growth in the 21 Nov survey is growth to speak of."
+        },
+        {
+          "claim_id": "c011",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey shows output 5.0% above the year-before level."
+        },
+        {
+          "claim_id": "c012",
+          "status": "now_wrong",
+          "reason": "'Idled' paraphrases flat; the 21 Nov survey records 5.0% year-on-year growth."
+        },
+        {
+          "claim_id": "c013",
+          "status": "now_wrong",
+          "reason": "'Treaded water' means flat, but the 21 Nov survey shows 5.0% growth."
+        },
+        {
+          "claim_id": "c014",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey shows factories produced 5.0% more than a year ago."
+        },
+        {
+          "claim_id": "c015",
+          "status": "now_wrong",
+          "reason": "The official Q3 figure is 5.0% in the 21 Nov survey, not 0%."
+        },
+        {
+          "claim_id": "c016",
+          "status": "now_wrong",
+          "reason": "'Nil' restates 0.0%; the 21 Nov survey reports 5.0%."
+        },
+        {
+          "claim_id": "c017",
+          "status": "now_wrong",
+          "reason": "'Zero per cent' is the advance estimate; the 21 Nov survey says 5.0%."
+        },
+        {
+          "claim_id": "c018",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey puts the year-on-year change at 5.0%, not 0.0."
+        },
+        {
+          "claim_id": "c019",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey reports 5.0% growth against a year earlier."
+        },
+        {
+          "claim_id": "c020",
+          "status": "now_wrong",
+          "reason": "The change was +5.0% per the 21 Nov survey, not 0%."
+        },
+        {
+          "claim_id": "c021",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised Q3 overall GDP growth to 4.2%."
+        },
+        {
+          "claim_id": "c022",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised Q3 services growth to 3.9%."
+        },
+        {
+          "claim_id": "c023",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised Q3 construction growth to 3.6%."
+        },
+        {
+          "claim_id": "c024",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey restates Q2 manufacturing growth as 5.1%, so the exact cited figure is stale."
+        },
+        {
+          "claim_id": "c025",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey restates Q1 services growth as 3.7%, so the exact cited figure is stale."
+        },
+        {
+          "claim_id": "c026",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised the Q3 seasonally adjusted quarter-on-quarter rise to 11.3%."
+        },
+        {
+          "claim_id": "c027",
+          "status": "now_wrong",
+          "reason": "After revision manufacturing (5.0%) outpaced services (3.9%), flipping the ranking."
+        },
+        {
+          "claim_id": "c028",
+          "status": "now_wrong",
+          "reason": "At 5.0% manufacturing is the strongest of the three sectors in the 21 Nov survey (services 3.9%, construction 3.6%)."
+        },
+        {
+          "claim_id": "c029",
+          "status": "now_wrong",
+          "reason": "Manufacturing (5.0%) now exceeds construction (3.6%) in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c030",
+          "status": "now_wrong",
+          "reason": "The ranking flips: manufacturing 5.0% vs services 3.9% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c031",
+          "status": "now_wrong",
+          "reason": "Manufacturing (5.0%) now grows faster than construction (3.6%) per the 21 Nov survey."
+        },
+        {
+          "claim_id": "c032",
+          "status": "now_wrong",
+          "reason": "Manufacturing (5.0%) now exceeds overall GDP growth (4.2%) in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c033",
+          "status": "unaffected",
+          "reason": "Both Q1 values are unchanged at 4.8% and 4.3% in the 21 Nov survey, so the comparison stands."
+        },
+        {
+          "claim_id": "c034",
+          "status": "still_true",
+          "reason": "Services was revised from 3.8% to 3.7% but manufacturing (4.8%) still leads, so the assertion survives."
+        },
+        {
+          "claim_id": "c035",
+          "status": "still_true",
+          "reason": "Q2 manufacturing (5.1%) and services (4.7%) were revised but remain below unchanged construction (6.2%)."
+        },
+        {
+          "claim_id": "c036",
+          "status": "still_true",
+          "reason": "Both were revised (5.1% vs 4.7%) but the ordering is unchanged, so the comparison holds."
+        },
+        {
+          "claim_id": "c037",
+          "status": "still_true",
+          "reason": "Both were revised (3.6% vs 3.9%) but construction still trails services."
+        },
+        {
+          "claim_id": "c038",
+          "status": "still_true",
+          "reason": "Revised Q2 figures (5.1%, 4.7%) remain below construction's unchanged 6.2%."
+        },
+        {
+          "claim_id": "c039",
+          "status": "still_true",
+          "reason": "The sentence quotes the 14 Oct advance estimate, which did show 0.0%."
+        },
+        {
+          "claim_id": "c040",
+          "status": "still_true",
+          "reason": "The October advance estimate reported 0.0%; the historical statement remains accurate."
+        },
+        {
+          "claim_id": "c041",
+          "status": "still_true",
+          "reason": "'At the time' anchors the claim to the October vintage, which was 0.0%."
+        },
+        {
+          "claim_id": "c042",
+          "status": "still_true",
+          "reason": "The 14 Oct flash/advance estimate did show 0.0%; the sentence reports that vintage."
+        },
+        {
+          "claim_id": "c043",
+          "status": "still_true",
+          "reason": "The named release and date match the 0.0% vintage exactly."
+        },
+        {
+          "claim_id": "c044",
+          "status": "still_true",
+          "reason": "The sentence explicitly reports the October vintage, which was 0.0%."
+        },
+        {
+          "claim_id": "c045",
+          "status": "still_true",
+          "reason": "The claim is anchored to the October publication date, when the official figure was 0.0%."
+        },
+        {
+          "claim_id": "c046",
+          "status": "still_true",
+          "reason": "The 14 Oct advance estimate did show 2.9%; the sentence reports that release, not the current figure."
+        },
+        {
+          "claim_id": "c047",
+          "status": "still_true",
+          "reason": "The October flash data showed 3.5%; the dated attribution keeps the sentence accurate."
+        },
+        {
+          "claim_id": "c048",
+          "status": "still_true",
+          "reason": "The 14 Jul advance estimate did report 5.5% for Q2; later vintages do not falsify that historical report."
+        },
+        {
+          "claim_id": "c049",
+          "status": "still_true",
+          "reason": "The 22 May Q1 Economic Survey reported 4.0%; the sentence correctly quotes that vintage."
+        },
+        {
+          "claim_id": "c050",
+          "status": "still_true",
+          "reason": "The October vintage for Q3 construction was 3.1%, exactly as quoted."
+        },
+        {
+          "claim_id": "c051",
+          "status": "still_true",
+          "reason": "The sentence reports what the October deck said against the then-current 0.0% figure."
+        },
+        {
+          "claim_id": "c052",
+          "status": "still_true",
+          "reason": "The flash estimate did show output level with a year earlier (0.0%)."
+        },
+        {
+          "claim_id": "c053",
+          "status": "needs_human",
+          "reason": "No official Q4 2025 estimate exists as of 21 Nov 2025, so the forecast cannot be adjudicated from the series."
+        },
+        {
+          "claim_id": "c054",
+          "status": "needs_human",
+          "reason": "The remainder of 2025 has no official data at the check date; a human must judge the outlook."
+        },
+        {
+          "claim_id": "c055",
+          "status": "now_wrong",
+          "reason": "The expectation concerns Q3, whose actual outturn is now 5.0% per the 21 Nov survey, so a current-tense expectation of flat is overtaken by fact."
+        },
+        {
+          "claim_id": "c056",
+          "status": "needs_human",
+          "reason": "Q4 2025 has no official vintage at the check date, so the forecast is unverifiable from the data."
+        },
+        {
+          "claim_id": "c057",
+          "status": "still_true",
+          "reason": "The sentence reports an expectation held in October; that historical fact is unchanged by the revision."
+        },
+        {
+          "claim_id": "c058",
+          "status": "needs_human",
+          "reason": "No official Q4 2025 value exists at the check date to test the projection against."
+        },
+        {
+          "claim_id": "c059",
+          "status": "needs_human",
+          "reason": "Q4 2025 overall GDP has no official vintage at the check date."
+        },
+        {
+          "claim_id": "c060",
+          "status": "needs_human",
+          "reason": "Future quarters have no official data at the check date; the hedge does not make it checkable."
+        },
+        {
+          "claim_id": "c061",
+          "status": "still_true",
+          "reason": "Both the October assumption and the advance estimate's 0.0% are accurately reported historical facts."
+        },
+        {
+          "claim_id": "c062",
+          "status": "needs_human",
+          "reason": "No Q4 2025 official values exist at the check date for either sector."
+        },
+        {
+          "claim_id": "c063",
+          "status": "needs_human",
+          "reason": "Without an anchor to the October release it is unclear whether the sentence reports a past reaction or endorses a now-false claim; a human must decide."
+        },
+        {
+          "claim_id": "c064",
+          "status": "needs_human",
+          "reason": "Present-tense attribution cannot be verified from the series, and the embedded claim is stale after the revision to 5.0%."
+        },
+        {
+          "claim_id": "c065",
+          "status": "still_true",
+          "reason": "The statement is explicitly anchored to the October advance estimate, which showed 0.0%, so the report remains accurate."
+        },
+        {
+          "claim_id": "c066",
+          "status": "still_true",
+          "reason": "The dated report of what the CFO said in October matches the then-official 0.0% figure."
+        },
+        {
+          "claim_id": "c067",
+          "status": "still_true",
+          "reason": "The attribution is anchored to the flash-estimate period, when the official figure was 0.0%."
+        },
+        {
+          "claim_id": "c068",
+          "status": "needs_human",
+          "reason": "'Still argue' reports a current opinion the series cannot verify, while the underlying claim is now false; editorial judgement is required."
+        },
+        {
+          "claim_id": "c069",
+          "status": "still_true",
+          "reason": "The quotation is explicitly based on the advance estimate, which showed 0.0%, so the report stays accurate."
+        },
+        {
+          "claim_id": "c070",
+          "status": "needs_human",
+          "reason": "A claim about beliefs cannot be checked against the series, and the believed proposition is now false."
+        },
+        {
+          "claim_id": "c071",
+          "status": "still_true",
+          "reason": "The cited release did show 0.0%, so the anchored attribution remains true."
+        },
+        {
+          "claim_id": "c072",
+          "status": "needs_human",
+          "reason": "Anonymous present-tense sourcing cannot be verified from the series and conflicts with the 5.0% outturn."
+        },
+        {
+          "claim_id": "c073",
+          "status": "now_wrong",
+          "reason": "The manufacturing half is false after the revision to 5.0%; construction's Q2 6.2% is unchanged."
+        },
+        {
+          "claim_id": "c074",
+          "status": "now_wrong",
+          "reason": "Overall Q3 growth is now 4.2%; the construction Q2 figure is unchanged."
+        },
+        {
+          "claim_id": "c075",
+          "status": "now_wrong",
+          "reason": "Q1's 4.8% stands, but Q3 is now 5.0%, breaking the 'flat' clause."
+        },
+        {
+          "claim_id": "c076",
+          "status": "now_wrong",
+          "reason": "Q1's 4.1% is unchanged but Q3 was revised to 4.2%."
+        },
+        {
+          "claim_id": "c077",
+          "status": "now_wrong",
+          "reason": "Services Q3 is now 3.9%; manufacturing Q1's 4.8% is unchanged."
+        },
+        {
+          "claim_id": "c078",
+          "status": "now_wrong",
+          "reason": "Q3 construction was revised to 3.6%; Q1's 4.3% stands."
+        },
+        {
+          "claim_id": "c079",
+          "status": "now_wrong",
+          "reason": "The manufacturing clause is false after the revision to 5.0%; services Q1 q-o-q 0.6% is unchanged."
+        },
+        {
+          "claim_id": "c080",
+          "status": "now_wrong",
+          "reason": "Manufacturing Q3 is now 5.0%; overall Q1's 4.1% is unchanged."
+        },
+        {
+          "claim_id": "c081",
+          "status": "now_wrong",
+          "reason": "Q2 manufacturing was restated to 5.1%, so the exact figure is stale; construction's 6.2% stands."
+        },
+        {
+          "claim_id": "c082",
+          "status": "now_wrong",
+          "reason": "Services Q2 is now 4.7%; construction's 6.2% is unchanged."
+        },
+        {
+          "claim_id": "c083",
+          "status": "now_wrong",
+          "reason": "The manufacturing clause is false after the revision to 5.0%; construction Q1 q-o-q -2.5% is unchanged."
+        },
+        {
+          "claim_id": "c084",
+          "status": "now_wrong",
+          "reason": "Overall Q2 was restated to 4.7%; manufacturing Q1's 4.8% stands."
+        },
+        {
+          "claim_id": "c085",
+          "status": "now_wrong",
+          "reason": "The chart title asserts 0.0% as the current Q3 figure; the 21 Nov survey says 5.0%."
+        },
+        {
+          "claim_id": "c086",
+          "status": "now_wrong",
+          "reason": "All three Q3 figures were revised (5.0%, 3.9%, 3.6%), so the scorecard is stale."
+        },
+        {
+          "claim_id": "c087",
+          "status": "still_true",
+          "reason": "The caption explicitly labels the figures as advance estimates, which were 0.0% and 2.9%."
+        },
+        {
+          "claim_id": "c088",
+          "status": "now_wrong",
+          "reason": "With no vintage label, the caption presents 0.0% as the current figure; it is now 5.0%."
+        },
+        {
+          "claim_id": "c089",
+          "status": "now_wrong",
+          "reason": "The note instructs the presenter to assert flatness, which the 5.0% outturn contradicts."
+        },
+        {
+          "claim_id": "c090",
+          "status": "still_true",
+          "reason": "The note correctly attributes 0.0% to the 14 October advance estimate."
+        },
+        {
+          "claim_id": "c091",
+          "status": "unaffected",
+          "reason": "Services Q1 q-o-q remains 0.6% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c092",
+          "status": "unaffected",
+          "reason": "Construction Q2 y-o-y is unchanged at 6.2% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c093",
+          "status": "now_wrong",
+          "reason": "The premise 'manufacturing was flat in Q3' is false after the revision to 5.0%, and the advice built on it misleads."
+        },
+        {
+          "claim_id": "c094",
+          "status": "still_true",
+          "reason": "The caption explicitly sources the figure to the 14 October release, which reported 0.0%."
+        },
+        {
+          "claim_id": "c095",
+          "status": "unaffected",
+          "reason": "Manufacturing Q1 y-o-y is unchanged at 4.8% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c096",
+          "status": "unaffected",
+          "reason": "Overall Q1 y-o-y is unchanged at 4.1% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c097",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey shows 5.0% growth, so the negation is false."
+        },
+        {
+          "claim_id": "c098",
+          "status": "now_wrong",
+          "reason": "Manufacturing did expand (5.0%) per the 21 Nov survey."
+        },
+        {
+          "claim_id": "c099",
+          "status": "still_true",
+          "reason": "Neither the 0.0% advance estimate nor the 5.0% survey figure is a contraction, so the negation survives."
+        },
+        {
+          "claim_id": "c100",
+          "status": "now_wrong",
+          "reason": "At 5.0% manufacturing is now the fastest of the tracked sectors (services 3.9%, construction 3.6%, overall 4.2%)."
+        },
+        {
+          "claim_id": "c101",
+          "status": "now_wrong",
+          "reason": "Manufacturing (5.0%) now exceeds services (3.9%), construction (3.6%) and overall GDP (4.2%)."
+        },
+        {
+          "claim_id": "c102",
+          "status": "now_wrong",
+          "reason": "Manufacturing (5.0%) now does outpace services (3.9%), so the statement is false."
+        },
+        {
+          "claim_id": "c103",
+          "status": "still_true",
+          "reason": "Growth was 0.0% and is now 5.0%; neither is negative, so the claim holds."
+        },
+        {
+          "claim_id": "c104",
+          "status": "now_wrong",
+          "reason": "The double negative asserts flatness, which the 5.0% outturn contradicts."
+        },
+        {
+          "claim_id": "c105",
+          "status": "unaffected",
+          "reason": "Manufacturing Q1 growth is unchanged at 4.8%, so the double negative remains accurate."
+        },
+        {
+          "claim_id": "c106",
+          "status": "unaffected",
+          "reason": "Both Q1 values are unchanged (4.3% vs 4.8%), so the negated comparison stands."
+        },
+        {
+          "claim_id": "c107",
+          "status": "unaffected",
+          "reason": "The PMI is a different, untracked series; the GDP revision does not touch it."
+        },
+        {
+          "claim_id": "c108",
+          "status": "unaffected",
+          "reason": "The PMI is not the manufacturing GDP series and is outside the watch list."
+        },
+        {
+          "claim_id": "c109",
+          "status": "unaffected",
+          "reason": "The IIP is a monthly index distinct from quarterly manufacturing GDP; no tracked value changed."
+        },
+        {
+          "claim_id": "c110",
+          "status": "unaffected",
+          "reason": "The IIP is untracked; the GDP revision does not affect it."
+        },
+        {
+          "claim_id": "c111",
+          "status": "unaffected",
+          "reason": "NODX is a trade series, not manufacturing GDP, and is outside the watch list."
+        },
+        {
+          "claim_id": "c112",
+          "status": "unaffected",
+          "reason": "NODX is untracked; the manufacturing GDP revision does not touch it."
+        },
+        {
+          "claim_id": "c113",
+          "status": "unaffected",
+          "reason": "Another country's manufacturing is not the Singapore series being watched."
+        },
+        {
+          "claim_id": "c114",
+          "status": "unaffected",
+          "reason": "Vietnam's series is outside the watch list."
+        },
+        {
+          "claim_id": "c115",
+          "status": "unaffected",
+          "reason": "China's industrial output is a different country and series; unaffected by Singapore's revision."
+        },
+        {
+          "claim_id": "c116",
+          "status": "unaffected",
+          "reason": "The eurozone PMI is untracked and unrelated to Singapore manufacturing GDP."
+        },
+        {
+          "claim_id": "c117",
+          "status": "unaffected",
+          "reason": "US industrial production is outside the watch list."
+        },
+        {
+          "claim_id": "c118",
+          "status": "unaffected",
+          "reason": "Korean export data is a different series and country; unaffected."
+        },
+        {
+          "claim_id": "c119",
+          "status": "unaffected",
+          "reason": "The sentence makes no statistical claim, so no revision can affect it."
+        },
+        {
+          "claim_id": "c120",
+          "status": "unaffected",
+          "reason": "No statistical assertion is made about any tracked series."
+        },
+        {
+          "claim_id": "c121",
+          "status": "unaffected",
+          "reason": "No statistical claim is present."
+        },
+        {
+          "claim_id": "c122",
+          "status": "unaffected",
+          "reason": "The sentence describes editorial work, not a statistic."
+        },
+        {
+          "claim_id": "c123",
+          "status": "unaffected",
+          "reason": "No statistical assertion is made."
+        },
+        {
+          "claim_id": "c124",
+          "status": "unaffected",
+          "reason": "A statement about coverage, not about official data."
+        },
+        {
+          "claim_id": "c125",
+          "status": "unaffected",
+          "reason": "No statistical claim is present."
+        },
+        {
+          "claim_id": "c126",
+          "status": "unaffected",
+          "reason": "No statistical assertion is made."
+        },
+        {
+          "claim_id": "c127",
+          "status": "unaffected",
+          "reason": "The sentence makes no claim about official statistics."
+        },
+        {
+          "claim_id": "c128",
+          "status": "unaffected",
+          "reason": "No statistical claim is present."
+        },
+        {
+          "claim_id": "c129",
+          "status": "unaffected",
+          "reason": "Manufacturing Q1 y-o-y is unchanged at 4.8% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c130",
+          "status": "unaffected",
+          "reason": "Construction Q2 y-o-y is unchanged at 6.2% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c131",
+          "status": "unaffected",
+          "reason": "Overall Q1 y-o-y is unchanged at 4.1% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c132",
+          "status": "unaffected",
+          "reason": "Services Q1 q-o-q remains 0.6% in both releases, as in answer-key case A."
+        },
+        {
+          "claim_id": "c133",
+          "status": "unaffected",
+          "reason": "Manufacturing Q1 q-o-q is unchanged at -5.1% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c134",
+          "status": "unaffected",
+          "reason": "Construction Q1 q-o-q is unchanged at -2.5% in the 21 Nov survey."
+        },
+        {
+          "claim_id": "c135",
+          "status": "still_true",
+          "reason": "The revision from 5.0% to 5.1% leaves 'about 5%' accurate."
+        },
+        {
+          "claim_id": "c136",
+          "status": "needs_human",
+          "reason": "Whether 3.9% still counts as 'roughly 3.5%' is an approximation-tolerance judgement (0.4 pp drift), consistent with the treatment of 'about 3%' in c138; a human should decide."
+        },
+        {
+          "claim_id": "c137",
+          "status": "now_wrong",
+          "reason": "Overall Q3 growth is now 4.2%, far from 'nearly 3%'."
+        },
+        {
+          "claim_id": "c138",
+          "status": "needs_human",
+          "reason": "Whether 3.6% still counts as 'about 3%' is a tolerance judgement the data alone cannot settle."
+        },
+        {
+          "claim_id": "c139",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised Q3 overall q-o-q growth to 2.4%."
+        },
+        {
+          "claim_id": "c140",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey revised Q3 services q-o-q growth to 0.4%."
+        },
+        {
+          "claim_id": "c141",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey restates the Q3 construction q-o-q decline as -0.7%."
+        },
+        {
+          "claim_id": "c142",
+          "status": "still_true",
+          "reason": "The decline was revised from -1.2% to -0.7% but remains a decline, so the directional claim survives."
+        },
+        {
+          "claim_id": "c143",
+          "status": "still_true",
+          "reason": "The q-o-q rebound was revised upward from 6.1% to 11.3%, so 'rebounded strongly' remains true."
+        },
+        {
+          "claim_id": "c144",
+          "status": "now_wrong",
+          "reason": "The ordering survives (6.2% > 5.1%) but the sentence states manufacturing's figure as exactly 5.0%, which the 21 Nov survey restates to 5.1%."
+        },
+        {
+          "claim_id": "c145",
+          "status": "still_true",
+          "reason": "After revision Q2 (5.1%) still exceeds Q3 (5.0%), so the cross-quarter comparison holds, though narrowly."
+        },
+        {
+          "claim_id": "c146",
+          "status": "now_wrong",
+          "reason": "Revised Q3 growth of 5.0% exceeds Q1's 4.8%, so Q3 is no longer the weakest quarter of 2025 to date."
+        },
+        {
+          "claim_id": "c147",
+          "status": "still_true",
+          "reason": "The 14 April advance estimate did report 5.0% for Q1; the sentence quotes that vintage accurately."
+        },
+        {
+          "claim_id": "c148",
+          "status": "needs_human",
+          "reason": "No period is stated, so the claim cannot be tied to a specific observation; if it means Q3 2025 it is now false."
+        },
+        {
+          "claim_id": "c149",
+          "status": "now_wrong",
+          "reason": "Q3 growth is now 4.2%, not 2.9%; the 'slower than Q2' clause still holds (4.2% < 4.7%) but the cited figure is wrong."
+        },
+        {
+          "claim_id": "c150",
+          "status": "now_wrong",
+          "reason": "The 21 Nov survey restates the Q2 manufacturing q-o-q dip as -0.6%, so the exact figure is stale."
+        }
+      ]
+    }
+  ]
+}

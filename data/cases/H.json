@@ -1,0 +1,36 @@
+{
+  "case_id": "H",
+  "title": "Services growth clears the benchmark",
+  "registered_on": "2026-07-15",
+  "claims": [
+    {
+      "claim_id": "h1",
+      "sentence": "Services growth stayed below 5% year on year in Q2 2026.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2026-Q2",
+      "value_cited": 4.6,
+      "vintage_cited": "2026-07-14",
+      "stance": "current",
+      "assertion": {
+        "type": "threshold",
+        "detail": "below 5%",
+        "operator": "<",
+        "threshold": 5
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2026-10-14",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "h1",
+          "status": "now_wrong",
+          "reason": "The October estimate places Q2 services growth at 5.2%."
+        }
+      ]
+    }
+  ]
+}

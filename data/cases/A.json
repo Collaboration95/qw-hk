@@ -1,0 +1,70 @@
+{
+  "case_id": "A",
+  "title": "Manufacturing moves from flat to growth",
+  "registered_on": "2025-10-20",
+  "claims": [
+    {
+      "claim_id": "a1",
+      "sentence": "Manufacturing stalled in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "a2",
+      "sentence": "As first reported in October, manufacturing output was flat in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      }
+    },
+    {
+      "claim_id": "a3",
+      "sentence": "Services output grew by 0.6% quarter on quarter in Q1 2025.",
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q1",
+      "value_cited": 0.6,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2025-11-21",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "a1",
+          "status": "now_wrong",
+          "reason": "Growth of 5.0% breaks the claim of flat output."
+        },
+        {
+          "claim_id": "a2",
+          "status": "still_true",
+          "reason": "The sentence quotes the October advance estimate, which was 0.0%."
+        },
+        {
+          "claim_id": "a3",
+          "status": "unaffected",
+          "reason": "The Q1 services estimate remains 0.6% in both releases."
+        }
+      ]
+    }
+  ]
+}

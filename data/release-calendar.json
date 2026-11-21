@@ -1,0 +1,330 @@
+{
+  "accessed": "2026-11-19",
+  "timezone": "Asia/Singapore",
+  "window_start": "2026-11-19",
+  "window_end": "2026-12-15",
+  "releases": [
+    {
+      "date": "2026-11-20",
+      "release": "Wholesale Trade Series, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-23",
+      "release": "CPI For General Households, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Balance of Payments, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Central Government Debt, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Expenditure-Based GDP, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "GDP, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [
+        "sg-gdp-construction-qoq",
+        "sg-gdp-construction-yoy",
+        "sg-gdp-manufacturing-qoq",
+        "sg-gdp-manufacturing-yoy",
+        "sg-gdp-overall-qoq",
+        "sg-gdp-overall-yoy",
+        "sg-gdp-services-qoq",
+        "sg-gdp-services-yoy"
+      ],
+      "time_sgt": "08:00",
+      "announcement_url": "https://www.meti.gov.sg/newsroom/release-of-third-quarter-2026-economic-survey-of-singapore/"
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Income-Based GDP, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Productivity, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Unit Business Cost, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-24",
+      "release": "Unit Labour Cost,3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-26",
+      "release": "Index of Industrial Production, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Business Receipts for Services Industries, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Household Sector Balance Sheet, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Income (Jun 2026^p)",
+      "date_type": "scheduled",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Information Paper on Real Personal Disposable Income",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Labour Force (Jun 2026^p)",
+      "date_type": "scheduled",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Labour Force Participation Rate",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Labour Force in Singapore Advance Release (2026^p)",
+      "date_type": "scheduled",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-27",
+      "release": "Personal Disposable Income and Personal Saving, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Central Government Operations, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Depository Corporations Survey, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Import and Export Price Indices, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Quarterly Gross Monthly Income (2nd Qtr 2026 & 3rd Qtr 2026)",
+      "date_type": "no_later_than",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Singapore Manufactured Products and Domestic Supply Price Indices, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-11-30",
+      "release": "Wages/ Earnings, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-12-07",
+      "release": "International Reserves, Nov 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-12-07",
+      "release": "Retail Sales and Food & Beverage Services Indices, Oct 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-12-07",
+      "release": "Taxes on Fossil Fuels, 3Q 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Employment Change (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [
+        "sg-employment-change"
+      ],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Hours Worked (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Job Vacancy (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Labour Market Report (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [
+        "sg-employment-change",
+        "sg-unemployment"
+      ],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Labour Turnover (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Re-entry into Employment (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Retrenchment (3rd Qtr 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-10",
+      "release": "Unemployment (Sep 2026)",
+      "date_type": "window",
+      "url": "https://eservices.mom.gov.sg/statshare/api/public/calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": [
+        "sg-unemployment"
+      ],
+      "end_date": "2026-12-16"
+    },
+    {
+      "date": "2026-12-14",
+      "release": "Central Bank Survey, Nov 2026",
+      "date_type": "scheduled",
+      "url": "https://www.singstat.gov.sg/data-tools-services/advance-release-calendar",
+      "accessed": "2026-11-19",
+      "tracked_series": []
+    }
+  ]
+}

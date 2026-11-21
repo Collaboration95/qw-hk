@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Indicators",
+  "url": "/indicators/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Total employment change",
+        "url": "/indicators/sg-employment-change/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Construction GDP · quarter on quarter",
+        "url": "/indicators/sg-gdp-construction-qoq/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Construction GDP · year on year",
+        "url": "/indicators/sg-gdp-construction-yoy/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Manufacturing GDP · quarter on quarter",
+        "url": "/indicators/sg-gdp-manufacturing-qoq/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Manufacturing GDP · year on year",
+        "url": "/indicators/sg-gdp-manufacturing-yoy/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Overall GDP · quarter on quarter",
+        "url": "/indicators/sg-gdp-overall-qoq/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Overall GDP · year on year",
+        "url": "/indicators/sg-gdp-overall-yoy/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Services GDP · quarter on quarter",
+        "url": "/indicators/sg-gdp-services-qoq/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Services GDP · year on year",
+        "url": "/indicators/sg-gdp-services-yoy/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "Overall unemployment",
+        "url": "/indicators/sg-unemployment/"
+      }
+    ]
+  }
+}

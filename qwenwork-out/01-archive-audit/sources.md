@@ -1,0 +1,336 @@
+# Sources
+
+**PARTIAL AUDIT.** No new web research in final assembly. These are inherited opened/attempted/excluded outcomes, not claims that every possible release was opened. Search discovery alone is not numeric evidence. Repeated outcomes retained to preserve redirects, failures and QC reopenings.
+
+Unique logged URL strings including redirects and excluded links: 106. Successful requested URLs in fetch logs: 56; failed requested URLs: 16; explicitly excluded requested URLs: 31. Full combined URL strings: 107. Categories may overlap across attempts.
+
+- [gdp fetch log 0] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 | opened | final URL: https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 | evidence: gdp-api-yoy.json
+- [gdp fetch log 1] https://api-open.data.gov.sg/v2/public/api/datasets/d_1506368f0e7928ac18e42f84d1c450a3/metadata | HTTP Error 403: Forbidden | final URL:  | evidence: gdp-meta-yoy.json
+- [gdp fetch log 2] https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100 | opened | final URL: https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100 | evidence: gdp-api-qoq.json
+- [gdp fetch log 3] https://api-open.data.gov.sg/v2/public/api/datasets/d_17702de81b268ab5d6100a1aab3805bf/metadata | HTTP Error 403: Forbidden | final URL:  | evidence: gdp-meta-qoq.json
+- [gdp fetch log 4] https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf | EXCLUDED domain; not opened | final URL:  | evidence: 
+- [gdp fetch log 5] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf | opened | final URL: https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf | evidence: gdp-source-d48d17af65bd.pdf
+- [gdp fetch log 6] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | opened | final URL: https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | evidence: gdp-source-ec8a4e49d2bd.pdf
+- [gdp fetch log 7] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf | opened | final URL: https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf | evidence: gdp-source-fb0cb7b4ebc9.pdf
+- [gdp fetch log 8] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | opened | final URL: https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | evidence: gdp-source-1a319bfa261a.pdf
+- [gdp fetch log 9] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | opened | final URL: https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | evidence: gdp-source-89d08a026df7.pdf
+- [gdp fetch log 10] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf | PDF extracted | final URL:  | evidence: gdp-source-fb0cb7b4ebc9.txt
+- [gdp fetch log 11] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf | PDF extracted | final URL:  | evidence: gdp-source-d48d17af65bd.txt
+- [gdp fetch log 12] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | PDF extracted | final URL:  | evidence: gdp-source-89d08a026df7.txt
+- [gdp fetch log 13] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf | opened | final URL: https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf | evidence: gdp-source-b8343ec1b5f7.pdf
+- [gdp fetch log 14] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | opened | final URL: https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | evidence: gdp-source-92e0a46ca762.pdf
+- [gdp fetch log 15] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | PDF extracted | final URL:  | evidence: gdp-source-ec8a4e49d2bd.txt
+- [gdp fetch log 16] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf | opened | final URL: https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf | evidence: gdp-source-65c6b23d440b.pdf
+- [gdp fetch log 17] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | PDF extracted | final URL:  | evidence: gdp-source-1a319bfa261a.txt
+- [gdp fetch log 18] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf | PDF extracted | final URL:  | evidence: gdp-source-b8343ec1b5f7.txt
+- [gdp fetch log 19] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | opened | final URL: https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | evidence: gdp-source-70ec2456b827.pdf
+- [gdp fetch log 20] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf | PDF extracted | final URL:  | evidence: gdp-source-65c6b23d440b.txt
+- [gdp fetch log 21] https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf | opened | final URL: https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf | evidence: gdp-source-38098f9ffb52.pdf
+- [gdp fetch log 22] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | opened | final URL: https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | evidence: gdp-source-be04ab0588f3.pdf
+- [gdp fetch log 23] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf | opened | final URL: https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf | evidence: gdp-source-d19570bfba2b.pdf
+- [gdp fetch log 24] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | PDF extracted | final URL:  | evidence: gdp-source-92e0a46ca762.txt
+- [gdp fetch log 25] https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf | PDF extracted | final URL:  | evidence: gdp-source-38098f9ffb52.txt
+- [gdp fetch log 26] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf | PDF extracted | final URL:  | evidence: gdp-source-d19570bfba2b.txt
+- [gdp fetch log 27] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | PDF extracted | final URL:  | evidence: gdp-source-70ec2456b827.txt
+- [gdp fetch log 28] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | PDF extracted | final URL:  | evidence: gdp-source-be04ab0588f3.txt
+- [gdp fetch log 29] https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2023 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2023 | evidence: gdp-page-7230c8d2b7cf.html
+- [gdp fetch log 30] https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2024 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2024 | evidence: gdp-page-845a3a5a81e2.html
+- [gdp fetch log 31] https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2023 | opened | final URL: https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2023 | evidence: gdp-page-576634a08de8.html
+- [gdp fetch log 32] https://www.singstat.gov.sg/news/advance-gdp-estimate-1q2024 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-1q2024 | evidence: gdp-page-23009615125f.html
+- [gdp fetch log 33] https://www.singstat.gov.sg/news/advance-gdp-estimate-2q2024 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-2q2024 | evidence: gdp-page-f68f65244cb5.html
+- [gdp fetch log 34] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf | opened | final URL: https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf | evidence: gdp-source-3ec0850965a9.pdf
+- [gdp fetch log 35] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf | opened | final URL: https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf | evidence: gdp-source-03805aeecdb7.pdf
+- [gdp fetch log 36] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | opened | final URL: https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | evidence: gdp-source-e8b2e038369b.pdf
+- [gdp fetch log 37] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf | opened | final URL: https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf | evidence: gdp-source-a853f42ac386.pdf
+- [gdp fetch log 38] https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf | opened | final URL: https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf | evidence: gdp-source-867d8fa0f0d8.pdf
+- [gdp fetch log 39] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf | PDF extracted | final URL:  | evidence: gdp-source-a853f42ac386.txt
+- [gdp fetch log 40] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf | PDF extracted | final URL:  | evidence: gdp-source-3ec0850965a9.txt
+- [gdp fetch log 41] https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2024 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2024 | evidence: gdp-page-760e20d57132.html
+- [gdp fetch log 42] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf | PDF extracted | final URL:  | evidence: gdp-source-03805aeecdb7.txt
+- [gdp fetch log 43] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | PDF extracted | final URL:  | evidence: gdp-source-e8b2e038369b.txt
+- [gdp fetch log 44] https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf | PDF extracted | final URL:  | evidence: gdp-source-867d8fa0f0d8.txt
+- [gdp fetch log 45] https://www.singstat.gov.sg/news/performance-of-singapore-economy-1q2024 | opened | final URL: https://www.singstat.gov.sg/news/performance-of-singapore-economy-1q2024 | evidence: gdp-page-8b8dbeb8ab0f.html
+- [gdp fetch log 46] https://www.singstat.gov.sg/news/performance-of-singapore-economy-3q2024 | opened | final URL: https://www.singstat.gov.sg/news/performance-of-singapore-economy-3q2024 | evidence: gdp-page-70f73ecdb8b6.html
+- [gdp fetch log 47] https://www.singstat.gov.sg/news/performance-of-singapore-economy-2q2024 | opened | final URL: https://www.singstat.gov.sg/news/performance-of-singapore-economy-2q2024 | evidence: gdp-page-3c5916b9cafc.html
+- [gdp fetch log 48] https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2024 | opened | final URL: https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2024 | evidence: gdp-page-de9b5eac2123.html
+- [gdp fetch log 49] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf | opened | final URL: https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf | evidence: gdp-source-f0fe375c1ee2.pdf
+- [gdp fetch log 50] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | opened | final URL: https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | evidence: gdp-source-e4cbff9cec38.pdf
+- [gdp fetch log 51] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf | PDF extracted | final URL:  | evidence: gdp-source-f0fe375c1ee2.txt
+- [gdp fetch log 52] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | opened | final URL: https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | evidence: gdp-source-503d058bf1b6.pdf
+- [gdp fetch log 53] https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2025 | opened | final URL: https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2025 | evidence: gdp-page-4eb7ce697e5d.html
+- [gdp fetch log 54] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | opened | final URL: https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | evidence: gdp-source-35dc3f0174f9.pdf
+- [gdp fetch log 55] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | opened | final URL: https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | evidence: gdp-source-6a04a900d865.pdf
+- [gdp fetch log 56] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | PDF extracted | final URL:  | evidence: gdp-source-e4cbff9cec38.txt
+- [gdp fetch log 57] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | opened | final URL: https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | evidence: gdp-source-4e306439c951.pdf
+- [gdp fetch log 58] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-2024/ | opened | final URL: https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-2024/ | evidence: gdp-page-dff708521958.html
+- [gdp fetch log 59] https://isomer-user-content.by.gov.sg/1004/14701252-47c0-4300-9749-0f602cc09faf/PR_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 60] https://isomer-user-content.by.gov.sg/1004/736a0505-140c-4478-9978-2943a6b6353c/FullReport_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 61] https://isomer-user-content.by.gov.sg/1004/092ffa63-9c9f-450c-92e6-8161ed76bddb/MainIndicators_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 62] https://isomer-user-content.by.gov.sg/1004/87b1fee6-a9d6-414e-8a2e-554663638ed5/BA3_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 63] https://isomer-user-content.by.gov.sg/1004/8d0556a6-ab42-4478-aaa5-0c594d7611c4/FA_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 64] https://isomer-user-content.by.gov.sg/1004/d3b95627-8845-4154-87d5-d1ca52efdcd5/FA2_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 65] https://isomer-user-content.by.gov.sg/1004/18aad920-80ac-4c23-a55b-00a49fbe0de6/SA_AES2024.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 66] https://isomer-user-content.by.gov.sg/1004/cfd9fae6-553e-43d0-bd7a-b5c792180395/AdvEst_4Q24.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 67] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | PDF extracted | final URL:  | evidence: gdp-source-4e306439c951.txt
+- [gdp fetch log 68] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | PDF extracted | final URL:  | evidence: gdp-source-35dc3f0174f9.txt
+- [gdp fetch log 69] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | PDF extracted | final URL:  | evidence: gdp-source-6a04a900d865.txt
+- [gdp fetch log 70] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-second-quarter-2023/ | opened | final URL: https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-second-quarter-2023/ | evidence: gdp-page-19f4a023dbfb.html
+- [gdp fetch log 71] https://isomer-user-content.by.gov.sg/1004/291f4d8c-403a-4b98-b27e-61e77000b57d/PR_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 72] https://isomer-user-content.by.gov.sg/1004/b98a5c0c-2b2a-47d1-8d38-0f2449760716/FullReport_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 73] https://isomer-user-content.by.gov.sg/1004/18711e11-bfd5-4b22-af73-07f8c87a57bd/Contents_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 74] https://isomer-user-content.by.gov.sg/1004/a3782f38-8300-4c92-9fc9-170338d809bb/MainIndicators_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 75] https://isomer-user-content.by.gov.sg/1004/ff34457f-61da-447e-942a-c7712bea9151/Ch1_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 76] https://isomer-user-content.by.gov.sg/1004/88887218-f57f-4c9a-b20e-67c1dce51bdb/Ch2_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 77] https://isomer-user-content.by.gov.sg/1004/9430c9a6-acba-40fb-bfc5-b6774cec5e08/BA_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 78] https://isomer-user-content.by.gov.sg/1004/2dbe38f5-a31c-4f17-9ae5-97273ca3ff0b/Ch3_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 79] https://isomer-user-content.by.gov.sg/1004/56bdb331-7508-45bc-822e-5cb28bd7d061/FA_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 80] https://isomer-user-content.by.gov.sg/1004/249a51c1-0e7a-47d0-b9d0-8443ec077687/SA_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 81] https://isomer-user-content.by.gov.sg/1004/240cf371-3a2a-43b8-b9a4-444f2fdb3138/AdvEst_2Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 82] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | PDF extracted | final URL:  | evidence: gdp-source-503d058bf1b6.txt
+- [gdp fetch log 83] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-third-quarter-2023/ | opened | final URL: https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-third-quarter-2023/ | evidence: gdp-page-a1de468ef077.html
+- [gdp fetch log 84] https://isomer-user-content.by.gov.sg/1004/4dd8f25d-dfbf-4566-b4e3-2f78827f0561/PR_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 85] https://isomer-user-content.by.gov.sg/1004/f85b3796-4af5-46ba-90f7-296da5d9d05a/FullReport_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 86] https://isomer-user-content.by.gov.sg/1004/f6085abc-96ef-4ec5-bc4f-c7558bf6e567/Contents_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 87] https://isomer-user-content.by.gov.sg/1004/c347c59a-492d-466b-a219-77bc8ce204d0/MainIndicators_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 88] https://isomer-user-content.by.gov.sg/1004/aae61f1d-13d7-44d0-a9b9-afca28959517/Ch1_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 89] https://isomer-user-content.by.gov.sg/1004/5e021234-ec38-40e6-9f0d-59517fe6bcb9/BA_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 90] https://isomer-user-content.by.gov.sg/1004/0cc49aa2-4119-4ea1-88f1-d327f1740b7c/Ch2_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 91] https://isomer-user-content.by.gov.sg/1004/4f019828-4715-4326-9c78-0b0213e3f8ba/Ch3_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 92] https://isomer-user-content.by.gov.sg/1004/ab8afe89-d7c3-4aeb-8343-db6a8c8193ce/FA_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 93] https://isomer-user-content.by.gov.sg/1004/60dcb670-fad4-4927-9632-23644e6543bb/SA_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp fetch log 94] https://isomer-user-content.by.gov.sg/1004/b807e3f2-f231-4d58-9ead-75754398bd76/AdvEst_3Q2023.pdf | EXCLUDED domain; discovered link, not opened | final URL:  | evidence: 
+- [gdp source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 : opened; final URL https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100
+- [gdp source narrative] https://api-open.data.gov.sg/v2/public/api/datasets/d_1506368f0e7928ac18e42f84d1c450a3/metadata : HTTP Error 403: Forbidden
+- [gdp source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100 : opened; final URL https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100
+- [gdp source narrative] https://api-open.data.gov.sg/v2/public/api/datasets/d_17702de81b268ab5d6100a1aab3805bf/metadata : HTTP Error 403: Forbidden
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf : EXCLUDED domain; not opened
+- [gdp source narrative] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf : opened; final URL https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf : opened; final URL https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf : opened; final URL https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf : opened; final URL https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf : opened; final URL https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf : opened; final URL https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf : opened; final URL https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf : opened; final URL https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf : opened; final URL https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf : opened; final URL https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf : opened; final URL https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf : opened; final URL https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2023 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2023
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2024 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2024
+- [gdp source narrative] https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2023 : opened; final URL https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2023
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-1q2024 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-1q2024
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-2q2024 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-2q2024
+- [gdp source narrative] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf : opened; final URL https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf : opened; final URL https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf : opened; final URL https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf : opened; final URL https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf : opened; final URL https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2024 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2024
+- [gdp source narrative] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/6837d1de-53f1-42b9-9806-c3a7b33d02de.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/news/performance-of-singapore-economy-1q2024 : opened; final URL https://www.singstat.gov.sg/news/performance-of-singapore-economy-1q2024
+- [gdp source narrative] https://www.singstat.gov.sg/news/performance-of-singapore-economy-3q2024 : opened; final URL https://www.singstat.gov.sg/news/performance-of-singapore-economy-3q2024
+- [gdp source narrative] https://www.singstat.gov.sg/news/performance-of-singapore-economy-2q2024 : opened; final URL https://www.singstat.gov.sg/news/performance-of-singapore-economy-2q2024
+- [gdp source narrative] https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2024 : opened; final URL https://www.singstat.gov.sg/news/performance-of-singapore-economy-4q2024
+- [gdp source narrative] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf : opened; final URL https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf : opened; final URL https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf : opened; final URL https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2025 : opened; final URL https://www.singstat.gov.sg/news/advance-gdp-estimate-3q2025
+- [gdp source narrative] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf : opened; final URL https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf : opened; final URL https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf
+- [gdp source narrative] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf : opened; final URL https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-2024/ : opened; final URL https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-2024/
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/14701252-47c0-4300-9749-0f602cc09faf/PR_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/736a0505-140c-4478-9978-2943a6b6353c/FullReport_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/092ffa63-9c9f-450c-92e6-8161ed76bddb/MainIndicators_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/87b1fee6-a9d6-414e-8a2e-554663638ed5/BA3_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/8d0556a6-ab42-4478-aaa5-0c594d7611c4/FA_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/d3b95627-8845-4154-87d5-d1ca52efdcd5/FA2_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/18aad920-80ac-4c23-a55b-00a49fbe0de6/SA_AES2024.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/cfd9fae6-553e-43d0-bd7a-b5c792180395/AdvEst_4Q24.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf : PDF extracted
+- [gdp source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf : PDF extracted
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-second-quarter-2023/ : opened; final URL https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-second-quarter-2023/
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/291f4d8c-403a-4b98-b27e-61e77000b57d/PR_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/b98a5c0c-2b2a-47d1-8d38-0f2449760716/FullReport_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/18711e11-bfd5-4b22-af73-07f8c87a57bd/Contents_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/a3782f38-8300-4c92-9fc9-170338d809bb/MainIndicators_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/ff34457f-61da-447e-942a-c7712bea9151/Ch1_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/88887218-f57f-4c9a-b20e-67c1dce51bdb/Ch2_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/9430c9a6-acba-40fb-bfc5-b6774cec5e08/BA_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/2dbe38f5-a31c-4f17-9ae5-97273ca3ff0b/Ch3_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/56bdb331-7508-45bc-822e-5cb28bd7d061/FA_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/249a51c1-0e7a-47d0-b9d0-8443ec077687/SA_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/240cf371-3a2a-43b8-b9a4-444f2fdb3138/AdvEst_2Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf : PDF extracted
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-third-quarter-2023/ : opened; final URL https://www.meti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-third-quarter-2023/
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/4dd8f25d-dfbf-4566-b4e3-2f78827f0561/PR_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/f85b3796-4af5-46ba-90f7-296da5d9d05a/FullReport_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/f6085abc-96ef-4ec5-bc4f-c7558bf6e567/Contents_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/c347c59a-492d-466b-a219-77bc8ce204d0/MainIndicators_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/aae61f1d-13d7-44d0-a9b9-afca28959517/Ch1_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/5e021234-ec38-40e6-9f0d-59517fe6bcb9/BA_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/0cc49aa2-4119-4ea1-88f1-d327f1740b7c/Ch2_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/4f019828-4715-4326-9c78-0b0213e3f8ba/Ch3_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/ab8afe89-d7c3-4aeb-8343-db6a8c8193ce/FA_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/60dcb670-fad4-4927-9632-23644e6543bb/SA_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://isomer-user-content.by.gov.sg/1004/b807e3f2-f231-4d58-9ead-75754398bd76/AdvEst_3Q2023.pdf : EXCLUDED domain; discovered link, not opened
+- [gdp source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf : QC reopened GDP-e49eb448210b8913: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf : QC reopened GDP-717aa5c1c34049ec: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf : QC reopened GDP-e6c853f7c1e7f740: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf : QC reopened GDP-ba313cb4bf35aeca: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf : QC reopened GDP-8e772dcf4cb82a3a: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf : QC reopened GDP-7600840cd7b0d9b3: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf : QC reopened GDP-45716cf79bdd74e8: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf : QC reopened GDP-35bc4b325260af14: MATCH
+- [gdp source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100 : QC reopened GDP-54df245416c0e7b8: MATCH
+- [gdp source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 : QC reopened GDP-162c013c5a1211c3: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf : QC reopened GDP-fdc08221bcd423f9: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf : QC reopened GDP-989671e30d134a0a: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf : QC reopened GDP-f3714ce15dead49a: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf : QC reopened GDP-f01cec300539e145: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf : QC reopened GDP-2e2a335e5cd2ba19: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf : QC reopened GDP-e5024ab63375e044: MATCH
+- [gdp source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 : QC reopened GDP-6c4f6e043fdddd25: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf : QC reopened GDP-87c66cea88bcdbb2: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf : QC reopened GDP-cbf63191de326695: MATCH
+- [gdp source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf : QC reopened GDP-fa57c8472ac783fe: MATCH
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-2024/ : Opened with webfetch; dated 14 February 2025; linked PDFs outside allowed domain
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-second-quarter-2023/ : Opened webfetch; dated 11 August 2023; linked assets excluded
+- [gdp source narrative] https://www.mti.gov.sg/resources/economic-survey-of-singapore/economic-survey-of-singapore-and-feature-articles/economic-survey-of-singapore-third-quarter-2023/ : Opened webfetch; dated 22 November 2023; linked assets excluded
+- [gdp source narrative] https://www.singstat.gov.sg/news/advance-gdp-estimate-4q2023 : Opened webfetch; discovered PDF
+- [gdp source narrative] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf : webfetch returned binary PDF, unusable text; downloaded and parsed separately
+- [gdp QC] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | reopened GDP-e49eb448210b8913: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/9c77a41c-c004-484a-9996-6d9859f700f7.pdf | reopened GDP-717aa5c1c34049ec: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | reopened GDP-e6c853f7c1e7f740: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/51524a2e-550d-4680-9ccc-9b6377b82f08.pdf | reopened GDP-ba313cb4bf35aeca: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | reopened GDP-8e772dcf4cb82a3a: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | reopened GDP-7600840cd7b0d9b3: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/a2d9a1f4-13e6-43ce-a786-296d9e35b63a.pdf | reopened GDP-45716cf79bdd74e8: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf | reopened GDP-35bc4b325260af14: MATCH
+- [gdp QC] https://data.gov.sg/api/action/datastore_search?resource_id=d_17702de81b268ab5d6100a1aab3805bf&limit=100 | reopened GDP-54df245416c0e7b8: MATCH
+- [gdp QC] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 | reopened GDP-162c013c5a1211c3: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf | reopened GDP-fdc08221bcd423f9: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf | reopened GDP-989671e30d134a0a: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/b4783339-3cf7-43f8-ad8a-5ac4d402ad69.pdf | reopened GDP-f3714ce15dead49a: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/e98950d1-fd6d-4fa8-873e-c7257404d038.pdf | reopened GDP-f01cec300539e145: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | reopened GDP-2e2a335e5cd2ba19: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf | reopened GDP-e5024ab63375e044: MATCH
+- [gdp QC] https://data.gov.sg/api/action/datastore_search?resource_id=d_1506368f0e7928ac18e42f84d1c450a3&limit=100 | reopened GDP-6c4f6e043fdddd25: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf | reopened GDP-87c66cea88bcdbb2: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | reopened GDP-cbf63191de326695: MATCH
+- [gdp QC] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | reopened GDP-fa57c8472ac783fe: MATCH
+- [labour fetch log 0] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | evidence: labour-source-92e0a46ca762.pdf
+- [labour fetch log 1] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | evidence: labour-source-89d08a026df7.pdf
+- [labour fetch log 2] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | evidence: labour-source-70ec2456b827.pdf
+- [labour fetch log 3] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | evidence: labour-source-1a319bfa261a.pdf
+- [labour fetch log 4] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | evidence: labour-source-ec8a4e49d2bd.pdf
+- [labour fetch log 5] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | evidence: labour-source-be04ab0588f3.pdf
+- [labour fetch log 6] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | evidence: labour-source-e8b2e038369b.pdf
+- [labour fetch log 7] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | evidence: labour-source-6a04a900d865.pdf
+- [labour fetch log 8] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | evidence: labour-source-e4cbff9cec38.pdf
+- [labour fetch log 9] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | evidence: labour-source-35dc3f0174f9.pdf
+- [labour fetch log 10] https://data.gov.sg/api/action/datastore_search?resource_id=d_b816a930bca0eb19fdf20fcbfcdd4c39&limit=100 | OPENED | final URL: https://data.gov.sg/api/action/datastore_search?resource_id=d_b816a930bca0eb19fdf20fcbfcdd4c39&limit=100 | evidence: labour-source-2db28e060548.json
+- [labour fetch log 11] https://www.mom.gov.sg/newsroom/press-releases/2026/0921-labour-market-report---second-quarter-2026 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2026/0921-labour-market-report---second-quarter-2026 | evidence: labour-source-a3620a578669.html
+- [labour fetch log 12] https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026 | evidence: labour-source-2efa3aa03233.html
+- [labour fetch log 13] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | OPENED | final URL: https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | evidence: labour-source-503d058bf1b6.pdf
+- [labour fetch log 14] https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf | OPENED | final URL: https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf | evidence: labour-source-a72afd9c1b3f.pdf
+- [labour fetch log 15] https://data.gov.sg/api/action/datastore_search?resource_id=d_31dec7667bc2c6b945a262cd60958eaf&limit=100 | OPENED | final URL: https://data.gov.sg/api/action/datastore_search?resource_id=d_31dec7667bc2c6b945a262cd60958eaf&limit=100 | evidence: labour-source-282ccb1a2069.json
+- [labour fetch log 16] https://www.mom.gov.sg/newsroom/press-releases/2023/0615-labour-market-report---first-quarter-2023 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2023/0615-labour-market-report---first-quarter-2023 | evidence: labour-source-e2b007eac33d.html
+- [labour fetch log 17] https://www.mom.gov.sg/newsroom/press-releases/2023/0428-labour-market-advance-release---first-quarter-2023 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2023/0428-labour-market-advance-release---first-quarter-2023 | evidence: labour-source-1a857579e733.html
+- [labour fetch log 18] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2023.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 19] https://stats.mom.gov.sg/Pages/Labour-Market-Report-1Q-2023.aspx?PageVersion=2048 | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 20] https://www.mom.gov.sg/newsroom/press-releases/2024/3101-labour-market-advance-release-fourth-quarter-2023 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2024/3101-labour-market-advance-release-fourth-quarter-2023 | evidence: labour-source-875499ece050.html
+- [labour fetch log 21] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q1-2024.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 22] https://stats.mom.gov.sg/Pages/Labour-Market-Report-4Q-2023.aspx?PageVersion=2560 | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 23] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2024.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 24] https://www.mom.gov.sg/newsroom/press-releases/2024/0620-labour-market-report-1q-2024 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2024/0620-labour-market-report-1q-2024 | evidence: labour-source-e13e15e09851.html
+- [labour fetch log 25] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q3-2024.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 26] https://www.mom.gov.sg/newsroom/press-releases/2025/0127-labour-market-advance-release---4q-2024 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2025/0127-labour-market-advance-release---4q-2024 | evidence: labour-source-f63261210d70.html
+- [labour fetch log 27] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q4-2024.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 28] https://stats.mom.gov.sg/Pages/Labour-Market-Report-4Q-2024.aspx?PageVersion=1536 | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 29] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-2Q-2025.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 30] https://www.mom.gov.sg/newsroom/press-releases/2025/0730-labour-market-advance-release-second-quarter-2025 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2025/0730-labour-market-advance-release-second-quarter-2025 | evidence: labour-source-941f979af5de.html
+- [labour fetch log 31] https://stats.mom.gov.sg/publications/report-labour-market-second-quarter-2025/ | OPENED | final URL: https://stats.mom.gov.sg/publications/report-labour-market-second-quarter-2025/ | evidence: labour-source-052936ccbafe.html
+- [labour fetch log 32] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-4Q-2025.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 33] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-1Q-2026.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 34] https://www.mom.gov.sg/newsroom/press-releases/2026/0129-labour-market-advance-release-fourth-quarter-2025 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2026/0129-labour-market-advance-release-fourth-quarter-2025 | evidence: labour-source-61e6d89c7d0b.html
+- [labour fetch log 35] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2026.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 36] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-1Q-2026.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 37] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-3Q-2026.pdf | HTTP Error 404: Not Found | final URL:  | evidence: 
+- [labour fetch log 38] https://www.mom.gov.sg/newsroom/press-releases/2023/1214-labour-market-report-third-quarter-2023 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2023/1214-labour-market-report-third-quarter-2023 | evidence: labour-source-dc215352d1f6.html
+- [labour fetch log 39] https://www.mom.gov.sg/newsroom/press-releases/2023/1026-labour-market-advance-release---third-quarter-2023 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2023/1026-labour-market-advance-release---third-quarter-2023 | evidence: labour-source-6732a6b6011a.html
+- [labour fetch log 40] https://www.mom.gov.sg/newsroom/press-releases/2024/0731-labour-market-advance-release-2q-2024 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2024/0731-labour-market-advance-release-2q-2024 | evidence: labour-source-971c4594cac0.html
+- [labour fetch log 41] https://www.mom.gov.sg/newsroom/press-releases/2025/0428-labour-market-advance-release-1q-2025 | OPENED | final URL: https://www.mom.gov.sg/newsroom/press-releases/2025/0428-labour-market-advance-release-1q-2025 | evidence: labour-source-4dc043251003.html
+- [labour source narrative] https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf | OPENED | local evidence labour-source-92e0a46ca762.pdf | final URL https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf | OPENED | local evidence labour-source-89d08a026df7.pdf | final URL https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf | OPENED | local evidence labour-source-70ec2456b827.pdf | final URL https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf | OPENED | local evidence labour-source-1a319bfa261a.pdf | final URL https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf | OPENED | local evidence labour-source-ec8a4e49d2bd.pdf | final URL https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf | OPENED | local evidence labour-source-be04ab0588f3.pdf | final URL https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | OPENED | local evidence labour-source-e8b2e038369b.pdf | final URL https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | OPENED | local evidence labour-source-6a04a900d865.pdf | final URL https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf | OPENED | local evidence labour-source-e4cbff9cec38.pdf | final URL https://www.singstat.gov.sg/files/a5c42295-7565-414b-9f82-42209fa0a1dd.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf | OPENED | local evidence labour-source-35dc3f0174f9.pdf | final URL https://www.singstat.gov.sg/files/74fb10f2-5e99-46d6-80c5-af3c93be295f.pdf
+- [labour source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_b816a930bca0eb19fdf20fcbfcdd4c39&limit=100 | OPENED | local evidence labour-source-2db28e060548.json | final URL https://data.gov.sg/api/action/datastore_search?resource_id=d_b816a930bca0eb19fdf20fcbfcdd4c39&limit=100
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2026/0921-labour-market-report---second-quarter-2026 | OPENED | local evidence labour-source-a3620a578669.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2026/0921-labour-market-report---second-quarter-2026
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026 | OPENED | local evidence labour-source-2efa3aa03233.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026
+- [labour source narrative] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | OPENED | local evidence labour-source-503d058bf1b6.pdf | final URL https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf
+- [labour source narrative] https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf | OPENED | local evidence labour-source-a72afd9c1b3f.pdf | final URL https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf
+- [labour source narrative] https://data.gov.sg/api/action/datastore_search?resource_id=d_31dec7667bc2c6b945a262cd60958eaf&limit=100 | OPENED | local evidence labour-source-282ccb1a2069.json | final URL https://data.gov.sg/api/action/datastore_search?resource_id=d_31dec7667bc2c6b945a262cd60958eaf&limit=100
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2023/0615-labour-market-report---first-quarter-2023 | OPENED | local evidence labour-source-e2b007eac33d.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2023/0615-labour-market-report---first-quarter-2023
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2023/0428-labour-market-advance-release---first-quarter-2023 | OPENED | local evidence labour-source-1a857579e733.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2023/0428-labour-market-advance-release---first-quarter-2023
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2023.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/Pages/Labour-Market-Report-1Q-2023.aspx?PageVersion=2048 | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2024/3101-labour-market-advance-release-fourth-quarter-2023 | OPENED | local evidence labour-source-875499ece050.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2024/3101-labour-market-advance-release-fourth-quarter-2023
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q1-2024.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/Pages/Labour-Market-Report-4Q-2023.aspx?PageVersion=2560 | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2024.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2024/0620-labour-market-report-1q-2024 | OPENED | local evidence labour-source-e13e15e09851.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2024/0620-labour-market-report-1q-2024
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q3-2024.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2025/0127-labour-market-advance-release---4q-2024 | OPENED | local evidence labour-source-f63261210d70.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2025/0127-labour-market-advance-release---4q-2024
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-Q4-2024.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/Pages/Labour-Market-Report-4Q-2024.aspx?PageVersion=1536 | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-2Q-2025.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2025/0730-labour-market-advance-release-second-quarter-2025 | OPENED | local evidence labour-source-941f979af5de.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2025/0730-labour-market-advance-release-second-quarter-2025
+- [labour source narrative] https://stats.mom.gov.sg/publications/report-labour-market-second-quarter-2025/ | OPENED | local evidence labour-source-052936ccbafe.html | final URL https://stats.mom.gov.sg/publications/report-labour-market-second-quarter-2025/
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-4Q-2025.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-1Q-2026.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2026/0129-labour-market-advance-release-fourth-quarter-2025 | OPENED | local evidence labour-source-61e6d89c7d0b.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2026/0129-labour-market-advance-release-fourth-quarter-2025
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-2Q-2026.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-Labour-Market-Report-1Q-2026.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://stats.mom.gov.sg/iMAS_PdfLibrary/mrsd-LMAR-3Q-2026.pdf | HTTP Error 404: Not Found | local evidence  | final URL 
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2023/1214-labour-market-report-third-quarter-2023 | OPENED | local evidence labour-source-dc215352d1f6.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2023/1214-labour-market-report-third-quarter-2023
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2023/1026-labour-market-advance-release---third-quarter-2023 | OPENED | local evidence labour-source-6732a6b6011a.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2023/1026-labour-market-advance-release---third-quarter-2023
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2024/0731-labour-market-advance-release-2q-2024 | OPENED | local evidence labour-source-971c4594cac0.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2024/0731-labour-market-advance-release-2q-2024
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2025/0428-labour-market-advance-release-1q-2025 | OPENED | local evidence labour-source-4dc043251003.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2025/0428-labour-market-advance-release-1q-2025
+- [labour source narrative] https://www.mom.gov.sg/newsroom/press-releases/2026/1030-labour-market-advance-release-3q-2026 | OPENED | local evidence labour-source-653dac02474e.html | final URL https://www.mom.gov.sg/newsroom/press-releases/2026/1030-labour-market-advance-release-3q-2026
+- [labour source narrative] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | OPENED | local evidence labour-source-503d058bf1b6.pdf | final URL https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | OPENED | local evidence labour-source-e8b2e038369b.pdf | final URL https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | OPENED | local evidence labour-source-6a04a900d865.pdf | final URL https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | OPENED | local evidence labour-source-e8b2e038369b.pdf | final URL https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf
+- [labour source narrative] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | OPENED | local evidence labour-source-6a04a900d865.pdf | final URL https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf
+- [labour QC] https://www.singstat.gov.sg/files/506dc6f4-937b-4aaf-a30f-58f8ba377b13.pdf | reopened LAB-c78985cb0b8c7316: MATCH
+- [labour QC] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | reopened LAB-7205ad418254a937: MATCH
+- [labour QC] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | reopened LAB-dc7dadcfc26c7f77: MATCH
+- [labour QC] https://www.singstat.gov.sg/files/6b14984e-db41-4842-9d12-0622e18e27a8.pdf | reopened LAB-b3a468d464824659: MATCH
+- [labour QC] https://www.singstat.gov.sg/files/a6945587-6c12-413c-aade-f4f0264fa560.pdf | reopened LAB-bb7a831fccd1a522: MATCH

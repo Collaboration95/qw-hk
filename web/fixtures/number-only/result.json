@@ -1,0 +1,11 @@
+{
+  "run_id": "2026-08-12T02-00", "started": "2026-08-12T02:00:00+08:00", "finished": "2026-08-12T02:00:04+08:00",
+  "trigger": "replay", "as_of": "2026-08-12", "replay": true, "series_checked": 1, "no_change": false,
+  "changes": [
+    {"series_id": "sg-gdp-overall-yoy", "period": "2026-Q2", "old": 5.7, "new": 5.9, "old_published": "2026-07-14", "new_published": "2026-08-11", "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf"}
+  ],
+  "verdicts": [
+    {"claim_id": "midyear-threshold", "status": "number_only", "reason": "Both readings are below 6%. Only the quoted rate needs updating.", "decided_by": "rule", "replacement_sentence": "GDP growth stayed under 6% in Q2 2026, at 5.9% year on year.", "replacement_file": "runs/2026-08-12T02-00/out/midyear-briefing-2026q2.pptx", "decision": "pending"},
+    {"claim_id": "committee-dated", "status": "still_true", "reason": "The committee note names the July release, which reported 5.7%.", "decided_by": "rule", "decision": "pending"}
+  ]
+}

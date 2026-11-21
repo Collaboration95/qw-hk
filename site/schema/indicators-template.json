@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "url": "{{path}}",
+  "name": "{{title}}",
+  "inLanguage": "en-SG",
+  "description": "{{description}} {{frequency_summary}}",
+  "creditText": "{{attribution}}",
+  "variableMeasured": "{{title}}",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Singapore"
+  },
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "{{dataset}}",
+    "url": "{{dataset_url}}",
+    "license": "{{licence_url}}",
+    "creator": {
+      "@type": "Organization",
+      "name": "{{agency}}"
+    }
+  }
+}

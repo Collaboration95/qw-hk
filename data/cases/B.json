@@ -1,0 +1,48 @@
+{
+  "case_id": "B",
+  "title": "GDP crosses the 6% threshold",
+  "registered_on": "2026-07-15",
+  "claims": [
+    {
+      "claim_id": "b1",
+      "sentence": "GDP growth stayed under 6% in Q2 2026.",
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2026-Q2",
+      "value_cited": 5.7,
+      "vintage_cited": "2026-07-14",
+      "stance": "current",
+      "assertion": {
+        "type": "threshold",
+        "detail": "under 6%",
+        "operator": "<",
+        "threshold": 6.0
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2026-08-11",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "b1",
+          "status": "number_only",
+          "reason": "GDP growth rose from 5.7% to 5.9%, still below 6%."
+        }
+      ]
+    },
+    {
+      "as_of": "2026-10-14",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "b1",
+          "status": "now_wrong",
+          "reason": "At 6.2%, GDP growth exceeds 6%."
+        }
+      ]
+    }
+  ]
+}

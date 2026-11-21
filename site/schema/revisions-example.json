@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "/revisions/sg-gdp-manufacturing-yoy-2025-q3/",
+  "name": "Did Singapore’s manufacturing sector grow in Q3 2025 compared with a year earlier?",
+  "inLanguage": "en-SG",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Did Singapore’s manufacturing sector grow in Q3 2025 compared with a year earlier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Q3 2025, Singapore’s manufacturing sector grew 4.6% from a year earlier, compared with the first archived figure of 0.0% on 14 Oct 2025."
+      }
+    }
+  ],
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "url": "https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf"
+    }
+  ]
+}

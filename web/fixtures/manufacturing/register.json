@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {"document_id": "members-briefing-2025q3", "title": "Members’ quarterly economy briefing", "path": "../../../samples/members-briefing-2025q3.pptx", "registered": "2025-10-20"},
+    {"document_id": "sales-outlook-2025q3", "title": "Sales team market brief", "path": "../../../samples/sales-outlook-2025q3.pptx", "registered": "2025-10-21"},
+    {"document_id": "board-paper-2025q3", "title": "Board paper on member enquiries", "path": "../../../samples/board-paper-2025q3.docx", "registered": "2025-10-22"}
+  ],
+  "claims": [
+    {"claim_id": "members-mfg", "document_id": "members-briefing-2025q3", "location": "slide 4, headline", "sentence": "Manufacturing stalled year on year in Q3 2025.", "series_id": "sg-gdp-manufacturing-yoy", "period": "2025-Q3", "value_cited": 0.0, "vintage_cited": "2025-10-14", "stance": "current", "assertion": {"type": "direction", "detail": "flat"}},
+    {"claim_id": "members-services", "document_id": "members-briefing-2025q3", "location": "slide 3, headline", "sentence": "Services grew 0.6% quarter on quarter in Q1 2025, seasonally adjusted.", "series_id": "sg-gdp-services-qoq", "period": "2025-Q1", "value_cited": 0.6, "vintage_cited": "2025-10-14", "stance": "current", "assertion": {"type": "direction", "detail": "up"}},
+    {"claim_id": "sales-mfg", "document_id": "sales-outlook-2025q3", "location": "slide 2, headline", "sentence": "Manufacturing output was flat year on year in Q3 2025.", "series_id": "sg-gdp-manufacturing-yoy", "period": "2025-Q3", "value_cited": 0.0, "vintage_cited": "2025-10-14", "stance": "current", "assertion": {"type": "direction", "detail": "flat"}},
+    {"claim_id": "sales-services", "document_id": "sales-outlook-2025q3", "location": "slide 3, headline", "sentence": "Services grew 0.6% quarter on quarter in Q1 2025, seasonally adjusted.", "series_id": "sg-gdp-services-qoq", "period": "2025-Q1", "value_cited": 0.6, "vintage_cited": "2025-10-14", "stance": "current", "assertion": {"type": "direction", "detail": "up"}},
+    {"claim_id": "board-dated", "document_id": "board-paper-2025q3", "location": "paragraph 7", "sentence": "As first reported in the October advance estimate, manufacturing output was flat year on year in Q3 2025.", "series_id": "sg-gdp-manufacturing-yoy", "period": "2025-Q3", "value_cited": 0.0, "vintage_cited": "2025-10-14", "stance": "dated", "assertion": {"type": "direction", "detail": "flat"}}
+  ]
+}

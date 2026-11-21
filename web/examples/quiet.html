@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark"><title>Recall Press · Publication map</title><style>:root {
+  color-scheme: light dark;
+  --page: #f7f5f0; --paper: #fffefb; --ink: #252838; --muted: #595c64; --hair: #d3d0c8;
+  --wire: #a5a299; --button: #302d49; --on-button: #fff; --inset: #f6f3ed; --accent: #765030;
+  --wrong: #91392a; --wrong-bg: #f9e4db; --number: #775313; --number-bg: #f6edcd;
+  --true: #246454; --true-bg: #e3efe8; --neutral: #525967; --neutral-bg: #ebedf0;
+  --delete: #f5e2dc; --insert: #dcebe2; --insert-ink: #214e3b;
+  --serif: Georgia, "Times New Roman", serif; --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #191921; --paper: #24242e; --ink: #f6f0e9; --muted: #c4c0c4; --hair: #484651;
+    --wire: #75717c; --button: #ebddd2; --on-button: #262231; --inset: #2d2b34; --accent: #edbd9c;
+    --wrong: #ffc2ac; --wrong-bg: #53332f; --number: #f9d78c; --number-bg: #49402a;
+    --true: #a7dbbf; --true-bg: #283f37; --neutral: #c3cad8; --neutral-bg: #343740;
+    --delete: #563933; --insert: #324c3e; --insert-ink: #cdf3d7;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.48 var(--sans); }
+[hidden] { display: none !important; }
+button, textarea { font: inherit; }
+button, a, summary { touch-action: manipulation; }
+a { color: inherit; text-underline-offset: .23em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid #8a76d1; outline-offset: 3px; }
+.press { max-width: 1840px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 72px) 32px; }
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: 12px 22px;
+  padding: 21px 0 18px; border-bottom: 1px solid var(--hair); }
+.wordmark { display: flex; align-items: center; gap: .38em; font: bold 31px/1 var(--serif); letter-spacing: -.06em; }
+.press-mark { display: inline-grid; width: .72em; height: .82em; align-content: center; gap: .105em; transform: skewY(-15deg); }
+.press-mark i { display: block; height: .14em; background: currentColor; }
+.press-mark i:last-child { width: 64%; color: var(--accent); }
+.trigger { margin: 0; color: var(--muted); font-size: 15px; }
+.figures { margin-top: 27px; background: linear-gradient(108deg,#262742 10%,#37334f 67%,#554354);
+  color: #fff8ef; border: 1px solid #514c60; border-radius: 5px; padding: 0 clamp(22px,3.3vw,58px); }
+.figure { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0,1.05fr); gap: 5%;
+  align-items: center; padding: clamp(24px,2vw,34px) 0; }
+.figure + .figure { border-top: 1px solid #777080; }
+.kicker, .label, .filetype { font: 650 12px/1.35 var(--sans); letter-spacing: .105em; text-transform: uppercase; }
+.kicker { margin: 0 0 12px; color: #f4c6a5; }
+.kicker span { color: #c2abb0; margin: 0 .45em; }
+h1, h2, h3, p { overflow-wrap: anywhere; }
+h1, h2, h3 { font-family: var(--serif); font-weight: normal; letter-spacing: -.035em; }
+h1 { margin: 0 0 16px; font-size: clamp(32px,2.8vw,50px); line-height: 1.08; text-wrap: balance; }
+.figure-title a { font-size: 15px; color: #e1dbe1; }
+.readings { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: start; gap: 12px; }
+.reading { display: flex; flex-direction: column; }
+.reading b { display: block; font: normal clamp(50px,5.2vw,95px)/1.04 var(--serif); letter-spacing: -.075em; font-variant-numeric: lining-nums tabular-nums; }
+.old b { color: #d8cfda; }
+.new b { color: #ffcfab; }
+.arrow { align-self: start; color: #d0b9bc; font: normal clamp(30px,3.2vw,55px)/1.45 var(--serif); }
+.release { margin: 11px 0 2px; font-weight: 650; line-height: 1.3; }
+.nowrap { white-space: nowrap; }
+.reading time { color: #e2d8de; font-size: 15px; }
+.publications { position: relative; }
+.map-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 18px; padding: 25px 0 14px; }
+.map-heading h2 { margin: 0; font-size: clamp(28px,2.1vw,38px); line-height: 1.2; }
+.map-heading p { margin: 0; font-size: 16px; color: var(--muted); }
+.branches { display: grid; grid-template-columns: repeat(var(--cols),minmax(0,1fr)); gap: 22px; position: relative; align-items: start; }
+.branches::before { content: ''; position: absolute; height: 13px; top: -12px; left: 50%; border-left: 1px solid var(--wire); }
+.document { position: relative; margin-top: 14px; min-width: 0; background: var(--paper); border: 1px solid var(--hair);
+  border-radius: 4px; box-shadow: 0 2px 3px #28243408; }
+.document::before { content: ''; position: absolute; height: 14px; border-left: 1px solid var(--wire); left: 50%; top: -15px; }
+.document::after { content: ''; position: absolute; top: -15px; left: -12px; right: -12px; border-top: 1px solid var(--wire); }
+.document:first-child::after { left: 50%; }
+.document:last-child::after { right: 50%; }
+.doc-head { padding: 20px 22px 15px; }
+.filetype { color: var(--muted); display: flex; align-items: center; gap: 7px; }
+.filetype i { display: inline-block; width: 12px; height: 15px; border: 1px solid currentColor;
+  background: linear-gradient(currentColor,currentColor) 2px 6px / 6px 1px no-repeat,
+  linear-gradient(currentColor,currentColor) 2px 9px / 4px 1px no-repeat; border-radius: 1px; }
+h3 { font-size: clamp(25px,1.75vw,32px); line-height: 1.1; margin: 8px 0 0; }
+.claim { container-type: inline-size; border-top: 1px solid var(--hair); padding: 15px 22px 19px; }
+.claim-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 12px; }
+.location { color: var(--muted); font-size: 14px; }
+.location::first-letter { text-transform: uppercase; }
+.badge { display: inline-flex; align-items: baseline; gap: .42em; border-radius: 3px; padding: 4px 8px; font-size: 14px; font-weight: 650; line-height: 1.35; }
+.badge i { font: inherit; }
+.now_wrong { background: var(--wrong-bg); color: var(--wrong); }
+.number_only { background: var(--number-bg); color: var(--number); }
+.still_true { background: var(--true-bg); color: var(--true); }
+.unaffected, .unchecked { background: var(--neutral-bg); color: var(--neutral); }
+.diff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 17px 0 12px; }
+.diff > div { min-width: 0; }
+.diff > div + div { border-left: 1px solid var(--hair); padding-left: 13px; }
+.label { margin: 0 0 6px; font-size: 11px; color: var(--muted); }
+.sentence, .unchanged { margin: 0; font: normal clamp(19px,1.21vw,23px)/1.34 var(--serif); }
+del, ins { -webkit-box-decoration-break: clone; box-decoration-break: clone; text-decoration-thickness: 1px; }
+del { background: var(--delete); text-decoration-color: var(--wrong); }
+ins { background: var(--insert); color: var(--insert-ink); text-underline-offset: .13em; }
+.unchanged { margin: 16px 0 0; }
+.reason { margin: 10px 0 0; font-size: 15px; line-height: 1.45; color: var(--muted); }
+.file-row:not(:empty) { margin: 14px 0; }
+.download { font-weight: 600; font-size: 14px; }
+.download span { display: inline-block; text-decoration: none; margin-right: 2px; }
+.missing { color: var(--muted); font-size: 14px; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+button { cursor: pointer; background: var(--paper); color: var(--ink); border: 1px solid var(--hair);
+  border-radius: 4px; min-height: 40px; font-size: 14px; line-height: 1.15; font-weight: 600; padding: 8px 13px; }
+button:hover { border-color: var(--ink); }
+button[data-action="apply"], button[aria-pressed="true"] { color: var(--on-button); border-color: var(--button); background: var(--button); }
+button[data-action="apply"]:hover { filter: brightness(1.18); }
+button:disabled { cursor: default; opacity: .55; }
+.state { margin: 0; font-size: 14px; font-weight: 600; color: var(--true); }
+.state:not(:empty) { margin-top: 10px; }
+.edit-box { display: block; font-size: 14px; font-weight: 600; margin-top: 10px; }
+textarea { display: block; width: 100%; background: var(--inset); color: var(--ink); border: 1px solid var(--wire); border-radius: 3px; padding: 9px; resize: vertical; }
+.export { border-top: 1px solid var(--hair); margin-top: 23px; padding: 12px 0; color: var(--muted); font-size: 14px; }
+.export summary { cursor: pointer; width: fit-content; padding: 4px 0; }
+.json { margin: 10px 0; font: 13px/1.5 ui-monospace, monospace; }
+.copy-status { margin-left: 10px; }
+.quiet { padding: clamp(48px,9vw,130px) 0; }
+.quiet p { font: normal clamp(24px,2.08vw,37px)/1.32 var(--serif); letter-spacing: -.032em; margin: 0; }
+.quiet i { display: inline-grid; place-items: center; font: 16px var(--sans); vertical-align: .12em; border-radius: 50%;
+  margin-right: .35em; width: 1.7em; height: 1.7em; background: var(--true-bg); color: var(--true); }
+@media (max-width: 1199px) {
+  .branches { grid-template-columns: 1fr; padding-left: 16px; gap: 15px; border-left: 1px solid var(--wire); }
+  .branches::before, .document::before { display: none; }
+  .document { margin: 0; }
+  .document::after, .document:first-child::after, .document:last-child::after { width: 16px; left: -17px; right: auto; top: 27px; }
+  .diff { gap: 20px; }
+  .diff > div + div { padding-left: 20px; }
+}
+@media (max-width: 760px) {
+  .masthead { align-items: flex-start; flex-direction: column; padding: 18px 0 14px; gap: 9px; }
+  .wordmark { font-size: 28px; }
+  .trigger { font-size: 13px; }
+  .figures { margin-top: 16px; padding: 0 18px; }
+  .figure { grid-template-columns: 1fr; gap: 18px; padding: 22px 0; }
+  h1 { font-size: 32px; margin-bottom: 8px; }
+  .kicker { margin-bottom: 8px; }
+  .readings { gap: 8px; }
+  .reading b { font-size: 48px; }
+  .reading time, .release { font-size: 13px; }
+  .release { margin-top: 5px; }
+  .map-heading { padding-top: 19px; }
+  .map-heading p { font-size: 14px; }
+  .doc-head, .claim { padding: 14px; }
+  .diff { gap: 10px; }
+  .diff > div + div { padding-left: 10px; }
+  .sentence, .unchanged { font-size: 18px; }
+  button { min-height: 44px; }
+}
+@container (max-width: 285px) {
+  .diff { grid-template-columns: 1fr; }
+  .diff > div + div { border-left: 0; padding-left: 0; }
+}
+
+@media (min-width: 1200px) {
+  .map-heading { position: relative; }
+  .map-heading::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 1px solid var(--wire); }
+}
+
+@media (min-width: 1200px) {
+  .publications:has(.many) .map-heading::before { left: 0; }
+  .publications:has(.many) .map-heading { padding-left: 18px; }
+  .many { grid-template-columns: 1fr; border-left: 1px solid var(--wire); padding-left: 18px; gap: 18px; }
+  .many::before, .many .document::before { display: none; }
+  .many .document { margin: 0; }
+  .many .document::after { width: 18px; left: -19px; right: auto; top: 30px; }
+}
+</style></head>
+<body><main class="press" data-run="2026-07-17T02-00"><header class="masthead">
+<div class="wordmark"><span class="press-mark" aria-hidden="true"><i></i><i></i><i></i></span>Recall Press</div>
+<p class="trigger">Historical replay · 17 Jul 2026</p></header><section class="quiet"><p><i aria-hidden="true">✓</i>
+            Checked 1 series at 02:00. Nothing you published has changed.</p></section></main><script>(() => {
+  const press = document.querySelector('.press');
+  const output = press.querySelector('.json');
+  if (!output) return;
+  const decisions = new Map();
+  function updateExport() {
+    output.value = JSON.stringify({run_id: press.dataset.run, decisions: [...decisions.values()]}, null, 2);
+    press.querySelector('.copy-status').textContent = '';
+  }
+
+  for (const section of press.querySelectorAll('.editable')) {
+    const id = section.dataset.claim;
+    const editor = section.querySelector('textarea');
+    const original = editor.value;
+    const editBox = section.querySelector('.edit-box');
+    const state = section.querySelector('.state');
+    const proposal = section.querySelector('.proposal');
+    const markedUp = proposal.cloneNode(true);
+    const apply = section.querySelector('[data-action="apply"]');
+    const skip = section.querySelector('[data-action="skip"]');
+    const edit = section.querySelector('[data-action="edit"]');
+
+    function choose(action) {
+      if (action === 'skip') {
+        editor.value = original;
+        apply.disabled = false;
+      }
+      const replacement = editor.value.trim();
+      if (action === 'apply' && !replacement) return;
+      const edited = action === 'apply' && replacement !== original;
+      const decision = {claim_id: id, decision: action};
+      if (edited) decision.replacement_sentence = replacement;
+      decisions.set(id, decision);
+      editBox.hidden = true;
+      edit.setAttribute('aria-expanded', 'false');
+      apply.setAttribute('aria-pressed', String(action === 'apply'));
+      skip.setAttribute('aria-pressed', String(action === 'skip'));
+      proposal.replaceChildren(...markedUp.cloneNode(true).childNodes);
+      if (edited) proposal.textContent = replacement;
+      state.textContent = action === 'skip' ? 'Decision recorded · Skip' :
+        edited ? 'Apply edited sentence · File shows the original proposal' : 'Decision recorded · Apply fix';
+      updateExport();
+    }
+
+    apply.addEventListener('click', () => choose('apply'));
+    skip.addEventListener('click', () => choose('skip'));
+    edit.setAttribute('aria-expanded', 'false');
+    edit.addEventListener('click', () => {
+      decisions.delete(id);
+      updateExport();
+      editBox.hidden = false;
+      edit.setAttribute('aria-expanded', 'true');
+      apply.setAttribute('aria-pressed', 'false');
+      skip.setAttribute('aria-pressed', 'false');
+      apply.disabled = !editor.value.trim();
+      state.textContent = 'Choose Apply fix to include your wording.';
+      editor.focus();
+    });
+    editor.addEventListener('input', () => { apply.disabled = !editor.value.trim(); });
+    if (section.dataset.decision === 'applied') choose('apply');
+    if (section.dataset.decision === 'skipped') choose('skip');
+  }
+  updateExport();
+  press.querySelector('.copy').addEventListener('click', async () => {
+    let copied = false;
+    try {
+      await navigator.clipboard.writeText(output.value);
+      copied = true;
+    } catch {
+      output.focus();
+      output.select();
+      try { copied = document.execCommand('copy'); } catch { /* selection remains available */ }
+    }
+    press.querySelector('.copy-status').textContent = copied ? 'Copied' : 'JSON selected. Use your copy shortcut.';
+  });
+})();
+</script></body></html>

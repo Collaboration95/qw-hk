@@ -1,0 +1,90 @@
+{
+  "case_id": "D3",
+  "title": "Jobs and activity briefing",
+  "registered_on": "2026-08-12",
+  "claims": [
+    {
+      "claim_id": "d3-1",
+      "sentence": "The unemployment rate was above 1.9% at the end of Q2 2026.",
+      "series_id": "sg-unemployment",
+      "period": "2026-Q2",
+      "value_cited": 2.0,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "type": "threshold",
+        "detail": "above 1.9%",
+        "operator": ">",
+        "threshold": 1.9
+      }
+    },
+    {
+      "claim_id": "d3-2",
+      "sentence": "As reported in August, the unemployment rate was 2.0% at the end of Q2 2026.",
+      "series_id": "sg-unemployment",
+      "period": "2026-Q2",
+      "value_cited": 2.0,
+      "vintage_cited": "2026-08-11",
+      "stance": "dated",
+      "assertion": {
+        "type": "level",
+        "detail": "reported figure"
+      }
+    },
+    {
+      "claim_id": "d3-3",
+      "sentence": "Services output expanded by 4.9% year on year in Q2 2026.",
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2026-Q2",
+      "value_cited": 4.9,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    },
+    {
+      "claim_id": "d3-4",
+      "sentence": "Construction output fell by 2.5% quarter on quarter in Q2 2026.",
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2026-Q2",
+      "value_cited": -2.5,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "down"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2026-09-21",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "d3-1",
+          "status": "now_wrong",
+          "reason": "The September figure is exactly 1.9%, breaking a strict lower bound."
+        },
+        {
+          "claim_id": "d3-2",
+          "status": "still_true",
+          "reason": "The August survey reported exactly 2.0%."
+        },
+        {
+          "claim_id": "d3-3",
+          "status": "unaffected",
+          "reason": "The next GDP release is in October."
+        },
+        {
+          "claim_id": "d3-4",
+          "status": "unaffected",
+          "reason": "The quarterly construction figure is unchanged by this date."
+        }
+      ]
+    }
+  ]
+}

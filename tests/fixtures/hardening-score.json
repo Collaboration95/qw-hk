@@ -1,0 +1,410 @@
+{
+  "totals": {
+    "right": 28,
+    "missed": 3,
+    "left for agent": 9
+  },
+  "extra_candidates": [],
+  "claims": [
+    {
+      "document": "autumn-floor.pptx",
+      "row": 1,
+      "sentence": "Manufacturing output stood still over July to September 2025.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The original figure was 0.0 (flat). The revised figure is 5.0 (up)."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 2,
+      "sentence": "At the time, Q3 2025 manufacturing output showed zero growth year on year.",
+      "gold": "still_true",
+      "linked": true,
+      "actual": "still_true",
+      "outcome": "right",
+      "reason": "The release of 2025-10-14 reported 0.0. The sentence still describes that release correctly."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 3,
+      "sentence": "In the third quarter of 2025, construction output expanded 3.1% year on year.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 3.1 to 3.6 and the direction remains up."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 4,
+      "sentence": "Services output rose 0.2% quarter over quarter in 3Q 2025.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 0.2 to 0.4 and the direction remains up."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 5,
+      "sentence": "Manufacturing grew 6.1 per cent quarter on quarter in the third quarter of 2025.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 6.1 to 11.3 and the direction remains up."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 6,
+      "sentence": "For Q1 2025, services output expanded 0.6% quarter on quarter.",
+      "gold": "unaffected",
+      "linked": true,
+      "actual": "unaffected",
+      "outcome": "right",
+      "reason": "No change to the linked figures for 2025-Q1."
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 7,
+      "sentence": "A weak order book masked what was effectively a standstill for factories.",
+      "gold": "review",
+      "linked": false,
+      "actual": "missed",
+      "outcome": "missed",
+      "reason": null
+    },
+    {
+      "document": "autumn-floor.pptx",
+      "row": 8,
+      "sentence": "Manufacturing and services seemed neck and neck in Q3 2025.",
+      "gold": "review",
+      "linked": false,
+      "actual": "missed",
+      "outcome": "missed",
+      "reason": null
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 1,
+      "sentence": "In the second quarter of 2026 Singapore GDP growth remained under 6 per cent.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The original figure of 5.7 was below 6.0. The revised figure of 6.2 falls outside that limit."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 2,
+      "sentence": "The July release put GDP growth at 5.7 per cent in Q2 2026.",
+      "gold": "still_true",
+      "linked": true,
+      "actual": "still_true",
+      "outcome": "right",
+      "reason": "The release of 2026-07-14 reported 5.7. The sentence still describes that release correctly."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 3,
+      "sentence": "Construction grew 6.2% year over year in 2Q 2026.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 6.2 to 6.1 and the direction remains up."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 4,
+      "sentence": "Services stayed below 5 per cent year on year during Q2 2026.",
+      "gold": "now_wrong",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the subject and wording against the source before changing this sentence."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 5,
+      "sentence": "Overall GDP expanded by 1.1% quarter on quarter in Q2 2026.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 1.1 to 1.5 and the direction remains up."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 6,
+      "sentence": "Output in manufacturing rose by exactly 12.2% year on year in 2Q 2026.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The sentence gives an exact figure of 12.2. The revised figure is 12.9."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 7,
+      "sentence": "The GDP forecast assumed growth of at least 6% for Q2 2026.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the qualification or comparison in this sentence before changing it."
+    },
+    {
+      "document": "midyear-minutes.docx",
+      "row": 8,
+      "sentence": "Q2 2026 GDP grew more quickly than household spending.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the subject and wording against the source before changing this sentence."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 1,
+      "sentence": "In Q2 2026 total employment grew by 14,000 persons.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 14000.0 to 14700.0 and the direction remains up."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 2,
+      "sentence": "For 2Q 2026 the overall unemployment rate was exactly 2.0%.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The sentence gives an exact figure of 2.0. The revised figure is 1.9."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 3,
+      "sentence": "The overall unemployment rate was at most 2% in Q2 2026.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure changed from 2.0 to 1.9. Both readings are at most 2.0."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 4,
+      "sentence": "The August release put Q2 2026 employment change at 14,000 people.",
+      "gold": "still_true",
+      "linked": true,
+      "actual": "still_true",
+      "outcome": "right",
+      "reason": "The release of 2026-08-11 reported 14000.0. The sentence still describes that release correctly."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 5,
+      "sentence": "Q3 2025 overall unemployment was 2.0 per cent.",
+      "gold": "unaffected",
+      "linked": true,
+      "actual": "unaffected",
+      "outcome": "right",
+      "reason": "No change to the linked figures for 2025-Q3."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 6,
+      "sentence": "In Q2 2026 the unemployment rate stayed below 2.1 per cent.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure changed from 2.0 to 1.9. Both readings are below 2.1."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 7,
+      "sentence": "Employment change almost reached 15,000 persons in the second quarter of 2026.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the qualification or comparison in this sentence before changing it."
+    },
+    {
+      "document": "labour-correspondence.md",
+      "row": 8,
+      "sentence": "第二季度的就业人数有所增加。",
+      "gold": "review",
+      "linked": false,
+      "actual": "missed",
+      "outcome": "missed",
+      "reason": null
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 1,
+      "sentence": "The November survey put manufacturing at 5.0% year on year in 3Q 2025.",
+      "gold": "still_true",
+      "linked": true,
+      "actual": "still_true",
+      "outcome": "right",
+      "reason": "The release of 2025-11-21 reported 5.0. The sentence still describes that release correctly."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 2,
+      "sentence": "Year-on-year manufacturing growth in Q3 2025 was exactly 5.0 per cent.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The sentence gives an exact figure of 5.0. The revised figure is 4.9."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 3,
+      "sentence": "Manufacturing grew by 5% year over year in the third quarter of 2025.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 5.0 to 4.9 and the direction remains up."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 4,
+      "sentence": "In Q3 2025 manufacturing output grew 11.3% quarter on quarter.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 11.3 to 11.1 and the direction remains up."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 5,
+      "sentence": "Services output stood at 3.9% year-on-year growth in Q3 2025.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The sentence reports a level. Update its figure from 3.9 to 4.1."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 6,
+      "sentence": "The third quarter of 2025 saw GDP grow at a 4.2% annual pace.",
+      "gold": "number_only",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the subject and wording against the source before changing this sentence."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 7,
+      "sentence": "Construction contracted 0.7% quarter on quarter in the third quarter of 2025.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The original figure was -0.7 (down). The revised figure is 0.7 (up)."
+    },
+    {
+      "document": "winter-reading.docx",
+      "row": 8,
+      "sentence": "The revised manufacturing figure for Q3 2025 practically doubled the consensus.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the subject and wording against the source before changing this sentence."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 1,
+      "sentence": "GDP growth was lower than 6 per cent for the second quarter of 2026.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure changed from 5.7 to 5.9. Both readings are below 6.0."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 2,
+      "sentence": "In 2Q 2026 the services sector grew by 4.6 per cent year on year.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 4.6 to 4.9 and the direction remains up."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 3,
+      "sentence": "Singapore GDP grew 5.7% year on year in 2Q 2026, the advance estimate showed.",
+      "gold": "still_true",
+      "linked": true,
+      "actual": "still_true",
+      "outcome": "right",
+      "reason": "The release of 2026-07-14 reported 5.7. The sentence still describes that release correctly."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 4,
+      "sentence": "Construction growth was at least 6.0 per cent year on year in the second quarter of 2026.",
+      "gold": "now_wrong",
+      "linked": true,
+      "actual": "now_wrong",
+      "outcome": "right",
+      "reason": "The original figure of 6.2 was at least 6.0. The revised figure of 5.8 falls outside that limit."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 5,
+      "sentence": "Quarter on quarter, Q2 2026 manufacturing grew 5.3%.",
+      "gold": "number_only",
+      "linked": true,
+      "actual": "number_only",
+      "outcome": "right",
+      "reason": "The figure moves from 5.3 to 6.3 and the direction remains up."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 6,
+      "sentence": "Q2 2026 GDP growth topped 5% but fell short of 6%.",
+      "gold": "number_only",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "This sentence contains several figures or limits. Check which assertion each supports."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 7,
+      "sentence": "No one claimed that Q2 2026 GDP growth was above 6%.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the subject and wording against the source before changing this sentence."
+    },
+    {
+      "document": "margin-notes.md",
+      "row": 8,
+      "sentence": "Q2 2026 GDP rose two percentage points relative to the private forecast.",
+      "gold": "review",
+      "linked": false,
+      "actual": "unlinked",
+      "outcome": "left for agent",
+      "reason": "Check the qualification or comparison in this sentence before changing it."
+    }
+  ]
+}

@@ -1,0 +1,599 @@
+{
+  "series_id": "sg-gdp-services-yoy",
+  "title": "Services Producing Industries, real GDP growth, year on year",
+  "unit": "%",
+  "aliases": [
+    "services"
+  ],
+  "source": {
+    "agency": "Singapore Department of Statistics",
+    "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly",
+    "dataset_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+    "dataset_url": "https://data.gov.sg/datasets/d_1506368f0e7928ac18e42f84d1c450a3/view",
+    "api_resource_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+    "api_row": "Services Producing Industries",
+    "api_row_field": "DataSeries",
+    "frequency": "quarterly",
+    "licence": "Singapore Open Data Licence v1.0",
+    "licence_url": "https://data.gov.sg/open-data-licence",
+    "accessed": "2026-11-19"
+  },
+  "observations": [
+    {
+      "period": "2025-Q1",
+      "vintages": [
+        {
+          "value": 3.4,
+          "published": "2025-04-14",
+          "release": "Advance GDP estimates — 2025-Q1",
+          "url": "https://www.singstat.gov.sg/files/c7873595-5970-4225-9219-d7fff255735d.pdf",
+          "quote": "3.4",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q25*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.6,
+          "published": "2025-05-22",
+          "release": "Economic Survey of Singapore — 2025-Q1",
+          "url": "https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf",
+          "quote": "3.6",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.7,
+          "published": "2025-07-14",
+          "release": "Advance GDP estimates — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf",
+          "quote": "3.7",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.8,
+          "published": "2025-08-12",
+          "release": "Economic Survey of Singapore — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf",
+          "quote": "3.8",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.8,
+          "published": "2025-10-14",
+          "release": "Advance GDP estimates — 2025-Q3",
+          "url": "https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf",
+          "quote": "3.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official MTI release linked by METI under its website terms",
+          "licence_url": "https://www.meti.gov.sg/terms-of-use/"
+        },
+        {
+          "value": 3.7,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "3.7",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.7,
+          "published": "2026-01-02",
+          "release": "Advance GDP estimates — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf",
+          "quote": "3.7",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.5,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "3.5",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.5,
+          "published": "2026-04-14",
+          "release": "Advance GDP estimates — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "quote": "3.5",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 3.5,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "3.5",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q2",
+      "vintages": [
+        {
+          "value": 4.1,
+          "published": "2025-07-14",
+          "release": "Advance GDP estimates — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/cc0d17f8-3325-4a3b-8e7d-54f3131c73fe.pdf",
+          "quote": "4.1",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q25*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2025-08-12",
+          "release": "Economic Survey of Singapore — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2025-10-14",
+          "release": "Advance GDP estimates — 2025-Q3",
+          "url": "https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official MTI release linked by METI under its website terms",
+          "licence_url": "https://www.meti.gov.sg/terms-of-use/"
+        },
+        {
+          "value": 4.7,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "4.7",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-01-02",
+          "release": "Advance GDP estimates — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2026-04-14",
+          "release": "Advance GDP estimates — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2026-07-14",
+          "release": "Advance GDP estimates — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.5,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "4.5",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q3",
+      "vintages": [
+        {
+          "value": 3.5,
+          "published": "2025-10-14",
+          "release": "Advance GDP estimates — 2025-Q3",
+          "url": "https://isomer-user-content.by.gov.sg/1004/c429212a-3d33-474e-b8fb-3e500069255e/AdvEst_3Q25.pdf",
+          "quote": "3.5",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q25*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official MTI release linked by METI under its website terms",
+          "licence_url": "https://www.meti.gov.sg/terms-of-use/"
+        },
+        {
+          "value": 3.9,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "3.9",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.1,
+          "published": "2026-01-02",
+          "release": "Advance GDP estimates — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf",
+          "quote": "4.1",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-04-14",
+          "release": "Advance GDP estimates — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-07-14",
+          "release": "Advance GDP estimates — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.3,
+          "published": "2026-10-14",
+          "release": "Advance GDP estimates — 2026-Q3",
+          "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf",
+          "quote": "4.3",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q25",
+          "agency": "Ministry of Energy, Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q4",
+      "vintages": [
+        {
+          "value": 3.8,
+          "published": "2026-01-02",
+          "release": "Advance GDP estimates — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/27e63127-7733-4691-8ac3-7bc13cd27c16.pdf",
+          "quote": "3.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 4Q25*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-04-14",
+          "release": "Advance GDP estimates — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-07-14",
+          "release": "Advance GDP estimates — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.8,
+          "published": "2026-10-14",
+          "release": "Advance GDP estimates — 2026-Q3",
+          "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf",
+          "quote": "4.8",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 4Q25",
+          "agency": "Ministry of Energy, Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q1",
+      "vintages": [
+        {
+          "value": 4.7,
+          "published": "2026-04-14",
+          "release": "Advance GDP estimates — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "quote": "4.7",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q26*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 5.7,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "5.7",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 6.2,
+          "published": "2026-07-14",
+          "release": "Advance GDP estimates — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf",
+          "quote": "6.2",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 6.3,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "6.3",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 1Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 6.3,
+          "published": "2026-10-14",
+          "release": "Advance GDP estimates — 2026-Q3",
+          "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf",
+          "quote": "6.3",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 1Q26",
+          "agency": "Ministry of Energy, Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q2",
+      "vintages": [
+        {
+          "value": 4.6,
+          "published": "2026-07-14",
+          "release": "Advance GDP estimates — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/d6371bc7-dc11-4fd1-a2a5-c4a49b43011e.pdf",
+          "quote": "4.6",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q26*",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 4.9,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "4.9",
+          "accessed": "2026-11-19",
+          "locator": "Annex B, Real Sectoral Growth Rates, year-on-year, Services Producing Industries, column 2Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 5.2,
+          "published": "2026-10-14",
+          "release": "Advance GDP estimates — 2026-Q3",
+          "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf",
+          "quote": "5.2",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 2Q26",
+          "agency": "Ministry of Energy, Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q3",
+      "vintages": [
+        {
+          "value": 5.2,
+          "published": "2026-10-14",
+          "release": "Advance GDP estimates — 2026-Q3",
+          "url": "https://www.singstat.gov.sg/files/b310c1e5-f7cb-43b6-8125-fe67dfc0ac05.pdf",
+          "quote": "5.2",
+          "accessed": "2026-11-19",
+          "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Services Producing Industries, column 3Q26*",
+          "agency": "Ministry of Energy, Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    }
+  ],
+  "revision_threshold": 5
+}

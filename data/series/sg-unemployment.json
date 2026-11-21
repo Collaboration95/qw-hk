@@ -1,0 +1,359 @@
+{
+  "series_id": "sg-unemployment",
+  "title": "Overall unemployment rate at quarter end, seasonally adjusted",
+  "unit": "%",
+  "aliases": [
+    "unemployment rate"
+  ],
+  "source": {
+    "agency": "Ministry of Manpower, via Singapore Department of Statistics",
+    "dataset": "Unemployment Rate (End Of Period), Quarterly, Seasonally Adjusted",
+    "dataset_id": "d_b816a930bca0eb19fdf20fcbfcdd4c39",
+    "dataset_url": "https://data.gov.sg/datasets/d_b816a930bca0eb19fdf20fcbfcdd4c39/view",
+    "api_resource_id": "d_b816a930bca0eb19fdf20fcbfcdd4c39",
+    "api_row": "Total Unemployment Rate, (SA)",
+    "api_row_field": "DataSeries",
+    "frequency": "quarterly",
+    "licence": "Singapore Open Data Licence v1.0",
+    "licence_url": "https://data.gov.sg/open-data-licence",
+    "accessed": "2026-11-19"
+  },
+  "observations": [
+    {
+      "period": "2025-Q1",
+      "vintages": [
+        {
+          "value": 2.1,
+          "published": "2025-05-22",
+          "release": "Economic Survey of Singapore — 2025-Q1",
+          "url": "https://www.singstat.gov.sg/files/3e690ced-275f-4ebc-a26e-19d3453308be.pdf",
+          "quote": "2.1",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2025-08-12",
+          "release": "Economic Survey of Singapore — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q2",
+      "vintages": [
+        {
+          "value": 2.1,
+          "published": "2025-08-12",
+          "release": "Economic Survey of Singapore — 2025-Q2",
+          "url": "https://www.singstat.gov.sg/files/e1a1dcd8-a96c-4bb9-a250-b826569ba88f.pdf",
+          "quote": "2.1",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q3",
+      "vintages": [
+        {
+          "value": 2.0,
+          "published": "2025-11-21",
+          "release": "Economic Survey of Singapore — 2025-Q3",
+          "url": "https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 3Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2025-Q4",
+      "vintages": [
+        {
+          "value": 2.0,
+          "published": "2026-02-10",
+          "release": "Economic Survey of Singapore — 2025-Q4",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 4Q25",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q1",
+      "vintages": [
+        {
+          "value": 2.1,
+          "published": "2026-05-25",
+          "release": "Economic Survey of Singapore — 2026-Q1",
+          "url": "https://www.singstat.gov.sg/files/5fb90497-058d-4ee1-b3c3-56470886b238.pdf",
+          "quote": "2.1",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-07-31",
+          "release": "Labour Market Advance Release, Q2 2026",
+          "url": "https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026",
+          "quote": "overall: 2.0%",
+          "accessed": "2026-11-19",
+          "locator": "March 2026, paragraph 4",
+          "agency": "Ministry of Manpower",
+          "licence": "MOM website terms of use",
+          "licence_url": "https://www.mom.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 1Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q2",
+      "vintages": [
+        {
+          "value": 2.0,
+          "published": "2026-07-31",
+          "release": "Labour Market Advance Release, Q2 2026",
+          "url": "https://www.mom.gov.sg/newsroom/press-releases/2026/0731-labour-market-advance-release-2q-2026",
+          "quote": "overall: 2.0%",
+          "accessed": "2026-11-19",
+          "locator": "June 2026, paragraph 4",
+          "agency": "Ministry of Manpower",
+          "licence": "MOM website terms of use",
+          "licence_url": "https://www.mom.gov.sg/terms-of-use"
+        },
+        {
+          "value": 2.0,
+          "published": "2026-08-11",
+          "release": "Economic Survey of Singapore — 2026-Q2",
+          "url": "https://www.singstat.gov.sg/files/09253980-e221-4b10-80f6-440e51c62060.pdf",
+          "quote": "2.0",
+          "accessed": "2026-11-19",
+          "locator": "Other Economic Indicators, Unemployment Rate, SA (%), column 2Q26",
+          "agency": "Ministry of Trade and Industry",
+          "licence": "Official release distributed by SingStat under its website terms",
+          "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+        },
+        {
+          "value": 1.9,
+          "published": "2026-09-21",
+          "release": "Labour Market Report, Q2 2026",
+          "url": "https://www.mom.gov.sg/newsroom/press-releases/2026/0921-labour-market-report---second-quarter-2026",
+          "quote": "overall: 1.9%",
+          "accessed": "2026-11-19",
+          "locator": "June 2026, paragraph 2",
+          "agency": "Ministry of Manpower",
+          "licence": "MOM website terms of use",
+          "licence_url": "https://www.mom.gov.sg/terms-of-use"
+        },
+        {
+          "value": 1.9,
+          "published": "2026-10-30",
+          "release": "Labour Market Advance Release, Q3 2026",
+          "url": "https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf",
+          "quote": "1.9%",
+          "accessed": "2026-11-19",
+          "locator": "Chart 2, Overall (O), Jun 2026",
+          "agency": "Ministry of Manpower",
+          "licence": "MOM website terms of use",
+          "licence_url": "https://www.mom.gov.sg/terms-of-use"
+        }
+      ]
+    },
+    {
+      "period": "2026-Q3",
+      "vintages": [
+        {
+          "value": 2.0,
+          "published": "2026-10-30",
+          "release": "Labour Market Advance Release, Q3 2026",
+          "url": "https://www.mom.gov.sg/-/media/mom/documents/press-releases/2026/lmar-3q-2026-public-report.pdf",
+          "quote": "2.0%",
+          "accessed": "2026-11-19",
+          "locator": "Chart 2, Overall (O), Sep 2026 preliminary",
+          "agency": "Ministry of Manpower",
+          "licence": "MOM website terms of use",
+          "licence_url": "https://www.mom.gov.sg/terms-of-use"
+        }
+      ]
+    }
+  ],
+  "revision_threshold": 2
+}

@@ -1,0 +1,13 @@
+{
+  "name": "recall-press-control-room",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Recall Press control room - watches official statistics revisions and maps them to publication claims",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "G",
+  "title": "Quarterly manufacturing rebound strengthens",
+  "registered_on": "2025-10-20",
+  "claims": [
+    {
+      "claim_id": "g1",
+      "sentence": "Manufacturing output grew by 6.1% quarter on quarter in Q3 2025.",
+      "series_id": "sg-gdp-manufacturing-qoq",
+      "period": "2025-Q3",
+      "value_cited": 6.1,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "as_of": "2025-11-21",
+      "no_change": false,
+      "repeat": 1,
+      "expected": [
+        {
+          "claim_id": "g1",
+          "status": "number_only",
+          "reason": "Growth remains positive and the estimate rises to 11.3%."
+        }
+      ]
+    }
+  ]
+}
