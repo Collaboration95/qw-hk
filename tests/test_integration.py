@@ -162,3 +162,18 @@ def test_invalid_batch_preserves_files_and_decisions(cli, tmp_path):
     applied = load(page.with_name("result.json"))["verdicts"]
     assert all(v["decision"] == "applied" for v in applied)
     assert all((work / v["replacement_file"]).is_file() for v in applied)
+
+
+def test_fresh_outlook_rules_registration(tmp_path):
+    deck = ROOT / "samples/fresh/chamber-outlook-2026q2.pptx"
+    result = execute(parser().parse_args(["register", str(deck), "--registered-on", "2026-08-14",
+                                          "--series-dir", str(ROOT / "data/series"), "--workspace", str(tmp_path)]))
+    assert [(c["series_id"], c["value_cited"], c["vintage_cited"], c["stance"], c["assertion"]["type"])
+            for c in result["claims"]] == [
+        ("sg-gdp-overall-yoy", 5.9, "2026-08-11", "current", "level"),
+        ("sg-gdp-services-yoy", 4.9, "2026-08-11", "current", "threshold"),
+        ("sg-employment-change", 14000, "2026-08-11", "current", "direction"),
+        ("sg-unemployment", 2.0, "2026-08-11", "current", "level"),
+        ("sg-gdp-manufacturing-yoy", 12.2, "2026-07-14", "dated", "level"),
+    ]
+    assert {c["period"] for c in result["claims"]} == {"2026-Q2"}

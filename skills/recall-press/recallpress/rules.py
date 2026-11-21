@@ -7,6 +7,9 @@ from .storage import visible
 
 PERCENT = re.compile(r"(?<![\w.])([+−-]?\d+(?:\.\d+)?)\s*(?:%|per\s*cent\b|percent\b)", re.I)
 PERSONS = re.compile(r"(?<![\w.,])([+−-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)\s+(?:people|persons|jobs|workers)\b", re.I)
+EMPLOYMENT_COUNT = re.compile(
+    r"\bemployment (?:rose|fell|increased|decreased) by (\d{1,3}(?:,\d{3})+|\d+)\b"
+    r"(?= (?:in|during) the |[.!?]?$)", re.I)
 MONTH_PATTERN = "|".join(calendar.month_name[1:] + calendar.month_abbr[1:])
 DATED = re.compile(
     r"\b(?:as (?:first|initially|originally) (?:reported|published|estimated)|"
@@ -46,10 +49,12 @@ def periods_in(text, possible):
     quarters = set(re.findall(r"\b[qQ]([1-4])\b|\b([1-4])[qQ]\b", text))
     nums = {int(a or b) for a, b in quarters}
     nums.update(ORDINAL[n.lower()] for n in re.findall(
-        r"\b(first|second|third|fourth|1st|2nd|3rd|4th)\s+quarter\b", text, re.I))
+        r"\b(first|second|third|fourth|1st|2nd|3rd|4th)(?:\s+|-)quarter\b", text, re.I))
     for q, (first, last) in enumerate(((1, 3), (4, 6), (7, 9), (10, 12)), 1):
         start = f"(?:{calendar.month_name[first]}|{calendar.month_abbr[first]})"
         end = f"(?:{calendar.month_name[last]}|{calendar.month_abbr[last]})"
+        if re.search(rf"\b{end} quarter\b", text, re.I):
+            nums.add(q)
         if re.search(rf"\b{start}\s*(?:to|through|[-–—])\s*{end}\b", text, re.I):
             nums.add(q)
     years = set(re.findall(r"\b(?:19|20)\d{2}\b", text))
@@ -110,6 +115,10 @@ def link_series(sentence, context, archive):
     return next(iter(archive)) if len(archive) == 1 else None
 
 
+# A percentage larger than a year earlier states the year-on-year growth rate.
+YOY_LEVEL = re.compile(PERCENT.pattern + rf"\s+larger (?:in the (?:{MONTH_PATTERN}) quarter )?than a year earlier\b", re.I)
+
+
 def infer_assertion(sentence):
     lower = sentence.lower()
     thresholds = list(THRESHOLD.finditer(lower))
@@ -122,6 +131,8 @@ def infer_assertion(sentence):
             return {"type": "threshold", "detail": m[0], "operator": op, "threshold": float(m[2].replace("−", "-"))}
     if re.search(r"\b(?:fastest|slowest|highest|lowest|largest|smallest|ranked|leading|last place)\b", lower):
         return {"type": "rank", "detail": "peer values needed"}
+    if YOY_LEVEL.search(lower):
+        return {"type": "level", "detail": "reported figure"}
     if re.search(r"\b(?:than|compared|outpaced|outgrew|overtook|stronger|faster|slower|accelerated|decelerated|"
                  r"rebounded|recovered|outperformed|weaker|doubled|halved)\b", lower):
         return {"type": "comparison", "detail": "comparison baseline needed"}
@@ -147,7 +158,7 @@ def numeric(text):
 
 
 def measurements(text):
-    return sorted([*PERCENT.finditer(text), *PERSONS.finditer(text)], key=lambda m: m.start())
+    return sorted([*PERCENT.finditer(text), *PERSONS.finditer(text), *EMPLOYMENT_COUNT.finditer(text)], key=lambda m: m.start())
 
 
 def measured_values(sentence):
@@ -180,6 +191,11 @@ def cited_vintage(vintages, sentence, assertion, dated):
     else:
         matches = vintages
     if dated:
+        release_date = re.search(rf"\bon (\d{{1,2}}) ({MONTH_PATTERN}) (\d{{4}})\b", sentence, re.I)
+        if release_date:
+            day, month_name, year = release_date.groups()
+            published = f"{year}-{MONTHS[month_name.lower()]:02d}-{int(day):02d}"
+            matches = [v for v in matches if v["published"] == published]
         # The named release month is evidence about publication, not the observation period.
         month_names = "|".join(MONTHS)
         month = re.search(rf"\bin ({month_names})(?=,? (?:MTI|METI|SingStat|the ministry)\b)|"
@@ -236,7 +252,10 @@ def wording_reason(sentence, series):
     # Remove whole recognized expressions before checking the remaining words.
     # An extra noun (e.g. orders) changes what series the sentence describes.
     text = DATED.sub(" ", sentence.lower())
+    text = re.sub(r"\bcame in just (?=(?:above|below)\b)", " ", text)
     text = THRESHOLD.sub(" ", text)
+    if series["series_id"].endswith("-yoy"):
+        text = YOY_LEVEL.sub(" ", text)
     text = PERCENT.sub(" ", text)
     text = PERSONS.sub(" ", text)
     for pattern in DIRECTIONS.values():
