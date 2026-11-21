@@ -29,7 +29,7 @@ On 14 October 2025 Singapore reported flat Q3 manufacturing. On 21 November the 
 
 Recall Press links the sentences in a registered briefing to a series, a quarter and a dated release. When the figure changes, it gives the editor the sentence, a verdict with a reason, and an editable corrected PPTX. The editor applies, skips or edits it.
 
-QwenWork corrected slide 4. On an independent sample it read eight claims, registered seven and matched the key on five of those seven. Two Run now checks followed missed slots. One found earlier revisions. The repeat was quiet. One automatic watch check was quiet. Later slots missed. The owner’s automation now starts QwenWork Desktop tasks. Revisionpedia publishes 60 revision records. No editor has paid for coverage.
+QwenWork corrected slide 4. Blind on an independent deck, QwenWork read 8 claims, registered 7 and matched 5/7 verdicts. Job 016 reused that reading in QwenWork, registered all 8 and matched 8/8. Two Run now checks followed missed slots. One found earlier revisions. The repeat was quiet. One automatic watch check was quiet. Later slots missed. The owner’s automation now starts QwenWork Desktop tasks. Revisionpedia publishes 60 revision records. No editor has paid for coverage.
 
 ## 300 words
 
@@ -37,7 +37,7 @@ QwenWork corrected slide 4. On an independent sample it read eight claims, regis
 
 Recall Press handles both cases. An editor registers a briefing once. Each sentence it can link to a figure gets a series, quarter and dated release. When the figure is revised, the editor gets the exact sentence, a verdict with a reason, and an editable corrected PowerPoint with the new source. The editor applies, skips or edits the proposal.
 
-In QwenWork Desktop the agent registered its own claims and corrected slide 4 in a dated replay. On one independent deck it read eight claims, including a speaker note. It registered seven and matched the key on five of those seven. Rules alone linked five. With the eight read claims supplied, the fixed engine matches eight locally. As of Job 014, a Desktop rerun was pending. Two missed slots needed Run now. One check found two earlier revisions. Each draft changes one sentence. Slide 4 cites 4.6% from April 2026 and retains its original October footer. The repeat was quiet. One automatic check was quiet. Later slots missed. The owner’s automation now starts Standard-tier Desktop tasks.
+In QwenWork Desktop the agent registered its own claims and corrected slide 4 in a dated replay. On one independent deck it read eight claims, including a speaker note. It registered seven and matched the key on five of those seven. Rules alone linked five. Job 016 rechecked and reused the first blind reading in QwenWork. All eight registered and all eight verdicts matched. Two missed slots needed Run now. One check found two earlier revisions. Each draft changes one sentence. Slide 4 cites 4.6% from April 2026 and retains its original October footer. The repeat was quiet. One automatic check was quiet. Later slots missed. The owner’s automation now starts Standard-tier Desktop tasks.
 
 Revisionpedia, built on Hashmeta, is live. It has a page for each of 60 revision records and 10 indicators, each with dated sources, and a “Cover my briefing” form. A record shows why one quarter is quoted several ways. One labelled test enquiry was submitted to the live form endpoint and appeared in Hashmeta’s form submissions.
 

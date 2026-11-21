@@ -1,6 +1,6 @@
 # Recall Press · 3-minute judge path
 
-**[Try the live recall desk](https://j3jvce39.qwenwork.page/)** · sample run `2026-11-21-68013a314ad1`. Job 011 hosts the two corrections from Job 001’s manual 15:48 SGT check in Desktop session `mwq2wb75y5x1adbq`. The original hosted map labelled this afternoon check “Nightly run”.
+**[Try the live recall desk](https://j3jvce39.qwenwork.page/)** · sample run `2026-11-21-68013a314ad1`. Job 011 hosts the two corrections from Job 001’s manual 15:48 SGT check in Desktop session `mwq2wb75y5x1adbq`. The public desk now labels it “Manual live check · started with Run now · 21 Nov 2026, 15:48 SGT”.
 
 The desk, correction Page and Revisionpedia are public. The replay map, images and task reports require organiser access to the private repository. That access is unconfirmed.
 
@@ -34,7 +34,7 @@ Open the [README](README.md#one-revision-two-answers) table and images.
 | [Watch log](docs/qw-results/watch-log.md) | The watch was configured for :15 and :45 SGT. The 21 Nov 23:15 slot started automatically at 23:16:37. It checked eight series and was quiet. The 23:45 slot missed. The watch log has one row. The owner’s automation now drives QwenWork Desktop to start each job as a Standard-tier task. |
 | [Pitch Page](https://vtzcv3g2.qwenwork.page/) | The pitch deck, republished with corrected headlines by Job 009. |
 | Open the [correction Page](https://ka62nv48.qwenwork.page/) | Download the live correction. Slide 4 reads “Manufacturing grew 4.6% year on year in Q3 2025.” |
-| [Fresh deck report](docs/qw-outbox/010-fresh-deck-read/REPORT.md) · [answer key](docs/qw-results/fresh-deck-answer-key.json) | On one independently written deck, QwenWork read eight claims and registered seven. Speaker notes were unsupported. Five of seven verdicts matched the key, including the one broken claim. The reader spotted “Manufacturing outpaced services” and the table cell about construction contracting. Both sentences still held, but the engine proposed adding numbers to both. Rules alone linked five claims in Job 010 and link five after the fixes. Given all eight claims from QwenWork’s read, the fixed verdict engine matches the key on 8/8 locally. As of Job 014, a QwenWork rerun was pending. |
+| [Fresh deck report](docs/qw-outbox/010-fresh-deck-read/REPORT.md) · [answer key](docs/qw-results/fresh-deck-answer-key.json) | On the first blind read of an independent deck, QwenWork read 8 claims, registered 7 and matched the key on 5/7. [Job 016](docs/qw-outbox/016-fresh-deck-rerun/REPORT.md) rechecked and reused that reading in QwenWork. Rules alone linked 5. With the reading, the fixed engine registered all 8, including the speaker note, and matched all 8 verdicts. |
 
 ## 4 · Open the corrected file · 30 s
 
