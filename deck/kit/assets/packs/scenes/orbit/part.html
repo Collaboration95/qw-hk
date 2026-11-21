@@ -1,0 +1,12 @@
+<!-- scenes/orbit: Earth from orbit. Drawn by lib/orbit.js + lib/orbit.css. data-tod 0…1 moves the sun (0 day side,
+     0.5 the terminator with a sunset on the limb, 1 night side with city lights, airglow and an aurora); data-seed picks
+     another planet; data-print-t picks the still frame for print. Planes are the engine's .parallax > [data-depth]. -->
+<div class="sc-orbit" data-tod="0.5" data-seed="3" aria-hidden="true">
+  <div class="parallax">
+    <div class="ob-space" data-depth=".015"></div>
+    <div class="ob-sats" data-depth=".03"></div>
+    <div class="ob-earth" data-depth=".07"></div>
+    <div class="ob-station" data-depth=".2"></div>
+  </div>
+  <i class="ob-grain"></i>
+</div>

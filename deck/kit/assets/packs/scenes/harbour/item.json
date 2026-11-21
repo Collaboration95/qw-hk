@@ -1,0 +1,34 @@
+{
+  "title": "Harbour",
+  "kind": "scene",
+  "mood": ["maritime", "open", "fresh", "working", "calm"],
+  "suits": "logistics, shipping, supply chain, travel, climate and ocean products, marketplaces that move goods; pitches that want openness and steady work. Walk data-tod from dawn to night across the deck.",
+  "tech": "svg+canvas+js",
+  "params": {
+    "data-tod": "0 dawn · .25 morning · .5 bright day · .75 golden hour · 1 night (lighthouse sweeping, buoys blinking)",
+    "--brand": "on the section: one sail, the lighthouse stripes, the ferry's band and funnel, the box the crane is lifting, the fishing boat's stripe, the ship's funnel",
+    "--brand-2": "on the section: the gantry cranes, a second sail, the dinghy",
+    "--field (set by the scene)": "the sky behind the headline zone, so --ink-auto stays right"
+  },
+  "details": [
+    "a gantry crane lifts a box off the docked ship, trolleys it ashore, sets it on the stack and goes back for the next (36 s); the box sways a little on its cables while it travels",
+    "the box the crane carries is the brand colour; once set down, the spreader comes back empty",
+    "the ship's bridge windows and the quay lamps come on as the light drops; red aircraft lights blink on the crane apexes",
+    "once the light drops, the lighthouse beam sweeps every 12 s, long when side-on, and flashes when it turns to face you",
+    "a red buoy blinks every 4 s and a green one every 3 s after dark, each bobbing and leaning on its own beat",
+    "three sailboats bob and heel out of phase; one sail is the brand colour, one the second brand colour",
+    "a ferry crosses right to left every 80 s with a bow wave, a wake, smoke from its funnel and, at night, lit decks and a red sidelight",
+    "a fishing boat in the foreground rocks slower and heavier than the dinghy; its mast lamp comes on after dark",
+    "the dinghy tugs at its rope on the pier bollard",
+    "a gull on the end of the pier turns its head every few seconds",
+    "gulls glide in wide loops over the port and flap only now and then; white against the day sky, dark against dawn and dusk",
+    "water laps at the pier piles",
+    "swell: three bands of wave crests slide and breathe, each on its own beat",
+    "glints sparkle in a path under the sun (and under the moon at night); elsewhere they drift slowly",
+    "the sun rises low on the right, stands high at midday and sets at the far right; a thin crescent and stars at night",
+    "the pier lamp lights a pool and a long reflection at night",
+    "fair-weather cumulus at midday, long lit streaks at dawn and dusk; the clouds drift with the breeze",
+    "the headland's cottages light up at dusk"
+  ],
+  "tods": [0.1, 0.5, 0.9]
+}

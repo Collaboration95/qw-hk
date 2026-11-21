@@ -1,0 +1,116 @@
+<!-- Story · two-accounts: two records of the same thing disagree on one line. An invoice slides in from the left and
+     a bank record from the right, each turned a little, their shadows catching up; lines draw between the fields
+     that match, a dot landing at each end; the amount line draws dashed in the alert colour, both amounts light up
+     and pulse twice, and the two swapped digits are underlined. Then a question chip carrying the product's mark
+     drops between them, squashes and swings to rest. ~1.4 s, CSS only (.play) + the engine's path draw.
+     Re-skin: the two documents are the product's two sources (order vs shipment, contract vs invoice, claim vs
+     policy); keep four rows, one disagreeing. Copy: rewrite the h2, the titles, labels and values. -->
+<section class="slide" id="s__N__">
+  <h2 class="st-two-accounts-h">Two ledgers agree on every line but one.</h2>
+
+  <div class="st-two-accounts-sh st-two-accounts-shl" aria-hidden="true"></div>
+  <div class="st-two-accounts-sh st-two-accounts-shr" aria-hidden="true"></div>
+
+  <div class="st-two-accounts-doc st-two-accounts-left">
+    <svg class="st-two-accounts-clip" viewBox="0 0 40 96" aria-hidden="true"><path d="M14 90V22a10 10 0 0 1 20 0v56a16 16 0 0 1-32 0V30"/></svg>
+    <p class="st-two-accounts-title"><i class="st-two-accounts-g st-two-accounts-ga" aria-hidden="true"></i>Invoice</p>
+      <div class="st-two-accounts-row"><span>Payee</span><b>Northwind Ltd</b></div>
+      <div class="st-two-accounts-row"><span>Reference</span><b>INV-4471</b></div>
+      <div class="st-two-accounts-row st-two-accounts-off"><span>Amount</span><b>$1,<u>24</u>0.00</b></div>
+      <div class="st-two-accounts-row"><span>Account</span><b>•• 4410</b></div>
+    <div class="st-two-accounts-rule" aria-hidden="true"><i></i><i></i></div>
+  </div>
+
+  <div class="st-two-accounts-doc st-two-accounts-right">
+    <i class="st-two-accounts-ear" aria-hidden="true"></i>
+    <p class="st-two-accounts-title"><i class="st-two-accounts-g st-two-accounts-gb" aria-hidden="true"></i>Bank record</p>
+      <div class="st-two-accounts-row"><span>Payee</span><b>Northwind Ltd</b></div>
+      <div class="st-two-accounts-row"><span>Reference</span><b>INV-4471</b></div>
+      <div class="st-two-accounts-row st-two-accounts-off"><span>Amount</span><b>$1,<u>42</u>0.00</b></div>
+      <div class="st-two-accounts-row"><span>Account</span><b>•• 4410</b></div>
+    <div class="st-two-accounts-rule" aria-hidden="true"><i></i><i></i></div>
+  </div>
+
+  <svg class="st-two-accounts-lines" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path class="st-two-accounts-ln draw" style="--t:0.42;--d:.26s" d="M761.6 577.1C911.6 577.1 1007.9 601.3 1157.9 601.3"/><path class="st-two-accounts-ln draw" style="--t:0.52;--d:.26s" d="M765.0 673.0C915.0 673.0 1005.2 697.2 1155.2 697.2"/><defs><mask id="st-two-accounts-reveal-__N__" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><path class="st-two-accounts-mask draw" style="--t:0.62;--d:.26s" d="M768.3 769.0C918.3 769.0 1002.5 793.2 1152.5 793.2"/></mask></defs><path class="st-two-accounts-ln st-two-accounts-bad" mask="url(#st-two-accounts-reveal-__N__)" d="M768.3 769.0C918.3 769.0 1002.5 793.2 1152.5 793.2"/><path class="st-two-accounts-ln draw" style="--t:0.72;--d:.26s" d="M771.7 864.9C921.7 864.9 999.8 889.1 1149.8 889.1"/>
+    <circle class="st-two-accounts-dot" style="--t:0.42" cx="761.6" cy="577.1" r="9"/><circle class="st-two-accounts-dot" style="--t:0.66" cx="1157.9" cy="601.3" r="9"/><circle class="st-two-accounts-dot" style="--t:0.52" cx="765.0" cy="673.0" r="9"/><circle class="st-two-accounts-dot" style="--t:0.76" cx="1155.2" cy="697.2" r="9"/><circle class="st-two-accounts-dot st-two-accounts-badd" style="--t:0.62" cx="768.3" cy="769.0" r="9"/><circle class="st-two-accounts-dot st-two-accounts-badd" style="--t:0.86" cx="1152.5" cy="793.2" r="9"/><circle class="st-two-accounts-dot" style="--t:0.72" cx="771.7" cy="864.9" r="9"/><circle class="st-two-accounts-dot" style="--t:0.96" cx="1149.8" cy="889.1" r="9"/>
+  </svg>
+
+  <div class="st-two-accounts-chipwrap" style="left:960px;top:781px" aria-hidden="true">
+    <i class="st-two-accounts-chipsh"></i>
+    <span class="st-two-accounts-chip"><svg class="mark" viewBox="0 0 24 24">__MARK__</svg><b>?</b></span>
+  </div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#1F2F9A 0%,#2E44B8 55%,#3B53C8 100%);--brand:var(--deck-brand,#FFD84D);--brand-2:var(--deck-brand-2,#7EE0C8);--st-two-accounts-alert:#F0503C;color:var(--ink-auto,#fff);padding:96px 100px}
+#s__N__::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,color-mix(in oklab,var(--ink-auto,#fff) 7%,transparent) 30% 46%,transparent 46%),radial-gradient(900px 500px at 50% 70%,color-mix(in oklab,var(--ink-auto,#fff) 8%,transparent),transparent 70%)}
+#s__N__ .st-two-accounts-h{position:relative;z-index:3;font-size:88px;letter-spacing:-.045em;line-height:1.04;white-space:nowrap}
+
+/* the two documents: white cards with an inner highlight, turned a little */
+#s__N__ .st-two-accounts-doc{position:absolute;width:640px;height:600px;padding:44px 52px;border-radius:26px;color:#14161E;z-index:1;
+  background:linear-gradient(180deg,#FFFFFF,color-mix(in oklab,var(--brand) 4%,#F7F7FA));box-shadow:0 1px 0 #fff inset,0 -2px 0 rgba(20,22,40,.06) inset,0 2px 4px rgba(0,0,0,.16)}
+#s__N__ .st-two-accounts-left{left:130px;top:350px;transform:rotate(-2.0deg)}
+#s__N__ .st-two-accounts-right{left:1150px;top:372px;transform:rotate(1.6deg)}
+#s__N__ .st-two-accounts-sh{position:absolute;width:600px;height:560px;border-radius:26px;background:rgba(0,0,0,.42);filter:blur(28px);z-index:0;will-change:transform}
+#s__N__ .st-two-accounts-shl{left:160px;top:414px;transform:rotate(-2.0deg)}
+#s__N__ .st-two-accounts-shr{left:1160px;top:436px;transform:rotate(1.6deg)}
+#s__N__ .st-two-accounts-title{display:flex;align-items:center;gap:18px;height:96px;margin:0 0 26px;border-bottom:2px solid #ECEDF3;font:800 44px/1 var(--f);letter-spacing:-.03em}
+#s__N__ .st-two-accounts-g{flex:none;width:50px;height:50px;border-radius:14px;box-shadow:0 0 0 1.5px rgba(0,0,0,.08) inset}
+#s__N__ .st-two-accounts-ga{background:linear-gradient(135deg,var(--brand-2),color-mix(in oklab,var(--brand-2) 55%,#14161E))}
+#s__N__ .st-two-accounts-gb{background:repeating-linear-gradient(90deg,color-mix(in oklab,var(--brand) 70%,#14161E) 0 7px,transparent 7px 13px) 9px 14px/32px 26px no-repeat,linear-gradient(color-mix(in oklab,var(--brand) 70%,#14161E),color-mix(in oklab,var(--brand) 70%,#14161E)) 7px 9px/36px 5px no-repeat,linear-gradient(color-mix(in oklab,var(--brand) 70%,#14161E),color-mix(in oklab,var(--brand) 70%,#14161E)) 7px 40px/36px 4px no-repeat,color-mix(in oklab,var(--brand) 22%,#fff)}
+#s__N__ .st-two-accounts-row{position:relative;display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 6px}
+#s__N__ .st-two-accounts-row+.st-two-accounts-row{border-top:1.5px dashed #E3E5EE}
+#s__N__ .st-two-accounts-row span{font:550 26px/1 var(--f);color:#646B85}
+#s__N__ .st-two-accounts-row b{font:750 34px/1 var(--f);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+#s__N__ .st-two-accounts-row u{text-decoration:none;box-shadow:0 5px 0 -1px var(--st-two-accounts-alert)}
+/* the disagreeing row: both amounts lit in the alert colour */
+#s__N__ .st-two-accounts-off b{padding:10px 14px;margin-right:-14px;border-radius:12px;background:color-mix(in oklab,var(--st-two-accounts-alert) 14%,#fff);box-shadow:0 0 0 2.5px color-mix(in oklab,var(--st-two-accounts-alert) 60%,#fff) inset}
+#s__N__ .st-two-accounts-rule{position:absolute;left:58px;right:58px;bottom:46px;display:flex;gap:16px}
+#s__N__ .st-two-accounts-rule i{height:10px;border-radius:5px;background:#EEEFF4;flex:1}
+#s__N__ .st-two-accounts-rule i+i{flex:.5}
+#s__N__ .st-two-accounts-clip{position:absolute;left:70px;top:-36px;width:40px;height:96px;fill:none;stroke:#A4AABD;stroke-width:5;stroke-linecap:round}
+#s__N__ .st-two-accounts-ear{position:absolute;right:0;top:0;width:62px;height:62px;border-radius:0 26px 0 14px;background:linear-gradient(225deg,transparent 50%,#E6E8F0 50%);box-shadow:-3px 3px 6px -3px rgba(0,0,0,.25)}
+
+/* the lines between matching fields */
+#s__N__ .st-two-accounts-lines{position:absolute;inset:0;width:1920px;height:1080px;z-index:2;overflow:visible;pointer-events:none}
+#s__N__ .st-two-accounts-ln{fill:none;stroke:color-mix(in oklab,var(--brand-2) 70%,#fff);stroke-width:6;stroke-linecap:round}
+#s__N__ .st-two-accounts-mask{fill:none;stroke:#fff;stroke-width:16;stroke-linecap:round}
+#s__N__ .st-two-accounts-bad{stroke:var(--st-two-accounts-alert);stroke-dasharray:4 14}
+#s__N__ .st-two-accounts-dot{fill:#fff;stroke:color-mix(in oklab,var(--brand-2) 65%,#14161E);stroke-width:4;transform-box:fill-box;transform-origin:50% 50%}
+#s__N__ .st-two-accounts-badd{stroke:var(--st-two-accounts-alert)}
+
+/* the question chip: the product, asking */
+#s__N__ .st-two-accounts-chipwrap{position:absolute;z-index:4;width:0;height:0}
+#s__N__ .st-two-accounts-chip{position:absolute;left:-70px;top:-46px;width:140px;height:92px;border-radius:46px;display:flex;align-items:center;justify-content:center;gap:10px;transform-origin:50% 0;
+  background:var(--brand);color:var(--on-brand,#14161E);box-shadow:0 0 0 5px #fff,0 16px 26px -10px rgba(0,0,0,.5);transform:rotate(-4deg)}
+#s__N__ .st-two-accounts-chip .mark{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#s__N__ .st-two-accounts-chip b{font:850 58px/1 var(--f)}
+#s__N__ .st-two-accounts-chipsh{position:absolute;left:-60px;top:62px;width:120px;height:20px;border-radius:50%;background:rgba(0,0,0,.3);filter:blur(6px)}
+
+/* ---- arrival (forward only) ---- */
+#s__N__.play .st-two-accounts-left{animation:st-two-accounts-inl .62s cubic-bezier(.2,.8,.3,1) backwards}
+#s__N__.play .st-two-accounts-right{animation:st-two-accounts-inr .62s cubic-bezier(.2,.8,.3,1) .05s backwards}
+#s__N__.play .st-two-accounts-shl{animation:st-two-accounts-shl .72s cubic-bezier(.2,.8,.3,1) .04s backwards}
+#s__N__.play .st-two-accounts-shr{animation:st-two-accounts-shr .72s cubic-bezier(.2,.8,.3,1) .09s backwards}
+#s__N__.play .st-two-accounts-dot{animation:pop .24s var(--spring) calc(var(--t) * 1s) backwards}
+#s__N__.play .st-two-accounts-off b{animation:st-two-accounts-pulse .6s ease-out .78s backwards}
+#s__N__.play .st-two-accounts-right .st-two-accounts-off b{animation-delay:.84s}
+#s__N__.play .st-two-accounts-row u{animation:st-two-accounts-u .2s ease-out 1.02s backwards}
+#s__N__.play .st-two-accounts-chip{animation:st-two-accounts-drop .56s linear .92s backwards}
+#s__N__.play .st-two-accounts-chipsh{animation:st-two-accounts-chipsh .56s linear .92s backwards}
+#s__N__.play .st-two-accounts-ear{animation:st-two-accounts-ear .5s ease-out .34s backwards}
+
+@keyframes st-two-accounts-inl{0%{transform:translateX(-640px) rotate(-7deg)}70%{transform:translateX(10px) rotate(-2.6deg)}100%{transform:rotate(-2.0deg)}}
+@keyframes st-two-accounts-inr{0%{transform:translateX(640px) rotate(7deg)}70%{transform:translateX(-10px) rotate(2.2deg)}100%{transform:rotate(1.6deg)}}
+@keyframes st-two-accounts-shl{0%{transform:translateX(-700px) rotate(-7deg) scale(.85);opacity:0}100%{transform:rotate(-2.0deg)}}
+@keyframes st-two-accounts-shr{0%{transform:translateX(700px) rotate(7deg) scale(.85);opacity:0}100%{transform:rotate(1.6deg)}}
+@keyframes st-two-accounts-pulse{0%{background:#fff;box-shadow:0 0 0 0 transparent inset,0 0 0 0 color-mix(in oklab,var(--st-two-accounts-alert) 50%,transparent)}
+  30%{box-shadow:0 0 0 2.5px var(--st-two-accounts-alert) inset,0 0 0 16px transparent}31%{box-shadow:0 0 0 2.5px var(--st-two-accounts-alert) inset,0 0 0 0 color-mix(in oklab,var(--st-two-accounts-alert) 50%,transparent)}
+  62%{box-shadow:0 0 0 2.5px var(--st-two-accounts-alert) inset,0 0 0 16px transparent}}
+@keyframes st-two-accounts-u{from{box-shadow:0 5px 0 -1px transparent}}
+@keyframes st-two-accounts-drop{0%{opacity:0;transform:translateY(-260px) rotate(10deg);animation-timing-function:cubic-bezier(.55,0,.9,.4)}10%{opacity:1}44%{transform:translateY(0) rotate(2deg) scale(1.08,.86);animation-timing-function:ease-out}58%{transform:translateY(-22px) rotate(-6deg)}72%{transform:translateY(0) rotate(1deg) scale(1.02,.96)}86%{transform:rotate(-5deg)}100%{transform:rotate(-4deg)}}
+@keyframes st-two-accounts-chipsh{0%{opacity:0;transform:scale(.3)}44%{opacity:1;transform:scale(1.1)}58%{transform:scale(.85)}72%,100%{transform:none}}
+@keyframes st-two-accounts-ear{0%{transform:scale(.4);transform-origin:100% 0}60%{transform:scale(1.12)}100%{transform:none}}
+</style>

@@ -1,0 +1,32 @@
+<!-- powers-of-ten demo 1 of 3 (also the item's slide.html) · the whole world from far away (0.3 px per km). On a first
+     arrival the camera dives in from five times further out. The viewfinder marks where the next slide goes. The
+     bundled world is a fractal coast; a deck declares its own with Pack["powers-of-ten"].world({ paint, sample,
+     unit }) in a lib file or the first slide (see the README). -->
+<section class="slide" id="s__N__" aria-label="See the whole picture">
+  <h2>See the whole picture.</h2>
+  <p class="cy-powers-of-ten-sub">__WORD__ starts from everything at once.</p>
+  <div class="cy-powers-of-ten-vf"><i></i></div>
+  <div class="cy-powers-of-ten-bar"><i></i><b></b></div>
+  <aside class="notes"><b>Say</b>This is the whole picture. __WORD__ starts here, then goes down to what matters.</aside>
+</section>
+
+<style>
+/* brand params: the world's whole palette derives from the FIRST view's --field / --brand / --brand-2 (delete these
+   to inherit the deck's); each view's --ink-auto is re-picked from the world's sea */
+#s__N__{--field:#163a66;--brand:var(--deck-brand,#ffb36b);--brand-2:var(--deck-brand-2,#7fe0c0)}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-powers-of-ten-sub{position:relative;margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.9}
+#s__N__ .cy-powers-of-ten-bar{left:100px;bottom:80px}
+#s__N__ .cy-powers-of-ten-vf{width:140px;height:96px;--l:28px;--w:3px}
+</style>
+
+<script>
+const P = Pack['powers-of-ten'], world = P.world()
+const s = .3, cam = { s, x0: -1180 / s, y0: -600 / s }   // the island's centre at screen (1180, 600)
+const cp = world.coastPoint(.55), [x, y] = P.toScreen(cam, cp[0], cp[1])
+// the bracket marks where the next slide goes (its view is about 1920 / 27 px wide here; the bracket is drawn larger so it reads)
+Object.assign(document.querySelector('#s__N__ .cy-powers-of-ten-vf').style, { left: x - 78 + 'px', top: y - 52 + 'px' })
+P.view('s__N__', cam, {
+  frame(g, t, k) { P.clouds(g, k.still ? 20 : t, { speed: 6, alpha: .12 }) },
+})
+</script>

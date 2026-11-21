@@ -1,0 +1,24 @@
+<!-- pan demo 2 of 3 · golden hour, two slide-widths down the road, the camera slightly dollied in (zoom 1.08) so the
+     near hills and the farmhouse grow more than the far ranges. The card is ordinary slide content: it cuts. -->
+<section class="slide" id="s__N__" aria-label="Forty minutes back, every trip">
+  <h2>Forty minutes back, every trip.</h2>
+  <div class="card cy-pan-card">
+    <b class="num">41 min</b>
+    <span>saved on an average day</span>
+  </div>
+  <aside class="notes"><b>Say</b>On the way, it reroutes before the jam forms: about forty minutes back on an average day.</aside>
+</section>
+
+<style>
+/* brand params: the panorama's whole palette derives from the FIRST stop's --field / --brand / --brand-2 (delete
+   these to inherit the deck's); the text ink is re-picked from this stop's own sky as --ink-auto */
+#s__N__{--field:linear-gradient(180deg,#2B3F8F,#6E5BA6);--brand:#FF9F7A;--brand-2:#FFD27A}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-pan-card{position:absolute;left:var(--pad-x);top:330px;padding:34px 44px 38px;display:flex;flex-direction:column;gap:12px}
+#s__N__ .cy-pan-card .num{font-size:96px;color:color-mix(in oklab,var(--brand) 45%,var(--ink))}
+#s__N__ .cy-pan-card span{font-size:32px;font-weight:550;color:var(--ink-2)}
+</style>
+
+<script>
+Pack.pan.stop('s__N__', { x: 3840, zoom: 1.08 })
+</script>

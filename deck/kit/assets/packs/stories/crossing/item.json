@@ -1,0 +1,28 @@
+{
+  "title": "Crossing",
+  "kind": "story",
+  "mood": ["fair", "playful", "simultaneous"],
+  "suits": "exchanges, marketplaces, escrow, atomic swaps, payments for access: two parties trade and neither goes first",
+  "tech": "svg+js",
+  "duration": 1.45,
+  "params": {
+    "--field / --brand / --brand-2": "field; the seller's shirt, the key and the seal (brand); the buyer's shirt (brand-2)",
+    ".st-crossing-cap": "the two counter captions (Buyer, Seller)",
+    "B / S / C1 / C2": "hand positions and the arc's control points (script); the key's arc is the coin's mirror image",
+    "T0 / T1": "throw and catch times"
+  },
+  "details": [
+    "both people lean back to wind up, then lean in on the throw, then settle",
+    "the two arcs are mirror images, so the coin and the key meet exactly mid-air at the same instant",
+    "a white flash and an expanding ring where they cross",
+    "the product's mark is left at the crossing as a small seal, which pops with an overshoot and stays",
+    "the coin flips edge-on and back four times as it flies; the key tumbles once",
+    "dotted trails are revealed behind each flight and stay as the picture of the swap",
+    "two floor shadows travel underneath, smaller and fainter the higher the things are",
+    "the receiving hand dips with the weight on the catch and comes back up",
+    "each person's eyes follow the thing coming to them",
+    "after the catch both tilt their heads to look at what they got",
+    "the counters are stalls: a lit top edge, a planked skirt in each side's colour",
+    "a soft pool of light behind the crossing"
+  ]
+}

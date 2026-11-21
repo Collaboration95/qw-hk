@@ -1,0 +1,32 @@
+{
+  "title": "Powers of ten",
+  "kind": "carry",
+  "mood": ["scale", "cinematic", "measured", "from orbit to the one thing"],
+  "suits": "pitches whose story is a change of scale: maps, geo, climate, satellites, data at many resolutions, a fleet down to one vehicle, a codebase down to one line; every slide is a view of one world, and a forward step zooms there.",
+  "tech": "canvas",
+  "params": {
+    "--field / --brand / --brand-2": "on the FIRST view's section: the bundled world's sea, shallows, land and coastline derive from them; the sea is the field pushed away from its ink, and every view's --ink-auto is re-picked from it",
+    "Pack['powers-of-ten'].view(id, cam, { paint, frame, scrim, px, printT })": "a slide's view: cam = { s px per world unit, x0, y0 } or P.at(x, y, s, cx, cy); paint replaces the world for this picture (P.cells at the bottom of the zoom); frame draws what moves on the one clock",
+    "Pack['powers-of-ten'].world({ paint(g, cam, c), sample(x, y, s), unit })": "the deck's own world, painted at any camera (default: the bundled fractal coast, unit 1000 m)",
+    "Pack['powers-of-ten'].chain('sA>sB', { via, dur } | false)": "override one move (named levels or views to pass through) or cut it",
+    "Pack['powers-of-ten'].entry": "zoom factor of the establishing dive on a first arrival (default 5; 0 = none)",
+    ".cy-powers-of-ten-vf / .cy-powers-of-ten-bar": "viewfinder brackets (lock on after --t s) and the scale caption, both part of the picture"
+  },
+  "details": [
+    "the zoom is logarithmic and centred on the point the two views share, so the camera feels like one continuous dive, not a scale tween",
+    "a move wider than x12 passes through in-between levels painted from the same world (one per x8), so the coastline gains detail all the way down and nothing pops",
+    "the finer picture fades in by scale with feathered (70 px blurred) edges, and the arriving slide's own frame runs live underneath, so its arrival story starts under the move",
+    "the bundled coast adds one octave of noise per halving of scale, with each octave rotated, so the shoreline is genuinely fractal at every power of ten",
+    "the coastline is drawn bright in a tint of the brand, land carries contours every .08 and a north-west hillshade, and the sea carries fainter depth contours and a pale shelf",
+    "the scale caption re-measures itself through the move on a 1-2-5 series (km, then m, then cm) and is part of the picture, not chrome",
+    "viewfinder brackets frame exactly what the next slide will show, and lock on with a small scale-in after the move",
+    "at the bottom of the zoom the world turns into crisp cells, each the colour sampled at its centre, with a faint per-cell jitter like measured data",
+    "the target cell glows once with a ring opening outward on arrival, then breathes very slightly",
+    "cloud shadows drift across every view on the one clock, faster the closer you are",
+    "the headline zone gets a soft scrim in the world's own sea colour while imagery flies under it, settling into each slide's resting scrim",
+    "the sea is the field pushed away from its ink, so headlines read on any brand, light or dark",
+    "a first arrival dives in from five times further out, so even a single slide opens with the device",
+    "in-between levels and the entry dive are painted while the deck is idle, so the first move does not hitch",
+    "print rasterises each canvas to a JPEG at its own rest state, so every slide prints its own view and map-heavy PDFs stay small"
+  ]
+}

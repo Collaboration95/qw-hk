@@ -1,0 +1,24 @@
+<!-- point-field demo 1 of 3 · the cloud: every point at its own data position (the data as it is). On a fresh load the
+     points condense out of their faint cloud; arriving from a slide without the field, the same. Replace the synthetic
+     3,000 records with the product's rows (PF.config({ points }) before the first field slide; see the README). -->
+<section class="slide" id="s__N__" aria-label="The cloud">
+  <canvas class="cy-pf" aria-hidden="true"></canvas>
+  <h2>3,000 teams.<br>Every dot is one.</h2>
+  <aside class="notes"><b>Say</b>Every dot here is one real team from our data, placed by how they work.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the points follow them either way) */
+#s__N__{--field:linear-gradient(180deg,#15406A,#1B3366);--brand:#FF8A4C;--brand-2:#7EF0B5}
+#s__N__{background:radial-gradient(1200px 760px at 74% 30%,color-mix(in oklab,var(--brand-2) 16%,transparent),transparent 70%),var(--field)}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff);line-height:1.04}
+</style>
+
+<script>
+const PF = Pack['point-field']
+const cloud = PF.fig.scatter({ box: { x: 520, y: 250, w: 1320, h: 780 } })
+PF.slide('s__N__', {
+  place: PF.fill(cloud, { r: p => 2.1 + Math.min(1.4, p.w * .5), a: p => p.k === 0 ? .62 : .92, d: 'center' }),
+  sweep: { every: 11, dur: 2.2, angle: 18, width: 170, gain: .7, phase: 4 },
+})
+</script>

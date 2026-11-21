@@ -1,0 +1,206 @@
+<!-- 0 · Intro reveal "constellation": a dusk sky, stars twinkling, the field's own colour glowing low on the horizon
+     behind a dark ridge with a small observatory. The first press brings up the mark's stars a little brighter than
+     the rest, then lines draw star to star (stopping short of each star, like a star chart) until the mark is drawn;
+     each star flares as its line arrives, and the wordmark rises in beneath it. At rest the sky twinkles on the deck
+     clock, the observatory window glows, and every 19 s a shooting star crosses. ~1.9 s. Print / reduced motion:
+     the drawn constellation.
+     Brand: --field (the sky by day: it is shaded to dusk, so any colour, light or dark or a gradient, becomes an
+     afterglow on the horizon), --brand (the accent star), --brand-2 (a second star tint) on #s__N__. Ink for the
+     lines, stars and wordmark is computed from the shaded sky (Deck.inkOn). __MARK__ = stroke paths in a 24 x 24
+     box (use-pack --mark): each stroke is simplified to its corners, the corners become stars, shared corners merge,
+     and a dot (a zero-length stroke) becomes the accent star. Long names shrink to fit 1600 px. -->
+<section class="slide rv-const" id="s__N__" aria-label="__WORD__">
+  <div class="rv-const-dusk" aria-hidden="true"></div>
+  <canvas class="rv-const-cv" width="1920" height="1080" aria-hidden="true"></canvas>
+  <svg class="rv-const-ridge" width="1920" height="170" viewBox="0 0 1920 170" aria-hidden="true">
+    <path class="far" d="M0 92C160 70 300 58 470 74S760 104 930 84S1240 40 1420 58S1730 96 1920 76V170H0Z"/>
+    <path class="near" d="M0 128C210 112 380 100 560 114S900 140 1080 122S1310 92 1452 98c4-24 18-34 34-34s30 10 34 34c120 6 250 20 400 12V170H0Z"/>
+    <rect class="slit" x="1480" y="66" width="7" height="26" rx="2"/>
+    <circle class="win" cx="1466" cy="112" r="2.6"/>
+  </svg>
+  <div class="rv-const-lock" role="img" aria-label="__WORD__">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+    <div class="rv-const-word"></div>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(180deg,#3A3F86 0%,#5B4A92 46%,#B66F8C 82%,#EFA07F 100%);   /* the sky by day: dusk violet by default */
+  --brand:var(--deck-brand,#FFD58A); --brand-2:var(--deck-brand-2,#9FD6FF);            /* the accent star, a second star tint */
+  --const-dusk:10,10,34;                         /* the dusk the field is shaded with (rgb) */
+  --const-ink:#FFFFFF;                           /* set by the script from the shaded sky */
+  --const-fs:150px;
+  padding:0;background:var(--field)}
+#s__N__ .rv-const-dusk{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--const-dusk),.8) 0%,rgba(var(--const-dusk),.7) 50%,rgba(var(--const-dusk),.52) 74%,rgba(var(--const-dusk),.16) 92%,rgba(var(--const-dusk),.05) 100%)}
+#s__N__ .rv-const-cv{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#s__N__ .rv-const-ridge{position:absolute;left:0;bottom:0;display:block}
+#s__N__ .rv-const-ridge .far{fill:rgba(var(--const-dusk),.78)}
+#s__N__ .rv-const-ridge .near,#s__N__ .rv-const-ridge .slit{fill:rgba(6,6,18,.96)}
+#s__N__ .rv-const-ridge .slit{fill:rgba(255,210,150,.16)}
+#s__N__ .rv-const-ridge .win{fill:#FFC877;opacity:.85}
+#s__N__ .rv-const-lock{position:absolute;left:0;right:0;top:0;height:1080px;pointer-events:none}
+#s__N__ .rv-const-lock .mark{position:absolute;width:0;height:0;visibility:hidden}
+#s__N__ .rv-const-word{position:absolute;left:0;right:0;top:668px;text-align:center;white-space:nowrap;
+  font:600 var(--const-fs)/1 var(--f);letter-spacing:.035em;color:var(--const-ink);text-shadow:0 0 30px color-mix(in oklab,var(--const-ink) 22%,transparent)}
+#s__N__ .rv-const-word b{display:inline-block;font-weight:inherit;white-space:pre;will-change:transform,opacity,filter}
+</style>
+
+<script>
+const el = document.getElementById('s__N__'), cv = el.querySelector('.rv-const-cv'), g = cv.getContext('2d'), mark = el.querySelector('svg.mark')
+const wordEl = el.querySelector('.rv-const-word'), win = el.querySelector('.rv-const-ridge .win')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), P = (t, t0, d) => clamp((t - t0) / d)
+const out = p => 1 - Math.pow(1 - p, 3), inOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(31415)
+const WORD = el.getAttribute('aria-label')
+for (const ch of WORD) wordEl.appendChild(Object.assign(document.createElement('b'), { textContent: ch }))
+const letters = [...wordEl.children]
+
+// colour: the sky is the field shaded to dusk; ink comes from that sky; the accent star is a brand colour that reads on it
+const col = (() => {
+  const cx = document.createElement('canvas').getContext('2d'), cs = getComputedStyle(el)
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s.trim(); const v = cx.fillStyle; return v[0] === '#' && v !== '#010203' ? [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)) : null }
+  const lum = c => { const f = v => (v /= 255) <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]) }
+  const con = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+  const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t), css = c => `rgb(${c.map(Math.round)})`
+  const st = (cs.getPropertyValue('--field').match(/#[0-9a-f]{3,8}\b/gi) || []).map(rgb).filter(Boolean)
+  const field = st.length ? [0, 1, 2].map(i => st.reduce((a, c) => a + c[i], 0) / st.length) : [80, 70, 140]
+  const dusk = cs.getPropertyValue('--const-dusk').split(',').map(Number)
+  const skyAt = a => mix(field, dusk, a)                       // the shaded sky at overlay alpha a
+  const ink = rgb(Deck.inkOn(css(skyAt(.62))) || '#fff')        // where the wordmark sits
+  const sky = skyAt(.75)                                       // where the stars sit
+  const star = rgb(Deck.inkOn(css(sky)) || '#fff')
+  const pick = cands => cands.filter(Boolean).find(c => con(c, sky) >= 3)
+  const b1 = rgb(cs.getPropertyValue('--brand')), b2 = rgb(cs.getPropertyValue('--brand-2'))
+  el.style.setProperty('--const-ink', css(ink))
+  return { star: css(star), starRGB: star, acc: css(pick([b1, b2]) || star), tint: css(pick([b2, b1]) || star), light: lum(star) > .5 }
+})()
+
+// the mark as a star chart: sample each stroke, keep its corners (Ramer-Douglas-Peucker), merge shared corners
+const S = 450, CX = 960, CY = 372, K = S / 24
+const rdp = (pts, eps) => {
+  if (pts.length < 3) return pts
+  const [a, b] = [pts[0], pts[pts.length - 1]], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy)
+  let i0 = 0, dm = 0
+  for (let i = 1; i < pts.length - 1; i++) { const d = L > .01 ? Math.abs(dy * pts[i][0] - dx * pts[i][1] + b[0] * a[1] - b[1] * a[0]) / L : Math.hypot(pts[i][0] - a[0], pts[i][1] - a[1]); if (d > dm) { dm = d; i0 = i } }
+  return dm > eps ? [...rdp(pts.slice(0, i0 + 1), eps).slice(0, -1), ...rdp(pts.slice(i0), eps)] : [a, b]
+}
+const stars = [], edges = []
+const starAt = (x, y, dot) => {
+  const px = CX + (x - 12) * K, py = CY + (y - 12) * K
+  const j = stars.findIndex(s => Math.hypot(s.x - px, s.y - py) < K * .8)
+  if (j >= 0) { if (dot) stars[j].dot = true; return j }
+  stars.push({ x: px, y: py, dot, on: 9, flare: 9, r: 4.4 + rng() * 1.6 }); return stars.length - 1
+}
+for (const p0 of mark.querySelectorAll('path')) {
+  // measure a copy without pathLength="1" (it rescales the length methods)
+  const p = p0.cloneNode(); p.removeAttribute('pathLength'); mark.appendChild(p)
+  let L = 0; try { L = p.getTotalLength() } catch { /* not rendered */ }
+  if (L < .4) { const q = L ? p.getPointAtLength(0) : { x: 12, y: 12 }; starAt(q.x, q.y, true); p.remove(); continue }
+  const n = Math.max(32, Math.ceil(L * 8)), pts = []
+  for (let i = 0; i <= n; i++) { const q = p.getPointAtLength(L * i / n); pts.push([q.x, q.y]) }
+  const closed = Math.hypot(pts[0][0] - pts[n][0], pts[0][1] - pts[n][1]) < .3
+  let eps = .5, v = rdp(pts, eps)
+  while (v.length > (closed ? 10 : 9) && eps < 4) v = rdp(pts, eps *= 1.35)
+  if (closed && v.length > 2) v = v.slice(0, -1)
+  const ids = v.map(([x, y]) => starAt(x, y, false))
+  for (let i = 0; i < ids.length - 1; i++) if (ids[i] !== ids[i + 1]) edges.push([ids[i], ids[i + 1]])
+  if (closed && ids.length > 2) edges.push([ids[ids.length - 1], ids[0]])
+  p.remove()
+}
+if (!stars.length) starAt(12, 12, true)
+if (!stars.some(s => s.dot)) stars[stars.length - 1].dot = true
+// timing: lines draw one after another from 0.25 s to about 1.4 s; a star lights when its first line reaches it
+const E0 = .25, EW = 1.12, ne = Math.max(1, edges.length), ed = clamp(EW / ne * 1.7, .1, .26), estep = (EW - ed) / Math.max(1, ne - 1)
+edges.forEach((e, i) => { e.t = E0 + i * estep; stars[e[0]].on = Math.min(stars[e[0]].on, e.t); stars[e[1]].flare = Math.min(stars[e[1]].flare, e.t + ed) })
+stars.forEach((s, i) => { if (s.on > 8) s.on = E0 + EW * (i / stars.length); if (s.flare > 8) s.flare = s.on + .05; s.on = Math.min(s.on, s.flare) })
+const WT = Math.max(1.05, E0 + EW - .25), END = WT + (letters.length - 1) * Math.min(.035, .4 / letters.length) + .55
+
+// the field of stars: denser up high, thinning toward the glow; never on top of the mark
+const sky = []
+for (let i = 0; i < 300; i++) {
+  const x = rng() * 1920, y = Math.pow(rng(), 1.5) * 900
+  if (stars.some(s => Math.hypot(s.x - x, s.y - y) < 26)) continue
+  const c = rng()
+  sky.push({ x, y, r: .5 + Math.pow(rng(), 3) * 1.6, a: .3 + rng() * .6, w: .5 + rng() * 2.2, ph: rng() * 6.28, tint: c < .06 ? 1 : c < .1 ? 2 : 0 })
+}
+
+// the wordmark: long names shrink to fit
+const fit = () => { el.style.removeProperty('--const-fs'); const w = wordEl.scrollWidth; if (w > 1600) el.style.setProperty('--const-fs', (150 * 1600 / w).toFixed(1) + 'px') }
+fit(); document.fonts?.ready.then(fit)
+
+const glowDot = (x, y, r, a, c) => {
+  const gr = g.createRadialGradient(x, y, 0, x, y, r * 4.5)
+  gr.addColorStop(0, c); gr.addColorStop(.25, c); gr.addColorStop(1, 'rgba(0,0,0,0)')
+  g.globalAlpha = a * .35; g.fillStyle = gr; g.beginPath(); g.arc(x, y, r * 4.5, 0, 6.283); g.fill()
+  g.globalAlpha = a; g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fill()
+}
+function frame(lt, t) {
+  g.clearRect(0, 0, 1920, 1080)
+  // the field twinkles
+  for (const s of sky) {
+    const tw = .62 + .38 * Math.sin(t * s.w + s.ph) * Math.sin(t * s.w * .37 + s.ph * 2)
+    g.globalAlpha = s.a * tw * (1 - clamp((s.y - 640) / 300) * .8)
+    g.fillStyle = s.tint === 1 ? col.acc : s.tint === 2 ? col.tint : col.star
+    g.beginPath(); g.arc(s.x, s.y, s.r, 0, 6.283); g.fill()
+  }
+  // a shooting star every 19 s, once the mark is up
+  const ph = t % 19
+  if (lt >= END && ph > 8 && ph < 8.75) {
+    const q = (ph - 8) / .75, x = 1580 - 900 * q, y = 90 + 300 * q, tail = 170 * Math.sin(Math.PI * Math.min(1, q * 1.15))
+    const lg = g.createLinearGradient(x, y, x + tail * .95, y - tail * .32)
+    lg.addColorStop(0, col.star); lg.addColorStop(1, 'rgba(0,0,0,0)')
+    g.globalAlpha = .9 * Math.sin(Math.PI * q); g.strokeStyle = lg; g.lineWidth = 2; g.lineCap = 'round'
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + tail * .95, y - tail * .32); g.stroke()
+  }
+  if (lt < 0) { g.globalAlpha = 1; return }
+  // lines, star to star, stopping short of each star
+  g.strokeStyle = col.star; g.lineWidth = 2.6; g.lineCap = 'round'
+  for (const e of edges) {
+    const p = inOut(P(lt, e.t, ed)); if (p <= 0) continue
+    const a = stars[e[0]], b = stars[e[1]], dx = b.x - a.x, dy = b.y - a.y, L = Math.hypot(dx, dy)
+    const gap = 13; if (L < gap * 2 + 2) continue
+    const ux = dx / L, uy = dy / L, sx = a.x + ux * gap, sy = a.y + uy * gap, len = (L - gap * 2) * p
+    g.globalAlpha = .7; g.beginPath(); g.moveTo(sx, sy); g.lineTo(sx + ux * len, sy + uy * len); g.stroke()
+  }
+  // the mark's stars: appear a little brighter than the field, flare as their line arrives
+  for (const s of stars) {
+    const on = out(P(lt, s.on - .22, .3)); if (on <= 0) continue
+    const f = lt >= s.flare ? Math.exp(-(lt - s.flare) * 5.5) : 0
+    const tw = lt >= END ? .9 + .1 * Math.sin(t * 1.7 + s.x) : 1
+    const c = s.dot ? col.acc : col.star, r = (s.dot ? s.r * 1.35 : s.r) * (1 + .7 * f)
+    glowDot(s.x, s.y, r, on * tw, c)
+    if (f > .02) {   // a four-point diffraction flare
+      g.globalAlpha = .8 * f; g.strokeStyle = c; g.lineWidth = 1.4
+      const k = 10 + 26 * f
+      g.beginPath(); g.moveTo(s.x - k, s.y); g.lineTo(s.x + k, s.y); g.moveTo(s.x, s.y - k); g.lineTo(s.x, s.y + k); g.stroke()
+    }
+  }
+  g.globalAlpha = 1
+}
+function word(lt) {
+  const st = Math.min(.035, .4 / letters.length)
+  letters.forEach((b, i) => {
+    const p = lt >= END ? 1 : out(P(lt, WT + i * st, .55))
+    b.style.opacity = p.toFixed(3)
+    b.style.transform = p >= 1 ? '' : `translateY(${(28 * (1 - p)).toFixed(1)}px)`
+    b.style.filter = p >= 1 ? '' : `blur(${(7 * (1 - p)).toFixed(1)}px)`
+  })
+}
+let mode = 'empty', t0 = 0, lastT = 9
+const show = m => { mode = m; t0 = performance.now() / 1000; const lt = m === 'empty' ? -1 : m === 'done' ? END : 0; frame(lt, lastT); word(lt) }
+Deck.clock(el, (t, _, still) => {
+  lastT = t
+  win.style.opacity = (.72 + .13 * Math.sin(t * .8) + .05 * Math.sin(t * 5.3)).toFixed(3)   // a warm window, a lamp moving inside
+  if (mode === 'play') { const lt = performance.now() / 1000 - t0; frame(lt, t); word(lt); if (lt >= END) mode = 'done' }
+  else frame(mode === 'done' ? END : -1, t)
+}, { printT: 4 })
+show('empty')
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (mode === 'empty') { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

@@ -1,0 +1,36 @@
+{
+  "title": "Constellation",
+  "kind": "reveal",
+  "mood": [
+    "dusk",
+    "wonder",
+    "quiet",
+    "discovery"
+  ],
+  "suits": "space, AI and research, networks and graphs, maps and discovery, education: products about finding patterns and connecting points",
+  "tech": "canvas",
+  "duration": 1.9,
+  "params": {
+    "--field": "the sky by day; it is shaded to dusk, so the field's own colour glows on the horizon (any colour or gradient)",
+    "--brand": "the accent star (used if it reads on the dusk sky)",
+    "--brand-2": "a second star tint, and the fallback accent",
+    "--const-dusk": "the dusk the field is shaded with (r,g,b)",
+    "--const-fs": "wordmark size (long names shrink to fit 1600 px)",
+    "__MARK__": "stroke paths in a 24 x 24 box: corners become stars, shared corners merge, a dot becomes the accent star"
+  },
+  "details": [
+    "the field is shaded to dusk, so any brand colour becomes the afterglow on the horizon",
+    "300 field stars, denser up high and thinning toward the glow, each twinkling at its own rate",
+    "a few field stars carry the accent and second tint, like coloured stars",
+    "the mark's strokes are reduced to their corners (Ramer-Douglas-Peucker); shared corners merge into one star",
+    "the mark's stars appear first, a little brighter than the field, so the eye finds them",
+    "lines draw star to star in stroke order and stop short of each star, like a printed star chart",
+    "every star flares with a four-point diffraction spike as its line arrives",
+    "a dot in the mark (or the last corner) becomes the accent star",
+    "field stars keep clear of the mark so no stray star sits on a line",
+    "the wordmark rises in letter by letter out of a blur",
+    "a dark ridge with a small observatory dome; its slit catches a little light and one window glows, flickering like a lamp moving inside",
+    "at rest the mark's stars breathe slightly on the deck clock",
+    "every 19 s a shooting star crosses with a fading tail, once the mark is up"
+  ]
+}

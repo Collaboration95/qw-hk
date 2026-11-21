@@ -1,0 +1,20 @@
+<!-- Carry · floor-plan demo: one slide of the endless plan. Every slide that calls Plan.slide(id, { you }) gets its
+     own plan canvas (under) and dot canvas (over); a forward step glides the window from the previous slide's view
+     and the dot walks there through doorways that swing open. [data-keep] content carves the walls. -->
+<section class="slide" id="s__N__">
+  <h2 class="cy-floor-plan-h" data-keep>__WORD__ is <span class="rev" data-rev="1">one</span> room further.</h2>
+  <div class="cy-floor-plan-room" data-keep="0"><span>a room on the drawing</span></div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#1F4DAA,#1B429B);--ln:#CFE1FF;--accent:#FF5B3A;padding:0;color:var(--ink-auto,#fff)}
+#s__N__ .cy-floor-plan-h{position:absolute;left:100px;top:90px;margin:0;font:800 104px/1.12 var(--f);letter-spacing:-.03em;white-space:nowrap}
+#s__N__ .cy-floor-plan-room{position:absolute;left:880px;top:380px;width:900px;height:560px;border:12px solid transparent;display:grid;place-items:center;
+  background:linear-gradient(color-mix(in oklab,#2A57B8 70%,#0E1E5A),color-mix(in oklab,#2A57B8 70%,#0E1E5A)) padding-box,repeating-linear-gradient(45deg,var(--ln) 0 2px,transparent 2px 8px) border-box;
+  box-shadow:0 0 0 2px var(--ln),inset 0 0 0 2px var(--ln),0 40px 70px -40px rgba(0,0,0,.7)}
+#s__N__ .cy-floor-plan-room span{font:500 30px ui-monospace,Menlo,monospace;color:var(--ln)}
+</style>
+
+<script>
+Plan.slide('s__N__', { you: [560, 760] })
+</script>

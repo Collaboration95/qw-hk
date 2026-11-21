@@ -1,0 +1,19 @@
+<!-- pan demo 3 of 3 · the far end of the road at dusk (stop x = width − 1920): stars come out, the barn's window lights
+     late, a meteor crosses high on the right once every 23 s. -->
+<section class="slide" id="s__N__" aria-label="Home before dark">
+  <h2>Home before dark.</h2>
+  <p class="cy-pan-sub">Try __WORD__ on your next trip.</p>
+  <aside class="notes"><b>Say</b>And you are home before dark. Try it on your next trip.</aside>
+</section>
+
+<style>
+/* brand params: the panorama's whole palette derives from the FIRST stop's --field / --brand / --brand-2 (delete
+   these to inherit the deck's); the text ink is re-picked from this stop's own sky as --ink-auto */
+#s__N__{--field:linear-gradient(180deg,#2B3F8F,#6E5BA6);--brand:#FF9F7A;--brand-2:#FFD27A}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-pan-sub{position:relative;margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.88}
+</style>
+
+<script>
+Pack.pan.stop('s__N__', { x: 7680 })
+</script>

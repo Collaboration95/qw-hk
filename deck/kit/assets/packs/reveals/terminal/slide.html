@@ -1,0 +1,187 @@
+<!-- 0 · Intro reveal "terminal": a deep phosphor-green field with a prompt and a blinking cursor. The first press types
+     the name with human keystroke timing (one slip onto a neighbouring key, a beat, a backspace), hits enter, a few
+     boot lines print and scroll, then flick away while every typed letter flies from its mono slot into the final
+     wordmark, crossfading typefaces, and the prompt glyph becomes the mark. The cursor ends after the wordmark in the
+     accent and keeps blinking on the deck clock. ~1.9 s. Print and reduced motion: the final lockup.
+     Brand: --field (may be a gradient), --brand (cursor and mark), --brand-2 (a tint for the text) on #s__N__. The
+     text takes the readable ink for the field (Deck.inkOn), tinted toward --brand-2 only while it stays readable; the
+     cursor and mark take whichever brand colour reads on the field. __MARK__ = stroke paths in a 24 x 24 box
+     (use-pack --mark). Long names shrink to fit 1640 px. Boot lines: the BOOT array in the script (keep them short
+     and generic: they are texture, not claims). -->
+<section class="slide rv-term" id="s__N__" aria-label="__WORD__">
+  <div class="rv-term-glow" aria-hidden="true"></div>
+  <div class="rv-term-tty" aria-hidden="true">
+    <div class="rv-term-ln rv-term-cmd"><span class="rv-term-pr">›</span><span class="rv-term-tx"></span><i class="rv-term-cur"></i></div>
+  </div>
+  <div class="rv-term-lock" role="img" aria-label="__WORD__">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+    <span class="rv-term-word"></span><i class="rv-term-cur rv-term-end"></i>
+  </div>
+  <div class="rv-term-scan" aria-hidden="true"></div>
+</section>
+
+<style>
+#s__N__{
+  --field:radial-gradient(95% 90% at 50% 48%,#11402F 0%,#0C3326 45%,#06211A 100%);   /* phosphor green by default */
+  --brand:var(--deck-brand,#FFB547); --brand-2:var(--deck-brand-2,#7CF5B0);            /* cursor and mark, a tint for the text */
+  --term-ink:#B9F7D2; --term-word:#E9FFF2; --term-accent:#FFB547; --term-glow:rgba(140,255,190,.35);   /* set by the script */
+  --term-dim:color-mix(in oklab,var(--term-ink) 56%,transparent);
+  --term-fs:170px; --term-mono:64px;
+  padding:0;background:var(--field)}
+#s__N__ .rv-term-glow{position:absolute;left:50%;top:50%;width:1600px;height:700px;margin:-350px 0 0 -800px;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in oklab,var(--term-glow) 28%,transparent),transparent)}
+#s__N__ .rv-term-scan{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 2px,rgba(0,8,4,.12) 2px 4px),radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(0,8,4,.36) 100%)}
+#s__N__ .rv-term-tty{position:absolute;left:0;top:0;font:500 var(--term-mono)/1 var(--m);color:var(--term-ink);white-space:pre;will-change:transform;
+  text-shadow:0 0 14px var(--term-glow)}
+#s__N__ .rv-term-ln{height:calc(var(--term-mono) * 1.25);display:flex;align-items:center}
+#s__N__ .rv-term-pr{display:inline-block;color:var(--term-accent);width:1.3ch}
+#s__N__ .rv-term-tx{position:relative}
+#s__N__ .rv-term-tx b{font-weight:inherit;display:inline-block}
+#s__N__ .rv-term-tx .ghost{position:absolute;top:0;color:var(--term-ink)}
+#s__N__ .rv-term-boot{font-size:calc(var(--term-mono) * .56);color:var(--term-dim);padding-left:1.3ch;letter-spacing:.01em}
+#s__N__ .rv-term-boot em{font-style:normal;color:var(--term-ink)}
+#s__N__ .rv-term-cur{display:inline-block;width:.58ch;height:1.02em;margin-left:.06ch;background:var(--term-accent);box-shadow:0 0 16px color-mix(in oklab,var(--term-accent) 55%,transparent);vertical-align:middle}
+#s__N__ .rv-term-lock{position:absolute;left:0;right:0;top:50%;height:0;display:flex;justify-content:center;align-items:center;white-space:nowrap;
+  font:800 var(--term-fs)/1 var(--f);letter-spacing:-.045em;color:var(--term-word);text-shadow:0 0 40px color-mix(in oklab,var(--term-glow) 50%,transparent)}
+#s__N__ .rv-term-lock .mark{width:.86em;height:.86em;flex:none;margin-right:.24em;overflow:visible;fill:none;stroke:var(--term-accent);stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;
+  filter:drop-shadow(0 0 18px color-mix(in oklab,var(--term-accent) 35%,transparent))}
+#s__N__ .rv-term-word b{font-weight:inherit;display:inline-block;white-space:pre}
+#s__N__ .rv-term-end{width:.34em;height:.74em;margin-left:.1em;vertical-align:baseline;align-self:center;transform:translateY(.02em)}
+#s__N__ .rv-term-lock,#s__N__ .rv-term-tty{visibility:hidden}
+</style>
+
+<script>
+const el = document.getElementById('s__N__'), tty = el.querySelector('.rv-term-tty'), cmd = el.querySelector('.rv-term-cmd'), tx = el.querySelector('.rv-term-tx')
+const pr = el.querySelector('.rv-term-pr'), cur = cmd.querySelector('.rv-term-cur'), lock = el.querySelector('.rv-term-lock'), wordEl = el.querySelector('.rv-term-word')
+const mark = lock.querySelector('.mark'), endCur = lock.querySelector('.rv-term-end')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), P = (t, t0, d) => clamp((t - t0) / d)
+const inOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2, out = p => 1 - Math.pow(1 - p, 3)
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(2718)
+const WORD = el.getAttribute('aria-label'), typed = WORD.toLowerCase()
+// colour: text in the readable ink for the field (tinted toward --brand-2 while it stays readable), the accent in a
+// brand colour that reads on the field, a glow only when the ink is light
+{
+  const cx = document.createElement('canvas').getContext('2d'), cs = getComputedStyle(el)
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s.trim(); const v = cx.fillStyle; return v[0] === '#' && v !== '#010203' ? [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)) : null }
+  const lum = c => { const f = v => (v /= 255) <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]) }
+  const con = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+  const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t), css = c => `rgb(${c.map(Math.round)})`
+  const st = (cs.getPropertyValue('--field').match(/#[0-9a-f]{3,8}\b/gi) || []).map(rgb).filter(Boolean)
+  const field = st.length ? [0, 1, 2].map(i => st.reduce((a, c) => a + c[i], 0) / st.length) : [12, 51, 38]
+  const ink = rgb(Deck.inkOn(css(field)) || '#fff'), b1 = rgb(cs.getPropertyValue('--brand')), b2 = rgb(cs.getPropertyValue('--brand-2'))
+  const tint = [.32, .2, .1, 0].map(k => b2 ? mix(ink, b2, k) : ink).find(c => con(c, field) >= 7) || ink
+  const acc = [b1, b2].filter(Boolean).find(c => con(c, field) >= 3) || ink
+  el.style.setProperty('--term-ink', css(tint)); el.style.setProperty('--term-word', css(mix(ink, tint, .4)))
+  el.style.setProperty('--term-accent', css(acc)); el.style.setProperty('--term-glow', lum(ink) > .5 ? `rgba(${tint.map(Math.round)},.3)` : 'transparent')
+}
+const BOOT = ['resolving graph  <em>ok</em>', 'linking modules  <em>ok</em>', 'warming cache    <em>[######]</em>', 'ready<em>.</em>']
+for (const ch of WORD) wordEl.appendChild(Object.assign(document.createElement('b'), { textContent: ch }))
+const finals = [...wordEl.children]
+BOOT.forEach(h => { const d = document.createElement('div'); d.className = 'rv-term-ln rv-term-boot'; d.innerHTML = h; d.style.visibility = 'hidden'; tty.appendChild(d) })
+const boots = [...tty.querySelectorAll('.rv-term-boot')]
+
+// keystrokes: human rhythm, one slip onto a neighbouring key two thirds in, a beat, a backspace, the right key
+const ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+const near = c => { for (const r of ROWS) { const i = r.indexOf(c); if (i >= 0) return r[i + 1] || r[i - 1] } return 'x' }
+const keys = [], slip = typed.length > 2 ? Math.max(1, Math.round(typed.length * .62)) : -1
+let t = .12
+for (let i = 0; i < typed.length; i++) {
+  if (i === slip) { keys.push([t, 'slip', near(typed[i])]); t += .17; keys.push([t, 'back']); t += .07 }
+  keys.push([t, 'key', typed[i]]); t += .055 + rng() * .05 + (rng() < .2 ? .04 : 0)
+}
+const span = t - .12, squeeze = Math.min(1, .66 / span)                // long names type faster
+keys.forEach(k => k[0] = .12 + (k[0] - .12) * squeeze)
+const ENTER = .12 + span * squeeze + .06, BT = ENTER + .06, BDT = .045, CLEAR = BT + BOOT.length * BDT + .07, MORPH = CLEAR + .02, MD = .46, MS = .018
+const END = MORPH + (WORD.length - 1) * MS + MD + .05
+const LH = parseFloat(getComputedStyle(el).getPropertyValue('--term-mono') || 58) * 1.25
+
+// long names shrink so the lockup fits 1640 px
+const fitLock = () => { el.style.removeProperty('--term-fs'); const w = [...lock.children].reduce((a, c) => a + c.offsetWidth, 0) + 170 * .34; if (w > 1640) el.style.setProperty('--term-fs', (170 * 1640 / w).toFixed(1) + 'px') }
+let rects = null, scale = 1
+const textAt = t => { let s = ''; for (const [at, kind, c] of keys) { if (at > t) break; if (kind === 'back') s = s.slice(0, -1); else s += c } return s }
+let shown = null
+const setText = s => {
+  if (s === shown) return; shown = s
+  tx.textContent = ''; for (const c of s) tx.appendChild(Object.assign(document.createElement('b'), { textContent: c }))
+}
+const box = e => { const r = e.getBoundingClientRect(), o = el.getBoundingClientRect(); return { x: (r.left - o.left) / scale, y: (r.top - o.top) / scale, w: r.width / scale, h: r.height / scale } }
+const place = () => {
+  // the command line starts where the final lockup starts, on the centre line
+  scale = el.getBoundingClientRect().width / 1920 || 1
+  lock.style.visibility = 'hidden'; lock.querySelectorAll('b,svg').forEach(e => e.style.transform = '')
+  fitLock()
+  const m = box(mark)
+  tty.style.left = (m.x - 8).toFixed(1) + 'px'; tty.style.top = (540 - LH / 2).toFixed(1) + 'px'
+  rects = null
+}
+const measure = () => {
+  const mono = [...tx.children].map(box), fin = finals.map(box)
+  rects = { mono, fin, pr: box(pr), mark: box(mark) }
+}
+// one element flies from box a to box b; p = 0 looks like a, p = 1 like b; it is drawn as `self`
+const fly = (e, self, a, b, p) => {
+  const x = a.x + (b.x - a.x) * p, y = a.y + (b.y - a.y) * p, h = a.h + (b.h - a.h) * p
+  e.style.transformOrigin = '0 0'
+  e.style.transform = `translate(${(x - self.x).toFixed(1)}px,${(y - self.y).toFixed(1)}px) scale(${(h / self.h).toFixed(4)})`
+}
+const pose = (t, amb) => {
+  const blink = amb == null ? 1 : (amb % 1.06) < .6 ? 1 : 0
+  if (t < 0) {   // empty: a prompt and an idle, blinking cursor
+    setText(''); tty.style.visibility = 'inherit'; tty.style.display = ''; tty.style.transform = ''; tty.style.opacity = 1; lock.style.visibility = 'hidden'
+    boots.forEach(b => b.style.visibility = 'hidden'); cur.style.opacity = blink; pr.style.opacity = 1; return
+  }
+  if (t >= END) {
+    tty.style.visibility = 'hidden'; tty.style.display = 'none'; lock.style.visibility = 'inherit'
+    lock.querySelectorAll('b,svg').forEach(e => { e.style.transform = ''; e.style.opacity = 1 })
+    endCur.style.opacity = blink; return
+  }
+  tty.style.visibility = 'inherit'; tty.style.display = ''
+  setText(textAt(t))
+  // the slipped key leaves a phosphor ghost for a fifth of a second after the backspace
+  const kb = keys.find(k => k[1] === 'back'), gs = kb ? t - kb[0] : -1
+  if (gs >= 0 && gs < .22 && t < MORPH) {
+    let g = tx.querySelector('.ghost'); if (!g) { g = document.createElement('b'); g.className = 'ghost'; g.textContent = keys.find(k => k[1] === 'slip')[2]; g.style.left = slip + 'ch'; tx.appendChild(g) }
+    g.style.opacity = (.55 * (1 - gs / .22)).toFixed(3)
+  } else tx.querySelector('.ghost')?.remove()
+  cur.style.opacity = t < ENTER ? 1 : 0                                    // solid while typing
+  cmd.style.filter = t >= ENTER && t < ENTER + .16 ? `brightness(${(1.55 - 3.4 * (t - ENTER)).toFixed(2)})` : ''   // enter commits the line
+  const nb = t < BT ? 0 : Math.min(BOOT.length, Math.floor((t - BT) / BDT) + 1)
+  boots.forEach((b, i) => { b.style.visibility = i < nb ? 'inherit' : 'hidden'; b.style.opacity = 1 - P(t, CLEAR - .04 + i * .012, .12) })
+  const sh = Math.max(0, nb - 1) * LH * out(P(t, BT + Math.max(0, nb - 1) * BDT - BDT, BDT))
+  tty.style.transform = `translateY(${(-sh).toFixed(1)}px)`
+  if (t < MORPH) { lock.style.visibility = 'hidden'; endCur.style.opacity = 0; return }
+  // morph: every letter flies from its mono slot to its sans slot; the prompt becomes the mark
+  if (!rects) measure()
+  lock.style.visibility = 'inherit'
+  const n = finals.length, monoKids = [...tx.children]
+  for (let i = 0; i < n; i++) {
+    const p = inOut(P(t, MORPH + i * MS, MD)), a = rects.mono[i] || rects.mono[rects.mono.length - 1], b = rects.fin[i]
+    fly(finals[i], b, a, b, p); finals[i].style.opacity = P(p, .1, .32)
+    if (monoKids[i]) { fly(monoKids[i], a, a, b, p); monoKids[i].style.opacity = 1 - P(p, .02, .26) }
+  }
+  const pm = inOut(P(t, MORPH - .04, MD))
+  fly(mark, rects.mark, rects.pr, rects.mark, pm); mark.style.opacity = P(pm, .15, .45)
+  fly(pr, rects.pr, rects.pr, rects.mark, pm); pr.style.opacity = 1 - P(pm, .05, .35)
+  endCur.style.opacity = P(t, END - .12, .06)
+}
+let mode = 'empty', t0 = 0
+const show = m => {
+  mode = m; t0 = performance.now() / 1000
+  if (m !== 'done') place(); else fitLock()
+  pose(m === 'empty' ? -1 : m === 'done' ? END : 0, null)
+}
+Deck.clock(el, t => {
+  if (mode === 'play') { const lt = performance.now() / 1000 - t0; pose(lt, lt >= END ? t : null); if (lt >= END) mode = 'done' }
+  else pose(mode === 'done' ? END : -1, t)
+}, { printT: 0.2 })
+document.fonts?.ready.then(() => { if (mode === 'empty') place(); else if (mode === 'done') fitLock() })
+show('empty')
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (mode === 'empty') { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

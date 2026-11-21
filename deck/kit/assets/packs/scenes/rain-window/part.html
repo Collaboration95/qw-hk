@@ -1,0 +1,11 @@
+<!-- scenes/rain-window: a café window on a rainy evening. Drawn by lib/rain-window.js + lib/rain-window.css.
+     data-tod 0…1 = the hour (0 blue hour, 0.5 evening, 1 late night: fewer cars, the last tram, stronger reflections);
+     data-word is the café's name in mirrored gold leaf on the glass (any length; it shrinks to fit); data-seed reshuffles
+     the street and the rain; data-print-t picks the still frame for print. Planes are the engine's .parallax > [data-depth]. -->
+<div class="sc-rain-window" data-tod="0.5" data-seed="11" data-word="__WORD__" aria-hidden="true">
+  <div class="parallax">
+    <div class="rw-street" data-depth=".04"></div>
+    <div class="rw-glass" data-depth=".1"></div>
+    <div class="rw-sill" data-depth=".22"></div>
+  </div>
+</div>

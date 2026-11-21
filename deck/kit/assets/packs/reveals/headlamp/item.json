@@ -1,0 +1,32 @@
+{
+  "title": "Headlamp at first light",
+  "kind": "reveal",
+  "mood": ["pre-dawn", "quiet", "outdoors", "field work", "mist"],
+  "suits": "agriculture, forestry, supply-chain traceability, land and climate data, field-work and rural products; any pitch whose day starts before dawn",
+  "tech": "svg+js",
+  "duration": 2.3,
+  "params": {
+    "--field": "the sky by day (indigo by default; any colour or gradient), shaded to pre-dawn so the name always reads",
+    "--brand": "tints the name's cream ink (12%), so a dark brand still reads light",
+    "--brand-2": "tints the first light behind the ridge and the land",
+    "--hl-fs": "name size (212 px); long names shrink so mark and name fit 1640 px",
+    "__MARK__": "stroke paths with pathLength=\"1\" in a 24 x 24 box, drawn on one after another"
+  },
+  "details": [
+    "the near worker's headlamp clicks on with a stutter (on, off, on in 90 ms), like a cheap switch",
+    "the beam starts on the fresh tapping cut of the tree beside them before it swings up",
+    "the beam finds the letters one by one, still blurred in the mist, before the mist lifts off them",
+    "first light rises behind the karst while the beam sweeps, and the stars fade with it, the morning star last",
+    "the headlamp clicks off the same way at 2 s, because it is light enough now",
+    "the mark draws itself stroke after stroke, after the name is clear",
+    "far workers' headlamps stop at each tree for a few seconds, their faint cone on the trunk, then walk to the next; at the row's end they turn and work back",
+    "each far headlamp bobs slightly with the worker's step",
+    "a satellite crosses the sky as a steady, unblinking moving point, once every 47 s",
+    "near trees carry a real tapping panel: faint healed cuts below, renewed bark, the fresh ochre cut at about 25 degrees with latex along it, a spout and a cup on a wire",
+    "about every nine seconds one drop of latex gathers at a spout and falls into the cup, each tree out of step",
+    "the karst towers are spires, sheer blocks and domes with a ragged forest fringe along their tops",
+    "a low mist lies at the feet of the karst and drifts slowly",
+    "the plot floor is littered with orange-red leaves",
+    "print and reduced motion show the finished lockup at first light, with no blur or blended layers"
+  ]
+}

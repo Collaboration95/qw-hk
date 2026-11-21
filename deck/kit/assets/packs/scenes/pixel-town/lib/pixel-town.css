@@ -1,0 +1,8 @@
+/* scenes/pixel-town · layout for lib/pixel-town.js. Each plane is a 492 × 282 art-pixel canvas shown at 4× with
+   hard pixels; planes overscan by 6 art px (24 px) so the engine's pointer parallax never shows an edge. */
+.sc-pixel-town{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#80c3f0;contain:strict}
+.sc-pixel-town .parallax{z-index:0}
+.sc-pixel-town .parallax>div{left:-24px;top:-24px;width:1968px;height:1128px}
+.sc-pixel-town canvas{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.sc-pixel-town::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(20,10,40,.05) 0 1px,transparent 1px 4px),radial-gradient(130% 100% at 45% 40%,transparent 62%,rgba(20,14,50,.3))}

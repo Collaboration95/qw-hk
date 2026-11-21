@@ -1,0 +1,35 @@
+{
+  "title": "Pixel build",
+  "kind": "reveal",
+  "mood": [
+    "playful",
+    "retro",
+    "arcade",
+    "dusk"
+  ],
+  "suits": "games, creator tools, dev tools with a playful streak, kids and education, indie apps: anything that wants to feel handmade, fun and a bit nostalgic",
+  "tech": "svg+js",
+  "duration": 2.4,
+  "params": {
+    "--field": "the sky gradient; it is dithered into bands and the pixel ranges are built from its stops",
+    "--brand": "the blocks of the mark (with light and dark bevel tints)",
+    "--brand-2": "the critter, and the blocks of the mark's last stroke when it is a small accent",
+    "__MARK__": "stroke paths in a 24 x 24 box, rasterised to a 12 x 12 block grid; an empty mark falls back to a block tile with the first letter",
+    "__WORD__": "set in a hand-drawn bitmap face that shrinks to fit"
+  },
+  "details": [
+    "the whole reveal runs on a 15 fps sprite clock, so motion steps like a real 8-bit game",
+    "blocks drop row by row from the bottom of the mark up, like a stacking game",
+    "each block lands with a two-frame squash",
+    "the bottom row kicks up pixel dust",
+    "the wordmark fizzles in pixel by pixel in a hand-drawn bitmap face, not a font",
+    "the word's drop shadow arrives one frame late",
+    "a tiny critter fizzles in on the last letter, hops across the word and lands on the mark's last block",
+    "the block squashes under the critter's weight",
+    "the critter blinks once it has settled",
+    "the sky is dithered into bands, with pixel ranges on the horizon built from the field's own stops",
+    "a dark sky gets pixel stars, a lit one three flat pixel clouds",
+    "the mark is rasterised at load, so any line mark becomes chunky pixel art with close strokes kept apart",
+    "a small last stroke (a dot, a slash) is picked out in the accent colour"
+  ]
+}

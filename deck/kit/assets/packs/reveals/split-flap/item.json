@@ -1,0 +1,39 @@
+{
+  "title": "Split-flap board",
+  "kind": "reveal",
+  "mood": [
+    "travel",
+    "mechanical",
+    "anticipation",
+    "station"
+  ],
+  "suits": "travel, mobility, logistics and freight, scheduling, booking, events and anything about time, routes or arrivals",
+  "tech": "svg+js",
+  "duration": 2.2,
+  "params": {
+    "--field": "the station wall (vermilion by default; any colour or gradient)",
+    "--brand": "the mark's colour in its flap (used if it reads on the board, 3:1)",
+    "--brand-2": "fallback mark colour; else the flap ink",
+    "--flap-board / --flap-top / --flap-bot / --flap-ink": "the near-black board, its two flap halves and the characters (independent of the wall, so they always read)",
+    "--flap-cw": "maximum flap width (shrinks so long names fit 1700 px)",
+    "__MARK__": "stroke paths in a 24 x 24 box; it lands in its own flap"
+  },
+  "details": [
+    "the board is already hanging, blank, before the press: an empty station waiting for the update",
+    "every flap spins through its drum in drum order (blank, A–Z, 0–9, -, .), so the clatter looks mechanical, not random",
+    "each flap starts a hair after its left neighbour, so the board ripples into motion",
+    "flaps land left to right; the timing is solved per flap so each reaches its letter exactly on schedule",
+    "the final flap of each letter bounces a hair off its stop and settles",
+    "one flap (about 60% along the word) lands a beat late",
+    "the falling half darkens as it turns away from the light; the rising half brightens as it lands",
+    "the falling flap shades the new top half, and the old bottom darkens as it is covered",
+    "a soft shadow under every flap, a dark hinge line and two metal hinge pins per flap",
+    "the housing shivers a fraction of a pixel while the flaps clatter and goes still when the last one lands",
+    "the mark has its own flap and briefly passes through other flaps as part of the drum",
+    "the board hangs from two rods with clamp brackets; a lamp above lights the wall and the board's top edge",
+    "enamel wall panels with faint joints",
+    "at rest, every 14 s the last blank flap shuffles once as if the board is updating",
+    "any character the name needs (an ampersand, an accent) is added to the drum",
+    "on a near-black wall a faint rim lifts the board off the wall"
+  ]
+}

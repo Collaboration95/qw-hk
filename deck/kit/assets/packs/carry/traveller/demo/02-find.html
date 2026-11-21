@@ -1,0 +1,27 @@
+<!-- traveller demo 2 of 3 · the next spot is behind and below, so the plane turns round (a quick flip as it pulls back),
+     arcs down and settles over the card, casting its shadow onto the card's surface (ground = the card's top). -->
+<section class="slide" id="s__N__" aria-label="It finds the three people who need it">
+  <h2>It finds the three people<br>who need it.</h2>
+  <div class="card rows cy-tr-who">
+    <div class="row"><i style="--c:color-mix(in oklab,var(--brand-2) 62%,var(--ink))">M</i><b>Maya</b><span>design</span></div>
+    <div class="row"><i style="--c:color-mix(in oklab,var(--brand) 40%,var(--ink))">J</i><b>Jon</b><span>legal</span></div>
+    <div class="row"><i style="--c:color-mix(in oklab,var(--brand-2) 30%,var(--ink))">A</i><b>Ade</b><span>ops</span></div>
+  </div>
+  <aside class="notes"><b>Say</b>It works out who actually needs it: here, three people across design, legal and ops.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the plane follows them either way) */
+#s__N__{--field:linear-gradient(180deg,#3A3FCC,#4A37BE);--brand:#FFFFFF;--brand-2:#FF7A8A}
+#s__N__{background:radial-gradient(color-mix(in oklab,var(--ink-auto,#fff) 10%,transparent) 1.6px,transparent 2.2px) 0 0/48px 48px,radial-gradient(1000px 700px at 30% 80%,color-mix(in oklab,var(--brand) 14%,transparent),transparent 70%),var(--field)}
+#s__N__ h2{color:var(--ink-auto,#fff)}
+#s__N__ .cy-tr-who{position:absolute;left:var(--pad-x);top:560px;width:640px;padding:6px 40px}
+#s__N__ .cy-tr-who .row{display:flex;align-items:center;gap:22px;padding:24px 0}
+#s__N__ .cy-tr-who i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:800 26px/1 var(--f);font-style:normal;color:#fff;background:var(--c)}
+#s__N__ .cy-tr-who b{font-size:38px;font-weight:750;letter-spacing:-.02em}
+#s__N__ .cy-tr-who span{margin-left:auto;font-size:30px;color:var(--ink-2)}
+</style>
+
+<script>
+Pack.traveller.spot('s__N__', { x: 560, y: 470, ground: 572, rot: -3 })
+</script>

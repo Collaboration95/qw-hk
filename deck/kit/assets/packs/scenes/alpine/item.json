@@ -1,0 +1,32 @@
+{
+  "title": "Alpine",
+  "kind": "scene",
+  "mood": ["snow", "crisp", "cosy", "holiday", "high"],
+  "suits": "travel, outdoor, sport, wellness, booking and seasonal products; pitches about reaching a peak or a winter launch. Walk data-tod from bright afternoon through alpenglow to a starry night.",
+  "tech": "svg+canvas+js",
+  "params": {
+    "data-tod": "0 bright afternoon · .5 alpenglow (lit faces turn pink) · 1 night (stars, moon, groomer, lit chalet)",
+    "--brand": "on the section: the skier's jacket, the skis by the chalet door, the summit flag, one in five chairlift riders",
+    "--brand-2": "on the section: the sled, the night groomer, one in five riders",
+    "--field (set by the scene)": "the sky behind the headline zone, so --ink-auto stays right"
+  },
+  "details": [
+    "snow falls at two depths: small slow flakes far, larger swaying flakes near; thinner over the headline zone",
+    "chairs move up one cable and down the other on a 96 s loop, hanging plumb and swaying a little after each tower",
+    "one chair rides up empty and swings more than the rest",
+    "riders sit in ones and twos in coloured jackets, skis dangling",
+    "a skier zigzags down the far snowfield, growing a little as she comes closer, leaning into each turn and leaving a trace that fades before the next run",
+    "after dark the skier is gone and a piste groomer crawls up the same run with its headlights on and an amber beacon blinking, leaving corduroy",
+    "chalet chimney smoke rises, leans with the breeze, spreads and thins",
+    "the chalet's windows light up as the light drops, and a fire flickers behind the ground-floor window",
+    "a pair of skis stands in the snow by the chalet door, a sled leans on the wall, footprints lead to the door",
+    "alpenglow at tod .5: the sunlit faces turn pink while the shaded faces go violet",
+    "rock shows only where the faces are too steep to hold snow",
+    "stars appear with the hour; a few on the right twinkle; a thin crescent moon at night",
+    "a satellite crosses the night sky every 50 s",
+    "a pine by the lift sheds its load of snow every 23 s",
+    "a summit flag flutters at the top of the lift; tower lamps come on at night",
+    "the lift's bottom station has a lit window and a snow-loaded roof"
+  ],
+  "tods": [0.1, 0.5, 0.9]
+}

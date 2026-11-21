@@ -1,0 +1,35 @@
+{
+  "title": "Pixel town",
+  "kind": "scene",
+  "mood": ["cosy", "playful", "nostalgic", "neighbourly"],
+  "suits": "games, local and community products, delivery, transit, small-business tools, anything 'your neighbourhood': it reads as a game's title screen. Puts the product's name on the bus. Not for serious enterprise or health pitches.",
+  "tech": "canvas",
+  "tods": [0.1, 0.5, 0.9],
+  "params": {
+    "data-tod": "0…1, the hour: 0 a sunny afternoon, 0.5 a golden sunset, 1 night with lit windows, lamps and stars",
+    "data-word": "the product name painted on the bus's side panel (A–Z, 0–9; trimmed to fit 32 art px). use-pack --word fills it",
+    "data-seed": "integer; reshuffles which windows light when, curtains, trees and stars",
+    "data-print-t": "clock time of the still frame for print (default 43: the bus is at the stop, door open, someone waiting)",
+    "--brand / --brand-2 on the section": "optional: the bus body takes --brand, the name panel takes --brand-2 (ink on it is picked by Deck.inkOn)"
+  },
+  "details": [
+    "every motion snaps to whole art pixels (4 px) and every sprite steps through a 2-frame cycle, like a real 16-bit game",
+    "the sky is six colour bands ordered-dithered (4×4 Bayer) into each other",
+    "windows light one by one as the hour moves, each at its own threshold; a few show a plant or a person",
+    "one window flickers blue all evening: someone watching TV",
+    "one window goes dark for 18 s in every 70 (someone off to bed), then lights again",
+    "the bakery chimney puffs all day: puffs rise a pixel at a time, drift with the breeze and dissolve into dither; at night a fireplace chimney joins in",
+    "the cat on the blue roof flicks its tail; every 23 s it stands and stretches; at night its eyes glint green",
+    "the bus runs a 46 s loop: it brakes into the stop, opens its door, the waiting passenger (who keeps looking up and down the street) steps on, and it pulls away",
+    "the bus wears the product's name on its side panel; by night its windows are lit, with passengers, and a dithered headlight beam leads it",
+    "villagers walk past: one with a baguette from the bakery, one with a dog, an old man with a cane, a kid who walks fast; by night only the man in the hat and the dog-walker are out",
+    "the clock tower shows the hour that data-tod stands for (3 pm at 0, 11 pm at 1), its minute hand creeping",
+    "the windmill's sails on the far hill turn in steps",
+    "a striped hot-air balloon bobs a pixel as it drifts over the hills by day; now and then a V of birds crosses",
+    "laundry flaps across the alley; pigeons sit on the antenna and one hops",
+    "street lamps come on at dusk and pour dithered pools of light onto the pavement; the bakery sign glows",
+    "snowcaps on the far mountains; at sunset the sun sinks behind them with two cloud stripes across its face",
+    "stars twinkle by single pixels beside a crescent moon",
+    "a faint CRT scanline over everything"
+  ]
+}

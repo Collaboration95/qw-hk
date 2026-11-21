@@ -1,0 +1,41 @@
+{
+  "title": "Orbit",
+  "kind": "scene",
+  "mood": [
+    "vast",
+    "quiet",
+    "awe",
+    "global"
+  ],
+  "suits": "planetary or networked products: climate, logistics, satellites and data, global payments, connectivity. Tod 0.5 is the hero frame for a vision slide. Not for intimate or playful products.",
+  "tech": "canvas",
+  "tods": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "params": {
+    "data-tod": "0…1, where the sun is: 0 the day side (sun glint on the oceans), 0.5 the terminator crossing the view with a sunset band on the limb, 1 the night side (city lights, airglow, aurora)",
+    "data-seed": "integer; another planet (continents, clouds, cities). Keep one seed across a deck",
+    "data-print-t": "clock time of the still frame for print (default 40)",
+    "--brand / --brand-2 on the section": "optional: the aurora's rays take --brand, their tops --brand-2 (default green and magenta)"
+  },
+  "details": [
+    "the ground drifts slowly toward the horizon, as it does under a real orbit; clouds and coastlines slide under the limb",
+    "the terminator moves with tod; along it the ground warms to rose and the limb turns orange, then red, where the sunset is",
+    "on the night side, city lights cluster along the coasts and stay hidden under thick cloud",
+    "a thin green airglow line floats just above the limb on the night side, with a dark gap under it, as in ISS photos",
+    "the sun glints on the oceans on the day side; the glint skips over land and cloud",
+    "lightning flickers inside night-side storms: two quick strokes, then a fade",
+    "an aurora sliver stands on the limb toward the pole at night: soft green rays that fold and travel, magenta at the tops",
+    "a meteor burns up below you once a minute, a short green streak inside the atmosphere, not across the stars",
+    "five satellites cross on different inclinations; one carries a faint imaging swath behind it",
+    "one satellite flares once mid-pass (an antenna catching the sun), then fades back to a point",
+    "a spent rocket stage tumbles, so its light pulses as it crosses",
+    "at night the satellites slide into Earth's shadow and go out mid-sky",
+    "the station drifts across the right third; a solar panel glints every 11 s and its red and green nav lights blink",
+    "on the night side the station is in Earth's shadow: a dark silhouette with only its nav lights",
+    "fewer stars by day (the bright Earth stops the exposure down), the full field and a faint Milky Way with a dust lane by night",
+    "space is deep indigo and violet with faint nebula tints, never black; film grain over everything"
+  ]
+}

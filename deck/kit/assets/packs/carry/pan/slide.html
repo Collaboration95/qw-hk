@@ -1,0 +1,20 @@
+<!-- pan demo 1 of 3 (also the item's slide.html) · first light at the start of the road (stop x = 0). On a fresh load
+     the camera glides in from the left. The bundled scene (Pack.pan.country) is used because no slide declared one;
+     a deck declares its own with Pack.pan.scene({...}) before Deck.start (see the README). -->
+<section class="slide" id="s__N__" aria-label="Leave at first light">
+  <h2>Leave at first light.</h2>
+  <p class="cy-pan-sub">__WORD__ plans the whole road before you start.</p>
+  <aside class="notes"><b>Say</b>Every trip starts with a plan. __WORD__ makes it before you leave.</aside>
+</section>
+
+<style>
+/* brand params: the panorama's whole palette derives from the FIRST stop's --field / --brand / --brand-2 (delete
+   these to inherit the deck's); the text ink is re-picked from this stop's own sky as --ink-auto */
+#s__N__{--field:linear-gradient(180deg,#2B3F8F,#6E5BA6);--brand:var(--deck-brand,#FF9F7A);--brand-2:var(--deck-brand-2,#FFD27A)}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-pan-sub{position:relative;margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.9}
+</style>
+
+<script>
+Pack.pan.stop('s__N__', { x: 0 })
+</script>

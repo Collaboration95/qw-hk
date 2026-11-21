@@ -1,0 +1,40 @@
+{
+  "title": "Rubber stamp",
+  "kind": "reveal",
+  "mood": [
+    "official",
+    "tactile",
+    "paperwork",
+    "warm"
+  ],
+  "suits": "compliance, legal, logistics, customs, government, approvals: anything with forms, sign-off and a paper trail",
+  "tech": "svg+js",
+  "duration": 2.0,
+  "params": {
+    "--field": "the paper (manila by default; any colour or gradient)",
+    "--brand": "the ink, used if it reads on the field (3.2:1)",
+    "--brand-2": "fallback ink; if neither reads, the engine's readable ink tinted toward the brand",
+    "--stamp-wood / --stamp-rail": "the beech block and the walnut rail",
+    "--stamp-fs": "wordmark size (long names shrink the die to fit 1560 px)",
+    "--stamp-case": "uppercase by default; none keeps the brand's own casing",
+    "--stamp-tilt": "how far off square the hand put it (-1.6deg)",
+    "__MARK__": "stroke paths in a 24 x 24 box, inked as thick round strokes; the block label copies it"
+  },
+  "details": [
+    "the block falls with gravity (accelerating) and turns from 8.5° to its final 1.6° as it is placed",
+    "two shadows: a soft one that trails far off while the block is high, a crisp contact shadow that appears only as it lands",
+    "the whole field nudges 1 px down on impact and recoils 0.4 px",
+    "the rubber squashes on contact (wider, shorter) and springs back a beat before the block leaves the paper",
+    "the hand rocks the block a hair while pressing, so the right side of the impression inks lighter",
+    "the index label on top of the block carries a tiny print of the impression, as real stamps do",
+    "ink pools at the edges of every glyph (darker rims, lighter mottled body)",
+    "rough, fibrous edges and starved pinholes from the paper texture",
+    "ink speckles thrown from the die edge, two larger splats at opposite corners",
+    "a faint broken ring where the block edge kissed the paper",
+    "the ink lands wet (darker) and dries matte over a second",
+    "the impression sits 1.6° off square, like a human hand put it there",
+    "manila fibre and slow blotches in the field; the block has real end-grain from noise",
+    "the wet ink is the dry ink pushed further from the paper (darker on light paper, brighter on dark paper)",
+    "the label's tiny print falls back to near-black when the ink would not read on the cream label"
+  ]
+}

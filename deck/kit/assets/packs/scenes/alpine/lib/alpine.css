@@ -1,0 +1,10 @@
+/* Pack scene "alpine" · drawn by lib/alpine.js into <div class="sc-alpine" data-tod="…">. The background is the
+   fallback field (and what shows for a frame before the script draws). */
+.sc-alpine{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict;
+  background:linear-gradient(180deg,#3B3A8C,#8E5E9E 40%,#F4A6A2 62%,#E6BDC6)}
+.sc-alpine .parallax{z-index:0}
+.sc-alpine-l{left:-40px;top:-30px;width:2000px;height:1140px}
+.sc-alpine-l>svg{position:absolute;left:0;top:0;width:2000px;height:1140px;display:block;overflow:visible}
+.sc-alpine-cv{position:absolute;display:block}
+.sc-alpine-grain{position:absolute;inset:0;background-size:256px 256px;mix-blend-mode:overlay;opacity:.1}
+html.print .sc-alpine .parallax>*{will-change:auto}

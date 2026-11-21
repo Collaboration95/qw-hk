@@ -1,0 +1,269 @@
+<!-- 0 · Intro reveal "fold": a self-healing cutting mat. The first press drops a folded square of two-sided paper onto
+     the mat (a blintz: all four corners tucked to the centre, coloured side out); its shadow tightens as it lands. Then
+     the corners open one after another, each turning toward the light and casting a shadow that softens as it lifts,
+     and the inside of the sheet shows __MARK__ printed on it. The corners never lie quite flat again and the four
+     creases stay. Then the wordmark opens out like an accordion, panel by panel, and a glint runs along a crease. ~2.3 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (the mat), --brand (the paper's coloured outside), --brand-2 (tints the pale inside) on #s__N__.
+     The print ink is --brand if it reads on the inside, else the engine's readable ink (Deck.inkOn). The name is
+     var(--ink-auto); mat lines are mixed from it. __MARK__ = stroke paths in a 24 x 24 box (use-pack --mark); it is
+     printed once on the sheet and copied onto each corner, so it is whole when they open. Long names shrink to fit.
+     Adapt: --rv-fs (name size), --rv-s (sheet size), --rv-y (the row's centre line). -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <svg class="rv-fold-mat" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <pattern id="rv-fold-g1-__N__" width="40" height="40" patternUnits="userSpaceOnUse"><path class="rv-fold-l1" d="M40 0H0V40"/></pattern>
+      <pattern id="rv-fold-g5-__N__" width="200" height="200" patternUnits="userSpaceOnUse"><path class="rv-fold-l2" d="M200 0H0V200"/></pattern>
+      <filter id="rv-fold-grain-__N__" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="12" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0"/>
+      </filter>
+      <radialGradient id="rv-fold-light-__N__" cx="34%" cy="30%" r="80%">
+        <stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/>
+      </radialGradient>
+    </defs>
+    <g transform="translate(-20 -20)"><rect width="1960" height="1120" fill="url(#rv-fold-g1-__N__)"/><rect width="1960" height="1120" fill="url(#rv-fold-g5-__N__)"/></g>
+    <path class="rv-fold-l2 rv-fold-dash" d="M-40 1120 L1160 -80"/>
+    <path class="rv-fold-l1 rv-fold-dash" d="M760 1120 L1960 -80"/>
+    <circle class="rv-fold-l2" cx="1720" cy="880" r="150"/>
+    <circle class="rv-fold-dot" cx="1720" cy="880" r="4"/>
+    <g class="rv-fold-ruler"></g>
+    <rect width="1920" height="1080" fill="url(#rv-fold-light-__N__)"/>
+    <rect class="rv-fold-grain" width="1920" height="1080" filter="url(#rv-fold-grain-__N__)"/>
+  </svg>
+  <div class="rv-fold-row" role="img" aria-label="__WORD__">
+    <div class="rv-fold-stage">
+      <div class="rv-fold-drop"></div>
+      <div class="rv-fold-paper">
+        <div class="rv-fold-base">
+          <!-- the printed mark: swap __MARK__ for the product's own stroke paths (24 x 24, pathLength="1") -->
+          <svg class="mark rv-fold-print" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+        </div>
+        <div class="rv-fold-cast" data-k="0"></div><div class="rv-fold-cast" data-k="1"></div><div class="rv-fold-cast" data-k="2"></div><div class="rv-fold-cast" data-k="3"></div>
+        <div class="rv-fold-flap" data-k="0"></div><div class="rv-fold-flap" data-k="1"></div><div class="rv-fold-flap" data-k="2"></div><div class="rv-fold-flap" data-k="3"></div>
+        <i class="rv-fold-crease" data-k="0"></i><i class="rv-fold-crease" data-k="1"></i><i class="rv-fold-crease" data-k="2"></i><i class="rv-fold-crease" data-k="3"></i>
+      </div>
+    </div>
+    <div class="rv-fold-word"><span class="rv-fold-spacer">__WORD__</span></div>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(160deg,#2447C6 0%,#1C389F 100%);    /* the cutting mat */
+  --brand:var(--deck-brand,#FF6A4B);                           /* the paper's coloured outside */
+  --brand-2:var(--deck-brand-2,#FFB48A);                       /* tints the pale inside */
+  --rv-fs:172px; --rv-s:236px;                                 /* wordmark size, sheet size (both shrink for long names) */
+  --rv-y:520px;
+  /* set by the script from the brand vars; first-paint fallbacks only */
+  --rv-out:var(--brand); --rv-in:color-mix(in oklab,var(--brand-2) 22%,#FBF7F0); --rv-print:var(--brand);
+  --rv-shadow:12,22,92;
+  --rv-line:color-mix(in srgb,var(--ink-auto,#fff) 13%,transparent); --rv-line-2:color-mix(in srgb,var(--ink-auto,#fff) 24%,transparent);
+  padding:0;background:var(--field)
+}
+#s__N__ .rv-fold-mat{position:absolute;inset:0;width:1920px;height:1080px;z-index:0;pointer-events:none}
+#s__N__ .rv-fold-l1,#s__N__ .rv-fold-l2{fill:none;stroke:var(--rv-line);stroke-width:1}
+#s__N__ .rv-fold-l2{stroke:var(--rv-line-2);stroke-width:1.5}
+#s__N__ .rv-fold-dash{stroke-dasharray:2 10}
+#s__N__ .rv-fold-dot,#s__N__ .rv-fold-ruler rect{fill:var(--rv-line-2)}
+#s__N__ .rv-fold-grain{mix-blend-mode:soft-light;opacity:.4}
+#s__N__ .rv-fold-row{position:absolute;left:0;right:0;z-index:1;top:calc(var(--rv-y) - var(--rv-s) / 2);height:var(--rv-s);display:flex;justify-content:center;align-items:center;gap:calc(var(--rv-fs) * .34)}
+#s__N__ .rv-fold-stage{position:relative;width:var(--rv-s);height:var(--rv-s);flex:none;perspective:900px;perspective-origin:50% 40%}
+#s__N__ .rv-fold-drop{position:absolute;inset:0;background:rgba(var(--rv-shadow),.5);filter:blur(12px);transform:translate(10px,16px);will-change:transform,filter,clip-path}
+#s__N__ .rv-fold-paper{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+#s__N__ .rv-fold-paper>*{position:absolute;inset:0}
+/* the inside: the diamond that the four corners fold onto */
+#s__N__ .rv-fold-base{background:linear-gradient(135deg,color-mix(in oklab,var(--rv-in) 92%,#fff),var(--rv-in) 50%,color-mix(in oklab,var(--rv-in) 93%,#000));
+  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+#s__N__ .rv-fold-print{position:absolute;left:21%;top:21%;width:58%;height:58%;overflow:visible;color:var(--rv-print)}
+#s__N__ .rv-fold-print>*{fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-fold-flap{backface-visibility:visible;will-change:transform,filter}
+#s__N__ .rv-fold-flap[data-k="0"]{clip-path:polygon(0 0,50% 0,0 50%);transform-origin:25% 25%}
+#s__N__ .rv-fold-flap[data-k="1"]{clip-path:polygon(100% 0,100% 50%,50% 0);transform-origin:75% 25%}
+#s__N__ .rv-fold-flap[data-k="2"]{clip-path:polygon(100% 100%,50% 100%,100% 50%);transform-origin:75% 75%}
+#s__N__ .rv-fold-flap[data-k="3"]{clip-path:polygon(0 100%,0 50%,50% 100%);transform-origin:25% 75%}
+#s__N__ .rv-fold-cast{background:rgba(var(--rv-shadow),.55);filter:blur(4px);opacity:0}
+#s__N__ .rv-fold-cast[data-k="0"]{clip-path:polygon(48% -2%,52% 52%,-2% 48%)}
+#s__N__ .rv-fold-cast[data-k="1"]{clip-path:polygon(52% -2%,102% 48%,48% 52%)}
+#s__N__ .rv-fold-cast[data-k="2"]{clip-path:polygon(102% 52%,48% 48%,52% 102%)}
+#s__N__ .rv-fold-cast[data-k="3"]{clip-path:polygon(-2% 52%,52% 48%,48% 102%)}
+/* the creases stay in the paper: a dark valley with a bright lip, and the glint runs along one of them */
+#s__N__ .rv-fold-crease{display:block;height:2px;inset:auto;width:calc(var(--rv-s) * .7071);opacity:0;transform-origin:0 0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95) var(--g,-30%),transparent calc(var(--g,-30%) + 16%)),
+    linear-gradient(180deg,rgba(var(--rv-shadow),.32) 50%,rgba(255,255,255,.4) 50%)}
+#s__N__ .rv-fold-crease[data-k="0"]{left:0;top:50%;transform:translateY(-1px) rotate(-45deg) translateZ(1.5px)}
+#s__N__ .rv-fold-crease[data-k="1"]{left:50%;top:0;transform:translateY(-1px) rotate(45deg) translateZ(1.5px)}
+#s__N__ .rv-fold-crease[data-k="2"]{left:100%;top:50%;transform:translateY(-1px) rotate(135deg) translateZ(1.5px)}
+#s__N__ .rv-fold-crease[data-k="3"]{left:50%;top:100%;transform:translateY(-1px) rotate(-135deg) translateZ(1.5px)}
+#s__N__ .rv-fold-word{position:relative;font-size:var(--rv-fs);font-weight:760;letter-spacing:-.045em;line-height:1.1;color:var(--ink-auto,#FBF7F0);white-space:nowrap;perspective:1100px;perspective-origin:0 50%}
+#s__N__ .rv-fold-spacer{display:block;filter:drop-shadow(0 .05em .05em rgba(var(--rv-shadow),.35))}
+#s__N__ .rv-fold-panel{position:absolute;top:0;height:100%;overflow:hidden;transform-origin:0 50%;will-change:transform,filter}
+#s__N__ .rv-fold-panel span{position:absolute;top:0;display:block;filter:drop-shadow(0 .05em .05em rgba(var(--rv-shadow),.35))}
+/* filtered and blended layers paint through visibility:hidden in Chrome: keep them transparent off-slide */
+@media screen{html:not(.print) #s__N__:not(.active) .rv-fold-mat,html:not(.print) #s__N__:not(.active) .rv-fold-row{opacity:0!important}}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s), $$ = s => [...el.querySelectorAll(s)]
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const P = (t, t0, d) => clamp((t - t0) / d)
+const E = {
+  cubicInOut: p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2,
+  cubicOut: p => 1 - Math.pow(1 - p, 3),
+  sineOut: p => Math.sin(p * Math.PI / 2),
+  backOut: (p, s = 1.4) => 1 + (s + 1) * Math.pow(p - 1, 3) + s * Math.pow(p - 1, 2),
+}
+const spring = (s, k = 220, c = 20) => { if (s <= 0) return 0; const w0 = Math.sqrt(k), z = c / (2 * w0), wd = w0 * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w0 * s) * (Math.cos(wd * s) + (z * w0 / wd) * Math.sin(wd * s)) }
+const css = n => getComputedStyle(el).getPropertyValue(n).trim()
+
+/* ---------- brand: the paper and its print come from --field, --brand, --brand-2; ink follows the engine's rule ---------- */
+const C2 = document.createElement('canvas').getContext('2d')
+const rgb = s => { C2.fillStyle = '#010203'; C2.fillStyle = String(s || '').trim() || '#010203'; const v = C2.fillStyle; if (v[0] === '#') return [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0] }
+const stops = s => (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl|oklch|oklab|lab|lch)a?\([^()]*\)/gi) || [s]).map(rgb)
+const hex = c => '#' + c.map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
+const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+const lum = ([r, g, b]) => { const f = c => (c /= 255) <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) }
+const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+const brandUp = () => {
+  const fieldCss = css('--field'), FST = stops(fieldCss), FAVG = FST.reduce((a, c) => a.map((v, i) => v + c[i] / FST.length), [0, 0, 0])
+  const INK = rgb(css('--ink-auto') || Deck.inkOn(hex(FAVG)) || '#fff'), BR = rgb(css('--brand')), BR2 = rgb(css('--brand-2'))
+  const PAPER = [251, 247, 240]
+  // the coloured outside must stand off the mat; a brand that matches it is pushed toward the readable ink
+  let OUT = BR; for (let k = 0; cr(OUT, FAVG) < 1.35 && k < 1; k += .1) OUT = mix(BR, INK, k)
+  // the inside: pale paper tinted by --brand-2, unless the mat is pale too; then the brand's deeper side
+  const IN = [mix(PAPER, BR2, .2), mix(BR2, [0, 0, 0], .12), mix(BR, INK, .55)].find(c => cr(c, FAVG) >= 1.35 && cr(c, OUT) >= 1.25) || mix(PAPER, BR2, .2)
+  const PRINT = [BR, mix(BR, [0, 0, 0], .35), BR2].find(c => cr(c, IN) >= 3) || rgb(Deck.inkOn(hex(IN)) || '#14161E')
+  const SH = mix(FAVG, [0, 0, 0], .78)
+  el.style.setProperty('--rv-out', hex(OUT)); el.style.setProperty('--rv-in', hex(IN)); el.style.setProperty('--rv-print', hex(PRINT))
+  el.style.setProperty('--rv-shadow', SH.map(Math.round).join(','))
+}
+brandUp()
+
+// a ruler along the mat's bottom edge
+const ruler = $('.rv-fold-ruler')
+for (let x = 40, k = 0; x < 1900; x += 20, k++) mk('rect', { x, y: 1080 - (k % 10 === 0 ? 30 : k % 5 === 0 ? 20 : 11), width: 1.5, height: 40 }, ruler)
+
+const paper = $('.rv-fold-paper'), drop = $('.rv-fold-drop'), print = $('.rv-fold-print')
+const flaps = $$('.rv-fold-flap'), casts = $$('.rv-fold-cast'), creases = $$('.rv-fold-crease')
+// each corner carries its own part of the print (clipped by its triangle), so the mark is whole once they open
+const prints = flaps.map(f => f.appendChild(print.cloneNode(true)))
+const wordBox = $('.rv-fold-word'), spacer = $('.rv-fold-spacer'), text = spacer.textContent
+
+/* ---------- fit: long names shrink the whole row to 1600 px ---------- */
+const FS0 = parseFloat(css('--rv-fs')) || 172, S0 = parseFloat(css('--rv-s')) || 236
+const fit = () => {
+  el.style.setProperty('--rv-fs', FS0 + 'px'); el.style.setProperty('--rv-s', S0 + 'px')
+  const w = S0 + FS0 * .34 + spacer.offsetWidth
+  if (w > 1600) { const k = 1600 / w; el.style.setProperty('--rv-fs', (FS0 * k).toFixed(1) + 'px'); el.style.setProperty('--rv-s', (S0 * Math.max(.62, k)).toFixed(1) + 'px') }
+}
+
+/* ---------- the word as an accordion: N panels that share one zig-zag ---------- */
+let panels = [], pw = 0
+const build = () => {
+  panels.forEach(p => p.remove()); panels = []
+  const W = spacer.offsetWidth, n = W > 700 ? 5 : W > 420 ? 4 : 3
+  pw = W / n
+  for (let i = 0; i < n; i++) {
+    const p = document.createElement('div'); p.className = 'rv-fold-panel'
+    p.style.left = (i * pw) + 'px'; p.style.width = (pw + 1) + 'px'
+    const s = document.createElement('span'); s.textContent = text; s.style.left = (-i * pw) + 'px'
+    p.appendChild(s); wordBox.appendChild(p); panels.push(p)
+  }
+}
+
+/* ---------- light: from the top left, a little toward the viewer ---------- */
+const Lt = (() => { const v = [-.42, -.5, .76], m = Math.hypot(...v); return v.map(x => x / m) })()
+// corner direction from the crease, the rotation axis and its sign for each flap (TL, TR, BR, BL)
+const DIR = [[-1, -1], [1, -1], [1, 1], [-1, 1]], AX = ['1,-1,0', '1,1,0', '1,-1,0', '1,1,0'], SG = [-1, -1, 1, 1], GA = [135, 225, 315, 45]
+const flapLook = (k, th) => {
+  const f = flaps[k], s = Math.sin(th), c = Math.cos(th)
+  // normal of a flap turned th about its crease; which side faces us decides the colour (and whether the print shows)
+  const n = [-DIR[k][0] * s / Math.SQRT2, -DIR[k][1] * s / Math.SQRT2, c]
+  const inside = n[2] >= 0, nn = inside ? n : n.map(x => -x)
+  const lit = clamp(.62 + .5 * (nn[0] * Lt[0] + nn[1] * Lt[1] + nn[2] * Lt[2]), .5, 1.12)
+  f.style.background = inside
+    ? `linear-gradient(135deg,color-mix(in oklab,var(--rv-in) 92%,#fff),var(--rv-in) 50%,color-mix(in oklab,var(--rv-in) 93%,#000))`
+    : `linear-gradient(${GA[k]}deg,color-mix(in oklab,var(--rv-out) 86%,#fff),var(--rv-out) 60%,color-mix(in oklab,var(--rv-out) 88%,#000))`
+  f.style.filter = `brightness(${lit.toFixed(3)})`
+  prints[k].style.visibility = inside ? 'visible' : 'hidden'
+}
+
+// timeline (s): the sheet lands, the four corners open in turn, each settling a few degrees off flat; then the word
+const DROP = .34, OPEN0 = .34, GAP = .15, OPEN = .46, REST = [7, 4, 9, 5], ACC = [1.02, .84], GLINT = [1.84, .42], END = 2.3
+const pose = t => {
+  const hidden = t < 0, done = t >= END
+  paper.style.visibility = drop.style.visibility = hidden ? 'hidden' : 'visible'
+  // the folded sheet drops onto the mat on a cushion of air: tilt and height spring out, a small slide, the shadow tightens
+  const d = done ? 1 : spring(t, 240, 24), dp = done ? 1 : E.cubicOut(P(t, 0, DROP))
+  paper.style.transform = `translate3d(${(10 * (1 - dp)).toFixed(2)}px,${(-30 * (1 - d)).toFixed(2)}px,${(260 * (1 - d)).toFixed(1)}px) rotateX(${(16 * (1 - d)).toFixed(2)}deg) rotateZ(${(-12 * (1 - d)).toFixed(2)}deg)`
+  paper.style.opacity = done ? 1 : P(t, 0, .08)
+  // flap angles: 180 = folded in, 0 = flat; each overshoots open and springs back to a few degrees of lift
+  const ths = REST.map((rest, k) => {
+    if (hidden) return 180
+    if (done) return rest
+    const t0 = OPEN0 + GAP * k, p = P(t, t0, OPEN)
+    return p < 1 ? 180 - (180 + 3) * E.cubicInOut(p) : -3 + (rest + 3) * E.cubicOut(P(t, t0 + OPEN, .28))
+  })
+  ths.forEach((th, k) => {
+    flaps[k].style.transform = `translateZ(${(.4 + .3 * k).toFixed(1)}px) rotate3d(${AX[k]},${(SG[k] * th).toFixed(2)}deg)`
+    flapLook(k, th * Math.PI / 180)
+    // its shadow on the sheet: sharp while folded, softer and fainter as it lifts away
+    const close = clamp((th - 70) / 110)
+    casts[k].style.opacity = (close * .55).toFixed(3)
+    casts[k].style.filter = `blur(${(10 - 8 * close).toFixed(1)}px)`
+    // the crease appears once the corner has opened past upright
+    creases[k].style.opacity = (hidden ? 0 : clamp((90 - th) / 60) * .9).toFixed(3)
+  })
+  // the sheet's shadow on the mat grows its corners back as they open
+  const c = ths.map(th => E.cubicInOut(clamp(th / 120)) * 50)
+  drop.style.clipPath = `polygon(${c[0]}% 0,${100 - c[1]}% 0,100% ${c[1]}%,100% ${100 - c[2]}%,${100 - c[2]}% 100%,${c[3]}% 100%,0 ${100 - c[3]}%,0 ${c[0]}%)`
+  drop.style.transform = `translate(${(10 + 40 * (1 - d)).toFixed(1)}px,${(16 + 56 * (1 - d)).toFixed(1)}px) scale(${(1 + .14 * (1 - d)).toFixed(3)})`
+  drop.style.filter = `blur(${(12 + 26 * (1 - d)).toFixed(1)}px)`
+  drop.style.opacity = (done ? .62 : .62 * (1 - .65 * (1 - d))).toFixed(3)
+  // a glint runs along the last crease
+  const gp = done ? 1 : P(t, GLINT[0], GLINT[1])
+  creases[2].style.setProperty('--g', `${(-30 + 150 * E.cubicInOut(gp)).toFixed(1)}%`)
+  // the word: an accordion that opens to the right; even panels face away (darker), odd ones toward the light
+  if (hidden || done || !panels.length) {
+    spacer.style.visibility = hidden ? 'hidden' : 'visible'
+    panels.forEach(p => p.style.visibility = 'hidden')
+    return
+  }
+  const ap = P(t, ACC[0], ACC[1])
+  const a = (90 * (1 - E.backOut(E.sineOut(ap), .9))) * Math.PI / 180, sa = Math.sin(a), ca = Math.cos(a)
+  spacer.style.visibility = 'hidden'
+  panels.forEach((p, i) => {
+    if (ap <= 0 || Math.abs(a) > 1.53) { p.style.visibility = 'hidden'; return }
+    p.style.visibility = 'visible'
+    const dx = i * pw * (ca - 1)
+    p.style.transform = i % 2 === 0
+      ? `translateX(${dx.toFixed(2)}px) rotateY(${(a * 57.2958).toFixed(2)}deg)`
+      : `translateX(${dx.toFixed(2)}px) translateZ(${(-pw * sa).toFixed(2)}px) rotateY(${(-a * 57.2958).toFixed(2)}deg)`
+    p.style.filter = `brightness(${(i % 2 === 0 ? 1 - .3 * Math.abs(sa) : 1 + .04 * Math.abs(sa)).toFixed(3)})`
+  })
+}
+
+let raf = 0, played = false, mode0 = 'empty'
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'; mode0 = mode
+  fit()
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  build()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+fit(); pose(-1)
+document.fonts?.ready.then(() => { if (mode0 !== 'play') show(mode0) })
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

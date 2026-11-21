@@ -1,0 +1,148 @@
+<!-- 0 · Intro reveal "surface": a tiled pool wall with the waterline across it. The first press sends a ring of caustic
+     light across the tiles, then __WORD__ rises from under the water through the surface: under water it is refracted
+     (bent by moving noise, shifted, squashed, tinted), in the air it is crisp, rings spread where it breaks through and
+     drops fall back; a last wobble settles. ~2.25 s. ← from slide 1 keeps it up; 0 shows the calm pool again.
+     Reduced motion and print: the word at rest. Brand: --field (dry wall), --brand (water), --brand-2 (deep water). -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <div class="rv-surface-pool" aria-hidden="true">
+    <div class="rv-surface-air"><i class="rv-surface-refl"></i></div>
+    <div class="rv-surface-water"><div class="rv-surface-caus"><i></i><i></i><i></i></div></div>
+    <div class="rv-surface-line"></div>
+  </div>
+  <svg class="rv-surface-defs" width="0" height="0" aria-hidden="true">
+    <filter id="rv-surface-up-__N__" x="-5%" y="-30%" width="110%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency=".006 .04" numOctaves="2" seed="4" result="n"/>
+      <feOffset in="n" dx="0" result="m"/>
+      <feDisplacementMap in="SourceGraphic" in2="m" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rv-surface-dn-__N__" x="-5%" y="-30%" width="110%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency=".008 .03" numOctaves="2" seed="9" result="n"/>
+      <feOffset in="n" dx="0" result="m"/>
+      <feDisplacementMap in="SourceGraphic" in2="m" scale="38" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+  <div class="rv-surface-ring"><i></i><i></i></div>
+  <div class="rv-surface-t">
+    <h1 class="rv-surface-dn" aria-hidden="true">__WORD__</h1>
+    <h1 class="rv-surface-up">__WORD__</h1>
+  </div>
+  <div class="rv-surface-rings"><i></i><i></i><i></i></div>
+  <div class="rv-surface-drops"><i style="--x:-.36"></i><i style="--x:-.12"></i><i style="--x:.05"></i><i style="--x:.25"></i><i style="--x:.4"></i></div>
+</section>
+
+<style>
+#s__N__{
+  --field:#8EE0DC;
+  --brand:var(--deck-brand,#46CDCF);
+  --brand-2:var(--deck-brand-2,#1C8F9E);
+  --rv-wl:610px; --rv-fs:150px;
+  padding:0}
+#s__N__ .rv-surface-pool{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;--tiles:repeating-linear-gradient(90deg,rgba(0,42,51,.13) 0 3px,transparent 3px 60px),repeating-linear-gradient(180deg,rgba(0,42,51,.13) 0 3px,transparent 3px 60px)}
+#s__N__ .rv-surface-air{position:absolute;left:0;right:0;top:0;height:var(--rv-wl);overflow:hidden;background:var(--tiles),linear-gradient(180deg,color-mix(in oklab,var(--field) 92%,#fff),var(--field))}
+#s__N__ .rv-surface-water{position:absolute;left:0;right:0;top:var(--rv-wl);bottom:0;overflow:hidden;background:var(--tiles),linear-gradient(180deg,var(--brand),var(--brand-2))}
+#s__N__ .rv-surface-caus{position:absolute;inset:0;mix-blend-mode:screen;opacity:var(--rv-cau,.6);isolation:isolate}
+#s__N__ .rv-surface-caus i,#s__N__ .rv-surface-refl{position:absolute;left:-600px;top:-600px;width:3200px;height:2400px;background:#000 var(--rv-caustic) 0 0/560px 560px;filter:blur(.6px)}
+#s__N__ .rv-surface-caus i:nth-child(1){animation:amb-rv-surface-a 48s linear infinite}
+#s__N__ .rv-surface-caus i:nth-child(2){background-size:690px 690px;mix-blend-mode:darken;transform:rotate(9deg);animation:amb-rv-surface-b 61s linear infinite}
+#s__N__ .rv-surface-caus i:nth-child(3){background-size:620px 620px;opacity:.38;filter:blur(7px);animation:amb-rv-surface-c 73s linear infinite}
+#s__N__ .rv-surface-refl{top:auto;bottom:-600px;background-size:900px 420px;filter:blur(5px);mix-blend-mode:screen;opacity:.5;
+  -webkit-mask:linear-gradient(0deg,#000 600px,transparent 1100px);mask:linear-gradient(0deg,#000 600px,transparent 1100px);animation:amb-rv-surface-r 39s linear infinite}
+@keyframes amb-rv-surface-a{to{transform:translate(560px,-560px)}}
+@keyframes amb-rv-surface-b{from{transform:rotate(9deg) translate(0,0)}to{transform:rotate(9deg) translate(-690px,-690px)}}
+@keyframes amb-rv-surface-c{to{transform:translate(-620px,620px)}}
+@keyframes amb-rv-surface-r{to{transform:translateX(-900px)}}
+#s__N__ .rv-surface-line{position:absolute;left:-40px;right:-520px;top:calc(var(--rv-wl) - 10px);height:28px;animation:amb-rv-surface-w 9s linear infinite;
+  background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='28'%3E%3Cpath d='M0 12C60 6 120 6 180 12S300 19 360 12 440 7 480 12V28H0Z' fill='%23fff' fill-opacity='.18'/%3E%3Cpath d='M0 12C60 6 120 6 180 12S300 19 360 12 440 7 480 12' fill='none' stroke='%23fff' stroke-opacity='.85' stroke-width='2.5'/%3E%3C/svg%3E") 0 0/480px 28px repeat-x}
+@keyframes amb-rv-surface-w{to{transform:translateX(-480px)}}
+#s__N__ .rv-surface-defs{position:absolute}
+#s__N__ .rv-surface-t{position:absolute;left:0;right:0;top:calc(var(--rv-wl) - 130px - var(--rv-fs));height:calc(var(--rv-fs) * 1.15)}
+#s__N__ h1{position:absolute;left:50%;top:0;width:1700px;margin-left:-850px;text-align:center;white-space:nowrap;font-size:var(--rv-fs);line-height:1.1;letter-spacing:-.03em;color:var(--ink-auto)}
+#s__N__ .rv-surface-up{filter:url(#rv-surface-up-__N__)}
+#s__N__ .rv-surface-dn{filter:url(#rv-surface-dn-__N__) blur(.8px);color:color-mix(in oklab,var(--ink-auto) 45%,var(--brand-2));opacity:.85;visibility:hidden}
+#s__N__ .rv-surface-ring{position:absolute;left:960px;top:calc(var(--rv-wl) + 210px);mix-blend-mode:screen}
+#s__N__ .rv-surface-ring i{position:absolute;left:-200px;top:-90px;width:400px;height:180px;border-radius:50%;opacity:0;box-shadow:0 0 0 16px rgba(225,255,250,.42),0 0 50px 30px rgba(225,255,250,.22);filter:blur(5px)}
+#s__N__ .rv-surface-rings{position:absolute;left:960px;top:var(--rv-wl)}
+#s__N__ .rv-surface-rings i{position:absolute;left:-150px;top:-14px;width:300px;height:28px;border-radius:50%;border:3px solid rgba(255,255,255,.85);opacity:0}
+#s__N__ .rv-surface-drops{position:absolute;left:960px;top:var(--rv-wl)}
+#s__N__ .rv-surface-drops i{position:absolute;left:calc(var(--x) * var(--rv-w,1200px));top:0;width:9px;height:13px;margin-left:-4px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 40% 35%,#fff 0 25%,rgba(220,250,250,.7) 45%,rgba(120,210,215,.6));opacity:0}
+#s__N__.rv-surface-play .rv-surface-ring i{animation:rv-surface-ring 1.05s cubic-bezier(.2,.6,.3,1) both}
+#s__N__.rv-surface-play .rv-surface-ring i+i{animation-delay:.22s}
+@keyframes rv-surface-ring{0%{opacity:0;transform:scale(.15)}15%{opacity:1}100%{opacity:0;transform:scale(5.2)}}
+#s__N__.rv-surface-play .rv-surface-rings i{animation:rv-surface-rings 1s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(1s + var(--k,0) * .16s)}
+#s__N__.rv-surface-play .rv-surface-rings i:nth-child(2){--k:1}#s__N__.rv-surface-play .rv-surface-rings i:nth-child(3){--k:2}
+@keyframes rv-surface-rings{0%{opacity:0;transform:scale(1.2,.8)}12%{opacity:.9}100%{opacity:0;transform:scale(5.6,2.2)}}
+#s__N__.rv-surface-play .rv-surface-drops i{animation:rv-surface-drop .42s cubic-bezier(.5,0,1,.6) both;animation-delay:calc(1.42s + var(--j,0) * .07s)}
+#s__N__.rv-surface-play .rv-surface-drops i:nth-child(2){--j:2}#s__N__.rv-surface-play .rv-surface-drops i:nth-child(3){--j:1}#s__N__.rv-surface-play .rv-surface-drops i:nth-child(4){--j:3}#s__N__.rv-surface-play .rv-surface-drops i:nth-child(5){--j:1.5}
+@keyframes rv-surface-drop{0%{opacity:0;transform:translateY(-136px)}10%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translateY(-4px)}}
+html.print #s__N__ .rv-surface-pool *{animation:none!important}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const $ = s => el.querySelector(s)
+const up = $('.rv-surface-up'), dn = $('.rv-surface-dn'), box = $('.rv-surface-t')
+const fu = el.querySelector('#rv-surface-up-__N__ feDisplacementMap'), ou = el.querySelector('#rv-surface-up-__N__ feOffset'), od = el.querySelector('#rv-surface-dn-__N__ feOffset')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+// the caustic texture: edges of a tileable Voronoi field, white on black, drawn once per page
+if (!window.__rvSurfaceCaustic) {
+  const N = 320, C = 5, R = rng(21), c = document.createElement('canvas'); c.width = c.height = N
+  const g = c.getContext('2d'), img = g.createImageData(N, N), d = img.data, jx = [], jy = []
+  for (let k = 0; k < C * C; k++) { jx.push(.12 + .76 * R()); jy.push(.12 + .76 * R()) }
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const u = x / N * C, v = y / N * C, ci = Math.floor(u), cj = Math.floor(v); let f1 = 9, f2 = 9
+    for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) {
+      const I = ci + di, J = cj + dj, k = ((J % C + C) % C) * C + ((I % C + C) % C), dx = I + jx[k] - u, dy = J + jy[k] - v, dd = Math.sqrt(dx * dx + dy * dy)
+      if (dd < f1) { f2 = f1; f1 = dd } else if (dd < f2) f2 = dd
+    }
+    const e = f2 - f1, b = Math.pow(Math.max(0, 1 - e / .2), 2.4) * .95 + Math.pow(Math.max(0, 1 - e / .5), 2) * .12, o = (y * N + x) * 4, val = Math.min(255, b * 255)
+    d[o] = d[o + 1] = d[o + 2] = val; d[o + 3] = 255
+  }
+  g.putImageData(img, 0, 0); window.__rvSurfaceCaustic = `url("${c.toDataURL('image/png')}")`
+}
+el.style.setProperty('--rv-caustic', window.__rvSurfaceCaustic)
+// long names shrink to fit
+let FS = 150, WL = 610
+const layout = () => {
+  el.style.removeProperty('--rv-fs')
+  const cs = getComputedStyle(el); FS = parseFloat(cs.getPropertyValue('--rv-fs')) || 150; WL = parseFloat(cs.getPropertyValue('--rv-wl')) || 610
+  const w = up.scrollWidth; if (w > 1600) { FS = FS * 1600 / w; el.style.setProperty('--rv-fs', FS.toFixed(1) + 'px') }
+  el.style.setProperty('--rv-w', Math.min(1600, w) + 'px')
+}
+layout(); document.fonts?.ready.then(layout)
+const END = 2.25, START = 470
+const rise = t => { const p = clamp((t - .42) / 1.25), e = 1 - Math.pow(1 - p, 3); return START * (1 - e) - Math.sin(p * Math.PI * 1.6) * 14 * (1 - p) * (p > .55 ? 1 : 0) }
+let raf = 0, played = false
+const pose = t => {
+  if (t < 0) { box.style.visibility = 'hidden'; return }
+  box.style.visibility = 'visible'
+  const H = FS * 1.15, REST = WL - 130 - FS, dy = t >= END ? 0 : rise(t), cut = WL - (REST + dy)
+  box.style.transform = `translateY(${dy.toFixed(1)}px)`
+  up.style.clipPath = `inset(0 0 ${clamp(H - cut, 0, H + 40).toFixed(1)}px 0)`
+  dn.style.clipPath = `inset(${clamp(cut, -40, H + 40).toFixed(1)}px 0 0 0)`
+  dn.style.visibility = cut < H + 20 ? 'visible' : 'hidden'
+  dn.style.transform = `translateX(${(10 * Math.sin(t * 5)).toFixed(1)}px) scaleY(.94)`
+  fu.setAttribute('scale', (t >= END ? 0 : 16 * Math.exp(-clamp(t - 1.1, 0, 9) / .35) * (cut > 0 ? 1 : 0)).toFixed(2))
+  ou.setAttribute('dx', (t * 90).toFixed(1)); od.setAttribute('dx', (t * 140).toFixed(1))
+}
+const show = mode => {
+  cancelAnimationFrame(raf); el.classList.remove('rv-surface-play'); played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  layout(); void el.offsetWidth; el.classList.add('rv-surface-play')
+  const t0 = performance.now()
+  const tick = () => {
+    const t = (performance.now() - t0) / 1000
+    pose(t); el.style.setProperty('--rv-cau', (.6 + .38 * Math.exp(-Math.pow((t - .45) / .32, 2))).toFixed(3))
+    if (t < END) raf = requestAnimationFrame(tick); else { pose(END); el.style.removeProperty('--rv-cau') }
+  }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

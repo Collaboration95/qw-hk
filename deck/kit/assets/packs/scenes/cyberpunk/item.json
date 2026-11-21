@@ -1,0 +1,36 @@
+{
+  "title": "Neon rain",
+  "kind": "scene",
+  "mood": ["night", "neon", "rain", "electric", "dense"],
+  "suits": "developer tools, AI, security, gaming, crypto, nightlife and delivery products; pitches with an edge that want energy without darkness. Not for wellness, family or finance-trust decks.",
+  "tech": "svg+canvas+js",
+  "params": {
+    "data-tod": "0 dusk (coral smog, signs waking) · .5 night (magenta) · 1 three in the morning (teal smog, heaviest rain)",
+    "--brand": "on the section: the koi on the holo billboard",
+    "--brand-2": "on the section: the billboard's panel, ring and glow, and the rain that passes in front of it",
+    "--field (set by the scene)": "the violet sky behind the headline zone, so --ink-auto stays right"
+  },
+  "details": [
+    "neon signs are drawn as single-stroke glass tubes (glow, tube, white-hot core), not as type",
+    "the T in HOTEL buzzes out of step with the rest of the sign; the E and L below it shimmer in the puddle",
+    "the 24H sign blinks slowly, all three letters together, like a cheap timer",
+    "rain falls at two depths; near streaks pick up the colour of the sign they pass, far rain stays pale",
+    "rain shows bright only inside the street lamp's cone, the way it does on a real night",
+    "rain is thinner over the headline zone so the top-left stays calm",
+    "splash rings open and fade on the wet pavement; their count rises with the hour",
+    "flying cars on two sky lanes: red tail streaks going right, white heads coming left, the near lane bobbing slightly",
+    "one near-lane car is a patrol spinner with alternating red and blue lights",
+    "the holo billboard's koi swims back and forth, turning at each end; every 20 s the image tears into red and cyan slices with a scan bar for half a second",
+    "a monorail glides across the beam every 26 s with lit windows and passengers' heads",
+    "a delivery drone crosses low every 30 s with a parcel and a blinking light",
+    "aircraft warning lights on the megatowers blink each on its own beat",
+    "steam rises from a street vent and the noodle pot, tinted by whichever neon it drifts past",
+    "the noodle cook ladles, the customer on the stool bows to slurp now and then, the paper lantern sways",
+    "a cat sits on the glowing vending machine and flicks its tail every few seconds",
+    "two people under umbrellas, one of them a transparent umbrella with a glowing rim",
+    "a drop gathers under the overhead cable and falls every 4 s",
+    "towers keep one window colour each; some are lit in floor bands; pink light strips trace a few edges",
+    "puddles mirror the signs and the smog glow, rippled and broken; the rest of the pavement only shines faintly"
+  ],
+  "tods": [0.1, 0.5, 0.9]
+}

@@ -1,0 +1,20 @@
+<!-- traveller demo 1 of 3 (also the item's slide.html) · the paper plane rests high on the right, its shadow far below
+     on the dotted desk. On a fresh load (or from a slide without a spot) it flies in from off the left edge, leaving a
+     dotted trail that fades as it lands. -->
+<section class="slide" id="s__N__" aria-label="Write it once">
+  <h2>Write it once.</h2>
+  <p class="cy-tr-sub">__WORD__ sends it everywhere it needs to go.</p>
+  <aside class="notes"><b>Say</b>You write the update once. __WORD__ takes it from there.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the plane follows them either way) */
+#s__N__{--field:linear-gradient(180deg,#2E49D6,#3A3FCC);--brand:#FFFFFF;--brand-2:#FF7A8A}
+#s__N__{background:radial-gradient(color-mix(in oklab,var(--ink-auto,#fff) 10%,transparent) 1.6px,transparent 2.2px) 0 0/48px 48px,radial-gradient(1100px 700px at 76% 30%,color-mix(in oklab,var(--brand) 16%,transparent),transparent 70%),var(--field)}
+#s__N__ h2{color:var(--ink-auto,#fff)}
+#s__N__ .cy-tr-sub{margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.9}
+</style>
+
+<script>
+Pack.traveller.spot('s__N__', { x: 1440, y: 330, ground: 560, rot: -6 })
+</script>

@@ -1,0 +1,29 @@
+<!-- point-field demo 2 of 3 (also the item's slide.html) · the cloud pours into the product's lockup: the mark in the
+     brand colour, the name in the records' own category colours, so the name is visibly made of the same data; the
+     rest stay behind as faint dust. Any name fits (1 to 12+ characters, spaces, "&"; two lines when that reads
+     bigger). A band of light passes across it every 8 s. On a fresh load the points condense into it from their own
+     cloud, left to right. The mark: replace __MARK__ in <svg class="mark"> with the product's own stroke paths
+     (24 × 24 viewBox); PF.fig.text('__WORD__', …) instead of lockup() for the name alone. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <canvas class="cy-pf" aria-hidden="true"></canvas>
+  <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+  <p class="cy-pf-sub">Every dot is one team that ships with it.</p>
+  <aside class="notes"><b>Say</b>And every one of them now runs on __WORD__.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the points follow them either way) */
+#s__N__{--field:linear-gradient(180deg,#1B3366,#20295E);--brand:#FF8A4C;--brand-2:#7EF0B5}
+#s__N__{background:radial-gradient(1300px 700px at 50% 46%,color-mix(in oklab,var(--brand-2) 15%,transparent),transparent 70%),var(--field)}
+#s__N__ svg.mark{display:none}
+#s__N__ .cy-pf-sub{position:absolute;left:0;right:0;top:816px;text-align:center;font-size:44px;font-weight:600;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.88}
+</style>
+
+<script>
+const PF = Pack['point-field']
+const logo = PF.fig.lockup(document.querySelector('#s__N__ svg.mark'), `__WORD__`, { box: { x: 170, y: 250, w: 1580, h: 470 }, size: 400, count: 2200 })
+PF.slide('s__N__', {
+  place: PF.fill(logo, { c: (p, g) => g === 0 ? 1 : p.k, a: p => p.k === 0 ? .9 : 1, order: 'random', d: 'wave-x' }),
+  sweep: { every: 8, dur: 1.9, angle: 16, width: 140, gain: .9, phase: 2.5 },
+})
+</script>

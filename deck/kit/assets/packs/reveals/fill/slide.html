@@ -1,0 +1,212 @@
+<!-- 0 · Intro reveal "fill": the wordmark and the mark are glassware. The first press draws their outlines, glyph by glyph,
+     then liquid rises inside them from below: the surface tilts back and forth and two ripples cross it, decaying; a few
+     bubbles climb the strokes, wobble and pop at the surface with a tiny ring; it settles on one level line across mark
+     and word (lowercase full, tall letters keep their empty tops) with a meniscus highlight, then breathes. ~2.3 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (the field), --brand (the liquid), --brand-2 (its depth tint) on #s__N__. The outlines use the
+     engine's --ink-auto. __MARK__ = stroke paths in a 24 × 24 box (use-pack --mark): each stroke becomes a tube that
+     fills with the rest. Long names shrink to fit. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <svg class="rv-fill-art" viewBox="0 0 1920 1080" role="img" aria-label="__WORD__">
+    <defs>
+      <filter id="rv-fill-grain-__N__" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="5" stitchTiles="stitch"/>
+        <feColorMatrix values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1"/>
+      </filter>
+      <linearGradient id="rv-fill-liq-__N__" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1080" class="rv-fill-lg">
+        <stop offset="0" stop-color="var(--rv-liq-top)"/><stop offset="1" stop-color="var(--rv-liq-deep)"/>
+      </linearGradient>
+      <!-- the glass around the glyphs: their union grown by 3 px, minus the glyphs (no seams where contours overlap) -->
+      <filter id="rv-fill-ring-__N__" x="-2%" y="-30%" width="104%" height="160%" color-interpolation-filters="sRGB">
+        <feMorphology in="SourceGraphic" operator="dilate" radius="3" result="d"/>
+        <feComposite in="d" in2="SourceAlpha" operator="out"/>
+      </filter>
+      <radialGradient id="rv-fill-glow-__N__" cx="50%" cy="52%" r="46%"><stop offset="0" stop-color="var(--brand)" stop-opacity=".16"/><stop offset="1" stop-color="var(--brand)" stop-opacity="0"/></radialGradient>
+      <!-- where liquid may be: inside the glyphs and inside the mark's tubes -->
+      <mask id="rv-fill-in-__N__" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <text class="rv-fill-t rv-fill-in-t" fill="#fff">__WORD__</text>
+        <g class="rv-fill-mk rv-fill-in-mk"><svg class="mark" viewBox="0 0 24 24" width="24" height="24" overflow="visible">__MARK__</svg></g>
+      </mask>
+      <!-- the mark's glass: a stroke with its inside cut away -->
+      <mask id="rv-fill-tube-__N__" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <g class="rv-fill-mk rv-fill-tube-out"><svg viewBox="0 0 24 24" width="24" height="24" overflow="visible">__MARK__</svg></g>
+        <g class="rv-fill-mk rv-fill-tube-in"><svg viewBox="0 0 24 24" width="24" height="24" overflow="visible">__MARK__</svg></g>
+      </mask>
+    </defs>
+    <rect class="rv-fill-glow" width="1920" height="1080" fill="url(#rv-fill-glow-__N__)"/>
+    <g mask="url(#rv-fill-in-__N__)">
+      <path class="rv-fill-liquid" fill="url(#rv-fill-liq-__N__)"/>
+      <path class="rv-fill-sheen"/>
+      <path class="rv-fill-surface"/>
+      <g class="rv-fill-bubbles"></g>
+    </g>
+    <text class="rv-fill-t rv-fill-outline">__WORD__</text>
+    <text class="rv-fill-t rv-fill-ring" filter="url(#rv-fill-ring-__N__)">__WORD__</text>
+    <rect class="rv-fill-glass" width="1920" height="1080" mask="url(#rv-fill-tube-__N__)"/>
+    <g class="rv-fill-pops"></g>
+    <rect width="1920" height="1080" filter="url(#rv-fill-grain-__N__)" opacity=".06"/>
+  </svg>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(170deg,#2E1670 0%,#1A0B45 100%);
+  --brand:var(--deck-brand,#FFC244);                                /* the liquid */
+  --brand-2:var(--deck-brand-2,#FF6F4F);                              /* its depth tint */
+  --rv-fs:216px;                                  /* wordmark size (shrinks for long names) */
+  --rv-base:626px;                                /* baseline */
+  --rv-liq-top:color-mix(in oklab,var(--brand) 92%,#fff);
+  --rv-liq-deep:color-mix(in oklab,var(--brand) 62%,var(--brand-2));
+  padding:0
+}
+#s__N__ .rv-fill-art{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+#s__N__ .rv-fill-t{font-family:var(--f);font-size:var(--rv-fs);font-weight:780;letter-spacing:-.035em}
+#s__N__ .rv-fill-outline{fill:none;stroke:var(--ink-auto,#fff);stroke-width:3.2;stroke-linejoin:round}
+#s__N__ .rv-fill-glass{fill:var(--ink-auto,#fff)}
+#s__N__ .rv-fill-ring{fill:var(--ink-auto,#fff)}
+#s__N__ .rv-fill-mk path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-fill-in-mk path{stroke:#fff;stroke-width:var(--rv-tube-in)}
+#s__N__ .rv-fill-tube-out path{stroke:#fff;stroke-width:var(--rv-tube)}
+#s__N__ .rv-fill-tube-in path{stroke:#000;stroke-width:var(--rv-tube-in)}
+#s__N__ .rv-fill-surface{fill:none;stroke:color-mix(in oklab,var(--brand) 40%,#fff);stroke-width:4;stroke-linecap:round}
+#s__N__ .rv-fill-sheen{fill:color-mix(in oklab,var(--brand) 55%,#fff);opacity:.35}
+#s__N__ .rv-fill-bubbles circle{fill:color-mix(in oklab,var(--brand) 50%,#fff);fill-opacity:.25;stroke:color-mix(in oklab,var(--brand) 30%,#fff);stroke-width:2}
+#s__N__ .rv-fill-pops circle{fill:none;stroke:var(--ink-auto,#fff);stroke-width:1.6}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s), $$ = s => [...el.querySelectorAll(s)]
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const P = (t, t0, d) => clamp((t - t0) / d)
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const cssv = n => getComputedStyle(el).getPropertyValue(n).trim()
+
+const texts = $$('.rv-fill-t'), outline = $('.rv-fill-outline'), ring = $('.rv-fill-ring'), marks = $$('.rv-fill-mk')
+const liquid = $('.rv-fill-liquid'), surface = $('.rv-fill-surface'), sheen = $('.rv-fill-sheen'), bubG = $('.rv-fill-bubbles'), popG = $('.rv-fill-pops')
+const markDraw = $$('.rv-fill-tube-out path, .rv-fill-tube-in path')
+const FS0 = parseFloat(cssv('--rv-fs')), BASE = parseFloat(cssv('--rv-base'))
+const OUT = 3.2                                                     // outline thickness, px
+
+/* ---------- layout: mark + word centred on one baseline; long names shrink ---------- */
+let L = { fs: FS0, x0: 0, w: 0, mx: 0, my: 0, ms: 1, chars: [] }
+const layout = () => {
+  let fs = FS0
+  for (let pass = 0; pass < 2; pass++) {
+    el.style.setProperty('--rv-fs', fs + 'px')
+    const tw = texts[1].getComputedTextLength(), mw = fs * .84, gap = fs * .3, total = mw + gap + tw
+    if (pass === 0 && total > 1600) { fs = fs * 1600 / total; continue }
+    const x0 = 960 - total / 2, ms = mw / 24, my = BASE - fs * .36 - mw / 2
+    texts.forEach(t => { t.setAttribute('x', (x0 + mw + gap).toFixed(1)); t.setAttribute('y', BASE) })
+    marks.forEach(g => g.setAttribute('transform', `translate(${x0.toFixed(1)} ${my.toFixed(1)}) scale(${ms.toFixed(4)})`))
+    // the tube: a stroke ~0.12 em wide, its glass OUT px thick
+    const tube = fs * .125 / ms
+    el.style.setProperty('--rv-tube', tube.toFixed(3)); el.style.setProperty('--rv-tube-in', (tube - 2 * OUT / ms).toFixed(3))
+    const chars = []
+    const n = texts[1].getNumberOfChars()
+    for (let i = 0; i < n; i++) { try { const b = texts[1].getExtentOfChar(i); if (/\S/.test(texts[1].textContent[i] || '')) chars.push([b.x, b.width]) } catch { /* none */ } }
+    L = { fs, x0, w: total, mx: x0, my, ms, mw, chars }
+  }
+}
+layout()
+document.fonts?.ready.then(() => { layout(); pose(state === 'done' ? END : state === 'empty' ? -1 : lastT) })
+
+/* ---------- the liquid: a level that overshoots and settles, a decaying seiche (tilt) and two ripples ---------- */
+const R = rng(13)
+const RISE = [.34, 1.12], WAVE = .6, END = 2.3
+const finalLevel = () => BASE - L.fs * .6                          // above the x-height, below the caps
+const levelAt = t => {
+  const bottom = BASE + L.fs * .3, top = finalLevel(), p = P(t, RISE[0], RISE[1])
+  const e = 1 - Math.pow(1 - p, 3), over = Math.sin(Math.PI * clamp((p - .62) / .38)) * .045 * (1 - p)
+  return bottom + (top - bottom) * (e + over)
+}
+const surf = (x, t, amb) => {
+  const a = t - RISE[0], cx = L.x0 + L.w / 2
+  if (amb != null) return finalLevel() + 1.6 * Math.sin(x / 210 + amb * 1.3) + 1.1 * Math.sin(x / 97 - amb * 2.1)
+  const A = L.fs * .06 * Math.exp(-Math.max(0, a) / WAVE)
+  const tilt = .07 * Math.exp(-Math.max(0, a) / .55) * Math.cos(a / .82 * Math.PI * 2)
+  return levelAt(t) + tilt * (x - cx) + A * (Math.sin(x / 61 - a * 7.2) + .5 * Math.sin(x / 27 + a * 11.5 + 1.3))
+}
+const drawLiquid = (t, amb) => {
+  const xa = L.x0 - 30, xb = L.x0 + L.w + 30, bottom = BASE + L.fs * .4, N = 72
+  let top = '', line = ''
+  for (let i = 0; i <= N; i++) { const x = xa + (xb - xa) * i / N, y = surf(x, t, amb); top += `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`; line += `${i ? 'L' : 'M'}${x.toFixed(1)} ${(y + 1).toFixed(1)}` }
+  liquid.setAttribute('d', `${top}L${xb} ${bottom}L${xa} ${bottom}Z`)
+  surface.setAttribute('d', line)
+  // a sheen just under the surface: the meniscus catching light
+  let band = ''
+  for (let i = 0; i <= N; i++) { const x = xa + (xb - xa) * i / N; band += `${i ? 'L' : 'M'}${x.toFixed(1)} ${(surf(x, t, amb) + 3).toFixed(1)}` }
+  for (let i = N; i >= 0; i--) { const x = xa + (xb - xa) * i / N; band += `L${x.toFixed(1)} ${(surf(x, t, amb) + L.fs * .07).toFixed(1)}` }
+  sheen.setAttribute('d', band + 'Z')
+}
+
+/* ---------- bubbles: up the strokes, a wobble, a pop and a ring at the surface ---------- */
+let bubbles = []
+const makeBubbles = () => {
+  bubG.textContent = ''; popG.textContent = ''
+  const spots = [...L.chars.map(([x, w]) => x + w * (.3 + .4 * R())), L.mx + L.mw * .5]
+  const k = Math.min(6, Math.max(3, Math.round(spots.length * .5)))
+  bubbles = Array.from({ length: k }, (_, i) => {
+    const x = spots[Math.floor((i + .5) / k * spots.length)]
+    return { x, t0: .62 + i * .11 + R() * .08, v: 230 + 120 * R(), r: L.fs * (.022 + .02 * R()), ph: R() * 6, c: mk('circle', { r: 0 }, bubG), ring: mk('circle', { r: 0 }, popG) }
+  })
+}
+const drawBubbles = t => {
+  for (const b of bubbles) {
+    const a = t - b.t0, y0 = BASE + L.fs * .1
+    let y = y0 - b.v * a - 40 * a * a, x = b.x + Math.sin(a * 17 + b.ph) * L.fs * .02
+    const s = surf(x, t), popAt = b.pop ?? null
+    if (a < 0 || (y - b.r < s && !b.popped)) {
+      if (a >= 0 && !b.popped) { b.popped = t; b.px = x; b.py = s }
+      b.c.setAttribute('r', 0)
+    } else if (!b.popped) { b.c.setAttribute('cx', x.toFixed(1)); b.c.setAttribute('cy', y.toFixed(1)); b.c.setAttribute('r', (b.r * (1 + .08 * Math.sin(a * 23))).toFixed(1)) }
+    else b.c.setAttribute('r', 0)
+    void popAt
+    const q = b.popped ? (t - b.popped) / .22 : -1
+    if (q >= 0 && q < 1) { b.ring.setAttribute('cx', b.px.toFixed(1)); b.ring.setAttribute('cy', (b.py - 2).toFixed(1)); b.ring.setAttribute('r', (b.r * (.8 + 1.6 * q)).toFixed(1)); b.ring.style.opacity = (1 - q) * .8 }
+    else b.ring.setAttribute('r', 0)
+  }
+}
+
+/* ---------- pose ---------- */
+let state = 'empty', lastT = -1
+const pose = t => {
+  lastT = t
+  const hidden = t < 0, done = t >= END
+  el.querySelector('.rv-fill-art').style.visibility = hidden ? 'hidden' : 'visible'
+  if (hidden) return
+  // outlines draw themselves: each glyph contour at its own pace, the mark's tubes stroke by stroke
+  const d = done ? 1 : 1 - Math.pow(1 - P(t, 0, .5), 2)
+  outline.style.strokeDasharray = '1800 1800'; outline.style.strokeDashoffset = (1800 * (1 - d)).toFixed(1)
+  const swap = done ? 1 : P(t, .26, .2)                            // the drawn stroke hands over to the seamless glass
+  outline.style.opacity = 1 - swap; ring.style.opacity = swap
+  markDraw.forEach(p => { p.style.strokeDasharray = '1 1'; p.style.strokeDashoffset = (1 - d).toFixed(4) })
+  if (done) { drawLiquid(END, 0); bubbles.forEach(b => { b.c.setAttribute('r', 0); b.ring.setAttribute('r', 0) }); return }
+  drawLiquid(t)
+  drawBubbles(t)
+}
+// after the reveal the surface breathes on the deck's one clock
+Deck.clock(el, (t, _, still) => { if (state === 'done' && !still) drawLiquid(END, t) }, { printT: 0 })
+
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  state = mode === 'play' ? 'play' : mode
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  layout(); makeBubbles()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick); else state = 'done' }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

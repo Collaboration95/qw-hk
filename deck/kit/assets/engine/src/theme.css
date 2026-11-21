@@ -1,0 +1,9 @@
+/* This deck's look. Loaded after base.css. Set the colour journey (one field per slide, each continuing from the
+   last), the accent, the fonts and any grain. Everything here comes from the product's own world: its brand colours,
+   art, characters, mascot, wordmark. Never the app's neutral UI background. See references/look.md. */
+:root{
+  /* --f0 … --f9: the journey. Example: a dusk that deepens one step per slide. */
+  /* --accent: the one warm accent (the problem, the marker). */
+  /* --f: the display/body font stack; add @font-face with a local woff2 in src/assets/fonts/. */
+  /* --grain: url("assets/grain.svg"); */
+}

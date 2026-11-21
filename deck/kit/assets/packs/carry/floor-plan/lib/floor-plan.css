@@ -1,0 +1,10 @@
+/* carry/floor-plan: the plan canvas under the slide, the dot canvas above it; line colour from --ln on the section */
+.slide>canvas.cy-floor-plan{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:-1;pointer-events:none}
+.slide>canvas.cy-floor-plan-top{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:5;pointer-events:none}
+.rev{position:relative;display:inline-block;white-space:nowrap;margin:0 .26em}
+.rev>svg{position:absolute;overflow:visible;pointer-events:none;z-index:2}
+.rev>svg>path{fill:none;stroke:var(--accent,#FF5B3A);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.rev .dl{fill:none;stroke:var(--accent,#FF5B3A);stroke-width:3.5;stroke-linejoin:round}
+.rev text{font:700 24px ui-monospace,Menlo,monospace;fill:var(--accent,#FF5B3A)}
+.slide.play .rev>svg>path{stroke-dasharray:var(--len);animation:cy-floor-plan-rev .6s cubic-bezier(.55,.05,.35,1) .35s backwards}
+@keyframes cy-floor-plan-rev{from{stroke-dashoffset:var(--len)}}

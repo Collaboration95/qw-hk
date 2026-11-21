@@ -1,0 +1,322 @@
+<!-- 0 · Intro reveal "pixel-build": a dithered arcade dusk. The first press drops chunky blocks row by row on a 15 fps
+     sprite clock; they stack into the mark (each lands with a two-frame squash, the bottom row kicks pixel dust), the
+     wordmark fizzles in pixel by pixel in a hand-drawn bitmap face with its shadow one frame late, and a tiny critter that
+     fizzled in on the last letter hops across the word onto the last block, which squashes under it; it blinks. ~2.3 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (the dithered sky and pixel ranges are built from its stops), --brand (the blocks), --brand-2 (the
+     critter, and the blocks of the mark's last stroke when it is a small accent) on #s__N__. The wordmark uses the
+     engine's --ink-auto. __MARK__ = stroke paths in a 24 × 24 box (use-pack --mark): it is rasterised to a 12 × 12 block
+     grid at load, so any mark becomes chunky pixel art; an empty mark falls back to a block tile with the first letter
+     set in. Long names shrink the bitmap face to fit. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <canvas class="rv-pixel-build-sky" width="480" height="270" aria-hidden="true"></canvas>
+  <svg class="rv-pixel-build-art" viewBox="0 0 1920 1080" shape-rendering="crispEdges" role="img" aria-label="__WORD__"></svg>
+  <!-- the mark, as data: rasterised to blocks by the script -->
+  <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+  <span class="rv-pixel-build-word" hidden>__WORD__</span>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(180deg,#5C1150 0%,#B0246A 55%,#F45A6A 100%);   /* dithered into bands, top → horizon */
+  --brand:var(--deck-brand,#FFC83A); --brand-2:var(--deck-brand-2,#5FE3A8);          /* the blocks; the critter and accent blocks */
+  /* derived by the script from the three brand vars; first-paint fallbacks only */
+  --rv-tile:#FFC83A; --rv-tile-hi:#FFEBA3; --rv-tile-lo:#E58A22; --rv-acc:#5FE3A8; --rv-acc-hi:#B9F7E4; --rv-acc-lo:#21A487;
+  --rv-inlay:#6B1658; --rv-inlay-hi:#8E2670; --rv-shadow:#3A0A30; --rv-wshadow:#3A0A30; --rv-critter:#5FE3A8; --rv-cline:#1D3A2C; --rv-cheek:#FF8FB1;
+  padding:0
+}
+#s__N__ .rv-pixel-build-sky{position:absolute;inset:0;width:1920px;height:1080px;image-rendering:pixelated;z-index:0}
+#s__N__ .rv-pixel-build-art{position:absolute;inset:0;width:1920px;height:1080px;z-index:1;overflow:visible}
+#s__N__ svg.mark{display:none}
+#s__N__ .rv-pixel-build-lid{opacity:0;animation:amb-rv-pixel-build-blink 4.6s steps(1,end) infinite;animation-delay:2.9s}
+#s__N__ .rv-pixel-build-tw{animation:amb-rv-pixel-build-tw 3.3s steps(1,end) infinite}
+@keyframes amb-rv-pixel-build-blink{0%{opacity:0}94%{opacity:1}97%{opacity:0}}
+@keyframes amb-rv-pixel-build-tw{0%{opacity:1}50%{opacity:.25}62%{opacity:1}}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s)
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const css = n => getComputedStyle(el).getPropertyValue(n).trim()
+const FPS = 15, snap = v => Math.round(v / 4) * 4                    // a 15 fps sprite clock on a 4 px grid
+
+/* ---------- a 5×7 bitmap face (rows top → bottom; lowercase descends 2 rows) ---------- */
+const FONT = {
+  A: '.###.|#...#|#...#|#####|#...#|#...#|#...#', B: '####.|#...#|#...#|####.|#...#|#...#|####.', C: '.###.|#...#|#....|#....|#....|#...#|.###.',
+  D: '####.|#...#|#...#|#...#|#...#|#...#|####.', E: '#####|#....|#....|####.|#....|#....|#####', F: '#####|#....|#....|####.|#....|#....|#....',
+  G: '.###.|#...#|#....|#.###|#...#|#...#|.####', H: '#...#|#...#|#...#|#####|#...#|#...#|#...#', I: '###|.#.|.#.|.#.|.#.|.#.|###',
+  J: '..###|...#.|...#.|...#.|#..#.|#..#.|.##..', K: '#...#|#..#.|#.#..|##...|#.#..|#..#.|#...#', L: '#....|#....|#....|#....|#....|#....|#####',
+  M: '#...#|##.##|#.#.#|#.#.#|#...#|#...#|#...#', N: '#...#|#...#|##..#|#.#.#|#..##|#...#|#...#', O: '.###.|#...#|#...#|#...#|#...#|#...#|.###.',
+  P: '####.|#...#|#...#|####.|#....|#....|#....', Q: '.###.|#...#|#...#|#...#|#.#.#|#..#.|.##.#', R: '####.|#...#|#...#|####.|#.#..|#..#.|#...#',
+  S: '.####|#....|#....|.###.|....#|....#|####.', T: '#####|..#..|..#..|..#..|..#..|..#..|..#..', U: '#...#|#...#|#...#|#...#|#...#|#...#|.###.',
+  V: '#...#|#...#|#...#|#...#|#...#|.#.#.|..#..', W: '#...#|#...#|#...#|#.#.#|#.#.#|#.#.#|.#.#.', X: '#...#|#...#|.#.#.|..#..|.#.#.|#...#|#...#',
+  Y: '#...#|#...#|.#.#.|..#..|..#..|..#..|..#..', Z: '#####|....#|...#.|..#..|.#...|#....|#####',
+  a: '.....|.....|.###.|....#|.####|#...#|.####', b: '#....|#....|####.|#...#|#...#|#...#|####.', c: '.....|.....|.###.|#....|#....|#....|.###.',
+  d: '....#|....#|.####|#...#|#...#|#...#|.####', e: '.....|.....|.###.|#...#|#####|#....|.###.', f: '..##|.#..|####|.#..|.#..|.#..|.#..',
+  g: '.....|.....|.####|#...#|#...#|#...#|.####|....#|.###.', h: '#....|#....|####.|#...#|#...#|#...#|#...#', i: '#|.|#|#|#|#|#',
+  j: '..#|...|..#|..#|..#|..#|..#|..#|##.', k: '#...|#...|#..#|#.#.|##..|#.#.|#..#', l: '#.|#.|#.|#.|#.|#.|.#',
+  m: '.....|.....|####.|#.#.#|#.#.#|#.#.#|#.#.#', n: '.....|.....|####.|#...#|#...#|#...#|#...#', o: '.....|.....|.###.|#...#|#...#|#...#|.###.',
+  p: '.....|.....|####.|#...#|#...#|#...#|####.|#....|#....', q: '.....|.....|.####|#...#|#...#|#...#|.####|....#|....#', r: '....|....|#.##|##..|#...|#...|#...',
+  s: '.....|.....|.####|#....|.###.|....#|####.', t: '.#..|.#..|####|.#..|.#..|.#..|..##', u: '.....|.....|#...#|#...#|#...#|#...#|.####',
+  v: '.....|.....|#...#|#...#|#...#|.#.#.|..#..', w: '.....|.....|#...#|#...#|#.#.#|#.#.#|.#.#.', x: '.....|.....|#...#|.#.#.|..#..|.#.#.|#...#',
+  y: '.....|.....|#...#|#...#|#...#|#...#|.####|....#|.###.', z: '.....|.....|#####|...#.|..#..|.#...|#####',
+  0: '.###.|#...#|#..##|#.#.#|##..#|#...#|.###.', 1: '.#.|##.|.#.|.#.|.#.|.#.|###', 2: '.###.|#...#|....#|...#.|..#..|.#...|#####',
+  3: '####.|....#|....#|.###.|....#|....#|####.', 4: '...#.|..##.|.#.#.|#..#.|#####|...#.|...#.', 5: '#####|#....|####.|....#|....#|#...#|.###.',
+  6: '.###.|#....|#....|####.|#...#|#...#|.###.', 7: '#####|....#|...#.|..#..|.#...|.#...|.#...', 8: '.###.|#...#|#...#|.###.|#...#|#...#|.###.',
+  9: '.###.|#...#|#...#|.####|....#|....#|.###.', '-': '....|....|....|####|....|....|....', '.': '.|.|.|.|.|.|#', '!': '#|#|#|#|#|.|#',
+  '&': '.##..|#..#.|#.#..|.#...|#.#.#|#..#.|.##.#', "'": '#|#|.|.|.|.|.', ' ': '...|...|...|...|...|...|...',
+}
+const glyph = ch => (FONT[ch] ?? FONT[ch.toUpperCase()] ?? FONT[ch.toLowerCase()] ?? '###|###|###|###|###|###|###').split('|')
+
+/* ---------- brand: every colour comes from --field, --brand, --brand-2; ink follows the engine's rule ---------- */
+const C2 = document.createElement('canvas').getContext('2d')
+const rgb = s => { C2.fillStyle = '#010203'; C2.fillStyle = String(s || '').trim() || '#010203'; const v = C2.fillStyle; if (v[0] === '#') return [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0] }
+const stops = s => (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl|oklch|oklab|lab|lch)a?\([^()]*\)/gi) || [s]).map(rgb)
+const hex = c => '#' + c.map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
+const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+const lum = ([r, g, b]) => { const f = c => (c /= 255) <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) }
+const WH = [255, 255, 255], BK = [0, 0, 0]
+const fieldCss = css('--field'), FST = stops(fieldCss), FAVG = FST.reduce((a, c) => a.map((v, i) => v + c[i] / FST.length), [0, 0, 0])
+const INK = rgb(css('--ink-auto') || Deck.inkOn?.(fieldCss) || '#fff'), BR = rgb(css('--brand')), BR2 = rgb(css('--brand-2'))
+const DARK = lum(FAVG) < .2, INKLIGHT = lum(INK) > .5
+// five dither bands: the field's own stops if it has several, else a ramp darker at the top
+const ramp = FST.length > 1 ? FST : [mix(FAVG, BK, DARK ? .3 : .14), FAVG, mix(FAVG, WH, DARK ? .1 : .16)]
+const at = f => { const x = f * (ramp.length - 1), i = Math.min(ramp.length - 2, Math.floor(x)); return mix(ramp[i], ramp[i + 1], x - i) }
+const BANDS = [0, .25, .5, .75, 1].map(f => hex(at(f)))
+const HORIZON = ramp[ramp.length - 1]
+const deep = (c, k) => hex(mix(c, BK, lum(c) < .06 ? k * .3 : k)), lift = (c, k) => hex(mix(c, WH, k))
+;[['--rv-tile', hex(BR)], ['--rv-tile-hi', lift(BR, .45)], ['--rv-tile-lo', deep(BR, .28)], ['--rv-acc', hex(BR2)], ['--rv-acc-hi', lift(BR2, .45)], ['--rv-acc-lo', deep(BR2, .28)],
+  ['--rv-inlay', deep(BR, .55)], ['--rv-inlay-hi', deep(BR, .42)], ['--rv-shadow', deep(FAVG, .5)], ['--rv-wshadow', INKLIGHT ? deep(FAVG, .5) : deep(FAVG, .16)],
+  ['--rv-critter', hex(BR2)], ['--rv-cline', deep(BR2, .72)], ['--rv-cheek', hex(mix(BR2, [255, 110, 150], .55))]].forEach(([k, v]) => el.style.setProperty(k, v))
+
+/* ---------- the field: ordered-dither bands, pixel stars or clouds, two pixel ranges (drawn once) ---------- */
+const sky = $('.rv-pixel-build-sky').getContext('2d')
+const drawSky = () => {
+  const bands = BANDS, B4 = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5]
+  for (let y = 0; y < 270; y++) {
+    const f = Math.pow(y / 232, 1.25) * (bands.length - 1), i = Math.min(bands.length - 2, Math.floor(f)), fr = f - i
+    for (let x = 0; x < 480; x++) { sky.fillStyle = fr * 16 > B4[(y % 4) * 4 + (x % 4)] + .5 ? bands[i + 1] : bands[i]; sky.fillRect(x, y, 1, 1) }
+  }
+  const R = rng(5)
+  const ridge = (base, amp, col, seed) => {
+    const r = rng(seed); sky.fillStyle = col
+    let h = base
+    for (let x = 0; x < 480; x += 2) { h += (r() - .5) * amp; h = Math.max(base - 26, Math.min(base + 6, h)); sky.fillRect(x, Math.round(h), 2, 270) }
+  }
+  ridge(232, 7, deep(HORIZON, DARK ? .3 : .2), 3); ridge(246, 5, deep(HORIZON, DARK ? .45 : .34), 9)
+  if (DARK) {                                                    // a dark sky gets stars
+    sky.fillStyle = lift(FAVG, .7)
+    for (let k = 0; k < 34; k++) { const x = Math.floor(R() * 480), y = Math.floor(R() * 120); sky.globalAlpha = .35 + .5 * R(); sky.fillRect(x, y, 1, 1) }
+  } else {                                                       // a lit one gets three flat pixel clouds
+    sky.fillStyle = lift(at(.3), .5); sky.globalAlpha = .55
+    ;[[44, 30, 1], [300, 18, .8], [392, 64, .6]].forEach(([x, y, k]) => { const w = Math.round(46 * k); sky.fillRect(x, y + 4, w, 4); sky.fillRect(x + 6, y, w - 18, 4); sky.fillRect(x + 14, y - 3, Math.round(w * .35), 3) })
+  }
+  sky.globalAlpha = 1
+}
+drawSky()
+
+/* ---------- layout: tile + word on one baseline, every edge on the 4 px grid ---------- */
+const art = $('.rv-pixel-build-art'), word = $('.rv-pixel-build-word').textContent.trim() || 'Name'
+const CP = 8                                                    // critter pixel
+const markSvg = $('svg.mark')
+// rasterise the mark: its strokes at 2.3 / 24 width onto a 12 × 12 grid, 4 × 4 samples a cell, lit above 40 % (keeps close strokes apart)
+const MG = 12, SS = 4
+const raster = () => {
+  const c = document.createElement('canvas'); c.width = c.height = MG * SS
+  const g = c.getContext('2d', { willReadFrequently: true })
+  const shapes = [...markSvg.querySelectorAll('path,circle,rect,line,polyline,polygon')]
+  const toPath = e => {
+    const t = e.tagName, a = k => +e.getAttribute(k) || 0
+    if (t === 'path') return new Path2D(e.getAttribute('d') || '')
+    const q = new Path2D()
+    if (t === 'circle') q.arc(a('cx'), a('cy'), a('r'), 0, Math.PI * 2)
+    else if (t === 'rect') q.rect(a('x'), a('y'), a('width'), a('height'))
+    else if (t === 'line') { q.moveTo(a('x1'), a('y1')); q.lineTo(a('x2'), a('y2')) }
+    else { const pts = (e.getAttribute('points') || '').trim().split(/[\s,]+/).map(Number); for (let i = 0; i + 1 < pts.length; i += 2) i ? q.lineTo(pts[i], pts[i + 1]) : q.moveTo(pts[i], pts[i + 1]); if (t === 'polygon') q.closePath() }
+    return q
+  }
+  const cover = list => {
+    g.clearRect(0, 0, c.width, c.height); g.save(); g.scale(MG * SS / 24, MG * SS / 24)
+    g.lineWidth = 2.3; g.lineCap = 'round'; g.lineJoin = 'round'; g.strokeStyle = '#fff'
+    for (const e of list) { const q = toPath(e); g.stroke(q); if (e.getAttribute('fill') && e.getAttribute('fill') !== 'none') { g.fillStyle = '#fff'; g.fill(q) } }
+    g.restore()
+    const d = g.getImageData(0, 0, c.width, c.height).data, out = []
+    for (let r = 0; r < MG; r++) for (let q = 0; q < MG; q++) { let s = 0; for (let y = 0; y < SS; y++) for (let x = 0; x < SS; x++) s += d[((r * SS + y) * c.width + q * SS + x) * 4 + 3]; out.push(s / (SS * SS * 255)) }
+    return out
+  }
+  if (!shapes.length) return []
+  const all = cover(shapes), last = shapes.length > 1 ? cover(shapes.slice(-1)) : null
+  const lit = all.map(v => v > .4), accent = last ? last.map(v => v > .4) : []
+  const nLit = lit.filter(Boolean).length, nAcc = accent.filter((v, i) => v && lit[i]).length
+  const useAcc = nAcc > 0 && nAcc <= nLit * .3                   // brand-2 only for a small last stroke (a dot, a slash)
+  const out = []
+  for (let r = 0; r < MG; r++) for (let q = 0; q < MG; q++) if (lit[r * MG + q]) out.push([q, r, useAcc && accent[r * MG + q] ? 'b' : 'a'])
+  if (!out.length) return out
+  const c0 = Math.min(...out.map(b => b[0])), r0 = Math.min(...out.map(b => b[1]))
+  return out.map(([q, r, k]) => [q - c0, r - r0, k])
+}
+let blocks = raster()                                           // [col, row, kind]
+if (!blocks.length) {
+  const g = glyph(word[0].toUpperCase()), gw = g[0].length, ox = Math.floor((9 - gw) / 2)
+  for (let r = 0; r < 9; r++) for (let c = 0; c < 9; c++) {
+    const corner = (r === 0 || r === 8) && (c === 0 || c === 8)
+    const hole = r >= 1 && r <= 7 && c >= ox && c < ox + gw && g[r - 1][c - ox] === '#'
+    if (!corner) blocks.push([c, r, hole ? 'd' : 'a'])
+  }
+}
+const cols = Math.max(...blocks.map(b => b[0])) + 1, rows = Math.max(...blocks.map(b => b[1])) + 1
+const glyphs = [...word].map(glyph)
+const GAPX = 64
+// font pixel: 24 px, smaller for long names; each lit pixel is 1.5 wide (a half-pixel smear = bold stems, gaps kept).
+// The mark is about 1.55 cap heights tall, so solve both sizes together.
+const cellsW = glyphs.reduce((s, g) => s + g[0].length + 1.5, 0) - 1.5 + .5
+const markK = 7 * 1.55 * cols / Math.max(rows, cols)
+const FP = Math.max(12, Math.min(24, Math.floor((1760 - GAPX) / (cellsW + markK) / 4) * 4))
+const BS = clamp(Math.round(7 * FP * 1.55 / Math.max(rows, cols) / 4) * 4, 12, 32)
+const tileW = cols * BS
+const wordW = cellsW * FP
+const X0 = snap((1920 - tileW - GAPX - wordW) / 2), BASE = 612   // BASE = the word's baseline
+const tileY = snap(BASE - 3.5 * FP - rows * BS / 2), wordX = X0 + tileW + GAPX
+const shadowG = mk('g', { fill: 'var(--rv-shadow)' }, art), tileG = mk('g', {}, art)
+const wShadowG = mk('g', { fill: 'var(--rv-wshadow)' }, art), wordG = mk('g', { fill: 'var(--ink-auto,#fff)' }, art)
+const fxG = mk('g', {}, art), critG = mk('g', {}, art)
+const tone = { a: ['--rv-tile', '--rv-tile-hi', '--rv-tile-lo'], b: ['--rv-acc', '--rv-acc-hi', '--rv-acc-lo'], d: ['--rv-inlay', '--rv-inlay-hi', '--rv-shadow'] }
+const R = rng(23)
+// blocks fall row by row from the bottom; inside a row, in a shuffled order. The last one waits for the critter.
+const order = [...blocks].sort((p, q) => (q[1] - p[1]) || (R() - .5))
+const top = Math.min(...blocks.map(b => b[1])), lastB = blocks.filter(b => b[1] === top).sort((p, q) => q[0] - p[0])[0]
+const B = order.map(([c, r, k]) => {
+  const x = X0 + c * BS, y = tileY + r * BS, [f, hi, lo] = tone[k] || tone.a
+  const sh = mk('rect', { x: 0, y: 0, width: BS, height: BS }, shadowG)
+  const g = mk('g', {}, tileG)
+  mk('rect', { width: BS, height: BS, fill: `var(${f})` }, g)
+  mk('rect', { width: BS, height: 4, fill: `var(${hi})` }, g)
+  mk('rect', { width: 4, height: BS - 4, y: 4, fill: `var(${hi})`, opacity: .55 }, g)
+  mk('rect', { y: BS - 4, width: BS, height: 4, fill: `var(${lo})` }, g)
+  mk('rect', { x: BS - 4, y: 4, width: 4, height: BS - 8, fill: `var(${lo})`, opacity: .6 }, g)
+  const row = rows - 1 - r
+  const start = row * .072 + (row % 2 ? cols - 1 - c : c) * .014 + R() * .012   // row by row, zig-zag, like a printer head
+  return { g, sh, x, y, c, r, start, fall: .26 + .04 * R(), floor: r === rows - 1, last: c === lastB[0] && r === lastB[1] }
+})
+const lastBlock = B.find(b => b.last)
+lastBlock.start = Math.max(...B.map(b => b.start)) + .1
+// word: one rect per lit pixel (shadow one frame behind)
+const WP = [], letterG = []
+let cx = wordX
+glyphs.forEach((g, li) => {
+  const lg = mk('g', {}, wordG), ls = mk('g', {}, wShadowG)
+  letterG.push([lg, ls])
+  let topRow = 99
+  g.forEach((row, ry) => [...row].forEach((ch, rx) => {
+    if (ch !== '#') return
+    topRow = Math.min(topRow, ry)
+    const x = cx + rx * FP, y = BASE - 7 * FP + ry * FP
+    const fx = (x - wordX) / Math.max(1, wordW)
+    WP.push({ p: mk('rect', { x, y, width: FP * 1.5, height: FP }, lg), s: mk('rect', { x: x + 8, y: y + 8, width: FP * 1.5, height: FP }, ls), at: .5 + .42 * fx + .2 * R() })
+  }))
+  letterG[li].top = topRow < 99 ? BASE - 7 * FP + topRow * FP : BASE; letterG[li].ink = topRow < 99
+  letterG[li].mid = cx + (g[0].length + .5) * FP / 2
+  cx += (g[0].length + 1.5) * FP
+})
+// the critter: 8×7 sprite, 8 px pixels. O outline, B body, E eye, H highlight, C cheek
+const SPR = {
+  idle: ['..OOOO..', '.OBHBBO.', 'OBEBBEBO', 'OBEBBEBO', 'OCBBBBCO', '.OBBBBO.', '..O..O..'],
+  crouch: ['........', '..OOOO..', '.OBHBBO.', 'OBEBBEBO', 'OCEBBECO', 'OBBBBBBO', '.OO..OO.'],
+  jump: ['..OOOO..', '.OBHBBO.', 'OBEBBEBO', 'OBEBBEBO', 'OCBBBBCO', '.OBBBBO.', '..O..O..'],
+  blink: ['..OOOO..', '.OBHBBO.', 'OBBBBBBO', 'OBOBBOBO', 'OCBBBBCO', '.OBBBBO.', '..O..O..'],
+}
+const PAL = { O: 'var(--rv-cline)', B: 'var(--rv-critter)', E: 'var(--rv-cline)', H: '#fff', C: 'var(--rv-cheek)' }
+const frames = {}
+for (const k in SPR) {
+  const g = mk('g', { visibility: 'hidden' }, critG)
+  SPR[k].forEach((row, y) => [...row].forEach((ch, x) => { if (PAL[ch]) mk('rect', { x: x * CP, y: y * CP, width: CP, height: CP, fill: PAL[ch] }, g) }))
+  if (k === 'idle') { const lid = mk('g', { class: 'rv-pixel-build-lid' }, g); [[2, 2], [5, 2]].forEach(([x, y]) => mk('rect', { x: x * CP, y: y * CP, width: CP, height: CP, fill: 'var(--rv-critter)' }, lid)) }
+  frames[k] = g
+}
+const CW = 8 * CP, CH = 7 * CP
+const dust = [0, 1, 2, 3].map(() => mk('rect', { width: 8, height: 8, fill: 'var(--rv-tile-hi)', visibility: 'hidden' }, fxG))
+// a few stars twinkle on the ambient clock
+if (DARK) for (let k = 0; k < 5; k++) mk('rect', { x: snap(160 + R() * 1600), y: snap(60 + R() * 320), width: 4, height: 4, fill: lift(FAVG, .75), class: 'rv-pixel-build-tw', style: `animation-delay:${(-R() * 3).toFixed(2)}s` }, fxG)
+
+/* ---------- critter path: fizzles in on the last letter, hops to the middle letter, then onto the last block ---------- */
+const inked = letterG.map((g, i) => g.ink ? i : -1).filter(i => i >= 0), L = inked.length ? inked[inked.length - 1] + 1 : 1
+const stand = li => [snap(letterG[li].mid - CW / 2), letterG[li].top - CH]
+const onBlock = [lastBlock.x + BS / 2 - CW / 2, lastBlock.y - CH]
+const mid = inked.length ? inked[Math.floor((inked.length - 1) / 2)] : 0
+const HOPS = [
+  { t0: 1.34, d: .3, a: stand(L - 1), b: stand(mid), h: 72, li: mid },
+  { t0: 1.72, d: .34, a: stand(mid), b: onBlock, h: 110, li: -1 },
+]
+lastBlock.start = 1.72 + .34 - lastBlock.fall - .2      // the last block lands just before the critter does
+const BLINK = 2.2, END = 2.36
+
+/* ---------- pose ---------- */
+const show1 = (e, on) => e.setAttribute('visibility', on ? 'visible' : 'hidden')
+let frameShown = ''
+const pose = (t, done) => {
+  const tq = done ? 99 : Math.floor(t * FPS + 1e-6) / FPS
+  for (const b of B) {
+    const p = (tq - b.start) / b.fall
+    if (p < 0) { show1(b.g, 0); show1(b.sh, 0); continue }
+    show1(b.g, 1); show1(b.sh, 1)
+    let y = b.y, sx = 1, sy = 1
+    if (p < 1) y = snap(b.y - 420 - b.r * 12 + (420 + b.r * 12) * p * p)
+    else {
+      const since = tq - (b.start + b.fall)
+      if (since < 1.5 / FPS) { sx = 1.2; sy = .8 }                                   // two frames of squash on landing
+      if (b.last && !done) { const c = tq - (HOPS[1].t0 + HOPS[1].d); if (c >= 0 && c < 1.5 / FPS) { sx = 1.2; sy = .8 } }   // and again under the critter
+    }
+    const tf = sx === 1 ? `translate(${b.x},${y})` : `translate(${b.x + BS / 2},${y + BS}) scale(${sx},${sy}) translate(${-BS / 2},${-BS})`
+    b.g.setAttribute('transform', tf)
+    b.sh.setAttribute('x', b.x + 8); b.sh.setAttribute('y', y + 8)
+  }
+  // dust from the bottom row's landings and from the critter's touchdown
+  const puffs = []
+  for (const b of B) if (b.floor && b.c % 3 === 0) { const s = tq - (b.start + b.fall); if (s >= 0 && s < 2.5 / FPS) puffs.push([b.x - 8 - s * 90, b.y + BS - 8 - s * 40], [b.x + BS + s * 90, b.y + BS - 8 - s * 40]) }
+  const land = tq - (HOPS[1].t0 + HOPS[1].d)
+  if (!done && land >= 0 && land < 2.5 / FPS) puffs.push([onBlock[0] - 4 - land * 80, onBlock[1] + CH - 8], [onBlock[0] + CW - 4 + land * 80, onBlock[1] + CH - 8])
+  dust.forEach((d, i) => { const q = puffs[i]; show1(d, !!q); if (q) { d.setAttribute('x', snap(q[0])); d.setAttribute('y', snap(q[1])) } })
+  // word: fizzle; shadow a frame behind
+  for (const w of WP) { show1(w.p, tq >= w.at); show1(w.s, tq >= w.at + 1 / FPS) }
+  // critter
+  let f = 'hidden', pos = stand(L - 1), dip = -1
+  const tin = HOPS[0].t0 - .2
+  if (done) { f = 'idle'; pos = onBlock }
+  else if (tq >= tin - .08) {
+    f = tq < tin ? 'blink' : 'idle'
+    for (const h of HOPS) {
+      const p = (tq - h.t0) / h.d
+      if (p >= 0 && p < 1) { pos = [h.a[0] + (h.b[0] - h.a[0]) * p, h.a[1] + (h.b[1] - h.a[1]) * p - h.h * 4 * p * (1 - p)]; f = 'jump' }
+      else if (p >= 1) { pos = h.b; const s = tq - h.t0 - h.d; if (s < 1.5 / FPS) { f = 'crouch'; if (h.li >= 0) dip = h.li } }
+      else if (p < 0 && p > -1.5 / FPS / h.d) f = 'crouch'                         // a crouch before each hop
+    }
+    if (tq >= BLINK && tq < BLINK + 1.5 / FPS) f = 'blink'
+  }
+  if (f !== frameShown) { for (const k in frames) show1(frames[k], k === f); frameShown = f }
+  critG.setAttribute('transform', `translate(${snap(pos[0])},${snap(pos[1])})`)
+  letterG.forEach(([lg, ls], i) => { const d = i === dip ? 'translate(0,8)' : ''; lg.setAttribute('transform', d); ls.setAttribute('transform', d) })
+  if (t < 0) { for (const k in frames) show1(frames[k], 0); frameShown = '' }
+}
+
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1, mode === 'done')
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t, t >= END); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

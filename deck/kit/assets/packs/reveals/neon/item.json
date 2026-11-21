@@ -1,0 +1,37 @@
+{
+  "title": "Neon sign",
+  "kind": "reveal",
+  "mood": [
+    "night",
+    "electric",
+    "street",
+    "after hours"
+  ],
+  "suits": "nightlife, music, events, food and drink, gaming, consumer and creator apps, cyberpunk-flavoured products",
+  "tech": "svg+js",
+  "duration": 2.2,
+  "params": {
+    "--field": "the wall by day (plum by default; any colour or gradient), shaded to night",
+    "--brand": "the word's gas: its hue is kept, lightness and chroma lifted in OKLCH so any colour burns",
+    "--brand-2": "the mark's gas, the same way",
+    "--neon-fs / --neon-weight": "word size and tube thickness (long names shrink to fit 1640 px)",
+    "--neon-y / --neon-g": "sign centre and the ground line (the reflection mirrors about it)",
+    "__MARK__": "stroke paths in a 24 x 24 box: one bent tube"
+  },
+  "details": [
+    "the unlit glass tubes come up first, with a faint highlight and a shadow on the wall",
+    "the mark strikes first, in a second gas colour, with two short flickers",
+    "letters strike roughly left to right, each with its own flicker pattern",
+    "every fresh strike comes on dim and warms to full over a quarter second",
+    "one letter stutters twice, dies, and catches late",
+    "the glow lights the wall: bricks appear only as the sign lights, strongest near it",
+    "a pool of pink light spreads on the wet ground and the kerb edge catches the glow",
+    "the sign reflects in the puddles as vertical streaks (squashed, blurred, stretched), cut by dry patches of asphalt",
+    "the tube that runs between letters is painted out, on two standoffs",
+    "a power cable leaves the last letter and droops down the wall to the ground",
+    "a fine drizzle is visible only inside the glow",
+    "at rest the tubes buzz: a faint, out-of-phase brightness flutter on the deck clock",
+    "every 17 s the same stubborn letter drops out for a double blink",
+    "a navy or black brand still burns: the gas keeps the hue and lifts it to neon lightness; a white brand burns cool white"
+  ]
+}

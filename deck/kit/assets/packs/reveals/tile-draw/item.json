@@ -1,0 +1,10 @@
+{
+  "title": "Tile and stroke",
+  "kind": "reveal",
+  "mood": ["clean", "app-icon", "confident"],
+  "suits": "apps and marketplaces with an app-icon mark; the tftf finals reveal. Overused: never the default.",
+  "tech": "svg+js",
+  "duration": 2.2,
+  "params": { "--fs": "wordmark size", "--ink0": "mark stroke colour", ".bt": "the white tile; swap the svg paths for the product's mark" },
+  "details": ["the tile springs in with an 8° counter-turn", "the last stroke (the dot) snaps on after the line", "the wordmark slides out from behind the tile", "a 1.8% push-in across the whole reveal"]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Panorama camera",
+  "kind": "carry",
+  "mood": ["journey", "cinematic", "calm", "time passing"],
+  "suits": "pitches that are a journey or a place: travel, logistics, mobility, climate, a user's day, a timeline; one wide world the camera travels through, slide by slide, first light to dusk.",
+  "tech": "svg+js",
+  "params": {
+    "--field / --brand / --brand-2": "on the FIRST stop's section (or country({ field, brand, brand2 })): the whole palette derives from them; the sky keeps the field's light or dark side",
+    "Pack.pan.stop(id, { x, y, zoom })": "each slide's view: x = left edge at depth 1 (0 … width − 1920), zoom ≥ 1 dollies in",
+    "Pack.pan.scene({ width, sky, skyTop, planes, lift, entry })": "a deck's own panorama: planes back to front, each { depth, draw, live, tick }",
+    "Pack.pan.country({ width, seed, turbines, sky, ink })": "the bundled scene: a road through layered country"
+  },
+  "details": [
+    "the sky's colour journey follows the camera: first light, morning, golden hour, sunset, dusk along the road, so the deck's colours form one continuous journey",
+    "the sun arcs across the whole journey, rising out of a glow behind the hills and setting into one; during a glide it visibly moves, a little time-lapse",
+    "depth parallax: far ranges barely move, the road moves with the camera, the foreground grass sweeps past fastest",
+    "long moves pull the camera back slightly mid-glide, like a crane, then settle",
+    "the first arrival is a small establishing move: from the left, a touch higher and closer, settling onto the stop",
+    "terrain layers are translucent field-hued ink, so each layer picks up the sky behind it and far ridges fade into haze",
+    "a rim of warm light along the far ridge line",
+    "mist lies between the far ranges and the rolling hills",
+    "clouds drift on the one clock at their own speeds",
+    "wind turbines turn; one turns slower than the others",
+    "telegraph wires sag between poles, and a few birds sit on them",
+    "road dashes and white milestones with a red band give the glide its speed",
+    "chimney smoke grows, drifts with the wind and thins as it rises",
+    "one barn window lights late, after the first eight seconds",
+    "stars come out only at dusk, a few twinkle, and a meteor crosses high on the right once every 23 s",
+    "the headline ink is re-picked from each stop's own sky, so text stays readable from dawn to dusk on any brand",
+    "each slide holds its own view of the one panorama (shared images, a few DOM nodes), so print shows every stop"
+  ]
+}

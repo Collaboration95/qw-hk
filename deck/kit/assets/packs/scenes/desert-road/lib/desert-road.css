@@ -1,0 +1,8 @@
+/* scenes/desert-road · layout for lib/desert-road.js. Planes overscan by 24 px so the engine's pointer parallax never
+   shows an edge. */
+.sc-desert-road{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#5584b6;contain:strict}
+.sc-desert-road .parallax{z-index:0}
+.sc-desert-road .parallax>div{left:-24px;top:-24px;width:1968px;height:1128px}
+.sc-desert-road canvas{position:absolute;display:block}
+.sc-desert-road .dr-grain{position:absolute;inset:0;z-index:2;background-size:200px 200px;mix-blend-mode:overlay;opacity:.1}
+.sc-desert-road::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(130% 100% at 45% 40%,transparent 60%,rgba(20,10,40,.36))}

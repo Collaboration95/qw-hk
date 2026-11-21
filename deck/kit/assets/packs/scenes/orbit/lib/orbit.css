@@ -1,0 +1,9 @@
+/* scenes/orbit · layout for lib/orbit.js. The root fills the slide behind its content; planes overscan by 24 px so the
+   engine's pointer parallax never shows an edge. */
+.sc-orbit{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#221c62;contain:strict}
+.sc-orbit .parallax{z-index:0}
+.sc-orbit .parallax>div{left:-24px;top:-24px;width:1968px;height:1128px}
+.sc-orbit canvas{position:absolute;display:block}
+.sc-orbit .ob-atmo{mix-blend-mode:screen}
+.sc-orbit .ob-grain{position:absolute;inset:0;z-index:2;background-size:200px 200px;mix-blend-mode:overlay;opacity:.09}
+.sc-orbit::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(130% 100% at 45% 40%,transparent 60%,rgba(10,6,40,.4))}

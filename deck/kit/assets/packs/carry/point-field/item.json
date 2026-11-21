@@ -1,0 +1,31 @@
+{
+  "title": "Point field",
+  "kind": "carry",
+  "mood": ["data-born", "alive", "precise", "swarm"],
+  "suits": "any product with real rows (users, cells, orders, events, repos): the data itself is the visual, and the same points become each slide's figure. The hr-2026 v4 device, the user's pick.",
+  "tech": "canvas",
+  "params": {
+    "--field / --brand / --brand-2": "on each section: the points' palette is derived from them per slide (0 ink tint, 1 brand, 2 brand-2, 3 their mix, 4 brand→ink, 5 ink), each pushed toward --ink-auto until it reads on the field",
+    "PF.config({ points })": "the product's rows: [{u, v, k, w}] or [{x, y, k, w}]; k = category colour, w = any value; default 3,000 synthetic records in five clusters",
+    "PF.slide(id, { place, under, over, breathe, sweep })": "one per field slide; place() sets o.x, o.y, o.r, o.a, o.c, o.d",
+    "PF.fill(fig, { r, a, c, d, order, only, pick, spare })": "pour the points into a figure: scatter, grid, layers, bars, histogram, text, mark, lockup, shape, polygon, ring",
+    "<svg class=\"mark\">__MARK__</svg>": "the product's mark (stroke paths, 24 × 24 viewBox) read by PF.fig.lockup / PF.fig.mark"
+  },
+  "details": [
+    "every point keeps its category colour from slide to slide, so the word and the bars are visibly made of the same records as the cloud",
+    "points travel on a slightly bowed path (each its own curl), never a straight line, so a change reads as a swarm",
+    "the stagger follows the figure: the name forms left to right, the bars grow from the bottom row up",
+    "about 3% of points are stragglers on a softer ease and land last, still inside 1.2 s",
+    "on a first arrival the field condenses out of its own faint data cloud on a fast-start ease, readable by 0.3 s",
+    "spare points stay behind as faint dust at their own data positions, never vanish",
+    "a breathing jitter: every point drifts under a pixel at its own rate and pulses its radius out of step",
+    "the sweep: a soft band of light passes once every few seconds and catches only the points, not the field",
+    "the colour switch happens at each point's own midpoint, so recolouring ripples through the swarm",
+    "names of 1 to 12+ characters fit the box; long names wrap to two lines when that reads bigger, dots never merge (radius follows the pitch)",
+    "the mark is sampled from its own stroke paths, so the logo is drawn in the same dots as the data",
+    "the shares above the bars are computed from the points, not typed",
+    "only the showing slide's canvas holds a backing store; print gives every slide its own final frame",
+    "back, jumps, print and reduced motion land straight in the final state",
+    "every field slide's layout is precomputed in idle time after start, so no forward step stutters"
+  ]
+}

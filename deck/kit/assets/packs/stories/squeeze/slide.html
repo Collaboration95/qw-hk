@@ -1,0 +1,207 @@
+<!-- Story · squeeze: a tall, messy stack of records slides onto the bed of a press; the platen comes down, the
+     hand wheel spins, the stack is squared up and squeezed into one thin block; the excess puffs out of both sides
+     as dust and a few paper scraps that stay where they fall. Beside it the size counts down 48 → 3 and the old
+     number lands struck above it. ~1.3 s, CSS + the engine's .count, then rests (the resting CSS is the final pose).
+     Re-skin: the sheets' colours and tabs are the product's records (pages, photos, logs, layers); the number and
+     unit are its real before → after. Copy: rewrite the h2 and the numbers (data-from, data-to, the struck line). -->
+<section class="slide" id="s__N__">
+  <h2 class="st-squeeze-h">A year of records,<br>pressed into one small file.</h2>
+
+  <div class="st-squeeze-peg" aria-hidden="true"></div>
+  <div class="st-squeeze-card" aria-hidden="true">
+    <svg class="st-squeeze-svg" viewBox="0 0 1080 620" width="1080" height="620">
+      <defs>
+        <linearGradient id="st-squeeze-steel-__N__" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C5049"/><stop offset="1" stop-color="#22302B"/></linearGradient>
+        <pattern id="st-squeeze-thread-__N__" width="28" height="12" patternUnits="userSpaceOnUse"><rect width="28" height="12" fill="#A9B7B0"/><path d="M0 9L28 3" stroke="#6F807A" stroke-width="3"/></pattern>
+        <radialGradient id="st-squeeze-lamp-__N__" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#FFF6DA"/><stop offset="1" stop-color="#FFF6DA" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="1080" height="620" fill="url(#st-squeeze-lamp-__N__)"/>
+      <ellipse cx="540" cy="596" rx="350" ry="13" fill="#1E3A33" opacity=".18"/>
+
+      <!-- the frame: two posts and a crossbar; the platen hangs from a threaded rod -->
+      <rect x="262" y="100" width="34" height="424" rx="8" fill="url(#st-squeeze-steel-__N__)"/>
+      <rect x="784" y="100" width="34" height="424" rx="8" fill="url(#st-squeeze-steel-__N__)"/>
+      <rect x="268" y="104" width="6" height="414" rx="3" fill="#fff" opacity=".12"/><rect x="790" y="104" width="6" height="414" rx="3" fill="#fff" opacity=".12"/>
+
+      <g class="st-squeeze-platen">
+        <rect x="526" y="-30" width="28" height="430" fill="url(#st-squeeze-thread-__N__)"/>
+        <rect x="320" y="392" width="440" height="44" rx="10" fill="url(#st-squeeze-steel-__N__)"/>
+        <rect x="330" y="395" width="420" height="5" rx="2.5" fill="#fff" opacity=".18"/>
+        <rect x="320" y="430" width="440" height="6" rx="3" fill="#121B18" opacity=".35"/>
+      </g>
+
+      <g class="st-squeeze-bar">
+        <rect x="230" y="70" width="620" height="60" rx="16" fill="url(#st-squeeze-steel-__N__)"/>
+        <rect x="246" y="75" width="588" height="6" rx="3" fill="#fff" opacity=".14"/>
+        <circle cx="270" cy="100" r="7" fill="#15201C"/><circle cx="810" cy="100" r="7" fill="#15201C"/>
+        <!-- hand wheel: spins while the press comes down -->
+        <g class="st-squeeze-wheel">
+          <circle cx="540" cy="100" r="50" fill="none" class="st-squeeze-brass-s" stroke-width="12"/>
+          <path d="M540 56v88M496 100h88M509 69l62 62M571 69l-62 62" class="st-squeeze-brass-s" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="540" cy="100" r="13" class="st-squeeze-brass-f st-squeeze-brass-d" stroke-width="3"/>
+          <circle cx="540" cy="51" r="9" class="st-squeeze-brass-df"/>
+        </g>
+      </g>
+
+      <!-- the shadow of the platen on the stack: darkens as it closes in -->
+      <g class="st-squeeze-press-sh"><ellipse cx="540" cy="448" rx="190" ry="8" fill="#1E3A33"/></g>
+
+      <!-- the stack: 14 records, messy; squared up and squeezed to a fifth of its height -->
+      <g class="st-squeeze-stack">
+        <rect x="340" y="200" width="400" height="320" fill="none"/>
+          <g class="st-squeeze-sheet" style="--i:0;--jx:11px;--r:1.14deg"><rect class="st-squeeze-face" x="360" y="501" width="360" height="19" rx="4" style="fill:#fff"/><rect class="st-squeeze-face" x="360" y="516" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="508" width="189" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:1;--jx:10px;--r:0.03deg"><rect class="st-squeeze-face" x="360" y="479" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 32%,#fff)"/><rect class="st-squeeze-face" x="360" y="494" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="486" width="165" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:2;--jx:-5px;--r:0.97deg"><rect class="st-squeeze-face" x="360" y="457" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand-2) 34%,#fff)"/><rect class="st-squeeze-face" x="360" y="472" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="464" width="150" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:3;--jx:-4px;--r:-0.17deg"><rect x="716" y="438" width="22" height="13" rx="3" style="fill:var(--brand-2)"/><rect class="st-squeeze-face" x="360" y="435" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 18%,#fff)"/><rect class="st-squeeze-face" x="360" y="450" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="442" width="108" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:4;--jx:-11px;--r:0.99deg"><rect class="st-squeeze-face" x="360" y="413" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand-2) 20%,#fff)"/><rect class="st-squeeze-face" x="360" y="428" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="420" width="178" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:5;--jx:-12px;--r:1.54deg"><rect class="st-squeeze-face" x="360" y="391" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 50%,#fff)"/><rect class="st-squeeze-face" x="360" y="406" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="398" width="147" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:6;--jx:-12px;--r:-1.55deg"><rect class="st-squeeze-face" x="360" y="369" width="360" height="19" rx="4" style="fill:#fff"/><rect class="st-squeeze-face" x="360" y="384" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="376" width="157" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:7;--jx:-3px;--r:-1.49deg"><rect class="st-squeeze-face" x="360" y="347" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 32%,#fff)"/><rect class="st-squeeze-face" x="360" y="362" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="354" width="120" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:8;--jx:-10px;--r:-0.56deg"><rect x="716" y="328" width="22" height="13" rx="3" style="fill:var(--brand)"/><rect class="st-squeeze-face" x="360" y="325" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand-2) 34%,#fff)"/><rect class="st-squeeze-face" x="360" y="340" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="332" width="165" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:9;--jx:-11px;--r:-0.85deg"><rect class="st-squeeze-face" x="360" y="303" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 18%,#fff)"/><rect class="st-squeeze-face" x="360" y="318" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="310" width="127" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:10;--jx:3px;--r:0.52deg"><rect class="st-squeeze-face" x="360" y="281" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand-2) 20%,#fff)"/><rect class="st-squeeze-face" x="360" y="296" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="288" width="148" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:11;--jx:9px;--r:1.59deg"><rect x="716" y="262" width="22" height="13" rx="3" style="fill:color-mix(in oklab,var(--brand) 50%,var(--brand-2))"/><rect class="st-squeeze-face" x="360" y="259" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 50%,#fff)"/><rect class="st-squeeze-face" x="360" y="274" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="266" width="197" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:12;--jx:-14px;--r:-0.79deg"><rect class="st-squeeze-face" x="360" y="237" width="360" height="19" rx="4" style="fill:#fff"/><rect class="st-squeeze-face" x="360" y="252" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="244" width="187" height="4" rx="2" fill="#1E3A33" opacity=".12"/></g>
+          <g class="st-squeeze-sheet" style="--i:13;--jx:-11px;--r:-0.68deg"><rect class="st-squeeze-face" x="360" y="215" width="360" height="19" rx="4" style="fill:color-mix(in oklab,var(--brand) 32%,#fff)"/><rect class="st-squeeze-face" x="360" y="230" width="360" height="4" rx="2" fill="#1E3A33" opacity=".14"/><rect x="384" y="222" width="98" height="4" rx="2" fill="#1E3A33" opacity=".12"/><path d="M402 206v18" stroke="#8A97A0" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+      </g>
+
+      <!-- once pressed, the block gets a crisp edge and a file label -->
+      <g class="st-squeeze-edge"><rect x="357" y="445" width="366" height="76" rx="7" fill="none" stroke="#22302B" stroke-width="3" opacity=".55"/><rect x="361" y="448" width="358" height="5" rx="2.5" fill="#fff" opacity=".7"/></g>
+      <g class="st-squeeze-label"><path d="M500 462h66l14 14v34h-80z" fill="#fff" stroke="#22302B" stroke-width="3" stroke-linejoin="round"/><path d="M566 462v14h14" style="fill:color-mix(in oklab,var(--brand) 14%,#fff)" stroke="#22302B" stroke-width="3" stroke-linejoin="round"/><svg class="mark st-squeeze-mark" x="514" y="468" width="38" height="38" viewBox="0 0 24 24">__MARK__</svg></g>
+      <!-- two straps snap round the pressed block -->
+      <g class="st-squeeze-strap st-squeeze-t1"><rect x="438" y="440" width="22" height="84" rx="5" class="st-squeeze-strapf" stroke-width="2.5"/><rect x="442" y="476" width="14" height="10" rx="2" class="st-squeeze-strapd"/></g>
+      <g class="st-squeeze-strap st-squeeze-t2"><rect x="620" y="440" width="22" height="84" rx="5" class="st-squeeze-strapf" stroke-width="2.5"/><rect x="624" y="476" width="14" height="10" rx="2" class="st-squeeze-strapd"/></g>
+      <!-- the bed -->
+      <g class="st-squeeze-bed">
+        <rect x="230" y="520" width="620" height="46" rx="12" fill="url(#st-squeeze-steel-__N__)"/>
+        <rect x="244" y="523" width="592" height="5" rx="2.5" fill="#fff" opacity=".16"/>
+        <rect x="256" y="566" width="74" height="24" rx="6" fill="#22302B"/><rect x="750" y="566" width="74" height="24" rx="6" fill="#22302B"/>
+      </g>
+
+      <!-- the excess: dust out of both sides, scraps that fly and stay -->
+      <g class="st-squeeze-dust st-squeeze-dl">
+        <circle cx="352" cy="500" r="18"/><circle cx="336" cy="480" r="12"/><circle cx="356" cy="470" r="9"/><circle cx="330" cy="506" r="10"/>
+      </g>
+      <g class="st-squeeze-dust st-squeeze-dr">
+        <circle cx="728" cy="500" r="18"/><circle cx="744" cy="480" r="12"/><circle cx="724" cy="470" r="9"/><circle cx="750" cy="506" r="10"/>
+      </g>
+      <g class="st-squeeze-scrap st-squeeze-s1"><rect x="346" y="494" width="22" height="14" rx="2" fill="#FFF0C4" stroke="#C9B88E" stroke-width="2"/></g>
+      <g class="st-squeeze-scrap st-squeeze-s2"><rect x="712" y="492" width="18" height="12" rx="2" fill="#E3EEFF" stroke="#9FB2CC" stroke-width="2"/></g>
+      <g class="st-squeeze-scrap st-squeeze-s3"><rect x="720" y="500" width="14" height="10" rx="2" fill="#FFE0D6" stroke="#D2A698" stroke-width="2"/></g>
+    </svg>
+  </div>
+
+  <div class="st-squeeze-num">
+    <p class="st-squeeze-was"><span class="strike">48 MB</span></p>
+    <p class="st-squeeze-now"><span class="st-squeeze-big"><span class="count" data-from="48" data-to="3" data-d="420" style="--t:.45">3</span></span><span class="st-squeeze-unit">MB</span></p>
+  </div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#0F4D41 0%,#156450 55%,#0E4438 100%);--brand:var(--deck-brand,#F2B544);--brand-2:var(--deck-brand-2,#FF8A65);color:var(--ink-auto,#fff);padding:96px 100px;
+  --st-squeeze-brass:color-mix(in oklab,var(--brand) 78%,#fff)}
+/* pegboard and a soft lamp pool: drawn from the ink, so they sit on any field */
+#s__N__ .st-squeeze-peg{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1100px 650px at 30% 34%,color-mix(in oklab,var(--ink-auto,#fff) 9%,transparent),transparent 70%),radial-gradient(circle,color-mix(in oklab,var(--ink-auto,#fff) 9%,transparent) 2.6px,transparent 3.2px) 22px 22px/44px 44px}
+#s__N__ .st-squeeze-brass-s{stroke:var(--st-squeeze-brass)}
+#s__N__ .st-squeeze-brass-f{fill:var(--st-squeeze-brass)}
+#s__N__ .st-squeeze-brass-d{stroke:color-mix(in oklab,var(--brand) 60%,#000)}
+#s__N__ .st-squeeze-brass-df{fill:color-mix(in oklab,var(--brand) 60%,#000)}
+#s__N__ .st-squeeze-strapf{fill:var(--brand);stroke:color-mix(in oklab,var(--brand) 55%,#000)}
+#s__N__ .st-squeeze-strapd{fill:color-mix(in oklab,var(--brand) 55%,#000)}
+#s__N__ .st-squeeze-mark{fill:none;stroke:#22302B;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#s__N__ .st-squeeze-h{font-size:96px;letter-spacing:-.045em;line-height:1.04}
+
+/* the stage: a warm cream card lit from above, with an inner highlight and a deep green shadow */
+#s__N__ .st-squeeze-card{position:absolute;left:100px;top:380px;width:1080px;height:620px;border-radius:34px;overflow:hidden;
+  background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 5%,#FBF6EC) 0%,color-mix(in oklab,var(--brand) 9%,#F1E8D6) 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 -3px 0 rgba(120,90,30,.08) inset,0 2px 4px rgba(0,0,0,.2),0 50px 90px -40px rgba(0,0,0,.7)}
+#s__N__ .st-squeeze-svg{display:block}
+#s__N__ .st-squeeze-svg *{transform-box:fill-box}
+#s__N__ .st-squeeze-dust circle{fill:#D3C29C;stroke:#FFF9EC;stroke-width:3}
+
+/* the number: the old size struck above, the new size big, level with the block */
+#s__N__ .st-squeeze-num{position:absolute;left:1260px;top:520px;width:560px}
+#s__N__ .st-squeeze-was{font:700 64px/1 var(--f);letter-spacing:-.03em;color:color-mix(in oklab,var(--ink-auto,#fff) 62%,transparent)}
+#s__N__ .st-squeeze-was .strike{background-size:100% 6px;padding:0 4px;opacity:1}
+#s__N__ .st-squeeze-now{margin-top:20px;display:flex;align-items:baseline;gap:18px;white-space:nowrap}
+#s__N__ .st-squeeze-big{display:inline-block;font:800 300px/.8 var(--f);letter-spacing:-.06em;font-variant-numeric:tabular-nums;transform-origin:50% 100%}
+#s__N__ .st-squeeze-unit{font:800 96px/1 var(--f);letter-spacing:-.04em;opacity:.72}
+
+/* ---- resting pose = the final frame ---- */
+#s__N__ .st-squeeze-stack{transform-origin:50% 100%;transform:scaleY(.24)}
+#s__N__ .st-squeeze-sheet{transform-origin:50% 50%}
+#s__N__ .st-squeeze-press-sh{opacity:.07;transform-origin:50% 50%}
+#s__N__ .st-squeeze-platen{transform:translateY(-30px)}
+#s__N__ .st-squeeze-wheel{transform-origin:50% 50%;transform:rotate(320deg)}
+#s__N__ .st-squeeze-dust{opacity:0}
+#s__N__ .st-squeeze-strap{transform-origin:50% 100%}
+#s__N__ .st-squeeze-label{transform-origin:50% 100%}
+#s__N__ .st-squeeze-dust circle{transform-origin:50% 50%}
+#s__N__ .st-squeeze-scrap{transform-origin:50% 50%}
+#s__N__ .st-squeeze-s1{transform:translate(-150px,84px) rotate(-200deg)}
+#s__N__ .st-squeeze-s2{transform:translate(160px,90px) rotate(170deg)}
+#s__N__ .st-squeeze-s3{transform:translate(96px,12px) rotate(8deg)}
+
+/* ---- the arrival: one 1.5 s timeline. Slide in 0–0.3 s, contact 0.45 s, squeezed 0.7 s, lift 0.7–1.0 s ---- */
+#s__N__.play .st-squeeze-sheet{animation:st-squeeze-sheet 1.5s linear backwards}
+#s__N__.play .st-squeeze-stack{animation:st-squeeze-stack 1.5s linear backwards}
+#s__N__.play .st-squeeze-platen{animation:st-squeeze-platen 1.5s linear backwards}
+#s__N__.play .st-squeeze-press-sh{animation:st-squeeze-press-sh 1.5s linear backwards}
+#s__N__.play .st-squeeze-wheel{animation:st-squeeze-wheel 1.5s linear backwards}
+#s__N__.play .st-squeeze-bed{animation:st-squeeze-jolt 1.5s linear backwards}
+#s__N__.play .st-squeeze-dust{animation:st-squeeze-show 1.5s linear backwards}
+#s__N__.play .st-squeeze-dl circle{animation:st-squeeze-puff-l 1.5s cubic-bezier(.2,.7,.3,1) backwards}
+#s__N__.play .st-squeeze-dr circle{animation:st-squeeze-puff-r 1.5s cubic-bezier(.2,.7,.3,1) backwards}
+#s__N__.play .st-squeeze-dust circle:nth-child(2){--dy:-24px;--k:1.6}
+#s__N__.play .st-squeeze-dust circle:nth-child(3){--dy:-40px;--k:1.3;--dx:40px}
+#s__N__.play .st-squeeze-dust circle:nth-child(4){--dy:6px;--k:1.2;--dx:90px}
+#s__N__.play .st-squeeze-s1{animation:st-squeeze-s1 1.5s linear backwards}
+#s__N__.play .st-squeeze-s2{animation:st-squeeze-s2 1.5s linear backwards}
+#s__N__.play .st-squeeze-s3{animation:st-squeeze-s3 1.5s linear backwards}
+#s__N__.play .st-squeeze-t1{animation:st-squeeze-strap 1.5s linear backwards}
+#s__N__.play .st-squeeze-t2{animation:st-squeeze-strap 1.5s linear .06s backwards}
+#s__N__.play .st-squeeze-edge{animation:st-squeeze-edge 1.5s linear backwards}
+#s__N__.play .st-squeeze-label{animation:st-squeeze-label 1.5s linear backwards}
+#s__N__.play .st-squeeze-big{animation:st-squeeze-land 1.5s linear backwards}
+#s__N__.play .st-squeeze-was{animation:st-squeeze-was 1.5s linear backwards}
+#s__N__.play .st-squeeze-was .strike{animation:strike .3s var(--ease) .98s backwards}
+
+/* the sheets slide in from the left, the top ones lagging, so the stack leans, overshoots and rights itself;
+   then the squeeze squares them up (the jitter goes to zero as the platen closes) */
+@keyframes st-squeeze-sheet{
+  0%{transform:translateX(calc(-700px - var(--i) * 6px)) translateX(var(--jx)) rotate(var(--r));animation-timing-function:cubic-bezier(.25,.7,.35,1)}
+  14%{transform:translateX(calc(var(--i) * -2.2px)) translateX(var(--jx)) rotate(var(--r));animation-timing-function:ease-in-out}
+  20%{transform:translateX(calc(var(--i) * 1.3px)) translateX(var(--jx)) rotate(var(--r));animation-timing-function:ease-in-out}
+  26%,30%{transform:translateX(var(--jx)) rotate(var(--r))}
+  47%{transform:translateX(calc(var(--jx) * .5)) rotate(calc(var(--r) * .3))}
+  60%,100%{transform:none}}
+@keyframes st-squeeze-stack{
+  0%,30%{transform:none;animation-timing-function:cubic-bezier(.5,0,.6,1)}
+  46.7%{transform:scaleY(.18);animation-timing-function:ease-out}
+  56%{transform:scaleY(.215);animation-timing-function:ease-in-out}
+  64%{transform:scaleY(.196)}
+  72%,100%{transform:scaleY(.24)}}
+/* platen: bottom at 150 → contact 212 (0.45 s) → 465 (0.7 s) → lifts to rest 436 */
+@keyframes st-squeeze-platen{
+  0%{transform:translateY(-286px);animation-timing-function:cubic-bezier(.5,0,.9,.5)}
+  30%{transform:translateY(-224px);animation-timing-function:cubic-bezier(.5,0,.6,1)}
+  46.7%{transform:translateY(18px);animation-timing-function:ease-in-out}
+  58%{transform:translateY(18px);animation-timing-function:cubic-bezier(.3,.6,.3,1)}
+  74%{transform:translateY(-34px);animation-timing-function:ease-in-out}
+  84%,100%{transform:translateY(-30px)}}
+@keyframes st-squeeze-press-sh{0%{opacity:0;transform:translateY(-236px) scale(1.5,1.4)}30%{opacity:.12;transform:translateY(-236px) scale(1.25,1.2)}46.7%{opacity:.32;transform:none}58%{opacity:.3}100%{opacity:.07;transform:none}}
+@keyframes st-squeeze-wheel{0%{transform:none;animation-timing-function:cubic-bezier(.5,0,.6,1)}46.7%{transform:rotate(380deg);animation-timing-function:ease-in-out}58%{transform:rotate(380deg);animation-timing-function:ease-in-out}84%,100%{transform:rotate(320deg)}}
+@keyframes st-squeeze-jolt{0%,46%{transform:none}48%{transform:translateY(4px)}51%{transform:translateY(-2px)}54%{transform:translateY(1px)}57%,100%{transform:none}}
+@keyframes st-squeeze-show{0%,36%{opacity:0}37%,100%{opacity:1}}
+@keyframes st-squeeze-puff-l{0%,36%{transform:scale(.2);opacity:0}42%{transform:translateX(-30px) scale(.8);opacity:1}80%,100%{transform:translate(calc(var(--dx,0px) * -1 - 110px),var(--dy,-12px)) scale(var(--k,1.8));opacity:0}}
+@keyframes st-squeeze-puff-r{0%,36%{transform:scale(.2);opacity:0}42%{transform:translateX(30px) scale(.8);opacity:1}80%,100%{transform:translate(calc(var(--dx,0px) + 110px),var(--dy,-12px)) scale(var(--k,1.8));opacity:0}}
+@keyframes st-squeeze-s1{0%,38%{transform:scale(.4);opacity:0}40%{opacity:1;transform:none;animation-timing-function:cubic-bezier(.2,.6,.4,1)}52%{transform:translate(-90px,-70px) rotate(-120deg);animation-timing-function:cubic-bezier(.6,0,.9,.5)}66%{transform:translate(-150px,84px) rotate(-210deg);animation-timing-function:ease-out}70%{transform:translate(-152px,76px) rotate(-204deg)}74%,100%{transform:translate(-150px,84px) rotate(-200deg)}}
+@keyframes st-squeeze-s2{0%,39%{transform:scale(.4);opacity:0}41%{opacity:1;transform:none;animation-timing-function:cubic-bezier(.2,.6,.4,1)}54%{transform:translate(110px,-90px) rotate(110deg);animation-timing-function:cubic-bezier(.6,0,.9,.5)}69%{transform:translate(160px,90px) rotate(176deg);animation-timing-function:ease-out}73%{transform:translate(162px,84px) rotate(172deg)}77%,100%{transform:translate(160px,90px) rotate(170deg)}}
+@keyframes st-squeeze-s3{0%,40%{transform:scale(.4);opacity:0}42%{opacity:1;transform:none;animation-timing-function:cubic-bezier(.2,.6,.4,1)}52%{transform:translate(60px,-40px) rotate(20deg);animation-timing-function:cubic-bezier(.6,0,.9,.5)}58%{transform:translate(90px,12px) rotate(20deg);animation-timing-function:ease-out}62%{transform:translate(94px,6px) rotate(12deg)}66%,100%{transform:translate(96px,12px) rotate(8deg)}}
+/* the number gets pressed too: it squashes as it lands on its new value */
+@keyframes st-squeeze-land{0%,54%{transform:none}58%{transform:scale(1.06,.88)}64%{transform:scale(.98,1.03)}70%,100%{transform:none}}
+@keyframes st-squeeze-strap{0%,54%{transform:scaleY(0);opacity:0;animation-timing-function:cubic-bezier(.3,1.6,.5,1)}55%{opacity:1}64%,100%{transform:none}}
+@keyframes st-squeeze-edge{0%,50%{opacity:0}60%,100%{opacity:1}}
+@keyframes st-squeeze-label{0%,60%{opacity:0;transform:translateY(-30px) rotate(-8deg);animation-timing-function:cubic-bezier(.5,0,.9,.5)}66%{opacity:1;transform:none;animation-timing-function:ease-out}70%{transform:scale(1.04,.92)}75%,100%{transform:none}}
+@keyframes st-squeeze-was{0%,60%{opacity:0;transform:translateY(16px)}68%,100%{opacity:1;transform:none}}
+</style>

@@ -1,0 +1,35 @@
+{
+  "title": "Conveyor",
+  "kind": "story",
+  "mood": [
+    "industrial",
+    "calm",
+    "watchful"
+  ],
+  "suits": "checking, screening, fraud or risk review, QA, moderation, compliance: everything passes through, only the odd one is held",
+  "tech": "svg+css",
+  "duration": 1.45,
+  "params": {
+    "--field": "the slide field; the machine sits in its own hall card, so it reads on any field",
+    "--brand": "tints the hall, the scanner beam and the checks",
+    "--brand-2": "the held crate",
+    "__MARK__": "on the scanner housing (the scanner is the product)",
+    ".st-conveyor-chipt": "the tag on the held item (one word: Hold, Review, Fraud?)"
+  },
+  "details": [
+    "the belt decelerates like a real one (fast in, easing to a stop) and every parcel rides the same profile",
+    "the belt treads and the roller spokes travel with the parcels during the arrival",
+    "parcels jiggle on the rollers while moving, each out of step",
+    "when the belt stops, every parcel tips forward 2.4° with the inertia and settles",
+    "the scanner beam flares for exactly the frames a parcel is under it",
+    "a teal check pops above each parcel the moment it leaves the beam",
+    "the odd parcel turns the beam amber and an amber scan line sweeps down it",
+    "its tag pops up on a string that is drawn on first, overshoots and is left swinging 2° off true",
+    "the arch lamp blinks amber twice when the crate is flagged and then stays amber",
+    "the fragile box carries a drawn glass glyph; the envelope has a stamp",
+    "every parcel has a top and a side face, tape and a label",
+    "after rest the belt keeps crawling at 8 px/s and the roller spokes keep turning (ambient, one clock)",
+    "faint racks of a sorting hall stand behind the belt",
+    "a soft teal halo around the scanner, dashed floor markings"
+  ]
+}

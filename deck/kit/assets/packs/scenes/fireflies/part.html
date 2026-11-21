@@ -1,0 +1,17 @@
+<!-- scenes/fireflies: a forest glade, late dusk into moonlit night. Drawn by lib/fireflies.js + lib/fireflies.css.
+     data-tod 0…1 = the hour (0 apricot afterglow, 0.5 blue hour, 1 moonlight shafts); data-seed reshuffles trees and flies;
+     data-print-t picks the still frame for print. Planes are the engine's .parallax > [data-depth]; tune depths here. -->
+<div class="sc-fireflies" data-tod="0.5" data-seed="7" aria-hidden="true">
+  <div class="parallax">
+    <div class="ff-sky" data-depth=".02"></div>
+    <div class="ff-far" data-depth=".05"></div>
+    <div class="ff-fog ff-fog-far" data-depth=".08"><i></i></div>
+    <div class="ff-mid" data-depth=".13"></div>
+    <div class="ff-beams" data-depth=".18"></div>
+    <div class="ff-fog ff-fog-near" data-depth=".2"><i></i></div>
+    <div class="ff-life" data-depth=".24"></div>
+    <div class="ff-near" data-depth=".34"></div>
+    <div class="ff-front" data-depth=".42"></div>
+  </div>
+  <i class="ff-grain"></i>
+</div>

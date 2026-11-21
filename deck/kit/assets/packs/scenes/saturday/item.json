@@ -1,0 +1,52 @@
+{
+  "title": "Saturday evening",
+  "kind": "scene",
+  "mood": [
+    "mellow",
+    "warm",
+    "weekend",
+    "city",
+    "unhurried"
+  ],
+  "suits": "consumer, local, leisure, travel, social and transit products; warm pitches about people. Walk data-tod forward for a sunset across the deck.",
+  "tech": "svg+js",
+  "params": {
+    "data-tod": "0 late afternoon (5 pm) · .5 sunset · 1 blue hour; any value in between",
+    "--brand": "on the section: the kite, the tour boat's flag, one moored dinghy",
+    "--brand-2": "on the section: the kite's second panel, every fourth ferris-wheel cabin",
+    "--field (set by the scene)": "the sky behind the headline zone, so --ink-auto stays right"
+  },
+  "details": [
+    "a steam train crosses left to right on a brick viaduct every 52 s; its chimney puffs in choo-choo pairs, with faint wisps between so the plume stays one plume",
+    "the steam leaves with the train's momentum, stops, rises, drifts left with the wind and thins as it grows",
+    "low white wisps hiss from the cylinder cocks at the front wheels on every first chuff",
+    "the driver toots once mid-crossing: a thin, fast white jet from the whistle by the cab",
+    "coupling and connecting rods turn with the wheels; the firebox under the cab flickers orange",
+    "after dark the firebox lights the underside of fresh steam orange; the coaches' windows glow and show heads",
+    "a semaphore signal drops to clear with a little bounce 8 s before the train appears and returns after the last coach",
+    "two birds on the telegraph wire take off as the loco nears, loop, and settle back after the train has gone",
+    "a skateboarder rolls along the far promenade and ollies once every 40 s, board tilting nose-up",
+    "a second skater kick-pushes in threes, surging on each push, then rides",
+    "a walker carries a board under one arm; a dog trots ahead of its owner, tail wagging, leash sagging",
+    "a cyclist pedals past; at dusk the rear light blinks and the front lamp is on",
+    "a red-and-amber kite bobs on the wind, tail streaming left, its line sagging to the flyer's raised hand; after dark the kite has gone home",
+    "birds head home in a loose V, flapping then gliding, shrinking as they descend into the promenade trees; after dark two bats flit by the lamps instead",
+    "a tiny ferris wheel on the right edge turns once every two minutes, cabins hanging level; its rim lights come on at sunset",
+    "windows light up one by one as the hour deepens (same windows, same order on every slide); a few west-facing panes flash with the low sun at 5 pm",
+    "one window flickers TV blue, one lights late (someone just got home), one goes dark for a while",
+    "street lamps come on after sunset; the next one to come on warms up sodium-pink with a stutter; one lamp is faulty and blinks",
+    "the clock tower shows the hour of the light: 5:00 in the afternoon, about twenty to eight at sunset, ten to nine at blue hour",
+    "a red aircraft light blinks on the TV tower once the light goes",
+    "the far bank is mirrored in the river, squashed and rippled, and lit windows smear into the water at night",
+    "the sun's glitter path on the river, sky glints drifting downstream with the current, lamp glints quivering under each lamp",
+    "a festooned tour boat chugs upstream with its flag streaming back; a sculler goes downstream surging on each stroke and leaving little oar puddles that fade",
+    "moored dinghies by the river steps nod against the wall, out of step with each other",
+    "one wind everywhere: steam, kite tail, flag and clouds all go right to left",
+    "a thin waxing crescent at blue hour, lit on the side facing where the sun went down; the city's own warm glow on the low sky"
+  ],
+  "tods": [
+    0.1,
+    0.5,
+    0.9
+  ]
+}

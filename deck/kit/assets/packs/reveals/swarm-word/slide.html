@@ -1,0 +1,208 @@
+<!-- 0 · Intro reveal "swarm-word": an empty ultramarine field. The first press scatters a few thousand points across
+     it; they drift, then curve in and settle into the glyphs of the mark and the wordmark, left to right, each with a
+     tiny overshoot. A few stragglers land late, and the very last points fill the mark's accent part in the accent
+     colour, each with a small landing ping. At rest the points breathe on the deck clock, a faint light wave crosses
+     the word, and a handful of free points keep drifting in the field. ~2.4 s. Print / reduced motion: the rest frame.
+     Brand: --field (may be a gradient), --brand (the accent: the last points), --brand-2 (fallback accent) on #s__N__.
+     The points take the readable ink for the field (Deck.inkOn); the accent is whichever brand colour reads on the
+     field and differs from the points. __MARK__ = stroke paths in a 24 x 24 box (use-pack --mark); the svg is never
+     shown, the points are sampled from its strokes. The last stroke (or the last fifth of a single stroke) is formed
+     last, in the accent. The points sample the deck font (var(--f)) at 800; long names shrink to fit 1700 px. -->
+<section class="slide rv-swarm" id="s__N__" aria-label="__WORD__">
+  <div class="rv-swarm-glow" aria-hidden="true"></div>
+  <canvas class="rv-swarm-cv" width="1920" height="1080" role="img" aria-label="__WORD__"></canvas>
+  <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+</section>
+
+<style>
+#s__N__{
+  --field:radial-gradient(110% 95% at 50% 46%,#3048E4 0%,#2338C8 42%,#151E8C 100%);   /* ultramarine by default */
+  --brand:var(--deck-brand,#FFD23F); --brand-2:var(--deck-brand-2,#7CFFB2);                /* the accent (the last points to land), a fallback */
+  --swarm-fs:236px;                                  /* wordmark size the points are sampled from */
+  padding:0;background:var(--field)}
+#s__N__::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 95% at 50% 46%,transparent 45%,rgba(0,0,20,.16) 100%)}
+#s__N__ .rv-swarm-glow{position:absolute;left:50%;top:50%;width:1500px;height:620px;margin:-310px 0 0 -750px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,255,255,var(--swarm-haze,.22)),transparent);opacity:0;transition:opacity 1.2s ease}
+#s__N__.rv-swarm-on .rv-swarm-glow{opacity:1}
+html.print #s__N__ .rv-swarm-glow{transition:none}
+#s__N__ .rv-swarm-cv{position:absolute;left:0;top:0;width:1920px;height:1080px}
+#s__N__ .mark{position:absolute;width:0;height:0;visibility:hidden}
+</style>
+
+<script>
+const el = document.getElementById('s__N__'), cv = el.querySelector('.rv-swarm-cv'), g = cv.getContext('2d'), mark = el.querySelector('svg.mark')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(90210)
+const inOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2
+// arrive with a hair of overshoot, then settle (easeOutBack on the back half of an in-out)
+const arrive = p => p < .5 ? 4 * p * p * p : (q => 1 + 2.2 * Math.pow(q - 1, 3) + 1.2 * Math.pow(q - 1, 2))(p * 2 - 1) * .5 + .5
+const END = 2.4
+let N = 0, F = 0, A = null, X0 = 0, X1 = 1920, col = {}
+
+// colour: points in the readable ink for the field; the accent is a brand colour that reads on it and differs
+const C = (() => {
+  const cx = document.createElement('canvas').getContext('2d')
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s; const v = cx.fillStyle; if (v[0] === '#') return v === '#010203' && !/^#010203$/i.test(s.trim()) ? null : [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : null }
+  const avg = s => { const a = (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl)a?\([^()]*\)/gi) || [s]).map(rgb).filter(Boolean); return a.length ? [0, 1, 2].map(i => a.reduce((t, c) => t + c[i], 0) / a.length) : null }
+  const lum = c => { const f = v => (v /= 255) <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]) }
+  const con = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+  const hex = c => '#' + c.map(v => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('')
+  const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+  return { rgb, avg, lum, con, hex, mix }
+})()
+const colours = v => {
+  const field = C.avg(v('--field')) || [35, 56, 200], dot = C.rgb(Deck.inkOn(C.hex(field)) || '#fff')
+  const far = c => Math.hypot(c[0] - dot[0], c[1] - dot[1], c[2] - dot[2]) > 90
+  const cands = [v('--brand'), v('--brand-2')].map(C.rgb).filter(Boolean)
+  const acc = cands.find(c => C.con(c, field) >= 2.4 && far(c)) || cands.find(c => C.con(c, field) >= 1.8 && far(c)) || C.mix(dot, cands[0] || dot, .5)
+  return { dot: C.hex(dot), acc: C.hex(acc) }
+}
+
+function sample() {
+  const cs = getComputedStyle(el), v = k => cs.getPropertyValue(k).trim()
+  col = colours(v); el.style.setProperty('--swarm-haze', col.dot === '#ffffff' ? '.22' : '.3')
+  const off = document.createElement('canvas'); off.width = 1920; off.height = 1080
+  const o = off.getContext('2d', { willReadFrequently: true })
+  const fs = parseFloat(v('--swarm-fs')) || 236, word = el.getAttribute('aria-label')
+  o.font = `800 ${fs}px ${cs.fontFamily}`; o.letterSpacing = (-.035 * fs).toFixed(1) + 'px'
+  let tw = o.measureText(word).width, cap = o.measureText('H').actualBoundingBoxAscent
+  const ms = cap * 1.22, gap = fs * .24
+  const k = Math.min(1, 1700 / (ms + gap + tw))   // long names shrink to fit
+  if (k < 1) { o.font = `800 ${fs * k}px ${cs.fontFamily}`; o.letterSpacing = (-.035 * fs * k).toFixed(1) + 'px'; tw *= k; cap *= k }
+  const msk = ms * k, gk = gap * k, x0 = 960 - (msk + gk + tw) / 2, mid = 540
+  const vb = mark.viewBox.baseVal, sc = msk / (vb.height || 24)
+  const len = p => { const q = p.cloneNode(); q.removeAttribute('pathLength'); mark.appendChild(q); let L = 1; try { L = q.getTotalLength() || 1 } catch { /* not rendered */ } q.remove(); return L }   // pathLength="1" rescales the length methods
+  const shapes = [...mark.querySelectorAll('path')].map(p => ({ d: p.getAttribute('d'), el: p, L: len(p) }))
+  // strokes: everything but the accent part, then the accent part (the last stroke, or the tail of a single stroke)
+  const stroke = acc => {
+    o.setTransform(sc, 0, 0, sc, x0, mid - msk / 2); o.lineWidth = 2.7; o.lineCap = 'round'; o.lineJoin = 'round'; o.strokeStyle = '#fff'
+    shapes.forEach((sh, k) => {
+      const last = k === shapes.length - 1, single = shapes.length === 1, path = new Path2D(sh.d || '')
+      if (single) { const L = sh.L; o.setLineDash(acc ? [.22 * L, 2 * L] : [.78 * L, 2 * L]); o.lineDashOffset = acc ? 1.44 * L : 0 }
+      else { o.setLineDash([]); o.lineDashOffset = 0; if (last !== !!acc) return }
+      o.stroke(path)
+    })
+    o.setLineDash([])
+  }
+  const passes = [
+    { accent: 0, draw: () => stroke(0) },
+    { accent: 1, draw: () => stroke(1) },
+    { accent: 0, draw: () => { o.setTransform(1, 0, 0, 1, 0, 0); o.textBaseline = 'alphabetic'; o.fillText(word, x0 + msk + gk, mid + cap / 2) } },
+  ]
+  // area first, so the spacing gives ~5,200 points whatever the name
+  let area = 0; const masks = []
+  for (const ps of passes) {
+    o.setTransform(1, 0, 0, 1, 0, 0); o.clearRect(0, 0, 1920, 1080); o.fillStyle = '#fff'; ps.draw()
+    const d = o.getImageData(0, 0, 1920, 1080).data; masks.push(d)
+    for (let i = 3; i < d.length; i += 16) if (d[i] > 128) area += 4
+  }
+  const step = clamp(Math.sqrt(area / 5200), 3.4, 9)
+  const pts = []
+  passes.forEach((ps, j) => {
+    const d = masks[j]
+    for (let y = step / 2; y < 1080; y += step) for (let x = step / 2; x < 1920; x += step) {
+      const px = x + (rng() - .5) * step * .7, py = y + (rng() - .5) * step * .7
+      const i = ((py | 0) * 1920 + (px | 0)) * 4 + 3
+      if (d[i] > 128) pts.push([px, py, ps.accent])
+    }
+  })
+  N = pts.length; F = 34    // F free drifters that never join
+  const T = N + F
+  A = { sx: new Float32Array(T), sy: new Float32Array(T), vx: new Float32Array(T), vy: new Float32Array(T), tx: new Float32Array(T), ty: new Float32Array(T),
+    d: new Float32Array(T), du: new Float32Array(T), cu: new Float32Array(T), px: new Float32Array(T), py: new Float32Array(T), f: new Float32Array(T),
+    ph: new Float32Array(T), r: new Uint8Array(T), ac: new Uint8Array(T), lvl: new Uint8Array(T) }
+  X0 = Math.min(...pts.map(p => p[0])); X1 = Math.max(...pts.map(p => p[0]))
+  for (let i = 0; i < T; i++) {
+    const free = i >= N, [tx, ty, ac] = free ? [0, 0, 0] : pts[i]
+    A.sx[i] = rng() * 2140 - 110; A.sy[i] = rng() * 1300 - 110
+    A.vx[i] = (rng() - .5) * (free ? 36 : 70); A.vy[i] = (rng() - .5) * (free ? 24 : 50)
+    A.tx[i] = tx; A.ty[i] = ty; A.ac[i] = ac
+    A.f[i] = rng() * .22; A.ph[i] = rng() * 6.283; A.lvl[i] = rng() < .3 ? 1 : 0
+    A.r[i] = rng() < .8 ? 0 : 1   // two dot sizes
+    const nx = (tx - X0) / Math.max(1, X1 - X0)
+    if (ac) { A.d[i] = 1.12 + .48 * rng(); A.du[i] = .55 + .2 * rng() }
+    else {
+      A.d[i] = .08 + .4 * nx + .36 * rng(); A.du[i] = .78 + .32 * rng()
+      if (rng() < .022) A.d[i] += .5 + .32 * rng()   // stragglers
+    }
+    A.d[i] = Math.min(A.d[i], END - .06 - A.du[i])
+    // each point curves in on its own arc
+    const dx = tx - A.sx[i], dy = ty - A.sy[i], L = Math.hypot(dx, dy) || 1, c = (rng() - .5) * Math.min(260, L * .45)
+    A.px[i] = -dy / L * c; A.py[i] = dx / L * c
+  }
+}
+const ready = document.fonts.load(`800 100px ${getComputedStyle(el).fontFamily}`).then(() => document.fonts.ready).then(sample)
+
+// position of point i, lt seconds into the reveal, breathing on the shared clock t
+const at = (i, lt, t, out) => {
+  const br = .62, bx = Math.sin(t * .9 + A.ph[i]) * br, by = Math.cos(t * 1.13 + A.ph[i] * 1.7) * br
+  if (i >= N) {   // free drifter: wanders the field forever
+    out[0] = ((A.sx[i] + A.vx[i] * t) % 2140 + 2140) % 2140 - 110; out[1] = ((A.sy[i] + A.vy[i] * t) % 1300 + 1300) % 1300 - 110; return 1
+  }
+  const d = A.d[i], p = clamp((lt - d) / A.du[i]), hold = Math.min(lt, d)
+  const fx = A.sx[i] + A.vx[i] * hold, fy = A.sy[i] + A.vy[i] * hold
+  const e = arrive(p), s = Math.sin(Math.PI * Math.min(1, p))
+  out[0] = fx + (A.tx[i] - fx) * e + A.px[i] * s + bx * e
+  out[1] = fy + (A.ty[i] - fy) * e + A.py[i] * s + by * e
+  return p
+}
+const P0 = [0, 0], P1 = [0, 0]
+function frame(lt, t) {
+  g.clearRect(0, 0, 1920, 1080)
+  if (!A || lt < 0) return
+  g.lineCap = 'round'
+  const T = N + F, waveX = X0 - 260 + ((t % 9) / 9) * (X1 - X0 + 900)
+  // passes: [colour, alpha, width filter]
+  const pass = (style, alpha, pick) => {
+    g.beginPath()
+    for (let i = 0; i < T; i++) {
+      if (!pick(i)) continue
+      const a = clamp((lt - A.f[i]) / .25)
+      if (a <= 0) continue
+      const p = at(i, lt, t, P1)
+      if (p < 1 && p > 0 && i < N) { at(i, lt - .012, t, P0); g.moveTo(P0[0], P0[1]) } else g.moveTo(P1[0] - .01, P1[1])
+      g.lineTo(P1[0], P1[1])
+    }
+    g.strokeStyle = style; g.globalAlpha = alpha; g.stroke()
+  }
+  for (const r of [0, 1]) {
+    g.lineWidth = r ? 4.3 : 3.1
+    pass(col.dot, .96, i => i < N && !A.ac[i] && A.r[i] === r && !A.lvl[i])
+    pass(col.dot, .66, i => i < N && !A.ac[i] && A.r[i] === r && A.lvl[i])
+  }
+  g.lineWidth = 2.4; pass(col.dot, .34, i => i >= N)
+  // a soft light wave crosses the word every 9 s
+  if (lt >= END) { g.lineWidth = 3.6; pass(col.dot, .5, i => i < N && !A.ac[i] && Math.abs(A.tx[i] - waveX) < 70 && (Math.abs(A.tx[i] - waveX) < 35 || A.lvl[i] === 0)) }
+  g.lineWidth = 3.8; pass(col.acc, 1, i => A.ac[i] === 1)
+  // landing pings for the last points
+  g.lineWidth = 1.6; g.strokeStyle = col.acc
+  for (let i = 0; i < N && lt < END; i += 3) {
+    if (!A.ac[i]) continue
+    const s = lt - (A.d[i] + A.du[i])
+    if (s < 0 || s > .42) continue
+    const q = s / .42
+    g.globalAlpha = .7 * (1 - q); g.beginPath(); g.arc(A.tx[i], A.ty[i], 2 + 13 * Math.sqrt(q), 0, 6.283); g.stroke()
+  }
+  g.globalAlpha = 1
+}
+
+let mode = 'empty', t0 = 0, lastT = 12
+const show = m => {
+  mode = m; t0 = performance.now() / 1000
+  el.classList.toggle('rv-swarm-on', m !== 'empty')
+  if (m === 'empty') return frame(-1, lastT)
+  ready.then(() => { if (mode === 'done') frame(END, lastT); else if (mode === 'play') t0 = Math.max(t0, performance.now() / 1000 - .016) })
+}
+Deck.clock(el, (t, _, still) => {
+  lastT = t
+  if (mode === 'play') { const lt = performance.now() / 1000 - t0; frame(lt, t); if (lt >= END) mode = 'done' }
+  else if (mode === 'done') frame(END, t)
+}, { printT: 6.5 })
+Deck.on('s__N__', {
+  steps: 1,
+  set: (n, ctx) => show(n ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (mode === 'empty') { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

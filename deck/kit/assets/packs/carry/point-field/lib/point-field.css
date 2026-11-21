@@ -1,0 +1,3 @@
+/* Pack point-field · one canvas per slide behind the content (lib/point-field.js creates it when a slide has none).
+   1920 × 1080 backing store on the showing slide only; print gives every slide its own final frame. */
+.slide>canvas.cy-pf{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:-1;pointer-events:none}

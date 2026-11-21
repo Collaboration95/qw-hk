@@ -1,0 +1,28 @@
+{
+  "title": "Traveller",
+  "kind": "carry",
+  "mood": ["playful", "warm", "crafted", "a thread through the story"],
+  "suits": "messaging, sending, delivery, routing, handoff products (a paper plane, a parcel, a tag): one object carries the story from slide to slide and lands on the thing that matters.",
+  "tech": "svg+js",
+  "params": {
+    "--field / --brand / --brand-2": "on each section: paper = --brand (pushed toward --ink-auto if it would vanish on the field), folds shaded toward --field, accent = --brand-2",
+    "Pack.traveller.spot(id, { x, y, rot, scale, ground, face, lift, loop })": "where it rests on each slide; ground = the surface its shadow falls on",
+    "Pack.traveller.object({ preset, svg, kind, color, z, hover, trail })": "preset 'plane' (fly), 'parcel' (hop), 'ball' (roll), or your own svg using the --cy-tr-* colour vars"
+  },
+  "details": [
+    "a tiny anticipation before every flight: it pulls back and noses up for a tenth of a second",
+    "it banks along the path (its angle follows the curve, a slight squash mid-flight)",
+    "when the next spot is behind it, it turns round with a quick flip as it pulls back",
+    "it overshoots its spot along the way it came in and settles with a damped wobble",
+    "a dotted trail follows the path and fades from the tail, gone by 1.2 s",
+    "a paper plane climbs a little and glides down: descending flights arc less",
+    "loop: true gives one loop-the-loop on the way to the happy moment",
+    "its shadow follows on the ground below, shrinking and fading with height, catching up a beat late",
+    "put ground on a card's top edge and the shadow falls onto the card",
+    "a fresh load throws it in from off the lower left",
+    "at rest it hovers on the one clock, nose bobbing gently, the hover easing in after landing so nothing jumps",
+    "print shows it at every slide's spot, facing the way it came",
+    "the plane is folded paper: a far wing peeking above, a shaded keel, a highlight, a crease, all derived from the brand colour",
+    "the parcel leans into each hop, squashes on landing and kicks up dust; the ball rolls by the distance travelled"
+  ]
+}

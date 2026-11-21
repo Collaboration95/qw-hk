@@ -1,0 +1,15 @@
+/* scenes/fireflies · layout for lib/fireflies.js. The root fills the slide behind its content; the planes overscan by
+   24 px so the engine's pointer parallax never shows an edge. Fog drifts on amb-* keyframes (one clock, see deck.js). */
+.sc-fireflies{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#2b2f6a;contain:strict}
+.sc-fireflies .parallax{z-index:0}
+.sc-fireflies .parallax>div{left:-24px;top:-24px;width:1968px;height:1128px}
+.sc-fireflies canvas{position:absolute;display:block}
+.sc-fireflies .ff-fog i{position:absolute;left:0;width:3888px;height:240px;background:var(--ff-fog,#8890c0);opacity:var(--ff-fog-a,.5);
+  -webkit-mask:var(--ff-mask) 0 0/1944px 100% repeat-x;mask:var(--ff-mask) 0 0/1944px 100% repeat-x;will-change:transform}
+.sc-fireflies .ff-fog-far i{top:588px;height:220px;animation:amb-ff-fog 300s linear infinite}
+.sc-fireflies .ff-fog-near i{top:760px;height:300px;opacity:calc(var(--ff-fog-a,.5) * .8);animation:amb-ff-fog 140s linear infinite;animation-delay:-40s}
+.sc-fireflies .ff-beams canvas{mix-blend-mode:screen;animation:amb-ff-breathe 19s ease-in-out infinite alternate}
+.sc-fireflies .ff-grain{position:absolute;inset:0;z-index:2;background-size:200px 200px;mix-blend-mode:overlay;opacity:.1}
+.sc-fireflies::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(130% 100% at 42% 38%,transparent 58%,rgba(6,8,34,.42))}
+@keyframes amb-ff-fog{to{transform:translateX(-1944px)}}
+@keyframes amb-ff-breathe{0%{opacity:1}100%{opacity:.62}}

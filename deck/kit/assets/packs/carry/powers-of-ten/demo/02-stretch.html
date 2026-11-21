@@ -1,0 +1,24 @@
+<!-- powers-of-ten demo 2 of 3 · one stretch of coast, about 27 times closer (8 px per km). Coming from demo 1 the camera
+     dives through one in-between level painted from the same world, so the coastline gains detail all the way down. -->
+<section class="slide" id="s__N__" aria-label="Then one stretch of it">
+  <h2>Then one stretch of it.</h2>
+  <p class="cy-powers-of-ten-sub">Every step down shows detail that was always there.</p>
+  <div class="cy-powers-of-ten-vf" style="--t:.95"><i></i></div>
+  <div class="cy-powers-of-ten-bar"><i></i><b></b></div>
+  <aside class="notes"><b>Say</b>Closer, the same world shows its detail. Nothing was redrawn; it was always there.</aside>
+</section>
+
+<style>
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-powers-of-ten-sub{position:relative;margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.9}
+#s__N__ .cy-powers-of-ten-bar{left:100px;bottom:80px}
+#s__N__ .cy-powers-of-ten-vf{left:1022px;top:568px;width:220px;height:128px;--l:34px}
+</style>
+
+<script>
+const P = Pack['powers-of-ten'], world = P.world()
+const cp = world.coastPoint(.55), cam = P.at(cp[0], cp[1], 8, 1160, 640)
+P.view('s__N__', cam, {
+  frame(g, t, k) { P.clouds(g, k.still ? 30 : t, { speed: 10, alpha: .16 }) },
+})
+</script>

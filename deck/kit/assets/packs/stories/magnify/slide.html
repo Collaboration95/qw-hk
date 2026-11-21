@@ -1,0 +1,146 @@
+<!-- Story · magnify: the needle in the haystack. A dense map of ~10,000 cells; a magnifying glass (the product,
+     in --brand) glides in over it, its shadow a beat behind, its handle swinging with the inertia, a reflection
+     sliding across the glass. Inside the lens the map is seen 3.6× closer, and two cells that look like all the
+     others outside it glow ember as the lens reaches them, the second a beat late. The lens overshoots, settles,
+     rings close around both cells and a chip pops on the rim. The embers keep a faint flicker (ambient).
+     ~1.4 s: canvas (map drawn once, lens view redrawn only while it moves) + one rAF per forward arrival.
+     Re-skin: the map is the product's haystack (sensor grid, solar farm, a city, log lines); the two cells are
+     what it finds. Copy: rewrite the h2 (it carries the one number). -->
+<section class="slide" id="s__N__">
+  <div class="st-magnify-copy">
+    <h2 class="st-magnify-h">Two bad cells,<br>found in 10,000.</h2>
+  </div>
+
+  <div class="st-magnify-card" aria-hidden="true">
+    <canvas class="st-magnify-map" width="700" height="714"></canvas>
+    <i class="st-magnify-probe st-magnify-p-lo"></i><i class="st-magnify-probe st-magnify-p-hi"></i><i class="st-magnify-probe st-magnify-p-em"></i>
+    <div class="st-magnify-sh"></div>
+    <div class="st-magnify-lens">
+      <i class="st-magnify-handle"></i>
+      <div class="st-magnify-glass">
+        <canvas class="st-magnify-view" width="600" height="600"></canvas>
+        <i class="st-magnify-ember st-magnify-e1"><b></b></i><i class="st-magnify-ember st-magnify-e2"><b></b></i>
+        <i class="st-magnify-shine"></i>
+      </div>
+      <span class="st-magnify-chip"><svg class="mark" viewBox="0 0 24 24">__MARK__</svg></span>
+    </div>
+  </div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#0D1838 0%,#15275A 60%,#1B3168 100%);--brand:var(--deck-brand,#FFC94A);--brand-2:var(--deck-brand-2,#4C7BD9);--st-magnify-ember:#FF5A1F;color:var(--ink-auto,#fff);padding:96px 100px;
+  --st-magnify-lo:color-mix(in oklab,var(--brand-2) 10%,#E9EDF4);--st-magnify-hi:color-mix(in oklab,var(--brand-2) 46%,#E2E7F0);--st-magnify-bg:color-mix(in oklab,var(--brand-2) 6%,#F5F7FB)}
+#s__N__::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,color-mix(in oklab,var(--ink-auto,#fff) 10%,transparent) 1.4px,transparent 2px) 0 0/36px 36px;-webkit-mask:linear-gradient(90deg,#000,transparent 52%);mask:linear-gradient(90deg,#000,transparent 52%)}
+#s__N__ .st-magnify-copy{position:absolute;left:100px;top:0;bottom:0;width:900px;display:flex;flex-direction:column;justify-content:center}
+#s__N__ .st-magnify-h{font-size:100px;letter-spacing:-.05em;line-height:1.02;white-space:nowrap}
+
+/* the map: a light card with depth, ~10,000 cells drawn once on a canvas */
+#s__N__ .st-magnify-card{position:absolute;left:1040px;top:140px;width:780px;height:794px;border-radius:34px;background:var(--st-magnify-bg);
+  box-shadow:0 1px 0 #fff inset,0 -3px 0 rgba(0,0,0,.05) inset,0 2px 4px rgba(0,0,0,.2),0 50px 90px -40px rgba(0,0,0,.75)}
+#s__N__ .st-magnify-map{position:absolute;left:40px;top:40px;width:700px;height:714px;border-radius:12px}
+#s__N__ .st-magnify-probe{position:absolute;width:0;height:0;visibility:hidden}
+#s__N__ .st-magnify-p-lo{color:var(--st-magnify-lo)}
+#s__N__ .st-magnify-p-hi{color:var(--st-magnify-hi)}
+#s__N__ .st-magnify-p-em{color:var(--st-magnify-ember)}
+
+/* the lens: rim in the brand, a handle, glass with a sliding reflection; its shadow lags behind */
+#s__N__ .st-magnify-lens,#s__N__ .st-magnify-sh{position:absolute;left:0;top:0;width:300px;height:300px;margin:-150px 0 0 -150px;will-change:transform}
+#s__N__ .st-magnify-sh{border-radius:50%;background:rgba(10,16,40,.38);filter:blur(16px)}
+#s__N__ .st-magnify-glass{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--st-magnify-bg);
+  box-shadow:0 0 0 16px var(--brand),0 0 0 19px rgba(0,0,0,.35),inset 0 0 0 3px rgba(0,0,0,.25),inset 0 0 30px rgba(20,30,70,.28)}
+#s__N__ .st-magnify-view{position:absolute;inset:0;width:300px;height:300px}
+#s__N__ .st-magnify-handle{position:absolute;left:236px;top:236px;width:150px;height:44px;border-radius:22px;transform-origin:0 50%;transform:rotate(45deg) translate(6px,-22px);
+  background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 78%,#000),color-mix(in oklab,var(--brand) 48%,#000));box-shadow:0 0 0 3px rgba(0,0,0,.3),0 12px 18px -8px rgba(0,0,0,.5)}
+#s__N__ .st-magnify-shine{position:absolute;left:34px;top:26px;width:120px;height:70px;border-radius:50%;border-top:9px solid rgba(255,255,255,.75);transform:rotate(-28deg);filter:blur(.4px)}
+#s__N__ .st-magnify-ember{position:absolute;left:0;top:0;width:0;height:0}
+#s__N__ .st-magnify-ember::before{content:"";position:absolute;left:-46px;top:-46px;width:92px;height:92px;border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--st-magnify-ember) 70%,#fff) 0,color-mix(in oklab,var(--st-magnify-ember) 45%,transparent) 30%,transparent 70%);opacity:var(--g,1)}
+#s__N__ .st-magnify-ember b{position:absolute;left:-30px;top:-30px;width:60px;height:60px;border-radius:50%;border:4px solid var(--st-magnify-ember);opacity:var(--ring,1);transform:scale(var(--rs,1))}
+#s__N__ .st-magnify-ember::before{animation:amb-st-magnify-flicker 2.3s ease-in-out infinite}
+#s__N__ .st-magnify-e2::before{animation-duration:3.1s}
+@keyframes amb-st-magnify-flicker{0%,100%{filter:brightness(1)}40%{filter:brightness(1.18)}55%{filter:brightness(.9)}}
+#s__N__ .st-magnify-chip{position:absolute;left:218px;top:-18px;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+  background:var(--brand);color:var(--on-brand,#14161E);box-shadow:0 0 0 5px #fff,0 12px 20px -8px rgba(0,0,0,.45);transform-origin:0 100%}
+#s__N__ .st-magnify-chip .mark{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const q = s => el.querySelector(s)
+const map = q('.st-magnify-map'), view = q('.st-magnify-view'), lens = q('.st-magnify-lens'), sh = q('.st-magnify-sh'), handle = q('.st-magnify-handle'), shine = q('.st-magnify-shine'), chip = q('.st-magnify-chip')
+const embers = [q('.st-magnify-e1'), q('.st-magnify-e2')]
+const COLS = 100, ROWS = 102, CELL = 7, GAP = 1, Z = 3.6, R = 150, MX = 40, MY = 40, END = 1.45
+const HOT = [[60, 40], [63, 44]]                          /* the two cells it finds (column, row) */
+const T = [(HOT[0][0] + HOT[1][0] + 1) * CELL / 2, (HOT[0][1] + HOT[1][1] + 1) * CELL / 2]   /* where the lens rests (map px) */
+const P0 = [90, 640], C1 = [110, 200], C2 = [620, 560], OV = [T[0] + 22, T[1] - 14]
+// colours come from the brand (read through probes, so color-mix works), parsed once on a 1 × 1 canvas
+const px = document.createElement('canvas').getContext('2d', { willReadFrequently: true })
+const rgb = (e, fb) => { px.clearRect(0, 0, 1, 1); px.fillStyle = fb; px.fillStyle = getComputedStyle(e).color; px.fillRect(0, 0, 1, 1); return [...px.getImageData(0, 0, 1, 1).data].slice(0, 3) }
+let LO, HI, EM, val
+const mix = (a, b, k) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(',')})`
+// a city-like heat map: soft value noise in blocks, lighter streets every 13 cells, a little per-cell grain
+const rnd = (() => { let s = 20261119; return () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296 })()
+{
+  const G = 9, gw = Math.ceil(COLS / G) + 2, gh = Math.ceil(ROWS / G) + 2, g = Array.from({ length: gw * gh }, rnd)
+  const sm = x => x * x * (3 - 2 * x)
+  val = (i, j) => {
+    const x = i / G, y = j / G, xi = Math.floor(x), yi = Math.floor(y), fx = sm(x - xi), fy = sm(y - yi), a = g[yi * gw + xi], b = g[yi * gw + xi + 1], c = g[(yi + 1) * gw + xi], d = g[(yi + 1) * gw + xi + 1]
+    return a + (b - a) * fx + (c - a) * fy + (a - b - c + d) * fx * fy
+  }
+  const grain = Array.from({ length: COLS * ROWS }, rnd)
+  /* a river winds through the city (water cells), away from the two hidden cells */
+  const river = (i, j) => Math.abs(i - (22 + 9 * Math.sin(j / 14) + j * .18)) < 2.2
+  const v0 = val; val = (i, j) => river(i, j) ? -2 : (i % 13 === 6 || j % 13 === 6) ? -1 : Math.min(1, Math.max(0, v0(i, j) * .85 + grain[j * COLS + i] * .3 - .05))
+}
+const colourOf = v => v === -2 ? mix(HI, [255, 255, 255], .25) : v < 0 ? mix(LO, [255, 255, 255], .55) : mix(LO, HI, v)
+const drawMap = () => {
+  LO = rgb(q('.st-magnify-p-lo'), '#E9EDF4'); HI = rgb(q('.st-magnify-p-hi'), '#9DB3E0'); EM = rgb(q('.st-magnify-p-em'), '#FF5A1F')
+  const c = map.getContext('2d'); c.clearRect(0, 0, 700, 714)
+  for (let j = 0; j < ROWS; j++) for (let i = 0; i < COLS; i++) { c.fillStyle = colourOf(val(i, j)); c.fillRect(i * CELL, j * CELL, CELL - GAP, CELL - GAP) }
+}
+// the lens view: only the ~120 cells under the glass, 3.6× closer, with rounded tiles; embers by heat h[k]
+const drawView = (cx, cy, h) => {
+  const c = view.getContext('2d'), S = 2, k = Z * S, r = R / Z
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, 600, 600)
+  const i0 = Math.max(0, Math.floor((cx - r) / CELL) - 1), i1 = Math.min(COLS - 1, Math.ceil((cx + r) / CELL) + 1), j0 = Math.max(0, Math.floor((cy - r) / CELL) - 1), j1 = Math.min(ROWS - 1, Math.ceil((cy + r) / CELL) + 1)
+  for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++) {
+    const x = R * S + (i * CELL - cx) * k, y = R * S + (j * CELL - cy) * k, w = (CELL - GAP * 1.4) * k
+    const hot = HOT.findIndex(([a, b]) => a === i && b === j)
+    c.fillStyle = hot >= 0 && h[hot] > 0 ? mix(LO.map((v, n) => v + (HI[n] - v) * Math.max(0, val(i, j))), EM, h[hot]) : colourOf(val(i, j))
+    c.beginPath(); c.roundRect(x, y, w, w, 5 * S); c.fill()
+  }
+}
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const bez = (u, a, b, c, d) => { const v = 1 - u; return v * v * v * a + 3 * v * v * u * b + 3 * v * u * u * c + u * u * u * d }
+const inout = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2
+const at = t => {
+  if (t >= END) return T
+  if (t < 1) { const u = inout(clamp(t)), v = clamp(t) ; return [bez(u, P0[0], C1[0], C2[0], OV[0]), bez(u, P0[1], C1[1], C2[1], OV[1])] }
+  const s = (t - 1) / (END - 1), d = Math.exp(-5 * s) * Math.cos(s * Math.PI * 2.2)      /* overshoot, then settle */
+  return [T[0] + (OV[0] - T[0]) * d, T[1] + (OV[1] - T[1]) * d]
+}
+const pose = t => {
+  const done = t >= END, p = at(t), pb = at(Math.max(0, t - .07)), pv = at(Math.max(0, t - .03))
+  const vx = done ? 0 : (p[0] - pv[0]) / .03
+  lens.style.transform = `translate(${MX + p[0]}px,${MY + p[1]}px) rotate(${clamp(-vx * .006, -7, 7).toFixed(2)}deg)`
+  sh.style.transform = `translate(${MX + pb[0] + 26}px,${MY + pb[1] + 34}px)`
+  handle.style.transform = `rotate(${(45 + clamp(-vx * .012, -10, 10)).toFixed(2)}deg) translate(6px,-22px)`
+  shine.style.transform = `translate(${clamp(-vx * .02, -18, 18).toFixed(1)}px,0) rotate(-28deg)`
+  // heat: each hidden cell glows as the lens comes over it; the second one lights a beat late
+  const h = HOT.map(([i, j], k) => { const d = Math.hypot((i + .5) * CELL - p[0], (j + .5) * CELL - p[1]); return done ? 1 : clamp((70 - d) / 50) * clamp((t - .62 - k * .16) / .2) })
+  drawView(p[0], p[1], h)
+  HOT.forEach(([i, j], k) => {
+    const e = embers[k], x = R + ((i + .5) * CELL - p[0]) * Z, y = R + ((j + .5) * CELL - p[1]) * Z
+    e.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`; e.style.setProperty('--g', h[k].toFixed(3))
+    const rk = done ? 1 : clamp((t - 1.12 - k * .08) / .22); e.style.setProperty('--ring', rk > 0 ? 1 : 0); e.style.setProperty('--rs', (rk <= 0 ? 0 : 1.6 - .6 * (1 - Math.pow(1 - rk, 3))).toFixed(3))
+  })
+  const ck = done ? 1 : clamp((t - 1.18) / .22), cs = ck <= 0 ? 0 : 1 + Math.sin(Math.PI * ck) * .18 * (1 - ck)
+  chip.style.opacity = ck > 0 ? 1 : 0; chip.style.transform = `scale(${cs.toFixed(3)})`
+}
+let raf = 0
+const play = () => { cancelAnimationFrame(raf); const t0 = performance.now(); const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }; pose(0); raf = requestAnimationFrame(tick) }
+const rest = () => { cancelAnimationFrame(raf); pose(END) }
+drawMap()
+Deck.on('s__N__', { enter: (_, ctx) => ctx.play ? play() : rest(), leave: rest, final: rest })
+rest()
+</script>

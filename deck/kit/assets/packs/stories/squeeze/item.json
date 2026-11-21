@@ -1,0 +1,37 @@
+{
+  "title": "Squeeze",
+  "kind": "story",
+  "mood": [
+    "mechanical",
+    "satisfying",
+    "workshop"
+  ],
+  "suits": "compression, consolidation, summarising, deduplication, cost or size reductions: a pile of pages, logs, layers or files becomes one small thing; shows one before → after number",
+  "tech": "svg+css",
+  "duration": 1.3,
+  "params": {
+    "--field": "the slide field (workshop green); the pegboard and lamp pool are drawn in its ink",
+    "--brand": "the hand wheel (a light tint, so it reads on the steel), the straps, half the sheet tints",
+    "--brand-2": "the other sheet tints and the tabs",
+    "data-from / data-to": "the before and after numbers on .count (counts down on arrival)",
+    ".st-squeeze-was": "the struck before value; .st-squeeze-unit the unit",
+    "__MARK__": "the label on the pressed block"
+  },
+  "details": [
+    "the sheets slide in with the top ones lagging, so the stack leans, overshoots and rights itself",
+    "the stack starts messy (each sheet nudged and turned a little) and the squeeze squares it up",
+    "three coloured tabs stick out of the stack and stay visible as slivers in the pressed block",
+    "a paperclip on the top sheet",
+    "the hand wheel spins as the press comes down and turns back a little as it lifts",
+    "the threaded rod's threads travel with the platen",
+    "the platen's shadow darkens and tightens on the stack as it closes in",
+    "the block overshoots as the platen lifts (springs up 4%) and settles",
+    "the bed jolts 4 px on contact",
+    "dust puffs out of both sides at bed height",
+    "three paper scraps fly out; two land on the floor, one on the bed, and stay there",
+    "the block gets a crisp edge, a file label that drops in with a squash, and two straps that snap on",
+    "the number counts down as the stack shrinks and squashes when it lands on its new value",
+    "the old value lands above it, faded, with the strike drawn through it",
+    "a warm lamp glow at the top of the card"
+  ]
+}

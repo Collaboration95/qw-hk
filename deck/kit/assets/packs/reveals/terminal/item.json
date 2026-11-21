@@ -1,0 +1,36 @@
+{
+  "title": "Terminal",
+  "kind": "reveal",
+  "mood": [
+    "developer",
+    "precise",
+    "fast",
+    "late-night build"
+  ],
+  "suits": "developer tools, infrastructure, CLIs, APIs, SDKs, security and devops: products whose users live in a shell",
+  "tech": "svg+js",
+  "duration": 1.9,
+  "params": {
+    "--field": "the field (phosphor green by default; any colour or gradient)",
+    "--brand": "cursor and mark (used if it reads on the field)",
+    "--brand-2": "a tint for the text (applied only while the text stays at 7:1), and the fallback accent",
+    "--term-fs / --term-mono": "final wordmark size / typed text size",
+    "BOOT": "the boot lines in the script: short, generic texture",
+    "__MARK__": "stroke paths in a 24 x 24 box; it is what the prompt glyph becomes"
+  },
+  "details": [
+    "before the press the field already shows a prompt and an idle cursor blinking at 1.06 s",
+    "the cursor holds solid while keys are typing and only blinks when idle, as real terminals do",
+    "keystrokes land with human rhythm: uneven gaps, an occasional hesitation",
+    "two thirds in, a finger slips onto the neighbouring key; a beat, a backspace, the right key",
+    "the slipped character leaves a phosphor ghost that fades for a fifth of a second",
+    "enter commits the line with a brief brightness flash",
+    "boot lines print faster than anyone can read, the log scrolling one line at a time, with a small [######] bar",
+    "the log flicks away line by line, top first",
+    "every typed letter flies from its mono slot into its slot in the wordmark, crossfading typefaces, staggered",
+    "the prompt glyph flies across and becomes the mark",
+    "the cursor ends after the wordmark in the accent and keeps blinking on the deck clock",
+    "faint scanlines and a vignette; the text glows only when the ink is light (a dark glow would read as a smudge)",
+    "long names type faster so the reveal still lands inside 2.4 s"
+  ]
+}

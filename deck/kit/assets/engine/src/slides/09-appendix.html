@@ -1,0 +1,25 @@
+<!-- Appendix (Q&A backup): the one interactive slide. Tiles named by the number or the question a judge asks.
+     Keys 1–9, 0, −, = open cards 1–12; Esc or → closes; #9.3 deep-links card 3. Each card: one diagram that draws
+     itself (path.draw), at most three short lines, nothing else. Never in the spoken path. -->
+<section class="slide appendix" id="s9">
+  <h2>Appendix</h2>
+  <div class="tiles">
+    <button class="tile-q" data-card="1"><span class="k">1</span><div><b>1,000</b><span>purchases re-checked</span></div></button>
+    <button class="tile-q" data-card="2"><span class="k">2</span><div><b>Architecture</b></div></button>
+    <button class="tile-q" data-card="3"><span class="k">3</span><div><b>What if the writer never delivers?</b></div></button>
+  </div>
+  <div class="acard" data-card="1"><h3>1,000 purchases, each re-checked</h3>
+    <svg viewBox="0 0 1500 300" class="dg"><path class="draw" style="--d:.9s" d="M40 250 C 400 240, 700 80, 1460 40"/></svg>
+    <p>Every Testnet purchase replayed against the ledger. 0 mismatches.</p></div>
+  <div class="acard" data-card="2"><h3>Architecture</h3><p>One diagram here.</p></div>
+  <div class="acard" data-card="3"><h3>No key, no payment</h3><p>The escrow expires and the money returns.</p></div>
+</section>
+
+<style>
+#s9{--field:var(--f9)}
+#s9 .tile-q b{font-size:40px}
+#s9 .acard h3{margin-bottom:30px}
+#s9 .acard p{font-size:var(--t-body);color:var(--ink-2);margin-top:24px}
+#s9 .dg{width:100%;height:300px}
+#s9 .dg path{fill:none;stroke:var(--accent-2);stroke-width:8;stroke-linecap:round}
+</style>

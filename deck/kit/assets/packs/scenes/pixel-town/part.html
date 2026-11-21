@@ -1,0 +1,12 @@
+<!-- scenes/pixel-town: a cosy pixel-art town, a game's title screen. Drawn by lib/pixel-town.js + lib/pixel-town.css.
+     data-tod 0…1 = the hour (0 sunny afternoon, 0.5 golden sunset, 1 night with lit windows); data-word puts the product
+     name on the bus's side panel (A–Z, 0–9, 7 letters); data-seed reshuffles windows, trees and stars;
+     data-print-t picks the still frame for print. Planes are the engine's .parallax > [data-depth]. -->
+<div class="sc-pixel-town" data-tod="0.5" data-seed="5" data-word="__WORD__" aria-hidden="true">
+  <div class="parallax">
+    <div class="pt-sky" data-depth=".02"></div>
+    <div class="pt-far" data-depth=".06"></div>
+    <div class="pt-town" data-depth=".14"></div>
+    <div class="pt-front" data-depth=".26"></div>
+  </div>
+</div>

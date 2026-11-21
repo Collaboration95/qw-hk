@@ -1,0 +1,37 @@
+{
+  "title": "Swarm word",
+  "kind": "reveal",
+  "mood": [
+    "data",
+    "luminous",
+    "alive",
+    "precise"
+  ],
+  "suits": "data, geo, mapping, AI and analytics products: anything whose material is many small signals becoming one picture",
+  "tech": "canvas",
+  "duration": 2.4,
+  "params": {
+    "--field": "the field (ultramarine by default; any colour or gradient)",
+    "--brand": "the accent: the last points to land (used if it reads on the field and differs from the points)",
+    "--brand-2": "fallback accent",
+    "--swarm-fs": "wordmark size the points are sampled from (long names shrink to fit 1700 px)",
+    "__MARK__": "stroke paths in a 24 x 24 box; the points sample its strokes; the last stroke (or the tail of a single stroke) lands last in the accent"
+  },
+  "details": [
+    "about 5,200 points whatever the name: the sampling step adapts to the glyph area",
+    "targets are sampled from the deck font itself on an offscreen canvas after document.fonts.ready",
+    "on the press the points appear scattered and already drifting, so the first frame is a field, not a blank",
+    "every point curves in on its own arc instead of flying straight",
+    "fast points stretch into short streaks; they become round dots as they slow",
+    "the word assembles roughly left to right, so it reads as it forms",
+    "each point overshoots its slot by a hair and settles back",
+    "about 2% are stragglers that leave late and land last among the white",
+    "the very last points fill the mark's accent part in the accent colour, each landing with a small ping ring",
+    "two dot sizes and two brightnesses, so the glyphs have texture rather than a flat fill",
+    "at rest every point breathes 0.6 px on the deck clock, out of phase with its neighbours",
+    "a soft light wave crosses the word every 9 s",
+    "34 free points never join and keep drifting through the field",
+    "a faint glow rises behind the word as it forms",
+    "the points take the readable ink for the field, so they are white on dark fields and near-black on light ones"
+  ]
+}

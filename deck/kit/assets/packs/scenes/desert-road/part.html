@@ -1,0 +1,13 @@
+<!-- scenes/desert-road: a desert highway from late afternoon into night. Drawn by lib/desert-road.js + lib/desert-road.css.
+     data-tod 0…1 = the hour (0 golden late afternoon with heat shimmer, 0.5 sunset and the evening star, 1 night with
+     the Milky Way); data-word is painted on the water tower by the road; data-seed reshuffles the freight and the scrub;
+     data-print-t picks the still frame for print. Planes are the engine's .parallax > [data-depth]. -->
+<div class="sc-desert-road" data-tod="0.5" data-seed="4" data-word="__WORD__" aria-hidden="true">
+  <div class="parallax">
+    <div class="dr-sky" data-depth=".02"></div>
+    <div class="dr-far" data-depth=".05"></div>
+    <div class="dr-mid" data-depth=".1"></div>
+    <div class="dr-near" data-depth=".22"></div>
+  </div>
+  <i class="dr-grain"></i>
+</div>

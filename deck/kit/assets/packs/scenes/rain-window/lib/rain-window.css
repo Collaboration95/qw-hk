@@ -1,0 +1,8 @@
+/* scenes/rain-window · layout for lib/rain-window.js. Planes overscan by 24 px so the engine's pointer parallax never
+   shows an edge: the street moves least, the pane and the sill more, as if you leaned toward the glass. */
+.sc-rain-window{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#2e2a66;contain:strict}
+.sc-rain-window .parallax{z-index:0}
+.sc-rain-window .parallax>div{left:-24px;top:-24px;width:1968px;height:1128px}
+.sc-rain-window canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sc-rain-window .rw-in{mix-blend-mode:screen}
+.sc-rain-window::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(130% 100% at 45% 40%,transparent 60%,rgba(12,8,30,.4))}

@@ -1,0 +1,37 @@
+{
+  "title": "Paywall bump",
+  "kind": "story",
+  "mood": [
+    "comic",
+    "warm",
+    "friction"
+  ],
+  "suits": "a problem slide where users, agents or orders hit friction: paywalls, logins, checkouts, approvals, rate limits",
+  "tech": "svg+css",
+  "duration": 1.45,
+  "params": {
+    "--field": "the slide field (dusk violet by default); hills are drawn in its ink",
+    "--brand": "the shop (awning stripes, facade tint), two antenna bulbs, the card's floor tint",
+    "--brand-2": "the wall's bricks and the sign's inner frame (the friction)",
+    ".st-paywall-bump-signt": "the sign's text: the friction in two words"
+  },
+  "details": [
+    "the lead bot squashes against the wall (scale .84 × 1.08) before it bounces back",
+    "it rests knocked back, tilted 7°, pivoting on its rear foot",
+    "its eyes switch from dots to > < on the frame of impact",
+    "its antenna keeps going forward and whips back and forth, damped, after the body stops",
+    "speed streaks trail the lead bot while it runs and vanish on impact",
+    "every shadow starts a beat late and catches up, and never tilts with its bot",
+    "a dust puff of four circles spreads from the wall's foot",
+    "three ink impact ticks flash at the corner of the wall",
+    "the wall shakes 7 px and settles",
+    "the hanging sign swings on its nail and is left 3° crooked",
+    "a crumb of brick falls off the coping, bounces once and stays on the floor",
+    "the second bot runs into the lead's back, leans in, and ends up looking up at the sign",
+    "the third bot slows down early, leans back, takes a half step back and looks over its shoulder",
+    "the last bot sits down with a squash, legs out in front, eyes half closed, and lets out a little sigh",
+    "the sitting bot blinks once every 7 s (ambient, after rest)",
+    "the shop beyond the wall glows, its door light spilling across the floor, breathing slowly",
+    "a pale far town on the horizon gives the card depth"
+  ]
+}

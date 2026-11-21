@@ -1,0 +1,244 @@
+<!-- 0 · Intro reveal "stamp": an empty manila field. The first press drops a wooden rubber stamp into frame; it
+     presses (the whole field nudges 1 px), rocks a hair, lifts away and leaves the mark + wordmark in ink: uneven
+     coverage, rough edges, speckles, a faint die ring, ink that dries from wet to matte. ~2.0 s.
+     Brand: --field (the paper), --brand (the ink), --brand-2 (fallback ink) on #s__N__. The ink is checked against the
+     field: if --brand is not readable on it, --brand-2 is tried, then the engine's readable ink (Deck.inkOn).
+     __MARK__ = stroke paths in a 24 x 24 box (use-pack --mark); it is inked as thick strokes and copied onto the
+     block's label. Long names shrink to fit. Mixed-case wordmark: set --stamp-case:none. Print / reduced motion:
+     the final impression. -->
+<section class="slide rv-stamp" id="s__N__" aria-label="__WORD__">
+  <div class="rv-stamp-desk" aria-hidden="true">
+    <svg class="rv-stamp-fibre" width="1960" height="1120" aria-hidden="true">
+      <filter id="rv-stamp-fib-__N__" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".75 .22" numOctaves="3" seed="4"/>
+        <feColorMatrix values="0 0 0 0 .32  0 0 0 0 .19  0 0 0 0 .05  0 0 -1.7 0 1.02"/>
+      </filter>
+      <filter id="rv-stamp-blot-__N__" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".0026 .004" numOctaves="3" seed="9"/>
+        <feColorMatrix values="0 0 0 0 .45  0 0 0 0 .25  0 0 0 0 .05  0 2.4 0 0 -1.15"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#rv-stamp-blot-__N__)" opacity=".5"/>
+      <rect width="100%" height="100%" filter="url(#rv-stamp-fib-__N__)"/>
+    </svg>
+      </div>
+
+  <div class="rv-stamp-imp" role="img" aria-label="__WORD__">
+    <div class="rv-stamp-ink">
+      <div class="rv-stamp-die">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+        <span class="rv-stamp-word">__WORD__</span>
+      </div>
+      <svg class="rv-stamp-specks" aria-hidden="true"></svg>
+    </div>
+  </div>
+
+  <div class="rv-stamp-hold" aria-hidden="true">
+    <i class="rv-stamp-sh far"></i><i class="rv-stamp-sh near"></i>
+    <div class="rv-stamp-block">
+      <svg class="rv-stamp-grain" aria-hidden="true">
+        <filter id="rv-stamp-wood-__N__" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".0035 .09" numOctaves="4" seed="21"/>
+          <feColorMatrix values="0 0 0 0 .30  0 0 0 0 .15  0 0 0 0 .05  2.2 0 0 0 -.95"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#rv-stamp-wood-__N__)"/>
+      </svg>
+      <div class="rv-stamp-rail"></div>
+      <div class="rv-stamp-label"></div>
+    </div>
+  </div>
+
+  <svg class="rv-stamp-defs" width="0" height="0" aria-hidden="true">
+    <!-- the ink: rough edges, uneven pressure, starved specks -->
+    <filter id="rv-stamp-ink-__N__" x="-4%" y="-8%" width="108%" height="116%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="2" seed="7" result="fine"/>
+      <feDisplacementMap in="SourceGraphic" in2="fine" scale="3.6" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+      <feMorphology in="rough" operator="erode" radius="2.4" result="core"/>
+      <feComposite in="rough" in2="core" operator="out" result="rim"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".006 .016" numOctaves="3" seed="12" result="low"/>
+      <feColorMatrix in="low" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.7 0 0 0 -.08" result="press"/>
+      <feComposite in="core" in2="press" operator="in" result="body"/>
+      <feComponentTransfer in="body" result="bodyA"><feFuncA type="linear" slope=".9"/></feComponentTransfer>
+      <feMerge result="pressed"><feMergeNode in="bodyA"/><feMergeNode in="rim"/></feMerge>
+      <feTurbulence type="fractalNoise" baseFrequency=".62" numOctaves="2" seed="3" result="holes"/>
+      <feColorMatrix in="holes" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -16 0 0 0 10.6" result="holesA"/>
+      <feComposite in="pressed" in2="holesA" operator="in"/>
+    </filter>
+  </svg>
+</section>
+
+<style>
+#s__N__{
+  --field:#DCA444;                                  /* the paper: manila by default */
+  --brand:var(--deck-brand,#33287C); --brand-2:var(--deck-brand-2,#B3261E);               /* the ink (stamp-pad violet), a fallback ink */
+  --stamp-ink:var(--brand); --stamp-wet:var(--brand);  /* set from the brand by the script, checked for contrast */
+  --stamp-wood:#C99560; --stamp-rail:#6B3F22;       /* beech block, walnut rail */
+  --stamp-fs:150px; --stamp-case:uppercase; --stamp-tilt:-1.6deg;
+  padding:0;background:var(--field)}
+#s__N__ .rv-stamp-desk{position:absolute;inset:0;overflow:hidden;will-change:transform;background:var(--field)}
+#s__N__ .rv-stamp-desk::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 46% 40%,transparent 0%,transparent 40%,rgba(60,30,0,.2) 100%)}
+#s__N__ .rv-stamp-fibre{position:absolute;left:0;top:0;mix-blend-mode:multiply;opacity:.34}
+
+#s__N__ .rv-stamp-imp{position:absolute;left:0;right:0;top:50%;height:0;display:flex;justify-content:center;align-items:center}
+#s__N__ .rv-stamp-ink{position:relative;flex:none;color:var(--stamp-ink);transform:rotate(var(--stamp-tilt));filter:url(#rv-stamp-ink-__N__);
+  -webkit-mask-image:linear-gradient(97deg,#000 0%,#000 46%,rgba(0,0,0,.74) 100%);mask-image:linear-gradient(97deg,#000 0%,#000 46%,rgba(0,0,0,.74) 100%);will-change:opacity}
+#s__N__ .rv-stamp-die{position:relative;display:flex;align-items:center;gap:.3em;padding:.3em .48em .3em .4em;white-space:nowrap;
+  font:800 var(--stamp-fs)/1 var(--f);letter-spacing:.035em;text-transform:var(--stamp-case);
+  border:.055em solid currentColor;border-radius:.16em}
+#s__N__ .rv-stamp-die::before{content:"";position:absolute;inset:.07em;border:.02em solid currentColor;border-radius:.1em;opacity:.9}
+#s__N__ .rv-stamp-die .mark{width:.96em;height:.96em;flex:none;display:block;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-stamp-word{display:block;margin-top:.02em}
+#s__N__ .rv-stamp-specks{position:absolute;left:-60px;top:-60px;width:calc(100% + 120px);height:calc(100% + 120px);overflow:visible;fill:currentColor}
+
+#s__N__ .rv-stamp-hold{position:absolute;left:0;top:0;width:0;height:0}
+#s__N__ .rv-stamp-block,#s__N__ .rv-stamp-sh{position:absolute;left:0;top:0;border-radius:22px;will-change:transform,opacity;opacity:0}
+#s__N__ .rv-stamp-sh{background:rgba(70,36,6,.42)}
+#s__N__ .rv-stamp-sh.far{filter:blur(40px);background:rgba(70,36,6,.42)}
+#s__N__ .rv-stamp-sh.near{filter:blur(5px);background:rgba(52,24,2,.55)}
+#s__N__ .rv-stamp-block{overflow:hidden;background:linear-gradient(180deg,#D8A672 0%,var(--stamp-wood) 30%,#B57F4B 100%);
+  box-shadow:0 0 0 3px #3B1712,0 2px 0 3px #2A0E0A,inset 0 2px 0 rgba(255,238,205,.55),inset 0 -6px 10px rgba(80,40,10,.35),inset 6px 0 10px rgba(255,230,190,.18)}
+#s__N__ .rv-stamp-grain{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:multiply;opacity:.85}
+#s__N__ .rv-stamp-rail{position:absolute;left:24%;right:9%;top:31%;bottom:31%;border-radius:999px;
+  background:linear-gradient(180deg,#4A2814 0%,#8A5531 22%,#B47A4D 34%,var(--stamp-rail) 58%,#3E2210 100%);
+  box-shadow:14px 22px 22px -6px rgba(60,28,6,.55),inset 0 1px 0 rgba(255,220,180,.35)}
+#s__N__ .rv-stamp-label{position:absolute;left:4.5%;top:50%;transform:translateY(-50%) rotate(-.6deg);display:flex;align-items:center;gap:6px;
+  padding:9px 12px;border-radius:5px;background:linear-gradient(180deg,#F4ECD6,#E6DABC);box-shadow:0 1px 2px rgba(60,30,5,.35);color:var(--stamp-label,#1D1A22);
+  font:800 22px/1 var(--f);letter-spacing:.03em;text-transform:var(--stamp-case);white-space:nowrap}
+#s__N__ .rv-stamp-label .mark{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-stamp-defs{position:absolute}
+#s__N__ .rv-stamp-ink{opacity:0}
+/* filtered and blended layers paint through visibility:hidden in Chrome: keep them transparent off-slide */
+@media screen{html:not(.print) #s__N__:not(.active) .rv-stamp-fibre,html:not(.print) #s__N__:not(.active) .rv-stamp-imp,html:not(.print) #s__N__:not(.active) .rv-stamp-hold{opacity:0!important}}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const desk = el.querySelector('.rv-stamp-desk'), ink = el.querySelector('.rv-stamp-ink'), die = el.querySelector('.rv-stamp-die')
+const hold = el.querySelector('.rv-stamp-hold'), block = el.querySelector('.rv-stamp-block'), label = el.querySelector('.rv-stamp-label')
+const far = el.querySelector('.rv-stamp-sh.far'), near = el.querySelector('.rv-stamp-sh.near')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), P = (t, t0, d) => clamp((t - t0) / d)
+const ease = { inOut: p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2, out: p => 1 - Math.pow(1 - p, 3) }
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(1234)
+
+// brand ink, checked against the paper: --brand, else --brand-2, else the engine's readable ink
+const C = (() => {
+  const cx = document.createElement('canvas').getContext('2d')
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s; const v = cx.fillStyle; if (v[0] === '#') return v === '#010203' && !/^#010203$/i.test(s.trim()) ? null : [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : null }
+  const avg = s => { const a = (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl)a?\([^()]*\)/gi) || [s]).map(rgb).filter(Boolean); return a.length ? [0, 1, 2].map(i => a.reduce((t, c) => t + c[i], 0) / a.length) : null }
+  const lum = c => { const f = v => (v /= 255) <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]) }
+  const con = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+  const hex = c => '#' + c.map(v => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('')
+  const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+  return { rgb, avg, lum, con, hex, mix }
+})()
+const inkUp = () => {
+  const cs = getComputedStyle(el), field = C.avg(cs.getPropertyValue('--field')) || [220, 164, 68]
+  const cands = [cs.getPropertyValue('--brand'), cs.getPropertyValue('--brand-2')].map(v => C.rgb(v.trim())).filter(Boolean)
+  const auto = C.rgb(Deck.inkOn(C.hex(field)) || '#14161E')
+  const ink = cands.find(c => C.con(c, field) >= 3.2) || C.mix(auto, cands[0] || auto, .18)
+  const darker = C.lum(ink) < C.lum(field)
+  el.style.setProperty('--stamp-ink', C.hex(ink))
+  el.style.setProperty('--stamp-wet', C.hex(C.mix(ink, darker ? [0, 0, 0] : [255, 255, 255], darker ? .38 : .3)))
+  const cream = [237, 227, 202]
+  el.style.setProperty('--stamp-label', C.hex([ink, ...cands].find(c => C.con(c, cream) >= 4) || [29, 26, 34]))
+}
+inkUp()
+
+// the index label on top of the block: a tiny print of the impression (what a real stamp carries)
+label.append(die.querySelector('.mark').cloneNode(true), Object.assign(document.createElement('span'), { textContent: el.getAttribute('aria-label') }))
+
+// ink speckles: starved dots and stray flecks, mostly near the die edge, a couple of larger splats
+const NS = 'http://www.w3.org/2000/svg', specks = el.querySelector('.rv-stamp-specks')
+for (let i = 0; i < 46; i++) {
+  const side = rng(), along = rng() * 100, off = (rng() - .5) * 2
+  let x, y
+  if (side < .35) { x = along; y = off < 0 ? 4 + off * 3 : 96 + off * 3 }
+  else if (side < .55) { x = rng() < .5 ? 3 + off * 2.5 : 97 + off * 2.5; y = along }
+  else { x = 8 + rng() * 84; y = 6 + rng() * 88 }
+  const c = document.createElementNS(NS, 'circle')
+  c.setAttribute('cx', x.toFixed(2) + '%'); c.setAttribute('cy', y.toFixed(2) + '%')
+  c.setAttribute('r', (side > .55 ? 1.4 + rng() * 1.6 : 1.6 + rng() * 3.4).toFixed(2))
+  c.setAttribute('opacity', (.45 + rng() * .5).toFixed(2))
+  specks.appendChild(c)
+}
+for (const [x, y, rx, ry, r] of [[98.6, 9, 4.5, 3, 20], [2.2, 88, 3.2, 2.2, -30]]) {
+  const e = document.createElementNS(NS, 'ellipse')
+  e.setAttribute('cx', x + '%'); e.setAttribute('cy', y + '%'); e.setAttribute('rx', rx); e.setAttribute('ry', ry); e.setAttribute('opacity', '.8')
+  e.setAttribute('transform-origin', `${x}% ${y}%`); e.setAttribute('transform', `rotate(${r})`)
+  specks.appendChild(e)
+}
+// the faint ring: the block edge kissed the paper when it rocked
+const ring = document.createElementNS(NS, 'rect')
+ring.setAttribute('x', '24'); ring.setAttribute('y', '24'); ring.style.width = 'calc(100% - 48px)'; ring.style.height = 'calc(100% - 48px)'
+ring.setAttribute('rx', '22'); ring.setAttribute('fill', 'none'); ring.setAttribute('stroke', 'currentColor'); ring.setAttribute('stroke-width', '4')
+ring.setAttribute('stroke-dasharray', '180 40 60 120 300 90 40 260'); ring.setAttribute('opacity', '.2')
+specks.appendChild(ring)
+
+// the wet layer: the same impression in wet ink over the dry one; it fades as the ink dries
+const wet = ink.cloneNode(true)
+wet.style.color = 'var(--stamp-wet)'; wet.style.position = 'absolute'; wet.removeAttribute('role')
+ink.parentElement.appendChild(wet)
+
+// long names shrink so the die fits 1560 px
+const fit = () => { el.style.removeProperty('--stamp-fs'); const w = die.offsetWidth; if (w > 1560) el.style.setProperty('--stamp-fs', (150 * 1560 / w).toFixed(1) + 'px') }
+fit()
+let W = 0, H = 0
+const measure = () => {
+  W = die.offsetWidth + 96; H = die.offsetHeight + 96
+  for (const b of [block, far, near]) { b.style.width = W + 'px'; b.style.height = H + 'px'; b.style.marginLeft = -W / 2 + 'px'; b.style.marginTop = -H / 2 + 'px' }
+  hold.style.left = '960px'; hold.style.top = '540px'
+}
+const IMPACT = .3, LIFT = .66, GONE = 1.24, END = 2.0
+const pose = t => {
+  if (t < 0) {
+    hold.style.display = 'none'
+    ink.style.opacity = 0; wet.style.opacity = 0; desk.style.transform = ''
+    return
+  }
+  hold.style.display = t < GONE + .05 ? '' : 'none'
+  const pd = P(t, 0, IMPACT), q = ease.inOut(P(t, LIFT + .05, GONE - LIFT - .05))
+  // height above the paper: falls with gravity, rests, then lifts away
+  const h = t < IMPACT ? 1 - pd * pd : t < LIFT ? 0 : q
+  // press: squash on impact, hold, the rubber springs back just before it leaves
+  const k = P(t, IMPACT, .07), rel = P(t, LIFT - .02, .07)
+  const press = t < IMPACT ? 0 : (t < LIFT ? Math.sin(k * Math.PI / 2) : 1 - ease.out(rel))
+  const rock = t > IMPACT + .08 && t < LIFT ? .42 * Math.sin(P(t, IMPACT + .08, LIFT - IMPACT - .08) * Math.PI * 2) : 0
+  const s = 1 + .68 * h - .026 * press
+  const sx = s * (1 + .008 * press), sy = s * (1 - .012 * press)
+  const rot = t < IMPACT ? -8.5 + (8.5 - 1.6) * ease.out(pd) : -1.6 + rock + 7 * q
+  const tx = t < IMPACT ? -70 * (1 - pd) : 420 * q * q, ty = t < IMPACT ? -150 * (1 - pd) * (1 - pd) : -880 * q * q
+  block.style.opacity = t < LIFT ? P(t, 0, .06) : 1 - P(q, .62, .38)
+  block.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${sx.toFixed(4)},${sy.toFixed(4)})`
+  // two shadows: a soft one far below (offset with height), a crisp contact one that appears as it lands
+  const shx = tx * .55 + 170 * h, shy = ty * .5 + 250 * h
+  far.style.opacity = (Math.min(1, h * 3) * (1 - P(q, .55, .45))).toFixed(3)
+  far.style.transform = `translate(${shx.toFixed(1)}px,${shy.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${(1 + .18 * h).toFixed(3)})`
+  near.style.opacity = (Math.pow(1 - Math.min(1, h * 2.2), 3) * (t < .02 ? 0 : 1)).toFixed(3)
+  near.style.transform = `translate(${(shx + 5).toFixed(1)}px,${(shy + 8).toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${(s * .995).toFixed(4)})`
+  // the whole field takes the hit: 1 px down, back
+  const n = P(t, IMPACT, .11)
+  desk.style.transform = t >= IMPACT && n < 1 ? `translateY(${n < .45 ? 1 : n < .8 ? -.4 : 0}px)` : ''
+  ink.style.transform = `rotate(var(--stamp-tilt)) translateY(${t >= IMPACT && n < .45 ? 1 : 0}px)`
+  // ink: there from the impact, darker while wet, drying matte
+  ink.style.opacity = t >= IMPACT ? 1 : 0
+  wet.style.opacity = t < IMPACT ? 0 : (1 - P(t, LIFT + .3, 1.1)).toFixed(3)
+}
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  measure()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+document.fonts?.ready.then(() => { fit(); measure() })
+Deck.on('s__N__', {
+  steps: 1,
+  set: (n, ctx) => show(n ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

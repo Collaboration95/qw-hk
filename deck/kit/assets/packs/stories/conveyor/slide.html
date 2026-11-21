@@ -1,0 +1,184 @@
+<!-- Story · conveyor: everything checked, one held. Parcels roll in on a belt and pass under a scanner arch; the
+     beam flares as each one crosses and a teal check pops over the ones that pass; the odd one (a crate) turns the
+     beam amber, gets swept by a scan line, and an amber "Hold" tag pops up on a string; the lamp on the arch
+     blinks twice and stays amber. The belt slows to a stop, the parcels tip forward with the inertia, then the
+     belt keeps a slow ambient crawl (treads, roller spokes). ~1.45 s, CSS only (.play) + amb- keyframes.
+     Re-skin: the parcels are the product's items (orders, invoices, messages, packages); the tag says what happens
+     to the odd one ("Hold", "Review", "Fraud?"). Copy: rewrite the h2 and the tag. -->
+<section class="slide" id="s__N__">
+  <h2 class="st-conveyor-h">Every order is checked.<br>Only the odd one waits.</h2>
+
+  <div class="st-conveyor-card" aria-hidden="true">
+  <svg class="st-conveyor-svg" viewBox="0 0 1920 1080">
+    <defs>
+      <linearGradient id="st-conveyor-beamg-__N__" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4FFFD"/><stop offset="1" style="stop-color:var(--st-conveyor-light)" stop-opacity=".55"/></linearGradient>
+      <linearGradient id="st-conveyor-ambg-__N__" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1CC"/><stop offset="1" stop-color="#FFB020" stop-opacity=".6"/></linearGradient>
+      <linearGradient id="st-conveyor-glow-__N__" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--st-conveyor-light)" stop-opacity="0"/><stop offset=".5" style="stop-color:var(--st-conveyor-light)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--st-conveyor-light)" stop-opacity="0"/></linearGradient>
+      <linearGradient id="st-conveyor-aglow-__N__" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFC44D" stop-opacity="0"/><stop offset=".5" stop-color="#FFC44D" stop-opacity=".6"/><stop offset="1" stop-color="#FFC44D" stop-opacity="0"/></linearGradient>
+      <linearGradient id="st-conveyor-house-__N__" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4FBFA"/><stop offset="1" stop-color="#C9DCDB"/></linearGradient>
+      <radialGradient id="st-conveyor-halo-__N__"><stop offset="0" style="stop-color:var(--st-conveyor-light)" stop-opacity=".3"/><stop offset="1" style="stop-color:var(--st-conveyor-light)" stop-opacity="0"/></radialGradient>
+      <clipPath id="st-conveyor-beltclip-__N__"><rect x="-40" y="800" width="2000" height="36" rx="18"/></clipPath>
+    </defs>
+    <circle cx="990" cy="660" r="520" fill="url(#st-conveyor-halo-__N__)"/>
+    <!-- far racks of the sorting hall: depth, kept faint -->
+    <g class="st-conveyor-racks" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".07" stroke-width="4">
+      <path d="M60 800V470M360 800V470" fill="none"/>
+      <path d="M60 540H360" fill="none"/>
+      <rect x="74" y="490" width="50" height="48" rx="4" stroke="none"/>
+      <rect x="146" y="483" width="35" height="55" rx="4" stroke="none"/>
+      <rect x="194" y="502" width="37" height="36" rx="4" stroke="none"/>
+      <rect x="252" y="488" width="49" height="50" rx="4" stroke="none"/>
+      <path d="M60 640H360" fill="none"/>
+      <rect x="74" y="599" width="34" height="39" rx="4" stroke="none"/>
+      <rect x="119" y="602" width="58" height="36" rx="4" stroke="none"/>
+      <rect x="185" y="584" width="42" height="54" rx="4" stroke="none"/>
+      <rect x="233" y="599" width="34" height="39" rx="4" stroke="none"/>
+      <rect x="278" y="594" width="44" height="44" rx="4" stroke="none"/>
+      <path d="M60 740H360" fill="none"/>
+      <rect x="74" y="699" width="68" height="39" rx="4" stroke="none"/>
+      <rect x="154" y="693" width="58" height="45" rx="4" stroke="none"/>
+      <rect x="231" y="703" width="44" height="35" rx="4" stroke="none"/>
+      <rect x="291" y="712" width="53" height="26" rx="4" stroke="none"/>
+      <path d="M470 800V470M770 800V470" fill="none"/>
+      <path d="M470 540H770" fill="none"/>
+      <rect x="484" y="493" width="38" height="45" rx="4" stroke="none"/>
+      <rect x="537" y="492" width="64" height="46" rx="4" stroke="none"/>
+      <rect x="622" y="509" width="45" height="29" rx="4" stroke="none"/>
+      <rect x="673" y="487" width="56" height="51" rx="4" stroke="none"/>
+      <path d="M470 640H770" fill="none"/>
+      <rect x="484" y="588" width="57" height="50" rx="4" stroke="none"/>
+      <rect x="547" y="610" width="62" height="28" rx="4" stroke="none"/>
+      <rect x="682" y="580" width="56" height="58" rx="4" stroke="none"/>
+      <path d="M470 740H770" fill="none"/>
+      <rect x="484" y="683" width="50" height="55" rx="4" stroke="none"/>
+      <rect x="551" y="710" width="52" height="28" rx="4" stroke="none"/>
+      <rect x="611" y="691" width="47" height="47" rx="4" stroke="none"/>
+      <rect x="675" y="691" width="43" height="47" rx="4" stroke="none"/>
+      <path d="M1290 800V470M1590 800V470" fill="none"/>
+      <path d="M1290 540H1590" fill="none"/>
+      <rect x="1304" y="492" width="53" height="46" rx="4" stroke="none"/>
+      <rect x="1474" y="497" width="36" height="41" rx="4" stroke="none"/>
+      <rect x="1527" y="483" width="50" height="55" rx="4" stroke="none"/>
+      <path d="M1290 640H1590" fill="none"/>
+      <rect x="1414" y="606" width="60" height="32" rx="4" stroke="none"/>
+      <path d="M1290 740H1590" fill="none"/>
+      <rect x="1441" y="695" width="64" height="43" rx="4" stroke="none"/>
+      <rect x="1523" y="705" width="43" height="33" rx="4" stroke="none"/>
+      <path d="M1640 800V470M1940 800V470" fill="none"/>
+      <path d="M1640 540H1940" fill="none"/>
+      <rect x="1654" y="491" width="65" height="47" rx="4" stroke="none"/>
+      <rect x="1740" y="480" width="51" height="58" rx="4" stroke="none"/>
+      <rect x="1813" y="508" width="57" height="30" rx="4" stroke="none"/>
+      <rect x="1887" y="493" width="36" height="45" rx="4" stroke="none"/>
+      <path d="M1640 640H1940" fill="none"/>
+      <rect x="1654" y="596" width="65" height="42" rx="4" stroke="none"/>
+      <rect x="1734" y="601" width="55" height="37" rx="4" stroke="none"/>
+      <rect x="1795" y="596" width="64" height="42" rx="4" stroke="none"/>
+      <path d="M1640 740H1940" fill="none"/>
+      <rect x="1654" y="695" width="56" height="43" rx="4" stroke="none"/>
+      <rect x="1805" y="691" width="57" height="47" rx="4" stroke="none"/>
+    </g>
+    <g transform="translate(-260 -180) scale(1.25)" style="transform-box:view-box">
+    <rect x="-200" y="930" width="2400" height="200" fill="#0A3A41"/>
+    <path d="M-200 930H2200" stroke="#2C7C84" stroke-width="3"/>
+    <path d="M-200 1000H2200" stroke="#0E4850" stroke-width="2" stroke-dasharray="60 40"/>
+
+    <!-- belt: frame, body, treads that travel with the parcels, roller hubs -->
+    <rect x="130" y="834" width="22" height="100" rx="4" fill="#0E2328"/><rect x="490" y="834" width="22" height="100" rx="4" fill="#0E2328"/><rect x="850" y="834" width="22" height="100" rx="4" fill="#0E2328"/><rect x="1210" y="834" width="22" height="100" rx="4" fill="#0E2328"/><rect x="1570" y="834" width="22" height="100" rx="4" fill="#0E2328"/><rect x="1860" y="834" width="22" height="100" rx="4" fill="#0E2328"/>
+    <rect x="-200" y="900" width="2400" height="14" fill="#0E2328"/>
+    <rect x="-40" y="800" width="2000" height="36" rx="18" fill="#16262B"/>
+    <g clip-path="url(#st-conveyor-beltclip-__N__)"><g class="st-conveyor-tread"><g class="st-conveyor-crawl" stroke="#2D4148" stroke-width="6"><path d="M-800 808v22"/><path d="M-760 808v22"/><path d="M-720 808v22"/><path d="M-680 808v22"/><path d="M-640 808v22"/><path d="M-600 808v22"/><path d="M-560 808v22"/><path d="M-520 808v22"/><path d="M-480 808v22"/><path d="M-440 808v22"/><path d="M-400 808v22"/><path d="M-360 808v22"/><path d="M-320 808v22"/><path d="M-280 808v22"/><path d="M-240 808v22"/><path d="M-200 808v22"/><path d="M-160 808v22"/><path d="M-120 808v22"/><path d="M-80 808v22"/><path d="M-40 808v22"/><path d="M0 808v22"/><path d="M40 808v22"/><path d="M80 808v22"/><path d="M120 808v22"/><path d="M160 808v22"/><path d="M200 808v22"/><path d="M240 808v22"/><path d="M280 808v22"/><path d="M320 808v22"/><path d="M360 808v22"/><path d="M400 808v22"/><path d="M440 808v22"/><path d="M480 808v22"/><path d="M520 808v22"/><path d="M560 808v22"/><path d="M600 808v22"/><path d="M640 808v22"/><path d="M680 808v22"/><path d="M720 808v22"/><path d="M760 808v22"/><path d="M800 808v22"/><path d="M840 808v22"/><path d="M880 808v22"/><path d="M920 808v22"/><path d="M960 808v22"/><path d="M1000 808v22"/><path d="M1040 808v22"/><path d="M1080 808v22"/><path d="M1120 808v22"/><path d="M1160 808v22"/><path d="M1200 808v22"/><path d="M1240 808v22"/><path d="M1280 808v22"/><path d="M1320 808v22"/><path d="M1360 808v22"/><path d="M1400 808v22"/><path d="M1440 808v22"/><path d="M1480 808v22"/><path d="M1520 808v22"/><path d="M1560 808v22"/><path d="M1600 808v22"/><path d="M1640 808v22"/><path d="M1680 808v22"/><path d="M1720 808v22"/><path d="M1760 808v22"/><path d="M1800 808v22"/><path d="M1840 808v22"/><path d="M1880 808v22"/><path d="M1920 808v22"/><path d="M1960 808v22"/><path d="M2000 808v22"/></g></g></g>
+    <rect x="-40" y="800" width="2000" height="5" rx="2.5" fill="#53727A"/>
+    <g transform="translate(60 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(180 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(300 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(420 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(540 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(660 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(780 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(900 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1020 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1140 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1260 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1380 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1500 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1620 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1740 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g><g transform="translate(1860 818)"><circle r="13" fill="#2B3E45" stroke="#0B1A1E" stroke-width="3"/><g class="st-conveyor-roll"><g class="st-conveyor-spin"><path d="M-9 0h18M0-9v18" stroke="#6E8C92" stroke-width="3" stroke-linecap="round"/></g></g></g>
+
+    <!-- the scanner arch: posts, housing, lamp; the beam flares for each parcel -->
+    <rect x="924" y="548" width="26" height="254" rx="6" fill="#0E2328"/>
+    <rect x="1050" y="548" width="26" height="254" rx="6" fill="#0E2328"/>
+    <g class="st-conveyor-beam">
+      <rect x="950" y="560" width="100" height="242" fill="url(#st-conveyor-glow-__N__)"/>
+      <rect x="992" y="560" width="16" height="242" fill="url(#st-conveyor-beamg-__N__)"/>
+      <ellipse cx="1000" cy="802" rx="40" ry="6" style="fill:color-mix(in oklab,var(--st-conveyor-light) 50%,#fff)"/>
+    </g>
+    <g class="st-conveyor-abeam">
+      <rect x="950" y="560" width="100" height="242" fill="url(#st-conveyor-aglow-__N__)"/>
+      <rect x="992" y="560" width="16" height="242" fill="url(#st-conveyor-ambg-__N__)"/>
+      <ellipse cx="1000" cy="802" rx="40" ry="6" fill="#FFE2A0"/>
+    </g>
+    <rect x="896" y="500" width="208" height="60" rx="16" fill="url(#st-conveyor-house-__N__)" stroke="#0E2328" stroke-width="5"/>
+    <rect x="912" y="505" width="176" height="6" rx="3" fill="#fff" opacity=".8"/>
+    <svg class="mark st-conveyor-mark" x="985" y="515" width="30" height="30" viewBox="0 0 24 24">__MARK__</svg>
+    <rect x="960" y="552" width="80" height="10" rx="5" style="fill:var(--st-conveyor-light)"/>
+    <path d="M988 500v-16h24v16" fill="#0E2328"/>
+    <circle cx="1000" cy="476" r="15" style="fill:var(--st-conveyor-ok)" stroke="#0E2328" stroke-width="4"/>
+    <g class="st-conveyor-lamp"><circle cx="1000" cy="476" r="40" fill="#FFB020" opacity=".25"/><circle cx="1000" cy="476" r="15" fill="#FFB020" stroke="#0E2328" stroke-width="4"/><circle cx="995" cy="471" r="4" fill="#fff" opacity=".8"/></g>
+
+    <!-- the parcels: they ride the belt, jiggle on the rollers, tip forward when the belt stops -->
+    <g transform="translate(1600 800)"><g class="st-conveyor-item"><g class="st-conveyor-jig" style="--p:0.039s"><ellipse cx="6" cy="3" rx="89" ry="7" fill="#04181C" opacity=".35"/><path d="M75.0 -116l14-12v112l-14 16z" fill="#A86F3E"/><path d="M-75.0 -116l14-12h150l-14 12z" fill="#E0A971"/><rect x="-75.0" y="-116" width="150" height="116" rx="5" fill="#C98B55"/><rect x="-9" y="-116" width="18" height="49" fill="#fff" opacity=".22"/><path d="M-9 -116l14-12h18l-14 12z" fill="#fff" opacity=".22"/><rect x="-61.0" y="-46" width="54" height="32" rx="4" fill="#FFFBF2"/><path d="M-53.0 -36h36M-53.0 -25h24" stroke="#9AA6A8" stroke-width="4" stroke-linecap="round"/></g><g transform="translate(0 -178)"><g class="st-conveyor-tick st-conveyor-tick1"><circle r="24" style="fill:var(--st-conveyor-ok)" stroke="#0C4A4F" stroke-width="4"/><path d="M-10 1l6 7 13-14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g></g></g></g>
+    <g transform="translate(1380 800)"><g class="st-conveyor-item"><g class="st-conveyor-jig" style="--p:0.065s"><ellipse cx="6" cy="3" rx="74" ry="7" fill="#04181C" opacity=".35"/><path d="M60.0 -168l14-12v164l-14 16z" fill="#96602F"/><path d="M-60.0 -168l14-12h120l-14 12z" fill="#D49660"/><rect x="-60.0" y="-168" width="120" height="168" rx="5" fill="#B97A45"/><rect x="-9" y="-168" width="18" height="71" fill="#fff" opacity=".22"/><path d="M-9 -168l14-12h18l-14 12z" fill="#fff" opacity=".22"/><rect x="-46.0" y="-46" width="54" height="32" rx="4" fill="#FFFBF2"/><path d="M-38.0 -36h36M-38.0 -25h24" stroke="#9AA6A8" stroke-width="4" stroke-linecap="round"/><path d="M-14-128h28l-4 22a10 10 0 0 1-20 0z M0-96v18M-10-78h20" fill="none" stroke="#7A4A22" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></g><g transform="translate(0 -230)"><g class="st-conveyor-tick st-conveyor-tick2"><circle r="24" style="fill:var(--st-conveyor-ok)" stroke="#0C4A4F" stroke-width="4"/><path d="M-10 1l6 7 13-14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g></g></g></g>
+    <g transform="translate(1160 800)"><g class="st-conveyor-item"><g class="st-conveyor-jig" style="--p:0.013s"><ellipse cx="6" cy="3" rx="99" ry="7" fill="#04181C" opacity=".35"/><path d="M85 -128l14-12v124l-14 16z" class="st-conveyor-cr-d"/><path d="M-85 -128l14-12h170l-14 12z" class="st-conveyor-cr-l"/><rect x="-85" y="-128" width="170" height="128" rx="6" class="st-conveyor-cr"/><path d="M-85 -86h170M-85 -44h170" class="st-conveyor-cr-ds" stroke-width="5"/><path d="M-80 -6L80 -122" class="st-conveyor-cr-ds" stroke-width="7" stroke-linecap="round"/><rect x="-85" y="-128" width="170" height="128" rx="6" fill="none" class="st-conveyor-cr-ds" stroke-width="5"/><rect x="-60" y="-120" width="40" height="5" rx="2.5" fill="#fff" opacity=".3"/></g><path class="st-conveyor-tether" d="M0 -140V-188" stroke="#FFD27A" stroke-width="4" stroke-linecap="round"/><g class="st-conveyor-chip"><rect x="-82" y="-252" width="164" height="64" rx="18" fill="#FFB020" stroke="#B86E00" stroke-width="4"/><rect x="-70" y="-246" width="140" height="10" rx="5" fill="#fff" opacity=".35"/><circle cx="-48" cy="-220" r="9" fill="#3A2200"/><text x="10" y="-209" text-anchor="middle" class="st-conveyor-chipt">Hold</text><circle cx="0" cy="-188" r="5" fill="#B86E00"/></g><g class="st-conveyor-scanline"><rect x="-92" y="-136" width="198" height="6" rx="3" fill="#FFC44D"/><rect x="-92" y="-146" width="198" height="26" fill="#FFC44D" opacity=".25"/></g></g></g>
+    <g transform="translate(790 800)"><g class="st-conveyor-item"><g class="st-conveyor-jig" style="--p:0.052s"><ellipse cx="4" cy="3" rx="94" ry="6" fill="#04181C" opacity=".35"/><path d="M-85 -56l10-8h170l-10 8z" fill="#FFFFFF"/><rect x="-85" y="-56" width="170" height="56" rx="8" fill="#EEF3F2"/><path d="M-80 -52l80 30 80-30" fill="none" stroke="#C6D3D1" stroke-width="4" stroke-linejoin="round"/><rect x="40" y="-46" width="28" height="22" rx="3" fill="#F26B4F"/></g></g></g>
+    <g transform="translate(520 800)"><g class="st-conveyor-item"><g class="st-conveyor-jig" style="--p:0.013s"><ellipse cx="6" cy="3" rx="84" ry="7" fill="#04181C" opacity=".35"/><path d="M70.0 -104l14-12v100l-14 16z" fill="#A86F3E"/><path d="M-70.0 -104l14-12h140l-14 12z" fill="#E0A971"/><rect x="-70.0" y="-104" width="140" height="104" rx="5" fill="#C98B55"/><rect x="-9" y="-104" width="18" height="44" fill="#fff" opacity=".22"/><path d="M-9 -104l14-12h18l-14 12z" fill="#fff" opacity=".22"/><rect x="-56.0" y="-46" width="54" height="32" rx="4" fill="#FFFBF2"/><path d="M-48.0 -36h36M-48.0 -25h24" stroke="#9AA6A8" stroke-width="4" stroke-linecap="round"/></g></g></g>
+    </g>
+  </svg>
+  </div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#0C4A55 0%,#126470 55%,#0F5965 100%);--brand:var(--deck-brand,#34D6B4);--brand-2:var(--deck-brand-2,#5C84A3);color:var(--ink-auto,#fff);padding:96px 100px;
+  --st-conveyor-light:color-mix(in oklab,var(--brand) 35%,#CFFFF6);--st-conveyor-ok:color-mix(in oklab,var(--brand) 60%,#3DE0BF)}
+/* the hall: one window card with its own light, so the machine reads on any field */
+#s__N__ .st-conveyor-card{position:absolute;left:100px;top:352px;width:1720px;height:640px;border-radius:34px;overflow:hidden;
+  background:radial-gradient(900px 520px at 52% 46%,color-mix(in oklab,var(--brand) 34%,#1C7A84),transparent 75%),linear-gradient(180deg,color-mix(in oklab,var(--brand) 26%,#0F5560),color-mix(in oklab,var(--brand) 18%,#0B3E47));
+  box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 0 0 2px color-mix(in oklab,var(--ink-auto,#fff) 16%,transparent),0 2px 4px rgba(0,0,0,.25),0 50px 90px -40px rgba(0,0,0,.75)}
+#s__N__ .st-conveyor-cr{fill:color-mix(in oklab,var(--brand-2) 70%,#8FA7B8)}
+#s__N__ .st-conveyor-cr-l{fill:color-mix(in oklab,var(--brand-2) 45%,#D5E2EA)}
+#s__N__ .st-conveyor-cr-d{fill:color-mix(in oklab,var(--brand-2) 62%,#22313C)}
+#s__N__ .st-conveyor-cr-ds{stroke:color-mix(in oklab,var(--brand-2) 55%,#1B2A35)}
+#s__N__ .st-conveyor-mark{fill:none;stroke:#0E2328;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#s__N__ .st-conveyor-h{position:relative;z-index:1;font-size:96px;letter-spacing:-.045em;line-height:1.04}
+#s__N__ .st-conveyor-svg{position:absolute;left:-100px;top:-352px;width:1920px;height:1080px}
+#s__N__ .st-conveyor-svg *{transform-box:fill-box}
+/* (a transform attribute with scale needs view-box, or it scales about its own box) */
+#s__N__ .st-conveyor-chipt{font:800 32px/1 var(--f);letter-spacing:-.02em;fill:#3A2200}
+
+/* resting = final */
+#s__N__ .st-conveyor-beam{opacity:.55}
+#s__N__ .st-conveyor-abeam{opacity:0}
+#s__N__ .st-conveyor-scanline{opacity:0}
+#s__N__ .st-conveyor-item{transform-origin:100% 100%}
+#s__N__ .st-conveyor-chip{transform-origin:50% 100%;transform:rotate(-2deg)}
+#s__N__ .st-conveyor-tick{transform-origin:50% 50%}
+#s__N__ .st-conveyor-roll,#s__N__ .st-conveyor-spin{transform-origin:50% 50%}
+
+/* the arrival (forward only) */
+#s__N__.play .st-conveyor-item{animation:st-conveyor-ride 1.5s linear backwards}
+#s__N__.play .st-conveyor-tread{animation:st-conveyor-tread 1.5s linear backwards}
+#s__N__.play .st-conveyor-roll{animation:st-conveyor-roll 1.5s linear backwards}
+#s__N__.play .st-conveyor-jig{animation:st-conveyor-jig .1s ease-in-out var(--p) 11 backwards}
+#s__N__.play .st-conveyor-beam{animation:st-conveyor-beam 1.5s linear backwards}
+#s__N__.play .st-conveyor-abeam{animation:st-conveyor-amber 1.5s linear backwards}
+#s__N__.play .st-conveyor-scanline{animation:st-conveyor-scan 1.5s linear backwards}
+#s__N__.play .st-conveyor-tick1{animation:st-conveyor-pop .3s var(--spring) 0.26s backwards}
+#s__N__.play .st-conveyor-tick2{animation:st-conveyor-pop .3s var(--spring) 0.51s backwards}
+#s__N__.play .st-conveyor-chip{animation:st-conveyor-chip .62s linear 0.93s backwards}
+#s__N__.play .st-conveyor-tether{animation:st-conveyor-tether .16s ease-out 0.93s backwards}
+#s__N__.play .st-conveyor-lamp{animation:st-conveyor-lamp 1.5s step-end backwards}
+
+/* ambient after rest: the belt crawls (treads 8 px/s, spokes turn), the idle beam shimmers. One clock (amb-*). */
+#s__N__ .st-conveyor-crawl{animation:amb-st-conveyor-crawl 5s linear infinite}
+#s__N__ .st-conveyor-spin{animation:amb-st-conveyor-spin 14s linear infinite}
+@keyframes amb-st-conveyor-crawl{to{transform:translateX(40px)}}
+@keyframes amb-st-conveyor-spin{to{transform:rotate(360deg)}}
+
+@keyframes st-conveyor-ride{0.00%{transform:translateX(-760.0px)}5.00%{transform:translateX(-681.0px)}10.00%{transform:translateX(-605.7px)}15.00%{transform:translateX(-534.0px)}20.00%{transform:translateX(-466.0px)}25.00%{transform:translateX(-402.0px)}30.00%{transform:translateX(-341.8px)}35.00%{transform:translateX(-285.8px)}40.00%{transform:translateX(-233.9px)}45.00%{transform:translateX(-186.4px)}50.00%{transform:translateX(-143.4px)}55.00%{transform:translateX(-105.2px)}60.00%{transform:translateX(-72.0px)}65.00%{transform:translateX(-44.1px)}70.00%{transform:translateX(-22.2px)}75.00%{transform:translateX(-6.8px)}80.00%{transform:translateX(0.0px)}85.33%{transform:rotate(2.4deg)}91.33%{transform:rotate(-.8deg)}96.67%{transform:none}}
+@keyframes st-conveyor-tread{0.00%{transform:translateX(-760.0px)}5.00%{transform:translateX(-681.0px)}10.00%{transform:translateX(-605.7px)}15.00%{transform:translateX(-534.0px)}20.00%{transform:translateX(-466.0px)}25.00%{transform:translateX(-402.0px)}30.00%{transform:translateX(-341.8px)}35.00%{transform:translateX(-285.8px)}40.00%{transform:translateX(-233.9px)}45.00%{transform:translateX(-186.4px)}50.00%{transform:translateX(-143.4px)}55.00%{transform:translateX(-105.2px)}60.00%{transform:translateX(-72.0px)}65.00%{transform:translateX(-44.1px)}70.00%{transform:translateX(-22.2px)}75.00%{transform:translateX(-6.8px)}80.00%{transform:translateX(0.0px)}}
+@keyframes st-conveyor-roll{0.00%{transform:rotate(-2419.2deg)}5.00%{transform:rotate(-2167.8deg)}10.00%{transform:rotate(-1927.9deg)}15.00%{transform:rotate(-1699.7deg)}20.00%{transform:rotate(-1483.4deg)}25.00%{transform:rotate(-1279.5deg)}30.00%{transform:rotate(-1088.1deg)}35.00%{transform:rotate(-909.6deg)}40.00%{transform:rotate(-744.6deg)}45.00%{transform:rotate(-593.4deg)}50.00%{transform:rotate(-456.6deg)}55.00%{transform:rotate(-334.9deg)}60.00%{transform:rotate(-229.2deg)}65.00%{transform:rotate(-140.5deg)}70.00%{transform:rotate(-70.5deg)}75.00%{transform:rotate(-21.7deg)}80.00%{transform:rotate(0.0deg)}}
+@keyframes st-conveyor-beam{0%{opacity:0.55}3.54%{opacity:0.55}4.87%{opacity:1}16.22%{opacity:1}18.89%{opacity:0.55}20.04%{opacity:0.55}21.38%{opacity:1}32.61%{opacity:1}35.28%{opacity:0.55}100%{opacity:0.55}}
+@keyframes st-conveyor-amber{0%,36.78%{opacity:0}38.11%{opacity:1}60.83%{opacity:1}66.16%{opacity:0}100%{opacity:0}}
+@keyframes st-conveyor-scan{0%,38.11%{opacity:0;transform:translateY(0)}39.44%{opacity:1}59.50%{opacity:1;transform:translateY(126px)}60.83%{opacity:0;transform:translateY(126px)}100%{opacity:0}}
+@keyframes st-conveyor-jig{50%{transform:translateY(-3px)}}
+@keyframes st-conveyor-pop{from{opacity:0;transform:translateY(14px) scale(.3)}}
+@keyframes st-conveyor-tether{from{stroke-dasharray:0 60}to{stroke-dasharray:60 0}}
+@keyframes st-conveyor-chip{0%{opacity:0;transform:scale(.2)}10%{opacity:1}30%{transform:scale(1.1) rotate(4deg)}48%{transform:scale(.97) rotate(-4deg)}66%{transform:rotate(1.5deg)}84%{transform:rotate(-2.6deg)}100%{transform:rotate(-2deg)}}
+@keyframes st-conveyor-lamp{0%{opacity:0}38.11%{opacity:1}42.78%{opacity:0}47.44%{opacity:1}52.11%{opacity:0}56.78%{opacity:1}}
+</style>

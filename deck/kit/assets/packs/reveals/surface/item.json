@@ -1,0 +1,28 @@
+{
+  "title": "Surface",
+  "kind": "reveal",
+  "mood": ["calm", "dreamy", "watery", "slightly uncanny"],
+  "suits": "anything set by or in water: pools, swimming, spas, travel, hydration, ocean and climate products, wellness, dreamcore and liminal-space talks; also a 'coming up for air' launch",
+  "tech": "svg+css+js",
+  "duration": 2.25,
+  "params": {
+    "--field": "the dry tiled wall above the waterline (light: the word gets dark ink)",
+    "--brand": "the water near the surface",
+    "--brand-2": "the water's depth tint",
+    "--rv-wl": "the waterline, px from the top",
+    "--rv-fs": "word size (shrinks for long names)",
+    "__WORD__": "the title or product name"
+  },
+  "details": [
+    "a ring of caustic light runs out across the tiles before the word moves; the caustics brighten as it passes",
+    "caustics are one tileable Voronoi-edge texture drawn once, two copies min-blended while they drift on amb- keyframes (one clock, prints still)",
+    "above the waterline the same texture, stretched and blurred, is the light the water throws back up the dry wall",
+    "the word rises with buoyancy: it overshoots a touch and settles",
+    "the part still under water is refracted: bent by moving noise, shifted sideways, squashed, tinted toward the water",
+    "the part in the air is crisp, and the split follows the waterline exactly",
+    "rings spread on the surface where the word breaks through",
+    "drops fall from its underside back into the water",
+    "a last wobble dies out into crisp type",
+    "glazed tiles each with their own glaze, a lit bevel and a grout line; the waterline is a slow swell with a bright crest"
+  ]
+}

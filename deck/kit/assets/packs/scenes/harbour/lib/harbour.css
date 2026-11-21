@@ -1,0 +1,11 @@
+/* Pack scene "harbour" · drawn by lib/harbour.js into <div class="sc-harbour" data-tod="…">. The background is the
+   fallback field (and what shows for a frame before the script draws). */
+.sc-harbour{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict;
+  background:linear-gradient(180deg,#1F5DA6,#4A8ED0 38%,#9ACDE6 59%,#8AC4DE 60%,#176190)}
+.sc-harbour .parallax{z-index:0}
+.sc-harbour-l{left:-40px;top:-30px;width:2000px;height:1140px}
+.sc-harbour-l>svg,.sc-harbour-drift,.sc-harbour-drift>svg{position:absolute;left:0;top:0;width:2000px;height:1140px;display:block;overflow:visible}
+.sc-harbour-drift{will-change:transform}
+.sc-harbour-cv{position:absolute;display:block}
+.sc-harbour-grain{position:absolute;inset:0;background-size:256px 256px;mix-blend-mode:overlay;opacity:.11}
+html.print .sc-harbour .parallax>*,html.print .sc-harbour-drift{will-change:auto}

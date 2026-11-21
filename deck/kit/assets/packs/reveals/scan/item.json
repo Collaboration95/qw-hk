@@ -1,0 +1,33 @@
+{
+  "title": "Scan",
+  "kind": "reveal",
+  "mood": [
+    "precise",
+    "technical",
+    "quiet",
+    "orbital"
+  ],
+  "suits": "earth observation, mapping, climate data, satellites, imaging, sensing and analytics: products that turn raw signals into a clear picture",
+  "tech": "svg+canvas+js",
+  "duration": 2.3,
+  "params": {
+    "--field": "the sea under the swath; graticule and terrain classes are tinted from it",
+    "--brand": "the mark and the second, truer pass",
+    "--brand-2": "the first, coarse false-colour pass",
+    "--rv-fs": "wordmark size (shrinks for long names)",
+    "--rv-y": "the lockup's centre line",
+    "__MARK__": "stroke paths in a 24 x 24 box; the canvas images them stroke for stroke"
+  },
+  "details": [
+    "a tiny satellite rides the top of the scan line across the field",
+    "the scan line itself is thin and noisy, like a real sensor",
+    "the strip behind the line lights up as the instrument's footprint",
+    "the lockup comes out of the swath as if imaged: coarse false-colour blocks right behind the line",
+    "the image resolves through finer, truer passes to sharp type about half a second later",
+    "tick marks run along both swath edges as it goes",
+    "the footprint and ticks fade once the image is in",
+    "a faint graticule sits under everything, tinted from the field",
+    "terrain classes in the coarse pass are drawn from the field and brand colours",
+    "film grain and a soft vignette give the field depth"
+  ]
+}

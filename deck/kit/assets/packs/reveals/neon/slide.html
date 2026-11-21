@@ -1,0 +1,213 @@
+<!-- 0 · Intro reveal "neon": a dark plum wall over wet pavement. The first press brings up the unlit glass tubes, then
+     the mark strikes, the letters strike one by one with short flickers and warm from dim to full, their glow lighting
+     the bricks and pooling on the wet ground, where the sign reflects in ripples. One letter stutters twice, dies and
+     catches late. At rest the sign buzzes faintly on the deck clock and the same letter drops out for a blink every
+     17 s. ~2.2 s. Print and reduced motion: the lit sign.
+     Brand: --field (the wall, shaded to night; may be a gradient), --brand (the word's gas), --brand-2 (the mark's gas)
+     on #s__N__. Any brand colour becomes a gas: the script keeps its hue and lifts lightness and chroma (OKLCH), so a
+     navy brand burns blue and a white brand burns cool white. __MARK__ = stroke paths in a 24 x 24 box (use-pack
+     --mark): one bent tube. The word uses the deck font at a light weight so its strokes read as single tubes;
+     --neon-weight tunes the tube. Long names shrink to fit 1640 px. -->
+<section class="slide rv-neon" id="s__N__" aria-label="__WORD__">
+  <div class="rv-neon-wall" aria-hidden="true">
+    <svg class="rv-neon-bricks" width="1920" height="700" aria-hidden="true">
+      <defs>
+        <pattern id="rv-neon-brick-__N__" width="132" height="64" patternUnits="userSpaceOnUse">
+          <rect width="132" height="64" fill="#1E0A26"/>
+          <rect x="2" y="2" width="128" height="28" rx="3" fill="#4A2353"/><rect x="-64" y="34" width="128" height="28" rx="3" fill="#43204C"/><rect x="68" y="34" width="128" height="28" rx="3" fill="#4C2455"/>
+        </pattern>
+        <filter id="rv-neon-rough-__N__"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.25"/><feComposite in="SourceGraphic" operator="in"/></filter>
+      </defs>
+      <rect width="1920" height="700" fill="url(#rv-neon-brick-__N__)" filter="url(#rv-neon-rough-__N__)"/>
+    </svg>
+    <i class="rv-neon-glow"></i>
+  </div>
+  <div class="rv-neon-ground" aria-hidden="true"><i class="rv-neon-pool"></i><i class="rv-neon-kerb"></i></div>
+  <svg class="rv-neon-cable" width="1920" height="1080" aria-hidden="true"><path/></svg>
+
+  <div class="rv-neon-sign" role="img" aria-label="__WORD__">
+    <i class="rv-neon-run"></i>
+    <div class="rv-neon-markbox">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+    </div>
+    <div class="rv-neon-word"><span class="rv-neon-glass"></span><span class="rv-neon-lit"></span></div>
+  </div>
+  <div class="rv-neon-refl" aria-hidden="true"></div>
+  <svg class="rv-neon-dry" width="1920" height="376" aria-hidden="true">
+    <filter id="rv-neon-patch-__N__" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".0035 .016" numOctaves="3" seed="8"/>
+      <feColorMatrix values="0 0 0 0 .07  0 0 0 0 .035  0 0 0 0 .1  7 0 0 0 -3.35"/>
+    </filter>
+    <filter id="rv-neon-grit-__N__" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".8 1.6" numOctaves="2" seed="2"/>
+      <feColorMatrix values="0 0 0 0 .02  0 0 0 0 .01  0 0 0 0 .03  0 0 0 -3 1.75"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#rv-neon-patch-__N__)" opacity=".85"/>
+    <rect width="100%" height="100%" filter="url(#rv-neon-grit-__N__)" opacity=".35"/>
+  </svg>
+  <div class="rv-neon-rain" aria-hidden="true">
+    <svg class="a" width="1920" height="1380"><defs><pattern id="rv-neon-dropa-__N__" width="300" height="300" patternUnits="userSpaceOnUse"><path d="M40 254l-3.1 26" opacity="0.46"/><path d="M149 135l-2.9 24" opacity="0.70"/><path d="M28 9l-3.3 27" opacity="0.54"/><path d="M229 1l-2.5 21" opacity="0.67"/><path d="M69 284l-3.4 28" opacity="0.36"/><path d="M8 162l-3.5 29" opacity="0.52"/><path d="M65 127l-1.7 14" opacity="0.45"/><path d="M131 149l-2.1 18" opacity="0.45"/><path d="M66 138l-2.2 19" opacity="0.36"/></pattern></defs><rect width="1920" height="1380" fill="url(#rv-neon-dropa-__N__)"/></svg>
+    <svg class="b" width="1920" height="1380"><defs><pattern id="rv-neon-dropb-__N__" width="300" height="300" patternUnits="userSpaceOnUse"><path d="M287 284l-1.8 15" opacity="0.39"/><path d="M251 221l-3.0 25" opacity="0.49"/><path d="M182 182l-2.8 23" opacity="0.42"/><path d="M129 118l-3.1 26" opacity="0.80"/><path d="M285 163l-2.5 21" opacity="0.47"/><path d="M11 8l-2.6 21" opacity="0.49"/></pattern></defs><rect width="1920" height="1380" fill="url(#rv-neon-dropb-__N__)"/></svg>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:#6A2C82;                               /* the wall by day: plum by default; shaded to night below */
+  --brand:var(--deck-brand,#FF3F9E); --brand-2:var(--deck-brand-2,#3FE0FF);            /* the two gases: word, mark */
+  --neon-glass:rgba(255,255,255,.14);            /* unlit tubes catch a little street light */
+  --neon-word:#FF3F9E; --neon-core:#FFE4F1;      /* set from --brand by the script */
+  --neon-mark:#3FE0FF; --neon-mark-core:#E2FBFF; /* set from --brand-2 by the script */
+  --neon-fs:200px; --neon-weight:290;
+  --neon-y:450px; --neon-g:688px;                /* sign centre, ground line */
+  padding:0;background:var(--field)}
+#s__N__ .rv-neon-wall{position:absolute;left:0;right:0;top:0;height:var(--neon-g);overflow:hidden;
+  background:radial-gradient(80% 110% at 50% 42%,rgba(9,4,16,.6) 0%,rgba(9,4,16,.74) 45%,rgba(6,2,12,.88) 100%)}
+#s__N__ .rv-neon-bricks{position:absolute;left:0;top:0;opacity:.13;mix-blend-mode:luminosity}
+#s__N__ .rv-neon-glow{position:absolute;left:50%;top:var(--neon-y);width:1900px;height:900px;margin:-450px 0 0 -950px;border-radius:50%;opacity:0;mix-blend-mode:screen;
+  background:radial-gradient(closest-side,color-mix(in oklab,var(--neon-word) 44%,transparent),color-mix(in oklab,var(--neon-word) 16%,transparent) 45%,transparent)}
+#s__N__ .rv-neon-ground{position:absolute;left:0;right:0;top:var(--neon-g);bottom:0;overflow:hidden;
+  background:linear-gradient(180deg,rgba(8,3,14,.8) 0%,rgba(6,2,11,.88) 30%,rgba(3,1,6,.94) 100%)}
+#s__N__ .rv-neon-pool{position:absolute;left:50%;top:-80px;width:1700px;height:420px;margin-left:-850px;border-radius:50%;opacity:0;mix-blend-mode:screen;
+  background:radial-gradient(closest-side,color-mix(in oklab,var(--neon-word) 36%,transparent),transparent)}
+#s__N__ .rv-neon-ground::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.45))}
+#s__N__ .rv-neon-kerb{position:absolute;left:8%;right:8%;top:0;height:2px;opacity:.3;background:radial-gradient(50% 100% at 50% 50%,var(--neon-core),color-mix(in oklab,var(--neon-word) 40%,transparent) 60%,transparent)}
+#s__N__ .rv-neon-dry{position:absolute;left:0;top:calc(var(--neon-g) + 16px);pointer-events:none}
+#s__N__ .rv-neon-cable{position:absolute;left:0;top:0;overflow:visible}
+#s__N__ .rv-neon-cable path{fill:none;stroke:rgba(3,1,6,.9);stroke-width:4;stroke-linecap:round}
+
+#s__N__ .rv-neon-sign,#s__N__ .rv-neon-in{position:absolute;left:0;right:0;top:var(--neon-y);height:0;display:flex;justify-content:center;align-items:center;gap:calc(var(--neon-fs) * .26);white-space:nowrap}
+#s__N__ .rv-neon-markbox{position:relative;width:calc(var(--neon-fs) * .9);height:calc(var(--neon-fs) * .9);flex:none}
+#s__N__ .rv-neon-markbox svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+#s__N__ .rv-neon-markbox .mark{stroke:var(--neon-glass);filter:drop-shadow(0 7px 6px rgba(0,0,0,.55))}
+#s__N__ .rv-neon-markbox .lit{stroke:var(--neon-mark-core);opacity:0;will-change:opacity;
+  filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px var(--neon-mark)) drop-shadow(0 0 16px var(--neon-mark)) drop-shadow(0 0 44px var(--neon-mark))}
+#s__N__ .rv-neon-word{position:relative;font:var(--neon-weight) var(--neon-fs)/1 var(--f);letter-spacing:.01em}
+#s__N__ .rv-neon-glass{color:var(--neon-glass);text-shadow:0 -1px 0 rgba(255,255,255,.08),0 7px 8px rgba(0,0,0,.55)}
+#s__N__ .rv-neon-lit{position:absolute;left:0;top:0;color:var(--neon-core)}
+#s__N__ .rv-neon-lit b{font-weight:inherit;opacity:0;will-change:opacity;
+  text-shadow:0 0 1px #fff,0 0 4px #fff,0 0 9px var(--neon-word),0 0 20px var(--neon-word),0 0 46px var(--neon-word),0 0 110px var(--neon-word),0 0 180px rgba(255,60,150,.6)}
+#s__N__ .rv-neon-glass b{font-weight:inherit}
+/* the tube that runs behind the letters, painted out, on standoffs */
+#s__N__ .rv-neon-run{position:absolute;top:calc(var(--neon-fs) * .3);height:6px;border-radius:3px;background:rgba(4,2,8,.85);box-shadow:0 1px 0 rgba(255,255,255,.07),0 6px 7px rgba(0,0,0,.5)}
+#s__N__ .rv-neon-run::before,#s__N__ .rv-neon-run::after{content:"";position:absolute;top:-3px;width:12px;height:12px;border-radius:50%;background:rgba(40,36,48,.9);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),3px 6px 6px rgba(0,0,0,.5)}
+#s__N__ .rv-neon-run::before{left:14%}
+#s__N__ .rv-neon-run::after{right:14%}
+
+#s__N__ .rv-neon-refl{position:absolute;left:0;right:0;top:0;height:1080px;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,transparent var(--neon-g),#000 calc(var(--neon-g) + 18px),rgba(0,0,0,.45) calc(var(--neon-g) + 200px),transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,transparent var(--neon-g),#000 calc(var(--neon-g) + 18px),rgba(0,0,0,.45) calc(var(--neon-g) + 200px),transparent 100%)}
+#s__N__ .rv-neon-copy{position:absolute;left:0;right:0;top:var(--neon-y);height:0;transform-origin:50% calc(var(--neon-g) - var(--neon-y) + 16px);transform:scaleY(-2.2);filter:blur(3.5px);opacity:.7}
+#s__N__ .rv-neon-in{left:0;right:0;top:0;transform-origin:50% calc(var(--neon-g) - var(--neon-y) + 16px);transform:scaleY(.38)}
+#s__N__ .rv-neon-refl .rv-neon-glass,#s__N__ .rv-neon-refl .mark,#s__N__ .rv-neon-refl .rv-neon-run{visibility:hidden}
+#s__N__ .rv-neon-rain{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:0;
+  -webkit-mask-image:radial-gradient(52% 46% at 50% 44%,#000 0%,rgba(0,0,0,.5) 50%,transparent 100%);mask-image:radial-gradient(52% 46% at 50% 44%,#000 0%,rgba(0,0,0,.5) 50%,transparent 100%)}
+#s__N__ .rv-neon-rain svg{position:absolute;left:0;top:-300px;will-change:transform;stroke:var(--neon-core);stroke-width:1.3;stroke-linecap:round;fill:none}
+#s__N__ .rv-neon-rain .a{animation:amb-neon-rain .62s linear infinite}
+#s__N__ .rv-neon-rain .b{animation:amb-neon-rain 1.05s linear infinite;stroke-width:1;opacity:.6}
+@keyframes amb-neon-rain{from{transform:translate(36px,0)}to{transform:translate(0,300px)}}
+#s__N__ .rv-neon-sign{opacity:0}
+/* filtered and blended layers paint through visibility:hidden in Chrome: keep them transparent off-slide */
+@media screen{html:not(.print) #s__N__:not(.active) .rv-neon-bricks,html:not(.print) #s__N__:not(.active) .rv-neon-dry,html:not(.print) #s__N__:not(.active) .rv-neon-rain,html:not(.print) #s__N__:not(.active) .rv-neon-refl,html:not(.print) #s__N__:not(.active) .rv-neon-glow,html:not(.print) #s__N__:not(.active) .rv-neon-pool,html:not(.print) #s__N__:not(.active) .rv-neon-markbox{opacity:0!important}}
+</style>
+
+<script>
+const el = document.getElementById('s__N__'), sign = el.querySelector('.rv-neon-sign'), refl = el.querySelector('.rv-neon-refl')
+// any brand colour becomes a gas: keep the hue, lift lightness and chroma in OKLCH, clip to sRGB
+const gas = (() => {
+  const cx = document.createElement('canvas').getContext('2d')
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s.trim(); const v = cx.fillStyle; return v[0] === '#' && v !== '#010203' ? [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16) / 255) : null }
+  const lin = c => c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4, gam = c => c <= .0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - .055
+  const toLab = ([r, g, b]) => { [r, g, b] = [r, g, b].map(lin); const l = Math.cbrt(.4122214708 * r + .5363325363 * g + .0514459929 * b), m = Math.cbrt(.2119034982 * r + .6806995451 * g + .1073969566 * b), s = Math.cbrt(.0883024619 * r + .2817188376 * g + .6299787005 * b); return [.2104542553 * l + .793617785 * m - .0040720468 * s, 1.9779984951 * l - 2.428592205 * m + .4505937099 * s, .0259040371 * l + .7827717662 * m - .808675766 * s] }
+  const toRgb = ([L, a, b]) => { const l = (L + .3963377774 * a + .2158037573 * b) ** 3, m = (L - .1055613458 * a - .0638541728 * b) ** 3, s = (L - .0894841775 * a - 1.291485548 * b) ** 3; return [4.0767416621 * l - 3.3077115913 * m + .2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - .3413193965 * s, -.0041960863 * l - .7034186147 * m + 1.707614701 * s].map(gam) }
+  const lch = (L, C, h) => { for (let c = C; c >= 0; c -= .005) { const v = toRgb([L, c * Math.cos(h), c * Math.sin(h)]); if (v.every(x => x >= -.001 && x <= 1.001)) return '#' + v.map(x => Math.round(Math.max(0, Math.min(1, x)) * 255).toString(16).padStart(2, '0')).join('') } return '#ffffff' }
+  return (s, fb) => { const c = rgb(s) || rgb(fb); const [, a, b] = toLab(c), C = Math.hypot(a, b), h = Math.atan2(b, a), grey = C < .03; return { glow: lch(.72, grey ? 0 : Math.max(C, .19), h), core: lch(.95, grey ? 0 : Math.min(.06, C), h) } }
+})()
+{
+  const cs = getComputedStyle(el), w = gas(cs.getPropertyValue('--brand'), '#FF3F9E'), m = gas(cs.getPropertyValue('--brand-2'), '#3FE0FF')
+  el.style.setProperty('--neon-word', w.glow); el.style.setProperty('--neon-core', w.core)
+  el.style.setProperty('--neon-mark', m.glow); el.style.setProperty('--neon-mark-core', m.core)
+}
+const word = el.getAttribute('aria-label'), glass = el.querySelector('.rv-neon-glass'), lit = el.querySelector('.rv-neon-lit')
+const rain = el.querySelector('.rv-neon-rain'), glow = el.querySelector('.rv-neon-glow'), pool = el.querySelector('.rv-neon-pool'), kerb = el.querySelector('.rv-neon-kerb'), bricks = el.querySelector('.rv-neon-bricks')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(404)
+for (const ch of word) { const a = document.createElement('b'); a.textContent = ch; glass.appendChild(a); lit.appendChild(a.cloneNode(true)) }
+const box = el.querySelector('.rv-neon-markbox'), glassMark = box.querySelector('.mark'), litMark = glassMark.cloneNode(true)
+litMark.setAttribute('class', 'lit'); box.appendChild(litMark)
+// the reflection is a mirrored copy of the sign, lit layers only
+const copy = document.createElement('div'), inner = sign.cloneNode(true); copy.className = 'rv-neon-copy'
+inner.removeAttribute('role'); inner.removeAttribute('aria-label'); inner.className = 'rv-neon-in'; inner.style.opacity = 1
+copy.appendChild(inner); refl.appendChild(copy)
+const tubes = [litMark, ...lit.children], mirror = [copy.querySelector('.lit'), ...copy.querySelector('.rv-neon-lit').children]
+
+// strike plan: lit segments [on, off) per tube; the mark strikes first, letters roughly left to right,
+// one letter stutters twice, dies, and catches late
+const n = word.length, stut = n > 2 ? n - 2 : n - 1
+const plan = tubes.map((_, i) => {
+  if (i === 0) return [[.26, .3], [.36, .4], [.47, 99]]
+  const k = i - 1, t = .5 + k * Math.min(.1, .85 / n) + (rng() - .5) * .06
+  if (k === stut) return [[t, t + .05], [t + .16, t + .2], [1.6, 1.635], [1.7, 99]]
+  return rng() < .45 ? [[t, t + .04], [t + .1, t + .13], [t + .19, 99]] : [[t, t + .03], [t + .08, 99]]
+})
+const END = 2.2
+const level = (i, t) => {
+  const segs = plan[i]
+  for (const [a, b] of segs) if (t >= a && t < b) {
+    // a fresh strike comes on dim and warms to full over a quarter second
+    return b > 50 ? .62 + .38 * clamp((t - a) / .25) : .78
+  }
+  return 0
+}
+// at rest: a faint buzz, and the stutter letter drops out for a blink every 17 s
+const buzz = (i, t) => {
+  let v = 1 - .03 * (.5 + .5 * Math.sin(t * 61 + i * 2.1)) * (.5 + .5 * Math.sin(t * 7.3 + i))
+  const ph = t % 17
+  if (i === stut + 1 && ((ph > 11 && ph < 11.05) || (ph > 11.12 && ph < 11.16))) v = .1
+  return v
+}
+
+let G = 688
+// long names shrink so mark + word fit 1640 px
+const fit = () => { el.style.removeProperty('--neon-fs'); const w = box.offsetWidth + el.querySelector('.rv-neon-word').offsetWidth + 52; if (w > 1640) el.style.setProperty('--neon-fs', (200 * 1640 / w).toFixed(1) + 'px') }
+const layout = () => {
+  fit()
+  const cs = getComputedStyle(el); G = parseFloat(cs.getPropertyValue('--neon-g')) || 688
+  const sr = el.getBoundingClientRect(), sc = sr.width / 1920 || 1
+  const wr = el.querySelector('.rv-neon-word').getBoundingClientRect(), mr = box.getBoundingClientRect()
+  const x0 = (mr.left - sr.left) / sc, x1 = (wr.right - sr.left) / sc, y = parseFloat(cs.getPropertyValue('--neon-y')) || 450
+  const run = el.querySelector('.rv-neon-run'), fs = parseFloat(cs.getPropertyValue('--neon-fs')) || 200
+  run.style.left = (x0 + fs * .45).toFixed(0) + 'px'; run.style.width = (x1 - x0 - fs * .6).toFixed(0) + 'px'
+  // the power cable leaves the last letter and droops down the wall to the ground
+  const ax = x1 - fs * .08, ay = y + fs * .3, bx = Math.min(1880, x1 + 150), by = G + 2
+  el.querySelector('.rv-neon-cable path').setAttribute('d', `M${ax} ${ay}C${ax + 30} ${ay + 120} ${bx - 10} ${ay + 40} ${bx} ${by}`)
+}
+const pose = (t, amb) => {
+  if (t < 0) { sign.style.opacity = 0; refl.style.opacity = 0; [glow, pool, rain].forEach(g => g.style.opacity = 0); kerb.style.opacity = .15; bricks.style.opacity = .13; return }
+  sign.style.opacity = clamp(t / .22).toFixed(3); refl.style.opacity = 1
+  let sum = 0
+  tubes.forEach((tb, i) => {
+    let v = t >= END ? 1 : level(i, t)
+    if (amb != null && t >= END) v *= buzz(i, amb)
+    tb.style.opacity = v.toFixed(3); mirror[i].style.opacity = v.toFixed(3); sum += v * (i === 0 ? 2 : 1)
+  })
+  const L = sum / (tubes.length + 1)
+  glow.style.opacity = L.toFixed(3); pool.style.opacity = L.toFixed(3); rain.style.opacity = (.55 * L).toFixed(3)
+  kerb.style.opacity = (.15 + .85 * L).toFixed(3); bricks.style.opacity = (.13 + .32 * L).toFixed(3)
+}
+let mode = 'empty', t0 = 0
+const show = m => { mode = m; t0 = performance.now() / 1000; layout(); pose(m === 'empty' ? -1 : m === 'done' ? END : 0, null) }
+Deck.clock(el, t => {
+  if (mode === 'play') { const lt = performance.now() / 1000 - t0; pose(Math.min(lt, END), lt >= END ? t : null); if (lt >= END) mode = 'done' }
+  else if (mode === 'done') pose(END, t)
+}, { printT: 3 })
+pose(-1)
+document.fonts?.ready.then(layout)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (mode === 'empty') { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

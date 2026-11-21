@@ -1,0 +1,19 @@
+/* Pack powers-of-ten · each slide's own view of the one world, edge to edge behind the content (lib/powers-of-ten.js
+   draws it), plus the two marks that belong to the picture: viewfinder brackets and the scale caption. */
+.slide>canvas.cy-powers-of-ten,.slide>img.cy-powers-of-ten{position:absolute;inset:0;width:1920px;height:1080px;z-index:-1;display:block;pointer-events:none}
+
+/* viewfinder brackets: <div class="cy-powers-of-ten-vf" style="left…;top…;width…;height…"><i></i></div>
+   --c colour, --l arm length, --w stroke; on a forward arrival they lock on (scale in, after --t seconds) */
+.cy-powers-of-ten-vf{position:absolute;pointer-events:none;--c:color-mix(in oklab,var(--ink-auto,#fff) 88%,transparent);--l:46px;--w:4px}
+.cy-powers-of-ten-vf::before,.cy-powers-of-ten-vf::after,.cy-powers-of-ten-vf>i::before,.cy-powers-of-ten-vf>i::after{content:"";position:absolute;width:var(--l);height:var(--l);border:solid var(--c)}
+.cy-powers-of-ten-vf::before{left:0;top:0;border-width:var(--w) 0 0 var(--w)}
+.cy-powers-of-ten-vf::after{right:0;top:0;border-width:var(--w) var(--w) 0 0}
+.cy-powers-of-ten-vf>i{position:absolute;inset:0}
+.cy-powers-of-ten-vf>i::before{left:0;bottom:0;border-width:0 0 var(--w) var(--w)}
+.cy-powers-of-ten-vf>i::after{right:0;bottom:0;border-width:0 var(--w) var(--w) 0}
+.slide.play .cy-powers-of-ten-vf{animation:cy-powers-of-ten-lock .42s cubic-bezier(.2,.7,.2,1) calc(var(--t,.9)*1s) backwards}
+@keyframes cy-powers-of-ten-lock{from{opacity:0;transform:scale(1.14)}60%{opacity:1}}
+
+/* scale caption: <div class="cy-powers-of-ten-bar"><i></i><b></b></div>; the lib sets the bar width and label */
+.cy-powers-of-ten-bar{position:absolute;display:flex;align-items:center;gap:16px;color:var(--ink-auto,#fff);font:500 24px/1 ui-monospace,"Geist Mono",monospace;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.cy-powers-of-ten-bar i{display:block;height:12px;width:var(--bw,200px);border:solid currentColor;border-width:0 3px 3px 3px;opacity:.9}

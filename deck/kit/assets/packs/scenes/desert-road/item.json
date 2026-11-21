@@ -1,0 +1,42 @@
+{
+  "title": "Desert road",
+  "kind": "scene",
+  "mood": [
+    "open",
+    "unhurried",
+    "warm",
+    "americana"
+  ],
+  "suits": "long-haul, patient products: logistics, freight, travel, energy, rural connectivity, 'the long game'. Tod 0.5 (sunset) is the hero frame. Not for dense urban or kids' products.",
+  "tech": "canvas",
+  "tods": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "params": {
+    "data-tod": "0…1, the hour: 0 golden late afternoon with heat shimmer and a mirage, 0.5 sunset with the evening star, 1 night with the Milky Way and a crescent moon",
+    "data-word": "the town's name painted on the water tower by the road (any length, it shrinks to fit). use-pack --word fills it; default 'MESA'",
+    "data-seed": "integer; reshuffles the freight cars, the scrub and the stars. Keep one seed across a deck",
+    "data-print-t": "clock time of the still frame for print (default 30: the freight mid-screen, a car on the highway)",
+    "--brand on the section": "optional: the water tower's tank takes --brand (the word on it uses Deck.inkOn)"
+  },
+  "details": [
+    "a mile-long freight crosses the far plain at walking pace: two locomotives, then 46 boxcars, tankers, hoppers and double-stacks in faded colours",
+    "the locomotives' exhaust drifts back over the train by day; at night the headlight reaches ahead and the end-of-train marker blinks red every 1.3 s",
+    "heat shimmer: by day each row of the horizon slips sideways a little, faster near the ground, and the sky lies along the horizon like water (a mirage)",
+    "a car passes on the highway every 25 s, alternating direction; every third pass is a truck with amber marker lights along its trailer",
+    "by day the car kicks up a thin plume of dust; at night its headlights throw a beam down the road and its tail lights glow red",
+    "the radio mast on the butte flashes a white strobe by day and pulses slow red by night; the low sun catches one leg",
+    "stars come out brightest first after sunset; the evening star is the first light, low over the road",
+    "at night a patchy Milky Way rises from the horizon on the right, with its dark dust lane",
+    "a crescent moon appears late, and thin cloud bands cross the setting sun",
+    "a hawk circles high on a thermal through the afternoon",
+    "a coyote sits on the left butte after dark and lifts its muzzle to the sky every 40 s",
+    "a tumbleweed rolls through every 47 s: it hops, spins and throws a soft shadow",
+    "the water tower by the road carries the town's name, with a painted band and a catwalk",
+    "saguaros with arms that elbow out and turn up; creosote is twiggy, not round; the fence has sagging barbed wire",
+    "telephone poles on the far side of the road, with wires that sag between them",
+    "the sky behind the headline stays a deep, saturated blue, orange or violet at every hour, never white and never flat black; film grain over everything"
+  ]
+}

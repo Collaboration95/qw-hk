@@ -1,0 +1,4 @@
+/* Pack traveller · the object's overlay on each slide (lib/traveller.js builds it): above the content (z-index from
+   object({ z }), default 30), never catching clicks. */
+.cy-tr{position:absolute;inset:0;z-index:30;pointer-events:none}
+.cy-tr>svg{position:absolute;left:0;top:0;overflow:visible}

@@ -1,0 +1,7 @@
+/* Pack pan · each slide's own view of the one panorama, edge to edge behind the content (lib/pan.js builds it).
+   Planes are shared SVG images moved with one transform each; only the showing view is promoted while it can move. */
+.cy-pan{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;contain:strict}
+.cy-pan-sky{position:absolute;inset:0}
+.cy-pan-plane{position:absolute;left:0;top:0;transform-origin:0 0}
+.cy-pan-plane>img,.cy-pan-plane>svg{position:absolute;left:0;top:0;display:block;max-width:none}
+.cy-pan-on .cy-pan-plane{will-change:transform}

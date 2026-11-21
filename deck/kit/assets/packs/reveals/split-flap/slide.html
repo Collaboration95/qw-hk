@@ -1,0 +1,167 @@
+<!-- 0 · Intro reveal "split-flap": a blank departure board hangs on a vermilion station wall. The first press sets
+     every flap spinning through its drum in drum order (blank, A–Z, 0–9); they land left to right on the mark and the
+     word, each final flap bouncing a hair off its stop, and one flap lands a beat late. At rest, every 14 s the
+     last blank flap shuffles once as if the board is updating. ~2.2 s. Print / reduced motion: the landed board.
+     Brand: --field (the wall, may be a gradient), --brand (the mark's colour), --brand-2 (fallback) on #s__N__. The
+     board stays near-black; the mark takes whichever brand colour reads on it, else the flap ink. __MARK__ = stroke
+     paths in a 24 x 24 box (use-pack --mark); it lands in its own flap. The word is set in capitals; any character
+     not on the drum (A–Z, 0–9, - . &) is added to it. Long names shrink the flaps to fit 1700 px. -->
+<section class="slide rv-flap" id="s__N__" aria-label="__WORD__">
+  <div class="rv-flap-wall" aria-hidden="true"><i class="rv-flap-lamp"></i></div>
+  <div class="rv-flap-hang" aria-hidden="true"><i></i><i></i></div>
+  <div class="rv-flap-board" role="img" aria-label="__WORD__">
+    <div class="rv-flap-row"></div>
+  </div>
+  <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+</section>
+
+<style>
+#s__N__{
+  --field:#D6452E;                               /* the station wall: vermilion by default */
+  --brand:var(--deck-brand,#FFB51E); --brand-2:var(--deck-brand-2,#F3ECDC);            /* the mark's flap colour, a fallback */
+  --flap-board:#18191C;                          /* housing */
+  --flap-top:#2B2C30; --flap-bot:#1F2023;        /* the two halves of a flap (lit from above) */
+  --flap-ink:#F3ECDC;                            /* characters (on the board, so they never depend on the wall) */
+  --flap-cw:150px;                               /* max flap width (shrinks for long names) */
+  padding:0;background:var(--field)}
+#s__N__ .rv-flap-wall{position:absolute;inset:0;background:radial-gradient(90% 85% at 50% 18%,transparent 0%,transparent 30%,rgba(30,0,0,.26) 100%)}
+#s__N__ .rv-flap-wall::before{content:"";position:absolute;inset:0;opacity:.18;
+  background:repeating-linear-gradient(90deg,transparent 0 318px,rgba(20,4,0,.5) 318px 320px,rgba(255,240,230,.3) 320px 321px)}
+#s__N__ .rv-flap-lamp{position:absolute;left:50%;top:-260px;width:1500px;height:900px;margin-left:-750px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,236,210,.3),rgba(255,236,210,0))}
+
+#s__N__ .rv-flap-hang{position:absolute;left:0;right:0;top:0;height:0}
+#s__N__ .rv-flap-hang i{position:absolute;top:0;width:8px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.38) 45%,rgba(0,0,0,.7));box-shadow:10px 0 14px rgba(0,0,0,.18)}
+#s__N__ .rv-flap-hang i::after{content:"";position:absolute;left:-7px;bottom:-4px;width:22px;height:13px;border-radius:3px 3px 1px 1px;background:linear-gradient(180deg,#45464C,#1C1D20);box-shadow:0 2px 3px rgba(0,0,0,.5)}
+
+#s__N__ .rv-flap-board{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:22px 24px 24px;border-radius:20px;
+  background:linear-gradient(180deg,#2A2B30 0%,var(--flap-board) 14%,#111215 100%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.12),inset 0 -2px 0 rgba(0,0,0,.6),0 0 0 2px #0B0B0D,0 0 0 3px var(--flap-rim,transparent),0 46px 70px -26px rgba(10,0,0,.6),0 16px 26px -12px rgba(10,0,0,.45)}
+#s__N__ .rv-flap-row{display:flex;gap:9px}
+#s__N__ .rv-flap-cell{position:relative;flex:none;width:var(--cw);height:var(--ch);border-radius:10px;background:#0A0A0C;perspective:calc(var(--ch) * 3.2);
+  box-shadow:0 7px 9px -3px rgba(0,0,0,.65)}
+#s__N__ .rv-flap-cell .h{position:absolute;left:0;right:0;height:calc(50% - 1.5px);overflow:hidden;backface-visibility:hidden}
+#s__N__ .rv-flap-cell .t{top:0;border-radius:10px 10px 3px 3px;background:linear-gradient(180deg,#34353A,var(--flap-top));transform-origin:50% calc(100% + 1.5px)}
+#s__N__ .rv-flap-cell .b{bottom:0;border-radius:3px 3px 10px 10px;background:linear-gradient(180deg,var(--flap-bot),#18191B);transform-origin:50% -1.5px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07)}
+#s__N__ .rv-flap-cell .h b{position:absolute;left:0;right:0;height:var(--ch);display:grid;place-items:center;
+  font:700 calc(var(--ch) * .62)/1 var(--f);letter-spacing:0;color:var(--flap-ink);font-variant-numeric:tabular-nums}
+#s__N__ .rv-flap-cell .t b{top:0}
+#s__N__ .rv-flap-cell .b b{bottom:0}
+#s__N__ .rv-flap-cell .h b svg{width:70%;height:auto;overflow:visible;fill:none;stroke:var(--flap-mark,#FFB51E);stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-flap-cell .h i{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+#s__N__ .rv-flap-cell .t i{background:linear-gradient(0deg,#000,rgba(0,0,0,.4))}
+#s__N__ .rv-flap-cell .f{z-index:2;will-change:transform;visibility:hidden}
+#s__N__ .rv-flap-cell::before,#s__N__ .rv-flap-cell::after{content:"";position:absolute;z-index:3;top:50%;width:5px;height:13px;margin-top:-6.5px;border-radius:2px;
+  background:linear-gradient(180deg,#6B6C72,#3A3B40);left:-3px}
+#s__N__ .rv-flap-cell::after{left:auto;right:-3px}
+#s__N__ .mark{position:absolute;width:0;height:0;visibility:hidden}
+</style>
+
+<script>
+const el = document.getElementById('s__N__'), row = el.querySelector('.rv-flap-row'), board = el.querySelector('.rv-flap-board')
+const markSrc = el.querySelector('svg.mark')
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const rng = (a => () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 })(777)
+const word = el.getAttribute('aria-label').toUpperCase()
+// the drum: blank, A-Z, 0-9, a few signs, plus any character the name needs
+const DRUM = [...new Set([...' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.&', ...word])].join(''), MARK = DRUM.length   // index MARK = the mark's own flap
+const D = DRUM.length + 1
+// colour: the mark takes a brand colour that reads on the board, else the flap ink; a rim lifts the board off a dark wall
+{
+  const cx = document.createElement('canvas').getContext('2d'), cs = getComputedStyle(el)
+  const rgb = s => { cx.fillStyle = '#010203'; cx.fillStyle = s.trim(); const v = cx.fillStyle; return v[0] === '#' && v !== '#010203' ? [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)) : null }
+  const lum = c => { const f = v => (v /= 255) <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]) }
+  const con = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+  const board = rgb(cs.getPropertyValue('--flap-top')) || [43, 44, 48]
+  const m = [cs.getPropertyValue('--brand'), cs.getPropertyValue('--brand-2')].map(rgb).filter(Boolean).find(c => con(c, board) >= 3)
+  el.style.setProperty('--flap-mark', m ? `rgb(${m})` : 'var(--flap-ink)')
+  const stops = (cs.getPropertyValue('--field').match(/#[0-9a-f]{3,8}\b/gi) || []).map(rgb).filter(Boolean)
+  if (stops.length && stops.reduce((a, c) => a + lum(c), 0) / stops.length < .03) el.style.setProperty('--flap-rim', 'rgba(255,255,255,.14)')
+}
+const targets = [0, MARK, 0, ...[...word].map(c => DRUM.indexOf(c)), 0]
+const n = targets.length
+const cw = Math.min(parseFloat(getComputedStyle(el).getPropertyValue('--flap-cw')) || 132, (1700 - 48) / n - 9), ch = Math.round(cw * 1.42)
+el.style.setProperty('--cw', cw.toFixed(1) + 'px'); el.style.setProperty('--ch', ch + 'px')
+// the board hangs from two rods
+const rodX = [.2, .8], bw = n * (cw + 9) - 9 + 48, bt = 540 - (ch + 46) / 2
+el.querySelectorAll('.rv-flap-hang i').forEach((r, k) => { r.style.left = (960 - bw / 2 + bw * rodX[k] - 4).toFixed(0) + 'px'; r.style.height = (bt + 6).toFixed(0) + 'px' })
+
+const glyph = k => k === MARK ? markSrc.outerHTML.replace('class="mark"', '') : (DRUM[k] === ' ' ? '' : DRUM[k])
+const cells = targets.map(() => {
+  const c = document.createElement('div'); c.className = 'rv-flap-cell'
+  c.innerHTML = '<div class="h t"><b></b><i></i></div><div class="h b"><b></b><i></i></div><div class="h t f fr"><b></b><i></i></div><div class="h b f bk"><b></b><i></i></div>'
+  row.appendChild(c)
+  const [top, bot, fr, bk] = c.children
+  return { c, top, bot, fr, bk, show: [-1, -1, -1, -1] }
+})
+const put = (cell, k, which) => { if (cell.show[which] !== k) { cell.show[which] = k; [cell.top, cell.bot, cell.fr, cell.bk][which].firstChild.innerHTML = glyph(k) } }
+
+// timing: each flap starts a hair after its left neighbour, spins through its drum and lands left to right
+const DT = .052, LAST = .17, late = 3 + Math.max(0, Math.round(word.length * .6) - 1)
+const plan = targets.map((tg, i) => {
+  const start = .02 + i * .022 + rng() * .02
+  const settle = .5 + i * (Math.min(.085, .95 / n)) + (i === late ? .34 : 0)
+  const flips = Math.max(4, Math.floor((settle - start) / DT))
+  return { start, flips, from: ((tg - flips) % D + D) % D, tg }
+})
+const END = 2.2, LANDED = Math.max(...plan.map(p => p.start + (p.flips - 1) * DT + LAST))
+const at = (pl, k) => k <= 0 ? 0 : (pl.from + k) % D   // every flap starts from blank
+// one flap: the old top falls (0 → -90°), the new bottom swings down (90° → 0) and, on the last flip, bounces off its stop
+function setCell(cell, a, b, p, final, s) {
+  put(cell, b, 0); put(cell, a, 1)
+  if (p >= 1 && s > .42) { cell.fr.style.visibility = cell.bk.style.visibility = 'hidden'; put(cell, b, 1); cell.top.lastChild.style.opacity = 0; cell.bot.lastChild.style.opacity = 0; return }
+  if (p < .5) {
+    const ang = -180 * p
+    put(cell, a, 2); cell.fr.style.visibility = 'inherit'; cell.bk.style.visibility = 'hidden'
+    cell.fr.style.transform = `rotateX(${ang.toFixed(1)}deg)`; cell.fr.lastChild.style.opacity = (p * 1.1).toFixed(3)
+    cell.top.lastChild.style.opacity = (.55 * (1 - p * 2)).toFixed(3)     // the new top is in the falling flap's shadow
+    cell.bot.lastChild.style.opacity = 0
+  } else {
+    let ang = 180 * (1 - p)
+    if (final && p >= 1) ang = 7.5 * Math.exp(-s * 16) * Math.abs(Math.sin(s * 26))   // bounce off the stop
+    put(cell, b, 3); cell.bk.style.visibility = 'inherit'; cell.fr.style.visibility = 'hidden'
+    cell.bk.style.transform = `rotateX(${ang.toFixed(1)}deg)`; cell.bk.lastChild.style.opacity = (.6 * ang / 90).toFixed(3)
+    cell.top.lastChild.style.opacity = 0
+    cell.bot.lastChild.style.opacity = (.5 * Math.max(0, 1 - (p - .5) * 2.4)).toFixed(3)  // the old bottom darkens as the flap covers it
+  }
+}
+function pose(t, amb) {
+  // the housing shivers a fraction of a pixel while the flaps clatter, and stops when the last one lands
+  const busy = t > 0 && t < LANDED
+  board.style.transform = busy ? `translate(-50%,calc(-50% + ${(Math.sin(t * 190) * .45 + Math.sin(t * 77) * .25).toFixed(2)}px))` : ''
+  cells.forEach((cell, i) => {
+    const pl = plan[i]
+    if (t < 0) return setCell(cell, 0, 0, 1, true, 1)
+    const u = t - pl.start
+    if (u < 0) return setCell(cell, 0, 0, 1, true, 1)
+    const spinEnd = (pl.flips - 1) * DT
+    if (u < spinEnd) { const k = Math.floor(u / DT); return setCell(cell, at(pl, k), at(pl, k + 1), (u - k * DT) / DT, false, 0) }
+    const f = (u - spinEnd) / LAST
+    setCell(cell, at(pl, pl.flips - 1), pl.tg, Math.min(1, f), true, Math.max(0, u - spinEnd - LAST))
+  })
+  // at rest: every 14 s the last blank flap shuffles a few flips and returns to blank
+  if (t >= END && amb != null) {
+    const cell = cells[n - 1], ph = (amb % 14) - 9
+    if (ph > 0 && ph < 8 * DT + LAST + .5) {
+      const seq = [0, 8, 15, 23, 4, 30, 19, 0], k = Math.floor(ph / DT)
+      if (k < seq.length - 2) setCell(cell, seq[k], seq[k + 1], (ph - k * DT) / DT, false, 0)
+      else { const f = (ph - (seq.length - 2) * DT) / LAST; setCell(cell, seq[seq.length - 2], 0, Math.min(1, f), true, Math.max(0, ph - (seq.length - 2) * DT - LAST)) }
+    } else setCell(cell, 0, 0, 1, true, 1)
+  }
+}
+let mode = 'empty', t0 = 0
+const show = m => { mode = m; t0 = performance.now() / 1000; pose(m === 'empty' ? -1 : m === 'done' ? END + 1 : 0, null) }
+Deck.clock(el, t => {
+  if (mode === 'play') { const lt = performance.now() / 1000 - t0; pose(lt, null); if (lt >= END) mode = 'done' }
+  else if (mode === 'done') pose(END + 1, t)
+}, { printT: 3 })
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (mode === 'empty') { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

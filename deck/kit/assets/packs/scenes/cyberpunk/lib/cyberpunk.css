@@ -1,0 +1,10 @@
+/* Pack scene "cyberpunk" · drawn by lib/cyberpunk.js into <div class="sc-cyberpunk" data-tod="…">. The background is
+   the fallback field (and what shows for a frame before the script draws). */
+.sc-cyberpunk{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict;
+  background:linear-gradient(180deg,#2C1A69,#5C2A86 40%,#C9418F 70%,#241544)}
+.sc-cyberpunk .parallax{z-index:0}
+.sc-cyberpunk-l{left:-40px;top:-30px;width:2000px;height:1140px}
+.sc-cyberpunk-l>svg{position:absolute;left:0;top:0;width:2000px;height:1140px;display:block;overflow:visible}
+.sc-cyberpunk-cv{position:absolute;display:block}
+.sc-cyberpunk-grain{position:absolute;inset:0;background-size:256px 256px;mix-blend-mode:overlay;opacity:.12}
+html.print .sc-cyberpunk .parallax>*{will-change:auto}

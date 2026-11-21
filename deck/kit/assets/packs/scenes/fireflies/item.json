@@ -1,0 +1,45 @@
+{
+  "title": "Fireflies",
+  "kind": "scene",
+  "mood": [
+    "hushed",
+    "magical",
+    "nocturnal",
+    "patient"
+  ],
+  "suits": "products about attention, sleep, calm, nature, community or small signals adding up (a sync, a swarm, a network that lights up together). Not for loud, fast or enterprise pitches.",
+  "tech": "canvas",
+  "tods": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "params": {
+    "data-tod": "0…1, the hour: 0 late dusk (apricot afterglow, peach moon rising in the clearing), 0.5 blue hour, 1 moonlit night with shafts",
+    "data-seed": "integer; reshuffles the trees and the flies (keep one seed across a deck so it stays one place)",
+    "data-print-t": "clock time of the still frame for print (default 69: the deer is mid-clearing, grazing)",
+    "--ff-glow": "firefly colour as #rrggbb on .sc-fireflies (default #ceff68); a brand accent works",
+    "--brand on the section": "optional: the bioluminescent mushrooms at the foot of the big trunk take --brand (default cyan)"
+  },
+  "details": [
+    "fireflies flash on a J-curve like the real ones: on in 0.14 s, a slower 0.4 s fade",
+    "a third flash in loose synchrony: every 13 s a burst of four flashes ripples left to right across the glade, each fly a little early or late",
+    "a fifth are glowers that hold a slow two-second glow instead of flashing",
+    "one firefly has landed on a fern by the big trunk and glows low and slow",
+    "flies that drift right past the eye are big out-of-focus discs",
+    "the count follows the hour: a few at dusk, about 120 by full night",
+    "a deer crosses the far clearing every 97 s: it stops to graze, lifts its head to look toward you, flags its white tail and walks on behind the bushes",
+    "the deer casts a faint shadow and grass grows in front of its hooves, so it stands in the meadow instead of floating",
+    "the owl blinks every few seconds with its right eye a beat behind; one blink in five is slow and sleepy",
+    "every 37 s the owl swivels its head away and back; its eyes glow amber only once it is dark",
+    "a bat zigzags across the upper right, at dusk only",
+    "the moon rises out of the clearing at dusk (large and peach) and stands high and white by night; stars near it are drowned out",
+    "at night moonlight shafts fan from the moon and breathe slowly; dust motes drift only inside the shafts",
+    "two fog banks drift at different speeds (300 s and 140 s a loop) between the tree rows",
+    "bioluminescent mushrooms glow at the foot of the big trunk once it is dark",
+    "the rim light changes sides: warm from the western afterglow at dusk, silver from the moon at night",
+    "two far rows of trees fade toward the sky colour; through the clearing you see the furthest trees in mist",
+    "faint bark lines run down the moonlit side of the big trunk",
+    "film grain and a tinted vignette, never pure black"
+  ]
+}

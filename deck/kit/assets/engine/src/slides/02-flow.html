@@ -1,0 +1,36 @@
+<!-- Example slide (replace): one user flow. Quote headline left, the mechanism as tool chips and three steps,
+     the app screens right in real iPhone frames that rise in and wiggle. One big number. ~45 words.
+     Patterns: .phone .wiggle (--r tilt) .pill.code .count [data-enter] -->
+<section class="slide" id="s2">
+  <div class="left">
+    <h2 data-enter>“Reorder my <span class="mk">toothpaste.</span>”</h2>
+    <div class="chips" data-enter style="--t:.2"><span class="pill code">search_orders</span><i class="conn"></i><span>Median ×3 · due now</span></div>
+    <div class="steps">
+      <div class="card" data-enter style="--t:.35"><b>Your usual</b><span>from order history</span></div>
+      <div class="card hot" data-enter style="--t:.45"><b>Ship it</b><span>1 tap</span></div>
+      <div class="card" data-enter style="--t:.55"><b>Undo</b><span>if you change your mind</span></div>
+    </div>
+    <p class="big" data-enter style="--t:.6"><span class="num"><span class="count" data-to="2" data-suf=" s">2 s</span></span> to the first screen</p>
+  </div>
+  <div class="phones">
+    <div class="phone wiggle" style="--r:-6deg;--t:.1"><div class="screen"></div></div>
+    <div class="phone wiggle" style="--r:4deg;--t:.25"><div class="screen"></div></div>
+  </div>
+  <aside class="notes"><b>Say</b>Strong intent: it already knows what you use.<b>Do</b>On the live phone: tap “Reorder toothpaste”, then Ship it, then Undo.</aside>
+</section>
+
+<style>
+#s2{--field:var(--f2);display:grid;grid-template-columns:1fr 820px;gap:40px}
+#s2 h2{font-size:84px}
+#s2 .chips{display:flex;align-items:center;gap:18px;margin-top:48px;font-size:32px}
+#s2 .chips .conn{color:var(--on);width:60px}
+#s2 .steps{display:flex;gap:20px;margin-top:40px}
+#s2 .steps .card{flex:1;padding:26px 28px;display:flex;flex-direction:column;gap:8px;font-size:30px}
+#s2 .steps .card span{font-size:24px;color:var(--ink-2)}
+#s2 .steps .hot{background:#FFC400}
+#s2 .big{margin-top:44px;font-size:32px;color:var(--on-2)}
+#s2 .big .num{font-size:96px;color:var(--on);margin-right:12px}
+#s2 .phones{position:relative;display:flex;align-items:center;justify-content:center;gap:40px}
+#s2 .phone{transform:rotate(var(--r))}
+#s2 .phone .screen{background:linear-gradient(180deg,#fff,#EEF0F7)}
+</style>

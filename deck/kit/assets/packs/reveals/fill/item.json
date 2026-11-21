@@ -1,0 +1,34 @@
+{
+  "title": "Fill",
+  "kind": "reveal",
+  "mood": [
+    "glossy",
+    "satisfying",
+    "liquid",
+    "warm"
+  ],
+  "suits": "drinks, food and beverage, energy, health and hydration, fintech balances and progress: products about filling up, topping up or reaching a level",
+  "tech": "svg+js",
+  "duration": 2.3,
+  "params": {
+    "--field": "the field behind the glass",
+    "--brand": "the liquid",
+    "--brand-2": "the liquid's depth tint",
+    "--rv-fs": "wordmark size (shrinks for long names)",
+    "--rv-base": "the baseline",
+    "__MARK__": "stroke paths in a 24 x 24 box; each stroke becomes a tube that fills with the rest"
+  },
+  "details": [
+    "the outlines draw first, glyph by glyph, like glass being blown",
+    "the drawn outline hands over to a seamless glass ring, so overlapping contours never show seams",
+    "liquid rises inside mark and word together from below",
+    "the surface tilts back and forth as it rises and two ripples cross it, decaying",
+    "a few bubbles climb the strokes, wobble and pop at the surface with a tiny ring",
+    "it settles on one level line across mark and word: lowercase full, tall letters keep their empty tops",
+    "a meniscus highlight runs along the surface",
+    "the liquid is lighter at the top and deeper below, toward the depth tint",
+    "a soft glow of the liquid colour sits behind the lockup",
+    "after it settles the level breathes gently",
+    "film grain on the field"
+  ]
+}

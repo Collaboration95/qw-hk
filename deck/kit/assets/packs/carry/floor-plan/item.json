@@ -1,0 +1,35 @@
+{
+  "title": "Floor plan",
+  "kind": "carry",
+  "mood": [
+    "architectural",
+    "quiet",
+    "after hours",
+    "wayfinding",
+    "uncanny"
+  ],
+  "suits": "talks and pitches about places, buildings, journeys, navigation, maps, real estate, wayfinding, games with levels, or anything 'one room further' each slide; a 'you are here' dot walks one endless plan.",
+  "tech": "canvas",
+  "params": {
+    "Plan.config({ views, backX, noclip, dur })": "views = world top-left of each slide's window by slide number; backX = world x where rooms turn dense, half-built and endless; noclip = the step whose walk ignores doors; dur = glide ms (≤ 1200)",
+    "Plan.slide(id, { you, quiet, ey, leave, mid, demo, lightsOff, extra })": "you = the dot's resting spot (view px); quiet = rects with no generated walls; ey = approach level for the last leg; leave:'v' = leave vertically; mid = where the walk turns; demo = dashed renovation walls; lightsOff = rooms switch off on arrival",
+    "Plan.wall({ o, c, a, b, th, doors })": "a fixed wall in world px (the reveal's threshold hall); doors with id animate in a reveal",
+    "Plan.reveal(id, T)": "draw a slide as a self-drawing reveal at time T (null = empty sheet, Infinity = done)",
+    "--ln / --accent on the section": "line colour of walls, grid, doors (blueprint #CFE1FF, amber #F2C14E) and the dot / footsteps colour",
+    "[data-keep] / data-keep=\"0\"": "DOM content that carves the plan (default 26 px padding)"
+  },
+  "details": [
+    "one world: each slide is a window onto the same seeded plan, so the building is continuous",
+    "a forward step glides the window (ease-out, ≤ 1.1 s) while the content cuts; back and jumps show the rest frame",
+    "the dot leaves alternating left/right footsteps, older ones fainter; the rest frame keeps them so print shows the route",
+    "doors on the route are closed until the dot reaches them, then swing open in its walking direction",
+    "every other door is drawn at 90° with its swing arc, plan convention",
+    "walls are hatched poché between two hairlines; the 40/200 px grid pans with the plan",
+    "past backX the generator cuts smaller rooms, leaves walls half-built, adds pillars and dashed ceiling troffers; one troffer flickers out of step",
+    "the noclip step has no doors: each wall the dot passes through jitters and dims for a moment",
+    "lightsOff: each block flickers once and goes dark at its own seeded time; footsteps fade; the dot dims to an ember",
+    "demo: the same walls redrawn dashed, a renovation drawing's 'to be demolished'",
+    "the dot pulses a ring every 2.6 s on the one clock",
+    "floor-plan-rev.js: a red-pencil revision cloud with its numbered delta as the deck's emphasis device"
+  ]
+}

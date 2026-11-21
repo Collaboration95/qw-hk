@@ -1,0 +1,24 @@
+<!-- traveller demo 3 of 3 · the plane turns round again, does one small loop-the-loop on the way (loop: true) and lands
+     on the corner of the result card, its shadow on the card. Use the loop once per deck, on the happy moment. -->
+<section class="slide" id="s__N__" aria-label="Read before the meeting">
+  <h2>Read before the meeting.</h2>
+  <div class="card cy-tr-done">
+    <b class="num">3 of 3</b>
+    <span>read it within 14 minutes</span>
+  </div>
+  <aside class="notes"><b>Say</b>All three read it within fourteen minutes, before the meeting even started.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the plane follows them either way) */
+#s__N__{--field:linear-gradient(180deg,#4A37BE,#5531AE);--brand:#FFFFFF;--brand-2:#FF7A8A}
+#s__N__{background:radial-gradient(color-mix(in oklab,var(--ink-auto,#fff) 10%,transparent) 1.6px,transparent 2.2px) 0 0/48px 48px,radial-gradient(1000px 700px at 70% 60%,color-mix(in oklab,var(--brand) 15%,transparent),transparent 70%),var(--field)}
+#s__N__ h2{color:var(--ink-auto,#fff)}
+#s__N__ .cy-tr-done{position:absolute;left:1080px;top:440px;width:700px;padding:54px 60px 58px;display:flex;flex-direction:column;gap:18px}
+#s__N__ .cy-tr-done .num{font-size:150px;color:color-mix(in oklab,var(--brand-2) 35%,var(--ink))}
+#s__N__ .cy-tr-done span{font-size:38px;font-weight:600;color:var(--ink-2)}
+</style>
+
+<script>
+Pack.traveller.spot('s__N__', { x: 1240, y: 360, ground: 456, rot: -8, loop: true, lift: 40 })
+</script>

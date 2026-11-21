@@ -1,0 +1,169 @@
+<!-- Story · crossing: an exchange with no one going first. A buyer and a seller stand at their counters; both lean
+     back, then throw at once: the coin arcs one way and the key the other, on mirrored curves that meet exactly
+     mid-air, where a glint flashes and the product's mark is left as a small seal. Each lands in the other's hand
+     (the hand dips with the weight), the dotted trails stay as the picture of the swap, and both look at what
+     they caught. ~1.45 s: svg + one rAF run per forward arrival; the markup is the final pose (print, ←).
+     Re-skin: the coin and the key are what changes hands (money and access, data and credit, a file and a
+     signature); the shirts take --brand and --brand-2. Copy: rewrite the h2 and the two counter captions. -->
+<section class="slide" id="s__N__">
+  <h2 class="st-crossing-h">Payment and access cross<br>at the same moment.</h2>
+
+  <svg class="st-crossing-svg" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <mask id="st-crossing-mc-__N__" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><path class="st-crossing-mpc" d="M636 604C730 290 1110 340 1284 604"/></mask>
+      <mask id="st-crossing-mk-__N__" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><path class="st-crossing-mpk" d="M1284 604C1190 290 810 340 636 604"/></mask>
+      <radialGradient id="st-crossing-flash-__N__"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    </defs>
+
+    <!-- the floor under the gap: two soft shadows travel on it, under the flying things -->
+    <ellipse class="st-crossing-shc" cx="1284" cy="1000" rx="40" ry="8"/>
+    <ellipse class="st-crossing-shk" cx="636" cy="1000" rx="40" ry="8"/>
+
+    <!-- dotted trails, revealed as each thing flies; they stay as the picture of the swap -->
+    <path class="st-crossing-trail st-crossing-tc" mask="url(#st-crossing-mc-__N__)" d="M636 604C730 290 1110 340 1284 604"/>
+    <path class="st-crossing-trail st-crossing-tk" mask="url(#st-crossing-mk-__N__)" d="M1284 604C1190 290 810 340 636 604"/>
+
+    <!-- the buyer -->
+    <g class="st-crossing-buyer" transform="translate(420 770) scale(1.2)">
+      <g class="st-crossing-lean">
+        <path class="st-crossing-shirt-a" d="M-100 0v-120c0-50 40-86 100-86s100 36 100 86V0z"/>
+        <path d="M-40-200c10 18 70 18 80 0" fill="none" stroke="#000" stroke-opacity=".12" stroke-width="8" stroke-linecap="round"/>
+        <g class="st-crossing-head"><circle cx="0" cy="-262" r="58" fill="#F1C7A2"/><path d="M-60-270c0-48 28-74 62-74s58 22 58 62c-20-24-58-30-120 12z" fill="#2C1F1A"/>
+          <g class="st-crossing-eyes"><circle cx="-14" cy="-258" r="6" fill="#2C1F1A"/><circle cx="20" cy="-258" r="6" fill="#2C1F1A"/></g>
+          <path d="M-6-232q10 8 20 0" fill="none" stroke="#2C1F1A" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="-240" r="8" fill="#F08F86" opacity=".4"/></g>
+        <g class="st-crossing-arm"><path class="st-crossing-sleeve-a" d="M60-150c60 0 100 10 120 30" fill="none" stroke-width="40" stroke-linecap="round"/><circle cx="182" cy="-118" r="22" fill="#F1C7A2"/></g>
+      </g>
+    </g>
+    <!-- the seller (mirrored) -->
+    <g class="st-crossing-seller" transform="translate(1500 770) scale(-1.2 1.2)">
+      <g class="st-crossing-lean">
+        <path class="st-crossing-shirt-b" d="M-100 0v-120c0-50 40-86 100-86s100 36 100 86V0z"/>
+        <path d="M-40-200c10 18 70 18 80 0" fill="none" stroke="#000" stroke-opacity=".12" stroke-width="8" stroke-linecap="round"/>
+        <g class="st-crossing-head"><circle cx="0" cy="-262" r="58" fill="#A8704F"/><path d="M-58-262c-6-50 26-82 60-82 40 0 64 34 58 78-14-30-40-40-58-40-24 0-44 14-60 44z" fill="#1E1512"/>
+          <g class="st-crossing-eyes"><circle cx="-14" cy="-258" r="6" fill="#1E1512"/><circle cx="20" cy="-258" r="6" fill="#1E1512"/></g>
+          <path d="M-6-232q10 8 20 0" fill="none" stroke="#1E1512" stroke-width="4" stroke-linecap="round"/></g>
+        <g class="st-crossing-arm"><path class="st-crossing-sleeve-b" d="M60-150c60 0 100 10 120 30" fill="none" stroke-width="40" stroke-linecap="round"/><circle cx="182" cy="-118" r="22" fill="#A8704F"/></g>
+      </g>
+    </g>
+
+    <!-- the counters: two stalls, white with a skirt in each side's colour -->
+    <g class="st-crossing-counter">
+      <rect x="200" y="740" width="500" height="210" rx="24" fill="#fff"/>
+      <rect x="200" y="740" width="500" height="30" rx="15" class="st-crossing-ctop"/>
+      <path d="M200 856h500v70a24 24 0 0 1-24 24H224a24 24 0 0 1-24-24z" class="st-crossing-skirt-a"/>
+      <g stroke="#000" stroke-opacity=".08" stroke-width="3"><path d="M240 858v88"/><path d="M300 858v88"/><path d="M360 858v88"/><path d="M420 858v88"/><path d="M480 858v88"/><path d="M540 858v88"/><path d="M600 858v88"/><path d="M660 858v88"/></g>
+      <text x="450" y="820" text-anchor="middle" class="st-crossing-cap">Buyer</text>
+    </g>
+    <g class="st-crossing-counter">
+      <rect x="1220" y="740" width="500" height="210" rx="24" fill="#fff"/>
+      <rect x="1220" y="740" width="500" height="30" rx="15" class="st-crossing-ctop"/>
+      <path d="M1220 856h500v70a24 24 0 0 1-24 24H1244a24 24 0 0 1-24-24z" class="st-crossing-skirt-b"/>
+      <g stroke="#000" stroke-opacity=".08" stroke-width="3"><path d="M1260 858v88"/><path d="M1320 858v88"/><path d="M1380 858v88"/><path d="M1440 858v88"/><path d="M1500 858v88"/><path d="M1560 858v88"/><path d="M1620 858v88"/><path d="M1680 858v88"/></g>
+      <text x="1470" y="820" text-anchor="middle" class="st-crossing-cap">Seller</text>
+    </g>
+
+    <!-- where they meet: a flash, then the product's seal stays -->
+    <g class="st-crossing-meet" transform="translate(960 437)">
+      <circle class="st-crossing-flash" r="90" fill="url(#st-crossing-flash-__N__)" opacity="0"/>
+      <circle class="st-crossing-ring" r="40" fill="none" stroke="#fff" stroke-width="4" opacity="0"/>
+      <g class="st-crossing-seal"><circle r="34" class="st-crossing-sealbg"/><svg class="mark st-crossing-mark" x="-19" y="-19" width="38" height="38" viewBox="0 0 24 24">__MARK__</svg></g>
+    </g>
+
+    <!-- the two things that change hands -->
+    <g class="st-crossing-coin" transform="translate(1284 604)">
+      <g class="st-crossing-coinface">
+        <circle r="40" fill="#F7C948" stroke="#9C6C0A" stroke-width="5"/><circle r="30" fill="none" stroke="#D9A21E" stroke-width="3"/>
+        <text y="13" text-anchor="middle" class="st-crossing-coint">$</text>
+        <path d="M-24-18a30 30 0 0 1 20-14" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75"/>
+      </g>
+    </g>
+    <g class="st-crossing-key" transform="translate(636 604)">
+      <g class="st-crossing-keyface">
+        <circle cx="-34" cy="0" r="26" class="st-crossing-keyb"/><circle cx="-34" cy="0" r="10" fill="none" stroke="#14161E" stroke-width="4"/>
+        <path d="M-8-9h60v18h-12v14h-12v-14h-10v10h-12v-10h-14z" class="st-crossing-keyb" stroke-linejoin="round"/>
+        <path d="M-50-14a20 20 0 0 1 14-8" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".7"/>
+      </g>
+    </g>
+  </svg>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#4A1A55 0%,#7A2D6A 55%,#A4466F 100%);--brand:var(--deck-brand,#7EE0C8);--brand-2:var(--deck-brand-2,#FFB347);color:var(--ink-auto,#fff);padding:96px 100px}
+#s__N__::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(700px 420px at 50% 42%,color-mix(in oklab,var(--ink-auto,#fff) 10%,transparent),transparent 72%)}
+#s__N__ .st-crossing-h{position:relative;z-index:1;font-size:96px;letter-spacing:-.045em;line-height:1.04}
+#s__N__ .st-crossing-svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+#s__N__ .st-crossing-shirt-a{fill:var(--brand-2)}
+#s__N__ .st-crossing-shirt-b{fill:var(--brand)}
+#s__N__ .st-crossing-sleeve-a{stroke:color-mix(in oklab,var(--brand-2) 82%,#000)}
+#s__N__ .st-crossing-sleeve-b{stroke:color-mix(in oklab,var(--brand) 82%,#000)}
+#s__N__ .st-crossing-counter{filter:drop-shadow(0 30px 30px rgba(0,0,0,.35))}
+#s__N__ .st-crossing-ctop{fill:color-mix(in oklab,var(--brand) 12%,#F1F2F7)}
+#s__N__ .st-crossing-skirt-a{fill:color-mix(in oklab,var(--brand-2) 30%,#fff)}
+#s__N__ .st-crossing-skirt-b{fill:color-mix(in oklab,var(--brand) 30%,#fff)}
+#s__N__ .st-crossing-cap{font:750 34px/1 var(--f);letter-spacing:-.02em;fill:#4C5270}
+#s__N__ .st-crossing-trail{fill:none;stroke:var(--ink-auto,#fff);stroke-opacity:.55;stroke-width:6;stroke-linecap:round;stroke-dasharray:0 18}
+#s__N__ .st-crossing-mpc,#s__N__ .st-crossing-mpk{fill:none;stroke:#fff;stroke-width:30}
+#s__N__ .st-crossing-shc,#s__N__ .st-crossing-shk{fill:#000;opacity:0}
+#s__N__ .st-crossing-sealbg{fill:var(--brand);stroke:#fff;stroke-width:5}
+#s__N__ .st-crossing-mark{fill:none;stroke:var(--on-brand,#14161E);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#s__N__ .st-crossing-coint{font:850 40px/1 var(--f);fill:#7A5206}
+#s__N__ .st-crossing-keyb{fill:var(--brand);stroke:#14161E;stroke-width:4}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const q = s => el.querySelector(s)
+const coin = q('.st-crossing-coin'), coinF = q('.st-crossing-coinface'), key = q('.st-crossing-key'), keyF = q('.st-crossing-keyface')
+const shC = q('.st-crossing-shc'), shK = q('.st-crossing-shk'), mC = q('.st-crossing-mpc'), mK = q('.st-crossing-mpk')
+const flash = q('.st-crossing-flash'), ring = q('.st-crossing-ring'), seal = q('.st-crossing-seal')
+const people = [...el.querySelectorAll('.st-crossing-lean')], arms = [...el.querySelectorAll('.st-crossing-arm')], heads = [...el.querySelectorAll('.st-crossing-head')], eyes = [...el.querySelectorAll('.st-crossing-eyes')]
+const B = [636, 604], S = [1284, 604], C1 = [730, 290], C2 = [1110, 340], END = 1.5, T0 = .2, T1 = .95
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const bez = (u, a, b, c, d) => { const v = 1 - u; return v * v * v * a + 3 * v * v * u * b + 3 * v * u * u * c + u * u * u * d }
+const coinAt = u => [bez(u, B[0], C1[0], C2[0], S[0]), bez(u, B[1], C1[1], C2[1], S[1])]
+const keyAt = u => { const [x, y] = coinAt(u); return [1920 - x, y] }
+const inout = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2
+const len = mC.getTotalLength ? mC.getTotalLength() : 900
+mC.style.strokeDasharray = mK.style.strokeDasharray = `${len} ${len}`
+// one u in [0, 1] for both flights; they meet at the same u because the curves are mirror images
+let uMeet = .5; for (let lo = 0, hi = 1, i = 0; i < 30; i++) { const m = (lo + hi) / 2; coinAt(m)[0] < 960 ? lo = m : hi = m; uMeet = m }
+q('.st-crossing-meet').setAttribute('transform', `translate(960 ${coinAt(uMeet)[1].toFixed(1)})`)
+const tMeet = T0 + (T1 - T0) * (() => { let lo = 0, hi = 1; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; inout(m) < uMeet ? lo = m : hi = m } return lo })()
+const pose = t => {
+  const done = t >= END, u = done ? 1 : inout(clamp((t - T0) / (T1 - T0)))
+  const c = coinAt(u), k = keyAt(u)
+  // the coin flips edge-on as it flies; the key tumbles once
+  const fly = !done && t > T0 && t < T1
+  coin.setAttribute('transform', `translate(${c[0].toFixed(1)} ${c[1].toFixed(1)})`)
+  coinF.setAttribute('transform', fly ? `scale(${Math.max(.14, Math.abs(Math.cos(u * Math.PI * 4))).toFixed(3)} 1)` : '')
+  key.setAttribute('transform', `translate(${k[0].toFixed(1)} ${k[1].toFixed(1)})`)
+  keyF.setAttribute('transform', fly ? `rotate(${(-360 * u).toFixed(1)})` : '')
+  // catch: the receiving hand dips with the weight and the thing bounces in it
+  const ck = done ? 1 : clamp((t - T1) / .3), dip = Math.sin(Math.PI * ck) * (1 - ck * .4) * 16
+  if (t > T1 && !done) { coin.setAttribute('transform', `translate(${c[0].toFixed(1)} ${(c[1] + dip).toFixed(1)})`); key.setAttribute('transform', `translate(${k[0].toFixed(1)} ${(k[1] + dip).toFixed(1)})`) }
+  // shadows on the floor follow underneath, smaller and fainter the higher the thing is
+  ;[[shC, c], [shK, k]].forEach(([s, p]) => { const h = clamp((604 - p[1]) / 300); s.setAttribute('cx', p[0].toFixed(1)); s.setAttribute('rx', (46 - 22 * h).toFixed(1)); s.setAttribute('opacity', fly ? (.22 - .14 * h).toFixed(3) : 0) })
+  // trails reveal with the flight and stay
+  const off = (len * (1 - u)).toFixed(1); mC.style.strokeDashoffset = off; mK.style.strokeDashoffset = off
+  // the meeting: a flash and a ring at the crossing, then the seal stays
+  const g = done ? 1 : clamp((t - tMeet + .02) / .32)
+  flash.setAttribute('opacity', done || t < tMeet - .02 ? 0 : (Math.sin(Math.PI * g) * .95).toFixed(3))
+  ring.setAttribute('opacity', done || t < tMeet - .02 ? 0 : ((1 - g) * .9).toFixed(3)); ring.setAttribute('r', (30 + 60 * g).toFixed(1))
+  const sp = done ? 1 : clamp((t - tMeet - .04) / .26), ss = sp <= 0 ? 0 : 1 + Math.sin(Math.PI * sp) * .25 * (1 - sp)
+  seal.setAttribute('transform', `scale(${(sp >= 1 ? 1 : ss * Math.min(1, sp * 3)).toFixed(3)})`); seal.setAttribute('opacity', sp > 0 ? 1 : 0)
+  // the people: lean back to wind up, lean in on the throw, settle; then look at what they caught
+  const lean = done ? 0 : t < T0 ? -5 * Math.sin(Math.PI / 2 * t / T0) : -5 + 11 * Math.sin(Math.PI / 2 * clamp((t - T0) / .14)) - 6 * clamp((t - T0 - .14) / .5)
+  people.forEach(p => p.setAttribute('transform', `rotate(${lean.toFixed(2)} 0 0)`))
+  arms.forEach(a => a.setAttribute('transform', `translate(0 ${(t > T1 && !done ? dip : t < T0 && !done ? 8 * t / T0 : 0).toFixed(1)})`))
+  const look = done ? 1 : clamp((t - 1.02) / .22)
+  heads.forEach(h => h.setAttribute('transform', `rotate(${(9 * look).toFixed(2)} 0 -262)`))
+  // eyes follow the thing coming to them: the buyer watches the key, the seller the coin
+  const watch = (p, ox, sx) => { const dx = (p[0] - ox) * sx, dy = p[1] - 500; const m = Math.hypot(dx, dy) || 1; return `translate(${(4 * dx / m).toFixed(2)} ${(4 * dy / m).toFixed(2)})` }
+  eyes[0].setAttribute('transform', done ? 'translate(4 2)' : watch(k, 420, 1)); eyes[1].setAttribute('transform', done ? 'translate(4 2)' : watch(c, 1500, -1))
+}
+let raf = 0
+const play = () => { cancelAnimationFrame(raf); const t0 = performance.now(); const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }; pose(0); raf = requestAnimationFrame(tick) }
+const rest = () => { cancelAnimationFrame(raf); pose(END) }
+Deck.on('s__N__', { enter: (_, ctx) => ctx.play ? play() : rest(), leave: rest, final: rest })
+rest()
+</script>

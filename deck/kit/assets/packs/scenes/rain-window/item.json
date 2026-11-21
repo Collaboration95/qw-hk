@@ -1,0 +1,43 @@
+{
+  "title": "Rain window",
+  "kind": "scene",
+  "mood": [
+    "cosy",
+    "reflective",
+    "urban",
+    "late"
+  ],
+  "suits": "focus, reading, writing, music, cafés and cities, remote work, 'the quiet hour': you are inside, looking out. The name goes on the glass. Not for sunny or high-energy pitches.",
+  "tech": "canvas",
+  "tods": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "params": {
+    "data-tod": "0…1, the hour: 0 blue hour, 0.5 evening, 1 late night (fewer cars, the last tram nearly empty, stronger reflections)",
+    "data-word": "the café's name in gold leaf on the glass, read backwards from inside (any length, it shrinks to fit). use-pack --word fills it; default 'Café'",
+    "data-seed": "integer; reshuffles the buildings, the lit windows and the rain",
+    "data-print-t": "clock time of the still frame for print (default 26.5: the tram is passing)",
+    "--brand on the section": "optional: the neon sign across the street and its reflection on the wet road take --brand"
+  },
+  "details": [
+    "every drop on the glass is a lens: it shows a patch of the street behind it, upside down",
+    "drops cling until rain landing on them feeds them past a size; then they run, catch on the glass, pause, and run again (stick-slip)",
+    "a running drop swallows every drop it touches and grows, and wipes a clean path through the mist of tiny droplets",
+    "it leaves a trail of small beads behind it, and new rain slowly mists the path over again",
+    "the glass is warmed up with 23 s of simulated rain before the first frame, so the first look is already lived-in",
+    "the headline corner gets fewer drops and less mist, so the type sits on calm glass",
+    "condensation is on the inside of the pane, thick along the bottom and in the corners; now and then a bead forms in it and runs down to the sill, clearing a line that fogs over again",
+    "the café's pendant lamps and its name in mirrored gold leaf are reflected in the glass, stronger the darker it gets outside",
+    "the street is painted, then blurred like a wide-open lens; lamps and lights stay round as bokeh with brighter rims",
+    "the wet road smears the shopfronts and lamps into long reflections",
+    "rain is visible outside only where a street lamp lights it",
+    "the traffic light down the street cycles red 12 s, green 10 s, amber 3 s, and its colour runs down the wet road",
+    "the pharmacy cross blinks its pattern: on, on, off",
+    "headlights pass one way on the near lane, tail lights the other, each trailing a streak across the wet road; fewer late at night",
+    "a tram glides past every 52 s with passengers in its lit windows and a blue spark at the wire; late at night it is the last one, nearly empty",
+    "passers-by under umbrellas bob with each step against the shop light",
+    "steam curls off the coffee on the sill; a bead of water sits where the glass meets the wood; a small plant trails one strand over its pot"
+  ]
+}

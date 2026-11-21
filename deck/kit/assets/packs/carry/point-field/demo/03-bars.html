@@ -1,0 +1,37 @@
+<!-- point-field demo 3 of 3 · the same points stack into a histogram of their own category: every bar is literally its
+     records, so the chart cannot disagree with the cloud two slides back. Bars grow from the bottom row up as the
+     points arrive; the shares above the bars are computed from the data, not typed. -->
+<section class="slide" id="s__N__" aria-label="Most teams ship in a day">
+  <canvas class="cy-pf" aria-hidden="true"></canvas>
+  <h2>Most teams ship in a day.</h2>
+  <div class="cy-pf-bars" aria-hidden="true"></div>
+  <aside class="notes"><b>Say</b>Sort the same dots by how long they took to ship: almost half shipped on day one.</aside>
+</section>
+
+<style>
+/* brand params: delete these three to inherit the deck's journey and brand (the points follow them either way) */
+#s__N__{--field:linear-gradient(180deg,#20295E,#1E1F52);--brand:#FF8A4C;--brand-2:#7EF0B5}
+#s__N__{background:radial-gradient(1200px 700px at 30% 80%,color-mix(in oklab,var(--brand-2) 12%,transparent),transparent 70%),var(--field)}
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-pf-bars>*{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center}
+#s__N__ .cy-pf-bars b{font-size:52px;font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--ink-auto,#fff)}
+#s__N__ .cy-pf-bars span{top:938px;font-size:28px;font-weight:600;color:var(--ink-auto,#fff);opacity:.78}
+</style>
+
+<script>
+const PF = Pack['point-field']
+const NAMES = ['a day', 'a week', 'a month', 'later', 'never']
+const hist = PF.fig.histogram({ x: 330, y: 912, bins: 5, of: p => p.k, cols: 22, pitch: 8, gap: 96, sort: p => -p.v })
+PF.slide('s__N__', {
+  place: PF.fill(hist, { r: 3, a: 1, d: 'wave-y' }),
+  under(g, P) {
+    g.fillStyle = PF.palette('s__N__')[5]; g.globalAlpha = .3 * P
+    for (const b of hist.geo()) g.fillRect(b.left - 6, 918, b.w + 12, 3)
+    g.globalAlpha = 1
+  },
+})
+const box = document.querySelector('#s__N__ .cy-pf-bars'), total = PF.points().length
+hist.geo().forEach((b, k) => {
+  box.insertAdjacentHTML('beforeend', `<b style="left:${b.x}px;top:${b.top - 76}px">${Math.round(b.n / total * 100)}%</b><span style="left:${b.x}px">${NAMES[k] ?? ''}</span>`)
+})
+</script>

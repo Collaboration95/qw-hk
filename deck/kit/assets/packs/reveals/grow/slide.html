@@ -1,0 +1,376 @@
+<!-- 0 · Intro reveal "grow": the mark grows like a plant. The first press drops a seed out of the sky; it lands with a
+     puff of dust, bounces once and splits, sends a root down and a short stem up, and the mark's own strokes grow out of
+     the stem as vines: pale growing tips lead them, a stroke that doesn't touch the rest is reached by a thin tendril that
+     withers once it has grown, and leaves bud along the way (the first opens underside-first and turns over, the last
+     one keeps a dew drop that catches the light). A runner creeps under the ground line and each letter of the name
+     sprouts from the soil as it passes. The split husk stays at the foot. ~2.3 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (the sky; soil, grass, roots and dust are mixed from it), --brand (seed, stem and vines; pushed toward
+     the ink if it would vanish on the field), --brand-2 (leaves and grass). The name is var(--ink-auto); the soil is kept
+     far enough from the ink that descenders stay readable. Any __MARK__ of stroked paths works (closed shapes grow both
+     ways round from their lowest point, dots pop like buds). Adapt: --rv-fs (name size; shrinks to fit), --rv-y (ground). -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <div class="rv-grow-soil"></div>
+  <div class="rv-grow-grass"></div>
+  <div class="rv-grow-row" role="img" aria-label="__WORD__">
+    <span class="rv-grow-mk"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg></span>
+    <span class="rv-grow-word">__WORD__</span>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(180deg,#163D29 0%,#2A6443 60%,#367750 100%);
+  --brand:var(--deck-brand,#D8F26B); --brand-2:var(--deck-brand-2,#7FCF63);                              /* vines and seed; leaves and grass */
+  --rv-fs:196px;                                                   /* name size (shrinks to fit) */
+  --rv-y:640px;                                                    /* the ground line = the name's baseline */
+  /* derived by the script from the three brand vars; first-paint fallbacks only */
+  --rv-vine:var(--brand); --rv-sap:#F4FBD0; --rv-tip:#F7FDE0; --rv-leaf:var(--brand-2); --rv-leaf-under:#538F44; --rv-rib:#D9F2C4; --rv-dew:#F2FFF0;
+  --rv-soil:#2C3120; --rv-soil-2:#22261A; --rv-surface:#6A9E58; --rv-speck:#45472F; --rv-grit:#5A5A3D; --rv-root:#9C9875;
+  --rv-seed:#C4DC5E; --rv-seed-hi:#EFF8C8; --rv-seed-rim:#7A8A34; --rv-dust:#8A8E68;
+  padding:0
+}
+#s__N__ .rv-grow-row{position:absolute;z-index:2;left:0;right:0;top:calc(var(--rv-y) - var(--rv-fs) * 1.14);display:flex;justify-content:center;align-items:baseline;
+  font-size:var(--rv-fs);font-weight:720;letter-spacing:-.04em;line-height:1.2;color:var(--ink-auto,#F5EEDA);white-space:nowrap}
+/* the mark box sits .14em above the ground; its stem, seed and roots overflow below it */
+#s__N__ .rv-grow-mk{flex:none;padding-bottom:.14em;margin-right:.28em}
+#s__N__ .rv-grow-mk .mark{display:block;width:1em;height:1em;overflow:visible}
+#s__N__ .mark>:not(.rv-grow-fx){fill:none;stroke:var(--rv-vine);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .mark .rv-grow-dot{transform-box:fill-box;transform-origin:50% 50%}
+#s__N__ .rv-grow-word{position:relative}
+#s__N__ .rv-grow-word i{font-style:normal;display:inline-block;transform-origin:50% 80%;will-change:transform}
+/* the soil: a cut-away strip under the lockup, fading out to the sides and downwards; grit near the surface */
+#s__N__ .rv-grow-soil{position:absolute;z-index:0;left:0;right:0;top:var(--rv-y);height:calc(var(--rv-fs) * 1.9);pointer-events:none;
+  background:radial-gradient(circle at 30% 40%,var(--rv-speck) 0 1.2px,transparent 1.8px) 0 6px/41px 23px,
+    radial-gradient(circle at 70% 60%,var(--rv-speck) 0 1.6px,transparent 2.2px) 13px 4px/67px 31px,
+    radial-gradient(circle at 50% 50%,var(--rv-grit) 0 1px,transparent 1.6px) 7px 2px/29px 17px,
+    linear-gradient(180deg,var(--rv-surface) 0 3px,var(--rv-soil) 3px,var(--rv-soil-2) 60%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 28%,#000 72%,transparent 97%),linear-gradient(180deg,#000 30%,transparent 100%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 3%,#000 28%,#000 72%,transparent 97%),linear-gradient(180deg,#000 30%,transparent 100%);mask-composite:intersect}
+/* a fringe of grass along the surface, behind the letters (the script draws it in the leaf tint) */
+#s__N__ .rv-grow-grass{position:absolute;z-index:1;left:0;right:0;top:calc(var(--rv-y) - 15px);height:16px;pointer-events:none;background:0 0/46px 16px repeat-x;opacity:.8;
+  -webkit-mask-image:linear-gradient(90deg,transparent 7%,#000 31%,#000 69%,transparent 93%);mask-image:linear-gradient(90deg,transparent 7%,#000 31%,#000 69%,transparent 93%)}
+#s__N__ .rv-grow-stem{fill:none;stroke:var(--rv-vine);stroke-width:2.3;stroke-linecap:round}
+#s__N__ .rv-grow-sapv{fill:none;stroke:var(--rv-sap);stroke-width:.55;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+#s__N__ .rv-grow-tendril{fill:none;stroke:var(--rv-vine);stroke-width:.62;stroke-linecap:round}
+#s__N__ .rv-grow-tip{fill:var(--rv-tip)}
+#s__N__ .rv-grow-root{fill:none;stroke:var(--rv-root);stroke-width:.5;stroke-linecap:round;opacity:.8}
+#s__N__ .rv-grow-root-2{stroke-width:.34;opacity:.6}
+#s__N__ .rv-grow-runner{fill:none;stroke:var(--rv-root);stroke-width:.46;stroke-linecap:round;opacity:.75}
+#s__N__ .rv-grow-rootlets path{fill:none;stroke:var(--rv-root);stroke-width:.3;stroke-linecap:round;opacity:.55}
+#s__N__ .rv-grow-blade{fill:var(--rv-leaf)}
+#s__N__ .rv-grow-rib{fill:none;stroke:var(--rv-rib);stroke-width:.05;stroke-linecap:round;opacity:.85}
+#s__N__ .rv-grow-dew{fill:var(--rv-dew);opacity:.9}
+#s__N__ .rv-grow-glint{fill:#fff}
+#s__N__ .rv-grow-half{fill:url(#rv-grow-seed-__N__);stroke:var(--rv-seed-rim);stroke-width:.8}
+#s__N__ .rv-grow-shine{fill:none;stroke:var(--rv-seed-hi);stroke-width:1.2;stroke-linecap:round;opacity:.9}
+#s__N__ .rv-grow-dust circle{fill:var(--rv-dust)}
+/* after the reveal the leaves breathe in a slow draught */
+#s__N__.rv-grow-live .rv-grow-sway{animation:amb-rv-grow-sway 5.6s ease-in-out infinite;transform-origin:0 0}
+@keyframes amb-rv-grow-sway{0%,100%{rotate:0deg}50%{rotate:-4deg}}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s), $$ = s => [...el.querySelectorAll(s)]
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const P = (t, t0, d) => clamp((t - t0) / d)
+const E = {
+  cubicOut: p => 1 - Math.pow(1 - p, 3),
+  cubicInOut: p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2,
+  quadInOut: p => p < .5 ? 2 * p * p : 1 - 2 * (1 - p) * (1 - p),
+  quartOut: p => 1 - Math.pow(1 - p, 4),
+  backOut: (p, s = 1.7) => 1 + (s + 1) * Math.pow(p - 1, 3) + s * Math.pow(p - 1, 2),
+}
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const spring = (s, k = 170, c = 13) => { if (s <= 0) return 0; const w0 = Math.sqrt(k), z = c / (2 * w0), wd = w0 * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w0 * s) * (Math.cos(wd * s) + (z * w0 / wd) * Math.sin(wd * s)) }
+const inv = (f, ease) => { let lo = 0, hi = 1; for (let k = 0; k < 24; k++) { const m = (lo + hi) / 2; ease(m) < f ? lo = m : hi = m } return lo }
+const css = n => getComputedStyle(el).getPropertyValue(n).trim()
+const R = rng(41)
+
+/* ---------- brand: every colour comes from --field, --brand, --brand-2; ink follows the engine's rule ---------- */
+const C2 = document.createElement('canvas').getContext('2d')
+const rgb = s => { C2.fillStyle = '#010203'; C2.fillStyle = String(s || '').trim() || '#010203'; const v = C2.fillStyle; if (v[0] === '#') return [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0] }
+const stops = s => (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl|oklch|oklab|lab|lch)a?\([^()]*\)/gi) || [s]).map(rgb)
+const hex = c => '#' + c.map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
+const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+const lum = ([r, g, b]) => { const f = c => (c /= 255) <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) }
+const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05) }
+const WH = [255, 255, 255], BK = [0, 0, 0]
+const fieldCss = css('--field'), FST = stops(fieldCss), FAVG = FST.reduce((a, c) => a.map((v, i) => v + c[i] / FST.length), [0, 0, 0])
+const INK = rgb(css('--ink-auto') || Deck.inkOn?.(fieldCss) || '#fff'), BR = rgb(css('--brand')), BR2 = rgb(css('--brand-2'))
+const INKLIGHT = lum(INK) > .5, ANTI = INKLIGHT ? BK : WH
+// nudge a colour toward `to` until it reads against `bg` (a brand colour that matches the field would vanish)
+const toward = (c, to, min, bg) => { let k = 0, o = c; while (cr(o, bg) < min && k < 1) { k += .08; o = mix(c, to, k) } return o }
+const dk = (c, k) => mix(c, BK, k), lt = (c, k) => mix(c, WH, k)
+const VINE = toward(BR, INK, 2.2, FAVG), LEAF = toward(BR2, INK, 1.5, FAVG)
+const SOIL = toward(mix(FAVG, INKLIGHT ? [40, 30, 20] : [206, 184, 152], .55), ANTI, 3.6, INK)   // descenders dip into it
+const GRASS = mix(LEAF, FAVG, .3)
+;[['--rv-vine', VINE], ['--rv-sap', lum(VINE) > .75 ? dk(VINE, .12) : lt(VINE, .4)], ['--rv-tip', lum(VINE) > .7 ? dk(VINE, .14) : lt(VINE, .6)],
+  ['--rv-leaf', LEAF], ['--rv-leaf-under', dk(LEAF, .32)], ['--rv-rib', lum(LEAF) > .55 ? dk(LEAF, .22) : lt(LEAF, .5)], ['--rv-dew', lt(LEAF, .85)],
+  ['--rv-soil', SOIL], ['--rv-soil-2', dk(SOIL, INKLIGHT ? .25 : .07)], ['--rv-surface', mix(GRASS, SOIL, .25)], ['--rv-speck', mix(SOIL, INK, .13)],
+  ['--rv-grit', mix(SOIL, INK, .25)], ['--rv-root', mix(SOIL, INK, .5)], ['--rv-seed', dk(VINE, .1)], ['--rv-seed-hi', lt(VINE, .5)], ['--rv-seed-rim', dk(VINE, .45)],
+  ['--rv-dust', mix(mix(SOIL, FAVG, .45), INK, .12)]].forEach(([k, v]) => el.style.setProperty(k, hex(v)))
+const grassSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='46' height='16'><g fill='none' stroke='${hex(GRASS)}' stroke-width='1.6' stroke-linecap='round'><path d='M4 16 Q5 9 3 4'/><path d='M7 16 Q8 11 11 7'/><path d='M20 16 Q19 10 21 2'/><path d='M23 16 Q25 12 27 10'/><path d='M35 16 Q34 11 31 8'/><path d='M38 16 Q39 9 38 5'/></g></svg>`
+$('.rv-grow-grass').style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(grassSvg)}")`
+
+/* ---------- the lockup ---------- */
+const row = $('.rv-grow-row'), mkBox = $('.rv-grow-mk'), svg = $('.rv-grow-mk .mark'), word = $('.rv-grow-word'), soil = $('.rv-grow-soil'), grass = $('.rv-grow-grass')
+const text = word.textContent
+word.textContent = ''
+const letters = []
+for (const ch of text) { if (/\s/.test(ch)) { word.appendChild(document.createTextNode(ch)); continue } const i = document.createElement('i'); i.textContent = ch; word.appendChild(i); letters.push(i) }
+
+// the mark's own strokes are the vines; everything else is added around them in the mark's 24-unit space
+const vEls = [...svg.querySelectorAll('path,line,polyline,polygon,circle,ellipse,rect')]
+const back = mk('g', { class: 'rv-grow-fx' }); svg.insertBefore(back, svg.firstChild)
+const front = mk('g', { class: 'rv-grow-fx' }, svg)
+const defs = mk('defs', {}, back)
+defs.innerHTML = `<radialGradient id="rv-grow-seed-__N__" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="var(--rv-seed-hi)"/><stop offset="1" stop-color="var(--rv-seed)"/></radialGradient>`
+const runner = mk('path', { class: 'rv-grow-runner', pathLength: 1, 'stroke-dasharray': '1 1' }, back)
+const rootlets = mk('g', { class: 'rv-grow-rootlets' }, back)
+const rootG = mk('g', {}, back)
+const roots = [['M0 .3 C.25 2.4 -.55 3.6 -.2 5.6 S.85 8 .3 9.8', ''], ['M-.15 2.6 C-1.1 3.6 -1.9 3.9 -2.9 5.2', ' rv-grow-root-2'], ['M.1 4.8 C1.1 5.7 2 6 2.6 7.4', ' rv-grow-root-2']]
+  .map(([d, c]) => mk('path', { class: 'rv-grow-root' + c, d, pathLength: 1, 'stroke-dasharray': '1 1' }, rootG))
+const tendG = mk('g', {}, back)
+const stem = mk('path', { class: 'rv-grow-stem', pathLength: 1, 'stroke-dasharray': '1 1' }, back)
+const stemSap = mk('path', { class: 'rv-grow-sapv', pathLength: 1, 'stroke-dasharray': '1 1', transform: 'translate(-.42 0)' }, back)
+const sapG = mk('g', { transform: 'translate(-.42 -.42)' }, front)
+const tipG = mk('g', {}, front), leafG = mk('g', {}, front)
+const seed = mk('g', {}, front)
+seed.innerHTML = `<g transform="scale(.26)"><path class="rv-grow-half rv-grow-half-l" d="M0 -6.5 C-7 -6.5 -12 -3 -12 0 C-12 3 -7 6.5 0 6.5Z"/>
+  <path class="rv-grow-half rv-grow-half-r" d="M0 -6.5 C7 -6.5 12 -3 12 0 C12 3 7 6.5 0 6.5Z"/><path class="rv-grow-shine" d="M-6 -2.5 C-4 -4.4 -1 -4.8 2 -4.4"/></g>`
+const halfL = seed.querySelector('.rv-grow-half-l'), halfR = seed.querySelector('.rv-grow-half-r'), shine = seed.querySelector('.rv-grow-shine')
+const dustG = mk('g', { class: 'rv-grow-dust' }, front)
+const dust = Array.from({ length: 11 }, (_, k) => ({ c: mk('circle', { r: 0 }, dustG), dir: k % 2 ? 1 : -1, v: 10 + 18 * R(), up: 4.5 + 10 * R(), r: .42 + .68 * R() }))
+
+/* ---------- the growth plan: where the seed lands, the order the strokes grow in, where the leaves go ---------- */
+const C = [12, 12], dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1])
+let vines = [], dots = [], tendrils = [], leaves = [], J0 = [12, 20], Rmax = 1, planned = false
+const plan = () => {
+  const items = vEls.map(e => {
+    e.setAttribute('pathLength', 1); e.classList.add('rv-grow-v')
+    const L = e.getTotalLength(), n = Math.max(2, Math.ceil(L / .25)), pts = []
+    for (let k = 0; k <= n; k++) { const s = L * k / n, q = e.getPointAtLength(s); pts.push({ s, p: [q.x, q.y] }) }
+    const closed = L > 1 && (/^(circle|ellipse|rect|polygon)$/.test(e.tagName) || dist(pts[0].p, pts[n].p) < .3)
+    return { el: e, L, pts, closed, dot: L < .6 }
+  })
+  if (!items.length || items.some(v => !(v.L >= 0))) return false
+  vines = items.filter(v => !v.dot); dots = items.filter(v => v.dot)
+  dots.forEach(d => { d.el.classList.add('rv-grow-dot'); d.p = d.pts[0].p })
+  vines.forEach(v => { v.sap = v.el.cloneNode(true); v.sap.removeAttribute('class'); v.sap.removeAttribute('style'); v.sap.setAttribute('class', 'rv-grow-sapv'); sapG.appendChild(v.sap); v.tips = [mk('circle', { class: 'rv-grow-tip', r: .95 }, tipG), mk('circle', { class: 'rv-grow-tip', r: .95 }, tipG)] })
+  const along = (v, s) => { let d = s - v.s0; if (v.closed) { d = ((d % v.L) + v.L * 1.5) % v.L - v.L / 2 } return d }
+  const arr = (v, s) => v.A + Math.abs(along(v, s))
+  // the seed lands under the lowest point (the most central one if several are about as low)
+  let best = -1e9, first = null
+  vines.forEach(v => v.pts.forEach(q => { const sc = q.p[1] - .15 * Math.abs(q.p[0] - 12); if (sc > best) { best = sc; first = { v, q } } }))
+  tendrils = []
+  if (first) {
+    J0 = first.q.p; first.v.A = 0; first.v.s0 = first.q.s
+    const grown = [first.v], rest = vines.filter(v => v !== first.v)
+    // every other stroke starts from the point the growing plant reaches soonest (a tendril bridges any gap)
+    while (rest.length) {
+      let bestA = 1e9, bestS = 1e9, pick = null
+      for (const v of rest) for (let a = 0; a < v.pts.length; a += 2) { const q = v.pts[a]; for (const g of grown) for (let b = 0; b < g.pts.length; b += 2) { const p = g.pts[b], dd = dist(p.p, q.p), sc = arr(g, p.s) + 3 * dd; if (sc < bestS) { bestS = sc; bestA = arr(g, p.s) + dd; pick = { v, q, p, g } } } }
+      const { v, q, p, g } = pick
+      v.A = bestA; v.s0 = q.s
+      const d = dist(p.p, q.p)
+      if (d > .7) {
+        const m = [(p.p[0] + q.p[0]) / 2, (p.p[1] + q.p[1]) / 2], nx = -(q.p[1] - p.p[1]) / d, ny = (q.p[0] - p.p[0]) / d, bow = .32 * d * (tendrils.length % 2 ? -1 : 1)
+        tendrils.push({ A: arr(g, p.s), d, el: mk('path', { class: 'rv-grow-tendril', pathLength: 1, 'stroke-dasharray': '1 1', d: `M${p.p[0].toFixed(2)} ${p.p[1].toFixed(2)} Q${(m[0] + nx * bow).toFixed(2)} ${(m[1] + ny * bow).toFixed(2)} ${q.p[0].toFixed(2)} ${q.p[1].toFixed(2)}` }, tendG) })
+      }
+      grown.push(v); rest.splice(rest.indexOf(v), 1)
+    }
+    vines.forEach(v => { v.f0 = v.s0 / (v.L || 1); v.reach = v.closed ? v.L / 2 : Math.max(v.s0, v.L - v.s0) })
+    dots.forEach(d => { let bd = 1e9; for (const g of vines) for (const q of g.pts) { const dd = dist(q.p, d.p); if (dd < bd - 1e-6) { bd = dd; d.A = arr(g, q.s) + .5 * dd } } })   // pops as the nearest vine passes
+  } else dots.forEach(d => d.A = 0)
+  Rmax = Math.max(1, ...vines.map(v => v.A + v.reach), ...dots.map(d => d.A))
+  // leaves: two or three along the vines, spread through the growth, on the side away from the mark's centre
+  leafG.textContent = ''; leaves = []
+  const cand = []
+  vines.forEach(v => v.pts.forEach((q, k) => {
+    if (k % 2) return
+    const dd = along(v, q.s); if (Math.abs(dd) < 1.4 || dist(q.p, J0) < 3) return
+    const sg = Math.sign(dd) || 1, a1 = v.el.getPointAtLength(clamp(q.s - .3 * sg, 0, v.L)), a2 = v.el.getPointAtLength(clamp(q.s + .3 * sg, 0, v.L))
+    const tx = a2.x - a1.x, ty = a2.y - a1.y, tl = Math.hypot(tx, ty) || 1
+    cand.push({ p: q.p, a: arr(v, q.s), t: [tx / tl, ty / tl] })
+  }))
+  const targets = Rmax < 14 ? [.45, .86] : [.3, .6, .88]
+  targets.forEach((T, i) => {
+    let bs = 1e9, b = null
+    for (const c of cand) {
+      if (leaves.some(l => dist(l.p, c.p) < 6)) continue
+      const sc = Math.abs(c.a - T * Rmax) + .35 * Math.max(0, 6 - dist(c.p, C))
+      if (sc < bs) { bs = sc; b = c }
+    }
+    if (!b) return
+    const n = [-b.t[1], b.t[0]], o = (b.p[0] - C[0]) * n[0] + (b.p[1] - C[1]) * n[1]
+    const side = Math.abs(o) > .8 ? Math.sign(o) : (i % 2 ? -1 : 1)
+    const ang = Math.atan2(b.t[1], b.t[0]) * 180 / Math.PI + side * 52
+    const g = mk('g', { transform: `translate(${b.p[0].toFixed(2)} ${b.p[1].toFixed(2)}) rotate(${ang.toFixed(1)}) scale(1 ${side})` }, leafG)
+    const sway = mk('g', { class: 'rv-grow-sway', style: `animation-delay:${(-i * 1.9).toFixed(1)}s` }, g)
+    const lp = mk('g', {}, sway)
+    const blade = mk('path', { class: 'rv-grow-blade', d: 'M0 0 C.16 -.3 .58 -.44 1 -.3 C.78 -.02 .38 .14 0 0Z' }, lp)
+    mk('path', { class: 'rv-grow-rib', d: 'M.03 -.01 Q.48 -.15 .93 -.29' }, lp)
+    leaves.push({ p: b.p, a: b.a, g, lp, blade })
+  })
+  leaves.sort((x, y) => x.a - y.a)
+  const last = leaves[leaves.length - 1]
+  if (last) { last.dew = mk('circle', { class: 'rv-grow-dew', cx: .66, cy: -.2, r: 0 }, last.lp); last.glint = mk('circle', { class: 'rv-grow-glint', cx: .64, cy: -.225, r: 0 }, last.lp) }
+  planned = true
+  return true
+}
+
+/* ---------- layout: fit the name, find the ground in the mark's units, lay the runner under the letters ---------- */
+const FS0 = parseFloat(css('--rv-fs')) || 156
+let G = 27.4, FALL = 120, wordStart = 30, wordEnd = 120
+const layout = () => {
+  if (!planned) plan()
+  el.style.setProperty('--rv-fs', FS0 + 'px')
+  const w = mkBox.offsetWidth * 1.28 + word.offsetWidth
+  if (w > 1560) el.style.setProperty('--rv-fs', (FS0 * 1560 / w).toFixed(1) + 'px')
+  const sr = el.getBoundingClientRect(), mr = svg.getBoundingClientRect()
+  if (!sr.width || !mr.width) return
+  const sc = sr.width / 1920, upx = mr.width / 24, base = mkBox.getBoundingClientRect().bottom
+  G = (base - mr.top) / upx
+  const gy = (base - sr.top) / sc
+  soil.style.top = gy + 'px'; grass.style.top = (gy - 15) + 'px'
+  FALL = (base - sr.top) / upx + 12
+  const u = x => (x - mr.left) / upx
+  const wr = word.getBoundingClientRect()
+  wordStart = u(wr.left); wordEnd = u(wr.right)
+  letters.forEach(l => { const r = l.getBoundingClientRect(); l._u = u(r.left + r.width / 2) })
+  const x0 = J0[0], ry = G + 1.8
+  runner.setAttribute('d', `M${x0.toFixed(2)} ${ry} C${(x0 + 5).toFixed(2)} ${ry + .3} ${(x0 + 9).toFixed(2)} ${ry - .4} ${wordStart.toFixed(2)} ${ry + .2} S${((wordStart + wordEnd) / 2).toFixed(2)} ${ry + .5} ${wordEnd.toFixed(2)} ${ry}`)
+  rootlets.textContent = ''
+  const RL = rng(7)
+  for (let x = wordStart + 3; x < wordEnd; x += 3.6 + RL() * 3) mk('path', { d: `M${x.toFixed(2)} ${ry + .2} q${(RL() * 2 - 1).toFixed(2)} 1.8 ${(RL() * 2.4 - 1.2).toFixed(2)} ${(2.4 + RL() * 3).toFixed(2)}`, pathLength: 1, 'stroke-dasharray': '1 1', 'data-x': x.toFixed(2) }, rootlets)
+  rootG.setAttribute('transform', `translate(${x0.toFixed(2)} ${G.toFixed(2)})`)
+  const h = Math.max(.5, G - J0[1])
+  stem.setAttribute('d', `M${x0.toFixed(2)} ${(G - .4).toFixed(2)} C${x0.toFixed(2)} ${(G - h * .45).toFixed(2)} ${(x0 + .9).toFixed(2)} ${(J0[1] + h * .42).toFixed(2)} ${x0.toFixed(2)} ${J0[1].toFixed(2)}`)
+  stemSap.setAttribute('d', stem.getAttribute('d'))
+}
+
+/* ---------- the timeline (s) ---------- */
+const DROP = .38, BOUNCE = .22, CRACK = .66, GROW0 = .72, GROW = .3, VINE0 = .92, VDUR = .86, RUN0 = .84, RUN = .66, LDUR = .42, END = 2.34
+const draw = (p, v) => { p.style.strokeDashoffset = 1 - v; p.style.visibility = v > .002 ? 'visible' : 'hidden' }
+const reveal = (v, lo, hi) => {
+  const D = Math.min(1, hi - lo)
+  for (const e of [v.el, v.sap]) {
+    if (D <= .0005) { e.style.visibility = 'hidden'; continue }
+    e.style.visibility = 'visible'
+    if (D >= .9995) { e.style.strokeDasharray = 'none'; e.style.strokeDashoffset = 0; continue }
+    e.style.strokeDasharray = v.closed ? `${D} ${1 - D}` : `${D} 3`
+    e.style.strokeDashoffset = -lo
+  }
+  return D
+}
+const tipAt = (c, v, f) => { const q = v.el.getPointAtLength(((f % 1) + 1) % 1 * v.L); c.setAttribute('cx', q.x.toFixed(2)); c.setAttribute('cy', q.y.toFixed(2)); c.style.visibility = 'visible' }
+const arriveT = a => VINE0 + VDUR * inv(clamp(a / Rmax), E.quadInOut)
+
+const pose = t => {
+  const done = t >= END, hidden = t < 0
+  el.classList.toggle('rv-grow-live', done)
+  // seed: falls tumbling out of the sky, lands with a squash, bounces once, splits; the husk stays
+  const rest = G - 1.56
+  let sy = rest, rot = 0, scx = 1, scy = 1
+  if (hidden) sy = -FALL - 40
+  else if (t < DROP) { const p = t / DROP; sy = rest - FALL * (1 - p * p); rot = 220 * (1 - p) }
+  else if (t < DROP + BOUNCE) { const p = (t - DROP) / BOUNCE; sy = rest - 6.8 * 4 * p * (1 - p); rot = -24 * p }
+  else rot = done ? 0 : -24 + 24 * E.cubicOut(P(t, DROP + BOUNCE, .2))
+  const l1 = t - DROP, l2 = t - DROP - BOUNCE
+  if (!done && l1 >= 0 && l1 < .07) { scy = .72; scx = 1.25 }
+  if (!done && l2 >= 0 && l2 < .06) { scy = .86; scx = 1.12 }
+  seed.setAttribute('transform', `translate(${J0[0].toFixed(2)} ${(sy + 1.56 * (1 - scy)).toFixed(2)}) rotate(${rot.toFixed(1)}) scale(${scx} ${scy})`)
+  const ck = done ? 1 : E.backOut(P(t, CRACK, .18), 2)
+  halfL.setAttribute('transform', `translate(${(-2.5 * ck).toFixed(2)} ${(1.5 * ck).toFixed(2)}) rotate(${(-26 * ck).toFixed(1)} 0 6)`)
+  halfR.setAttribute('transform', `translate(${(2.5 * ck).toFixed(2)} ${(1.5 * ck).toFixed(2)}) rotate(${(22 * ck).toFixed(1)} 0 6)`)
+  shine.style.opacity = .9 * (1 - ck)
+  // dust: from the first landing only, skims the ground and settles
+  const da = t - DROP
+  dust.forEach(d => {
+    if (done || hidden || da <= 0 || da >= .55) { d.c.setAttribute('r', 0); return }
+    const q = da / .55
+    d.c.setAttribute('cx', (J0[0] + d.dir * (1.6 + d.v * (1 - Math.exp(-5 * da)))).toFixed(2))
+    d.c.setAttribute('cy', (G - .5 - d.up * (1 - Math.exp(-6 * da)) + 8 * da * da).toFixed(2))
+    d.c.setAttribute('r', (d.r * (1 + 1.6 * q)).toFixed(2)); d.c.style.opacity = (.75 * (1 - q) ** 1.5).toFixed(3)
+  })
+  // root down, stem up
+  draw(roots[0], hidden ? 0 : done ? 1 : E.cubicOut(P(t, CRACK + .02, .4)))
+  draw(roots[1], hidden ? 0 : done ? 1 : E.cubicOut(P(t, CRACK + .22, .3)))
+  draw(roots[2], hidden ? 0 : done ? 1 : E.cubicOut(P(t, CRACK + .3, .3)))
+  const sg = hidden ? 0 : done ? 1 : E.quartOut(P(t, GROW0, GROW))
+  draw(stem, sg); draw(stemSap, sg)
+  // the strokes grow out of the stem at one speed, both ways from where they start; pale tips lead them
+  const r = hidden ? -1 : done ? Rmax + 1 : Rmax * E.quadInOut(P(t, VINE0, VDUR))
+  vines.forEach(v => {
+    const f = (r - v.A) / (v.L || 1)
+    let lo = v.f0 - f, hi = v.f0 + f
+    if (!v.closed) { lo = Math.max(0, lo); hi = Math.min(1, hi) }
+    const D = reveal(v, lo, hi)
+    const growing = !done && D > .0005 && D < .9995
+    if (growing && (v.closed || lo > 0)) tipAt(v.tips[0], v, lo); else v.tips[0].style.visibility = 'hidden'
+    if (growing && (v.closed || hi < 1)) tipAt(v.tips[1], v, hi); else v.tips[1].style.visibility = 'hidden'
+  })
+  tendrils.forEach(td => {
+    draw(td.el, hidden ? 0 : done ? 0 : clamp((r - td.A) / td.d))
+    td.el.style.opacity = done ? 0 : (1 - P(t, END - .5, .45)).toFixed(3)            // withers once the stroke has grown
+  })
+  dots.forEach(d => {
+    const k = hidden ? 0 : done ? 1 : E.backOut(P(t, arriveT(d.A), .26), 2.4)
+    d.el.style.visibility = k > .01 ? 'visible' : 'hidden'; d.el.style.transform = `scale(${Math.max(0, k).toFixed(3)})`
+  })
+  // leaves bud as the vine passes: folded along it, they swing out; the first shows its underside, then turns over
+  leaves.forEach((l, i) => {
+    const p = hidden ? 0 : done ? 1 : P(t, arriveT(l.a) + .02, LDUR)
+    if (p <= 0) { l.g.style.visibility = 'hidden'; return }
+    l.g.style.visibility = 'visible'
+    const s = E.backOut(p, 1.6), flip = i === 0 ? -.35 + 1.35 * E.cubicInOut(p) : .25 + .75 * E.cubicOut(p), sz = 5 * (.15 + .85 * Math.min(1.08, s))
+    l.lp.setAttribute('transform', `rotate(${(-52 * (1 - s)).toFixed(2)}) scale(${sz.toFixed(3)} ${(5 * flip).toFixed(3)})`)
+    l.blade.style.fill = flip < 0 ? 'var(--rv-leaf-under)' : 'var(--rv-leaf)'
+    if (l.dew) {
+      const td = arriveT(l.a) + .02 + LDUR
+      l.dew.setAttribute('r', done ? .085 : (.085 * E.backOut(P(t, td - .08, .2), 2)).toFixed(4))
+      const gl = done ? .6 : P(t, td + .14, .07) * (1 - .4 * P(t, td + .24, .16))   // the drop catches the light
+      l.glint.setAttribute('r', (.03 * Math.max(0, gl)).toFixed(4)); l.glint.style.opacity = gl
+    }
+  })
+  // the runner creeps under the ground; letters sprout as it passes, then it fades into the soil
+  const rp = hidden ? 0 : done ? 1 : E.cubicInOut(P(t, RUN0, RUN))
+  draw(runner, rp); runner.style.opacity = done ? 0 : .75 * (1 - P(t, RUN0 + RUN + .1, .45))
+  const reach = J0[0] + (wordEnd - J0[0]) * rp
+  for (const rl of rootlets.children) { draw(rl, clamp((reach - +rl.dataset.x) / 4)); rl.style.opacity = done ? 0 : .55 * (1 - P(t, RUN0 + RUN + .1, .45)) }
+  letters.forEach((l, i) => {
+    if (hidden) { l.style.visibility = 'hidden'; return }
+    if (done) { l.style.visibility = 'visible'; l.style.transform = 'none'; return }
+    const a = t - (RUN0 + RUN * inv(clamp((l._u - J0[0]) / Math.max(1, wordEnd - J0[0])), E.cubicInOut))
+    if (a <= 0) { l.style.visibility = 'hidden'; return }
+    l.style.visibility = 'visible'
+    const sy2 = spring(a, 190, 14), sw = Math.exp(-a / .22) * Math.sin(a * 22) * 7 * (i % 2 ? 1 : -1)
+    l.style.transform = `skewX(${sw.toFixed(2)}deg) scale(${(1 - .25 * Math.exp(-a / .1)).toFixed(3)},${Math.max(0, sy2).toFixed(4)})`
+  })
+}
+
+let raf = 0, played = false, mode0 = 'empty'
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'; mode0 = mode
+  letters.forEach(l => l.style.transform = 'none')
+  layout()
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+layout(); pose(-1)
+document.fonts?.ready.then(() => { if (mode0 !== 'play') show(mode0) })
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

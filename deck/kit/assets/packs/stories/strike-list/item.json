@@ -1,0 +1,35 @@
+{
+  "title": "Strike list",
+  "kind": "story",
+  "mood": [
+    "decisive",
+    "desk",
+    "hand-made"
+  ],
+  "suits": "before → after replacement claims: many tools, steps, apps or forms become one product; consolidation, simplification, 'you can stop doing these'",
+  "tech": "html+svg+css",
+  "duration": 1.4,
+  "params": {
+    "--field": "the desk field (terracotta); text, strikes, pen ink and the ghost card use --ink-auto",
+    "--brand": "the pen body, the mark tile, the check, board chips",
+    "--brand-2": "the pen band, board chips",
+    "__WORD__ / __MARK__": "the bright card's header: it is the product",
+    ".st-strike-list-row": "a before item (glyph + word); keep 3–5, each --i in order"
+  },
+  "details": [
+    "a marker pen rides each strike, pressing down, and lifts away between rows",
+    "the pen lands with a small ink dot where each line starts",
+    "every strike is drawn by hand, wavy, its own slant, overshooting the word on both ends",
+    "each row dims a beat after its line passes, not with it",
+    "the last pen lifts and stays hovering at the end of its line",
+    "the faded card is turned 2.5° like it has been on the desk a while, and sags a little more once all are struck",
+    "a dashed slot waits where the new card will land",
+    "the hand-drawn arrow is drawn on between the two cards",
+    "the bright card drops in tilted, squashes on landing, hops 8 px and settles",
+    "its shadow starts small and soft and catches up as it lands",
+    "the board's chips pop in after the landing and one chip slides from the first column to the second",
+    "three faces pop in one after another: the board is shared",
+    "a check stamps the corner and leaves a fading ring",
+    "a faint coffee ring on the desk"
+  ]
+}

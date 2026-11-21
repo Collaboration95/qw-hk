@@ -1,0 +1,40 @@
+<!-- powers-of-ten demo 3 of 3 · the bottom of the zoom (80 px per km): the world as cells of 750 m, each the colour
+     sampled at its centre, drawn crisp. The cell on the shoreline is the one the whole zoom was heading for: it
+     glows once on arrival, then breathes very slightly. Replace P.cells with the product's own unit (a pixel, a
+     plot, a seat, a line of code). -->
+<section class="slide" id="s__N__" aria-label="Down to the one cell that matters">
+  <h2>Down to the one cell that matters.</h2>
+  <p class="cy-powers-of-ten-sub">__WORD__ answers here, then climbs back out.</p>
+  <div class="cy-powers-of-ten-vf" style="--t:.9"><i></i></div>
+  <div class="cy-powers-of-ten-bar"><i></i><b></b></div>
+  <aside class="notes"><b>Say</b>And this is the one cell that matters. __WORD__ answers here.</aside>
+</section>
+
+<style>
+#s__N__ h2{position:relative;color:var(--ink-auto,#fff)}
+#s__N__ .cy-powers-of-ten-sub{position:relative;margin-top:26px;font-size:40px;font-weight:550;letter-spacing:-.02em;color:var(--ink-auto,#fff);opacity:.9}
+#s__N__ .cy-powers-of-ten-bar{left:100px;bottom:80px}
+#s__N__ .cy-powers-of-ten-vf{left:1186px;top:566px;width:108px;height:108px;--l:30px}
+</style>
+
+<script>
+const P = Pack['powers-of-ten'], world = P.world()
+const SIZE = .75, S = 80, cp = world.coastPoint(.55)
+let ci = Math.floor(cp[0] / SIZE), cj = Math.floor(cp[1] / SIZE)
+// the target is the first LAND cell on the shoreline: step inland (toward the island's centre) while the cell's centre is sea
+for (let k = 0; k < 6 && world.elev && world.elev((ci + .5) * SIZE, (cj + .5) * SIZE, SIZE * .5) < 0; k++) {
+  if (Math.abs(cp[0]) > Math.abs(cp[1]) * 1.25) ci -= Math.sign(cp[0]); else cj -= Math.sign(cp[1])
+}
+const cam = P.at((ci + .5) * SIZE, (cj + .5) * SIZE, S, 1240, 620)
+P.view('s__N__', cam, { px: true,
+  paint(g, c, ctx) { P.cells(g, c, ctx, { size: SIZE, gap: 2 }) },
+  frame(g, t, k) {
+    const [x, y] = P.toScreen(cam, ci * SIZE, cj * SIZE), w = SIZE * S - 2, u = k.since, pal = P.palette
+    const br = k.still ? 0 : .5 + .5 * Math.sin(t * 1.9)
+    g.save(); g.shadowColor = P.css(pal.coast, .95); g.shadowBlur = 16 + 8 * br; g.strokeStyle = P.css(pal.coast); g.lineWidth = 3; g.strokeRect(x + 1.5, y + 1.5, w - 3, w - 3); g.restore()
+    // one ring on arrival, opening outward and fading
+    if (u < 1.1) { const p = u / 1.1, e = 4 + p * 40; g.save(); g.globalAlpha = 1 - p; g.strokeStyle = P.css(pal.coast); g.lineWidth = 3; g.strokeRect(x - e, y - e, w + 2 * e, w + 2 * e); g.restore() }
+    P.clouds(g, k.still ? 40 : t, { speed: 14, alpha: .1 })
+  },
+})
+</script>

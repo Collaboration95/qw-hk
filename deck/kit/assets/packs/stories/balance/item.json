@@ -1,0 +1,35 @@
+{
+  "title": "Balance",
+  "kind": "story",
+  "mood": [
+    "weighty",
+    "warm",
+    "fair"
+  ],
+  "suits": "cost vs value, price drops, 'same result for less': pricing slides, unit economics, a cheaper way to the same outcome",
+  "tech": "svg+js",
+  "duration": 1.45,
+  "params": {
+    "--field": "the slide field (mustard); the scale is drawn in the field's ink: dark wood on light fields, pale ash on dark ones",
+    "--brand": "the gem (what the buyer gets)",
+    "--brand-2": "the needle and the cushion",
+    ".st-balance-wt / .st-balance-coint": "the two prices (old cost on the iron weight, new cost on the coin)",
+    "T0 / T1": "the beam's start and rest tilt in degrees (script)"
+  },
+  "details": [
+    "the iron weight slides off the cost pan, tips over the edge, drops and lands on the floor with a squash",
+    "it stays on the floor beside the scale, where it fell, with its own shadow",
+    "a dust puff spreads where it lands, and the stand jolts 3 px with the thud",
+    "the cost pan kicks sideways as the weight leaves it",
+    "the beam swings on a damped spring: overshoots the value side and settles at 10°",
+    "the pans are pendulums: they swing on their strings, out of step with the beam, and come to rest",
+    "the coin falls spinning (it flips edge-on and back) and bounces twice: 36 px, then 10 px",
+    "a white clink ring spreads from the coin when it lands",
+    "the beam dips a hair when the coin lands",
+    "each pan's floor shadow grows and darkens as the pan comes down, shrinks as it rises",
+    "the needle on the dial swings with the beam across 13 ticks",
+    "the gem's velvet cushion gives a little as the value pan drops",
+    "a glint sweeps across the gem once the scale has settled",
+    "a soft spotlight from above and a lit edge on the floor"
+  ]
+}

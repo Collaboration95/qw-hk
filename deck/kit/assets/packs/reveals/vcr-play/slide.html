@@ -1,0 +1,92 @@
+<!-- 0 · Intro reveal "vcr-play": a VCR's clean blue screen. The first press: PLAY ▶ in OSD type, a beat on the blue, then a
+     band of tracking noise rolls up the screen and leaves the tape's picture behind it with the name set as a camcorder
+     title, lower left, white with the titler's hard drop shadow. The picture slips two frames of vertical hold and settles;
+     the OSD clears like a real deck. ~2.3 s. Print and reduced motion: the title card.
+     Brand: --field (the tape's picture: any colour, gradient, or put an <img> in .rv-vcr-pic), --rv-vcr (the VCR blue),
+     --brand (the titler's shadow tint). Ink is the engine's --ink-auto. Long names shrink to fit 1600 px.
+     OSD font: any mono; VT323 (@fontsource/vt323) looks right. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <div class="rv-vcr-pic" aria-hidden="true"><!-- optional: <img src="../assets/photos/your-frame.jpg" alt=""> --></div>
+  <i class="rv-vcr-scan" aria-hidden="true"></i>
+  <h1 class="rv-vcr-h">__WORD__</h1>
+  <div class="rv-vcr-blue" aria-hidden="true"></div>
+  <canvas class="rv-vcr-fx" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div class="rv-vcr-osd" aria-hidden="true">PLAY <b>▶</b></div>
+</section>
+
+<style>
+#s__N__{
+  --field:radial-gradient(70% 60% at 78% 18%,#8A6A44 0%,#4E3A2A 55%,#22282C 100%);   /* the tape's picture: sun-faded warmth */
+  --rv-vcr:#1F34C6;                                                                    /* the VCR's blue screen */
+  --brand:var(--deck-brand,#3A1E0E);                                                   /* titler shadow tint */
+  --rv-fs:150px;
+  padding:0
+}
+#s__N__ .rv-vcr-pic{position:absolute;inset:0;z-index:0;overflow:hidden}
+#s__N__ .rv-vcr-pic img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.35) saturate(.8) contrast(.9) brightness(.8) blur(1.5px);transform:scale(1.04)}
+#s__N__ .rv-vcr-scan{position:absolute;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(0,0,0,.16) 0 2px,rgba(255,255,255,.025) 2px 4px),radial-gradient(130% 120% at 50% 45%,rgba(0,0,0,0) 58%,rgba(0,0,0,.4) 100%)}
+#s__N__ .rv-vcr-h{position:absolute;left:100px;bottom:120px;z-index:5;margin:0;max-width:1600px;font:800 var(--rv-fs)/.98 var(--f);letter-spacing:-.05em;color:var(--ink-auto,#fff);
+  text-shadow:0 5px 0 color-mix(in oklab,var(--brand) 70%,transparent),0 0 34px rgba(0,0,0,.35);text-wrap:balance}
+#s__N__ .rv-vcr-blue{position:absolute;inset:0;z-index:8;background:var(--rv-vcr);display:none}
+#s__N__.rv-vcr-empty .rv-vcr-blue{display:block}
+#s__N__ .rv-vcr-fx{position:absolute;inset:0;width:1920px;height:1080px;z-index:9;pointer-events:none}
+#s__N__ .rv-vcr-osd{position:absolute;left:92px;top:66px;z-index:10;font:400 64px/1 VT323,var(--m,monospace);color:#F4F6FF;text-shadow:3px 3px 0 rgba(0,0,0,.6);display:none;white-space:nowrap}
+#s__N__ .rv-vcr-osd b{font-weight:400;display:inline-block;transform:scaleX(1.12);margin-left:.16em}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const fx = el.querySelector('.rv-vcr-fx'), g = fx.getContext('2d'), osd = el.querySelector('.rv-vcr-osd'), pic = el.querySelector('.rv-vcr-pic'), h = el.querySelector('.rv-vcr-h')
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const BLUE = getComputedStyle(el).getPropertyValue('--rv-vcr').trim() || '#1F34C6'
+const BAND = 300, B0 = .62, BD = .92, OSD_OFF = 2.2, END = 2.3
+const FS0 = parseFloat(getComputedStyle(el).getPropertyValue('--rv-fs')) || 150
+const fit = () => { el.style.removeProperty('--rv-fs'); const r = h.scrollWidth / 1600; if (r > 1) el.style.setProperty('--rv-fs', (FS0 / r).toFixed(1) + 'px') }
+fit(); document.fonts?.ready.then(fit)
+let noise = null
+const makeNoise = () => [0, 1, 2].map(v => {
+  const c = document.createElement('canvas'); c.width = 1920; c.height = BAND
+  const q = c.getContext('2d'), R = rng(41 + v * 97)
+  for (let r = 0; r < BAND; r += 2) {
+    const mid = 1 - Math.abs(r - BAND / 2) / (BAND / 2)
+    let x = 0
+    while (x < 1920) { const w = 4 + R() * 90; if (R() < .25 + .6 * mid) { const l = 120 + R() * 135; q.fillStyle = `rgba(${l},${l},${l + 10},${(.35 + .6 * R()).toFixed(2)})`; q.fillRect(x, r, w, 2) } x += w }
+    if (R() < .05) { q.fillStyle = R() < .5 ? 'rgba(255,63,200,.55)' : 'rgba(47,240,220,.5)'; q.fillRect(0, r, 1920, 2) }
+  }
+  return c
+})
+const pose = t => {
+  g.clearRect(0, 0, 1920, 1080)
+  if (t < 0) { el.classList.add('rv-vcr-empty'); osd.style.display = 'none'; pic.style.transform = ''; return }
+  el.classList.remove('rv-vcr-empty')
+  osd.style.display = t < OSD_OFF ? 'block' : 'none'
+  if (t >= END) { pic.style.transform = ''; return }
+  const p = (t - B0) / BD, cy = 1080 + BAND / 2 - Math.max(0, Math.min(1.2, p)) * (1080 + BAND), top = cy - BAND / 2
+  if (top > 0) { g.fillStyle = BLUE; g.fillRect(0, 0, 1920, Math.min(1080, top + 2)) }
+  if (p >= 0 && top < 1080 && top + BAND > 0) {
+    const fr = Math.floor(t * 60), R = rng(fr * 13 + 5)
+    g.globalAlpha = .96; g.drawImage(noise[fr % 3], -R() * 40, top); g.globalAlpha = 1
+    for (let i = 0; i < 9; i++) { g.fillStyle = R() < .5 ? 'rgba(255,255,255,.28)' : 'rgba(0,0,0,.35)'; g.fillRect(R() * 400, top + BAND + R() * 140, 400 + R() * 1400, 2) }
+  }
+  const s = t - (B0 + BD)
+  pic.style.transform = s > 0 && s < .16 ? `translateY(${s < .08 ? -10 : 5}px)` : ''
+}
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  noise = noise || makeNoise()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

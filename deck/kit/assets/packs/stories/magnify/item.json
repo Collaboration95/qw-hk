@@ -1,0 +1,29 @@
+{
+  "title": "Magnify",
+  "kind": "story",
+  "mood": ["searching", "night", "precise"],
+  "suits": "detection and search claims: anomaly detection, monitoring, inspection, fraud, defects, 'finds the needle in the haystack'",
+  "tech": "canvas+js",
+  "duration": 1.45,
+  "params": {
+    "--field / --brand / --brand-2": "field; the lens rim, handle and mark badge (brand); the map's tint (brand-2)",
+    "--st-magnify-ember": "the colour the hidden cells glow (ember by default)",
+    "HOT": "the two hidden cells (column, row) in the script; the lens rests between them",
+    "P0 / C1 / C2": "the lens's glide path (script)"
+  },
+  "details": [
+    "the map is about 10,000 real cells: soft heat-map noise, lighter streets every 13 cells and a winding river",
+    "outside the lens the two hidden cells look like every other cell",
+    "inside the lens the map is 3.6× closer and the cells become rounded tiles with visible gaps",
+    "each hidden cell heats up only as the lens reaches it; the second lights a beat late",
+    "a soft ember glow around each, which keeps a faint out-of-step flicker after rest (ambient)",
+    "rings close around both cells once the lens has settled",
+    "the lens glides on a curve, overshoots and settles on a damped spring",
+    "its shadow is drawn from 70 ms earlier, so it lags and catches up",
+    "the lens tilts and the handle swings with the inertia, then hang straight",
+    "the glass reflection slides against the motion",
+    "a ring of darker glass at the rim, a double edge on the rim so a white brand still reads",
+    "the product's mark pops onto the rim at the end",
+    "a faint dot grid on the field fades out towards the map"
+  ]
+}

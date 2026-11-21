@@ -1,0 +1,26 @@
+{
+  "title": "VCR play",
+  "kind": "reveal",
+  "mood": ["found footage", "90s", "nostalgic", "uncanny", "home video"],
+  "suits": "talks and products about video, archives, memory, nostalgia, found footage, retro media, film and storytelling; anything that should feel like a tape someone pressed play on",
+  "tech": "canvas+css",
+  "duration": 2.3,
+  "params": {
+    "--field": "the tape's picture behind the title (any colour or gradient); or put an <img> in .rv-vcr-pic",
+    "--rv-vcr": "the VCR's blue screen before play",
+    "--brand": "the titler's hard drop-shadow tint",
+    "--rv-fs": "title size (shrinks to fit 1600 px)",
+    "__WORD__": "the title, set as a camcorder title overlay lower left"
+  },
+  "details": [
+    "before the press the VCR's blue is perfectly clean: no scanlines, no noise, because the deck generates it, not the tape",
+    "PLAY ▶ appears in OSD type the instant the press lands, the ▶ slightly widened like a real deck's glyph",
+    "a beat of pure blue (0.6 s) while the heads spin up",
+    "a band of tracking noise rolls up from the bottom: streaky rows, brightest in the middle, a magenta or teal line now and then",
+    "just under the band the fresh picture tears in a few thin slipped lines",
+    "the picture slips two frames of vertical hold (up, then down) and goes still",
+    "the title is a camcorder titler overlay: white, heavy, lower left, with a hard drop shadow",
+    "the OSD clears at 2.2 s, as decks do a couple of seconds after PLAY",
+    "the picture behind the title is softly blurred and sun-faded, so the title stays crisp"
+  ]
+}

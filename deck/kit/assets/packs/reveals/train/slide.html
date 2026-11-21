@@ -1,0 +1,449 @@
+<!-- 0 · Intro reveal "train": a travel-poster dusk with rails, poles and a low sun. The first press brings a little steam
+     train in from the left, pulling one flatcar per letter of the name and a brake van that carries the mark. It brakes
+     (sparks at the wheels, the couplings bump in a ripple), the mark and the letters lift off their wagons into the
+     wordmark above, the whistle puffs, the drivers slip once and it chugs out to the right. ~2.4 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (sky; hills, ground, sun and steam are tinted from it), --brand (the train, the mark's enamel plate),
+     --brand-2 (brass, lamps) on #s__N__. Ink is the engine's: letters use --ink-auto, the mark --on-brand. __MARK__ =
+     stroke paths in a 24 × 24 box (use-pack --mark). One flatcar per character up to 12, two per wagon beyond; the train
+     and the wordmark shrink to fit. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <div class="rv-train-land" aria-hidden="true">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <defs>
+        <radialGradient id="rv-train-sun-__N__" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="var(--rv-sun)" stop-opacity=".95"/>
+          <stop offset=".62" stop-color="var(--rv-sun)" stop-opacity=".55"/>
+          <stop offset="1" stop-color="var(--rv-sun)" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="rv-train-ground-__N__" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--rv-ground)"/>
+          <stop offset="1" stop-color="var(--rv-ground-2)"/>
+        </linearGradient>
+        <filter id="rv-train-grain-__N__" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" stitchTiles="stitch"/>
+          <feColorMatrix values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1"/>
+        </filter>
+      </defs>
+      <circle cx="1490" cy="742" r="200" fill="url(#rv-train-sun-__N__)"/>
+      <circle cx="1490" cy="742" r="92" fill="var(--rv-sun)" opacity=".9"/>
+      <path class="rv-train-far" d="M0 742 C120 716 210 724 320 706 S520 690 640 712 S860 744 990 722 S1210 682 1340 700 S1560 736 1700 716 S1860 700 1920 708 V820 H0Z"/>
+      <path class="rv-train-near" d="M0 776 C160 760 300 770 430 756 S700 742 820 760 S1080 786 1240 768 S1520 748 1660 764 S1860 778 1920 770 V820 H0Z"/>
+      <g class="rv-train-poles"></g>
+      <rect x="0" y="802" width="1920" height="278" fill="url(#rv-train-ground-__N__)"/>
+      <g class="rv-train-track"></g>
+      <rect class="rv-train-grain" x="0" y="0" width="1920" height="1080" filter="url(#rv-train-grain-__N__)"/>
+    </svg>
+  </div>
+  <canvas class="rv-train-steam" width="1920" height="1080" aria-hidden="true"></canvas>
+  <svg class="rv-train-train" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <canvas class="rv-train-sparks" width="1920" height="220" aria-hidden="true"></canvas>
+  <div class="rv-train-row" role="img" aria-label="__WORD__">
+    <span class="rv-train-mk"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg></span>
+    <span class="rv-train-word">__WORD__</span>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(180deg,#C9582F 0%,#E0794A 70%);   /* the sky; everything in the land is tinted from it */
+  --brand:var(--deck-brand,#1E2340); --brand-2:var(--deck-brand-2,#F2BF4A);              /* the train and the mark plate; brass and lamps */
+  --rv-fs:164px;                                   /* wordmark size (shrinks for long names) */
+  --rv-y:392px;                                    /* lockup centre line */
+  /* --rv-* below are derived from the three brand vars by the script; these are only first-paint fallbacks */
+  --rv-sun:#FFC98A; --rv-far:#B9512E; --rv-near:#A8462A; --rv-ground:#8F3A24; --rv-ground-2:#6E2B1C;
+  --rv-ink:#1E2340; --rv-ink-2:#2D3459; --rv-ink-3:#12152A; --rv-van:#2D3459;
+  --rv-brass:#F2BF4A; --rv-red:#E5483A; --rv-steel:#C8CCD8; --rv-cream:#FFF2DC; --rv-glass:#FFD27A;
+  padding:0
+}
+#s__N__ .rv-train-land{position:absolute;inset:0;z-index:0;pointer-events:none}
+#s__N__ .rv-train-land svg{position:absolute;inset:0;width:100%;height:100%}
+#s__N__ .rv-train-far{fill:var(--rv-far);opacity:.75}
+#s__N__ .rv-train-near{fill:var(--rv-near)}
+#s__N__ .rv-train-grain{opacity:.07}
+#s__N__ .rv-train-steam{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;pointer-events:none}
+#s__N__ .rv-train-train{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:2;pointer-events:none;overflow:visible}
+#s__N__ .rv-train-sparks{position:absolute;left:0;top:680px;width:1920px;height:220px;z-index:4;pointer-events:none}
+#s__N__ .rv-train-row{position:absolute;left:0;right:0;z-index:3;top:calc(var(--rv-y) - var(--rv-fs) * .65);height:calc(var(--rv-fs) * 1.3);
+  display:flex;justify-content:center;align-items:center;white-space:nowrap;font-size:var(--rv-fs);font-weight:760;letter-spacing:-.04em;line-height:1;color:var(--ink-auto,var(--rv-cream))}
+/* the mark rides on an enamel plate in the brand colour, ringed in brass */
+#s__N__ .rv-train-mk{flex:none;display:grid;place-items:center;width:.86em;height:.86em;margin-right:.26em;border-radius:50%;background:var(--brand);transform-origin:50% 50%;will-change:transform;
+  box-shadow:inset 0 0 0 .03em var(--brand-2),inset 0 .05em .06em rgba(255,255,255,.16),0 .03em .08em rgba(0,0,0,.22)}
+#s__N__ .rv-train-mk svg{display:block;width:60%;height:60%;overflow:visible}
+#s__N__ .rv-train-mk path{fill:none;stroke:var(--on-brand,#fff);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-train-word{display:inline-block;position:relative;top:-.02em}
+#s__N__ .rv-train-word i{font-style:normal;display:inline-block;transform-origin:50% 100%;will-change:transform}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s)
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const P = (t, t0, d) => clamp((t - t0) / d)
+const E = {
+  cubicInOut: p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2,
+  expoOut: p => p >= 1 ? 1 : 1 - Math.pow(2, -10 * p),
+  backOut: (p, s = 1.5) => 1 + (s + 1) * Math.pow(p - 1, 3) + s * Math.pow(p - 1, 2),
+  sine: p => .5 - .5 * Math.cos(Math.PI * p),
+}
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const css = n => getComputedStyle(el).getPropertyValue(n).trim()
+
+/* ---------- brand: every colour below comes from --field, --brand, --brand-2; ink follows the engine's rule ---------- */
+const C2 = document.createElement('canvas').getContext('2d')
+const rgb = s => { C2.fillStyle = '#010203'; C2.fillStyle = String(s || '').trim() || '#010203'; const v = C2.fillStyle; if (v[0] === '#') return [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0] }
+const stops = s => (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl|oklch|oklab|lab|lch)a?\([^()]*\)/gi) || [s]).map(rgb)
+const hex = c => '#' + c.map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
+const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+const lum = ([r, g, b]) => { const f = c => (c /= 255) <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) }
+const WH = [255, 255, 255], BK = [0, 0, 0]
+const fieldCss = css('--field'), FS = stops(fieldCss), FAVG = FS.reduce((a, c) => a.map((v, i) => v + c[i] / FS.length), [0, 0, 0])
+const INK = rgb(Deck.inkOn?.(fieldCss) || '#fff'), BR = rgb(css('--brand')), BR2 = rgb(css('--brand-2'))
+const DARK = lum(FAVG) < .035, LIGHT = lum(FAVG) > .55
+const tone = k => hex(DARK ? mix(FAVG, WH, k * .5) : mix(FAVG, BK, k))           // depth: darker on a lit sky, lighter at night
+const deep = (c, k) => hex(lum(c) < .08 ? mix(c, WH, k * .6) : mix(c, BK, k))
+;[['--rv-far', tone(.1)], ['--rv-near', tone(.17)], ['--rv-ground', tone(.3)], ['--rv-ground-2', tone(.42)], ['--rv-sun', hex(mix(FAVG, [255, 246, 222], LIGHT ? .7 : .5))],
+  ['--rv-ink', hex(BR)], ['--rv-ink-2', deep(BR, .2)], ['--rv-ink-3', deep(BR, .4)], ['--rv-van', deep(BR, .22)],
+  ['--rv-brass', hex(BR2)], ['--rv-red', hex(mix(BR2, [226, 64, 48], .55))], ['--rv-steel', hex(mix(BR, WH, .62))], ['--rv-glass', hex(mix(BR2, WH, .45))], ['--rv-cream', hex(INK)],
+].forEach(([k, v]) => el.style.setProperty(k, v))
+const STEAM = [mix(FAVG, WH, LIGHT ? .85 : .8), DARK ? mix(FAVG, WH, .38) : mix(FAVG, BK, LIGHT ? .3 : .22)]   // sunlit top, shaded underside
+const SPARK = LIGHT ? ['#FFE08A', '#FF8A1E', '#D9480F'] : ['#FFF6CF', '#FFC24A', '#FF7A2E']
+
+/* ---------- the land: track and telegraph poles (drawn once) ---------- */
+const RY = 800                                   // rail top, stage px
+const track = $('.rv-train-track'), poles = $('.rv-train-poles')
+for (let x = -6; x < 1930; x += 34) mk('rect', { x, y: RY + 9, width: 22, height: 7, rx: 1.5, fill: 'var(--rv-ink-3)', opacity: .55 }, track)
+mk('rect', { x: 0, y: RY, width: 1920, height: 5, fill: 'var(--rv-ink-3)', opacity: .8 }, track)
+mk('rect', { x: 0, y: RY, width: 1920, height: 1.5, fill: 'var(--rv-sun)', opacity: .55 }, track)  // the sun catches the railhead
+mk('rect', { x: 0, y: RY + 5, width: 1920, height: 4, fill: 'var(--rv-ground-2)', opacity: .9 }, track)
+const PX = [70, 330, 590, 850, 1110, 1370, 1630, 1890], PT = 622, PB = 782
+PX.forEach(x => {
+  mk('rect', { x: x - 2.5, y: PT, width: 5, height: PB - PT, fill: 'var(--rv-ground)', opacity: .7 }, poles)
+  mk('rect', { x: x - 22, y: PT + 12, width: 44, height: 4, rx: 1, fill: 'var(--rv-ground)', opacity: .7 }, poles)
+  ;[-16, 16].forEach(dx => mk('circle', { cx: x + dx, cy: PT + 10, r: 2.6, fill: 'var(--rv-sun)', opacity: .7 }, poles))
+})
+for (let i = 0; i < PX.length - 1; i++) [-16, 16].forEach((dx, k) => {
+  const a = PX[i] + dx, b = PX[i + 1] + dx, y = PT + 10, sag = 26 + k * 4      // wires sag between poles
+  mk('path', { d: `M${a} ${y} Q${(a + b) / 2} ${y + sag * 2} ${b} ${y}`, fill: 'none', stroke: 'var(--rv-ground)', 'stroke-width': 1.4, opacity: .55 }, poles)
+})
+
+/* ---------- the word: one <i> per letter ---------- */
+const wordEl = $('.rv-train-word'), markEl = $('.rv-train-mk')
+const text = wordEl.textContent
+wordEl.textContent = ''
+const letters = []
+for (const ch of text) {
+  if (/\s/.test(ch)) { wordEl.appendChild(document.createTextNode(ch)); continue }
+  const i = document.createElement('i'); i.textContent = ch; wordEl.appendChild(i); letters.push(i)
+}
+const n = letters.length, PER = Math.max(1, Math.ceil(n / 12)), NW = Math.max(1, Math.ceil(n / PER))   // characters per wagon, wagons
+const row = $('.rv-train-row'), FS0 = parseFloat(css('--rv-fs'))
+const fit = () => { el.style.removeProperty('--rv-fs'); const w = markEl.offsetWidth * 1.3 + wordEl.offsetWidth; if (w > 1560) el.style.setProperty('--rv-fs', (FS0 * 1560 / w).toFixed(1) + 'px') }
+fit()
+document.fonts?.ready.then(() => { const keep = letters.map(l => l.style.transform); letters.forEach(l => l.style.transform = 'none'); fit(); letters.forEach((l, i) => l.style.transform = keep[i]) })
+
+/* ---------- the train (local units, rail top = y 0, x from the rear) ---------- */
+const VAN = 112, WAG = PER > 1 ? 86 + 52 * (PER - 1) : 86, GAP = 10, LOCO = 226
+const W = VAN + GAP + NW * (WAG + GAP) + LOCO
+const K = Math.min(1.7, 1700 / W)
+const trainSvg = $('.rv-train-train')
+const trainG = mk('g', {}, trainSvg)
+const shadow = mk('rect', { x: 0, y: RY + 6, height: 10, rx: 5, fill: 'var(--rv-ink-3)', opacity: .28 }, trainG)
+const wheel = (g, cx, r, spokes, big) => {
+  const w = mk('g', { transform: `translate(${cx},${-r})` }, g)
+  const rot = mk('g', {}, w)
+  mk('circle', { r, fill: 'var(--rv-ink-3)' }, rot)
+  mk('circle', { r: r - 3, fill: 'none', stroke: 'var(--rv-ink-2)', 'stroke-width': 2 }, rot)
+  for (let k = 0; k < spokes; k++) { const a = k / spokes * Math.PI * 2; mk('line', { x1: 0, y1: 0, x2: Math.cos(a) * (r - 3), y2: Math.sin(a) * (r - 3), stroke: 'var(--rv-ink-2)', 'stroke-width': big ? 2.4 : 2 }, rot) }
+  if (big) mk('path', { d: `M${-r + 4} 0 A${r - 4} ${r - 4} 0 0 0 ${r - 4} 0 L${r - 10} 0 A${r - 10} ${r - 10} 0 0 1 ${-r + 10} 0Z`, fill: 'var(--rv-ink-2)' }, rot)  // counterweight
+  mk('circle', { r: big ? 4.2 : 2.6, fill: 'var(--rv-brass)' }, rot)
+  return { rot, r, cx }
+}
+const vehicles = []
+// brake van: carries the mark and the red tail lamp
+{
+  const g = mk('g', {}, trainG), body = mk('g', {}, g)
+  mk('rect', { x: 10, y: -24, width: 92, height: 8, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 6, y: -84, width: 100, height: 62, rx: 6, fill: 'var(--rv-van)' }, body)
+  mk('rect', { x: 2, y: -90, width: 108, height: 9, rx: 3, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 38, y: -104, width: 34, height: 15, rx: 3, fill: 'var(--rv-van)' }, body)
+  mk('rect', { x: 34, y: -108, width: 42, height: 6, rx: 2, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 44, y: -101, width: 22, height: 8, rx: 1.5, fill: 'var(--rv-glass)' }, body)
+  mk('rect', { x: 14, y: -72, width: 14, height: 16, rx: 2, fill: 'var(--rv-glass)' }, body)
+  mk('rect', { x: 84, y: -72, width: 14, height: 16, rx: 2, fill: 'var(--rv-glass)' }, body)
+  mk('rect', { x: 6, y: -34, width: 100, height: 3, fill: 'var(--rv-brass)', opacity: .9 }, body)
+  mk('rect', { x: -4, y: -32, width: 8, height: 6, rx: 1, fill: 'var(--rv-red)' }, body)
+  mk('line', { x1: 4, y1: -62, x2: -3, y2: -62, stroke: 'var(--rv-ink-3)', 'stroke-width': 2 }, body)
+  mk('circle', { cx: -4, cy: -62, r: 9, fill: 'var(--rv-red)', opacity: .22 }, body)
+  mk('circle', { cx: -4, cy: -62, r: 4.5, fill: '#FF5A3D' }, body)
+  mk('circle', { cx: -5.2, cy: -63.2, r: 1.4, fill: '#FFD8B8' }, body)
+  const wh = [wheel(g, 30, 11, 6), wheel(g, 82, 11, 6)]
+  vehicles.push({ g, body, wh, x0: 0, w: VAN, kind: 'van', mark: [56, -54] })
+}
+for (let i = 0; i < NW; i++) {
+  const x0 = VAN + GAP + i * (WAG + GAP)
+  const g = mk('g', {}, trainG), body = mk('g', {}, g)
+  mk('rect', { x: -GAP, y: -26, width: GAP + 2, height: 3, fill: 'var(--rv-ink-3)' }, body)   // coupling
+  mk('rect', { x: 8, y: -24, width: WAG - 16, height: 8, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 0, y: -32, width: WAG, height: 9, rx: 2, fill: 'var(--rv-ink)' }, body)
+  mk('rect', { x: 0, y: -32, width: WAG, height: 2.2, rx: 1, fill: 'var(--rv-brass)' }, body)
+  mk('rect', { x: 2, y: -44, width: 4, height: 13, rx: 1, fill: 'var(--rv-ink)' }, body)
+  mk('rect', { x: WAG - 6, y: -44, width: 4, height: 13, rx: 1, fill: 'var(--rv-ink)' }, body)
+  const wh = [wheel(g, 20, 10, 6), wheel(g, WAG - 20, 10, 6)]
+  vehicles.push({ g, body, wh, x0, w: WAG, kind: 'wagon', i })
+}
+const loco = (() => {
+  const x0 = VAN + GAP + NW * (WAG + GAP)
+  const g = mk('g', {}, trainG), body = mk('g', {}, g)
+  mk('rect', { x: -GAP, y: -28, width: GAP + 2, height: 3, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 36, y: -48, width: 172, height: 14, fill: 'var(--rv-ink-3)' }, body)              // frame
+  mk('rect', { x: 0, y: -128, width: 58, height: 88, fill: 'var(--rv-ink)' }, body)                  // cab
+  mk('rect', { x: -6, y: -137, width: 70, height: 10, rx: 3, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 14, y: -116, width: 28, height: 24, rx: 4, fill: 'var(--rv-glass)' }, body)
+  mk('path', { d: 'M22 -92 C22 -100 25 -104 29 -104 C33 -104 36 -100 36 -92Z', fill: 'var(--rv-ink-2)' }, body)  // the driver
+  mk('rect', { x: 54, y: -104, width: 116, height: 54, fill: 'var(--rv-ink)' }, body)               // boiler
+  mk('rect', { x: 54, y: -101, width: 116, height: 5, fill: '#fff', opacity: .08 }, body)
+  ;[84, 116, 148].forEach(x => mk('rect', { x, y: -104, width: 3, height: 54, fill: 'var(--rv-brass)' }, body))
+  mk('rect', { x: 166, y: -107, width: 18, height: 58, rx: 4, fill: 'var(--rv-ink-3)' }, body)        // smokebox
+  mk('path', { d: 'M98 -104 Q98 -121 110 -121 Q122 -121 122 -104Z', fill: 'var(--rv-brass)' }, body)  // dome
+  mk('rect', { x: 150, y: -136, width: 14, height: 33, fill: 'var(--rv-ink-3)' }, body)              // chimney
+  mk('rect', { x: 146, y: -145, width: 22, height: 9, rx: 2, fill: 'var(--rv-ink-3)' }, body)
+  mk('rect', { x: 172, y: -118, width: 11, height: 11, rx: 2, fill: 'var(--rv-ink-3)' }, body)        // headlamp
+  mk('circle', { cx: 186, cy: -112.5, r: 9, fill: 'var(--rv-glass)', opacity: .25 }, body)
+  mk('circle', { cx: 184, cy: -112.5, r: 3.6, fill: 'var(--rv-cream)' }, body)
+  mk('rect', { x: 59, y: -141, width: 4, height: 6, fill: 'var(--rv-brass)' }, body)                   // whistle
+  mk('rect', { x: 50, y: -53, width: 152, height: 5, fill: 'var(--rv-ink-3)' }, body)                 // running board
+  mk('rect', { x: 50, y: -53, width: 152, height: 1.6, fill: 'var(--rv-brass)', opacity: .8 }, body)
+  mk('rect', { x: 172, y: -50, width: 32, height: 19, rx: 5, fill: 'var(--rv-ink-2)' }, body)          // cylinder
+  mk('rect', { x: 200, y: -48, width: 5, height: 15, rx: 2, fill: 'var(--rv-brass)' }, body)
+  mk('rect', { x: 204, y: -48, width: 10, height: 16, fill: 'var(--rv-red)' }, body)                    // buffer beam
+  mk('path', { d: 'M206 -32 H220 L232 -3 H206Z', fill: 'var(--rv-ink-3)' }, body)                     // pilot
+  ;[[211, -28, 214, -4], [217, -28, 222, -4], [222, -26, 228, -4]].forEach(([a, b, c, d]) => mk('line', { x1: a, y1: b, x2: c, y2: d, stroke: 'var(--rv-ink-2)', 'stroke-width': 1.6 }, body))
+  const wh = [wheel(g, 178, 11, 6), wheel(g, 200, 11, 6)]
+  const dr = [wheel(g, 76, 23, 10, true), wheel(g, 126, 23, 10, true)]
+  const rods = mk('g', {}, g)
+  mk('line', { x1: 146, y1: -40, x2: 176, y2: -40, stroke: 'var(--rv-steel)', 'stroke-width': 2, opacity: .7 }, rods)
+  const conn = mk('line', { stroke: 'var(--rv-steel)', 'stroke-width': 4, 'stroke-linecap': 'round' }, rods)
+  const coup = mk('line', { stroke: 'var(--rv-steel)', 'stroke-width': 5, 'stroke-linecap': 'round' }, rods)
+  const head = mk('rect', { width: 10, height: 7, rx: 1.5, fill: 'var(--rv-brass)' }, rods)
+  const pins = [mk('circle', { r: 3.4, fill: 'var(--rv-brass)' }, rods), mk('circle', { r: 3.4, fill: 'var(--rv-brass)' }, rods)]
+  const v = { g, body, wh, dr, conn, coup, head, pins, x0, w: LOCO, kind: 'loco' }
+  vehicles.push(v)
+  return v
+})()
+const LEN = K * W
+
+/* ---------- timing ---------- */
+const T_IN = 0.95, L0 = 1.0, LSPREAD = 0.3, LD = 0.5, D0 = 1.42, END = 2.4
+let Xs = 400, Dd = 1800, Acc = 3000
+const kin = t => {
+  if (t <= 0) return [-LEN - 40, 0]
+  if (t <= T_IN) { const p = t / T_IN; return [Xs - Dd * (1 - p) ** 2, 2 * Dd * (1 - p) / T_IN] }
+  if (t <= D0) return [Xs, 0]
+  const u = t - D0; return [Xs + .5 * Acc * u * u, Acc * u]
+}
+// couplings: a buffer ripple runs from the loco to the van when it stops; slack pulls out one by one when it starts
+const ripple = (t, j) => {                       // j = couplings from the loco
+  const a = t - T_IN - j * .028
+  let d = a > 0 ? 3.6 * Math.exp(-a / .13) * Math.sin(a / .2 * Math.PI * 2) : 0
+  if (t > D0) d += Math.max(kin(t - j * .03)[0] - kin(t)[0], -j * 3.2)
+  return d
+}
+
+/* ---------- precompute: wheel angles, chuffs, sparks (deterministic, so any t can be drawn) ---------- */
+let table = [], puffs = [], sparks = [], s0 = .5
+const DT = 1 / 240
+const prep = () => {
+  // the lockup's natural positions (offsets ignore transforms)
+  const sec = el
+  const off = e => { let x = 0, y = 0; while (e && e !== sec) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent } return [x, y] }
+  letters.forEach(l => { const [x, y] = off(l); l._x = x + l.offsetWidth / 2; l._y = y + l.offsetHeight; l._w = l.offsetWidth })
+  const [mx, my] = off(markEl); markEl._x = mx + markEl.offsetWidth / 2; markEl._y = my + markEl.offsetHeight / 2; markEl._s = markEl.offsetWidth
+  // which wagon each character rides, and where on it (side by side when a wagon carries two)
+  s0 = 56 * K / parseFloat(css('--rv-fs'))
+  letters.forEach((l, i) => { l._wi = Math.floor(i / PER) })
+  for (let w = 0; w < NW; w++) { const ls = letters.filter(l => l._wi === w), tot = ls.reduce((a, l) => a + l._w * s0, 0); let c = -tot / 2; ls.forEach(l => { l._wo = c + l._w * s0 / 2; c += l._w * s0 }) }
+  // stop where the cargo sits under the word
+  const cargoMid = (56 + VAN + GAP + (NW - 1) * (WAG + GAP) + WAG / 2) / 2
+  const wordMid = (markEl._x + (letters.length ? letters[n - 1]._x : markEl._x)) / 2
+  Xs = Math.max(20, Math.min(1900 - LEN, wordMid - K * cargoMid))
+  Dd = Xs + LEN
+  Acc = 2 * (1940 - Xs) / (END - D0) ** 2
+  const R = rng(11)
+  table = []; puffs = []; sparks = []
+  let thd = 0, thw = 0, lastChuff = -1, nextQ = Math.PI / 2, lastSpark = 0, lastStream = -1e9
+  const rd = 23 * K, rw = 11 * K
+  for (let t = 0; t <= END + 1e-6; t += DT) {
+    const [x, v] = kin(t)
+    const skid = t > .5 && t < T_IN ? 1 - .75 * E.sine(P(t, .5, .3)) : 1
+    const slip = t > D0 ? 26 * Math.sin(Math.PI * P(t, D0, .34)) : 0          // the drivers slip once on the start
+    thd += (v * skid / rd + slip) * DT
+    thw += v / rw * DT
+    table.push([x, v, thd, thw])
+    const chimX = x + K * (loco.x0 + 157), chimY = RY - K * 146
+    // exhaust beats: four per driver turn; steam shut off while braking; the first two on the start are big
+    if (thd >= nextQ) {
+      nextQ += Math.PI / 2
+      const steam = t < T_IN ? 1 - .85 * P(t, .3, .35) : t > D0 ? 1 : 0
+      if (steam > .05 && t - lastChuff > (t > D0 ? .06 : .032)) {
+        const first = t > D0 ? Math.max(0, 1 - (t - D0) / .45) : 0
+        puffs.push({ t, x: chimX, y: chimY, vx: v * .22, s: (.75 + .35 * R()) * (1 + .8 * first) * (t < T_IN ? .9 : 1), life: 1.25 + .5 * R(), a: .9 * steam, seed: R() * 6.28, up: 140 + 50 * R() })
+        lastChuff = t
+      }
+    }
+    // at speed the beats run together into one plume laid back over the train
+    if (t < T_IN && x - lastStream > 30 * K && v > 900) {
+      lastStream = x
+      const steam = 1 - .9 * P(t, .3, .35)
+      if (steam > .05) puffs.push({ t, x: chimX, y: chimY, vx: v * .18, s: .55 + .25 * R(), life: .9 + .4 * R(), a: .5 * steam, seed: R() * 6.28, up: 110 + 40 * R() })
+    }
+    // brake sparks: hotter and denser as it slows
+    if (t > .52 && t < T_IN - .02 && t - lastSpark > 1 / 90) {
+      lastSpark = t
+      const heat = E.sine(P(t, .52, .25))
+      const pts = [...loco.dr.map(w => loco.x0 + w.cx), loco.x0 + 178, 30, 82, ...[0, Math.floor(NW / 2), NW - 1].map(i => VAN + GAP + i * (WAG + GAP) + WAG - 20)]
+      for (const lx of pts) if (R() < .55 * heat + .15) sparks.push({ t, x: x + K * lx + (R() - .5) * 8, y: RY - 1, vx: v * (.35 + .5 * R()) + 60 * (R() - .3), vy: -(120 + 320 * R()), life: .16 + .2 * R() })
+    }
+  }
+  // safety valve feathers while it stands, then the whistle and the cylinder cocks on the start
+  const lx = Xs + K * loco.x0
+  ;[1.0, 1.12, 1.24].forEach((t, k) => puffs.push({ t, x: lx + K * 110, y: RY - K * 123, vx: 0, s: .32 + .06 * k, life: .9, a: .55, seed: k * 2.1, up: 90 }))
+  for (let k = 0; k < 5; k++) puffs.push({ t: D0 - .2 + k * .03, x: lx + K * 61, y: RY - K * 143, vx: 0, s: .22, life: .55, a: .9, seed: k * 1.7, up: 270 })
+  for (let k = 0; k < 14; k++) { const t = D0 + .02 + k * .028; const [x] = kin(t); puffs.push({ t, x: x + K * (loco.x0 + (k % 2 ? 212 : 176)), y: RY - K * 34, vx: (k % 2 ? 1 : -1) * (240 + 80 * R()), s: .5 + .25 * R(), life: .55, a: .75, seed: R() * 6, up: 20, low: 1 }) }
+}
+const at = t => { const i = clamp(Math.floor(t / DT), 0, table.length - 1); return table[i] || [-LEN - 40, 0, 0, 0] }
+
+/* ---------- steam and sparks (canvas) ---------- */
+const sc = $('.rv-train-steam'), sx = sc.getContext('2d')
+const kc = $('.rv-train-sparks'), kx = kc.getContext('2d'), KTOP = 680
+const sprite = col => {
+  const c = document.createElement('canvas'); c.width = c.height = 128
+  const g = c.getContext('2d'), gr = g.createRadialGradient(64, 64, 0, 64, 64, 64)
+  gr.addColorStop(0, col); gr.addColorStop(.5, col.replace(/[\d.]+\)$/, '.78)')); gr.addColorStop(1, col.replace(/[\d.]+\)$/, '0)'))
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return c
+}
+let lit = null, shade = null
+const LOBES = [[0, 0, 1], [.4, .62, .7], [2.3, .58, .66], [3.6, .55, .6], [5.1, .6, .56]]
+const drawSteam = t => {
+  sx.clearRect(0, 0, 1920, 1080)
+  if (!lit) { lit = sprite(`rgba(${STEAM[0].map(Math.round)},1)`); shade = sprite(`rgba(${STEAM[1].map(Math.round)},1)`) }
+  for (const p of puffs) {
+    const a = t - p.t
+    if (a < 0 || a > p.life) continue
+    const q = a / p.life
+    const x = p.x + p.vx * (1 - Math.exp(-5 * a)) / 5 - 90 * a
+    const y = p.y - p.up * K * (1 - Math.exp(-2.4 * a)) / 2.4 - 16 * a + (p.low ? 30 * a : 0)
+    const r = (11 + 34 * (1 - Math.exp(-2.6 * a))) * p.s * K
+    const alpha = p.a * Math.pow(1 - q, 1.6) * Math.min(1, a / .05)
+    for (let j = 0; j < LOBES.length; j++) {                  // a cauliflower: one big lobe, smaller ones around it
+      const [ang, dist, size] = LOBES[j], spread = .55 + .45 * q
+      const ox = Math.cos(ang + p.seed) * r * dist * spread, oy = Math.sin(ang + p.seed) * r * dist * spread * .75, rr = r * size
+      sx.globalAlpha = alpha * .5
+      sx.drawImage(shade, x + ox - rr, y + oy - rr + rr * .24, rr * 2, rr * 2)
+      sx.globalAlpha = alpha * (.95 - .3 * q)                     // thins as it rises
+      sx.drawImage(lit, x + ox - rr, y + oy - rr - rr * .05, rr * 2, rr * 2)
+    }
+  }
+  sx.globalAlpha = 1
+}
+const drawSparks = t => {
+  kx.clearRect(0, 0, 1920, 220)
+  kx.lineCap = 'round'
+  for (const s of sparks) {
+    const a = t - s.t
+    if (a < 0 || a > s.life) continue
+    const q = a / s.life, x = s.x + s.vx * a, y = s.y + s.vy * a + 900 * a * a - KTOP
+    const vx = s.vx, vy = s.vy + 1800 * a
+    kx.strokeStyle = SPARK[q < .3 ? 0 : q < .65 ? 1 : 2]
+    kx.globalAlpha = 1 - q * q
+    kx.lineWidth = 2.2 - q
+    kx.beginPath(); kx.moveTo(x, y); kx.lineTo(x - vx * .018, y - vy * .018); kx.stroke()
+  }
+  kx.globalAlpha = 1
+}
+
+/* ---------- pose ---------- */
+const dsin = (a, amp, tau, per) => a > 0 ? amp * Math.exp(-a / tau) * Math.sin(a / per * Math.PI * 2) : 0
+const pose = t => {
+  const hidden = t < 0, done = t >= END
+  trainSvg.style.visibility = hidden || done ? 'hidden' : 'visible'
+  if (hidden || done) { sx.clearRect(0, 0, 1920, 1080); kx.clearRect(0, 0, 1920, 220) }
+  const [x, v, thd, thw] = hidden ? [-LEN - 40, 0, 0, 0] : at(t)
+  if (!hidden && !done) {
+    const pitch = dsin(t - T_IN + .06, -1.1, .16, .5) + (t > D0 ? -.5 * Math.sin(Math.PI * P(t, D0, .4)) : 0)   // nose dips on the stop, squats on the start
+    for (const vh of vehicles) {
+      const j = vh.kind === 'loco' ? 0 : vh.kind === 'van' ? NW + 1 : NW - vh.i
+      const vx = x + K * vh.x0 + ripple(t, j)
+      vh.g.setAttribute('transform', `translate(${vx.toFixed(2)},${RY}) scale(${K})`)
+      for (const w of vh.wh) w.rot.setAttribute('transform', `rotate(${(thw * 57.2958).toFixed(1)})`)
+      if (vh.kind === 'wagon') {
+        const lift = dsin(t - (L0 + LSPREAD * (vh.i * PER + 1) / (n + 1)) - .05, -2.4, .12, .2)   // springs back up when unloaded
+        vh.body.setAttribute('transform', `translate(0,${lift.toFixed(2)})`)
+      }
+      if (vh.kind === 'van') vh.body.setAttribute('transform', `translate(0,${dsin(t - L0 - .05, -2, .12, .2).toFixed(2)})`)
+    }
+    loco.body.setAttribute('transform', `rotate(${pitch.toFixed(3)} 100 0)`)
+    // rods: crank pins on the drivers, a connecting rod to the crosshead
+    const pin = w => [w.cx + Math.cos(thd) * 11, -23 + Math.sin(thd) * 11]
+    const [p1, p2] = loco.dr.map(pin)
+    loco.dr.forEach(w => w.rot.setAttribute('transform', `rotate(${(thd * 57.2958).toFixed(1)})`))
+    loco.pins[0].setAttribute('cx', p1[0].toFixed(2)); loco.pins[0].setAttribute('cy', p1[1].toFixed(2))
+    loco.pins[1].setAttribute('cx', p2[0].toFixed(2)); loco.pins[1].setAttribute('cy', p2[1].toFixed(2))
+    loco.coup.setAttribute('x1', p1[0].toFixed(2)); loco.coup.setAttribute('y1', p1[1].toFixed(2))
+    loco.coup.setAttribute('x2', p2[0].toFixed(2)); loco.coup.setAttribute('y2', p2[1].toFixed(2))
+    const chx = p2[0] + Math.sqrt(40 * 40 - (p2[1] + 40) ** 2)
+    loco.conn.setAttribute('x1', p2[0].toFixed(2)); loco.conn.setAttribute('y1', p2[1].toFixed(2))
+    loco.conn.setAttribute('x2', chx.toFixed(2)); loco.conn.setAttribute('y2', -40)
+    loco.head.setAttribute('x', (chx - 5).toFixed(2)); loco.head.setAttribute('y', -43.5)
+    shadow.setAttribute('x', (x + 6).toFixed(1)); shadow.setAttribute('width', (LEN - 10).toFixed(1))
+    drawSteam(t); drawSparks(t)
+  }
+  // the cargo: mark on the van side, letters on the flatcars; then they lift into the lockup
+  const deckY = RY - K * 32
+  const rip = j => ripple(t, j)
+  letters.forEach((l, i) => {
+    if (hidden) { l.style.opacity = 0; return }
+    l.style.opacity = 1
+    const lt = L0 + LSPREAD * (i + 1) / (n + 1)
+    const p = P(t, lt, LD)
+    if (p >= 1 || done) { l.style.transform = 'none'; return }
+    const wx = x + K * (VAN + GAP + l._wi * (WAG + GAP) + WAG / 2) + l._wo + rip(NW - l._wi) - l._x
+    const wy = deckY - l._y
+    const squash = t < lt && t > lt - .1 ? 1 - .12 * Math.sin(Math.PI * P(t, lt - .1, .1)) : 1   // a crouch before the hop
+    const ex = E.cubicInOut(p), ey = E.backOut(p, 1.1), es = E.expoOut(p)
+    const tx = wx * (1 - ex), ty = wy * (1 - ey), s = s0 + (1 - s0) * es
+    const tilt = Math.sin(Math.PI * p) * (i - (n - 1) / 2) * -.6
+    l.style.transform = `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) rotate(${tilt.toFixed(2)}deg) scale(${(s * (2 - squash)).toFixed(4)},${(s * squash).toFixed(4)})`
+  })
+  if (hidden) { markEl.style.opacity = 0; return }
+  markEl.style.opacity = 1
+  const mp = P(t, L0 - .04, LD + .04)
+  if (mp >= 1 || done) { markEl.style.transform = 'none'; return }
+  const ms = 40 * K / markEl._s
+  const vx = x + K * 56 + rip(NW + 1) - markEl._x, vy = RY - K * 54 - markEl._y
+  const ex = E.cubicInOut(mp), ey = E.backOut(mp, 1.1)
+  markEl.style.transform = `translate(${(vx * (1 - ex)).toFixed(2)}px,${(vy * (1 - ey)).toFixed(2)}px) rotate(${(-14 * (1 - E.cubicInOut(mp))).toFixed(2)}deg) scale(${(ms + (1 - ms) * E.expoOut(mp)).toFixed(4)})`
+}
+
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  letters.forEach(l => l.style.transform = 'none'); markEl.style.transform = 'none'
+  prep()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

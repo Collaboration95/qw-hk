@@ -1,0 +1,27 @@
+{
+  "title": "Two accounts",
+  "kind": "story",
+  "mood": ["precise", "forensic", "calm"],
+  "suits": "reconciliation, audit, matching and anomaly claims: two records of the same thing (invoice vs payment, order vs shipment, contract vs claim) and the one line they disagree on",
+  "tech": "html+svg+css",
+  "duration": 1.45,
+  "params": {
+    "--field / --brand / --brand-2": "field; the question chip (brand, with the mark); the match lines (brand-2)",
+    "--st-two-accounts-alert": "the mismatch colour (alert coral by default)",
+    ".st-two-accounts-row": "four label + value rows per document; the third (.st-two-accounts-off) disagrees",
+    "<u> in the values": "the digits that differ get an underline"
+  },
+  "details": [
+    "the two documents slide in from opposite sides, each turned a little, and settle with a 10 px overshoot",
+    "each has its own soft shadow that starts a beat late and catches up",
+    "a paperclip on the invoice, a folded dog-ear on the bank record that unfolds as it lands",
+    "the match lines draw one after another, top to bottom, each a gentle S-curve",
+    "a white dot pops at each end of a line as it is reached",
+    "the mismatch line draws dashed in the alert colour",
+    "both amounts light up and pulse twice, the right one a beat after the left",
+    "only the two swapped digits are underlined (24 vs 42)",
+    "the question chip carries the product's mark, drops from above, squashes on the mismatch line, hops and swings to rest 4° off true",
+    "its shadow grows as it falls and tightens when it lands",
+    "a faint diagonal light band and a pool of light on the field, drawn from the field's own ink"
+  ]
+}

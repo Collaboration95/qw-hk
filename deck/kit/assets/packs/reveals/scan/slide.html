@@ -1,0 +1,232 @@
+<!-- 0 · Intro reveal "scan": a dark sea-teal field under a faint graticule. The first press sends a push-broom swath
+     across: a tiny satellite rides the top of a thin noisy scan line, the strip behind it lights up as the footprint, and
+     the mark and wordmark come out of it as if imaged: coarse false-colour blocks right behind the line, resolving
+     through finer and truer passes to sharp type about half a second later. Tick marks run along both swath edges as it
+     goes; the footprint and ticks fade once the image is in. ~2.3 s.
+     ← from slide 1 keeps the lockup up; 0 shows the empty field again. Reduced motion and print: the final lockup.
+     Brand: --field (the sea; graticule and terrain classes are tinted from it), --brand (the mark, the second pass),
+     --brand-2 (the first false-colour pass) on #s__N__. Ink is the engine's --ink-auto (wordmark, scan line, ticks).
+     __MARK__ = stroke paths in a 24 × 24 box (use-pack --mark); the canvas images them stroke for stroke. Long names
+     shrink to fit. -->
+<section class="slide" id="s__N__" aria-label="__WORD__">
+  <svg class="rv-scan-grid" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <filter id="rv-scan-grain-__N__" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3" stitchTiles="stitch"/>
+        <feColorMatrix values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1"/>
+      </filter>
+      <radialGradient id="rv-scan-vig-__N__" cx="50%" cy="46%" r="70%">
+        <stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="1"/>
+      </radialGradient>
+    </defs>
+    <g class="rv-scan-lines"></g>
+    <rect width="1920" height="1080" fill="url(#rv-scan-vig-__N__)" style="opacity:var(--rv-vig)"/>
+    <rect width="1920" height="1080" filter="url(#rv-scan-grain-__N__)" opacity=".07"/>
+  </svg>
+  <canvas class="rv-scan-fx" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div class="rv-scan-row" role="img" aria-label="__WORD__">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg>
+    <span class="rv-scan-word">__WORD__</span>
+  </div>
+</section>
+
+<style>
+#s__N__{
+  --field:linear-gradient(180deg,#082F35 0%,#0C4046 100%);   /* the sea under the swath */
+  --brand:var(--deck-brand,#4BF0C6); --brand-2:var(--deck-brand-2,#FFB04A);            /* the mark and second pass; the first false-colour pass */
+  --rv-fs:172px;                                 /* wordmark size (shrinks for long names) */
+  --rv-y:528px;
+  /* derived by the script from the brand vars; first-paint fallbacks only */
+  --rv-grid:#2A7A78; --rv-acc:#C9FFF0; --rv-vig:.38;
+  padding:0
+}
+#s__N__ .rv-scan-grid{position:absolute;inset:0;width:1920px;height:1080px;z-index:0;pointer-events:none}
+#s__N__ .rv-scan-lines path{fill:none;stroke:var(--rv-grid);stroke-width:1;opacity:.28}
+#s__N__ .rv-scan-fx{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;pointer-events:none}
+#s__N__ .rv-scan-row{position:absolute;left:0;right:0;z-index:2;top:calc(var(--rv-y) - var(--rv-fs) * .65);height:calc(var(--rv-fs) * 1.3);display:flex;justify-content:center;align-items:center;
+  font-size:var(--rv-fs);font-weight:680;letter-spacing:-.035em;line-height:1;color:var(--ink-auto,#fff);white-space:nowrap}
+#s__N__ .rv-scan-row svg.mark{width:.86em;height:.86em;margin-right:.26em;flex:none;overflow:visible}
+#s__N__ .rv-scan-row svg.mark path{fill:none;stroke:var(--brand);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .rv-scan-word i{font-style:normal;display:inline-block}
+</style>
+
+<script>
+const el = document.getElementById('s__N__')
+const NS = 'http://www.w3.org/2000/svg'
+const $ = s => el.querySelector(s)
+const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e }
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const P = (t, t0, d) => clamp((t - t0) / d)
+const rng = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+const cssv = n => getComputedStyle(el).getPropertyValue(n).trim()
+
+/* ---------- brand: every colour comes from --field, --brand, --brand-2; ink follows the engine's rule ---------- */
+const C2 = document.createElement('canvas').getContext('2d')
+const rgb = s => { C2.fillStyle = '#010203'; C2.fillStyle = String(s || '').trim() || '#010203'; const v = C2.fillStyle; if (v[0] === '#') return [1, 3, 5].map(i => parseInt(v.slice(i, i + 2), 16)); const m = v.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0] }
+const stops = s => (String(s).match(/#[0-9a-f]{3,8}\b|(?:rgb|hsl|oklch|oklab|lab|lch)a?\([^()]*\)/gi) || [s]).map(rgb)
+const hex = c => '#' + c.map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
+const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t)
+const lum = ([r, g, b]) => { const f = c => (c /= 255) <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) }
+const fieldCss = cssv('--field'), FS = stops(fieldCss), FAVG = FS.reduce((a, c) => a.map((v, i) => v + c[i] / FS.length), [0, 0, 0])
+const INK = rgb(Deck.inkOn?.(fieldCss) || '#fff'), BR = rgb(cssv('--brand')), BR2 = rgb(cssv('--brand-2')), LIGHT = lum(FAVG) > .4, WHT = [255, 255, 255]
+const ACC = hex(mix(INK, BR, .3))                                                   // line, ticks, satellite: ink, tinted by the brand
+el.style.setProperty('--rv-grid', hex(mix(FAVG, INK, .32))); el.style.setProperty('--rv-acc', ACC); el.style.setProperty('--rv-vig', LIGHT ? .14 : .38)
+
+/* ---------- graticule: meridians bow gently, parallels are straight (drawn once) ---------- */
+const lines = $('.rv-scan-lines')
+for (let k = -6; k <= 6; k++) { const x = 960 + k * 168, b = k * 22; mk('path', { d: `M${x - b} -20 Q${x + b} 540 ${x - b} 1100` }, lines) }
+for (let y = 60; y < 1080; y += 120) mk('path', { d: `M-20 ${y} H1940` }, lines)
+
+/* ---------- the word: one <i> per letter so the canvas can image each glyph where the DOM puts it ---------- */
+const row = $('.rv-scan-row'), markEl = $('svg.mark'), word = $('.rv-scan-word'), text = word.textContent
+word.textContent = ''
+const letters = []
+for (const ch of text) { const i = document.createElement('i'); i.textContent = ch; word.appendChild(i); letters.push(i) }
+const FS0 = parseFloat(cssv('--rv-fs'))
+const fitRow = () => { el.style.removeProperty('--rv-fs'); const w = markEl.getBoundingClientRect().width / ((el.getBoundingClientRect().width / 1920) || 1) * 1.3 + word.offsetWidth; if (w > 1560) el.style.setProperty('--rv-fs', (FS0 * 1560 / w).toFixed(1) + 'px') }
+fitRow(); document.fonts?.ready.then(fitRow)
+
+const fx = $('.rv-scan-fx'), cx = fx.getContext('2d')
+const fs = () => parseFloat(cssv('--rv-fs')), Y = () => parseFloat(cssv('--rv-y'))
+const band = () => { const h = Math.round(fs() * 1.3 + 260); return { x: 0, y: Math.round(Y() - h / 2), w: 1920, h } }
+let sharp = null, levels = [], box = null, terrain = null
+const BLOCKS = [44, 26, 15, 8, 4]
+const off = e => { let x = 0, y = 0; while (e && e !== el) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent } return [x, y] }
+// the ground under the swath: a classified raster (value noise in five teal classes, 4 px cells), made once
+const makeTerrain = b => {
+  const W = b.w / 4, H = Math.ceil(b.h / 4), c = document.createElement('canvas'); c.width = W; c.height = H
+  const g = c.getContext('2d'), img = g.createImageData(W, H), Rn = rng(91)
+  const oct = [[28, .55], [11, .3], [4, .15]].map(([cell, amp]) => { const gw = Math.ceil(W / cell) + 2, gh = Math.ceil(H / cell) + 2; return { cell, amp, gw, v: Array.from({ length: gw * gh }, Rn) } })
+  const sm = x => x * x * (3 - 2 * x)
+  const val = (x, y) => oct.reduce((s, o) => { const fx = x / o.cell, fy = y / o.cell, ix = Math.floor(fx), iy = Math.floor(fy), ax = sm(fx - ix), ay = sm(fy - iy), V = (i, j) => o.v[(iy + j) * o.gw + ix + i]; return s + o.amp * ((V(0, 0) * (1 - ax) + V(1, 0) * ax) * (1 - ay) + (V(0, 1) * (1 - ax) + V(1, 1) * ax) * ay) }, 0)
+  const cls = [[0, 0, 0, 0], ...[.1, .17, .25, .34].map((k, i) => [...mix(FAVG, mix(INK, BR, .25), k), 60 + i * 22])]
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const v = val(x, y), k = v < .42 ? 0 : v < .5 ? 1 : v < .57 ? 2 : v < .64 ? 3 : 4, o = (y * W + x) * 4, edge = Math.min(1, y / 8, (H - 1 - y) / 8)
+    img.data[o] = cls[k][0]; img.data[o + 1] = cls[k][1]; img.data[o + 2] = cls[k][2]; img.data[o + 3] = cls[k][3] * edge
+  }
+  g.putImageData(img, 0, 0)
+  const big = document.createElement('canvas'); big.width = b.w; big.height = b.h
+  const bg = big.getContext('2d'); bg.imageSmoothingEnabled = false; bg.drawImage(c, 0, 0, W * 4, H * 4)
+  return big
+}
+// image the lockup into the raster, then pre-average it at each block size
+const prep = () => {
+  box = band()
+  if (!terrain || terrain.height !== box.h) terrain = makeTerrain(box)
+  const [rx, ry] = off(row)
+  const mb = markEl.getBoundingClientRect(), rb = row.getBoundingClientRect(), k = rb.width ? row.offsetWidth / rb.width : 1
+  const mx = rx + (mb.left - rb.left) * k, my = ry + (mb.top - rb.top) * k, ms = mb.width * k
+  const xs = letters.map(l => off(l)[0])
+  sharp = document.createElement('canvas'); sharp.width = box.w; sharp.height = box.h
+  const g = sharp.getContext('2d')
+  g.drawImage(terrain, 0, 0)
+  g.save(); g.translate(mx - box.x, my - box.y); g.scale(ms / 24, ms / 24)
+  for (const s of markEl.querySelectorAll('path,circle,rect')) {
+    let p
+    if (s.tagName === 'path') p = new Path2D(s.getAttribute('d'))
+    else if (s.tagName === 'circle') { p = new Path2D(); p.arc(+s.getAttribute('cx'), +s.getAttribute('cy'), +s.getAttribute('r'), 0, Math.PI * 2) }
+    else { p = new Path2D(); p.rect(+s.getAttribute('x') || 0, +s.getAttribute('y') || 0, +s.getAttribute('width'), +s.getAttribute('height')) }
+    const cs = getComputedStyle(s)
+    if (cs.fill !== 'none') { g.fillStyle = cs.fill; g.fill(p) }
+    if (cs.stroke !== 'none') { g.strokeStyle = cs.stroke; g.lineWidth = parseFloat(cs.strokeWidth) || 1; g.lineCap = cs.strokeLinecap; g.lineJoin = cs.strokeLinejoin; g.stroke(p) }
+  }
+  g.restore(); g.globalAlpha = 1
+  const cs = getComputedStyle(row)
+  g.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`
+  g.fillStyle = hex(INK); g.textBaseline = 'alphabetic'
+  const probe = document.createElement('span'); probe.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline'
+  word.appendChild(probe); const base = off(probe)[1]; probe.remove()
+  letters.forEach((l, i) => g.fillText(l.textContent, xs[i] - box.x, base - box.y))
+  // coarse passes in false colour (amber, then cyan), finer passes true
+  levels = BLOCKS.map((b, li) => {
+    const c = document.createElement('canvas'); c.width = Math.ceil(box.w / b); c.height = Math.ceil(box.h / b)
+    const q = c.getContext('2d'); q.imageSmoothingEnabled = true; q.imageSmoothingQuality = 'high'
+    q.drawImage(sharp, 0, 0, c.width * b, c.height * b, 0, 0, c.width, c.height)
+    if (li < 2) { q.globalCompositeOperation = 'source-atop'; q.fillStyle = hex(li === 0 ? BR2 : mix(BR, WHT, .2)); q.globalAlpha = li === 0 ? .85 : .55; q.fillRect(0, 0, c.width, c.height) }
+    return { c, b }
+  })
+}
+
+/* ---------- timing: the line crosses the whole slide at a constant speed ---------- */
+const S0 = .08, SD = 1.3, AGES = [.07, .15, .24, .33, .44], FADE = [1.62, .6], END = 2.3
+const V = 2000 / SD, L0 = -40
+const lineX = t => L0 + V * (t - S0)
+const draw = t => {
+  cx.clearRect(0, 0, 1920, 1080)
+  if (!box || t < S0 - .05 || t >= END) return
+  const sx = lineX(t), top = box.y, bot = box.y + box.h
+  const fade = 1 - P(t, FADE[0], FADE[1])
+  const acc = ACC, glow = BR.map(Math.round).join(',')
+  const edge = a => sx - a * V
+  cx.imageSmoothingEnabled = false
+  // resolved: the terrain alone (the DOM type sits on top), fading out once the pass is done
+  const xr = Math.min(1920, edge(AGES[AGES.length - 1]))
+  if (xr > 0) { cx.save(); cx.globalAlpha = fade; cx.beginPath(); cx.rect(0, top, xr, box.h); cx.clip(); cx.drawImage(terrain, box.x, box.y); cx.restore() }
+  for (let i = levels.length - 1; i >= 0; i--) {
+    const xa = Math.max(0, edge(AGES[i])), xb = Math.min(1920, edge(i ? AGES[i - 1] : 0))
+    if (xb <= xa) continue
+    cx.save(); cx.globalAlpha = fade; cx.beginPath(); cx.rect(xa, top, xb - xa, box.h); cx.clip()
+    const { c, b } = levels[i]
+    cx.drawImage(c, box.x, box.y, c.width * b, c.height * b)
+    if (i === 0) { cx.globalCompositeOperation = 'lighter'; cx.globalAlpha = .3 * fade; cx.drawImage(c, box.x + 6, box.y, c.width * b, c.height * b) }   // newest column: a little misregistration
+    cx.restore()
+  }
+  const x1 = Math.min(1920, sx)
+  // ticks along both swath edges, a long one every fifth, plus the edge rules
+  cx.fillStyle = acc
+  for (let x = 12; x < x1; x += 24) {
+    const long = Math.round((x - 12) / 24) % 5 === 0, h = long ? 16 : 7
+    cx.globalAlpha = (long ? .75 : .45) * fade
+    cx.fillRect(x, top - h - 3, 1.5, h); cx.fillRect(x, bot + 3, 1.5, h)
+  }
+  cx.globalAlpha = .55 * fade; cx.fillRect(0, top - 2, x1, 1); cx.fillRect(0, bot + 1, x1, 1); cx.globalAlpha = 1
+  if (sx > 1960) return
+  // the scan line: bright, thin, a trailing glow, noise that changes every frame
+  const gl = cx.createLinearGradient(sx - 110, 0, sx + 4, 0)
+  gl.addColorStop(0, `rgba(${glow},0)`); gl.addColorStop(1, `rgba(${glow},.34)`)
+  cx.fillStyle = gl; cx.fillRect(sx - 110, top, 114, box.h)
+  cx.fillStyle = acc; cx.fillRect(sx - 1, top - 46, 2.5, box.h + 92)
+  const fr = Math.floor(t * 60), rr = rng(fr * 31 + 7)
+  for (let k = 0; k < 40; k++) { cx.globalAlpha = .4 + .6 * rr(); cx.fillStyle = rr() < .5 ? hex(INK) : `rgb(${glow})`; cx.fillRect(sx - 7 + rr() * 12, top + rr() * box.h, 1 + rr() * 3, 1 + rr() * 2) }
+  cx.globalAlpha = 1
+  // the satellite riding ahead of the line's top, its ground track dashed behind it
+  const yS = top - 92
+  cx.strokeStyle = acc; cx.globalAlpha = .45; cx.setLineDash([5, 9]); cx.beginPath(); cx.moveTo(0, yS); cx.lineTo(sx, yS); cx.stroke(); cx.setLineDash([]); cx.globalAlpha = 1
+  cx.save(); cx.translate(sx, yS)
+  cx.fillStyle = acc; cx.fillRect(-6, -6, 12, 12)
+  cx.fillStyle = `rgb(${glow})`; cx.fillRect(-31, -4, 20, 8); cx.fillRect(11, -4, 20, 8)
+  cx.fillStyle = `rgba(${FAVG.map(Math.round)},.6)`; for (let q = 0; q < 4; q++) { cx.fillRect(-29 + q * 5, -4, 1, 8); cx.fillRect(13 + q * 5, -4, 1, 8) }
+  cx.fillStyle = acc; cx.fillRect(-11, -.75, 5, 1.5); cx.fillRect(6, -.75, 5, 1.5)
+  cx.globalAlpha = Math.sin(t * 38) > 0 ? 1 : .25; cx.fillStyle = '#FF6B5A'; cx.fillRect(-1.5, -9, 3, 3)   // a beacon blinking out of step
+  cx.restore(); cx.globalAlpha = .14; cx.fillStyle = acc
+  cx.beginPath(); cx.moveTo(sx - 3, yS + 8); cx.lineTo(sx + 3, yS + 8); cx.lineTo(sx + 1.5, top - 46); cx.lineTo(sx - 1.5, top - 46); cx.fill(); cx.globalAlpha = 1
+}
+const pose = t => {
+  if (t < 0) { row.style.clipPath = 'inset(0 100% 0 0)'; cx.clearRect(0, 0, 1920, 1080); return }
+  if (t >= END || !box) { row.style.clipPath = 'none'; cx.clearRect(0, 0, 1920, 1080); return }
+  // the DOM type shows only where the image has fully resolved
+  const done = lineX(t) - AGES[AGES.length - 1] * V
+  const [rx] = off(row)
+  row.style.clipPath = `inset(-60px ${Math.max(0, row.offsetWidth - (done - rx))}px -60px 0)`
+  draw(t)
+}
+
+let raf = 0, played = false
+const show = mode => {
+  cancelAnimationFrame(raf)
+  played = mode !== 'empty'
+  if (mode !== 'play') return pose(mode === 'done' ? END : -1)
+  prep()
+  const t0 = performance.now()
+  const tick = () => { const t = (performance.now() - t0) / 1000; pose(t); if (t < END) raf = requestAnimationFrame(tick) }
+  pose(0); raf = requestAnimationFrame(tick)
+}
+pose(-1)
+Deck.on('s__N__', {
+  steps: 1,
+  set: (k, ctx) => show(k ? (ctx.animate ? 'play' : 'done') : 'empty'),
+  enter: (_, ctx) => { if (ctx.from === __N__ + 1) show('done') },
+  next: () => { if (!played) { Deck.step('s__N__', 1); return true } },
+  final: () => show('done'),
+})
+</script>

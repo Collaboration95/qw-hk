@@ -1,0 +1,148 @@
+<!-- Story · strike-list: before → after. A faded card lists the tools people juggle; a marker pen strikes them
+     through one by one with a hand-drawn line (a little ink dot where the pen lands, an overshoot past the word),
+     each row dims a beat after its line; the pen lifts and stays. Then one bright card drops into the dashed slot
+     with a squash and its shadow catching up, and a check stamps its corner. ~1.4 s, CSS only (.play).
+     Re-skin: the four rows (glyph + word) are the product's "before"; the bright card is its one "after"
+     (title + a small drawing of it). Copy: rewrite the h2, the four words and the title. -->
+<section class="slide" id="s__N__">
+  <h2 class="st-strike-list-h">Four tools become one shared board.</h2>
+  <svg class="st-strike-list-desk" viewBox="0 0 1920 1080" aria-hidden="true"><path d="M812 1104a100 94 0 1 1 1 .6" fill="none" style="stroke:var(--ink-auto,#fff)" stroke-opacity=".1" stroke-width="8" stroke-linecap="round"/><path d="M826 1086a84 78 0 0 1 128-84" fill="none" style="stroke:var(--ink-auto,#fff)" stroke-opacity=".06" stroke-width="3"/></svg>
+
+  <div class="st-strike-list-before">
+      <div class="st-strike-list-row" style="--i:0">
+        <svg class="st-strike-list-glyph" viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="40" rx="5"/><path d="M8 25h48M8 38h48M24 12v40M40 12v40"/></svg>
+        <span class="st-strike-list-word">Spreadsheets</span>
+        <span class="st-strike-list-line"><svg viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M2 14C70 9 140 17 210 12S340 9 398 15"/></svg><i class="st-strike-list-dot"></i></span>
+        <span class="st-strike-list-pen"><svg viewBox="0 0 150 40"><rect x="22" y="8" width="122" height="24" rx="11" class="st-strike-list-penb"/><rect x="104" y="8" width="40" height="24" rx="11" class="st-strike-list-penc"/><rect x="98" y="8" width="8" height="24" style="fill:var(--brand-2)"/><path d="M24 12L4 20l20 8z" fill="#E7E1D6"/><path d="M4 20l9-3.4v6.8z" style="fill:var(--ink-pen)"/><rect x="30" y="12" width="60" height="4" rx="2" fill="#fff" opacity=".22"/></svg></span>
+      </div>
+      <div class="st-strike-list-row" style="--i:1">
+        <svg class="st-strike-list-glyph" viewBox="0 0 64 64"><rect x="8" y="14" width="48" height="36" rx="5"/><path d="M10 17l22 18 22-18"/></svg>
+        <span class="st-strike-list-word">Email threads</span>
+        <span class="st-strike-list-line"><svg viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M2 11C80 15 150 9 230 13S350 17 398 10"/></svg><i class="st-strike-list-dot"></i></span>
+        <span class="st-strike-list-pen"><svg viewBox="0 0 150 40"><rect x="22" y="8" width="122" height="24" rx="11" class="st-strike-list-penb"/><rect x="104" y="8" width="40" height="24" rx="11" class="st-strike-list-penc"/><rect x="98" y="8" width="8" height="24" style="fill:var(--brand-2)"/><path d="M24 12L4 20l20 8z" fill="#E7E1D6"/><path d="M4 20l9-3.4v6.8z" style="fill:var(--ink-pen)"/><rect x="30" y="12" width="60" height="4" rx="2" fill="#fff" opacity=".22"/></svg></span>
+      </div>
+      <div class="st-strike-list-row" style="--i:2">
+        <svg class="st-strike-list-glyph" viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="40" rx="5"/><path d="M10 26h44M22 9v10M42 9v10"/><circle cx="32" cy="40" r="4"/></svg>
+        <span class="st-strike-list-word">Status calls</span>
+        <span class="st-strike-list-line"><svg viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M2 15C60 11 160 16 240 11S360 12 398 14"/></svg><i class="st-strike-list-dot"></i></span>
+        <span class="st-strike-list-pen"><svg viewBox="0 0 150 40"><rect x="22" y="8" width="122" height="24" rx="11" class="st-strike-list-penb"/><rect x="104" y="8" width="40" height="24" rx="11" class="st-strike-list-penc"/><rect x="98" y="8" width="8" height="24" style="fill:var(--brand-2)"/><path d="M24 12L4 20l20 8z" fill="#E7E1D6"/><path d="M4 20l9-3.4v6.8z" style="fill:var(--ink-pen)"/><rect x="30" y="12" width="60" height="4" rx="2" fill="#fff" opacity=".22"/></svg></span>
+      </div>
+      <div class="st-strike-list-row" style="--i:3">
+        <svg class="st-strike-list-glyph" viewBox="0 0 64 64"><path d="M18 8h36v28l-10 10H18z"/><path d="M44 46V36h10"/><path d="M10 20v36h32"/></svg>
+        <span class="st-strike-list-word">Sticky notes</span>
+        <span class="st-strike-list-line"><svg viewBox="0 0 400 24" preserveAspectRatio="none"><path d="M2 12C90 16 170 10 250 14S360 10 398 12"/></svg><i class="st-strike-list-dot"></i></span>
+        <span class="st-strike-list-pen"><svg viewBox="0 0 150 40"><rect x="22" y="8" width="122" height="24" rx="11" class="st-strike-list-penb"/><rect x="104" y="8" width="40" height="24" rx="11" class="st-strike-list-penc"/><rect x="98" y="8" width="8" height="24" style="fill:var(--brand-2)"/><path d="M24 12L4 20l20 8z" fill="#E7E1D6"/><path d="M4 20l9-3.4v6.8z" style="fill:var(--ink-pen)"/><rect x="30" y="12" width="60" height="4" rx="2" fill="#fff" opacity=".22"/></svg></span>
+      </div>
+  </div>
+
+  <svg class="st-strike-list-arrow" viewBox="0 0 170 80" aria-hidden="true"><path d="M8 46C50 30 96 30 150 40"/><path d="M128 22l24 18-26 14"/></svg>
+
+  <div class="st-strike-list-slot" aria-hidden="true"></div>
+  <div class="st-strike-list-shadow" aria-hidden="true"></div>
+  <div class="st-strike-list-after">
+    <p class="st-strike-list-brand"><span class="st-strike-list-tile"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true">__MARK__</svg></span><span class="st-strike-list-word2">__WORD__</span></p>
+    <svg class="st-strike-list-board" viewBox="0 0 680 300" aria-hidden="true">
+      <rect x="0" y="0" width="212" height="300" rx="20" fill="#F2EFEA"/><rect x="234" y="0" width="212" height="300" rx="20" fill="#F2EFEA"/><rect x="468" y="0" width="212" height="300" rx="20" fill="#F2EFEA"/>
+      <g class="st-strike-list-chip"><rect x="16" y="18" width="180" height="76" rx="12" fill="#fff"/><rect x="16" y="18" width="10" height="76" rx="5" style="fill:var(--brand)"/><rect x="40" y="38" width="110" height="10" rx="5" fill="#D9D2C7"/><rect x="40" y="62" width="70" height="10" rx="5" fill="#ECE7DF"/></g>
+      <g class="st-strike-list-chip"><rect x="16" y="108" width="180" height="76" rx="12" fill="#fff"/><rect x="16" y="108" width="10" height="76" rx="5" style="fill:var(--brand-2)"/><rect x="40" y="128" width="96" height="10" rx="5" fill="#D9D2C7"/><rect x="40" y="152" width="120" height="10" rx="5" fill="#ECE7DF"/></g>
+      <g class="st-strike-list-chip"><rect x="250" y="18" width="180" height="76" rx="12" fill="#fff"/><rect x="250" y="18" width="10" height="76" rx="5" style="fill:color-mix(in oklab,var(--brand) 50%,var(--brand-2))"/><rect x="274" y="38" width="120" height="10" rx="5" fill="#D9D2C7"/><rect x="274" y="62" width="80" height="10" rx="5" fill="#ECE7DF"/></g>
+      <g class="st-strike-list-chip st-strike-list-moved"><rect x="250" y="108" width="180" height="76" rx="12" fill="#fff"/><rect x="250" y="108" width="10" height="76" rx="5" style="fill:var(--brand)"/><rect x="274" y="128" width="84" height="10" rx="5" fill="#D9D2C7"/><rect x="274" y="152" width="110" height="10" rx="5" fill="#ECE7DF"/><circle cx="404" cy="160" r="13" style="fill:var(--brand-2)" stroke="#fff" stroke-width="3"/></g>
+      <g class="st-strike-list-chip"><rect x="484" y="18" width="180" height="76" rx="12" fill="#fff"/><rect x="484" y="18" width="10" height="76" rx="5" style="fill:color-mix(in oklab,var(--brand-2) 60%,#fff)"/><rect x="508" y="38" width="100" height="10" rx="5" fill="#D9D2C7"/><rect x="508" y="62" width="64" height="10" rx="5" fill="#ECE7DF"/></g>
+    </svg>
+    <p class="st-strike-list-title">One shared board</p>
+    <div class="st-strike-list-faces" aria-hidden="true"><i style="background:var(--brand)"></i><i style="background:var(--brand-2)"></i><i style="background:color-mix(in oklab,var(--brand) 40%,#fff)"></i></div>
+    <span class="st-strike-list-check" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M11 21l6 6 13-14"/></svg></span>
+    <span class="st-strike-list-ring" aria-hidden="true"></span>
+  </div>
+</section>
+
+<style>
+#s__N__{--field:linear-gradient(180deg,#A63E2B 0%,#BF5137 55%,#CC6242 100%);--brand:var(--deck-brand,#2B2F45);--brand-2:var(--deck-brand-2,#FFC83D);color:var(--ink-auto,#fff);padding:96px 100px;--ink-pen:var(--ink-auto,#fff)}
+/* a warm lamp from the top right, drawn in the ink so it suits any field */
+#s__N__::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 600px at 82% 10%,color-mix(in oklab,var(--ink-auto,#fff) 12%,transparent),transparent 70%)}
+#s__N__ .st-strike-list-h{font-size:96px;letter-spacing:-.045em;line-height:1.04;white-space:nowrap}
+#s__N__ .st-strike-list-desk{position:absolute;inset:0;width:1920px;height:1080px;z-index:-1;pointer-events:none}
+
+/* before: a faded card, slightly turned, like it has been on the desk a while */
+#s__N__ .st-strike-list-before{position:absolute;left:100px;top:340px;width:700px;height:600px;padding:52px 56px;border-radius:30px;
+  display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-2.5deg) translateY(6px);
+  background:linear-gradient(180deg,color-mix(in oklab,var(--ink-auto,#fff) 14%,transparent),color-mix(in oklab,var(--ink-auto,#fff) 7%,transparent));box-shadow:0 0 0 2px color-mix(in oklab,var(--ink-auto,#fff) 26%,transparent) inset,0 30px 60px -36px rgba(0,0,0,.5)}
+#s__N__ .st-strike-list-row{position:relative;display:flex;align-items:center;gap:26px;width:max-content}
+#s__N__ .st-strike-list-glyph,#s__N__ .st-strike-list-word{opacity:.42;transform:translateY(2px)}
+#s__N__ .st-strike-list-glyph{width:76px;height:76px;flex:none;fill:none;stroke:var(--ink-auto,#fff);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .st-strike-list-word{font:650 58px/1 var(--f);letter-spacing:-.03em;color:var(--ink-auto,#fff)}
+/* the strike: a hand-drawn line, stretched to the row, overshooting both ends; revealed left to right */
+#s__N__ .st-strike-list-line{position:absolute;left:-18px;right:-26px;top:50%;height:28px;margin-top:-12px}
+#s__N__ .st-strike-list-line svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#s__N__ .st-strike-list-line path{fill:none;stroke:var(--ink-pen);stroke-width:7;stroke-linecap:round;vector-effect:non-scaling-stroke}
+#s__N__ .st-strike-list-dot{position:absolute;left:-4px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--ink-pen)}
+/* the pen: one per row, visible only while its row is struck; the last one stays, lifted */
+#s__N__ .st-strike-list-pen{position:absolute;top:50%;left:calc(100% + 26px);width:150px;height:40px;margin:-38px 0 0 -6px;opacity:0;transform-origin:4px 20px;transform:rotate(-38deg) translate(10px,-6px)}
+#s__N__ .st-strike-list-pen svg{display:block;width:150px;height:40px;overflow:visible;filter:drop-shadow(0 8px 6px rgba(0,0,0,.3))}
+#s__N__ .st-strike-list-penb{fill:var(--brand);stroke:color-mix(in oklab,var(--ink-auto,#fff) 55%,transparent);stroke-width:2.5}
+#s__N__ .st-strike-list-penc{fill:color-mix(in oklab,var(--brand) 70%,#fff)}
+#s__N__ .st-strike-list-row:last-child .st-strike-list-pen{opacity:1}
+
+#s__N__ .st-strike-list-arrow{position:absolute;left:826px;top:600px;width:170px;height:80px;overflow:visible}
+#s__N__ .st-strike-list-arrow path{fill:none;stroke:var(--ink-auto,#fff);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+
+/* after: one bright card, dropped into its slot */
+#s__N__ .st-strike-list-slot{position:absolute;left:1010px;top:330px;width:810px;height:620px;border-radius:32px;border:4px dashed color-mix(in oklab,var(--ink-auto,#fff) 40%,transparent)}
+#s__N__ .st-strike-list-shadow{position:absolute;left:1030px;top:380px;width:770px;height:580px;border-radius:32px;background:rgba(0,0,0,.38);filter:blur(30px);transform-origin:50% 100%;will-change:transform}
+#s__N__ .st-strike-list-after{position:absolute;left:1010px;top:330px;width:810px;height:620px;border-radius:32px;padding:64px 64px 0;color:#2A1712;transform-origin:50% 100%;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F2 100%);box-shadow:0 1px 0 #fff inset,0 -3px 0 rgba(160,70,40,.08) inset,0 2px 5px rgba(80,20,0,.18)}
+#s__N__ .st-strike-list-brand{display:flex;align-items:center;gap:16px;margin:-14px 0 26px;min-width:0}
+#s__N__ .st-strike-list-tile{flex:none;width:56px;height:56px;border-radius:15px;display:grid;place-items:center;background:var(--brand);box-shadow:0 0 0 1.5px rgba(0,0,0,.08) inset,0 6px 12px -6px rgba(0,0,0,.4)}
+#s__N__ .st-strike-list-tile .mark{width:34px;height:34px;fill:none;stroke:var(--on-brand,#fff);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#s__N__ .st-strike-list-word2{font:750 36px/1 var(--f);letter-spacing:-.025em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:560px}
+#s__N__ .st-strike-list-board{display:block;width:682px;height:260px}
+#s__N__ .st-strike-list-title{margin-top:40px;font:800 64px/1 var(--f);letter-spacing:-.04em}
+#s__N__ .st-strike-list-faces{position:absolute;right:62px;bottom:60px;display:flex}
+#s__N__ .st-strike-list-faces i{width:54px;height:54px;border-radius:50%;border:5px solid #fff;margin-left:-16px;box-shadow:0 4px 10px -4px rgba(80,20,0,.4)}
+#s__N__ .st-strike-list-check{position:absolute;right:-26px;top:-26px;width:84px;height:84px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px #fff,0 10px 20px -8px rgba(10,60,30,.6);display:grid;place-items:center}
+#s__N__ .st-strike-list-check svg{width:46px;height:46px;fill:none;stroke:var(--on-brand,#fff);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+#s__N__ .st-strike-list-ring{position:absolute;right:-34px;top:-34px;width:100px;height:100px;border-radius:50%;box-shadow:0 0 0 3px color-mix(in oklab,var(--brand) 40%,transparent);opacity:0}
+
+/* ---- the arrival: strikes at 0.12 + 0.2 s × row, the card lands at 1.05 s ---- */
+#s__N__.play .st-strike-list-line svg{animation:st-strike-list-draw .17s cubic-bezier(.4,0,.6,1) calc(.12s + var(--i) * .2s) backwards}
+#s__N__.play .st-strike-list-dot{animation:st-strike-list-dot .1s ease-out calc(.1s + var(--i) * .2s) backwards}
+#s__N__.play .st-strike-list-glyph,#s__N__.play .st-strike-list-word{animation:st-strike-list-dim .25s ease-out calc(.3s + var(--i) * .2s) backwards}
+#s__N__.play .st-strike-list-pen{animation:st-strike-list-pen .23s linear calc(.1s + var(--i) * .2s) backwards}
+#s__N__.play .st-strike-list-row:last-child .st-strike-list-pen{animation-name:st-strike-list-pen-last;animation-duration:.5s}
+#s__N__.play .st-strike-list-before{animation:st-strike-list-sag .4s ease-in-out .95s backwards}
+#s__N__.play .st-strike-list-arrow{animation:sweep .2s linear .9s backwards;--n:1}
+#s__N__.play .st-strike-list-arrow path{animation:st-strike-list-arrow .22s ease-out .88s backwards}
+#s__N__.play .st-strike-list-after{animation:st-strike-list-drop .5s linear .82s backwards}
+#s__N__.play .st-strike-list-shadow{animation:st-strike-list-shadow .5s linear .82s backwards}
+#s__N__.play .st-strike-list-chip{animation:st-strike-list-chip .3s var(--spring) 1.08s backwards}
+#s__N__.play .st-strike-list-chip:nth-child(n+5){animation-delay:1.12s}
+#s__N__.play .st-strike-list-moved{animation:st-strike-list-moved .45s var(--ease) 1.1s backwards}
+#s__N__.play .st-strike-list-check{animation:stamp .22s var(--ease) 1.2s backwards}
+#s__N__.play .st-strike-list-ring{animation:st-strike-list-ring .5s ease-out 1.22s backwards}
+#s__N__.play .st-strike-list-faces i{animation:pop .24s var(--spring) backwards}
+#s__N__.play .st-strike-list-faces i:nth-child(1){animation-delay:1.14s}
+#s__N__.play .st-strike-list-faces i:nth-child(2){animation-delay:1.19s}
+#s__N__.play .st-strike-list-faces i:nth-child(3){animation-delay:1.24s}
+
+@keyframes st-strike-list-draw{from{clip-path:inset(-20px 100% -20px -20px)}to{clip-path:inset(-20px -20px -20px -20px)}}
+@keyframes st-strike-list-dot{from{transform:scale(0)}}
+@keyframes st-strike-list-dim{from{opacity:.86;transform:none}}
+/* the pen rides along its line (left 0 → 100%), pressing down; then it lifts away */
+@keyframes st-strike-list-pen{0%{left:-18px;opacity:0;transform:rotate(-38deg) translate(14px,-18px)}12%{opacity:1;transform:rotate(-38deg)}84%{left:calc(100% + 26px);opacity:1;transform:rotate(-38deg)}100%{left:calc(100% + 26px);opacity:0;transform:rotate(-34deg) translate(16px,-20px)}}
+@keyframes st-strike-list-pen-last{0%{left:-18px;opacity:0;transform:rotate(-38deg) translate(14px,-18px)}6%{opacity:1;transform:rotate(-38deg)}40%{left:calc(100% + 26px);transform:rotate(-38deg)}70%{transform:rotate(-40deg) translate(14px,-10px)}100%{left:calc(100% + 26px);opacity:1;transform:rotate(-38deg) translate(10px,-6px)}}
+@keyframes st-strike-list-sag{from{transform:rotate(-1.5deg)}}
+@keyframes st-strike-list-arrow{from{stroke-dasharray:0 400}to{stroke-dasharray:400 0}}
+@keyframes st-strike-list-drop{
+  0%{opacity:0;transform:translateY(-110px) rotate(2.5deg);animation-timing-function:cubic-bezier(.55,0,.9,.45)}
+  12%{opacity:1}
+  46%{transform:none;animation-timing-function:ease-out}
+  58%{transform:scale(1.015,.965)}
+  74%{transform:translateY(-8px) scale(.995,1.01);animation-timing-function:ease-in}
+  90%{transform:none}
+  100%{transform:none}}
+/* the shadow starts small and soft and catches up as the card lands */
+@keyframes st-strike-list-shadow{0%{opacity:0;transform:translateY(30px) scale(.72)}46%{opacity:.8;transform:scale(1.02)}74%{opacity:.9;transform:scale(.97)}100%{opacity:1;transform:none}}
+@keyframes st-strike-list-chip{from{opacity:0;transform:translateY(16px)}}
+@keyframes st-strike-list-moved{from{transform:translate(-234px,0)}}
+@keyframes st-strike-list-ring{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.35)}}
+</style>

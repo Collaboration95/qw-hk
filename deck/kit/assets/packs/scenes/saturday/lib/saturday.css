@@ -1,0 +1,12 @@
+/* Pack scene "saturday" · drawn by lib/saturday.js into <div class="sc-saturday" data-tod="…">. The background below is
+   the fallback field (and what shows for a frame before the script draws). */
+.sc-saturday{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict;
+  background:linear-gradient(180deg,#45408E 0%,#A0609A 34%,#EA7E6E 56%,#F8A168 68%,#DE8B77 72%,#523D7E 100%)}
+.sc-saturday .parallax{z-index:0}
+.sc-saturday-l{left:-40px;top:-30px;width:2000px;height:1140px}
+.sc-saturday-l>svg,.sc-saturday-drift,.sc-saturday-drift>svg{position:absolute;left:0;top:0;width:2000px;height:1140px;display:block;overflow:visible}
+.sc-saturday-drift{will-change:transform}
+.sc-saturday-cv{position:absolute;display:block}
+.sc-saturday-grain{position:absolute;inset:0;background-size:256px 256px;mix-blend-mode:overlay;opacity:.11}
+/* print stacks every slide at once: no compositor layers there, or headless Chrome drops tiles */
+html.print .sc-saturday .parallax>*,html.print .sc-saturday-drift{will-change:auto}

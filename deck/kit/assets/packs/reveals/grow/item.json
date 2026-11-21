@@ -1,0 +1,39 @@
+{
+  "title": "Grow",
+  "kind": "reveal",
+  "mood": [
+    "organic",
+    "hopeful",
+    "alive",
+    "calm"
+  ],
+  "suits": "climate, agritech, food, wellbeing, community and growth tools: products about something living, growing or being nurtured over time",
+  "tech": "svg+js",
+  "duration": 2.34,
+  "params": {
+    "--field": "the sky; soil, grass, roots and dust are mixed from it",
+    "--brand": "seed, stem and vines (pushed toward the ink if it would vanish on the field)",
+    "--brand-2": "leaves and grass",
+    "--rv-fs": "name size (shrinks to fit 1560 px)",
+    "--rv-y": "the ground line, which is the name's baseline",
+    "__MARK__": "stroke paths in a 24 x 24 box; each stroke grows as a vine, dots pop like buds"
+  },
+  "details": [
+    "the seed tumbles out of the sky with gravity and lands with a squash",
+    "a puff of dust skims the ground from the first landing only",
+    "it bounces once, then splits; the husk halves stay at the foot of the plant",
+    "a root goes down with two side roots while a short stem goes up",
+    "the mark's own strokes grow out of the stem as vines at one speed, both ways from where they start",
+    "closed shapes grow both ways round from their lowest point",
+    "pale growing tips lead every vine",
+    "a stroke that does not touch the rest is reached by a thin tendril that withers once it has grown",
+    "dots in the mark pop like buds as the nearest vine passes",
+    "leaves bud along the vines on the side away from the mark's centre",
+    "the first leaf opens underside-first and turns over",
+    "the last leaf keeps a dew drop that catches the light once",
+    "a runner creeps under the ground line, putting down rootlets, and each letter sprouts from the soil as it passes",
+    "letters spring up with a small wobble, alternating left and right",
+    "after the reveal the leaves sway in a slow draught",
+    "the soil is kept far enough from the ink that descenders stay readable"
+  ]
+}
