@@ -225,3 +225,18 @@ Surprise: none — the live check correctly found the same 2 revisions the offli
 | 7. Clock tasks fired (live check) | PASS (manual trigger; scheduler issue noted) |
 
 All deliverables produced except the hosted QW Page URL (environment blocker, not a Skill defect).
+
+## Overnight 21–22 Nov
+
+The overnight QwenWork jobs used roughly 18 credits on Standard.
+
+- [Job 003](../qw-outbox/003-handshake/REPORT.md) · Standard-tier handshake completed in 13 seconds. All 116 tests passed.
+- [Job 004](../qw-outbox/004-automatic-watch/REPORT.md) · Configured the recurring watch. The first automatic run, scheduled for 23:15 on 21 Nov 2026, started at 23:16:37 SGT. The scheduler checked 8 live series without a manual trigger. The result was quiet.
+- [Job 005](../qw-outbox/005-correction-page/REPORT.md) · Published the live [correction Page](https://ka62nv48.qwenwork.page/). Slide 4 reports 4.6% growth.
+- [Job 006](../qw-outbox/006-hashmeta-loop/REPORT.md) · Stamped and published 8 Revisionpedia indicator pages through the Hashmeta connector. One labelled test enquiry was submitted to the live form endpoint and appeared in Hashmeta’s form submissions.
+- [Job 007](../qw-outbox/007-hashmeta-cover-copy/REPORT.md) · Replaced the live cover page’s price placeholder with the pilot offer.
+- [Job 008](../qw-outbox/008-watch-stamp-fix/REPORT.md) · Fixed the watch stamp time and moved the bridge to Standard.
+- [Job 009](../qw-outbox/009-deck-honest-headlines/REPORT.md) · Republished the [pitch deck](https://vtzcv3g2.qwenwork.page/) with corrected headlines.
+- [Job 010](../qw-outbox/010-fresh-deck-read/REPORT.md) · Found all 8 fresh-deck claims in about 6 minutes. Verdicts matched 5 of 7 registrable claims. After cfcec68 the rules match all 8 in the [answer key](fresh-deck-answer-key.json).
+- [Job 011](../qw-outbox/011-recall-desk-db/REPORT.md) · Published the [recall desk](https://j3jvce39.qwenwork.page/). One labelled test decision persisted. A delete request returned 400.
+- [Job 012](../qw-outbox/012-rebuild-bridge/REPORT.md) · Disabled the old bridge and confirmed the replacement was enabled for :05 and :35 SGT.

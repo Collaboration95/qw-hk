@@ -1,6 +1,6 @@
 # Recall Press · 3-minute judge path
 
-Public links first. Nothing here needs a login or a checkout until the local replay at the end. The publications are samples written by the founder; the figures, dates and sources are official.
+Public links first. Nothing here needs a login or a checkout until the local replay at the end. The publications are samples; the figures, dates and sources are official.
 
 ## Watch
 
@@ -13,7 +13,7 @@ Open the [Q3 2025 manufacturing record on Revisionpedia](https://revisionpedia.g
 
 - Look for: 0.0% on 14 Oct 2025, 5.0% on 21 Nov 2025, then 4.9%, 5.3% and 4.6% from 14 Apr 2026. Each reading links to its official release.
 - Then: the [Revisions list](https://revisionpedia.geo.hashmeta.tech/revisions) (60 records) and the [Indicators list](https://revisionpedia.geo.hashmeta.tech/indicators) (10).
-- [Cover my briefing](https://revisionpedia.geo.hashmeta.tech/cover-my-briefing/) is the enquiry form. It has no forwarding rule and no verified test submission yet.
+- [Cover my briefing](https://revisionpedia.geo.hashmeta.tech/cover-my-briefing/) is the enquiry form. One labelled test enquiry was submitted to the live form endpoint and appeared in Hashmeta’s form submissions.
 
 ## 2 · See what one revision does to two sentences · 45 s
 
@@ -29,13 +29,18 @@ Open the [README](README.md#one-revision-two-answers) table and images.
 | [Job 001 report](docs/qw-outbox/001-acceptance-tests/REPORT.md) | Session `mwq2wb75y5x1adbq`, Qwen4-Max. Skill loaded, slide corrected (replay run `2025-11-21-8d43d94969a0`), unseen deck read 4 of 4. The Skill includes a worked example for the zero-growth wording. |
 | [clock-1](docs/qw-results/clock-1.md) | Live data.gov.sg check `2026-11-21-68013a314ad1`: 8 series, 2 later revisions (services 0.6% → 0.7%; manufacturing now 4.6%), 2 corrected drafts. Started manually with Run now. |
 | [clock-2](docs/qw-results/clock-2.md) | Repeat check `2026-11-21-98bbcfe8ff96`: quiet, nothing issued twice. Also started with Run now. |
-| [Watch log](docs/qw-results/watch-log.md) | <!-- TODO: fill when job 004/005 report --> Runs started by the scheduler at :15 and :45 SGT, with no manual trigger. Pending. |
-| [Pitch Page](https://zsg5gl36.qwenwork.page/) | The pitch deck, published as a public Page by QwenWork Job 002. |
-| Correction Page | <!-- TODO: fill when job 004/005 report --> The live run’s correction with the corrected PPTX to download. URL to come. |
+| [Watch log](docs/qw-results/watch-log.md) | The first automatic run, scheduled for 23:15 on 21 Nov 2026, started at 23:16:37 SGT. The scheduler checked 8 live series without a manual trigger. The result was quiet. |
+| [Pitch Page](https://vtzcv3g2.qwenwork.page/) | The pitch deck, republished with corrected headlines by Job 009. |
+| Open the [correction Page](https://ka62nv48.qwenwork.page/) | Download the live correction. Slide 4 reads “Manufacturing grew 4.6% year on year in Q3 2025.” |
+| [Fresh deck report](docs/qw-outbox/010-fresh-deck-read/REPORT.md) · [answer key](docs/qw-results/fresh-deck-answer-key.json) | QwenWork found all 8 claims in about 6 minutes. Its verdicts matched 5 of 7 registrable claims. After the engine fix the rules match all 8. |
 
 ## 4 · Open the corrected file · 30 s
 
 Without a checkout: download [the Job 001 map](docs/qw-results/map-2025-11-21.html) and open it in a browser. Select the members’ briefing, then **Replacement PPTX**. Slide 4 carries the new headline and the November source line. The original October footer is still on the slide.
+
+## Try the recall desk
+
+Open the [recall desk](https://j3jvce39.qwenwork.page/), select the members’ briefing and click **Apply** on a correction. Reload the Page and reopen the briefing to see the saved decision.
 
 ## Local replay · 3 minutes, needs Python 3.10+
 
@@ -51,6 +56,6 @@ python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements-dev
 2. On the same map, open the board paper. Its dated sentence is still true and gets no replacement.
 3. Open the maps for **2026-08-11** and **2026-10-14**. The Q2 2026 GDP figure moves 5.7% → 5.9% → 6.2%. “Under 6%” holds at 5.9% and breaks at 6.2%.
 4. The map for **2026-10-16** is a quiet check: no new revision, no files.
-5. `python -m pytest -q` runs the 116 tests.
+5. `python -m pytest -q` runs the test suite.
 
 Code map: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

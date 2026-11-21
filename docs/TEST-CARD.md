@@ -7,10 +7,10 @@
 | 1 · Find the Skill | Skill loaded through the Skill tool in the task (Job 001 step 1). | Loaded by the tool, not chosen from the `/` picker. No picker screenshot. |
 | 2 · Correct the slide | Slide 4 corrected to “grew 5.0%”, replay run `2025-11-21-8d43d94969a0` (step 2). | None. Slide images rendered from the PPTX, not exported from PowerPoint. |
 | 3 · Read a different deck | First read: 4 of 4 sentences and verdicts, written before opening the answer key. Rules alone: 3 (step 3). | The Skill includes a worked example for the zero-growth sentence. |
-| 4 · Try the clock | Two one-time tasks created; both missed their slots and were started with Run now. Live runs `2026-11-21-68013a314ad1` (2 corrections) and `2026-11-21-98bbcfe8ff96` (quiet) (steps 4 and 7). | Manual, not automatic. <!-- TODO: fill when job 004/005 report --> Job 004 tests a recurring automatic watch. |
+| 4 · Try the clock | Two one-time tasks created; both missed their slots and were started with Run now. Live runs `2026-11-21-68013a314ad1` (2 corrections) and `2026-11-21-98bbcfe8ff96` (quiet) (steps 4 and 7). | The first automatic run, scheduled for 23:15 on 21 Nov 2026, started at 23:16:37 SGT. The scheduler checked 8 live series without a manual trigger. The result was quiet. |
 | 5 · Read Mail | Pasted release notice matched to documents; earlier correction recognised (step 5). | Pasted text, not Mail. |
-| 6 · Try Hashmeta | Not run in QwenWork. Revisionpedia was built and published through the Hashmeta MCP instead ([build log](HASHMETA-LOG.md)). | No QwenWork connector draft. |
-| 7 · Publish the map | Page created; the publisher withheld its URL (step 6). Download not tested. | <!-- TODO: fill when job 004/005 report --> Job 005 publishes the live correction as a public Page. |
+| 6 · Try Hashmeta | Not run in QwenWork. Revisionpedia was built and published through the Hashmeta MCP instead ([build log](HASHMETA-LOG.md)). | Job 006 later used the QwenWork connector to stamp and publish 8 indicator pages. One labelled test enquiry was submitted to the live form endpoint and appeared in Hashmeta’s form submissions. |
+| 7 · Publish the map | Page created; the publisher withheld its URL (step 6). Download not tested. | Job 005 published the live [correction Page](https://ka62nv48.qwenwork.page/). The downloaded deck shows 4.6% on slide 4. |
 | 8 · Export a video | Not run. | Film is planned in QwenWork for Sunday 22 November. |
 
 ---
