@@ -1,0 +1,38 @@
+/* Recall Press · "Release morning". A Singapore release morning, pre-dawn to sunrise: the product's navy-plum hero band
+   (#272846 → #4a3550) at the reveal, lifting through deep teal-blue to a warm peach dawn at the close. Never white or
+   off-white (the product's app is off-white). Each field's top continues from the previous field's middle.
+   --fb is each field's horizon colour: the city silhouettes, mist and train are mixed from it (lib/30-morning). */
+@font-face{font-family:"Source Serif 4";src:url("assets/fonts/source-serif-4-latin-opsz-normal.woff2") format("woff2");font-weight:200 900;font-display:block}
+
+:root{
+  --f0:linear-gradient(180deg,#1E1F3C 0%,#272846 46%,#4A3550 100%);
+  --f1:linear-gradient(180deg,#2B2A4A 0%,#33305A 50%,#3E3A66 100%);
+  --f2:linear-gradient(180deg,#34335E 0%,#2E3E68 52%,#2A4C6C 100%);
+  --f3:linear-gradient(180deg,#2C4769 0%,#26566F 52%,#2A6274 100%);
+  --f4:linear-gradient(180deg,#285B71 0%,#3F6680 50%,#7C7489 100%);
+  --f5:linear-gradient(180deg,#4F6584 0%,#86758C 52%,#C08A86 100%);
+  --f6:linear-gradient(180deg,#A07E8E 0%,#DA9A86 50%,#F2B58F 100%);
+  --f9:linear-gradient(180deg,#D99A84 0%,#EBAA88 55%,#F3BE96 100%);
+  --page:#15152A;
+
+  --accent:#F2A67A;            /* peach: the new figure, the marker */
+  --marker:#F2A67A;
+  --thread:#D9472F;            /* the red recall thread */
+  --true:#3E9A78;              /* "still true" */
+  --navy:#272846; --plum:#4A3550;
+
+  /* paper-tint document cards (cards, never fields) */
+  --paper:#F7EEE4; --paper-2:#EFE2D3;
+  --ink:#232437; --ink-2:#5B566A; --ink-3:#8F8798; --line:#E3D6C8; --soft:#F1E6DA;
+  --sh-card:0 1px 0 rgba(255,255,255,.75) inset,0 2px 3px rgba(30,20,40,.10),0 34px 60px -30px rgba(28,18,48,.62);
+
+  --serif:"Source Serif 4",Georgia,serif;
+  --t-h2:100px;
+}
+
+.slide{font-variant-numeric:tabular-nums}
+.slide h2{font-family:var(--serif);font-weight:800;font-size:var(--t-h2);letter-spacing:-.022em;line-height:1.02;
+  font-variation-settings:"opsz" 60;color:var(--ink-auto);max-width:1360px;text-wrap:balance}
+.card{background:linear-gradient(180deg,var(--paper) 0%,#F3E8DC 100%)}
+.browser{background:#F7F5F0}
+.browser::before{background:radial-gradient(circle at 26px 22px,#E7816B 6px,transparent 7px),radial-gradient(circle at 48px 22px,#E9BE72 6px,transparent 7px),radial-gradient(circle at 70px 22px,#86B79A 6px,transparent 7px),#ECE6DE;border-bottom:1px solid #DDD3C6}

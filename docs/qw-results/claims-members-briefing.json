@@ -1,0 +1,22 @@
+[
+  {
+    "sentence": "Services grew 0.6% quarter on quarter in Q1 2025, seasonally adjusted.",
+    "location": "slide 3, Headline, paragraph 1",
+    "series_id": "sg-gdp-services-qoq",
+    "period": "2025-Q1",
+    "value_cited": 0.6,
+    "vintage_cited": "2025-10-14",
+    "stance": "current",
+    "assertion": {"type": "direction", "detail": "up"}
+  },
+  {
+    "sentence": "Manufacturing stalled year on year in Q3 2025.",
+    "location": "slide 4, Headline, paragraph 1",
+    "series_id": "sg-gdp-manufacturing-yoy",
+    "period": "2025-Q3",
+    "value_cited": 0.0,
+    "vintage_cited": "2025-10-14",
+    "stance": "current",
+    "assertion": {"type": "direction", "detail": "flat"}
+  }
+]

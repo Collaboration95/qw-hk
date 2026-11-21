@@ -1,0 +1,14 @@
+/* Release morning scene (lib/30-morning.js). Behind everything, edge of attention: low, far, slow. */
+.rm-scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.rm-scene .rm-city{position:absolute;left:0;bottom:0;width:1920px;height:260px;display:block}
+.rm-scene .rm-sun{position:absolute;left:1180px;bottom:-520px;width:1300px;height:1000px;border-radius:50%;opacity:var(--sun);
+  background:radial-gradient(closest-side,rgba(255,226,170,.95),rgba(255,190,140,.55) 32%,rgba(255,170,130,.18) 62%,rgba(255,170,130,0))}
+.rm-scene .rm-rain{position:absolute;inset:-240px 0 0 0;opacity:calc(var(--rain) * .55);background-size:240px 240px;
+  animation:amb-rain 1.1s linear infinite;-webkit-mask-image:linear-gradient(180deg,#000 30%,rgba(0,0,0,.35) 90%);mask-image:linear-gradient(180deg,#000 30%,rgba(0,0,0,.35) 90%)}
+.rm-scene .rm-rain2{opacity:calc(var(--rain) * .3);background-size:120px 120px;animation-duration:.8s;filter:blur(.6px)}
+@keyframes amb-rain{to{transform:translate(0,240px)}}
+.rm-scene .rm-late{transition:opacity .25s}
+html.print .rm-scene .rm-rain{animation:none}
+/* the sun itself, only once it is up (close and appendix): a disc rising behind the towers */
+.rm-scene .rm-sun::after{content:"";position:absolute;left:50%;top:calc(50% - 170px);width:190px;height:190px;margin:-95px;border-radius:50%;
+  background:radial-gradient(closest-side,#FFF4DC 0%,#FFE2B0 70%,rgba(255,226,176,0) 100%);opacity:clamp(0,calc((var(--sun) - .7) * 3.4),1)}

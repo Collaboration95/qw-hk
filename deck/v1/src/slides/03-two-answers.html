@@ -1,0 +1,37 @@
+<!-- 3 · The golden run. The real publication map (21 Nov 2025 replay) rises in a browser frame; beside it the two
+     answers: the deck's sentence has "stalled" struck and "grew 5.0%" lands in peach; the board paper's dated
+     statement gets a green "Still true" tag that presses on. Marker on "Two" (2nd of 2 in the deck). -->
+<section class="slide" id="s3">
+  <h2 data-enter>One revision. Four documents.<br><span class="mk">Two</span> different answers.</h2>
+  <div class="browser rise map" style="--t:.05"><img src="../assets/map-crop.jpg" alt="Recall Press publication map, Q3 2025 manufacturing"></div>
+  <div class="answers">
+    <div class="ans card" data-enter style="--t:.25">
+      <b class="who">Members' deck</b>
+      <p class="sent">Manufacturing <span class="old strike" style="--t:.6">stalled</span> <span class="new pop" style="--t:.85;--o:0 60%">grew 5.0%</span> year on year in Q3 2025.</p>
+    </div>
+    <div class="ans card" data-enter style="--t:.4">
+      <b class="who">Board paper</b>
+      <span class="tag stamp" style="--t:1.1"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Still true</span>
+    </div>
+  </div>
+  <aside class="notes"><b>Say</b>Here is a real revision, replayed. In October 2025 the advance estimate put third-quarter manufacturing at 0.0 percent. The November survey said 5.0 percent. The map brings the editor to slide four of the members' briefing: "stalled" becomes "grew 5.0 percent year on year", with the source and an editable replacement. The board paper reported what October's estimate said. That is still true, so it stays. One revision, two different answers.<b>Do</b>If time allows, switch to the live map and click Apply fix. Say aloud: the briefings are sample documents the founder wrote; the figures and dates are real.</aside>
+</section>
+
+<style>
+#s3{--field:var(--f3)}
+#s3 h2{max-width:1400px}
+#s3 .map{position:absolute;left:var(--pad-x);top:352px;width:1400px;border-radius:18px}
+#s3 .map img{display:block;width:100%}
+#s3 .answers{position:absolute;right:var(--pad-x);top:618px;width:740px;z-index:2;display:flex;flex-direction:column;gap:26px}
+#s3 .ans{padding:30px 40px 34px;border-radius:20px;box-shadow:var(--sh-card),0 40px 80px -30px rgba(10,20,40,.55)}
+#s3 .who{display:block;font:600 28px/1 var(--f);color:var(--ink-2);margin-bottom:16px}
+#s3 .sent{font:600 42px/1.18 var(--serif);letter-spacing:-.015em;color:var(--ink);text-wrap:pretty}
+#s3 .old{color:#8C8392;opacity:.75;background:linear-gradient(#9A4C3C,#9A4C3C) 0 56%/100% 4px no-repeat}
+#s3 .new{display:inline-block;color:#9A4A22;background:#FBD7BF;padding:0 10px;margin:0 -2px;border-radius:8px;box-shadow:inset 0 -3px 0 #F2A67A}
+#s3 .ans .tag{display:inline-flex;align-items:center;gap:12px;padding:12px 22px 12px 16px;border-radius:999px;font:700 32px/1 var(--f);color:#fff;
+  background:linear-gradient(180deg,#46A783,#2F8566);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 8px 16px -8px rgba(20,80,60,.7)}
+#s3 .ans .tag svg{font-size:30px;stroke-width:3}
+#s3 .ans:last-child{display:flex;align-items:center;justify-content:space-between}
+#s3 .ans:last-child .who{margin:0;font:700 40px/1 var(--serif);color:var(--ink)}
+#s3 .mk.draw path{animation-delay:1.0s}
+</style>

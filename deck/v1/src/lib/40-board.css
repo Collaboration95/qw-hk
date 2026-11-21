@@ -1,0 +1,18 @@
+/* The morning board (lib/40-board.js): hangs from the top edge, right; on the close it widens to the centre. */
+.rp-hang{position:absolute;top:0;right:96px;z-index:4;pointer-events:none;--cw:46px;--ch:64px}
+.rp-hang .rod{position:absolute;top:0;width:6px;height:28px;border-radius:0 0 2px 2px;background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.35) 45%,rgba(0,0,0,.65))}
+.rp-hang .rod:nth-child(1){left:22%}
+.rp-hang .rod:nth-child(2){left:76%}
+.rp-hang .rp-housing{margin-top:26px;padding:10px 12px 12px;border-radius:12px}
+.rp-hang .rp-row{gap:5px}
+.rp-hang .rp-fl:nth-child(3) s{color:#C9C1B6}
+.rp-hang.wide{right:auto;left:50%;transform:translateX(-50%);--cw:62px;--ch:86px}
+.rp-hang.wide .rp-fl:nth-child(3) s{color:var(--fl-ink,#F3ECDC)}
+/* on the close the second flap carries the press mark, like the reveal */
+.rp-hang .rp-fl.mark>b>s{font-size:0}
+.rp-hang .rp-fl.mark>b>s::before{content:"";width:46%;height:46%;
+  background:linear-gradient(var(--accent),var(--accent)) 0 18%/100% 15% no-repeat,linear-gradient(var(--accent),var(--accent)) 0 52%/100% 15% no-repeat,linear-gradient(var(--accent),var(--accent)) 0 86%/64% 15% no-repeat;transform:skewY(-15deg)}
+.rp-pigeon{position:absolute;width:58px;height:39px;right:26px;top:-36px;fill:#7D7F92;stroke:#7D7F92;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
+.rp-pigeon .head{fill:#5F6177}
+.rp-pigeon .body path,.rp-pigeon .head{stroke:none}
+.rp-hang.wide .rp-pigeon{right:auto;left:70px}

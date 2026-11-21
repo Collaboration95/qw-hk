@@ -1,0 +1,57 @@
+Recall Press · judges' questions · short, truthful answers
+Source: docs/submission/pitch-qa.md (evidence as of 19 November). "Not yet" stays "not yet" until a test result replaces it.
+Appendix keys: 9 then 1-6 open the cards.
+
+1. Has anyone paid for coverage after seeing their own slide corrected?
+   Not yet. The founder wrote the sample publications. The first proof would be an editor paying to cover a second edition after seeing their own slide corrected.
+
+2. Can you open a QwenWork task now and show which part the agent did?
+   Not yet verified. The plan: pick the Skill in a fresh task, watch it read the briefing, give its reasons and deliver slide four. Today the local replay shows what the scripts do.
+
+3. Did the clock run twice without the founder clicking?
+   Not yet. Two time-triggered runs must show the same project and their records. On unchanged data the second run should issue no duplicate correction.
+
+4. Can the agent find a claim your rules missed on a different deck?
+   Not yet. The rules found three of four verifiable claims on one unseen sample deck; the agent must read for the fourth. (Appendix 1: 40 unseen claims, 28 right, 9 handed to the agent with a reason, 3 not surfaced, 0 confidently wrong.)
+
+5. Can I find that figure on a public page and trace its enquiry into CRM?
+   Not yet. The record page and its enquiry form exist in the Revisionpedia build; public hosting and a test enquiry reaching CRM still need checking.
+
+6. Why buy this if charts already refresh in PowerPoint?
+   A refreshed chart can sit under a headline that still says "stalled". We find that sentence across registered briefings and hand the editor replacement wording and an editable file.
+
+7. What stops the agent from silently changing a board minute?
+   Each claim records whether it describes today or a dated release. October really did report flat output, so the minute keeps that statement; only the current headline gets a proposed replacement, with a reason. (Appendix 2.)
+
+8. What about the copy a member downloaded yesterday?
+   It stays on their device. The editor can send the corrected copy and cite the release behind it. We cannot recall a download.
+
+9. Does an email start a background job, and can the sender dictate the new value?
+   The planned route starts when the editor selects a forwarded notice and asks the task to check it. The check uses the official series, basis and quarter, never the sender's number.
+
+10. Does 57 of 60 mean almost every slide needs fixing?
+    No. The 60 are series-quarters with more than one reading in our archive; 57 changed at least once, 21 crossed zero or an illustrative cutoff at some point. Whether a slide needs fixing depends on its wording.
+
+11. Why trust the agent with an ambiguous sentence or a failed source check?
+    An unresolved claim is held with a reason, and a failed source check is reported. The editor applies, skips or edits each proposal.
+
+12. Why would anyone visit Revisionpedia before they know you?
+    A reader can look up why Q3 manufacturing is quoted as 0.0%, 5.0% and 4.6% and follow the source for each reading. Search and AI-citation traffic still need measuring.
+
+13. Can the public directory expose a subscriber's deck?
+    No. The directory is built from statistical records with links to dated releases. Only the founder's labelled samples belong on a public demo page.
+
+14. Can one founder deliver this profitably?
+    Unproven. We would measure the editor's manual correction time against registration, agent cost, review time and exceptions over several releases, and compare the cost per briefing with what an editor actually pays.
+
+15. What if the 24 November release changes nothing?
+    We show the actual run record: when the data was checked and whether it succeeded. An unchanged figure gets a quiet result; a failed fetch gets a visible failure. The November 2025 example stays a dated historical replay.
+
+16. Is anyone still quoting old numbers?
+    Yes: a claim-specific screen found 2 live web pages still quoting superseded figures, 6 and 57 days after the revision. It is a screen, not a census. (Appendix 3.)
+
+17. Where does the data come from?
+    SingStat tables via data.gov.sg under the Singapore Open Data Licence v1.0; dated MTI and SingStat releases for earlier readings. (Appendix 4.)
+
+18. Who pays?
+    Recurring briefing editors, for coverage per publication. Price is not yet validated. (Appendix 6.)

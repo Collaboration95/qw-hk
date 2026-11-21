@@ -1,0 +1,50 @@
+<!-- 4 · How it works, by roles. Four stations along one red recall thread that draws itself left to right; each
+     station's signal lamp lights as the thread reaches it, and the press mark rides the thread from the slide to the
+     corrected deck. Keyword chips only. -->
+<section class="slide" id="s4">
+  <h2 data-enter>QwenWork reads, checks nightly and hands back the fix.</h2>
+  <svg class="line" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path class="draw" style="--t:.1;--d:1.05s" d="M230 502 H1690"/>
+  </svg>
+  <i class="rider" aria-hidden="true"><span class="pm"><i></i><i></i><i></i></span></i>
+  <div class="stations">
+    <div class="st card pop" style="--t:.12;--o:50% 0">
+      <i class="ic"><svg viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="22" rx="3"/><path d="M14 20h14M14 26h9"/><path d="M24 34v6M17 40h14"/></svg></i>
+      <b>Skill</b><span>reads the slide</span>
+    </div>
+    <div class="st card pop" style="--t:.42;--o:50% 0">
+      <i class="ic"><svg viewBox="0 0 48 48"><path d="M30 9a14 14 0 1 0 9 22A11 11 0 0 1 30 9z"/><path d="M20 20v7l5 3"/></svg></i>
+      <b>Nightly task</b><span>checks the official data</span>
+    </div>
+    <div class="st card pop" style="--t:.72;--o:50% 0">
+      <i class="ic"><svg viewBox="0 0 48 48"><path d="M8 13h22M8 20h14M8 27h10"/><circle cx="31" cy="29" r="8"/><path d="M37 35l5 5"/></svg></i>
+      <b>Agent</b><span>judges each sentence</span>
+    </div>
+    <div class="st card pop hot" style="--t:1.02;--o:50% 0">
+      <i class="ic"><svg viewBox="0 0 48 48"><path d="M7 12l11-4 12 4 11-4v28l-11 4-12-4-11 4z"/><path d="M18 8v28M30 12v28"/><path d="M33 22l3 3 6-7" class="ok"/></svg></i>
+      <b>Page</b><span>map + corrected deck</span>
+    </div>
+  </div>
+  <aside class="notes"><b>Say</b>QwenWork does the reading, the nightly check and the delivery. A Skill reads each slide and links every claim to a series, a quarter and a dated source. A nightly task checks the official data. The agent judges each sentence (now wrong, number changed, or a dated statement that still holds) and gives a reason. Then it hands back the page: the map and the corrected deck. The editor decides: apply, skip or edit first.<b>Do</b>Keep it to the four nouns. If asked: this is the designed QwenWork flow; the founder's desktop checks (Skill picker, fresh task, two timed runs) are on the test card, and the local replay proves the engine underneath.</aside>
+</section>
+
+<style>
+#s4{--field:var(--f4)}
+#s4 .line{position:absolute;inset:0;width:1920px;height:1080px;pointer-events:none}
+#s4 .line path{fill:none;stroke:var(--thread);stroke-width:6;stroke-linecap:round;filter:drop-shadow(0 6px 8px rgba(10,10,30,.3))}
+#s4 .stations{position:absolute;left:var(--pad-x);right:var(--pad-x);top:470px;display:grid;grid-template-columns:repeat(4,1fr);gap:44px}
+#s4 .st{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:0 36px 40px;border-radius:22px}
+#s4 .st .ic{display:grid;place-items:center;width:132px;height:132px;margin:-34px 0 22px;border-radius:20px;
+  background:linear-gradient(180deg,#2A2B30,#141518);box-shadow:inset 0 2px 0 rgba(255,255,255,.12),0 0 0 2px #0B0B0D,0 16px 24px -12px rgba(10,8,30,.6)}
+#s4 .st .ic svg{width:76px;height:76px;fill:none;stroke:#F3ECDC;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#s4 .st.hot .ic svg .ok{stroke:var(--accent);stroke-width:3.4}
+#s4 .st b{font:800 58px/1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+#s4 .st span{font:500 34px/1.2 var(--f);color:var(--ink-2)}
+#s4 .rider{position:absolute;left:1690px;top:502px;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;z-index:3;
+  background:var(--navy);box-shadow:0 0 0 4px var(--thread),0 10px 18px -6px rgba(10,8,30,.6);color:#F3ECDC;font-size:30px;opacity:0}
+#s4 .rider .pm{display:inline-grid;width:.72em;height:.82em;align-content:center;gap:.105em;transform:skewY(-15deg)}
+#s4 .rider .pm i{display:block;height:.14em;background:currentColor}
+#s4 .rider .pm i:last-child{width:64%;background:var(--accent)}
+#s4.play .rider{animation:s4-ride 1.15s cubic-bezier(.45,0,.4,1) .1s both}
+@keyframes s4-ride{0%{opacity:0;transform:translateX(-1460px)}8%{opacity:1}88%{opacity:1}100%{opacity:0;transform:none}}
+</style>

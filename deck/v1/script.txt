@@ -1,0 +1,30 @@
+Recall Press · 3-minute pitch · spoken path (~390 words)
+Keys: → / Space / click = next · 0-9 jump · n = notes · f = fullscreen. Slide 0 is empty; the first press plays the reveal.
+
+[0 · reveal: press once, let the board land]
+Good morning. This is Recall Press.
+
+[1 · Official figures change. Published slides keep the old story.]
+Official figures change after they are published. Singapore's manufacturing in the first quarter of 2025 was first reported shrinking 4.9 percent. Today the same quarter shows 0.6 percent growth. But the slide that says "manufacturing shrank" is still sitting in someone's briefing. The figure moved. The slide kept the old story. Recall Press brings the editor back to the exact sentence.
+
+[2 · Every published number gets a recall address.]
+When an editor registers a briefing, every published number gets a recall address: the series, the quarter, and the exact sentence that quotes it. One official figure can sit in a members' deck, a sales brief and a board paper. When it changes, we know which sentences to revisit.
+
+[3 · One revision. Four documents. Two different answers.]
+Here is a real revision, replayed. In October 2025 the advance estimate put third-quarter manufacturing at 0.0 percent. The November survey said 5.0 percent. The map brings the editor to slide four of the members' briefing: "stalled" becomes "grew 5.0 percent year on year", with the source and an editable replacement. The board paper reported what October's estimate said. That is still true, so it stays. One revision, two different answers.
+(If time allows: switch to the live map and click Apply fix.)
+
+[4 · QwenWork reads, checks nightly and hands back the fix.]
+QwenWork does the reading, the nightly check and the delivery. A Skill reads each slide and links every claim to a series, a quarter and a dated source. A nightly task checks the official data. The agent judges each sentence (now wrong, number changed, or a dated statement that still holds) and gives a reason. Then it hands back the page: the map and the corrected deck. The editor decides: apply, skip or edit first.
+
+[5 · 57 of 60 quarters changed after first release.]
+This is not rare. Of 60 series and quarters in our archive with more than one reading, 57 changed after first release. Revisionpedia, our public directory on Hashmeta, gives every figure and quarter its own page with its release history and official sources. It explains why one quarter is quoted three ways, and it is where an editor can ask us to cover their briefing.
+
+[6 · A slide that comes with its next correction.]
+The next GDP release is scheduled for 24 November at 8 a.m. Singapore time. We want to be live on it, and to pilot with one briefing editor. Scan to browse Revisionpedia. Recall Press: a slide that comes with its next correction.
+
+Say aloud only if asked (never on a slide):
+- The briefings in the demo are sample documents the founder wrote; the figures, dates and sources are real releases.
+- The history is replayed: each saved map uses only the figures available on its check date.
+- No paying customer yet; price and demand are unvalidated.
+- The QwenWork flow on slide 4 is the designed run; the founder's desktop checks (Skill picker, fresh task, two timed runs, Hashmeta draft) are on the test card. The local replay proves the engine underneath.

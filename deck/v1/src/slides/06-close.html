@@ -1,0 +1,26 @@
+<!-- 6 · Close, bookend. The morning board widens and lands on the wordmark (lib/40-board.js); the sun is up. Two
+     next steps as departure rows that flip in; a big QR to the live Revisionpedia (tools/qr.py regenerates it). -->
+<section class="slide" id="s6">
+  <h2 data-enter style="--t:.1">A slide that comes with its next correction.</h2>
+  <div class="next">
+    <div class="dep flip" style="--t:.35"><i class="arr">→</i><span>Pilot with a briefing editor</span></div>
+    <div class="dep flip" style="--t:.55"><i class="arr">→</i><span>Live on the next GDP release</span></div>
+  </div>
+  <div class="qr rise" style="--t:.2"><img data-inline src="../assets/qr.svg" alt="QR code to Revisionpedia"><p>revisionpedia.geo.hashmeta.tech</p></div>
+  <aside class="notes"><b>Say</b>The next GDP release is scheduled for 24 November at 8 a.m. Singapore time. We want to be live on it, and to pilot with one briefing editor. Scan to browse Revisionpedia. Recall Press: a slide that comes with its next correction.<b>Do</b>Hold on this slide for questions. Say aloud if asked: no paying customer yet; the history shown is replayed from real releases.</aside>
+</section>
+
+<style>
+#s6{--field:var(--f6)}
+#s6 h2{position:absolute;left:var(--pad-x);top:300px;width:1060px;font-size:108px}
+#s6 .next{position:absolute;left:var(--pad-x);top:640px;display:flex;flex-direction:column;gap:18px}
+#s6 .dep{position:relative;display:flex;align-items:center;gap:24px;width:1000px;height:100px;padding:0 34px;border-radius:14px;color:#F3ECDC;font:600 42px/1 var(--f);letter-spacing:-.01em;
+  background:linear-gradient(180deg,#2E2F35 0%,#25262B 49.6%,#0B0B0D 49.6%,#0B0B0D 50.4%,#1E1F23 50.4%,#17181B 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 2px #0B0B0D,0 22px 34px -18px rgba(60,20,30,.7)}
+#s6 .dep .arr{font-style:normal;color:var(--accent);font-weight:700}
+#s6.play .dep.flip{transform-origin:50% 0;animation:s6-flip .42s cubic-bezier(.3,1.4,.5,1) calc(var(--t)*1s) backwards}
+@keyframes s6-flip{from{transform:perspective(900px) rotateX(-88deg);filter:brightness(.4)}}
+#s6 .qr{position:absolute;right:var(--pad-x);top:262px;padding:30px 30px 22px;background:linear-gradient(180deg,var(--paper),#F1E5D8);border-radius:26px}
+#s6 .qr svg{display:block;width:500px;height:500px}
+#s6 .qr p{margin-top:16px;text-align:center;font:600 26px/1 var(--f);color:var(--ink-2);letter-spacing:-.01em}
+</style>

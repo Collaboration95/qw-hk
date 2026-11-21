@@ -1,0 +1,51 @@
+<!-- 2 · The idea in one picture: one official figure, three documents, three red recall threads. Each thread pulls
+     taut from the figure to the one sentence that quotes it; the sentence lights and a small recall stamp presses
+     where the thread lands. -->
+<section class="slide" id="s2">
+  <h2 data-enter>Every published number gets a recall address.</h2>
+  <div class="fig pop" style="--t:.05;--o:100% 50%">
+    <div class="rp-housing">
+      <div class="plate">Manufacturing</div>
+      <div class="rp-row q"></div>
+    </div>
+  </div>
+  <svg class="threads" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path class="draw" style="--t:.15;--d:.5s" d="M596 640 C 800 640, 860 452, 1092 452"/>
+    <path class="draw" style="--t:.32;--d:.5s" d="M596 640 C 800 640, 860 652, 1092 652"/>
+    <path class="draw" style="--t:.49;--d:.5s" d="M596 640 C 800 640, 860 852, 1092 852"/>
+    <circle cx="596" cy="640" r="9" class="knot"/>
+  </svg>
+  <div class="docs">
+    <div class="doc card" data-enter style="--t:0"><b>Members' deck</b><div class="lines"><i></i><i class="hit" style="--t:.6"></i><i class="s"></i></div><i class="stamp ring" style="--t:.62"></i></div>
+    <div class="doc card" data-enter style="--t:.05"><b>Sales brief</b><div class="lines"><i class="s"></i><i class="hit" style="--t:.77"></i><i></i></div><i class="stamp ring" style="--t:.79"></i></div>
+    <div class="doc card paper" data-enter style="--t:.1"><b>Board paper</b><div class="lines"><i></i><i class="hit" style="--t:.94"></i><i class="s"></i></div><i class="stamp ring" style="--t:.96"></i></div>
+  </div>
+  <aside class="notes"><b>Say</b>When an editor registers a briefing, every published number gets a recall address: the series, the quarter, and the exact sentence that quotes it. One official figure can sit in a members' deck, a sales brief and a board paper. When it changes, we know which sentences to revisit.<b>Do</b>Trace one thread with your hand, figure to sentence.</aside>
+</section>
+
+<style>
+#s2{--field:var(--f2)}
+#s2 .fig{position:absolute;left:var(--pad-x);top:536px}
+#s2 .fig .rp-housing{padding:18px 20px 22px;gap:14px}
+#s2 .fig .plate{font:600 34px/1 var(--serif);color:#E9DFD2;padding:4px 4px 2px}
+#s2 .fig .rp-row{--cw:52px;--ch:74px;gap:6px}
+#s2 .threads{position:absolute;inset:0;width:1920px;height:1080px;pointer-events:none;z-index:2}
+#s2 .threads path{fill:none;stroke:var(--thread);stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 6px 6px rgba(10,10,30,.35))}
+#s2 .threads .knot{fill:var(--thread);stroke:#F3D2C5;stroke-width:3}
+#s2 .docs{position:absolute;left:1080px;top:382px;display:flex;flex-direction:column;gap:30px}
+#s2 .doc{width:700px;height:170px;padding:26px 34px 0 50px;border-radius:20px;display:flex;flex-direction:column;gap:20px}
+#s2 .doc b{font:700 40px/1 var(--serif);letter-spacing:-.015em;color:var(--ink)}
+#s2 .doc .lines{display:flex;flex-direction:column;gap:12px}
+#s2 .doc .lines i{display:block;height:13px;width:86%;border-radius:7px;background:#E2D4C4}
+#s2 .doc .lines i.s{width:58%}
+#s2 .doc .lines i.hit{position:relative;width:96%;height:22px;margin:-4px 0 -5px -12px;border-radius:6px;background:#F7C9AE;box-shadow:inset 0 0 0 2px #E79A76}
+#s2 .doc .lines i.hit::after{content:"";position:absolute;left:12px;top:9px;width:72%;height:5px;border-radius:3px;background:#B9573D;opacity:.55}
+#s2.play .doc .lines i.hit{animation:s2-lit .3s var(--ease) calc(var(--t)*1s) backwards}
+@keyframes s2-lit{from{background:#E2D4C4;box-shadow:inset 0 0 0 2px transparent}}
+#s2 .doc .ring{position:absolute;left:-24px;top:62px;width:26px;height:26px;border-radius:50%;background:var(--thread);box-shadow:0 0 0 5px rgba(217,71,47,.22),0 3px 6px rgba(20,10,30,.4)}
+</style>
+
+<script>
+const el = document.getElementById('s2')
+RP.flaps(el.querySelector('.fig .q'), 7, { text: 'Q3 2025' })
+</script>

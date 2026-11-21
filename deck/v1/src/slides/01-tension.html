@@ -1,0 +1,72 @@
+<!-- 1 · The felt, two-sided tension. Left: the vintage board for one quarter; the NOW row flips from −4.9% to +0.6%
+     while the FIRST row dims and is struck. Right: the briefing slide that still says "shrank" (it does not move:
+     that is the point); the marker draws on "shrank" after the board has landed. Then the one-line answer. -->
+<section class="slide" id="s1">
+  <h2 data-enter>Official figures change. Published slides keep the old story.</h2>
+  <div class="stage1">
+    <div class="vb-wrap">
+      <div class="rp-housing vb">
+        <div class="plate">Manufacturing · Q1 2025</div>
+        <div class="rp-row first"><span class="lab"></span><span class="val"></span><i class="cut"></i></div>
+        <div class="rp-row now"><span class="lab"></span><span class="val"></span></div>
+      </div>
+    </div>
+    <div class="slidecard card">
+      <div class="sc-bar"></div>
+      <p class="sc-h">Manufacturing <span class="mk">shrank</span> in Q1</p>
+      <svg class="sc-chart" viewBox="0 0 520 150" aria-hidden="true">
+        <path d="M0 96H520" class="base"/>
+        <rect x="20" y="40" width="56" height="56"/><rect x="120" y="22" width="56" height="74"/><rect x="220" y="50" width="56" height="46"/><rect x="320" y="34" width="56" height="62"/>
+        <rect x="420" y="96" width="56" height="44" class="neg"/>
+      </svg>
+      <div class="sc-foot"><i></i><i></i></div>
+    </div>
+  </div>
+  <p class="answer" data-enter style="--t:1.05"><b class="wm"><span class="pm"><i></i><i></i><i></i></span>Recall Press</b> brings the editor back to the exact sentence.</p>
+  <aside class="notes"><b>Say</b>Official figures change after they are published. Singapore's manufacturing in the first quarter of 2025 was first reported shrinking 4.9 percent. Today the same quarter shows 0.6 percent growth. But the slide that says "manufacturing shrank" is still sitting in someone's briefing. The figure moved. The slide kept the old story. Recall Press brings the editor back to the exact sentence.<b>Do</b>Let the board flip, then point at the circled word. One breath per side.</aside>
+</section>
+
+<style>
+#s1{--field:var(--f1)}
+#s1 .stage1{position:absolute;left:var(--pad-x);right:var(--pad-x);top:372px;height:470px;display:flex;align-items:center;gap:90px}
+#s1 .vb{padding:20px 22px 24px;gap:16px}
+#s1 .vb .plate{font:600 30px/1 var(--serif);color:#E9DFD2;letter-spacing:.005em;padding:4px 4px 6px}
+#s1 .vb .rp-row{position:relative;align-items:center;gap:22px}
+#s1 .vb .lab,#s1 .vb .val{display:flex;gap:5px}
+#s1 .vb .lab{--cw:40px;--ch:58px;width:220px}
+#s1 .vb .val{--cw:88px;--ch:124px;gap:7px}
+#s1 .vb .first{--fl-ink:#B8AFA6;opacity:.62}
+#s1 .vb .first .val{--cw:58px;--ch:82px;gap:6px}
+#s1 .vb .now .val{--fl-ink:var(--accent)}
+#s1 .vb .cut{position:absolute;left:236px;right:-6px;top:50%;height:5px;margin-top:-2px;border-radius:3px;background:#E9DFD2;transform-origin:0 50%;z-index:5}
+#s1.play .vb .cut{animation:draw-x .3s var(--ease) .95s backwards}
+#s1 .slidecard{flex:none;width:760px;height:428px;padding:36px 44px;transform:rotate(1.6deg);border-radius:18px}
+#s1 .sc-bar{width:150px;height:14px;border-radius:7px;background:#D9CBBB}
+#s1 .sc-h{margin-top:26px;font:700 62px/1.05 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+#s1 .sc-chart{display:block;width:520px;height:150px;margin-top:28px}
+#s1 .sc-chart rect{fill:#4A4B6E}
+#s1 .sc-chart .neg{fill:#8E5263}
+#s1 .sc-chart .base{stroke:#BDAE9F;stroke-width:3}
+#s1 .sc-foot{position:absolute;left:44px;bottom:30px;display:flex;gap:14px}
+#s1 .sc-foot i{width:90px;height:10px;border-radius:5px;background:#E3D6C8}
+#s1 .sc-foot i+i{width:60px}
+#s1 .mk.draw path{animation-delay:1.0s}
+#s1 .answer{position:absolute;left:var(--pad-x);bottom:118px;display:flex;align-items:baseline;gap:6px;font:500 40px/1.2 var(--f);color:var(--ink-auto)}
+#s1 .wm{font:800 44px/1 var(--serif);letter-spacing:-.03em;margin-right:6px;display:inline-flex;align-items:baseline;gap:.32em}
+#s1 .pm{align-self:center;display:inline-grid;width:.72em;height:.82em;align-content:center;gap:.105em;transform:skewY(-15deg)}
+#s1 .pm i{display:block;height:.14em;background:currentColor}
+#s1 .pm i:last-child{width:64%;background:var(--accent)}
+</style>
+
+<script>
+const el = document.getElementById('s1')
+const lab1 = RP.flaps(el.querySelector('.first .lab'), 5, { text: 'FIRST' })
+const val1 = RP.flaps(el.querySelector('.first .val'), 5, { text: '−4.9%' })
+const lab2 = RP.flaps(el.querySelector('.now .lab'), 5, { text: 'NOW' })
+const val2 = RP.flaps(el.querySelector('.now .val'), 5, { text: '+0.6%' })
+Deck.on('s1', {
+  enter: (_, ctx) => { if (ctx.play) val2.play('−4.9%', '+0.6%', { delay: .36, stagger: .06, dt: .05, maxFlips: 7 }); else val2.set('+0.6%') },
+  rest: () => val2.set('+0.6%'),
+  final: () => val2.set('+0.6%'),
+})
+</script>
