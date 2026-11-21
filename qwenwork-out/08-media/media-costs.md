@@ -1,6 +1,6 @@
 # Recall Press — Media Generation Cost Report
 
-Generated with QwenWork on 2026-11-19. Credits measured from the QwenWork usage panel
+QwenWork run dated 2026-11-19. Credits measured from the QwenWork usage panel
 (`qwenwork.usage`) before/after each asset. Plan: 4500 credits.
 
 ## Environment

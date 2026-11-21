@@ -1,6 +1,6 @@
-# QwenWork bridge · one paste, then Claude drives
+# QwenWork bridge · one paste, then the orchestrator drives
 
-QwenWork has no outside API, but it has a scheduler. This sets up one local scheduled task that checks `docs/qw-inbox/` every 10 minutes and runs whatever job file Claude has written there, as a real QwenWork task with the recall-press Skill. Results land in `docs/qw-outbox/<job>/`. Claude reads them and writes the next job.
+QwenWork has no outside API, but it has a scheduler. This sets up one local scheduled task that checks `docs/qw-inbox/` every 10 minutes and runs whatever job file the orchestrator has written there, as a real QwenWork task with the recall-press Skill. Results land in `docs/qw-outbox/<job>/`. The orchestrator reads them and writes the next job.
 
 **Your part, once:** QwenWork Desktop → new task → working folder = this repo (`qw-hk`) → strongest model in the dropdown → `/recall-press` → paste the box. Keep QwenWork open and the Mac awake and plugged in (`caffeinate -dis` in a terminal works).
 

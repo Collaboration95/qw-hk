@@ -105,7 +105,7 @@ Every rule below cost at least one feedback round when it was missed. Read all o
 - Screens: use the best-looking source (concept renders, drawn art), not raw captures that look worse.
 - Every phone screen sits in a real iPhone frame (9:19.5, bezel, Dynamic Island, home bar). Asked five times,
   twice in caps. Web products use a browser frame. Use `.phone` / `.browser` from the engine.
-- Real logos for third parties (Claude, Cursor, VS Code), never drawn stand-ins. The brand wordmark is text in
+- Real logos for third parties (for example, Cursor or VS Code), never drawn stand-ins. The brand wordmark is text in
   the brand font and colour.
 
 ## 10. Craft shows in the tiny details

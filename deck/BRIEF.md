@@ -1,6 +1,6 @@
 # Recall Press pitch deck · BRIEF
 
-Written by Claude (story, claims, design direction). Built by QwenWork with the kit in `deck/kit/` (the owner's pitch-deck engine and rules). Copy comes ONLY from this file. Numbers come ONLY from the claims table. If something does not fit, leave it out and say so in the report. Never invent copy, quotes, users or numbers.
+Written by the orchestrator (story, claims, design direction). Built by QwenWork with the kit in `deck/kit/` (the owner's pitch-deck engine and rules). Copy comes ONLY from this file. Numbers come ONLY from the claims table. If something does not fit, leave it out and say so in the report. Never invent copy, quotes, users or numbers.
 
 ## 1. Must know
 
@@ -38,7 +38,7 @@ Each number appears on one slide only. Caveats (sample documents were written by
 | 3 | **One revision. Four documents. Two different answers.** | the demo / golden run | the real map screenshot (deck/shared/map-2025-11-21.png) in a `.browser` frame, cropped to the hero band + the document list; beside it a before → after sentence card: "Manufacturing ~~stalled~~ → grew 5.0% year on year in Q3 2025." and a green "still true" tag on the board paper | yes |
 | 4 | **QwenWork reads, checks nightly and hands back the fix.** | how it works (roles) | a role pipeline of four stations with self-drawing line: Skill reads the slide → Nightly task checks the official data → Agent judges each sentence → Page map + corrected deck. Keyword chips only | yes |
 | 5 | **57 of 60 quarters changed after first release.** | proof / reach | big count-up "57 / 60" at left; right: Revisionpedia record page (deck/shared/revisionpedia-mfg-q3.png) in a `.browser` frame, rising | yes |
-| 6 | **A slide that comes with its next correction.** | close / bookend | the split-flap board from slide 0 small at top showing RECALL PRESS; two "What's next" items as board rows: "Pilot with a briefing editor" · "Live on the next GDP release"; big QR (≥ 420 px) to the live Revisionpedia URL (placeholder `QR_URL` until Claude supplies it) | yes |
+| 6 | **A slide that comes with its next correction.** | close / bookend | the split-flap board from slide 0 small at top showing RECALL PRESS; two "What's next" items as board rows: "Pilot with a briefing editor" · "Live on the next GDP release"; big QR (≥ 420 px) to the live Revisionpedia URL (placeholder `QR_URL` until the orchestrator supplies it) | yes |
 | 9 | **Appendix** | Q&A tiles | numbered tiles: "How accurate is the reading?" (C5) · "What about dated statements?" (C4) · "Is anyone still quoting old numbers?" (C6) · "Where does the data come from?" (SingStat via data.gov.sg, Singapore Open Data Licence; MTI releases) · "What is real and what is replayed?" (real releases and engine; replayed history; founder-written sample documents) · "Who pays?" (recurring briefing editors, per-publication coverage; price unvalidated) | fallback |
 
 Spoken word budget about 400 words total; speaker notes in `<aside class="notes">` with Say/Do on each spoken slide.

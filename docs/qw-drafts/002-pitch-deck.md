@@ -18,7 +18,7 @@ Build the Recall Press pitch deck with the owner's deck engine. The story, copy,
 5. Copy the needed screens from `deck/shared/` into `v1/src/assets/` (crop with a small script in `v1/tools/` if needed; keep the deck under 5 MB).
 6. The carry device: a slim vintage board along the top edge whose rows flip on each forward slide change (≤ 1.2 s). If this is too hard, build it static first and report it.
 7. Ambient life on one clock (`Deck.clock`): a far MRT train along the bottom, thinning rain, one late window. Small, low, slow.
-8. Slide 6 QR: generate a QR PNG for the text `https://revisionpedia.geo.hashmeta.tech` with python (`pip install qrcode` or `segno`) into `v1/src/assets/qr.png`, at least 420 px on the slide. Claude may change the URL later.
+8. Slide 6 QR: generate a QR PNG for the text `https://revisionpedia.geo.hashmeta.tech` with python (`pip install qrcode` or `segno`) into `v1/src/assets/qr.png`, at least 420 px on the slide. The owner’s agent may change the URL later.
 9. `node kit/scripts/export.mjs v1` then `node kit/scripts/export.mjs v1 --motion`.
 
 ## Self-check loop (do at least 2 rounds)

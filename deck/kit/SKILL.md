@@ -14,10 +14,10 @@ Optimised for hackathon pitches. Outside hackathons, the user supplies the conte
 
 ## Models
 
-- Design and copy lanes: Claude only (Opus 5.5, or Fable 5.2 for critique). **Never use Codex or GPT models for
-  designing or writing copy.** In Codex, delegate design lanes to Claude (T3 `delegate_task` with the Claude
-  provider, or `claude -p`); if that is impossible, say so and stop rather than designing with GPT.
-- Capture, asset gathering and fact checks may use cheaper Claude models (Sonnet, Haiku).
+- Design and copy lanes: use only the designated design provider (Opus 5.5, or Fable 5.2 for critique). **Never use Codex or GPT models for
+  designing or writing copy.** In Codex, delegate design lanes to the designated provider through T3 `delegate_task`
+  or its command-line agent in noninteractive mode. If delegation is unavailable, report it and stop.
+- Capture, asset gathering and fact checks may use cheaper models from the same provider (Sonnet, Haiku).
 - Spend freely on quality; the user prefers more parallel lanes to more feedback rounds.
 
 ## Steps
@@ -55,7 +55,7 @@ Optimised for hackathon pitches. Outside hackathons, the user supplies the conte
 - Brief each lane with `references/variant-brief.md` filled in (its direction, the others in one line each).
   Each lane scaffolds its own folder `pitch/v1` … `pitch/v4` with `scripts/new-deck.mjs`, builds from the
   engine, exports, reads its own `out/sheet.png` and fixes against taste.md before returning.
-- Parallel lanes: Claude Code `Agent` (model opus), or T3 `delegate_task` with Claude Opus.
+- Parallel lanes: use the designated coding agent’s `Agent` tool or T3 `delegate_task`, with Opus in either case.
 
 ### 5. Compare and critique
 - `node scripts/export.mjs --compare pitch/v1 pitch/v2 pitch/v3 pitch/v4 --out pitch/compare` → filmstrip.

@@ -1,6 +1,6 @@
 # QwenWork autopilot · batch 1
 
-One paste replaces the manual test card. QwenWork's own agent runs tests 1–5 and 7, writes the evidence into this repo, and Claude reads it afterwards. Hashmeta (test 6) and the video (test 8) come in batch 2.
+One paste replaces the manual test card. QwenWork's own agent runs tests 1–5 and 7, writes the evidence into this repo, and the orchestrator reads it afterwards. Hashmeta (test 6) and the video (test 8) come in batch 2.
 
 **Before pasting:** open QwenWork Desktop → new task → working folder = this repo (`qw-hk`) → pick the strongest model in the dropdown (Qwen4-Max if listed) → select the `recall-press` Skill with `/`. Keep the Mac awake and plugged in. Then paste everything inside the box below and leave it alone.
 
