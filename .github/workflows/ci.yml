@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.14'
       - name: Install test dependencies
@@ -25,7 +25,13 @@ jobs:
       - name: Check map viewports in headless Chrome
         run: |
           PYTHONPATH=. python tests/test_hardening_map.py "$RUNNER_TEMP/maps"
-          CHROME="$(command -v google-chrome)" node tests/map_viewports.mjs "$RUNNER_TEMP/maps"
+          # Keep the content viewport at the requested width on Linux.
+          cat > "$RUNNER_TEMP/chrome" <<'SH'
+          #!/bin/sh
+          exec google-chrome --hide-scrollbars "$@"
+          SH
+          chmod +x "$RUNNER_TEMP/chrome"
+          CHROME="$RUNNER_TEMP/chrome" node tests/map_viewports.mjs "$RUNNER_TEMP/maps"
       - name: Replay samples and verify corrected slide 4
         shell: python
         run: |
