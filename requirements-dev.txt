@@ -1,0 +1,3 @@
+-r skills/recall-press/requirements.txt
+lxml==6.1.3
+pytest==9.2.0
