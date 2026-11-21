@@ -178,3 +178,50 @@ Download-button assessment (from the HTML, since the hosted test was blocked): t
 Outputs: docs/qw-results/page/index.html, docs/qw-results/map-static.png (static screenshot), docs/qw-results/map-2025-11-21.html.
 
 Surprise: the controlled publisher created the Page but repeatedly withheld its result/URL under a "protection context changed" guard — an environment blocker, not a map defect.
+
+## STEP 7 · Clock tasks fired — PASS (with scheduler caveat)
+
+Both one-time scheduled tasks were created at 15:33:31 SGT for 15:43:31 and 15:53:31. The local scheduler did NOT admit either on time (same `request_deadline` miss that affected the bridge cron at 15:30 and 15:40). This is exactly the scenario documented in FALLBACKS.md item 4.
+
+**Manual trigger via "Run now"** bypassed the broken scheduled admission:
+
+| Task | Triggered at | run_id | Verdict |
+|---|---|---|---|
+| clock-1 (fe33912c) | 15:48:37 SGT (manual) | 2026-11-21-68013a314ad1 | **corrections** — 2 revisions found live |
+| clock-2 (d9917d4b) | 15:56:49 SGT (manual) | 2026-11-21-98bbcfe8ff96 | **quiet** — no new change, 8 series checked |
+
+### Clock-1 detail (live data.gov.sg check)
+
+- `rp check --trigger schedule --record` hit real data.gov.sg endpoints; all 8 series fetched successfully.
+- Found 2 issued-revisions affecting the members' briefing:
+  - services-qoq 2025-Q1: 0.6→0.7 (Economic Survey 2025-Q4, pub 2026-02-10) → `number_only`
+  - manufacturing-yoy 2025-Q3: 0.0→4.6 (Advance GDP 2026-Q1, pub 2026-04-14) → `now_wrong`
+- Agent judged both, ran `fix` (2 corrected PPTX drafts) and `map` (self-contained HTML).
+- October briefing 8 claims: all `unaffected` (no 2026-Q3 revision).
+- Full note: `docs/qw-results/clock-1.md` (38 lines).
+
+### Clock-2 detail (second live check, 8 min later)
+
+- Same live check; no new revision since clock-1 → `no_change: true`.
+- Previously issued corrections correctly deduplicated (issued ledger).
+- Full note: `docs/qw-results/clock-2.md` (18 lines).
+
+### Scheduler assessment
+
+The local scheduled-task engine is currently not admitting runs at their scheduled time (`Missed execution (reason: request_deadline)`). This affects the bridge cron (which will also miss until resolved) and both one-shot clock tasks. Manual "Run now" works reliably and is the documented fallback. The tasks themselves are functional; the scheduler is an environment issue to monitor.
+
+Surprise: none — the live check correctly found the same 2 revisions the offline replay predicted (with a slightly different manufacturing value: 4.6 from the 2026-04-14 advance vs 5.0 from the 2025-11-21 survey; both are valid published vintages).
+
+## SUMMARY
+
+| Step | Result |
+|---|---|
+| 1. Skill loaded + environment | PASS |
+| 2. Correct the slide (offline replay) | PASS |
+| 3. Unseen deck (unassisted read) | PASS (4/4) |
+| 4. Clock tasks created | PASS |
+| 5. Email-style trigger (simulated) | PASS |
+| 6. Publish map as QW Page | PARTIAL (Page created; URL withheld) |
+| 7. Clock tasks fired (live check) | PASS (manual trigger; scheduler issue noted) |
+
+All deliverables produced except the hosted QW Page URL (environment blocker, not a Skill defect).
