@@ -1,41 +1,40 @@
 # Recall Press · submission film
 
-**Full cut 2:35.** Open on the working map. Hold long enough to read one sentence before moving the pointer. These are capture filenames for the founder, not recordings already made. As of 19 November the product has run locally only. Friday markers refer to the [desktop test card](../TEST-CARD.md).
+**Target 2:30, maximum 3:00.** Screen recordings of the real product for every product shot. Generated clips only for short transitions. Every historical shot keeps its date and the word “sample”. Filenames are captures still to be made.
 
-| Time | Surface and capture | On-screen caption | Narration |
+Evidence for each shot: [QwenWork results](../qw-results/RESULTS.md), [clock-1](../qw-results/clock-1.md), [clock-2](../qw-results/clock-2.md), [Job 001 report](../qw-outbox/001-acceptance-tests/REPORT.md), [Hashmeta build log](../HASHMETA-LOG.md).
+
+| Time | Capture | On-screen caption | Narration |
 |---|---|---|---|
-| 0:00–0:12 | Publication map · `01-map.mov`. Click the members’ briefing and reveal slide four. | Historical replay · 21 Nov 2025 · sample briefing | “Manufacturing stalled.” That was a fair headline in October. In November the same quarter showed five percent growth. Here’s the slide an editor needs to fix. |
-| 0:12–0:25 | Original slide · `02-original.png`. Hold on the October headline. | Sample slide · October estimate, 0.0% | Imagine this slide going into next week’s member briefing. A release alert tells me the figure changed. I still have to remember where I used it. |
-| 0:25–0:42 | QwenWork task · `03-register.mov`. Select Skill, show linked sentences [VERIFY: test 1] [VERIFY: test 2]. | Register once · founder’s sample | I register the slide once. Each sentence points to a figure, a quarter and a particular release. That gives the next correction an address. |
-| 0:42–0:56 | Scheduled-task history · `04-clock.mov`. Hold on actual times, location and saved outcome [VERIFY: test 4]. | Clock test · two one-time checks | These are two checks of the same project. A change needs an editor. An unchanged reading needs a record and no second deck. |
-| 0:56–1:08 | QwenWork task with selected Mail release · `05-mail.mov` [VERIFY: test 5]. | Editor-requested check · forwarded release | An editor can also bring a release email to the task. The notice tells it where to look. The official figure supplies the evidence. |
-| 1:08–1:24 | Map · `06-dated.mov`. Open the board paper on the November replay. | Historical replay · sample board paper | The board paper says what October’s estimate was. That sentence is still true. Replacing its number would introduce an error. |
-| 1:24–1:39 | Map · `07-threshold.mov`. Show the same sample GDP claim in the August and October maps. | Historical replay · Q2 2026 GDP · sample publication | Five point seven became five point nine. “Under six percent” still held. When the figure reached six point two, the conclusion had to change too. |
-| 1:39–1:56 | Corrected slide · `08-fixed.png`. Download and open the local November deck, capture slide four with its source. | Historical replay · editable replacement · 21 Nov 2025 | Here’s the replacement slide. The editor can apply the fix, skip it or edit the wording first. Someone who already downloaded the old deck still has their copy. |
-| 1:56–2:12 | Revisionpedia record · `09-record.mov`. Follow the dated releases to the later reading. | Revisionpedia · local preview | Five percent was the November figure. Later it was four point six. This page keeps the whole history, so a reader can check what was known on each date. |
-| 2:12–2:24 | Enquiry arriving · `10-enquiry.mov`. Only with a matched test receipt, cut from the record slug to its arrival in CRM. Mask private fields. | Founder’s test enquiry · matched record | An editor can ask for the same coverage on a briefing. This enquiry is the founder’s delivery test. There is no paying customer yet. |
-| 2:24–2:35 | Corrected slide · `08-fixed.png`. Hold on the source line. | Next GDP release · 24 Nov 2026 · 08:00 SGT | Tuesday brings the next GDP release. The first question for a real editor is simple. Which slide will you use again? |
+| 0:00–0:15 | `01-map.mov` · Job 001 map. Click the members’ briefing, show “stalled” and the source changing from 14 Oct to 21 Nov 2025. | Sample briefing written by the founder · historical replay, 21 Nov 2025 | “Manufacturing stalled.” That was a fair headline in October 2025. In November the same quarter showed five percent growth. |
+| 0:15–0:45 | `02-task.mov` · QwenWork task (session `mwq2wb75y5x1adbq`): the loaded Skill, the registered original, slide 4 and its sentence, the agent’s own claim and reason. Show series, quarter and dated release. | QwenWork Job 001 · run 2025-11-21-8d43d94969a0 | In QwenWork, the Skill reads the slide. The agent links this sentence to manufacturing growth, third quarter, the October release. Then it judges it against the November survey: now wrong, and why. |
+| 0:45–1:15 | `03-dated.mov` then `04-fixed.mov` · Four-document replay map: open the board paper. Return to the Job 001 result, download the replacement, open slide 4 in PowerPoint beside the original. | Sample board paper · still true · then: editable replacement, November source | The board paper says what October’s estimate was. That is still true, so it stays. The headline is not. Here is the replacement, in the same deck, with the November source. |
+| 1:15–1:42 | `05-history.mov` · QwenWork scheduled-task history with both run IDs. | Live checks · 21 Nov 2026 · **manual Run now after a missed schedule** · 8 series | These are two live checks against data.gov.sg. We started both by hand after the scheduler missed its slot. The first found two later revisions, including manufacturing now at 4.6 percent, published in April 2026. The second was quiet and issued nothing twice. |
+| 1:42–2:05 | `06-decision.mov` · Make one editor choice on the map: Apply fix, Skip or Edit first. Show the exported decision. | Editor decides · the original file is kept | The editor decides. Apply, skip, or edit the wording first. Nothing is sent until the editor sends it. A copy someone already downloaded stays with them. |
+| 2:05–2:30 | `07-record.mov` · Open the public Revisionpedia record signed out, then Cover my briefing. End card: pilot offer, customer status, links. | Revisionpedia · live on Hashmeta · no paying customer yet | Revisionpedia keeps every reading of this figure, with its source. An editor can ask us to cover one briefing. There is no paying customer yet. The first step is one editor with one real slide. |
 
-**If evidence is missing.** For shot 3 use the actual registration prompt screenshot, caption “Skill instructions · desktop run pending” and say “The Skill asks the editor to register the slide once.” For shot 4 show the schedule prompt, caption “Planned schedule · clock unverified” and say “The planned nightly check uses the same project each time.” For shot 5 show the mail prompt, caption “Mail test pending” and say “A forwarded release is the second planned way to ask for a check.” Label any actual pasted input “Pasted release”; label a manual run “Manual”. Show the actual history outcome if it differs from the script.
+<!-- TODO: fill when job 004/005 report -->
+**If Job 004 records runs started by the scheduler:** in shot 1:15–1:42, show those history entries next to the manual pair. Caption them “Automatic · started by schedule” with their times, and keep the manual pair labelled “manual Run now”. Otherwise keep the caption above.
 
-Keep the directory caption “local preview” until the record loads signed out on Hashmeta. An unpublished draft [VERIFY: test 6] proves only draft access. With no verified CRM receipt, replace shot 10 with the disabled preview form, caption “Local form preview · delivery unverified” and say “This is where an editor could ask for coverage. Delivery still needs a test. There is no paying customer yet.” Use the local map unless the hosted Page and its download work [VERIFY: test 7]. Keep the date and sample label on every historical shot, including a hosted replay.
+**If Job 005 publishes the correction Page:** in shot 0:45–1:15, download the replacement from the public Page instead of the local map, and show its URL. Otherwise use the local Job 001 map and caption it “local map”.
+
+**Shot 2:05–2:30:** show a test enquiry arriving in Form Submissions only if one has been sent and matched to the record. Otherwise show the form and caption “Enquiry delivery not yet tested”.
 
 ## 60-second cut
 
-Use the same source files, captions and evidence conditions. Read only this column.
+Use the same captures and captions. Read only this column.
 
 | Time | Picture | Narration |
 |---|---|---|
-| 0:00–0:10 | 01 · select slide four | Singapore first reported flat manufacturing output. Five weeks later, the same quarter showed five percent growth. This sample slide still says “stalled.” |
-| 0:10–0:19 | 03 · registration | Register the sentence once, with its slide, quarter and source. That’s where its next correction goes. |
-| 0:19–0:26 | 04 · history | The planned nightly check looks for changes to figures the editor actually used. |
-| 0:26–0:35 | 06 · dated board paper | This board paper quotes October’s estimate. Updating that sentence would make it wrong. |
-| 0:35–0:45 | 08 · replacement slide | Here’s the corrected slide with its source. The editor decides whether to use it. |
-| 0:45–0:53 | 09 · public record or preview | Revisionpedia keeps all three readings, including the later four point six percent. |
-| 0:53–1:00 | 10 · receipt or preview form | The first invitation is to register one real slide. There is no paying customer yet. |
+| 0:00–0:10 | 01 · slide 4 on the map | Singapore first reported flat manufacturing for Q3 2025. A month later the same quarter showed five percent growth. This sample slide still says “stalled.” |
+| 0:10–0:22 | 02 · QwenWork task | In QwenWork, the Skill links the sentence to its figure, quarter and release, and the agent judges it: now wrong. |
+| 0:22–0:32 | 03 · dated board paper | This board paper quotes October’s estimate. That stays true, so it stays. |
+| 0:32–0:42 | 04 · replacement slide | Here is the corrected slide, editable, with its source. |
+| 0:42–0:52 | 05 · task history | Two live checks, started by hand: two later revisions found, then a quiet repeat. |
+| 0:52–1:00 | 07 · public record | Revisionpedia keeps every reading. No paying customer yet. The first step is one real slide. |
 
-## Prompt for the founder’s QwenWork assembly task
+## Prompt for the QwenWork assembly task
 
-> Assemble the final film **inside this task** from this shot list and the attached captures: 01-map.mov, 02-original.png, 03-register.mov, 04-clock.mov, 05-mail.mov, 06-dated.mov, 07-threshold.mov, 08-fixed.png, 09-record.mov and 10-enquiry.mov. For any missing evidence I have supplied the fallback screenshot with the same number and the suffix -fallback.png. Follow the matching fallback caption and narration. If neither file exists, omit that shot and its voiceover. Use only the observed interface and outcomes. Preserve source dates, capture labels, replay labels and the word “sample”. Crop out names and account details. Begin with the click on the working map. Use straight cuts, readable captions and a plain spoken voice. Export recall-press-full.mp4 at 1080p, target 2:35, maximum 2:45. Assemble recall-press-60.mp4 from the short table, maximum 1:00. Play both inside the task, check speech and duration, and return the files and actual runtimes.
+> Assemble the final film **inside this task** from this shot list and the attached captures: 01-map.mov, 02-task.mov, 03-dated.mov, 04-fixed.mov, 05-history.mov, 06-decision.mov and 07-record.mov. Use only the observed interface and outcomes. Keep every caption exactly, including dates, run IDs, “sample” and “manual Run now”. Crop out names and account details. Use straight cuts, readable captions and a plain spoken voice. Export recall-press-full.mp4 at 1080p, target 2:30, maximum 3:00. Assemble recall-press-60.mp4 from the short table, maximum 1:00. Play both inside the task, check speech and duration, and return the files, actual runtimes and the export history.
 
-Friday’s 20-second narrated export is a feasibility check [VERIFY: test 8]. The submission needs the **final** playable QwenWork-assembled film and its YouTube link by Monday 23 November, 23:59 SGT.
+The submission needs the final film assembled in QwenWork and its YouTube link by Monday 23 November 2026, 23:59 SGT. After upload, open the YouTube link signed out and check it plays.

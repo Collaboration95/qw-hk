@@ -1,22 +1,32 @@
-# Friday outreach · one slide before Tuesday’s GDP release
+# First customer · one pilot offer and three opening messages
+
+## Pilot offer
+
+- **Who it is for.** One editor of a recurring Singapore briefing, newsletter or board pack that quotes quarterly GDP or sector growth from the ten series Revisionpedia tracks.
+- **What they send.** One slide deck, Word note or Markdown page they have already published and expect to reuse, and the date it was published. A public file is enough; nothing confidential.
+- **What they get.** First, the list of sentences Recall Press linked, each with its series, quarter and dated source, plus any sentence it could not link. Then, after the next official release for those figures, either a note that nothing changed or a corrected editable copy with the reason, which the editor applies, skips or edits.
+- **When.** The linked-sentence list within two working days of receiving the file. The release result on the day of the next scheduled release for those figures; the next GDP release is 24 November 2026 at 08:00 SGT.
+- **Price.** None is set. Any fee for later editions is agreed with the editor before coverage continues.
+
+There is no paying customer yet. The messages below open the conversation; the offer above is what the editor is asked to accept.
 
 ## Chamber or trade association editor
 
 **Subject: Ten minutes with one member-briefing slide?**
 
-I saw the quarterly GDP row in your Singapore economic data sheet. Do you have a member slide that uses it again? I’m building Recall Press so that when the figure changes, the editor gets the exact sentence and a corrected slide. Could we spend ten minutes on Friday registering one public slide you expect to reuse? I’ll show you the source match and you can tell me whether it’s the right one.
+I saw the quarterly GDP row in your Singapore economic data sheet. Do you have a member slide that uses it again? I’m building Recall Press so that when the figure changes, the editor gets the exact sentence and a corrected slide. Could we spend ten minutes before Tuesday’s release registering one public slide you expect to reuse? I’ll show you the source match and you can tell me whether it’s the right one.
 
 ## Research desk editor
 
 **Subject: Which sentence should survive a GDP revision?**
 
-Your July note recorded Singapore’s Q2 advance estimate at 5.7%. That’s still the right number for a sentence about July’s release. A current outlook slide might need 6.2%. Could we take ten minutes on Friday to register one slide from a published briefing and check that distinction together? I’ll bring the two releases.
+Your July note recorded Singapore’s Q2 advance estimate at 5.7%. That’s still the right number for a sentence about July’s release. A current outlook slide might need 6.2%. Could we take ten minutes before Tuesday’s release to register one slide from a published briefing and check that distinction together? I’ll bring the two releases.
 
 ## Investor newsletter editor
 
 **Subject: One slide for Tuesday’s GDP release**
 
-Do you reuse an economy slide between issues? I’m testing Recall Press with editors ahead of Tuesday’s GDP release. Could we take ten minutes on Friday to register one slide you’ve already made public? I’ll link its sentence to the official figure. After the release I’ll send you the proposed wording if the figure changes, or tell you it held.
+Do you reuse an economy slide between issues? I’m testing Recall Press with editors ahead of Tuesday’s GDP release. Could we take ten minutes before the release to register one slide you’ve already made public? I’ll link its sentence to the official figure. After the release I’ll send you the proposed wording if the figure changes, or tell you it held.
 
 ## Ten Singapore publishing workflows
 

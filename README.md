@@ -1,52 +1,105 @@
-# Recall Press
+<div align="center">
+  <img src="qwenwork-out/08-media/recall-press-mark-1024.png" alt="Recall Press mark" width="120" height="120" />
+  <h1>Recall Press</h1>
+  <p><strong>Recall Press checks Singapore’s revised economic figures against a briefing and gives its editor the exact sentence, dated source and editable correction.</strong></p>
 
-**A slide that comes with its next correction.**
+  [![Live directory](https://img.shields.io/badge/Live_directory-Revisionpedia_on_Hashmeta-075b48?style=for-the-badge)](https://revisionpedia.geo.hashmeta.tech)
+  [![QwenWork pitch Page](https://img.shields.io/badge/QwenWork_Page-Pitch_deck-1f4e79?style=for-the-badge)](https://zsg5gl36.qwenwork.page/)
+  [![QwenWork run evidence](https://img.shields.io/badge/QwenWork-Run_evidence-4b5563?style=for-the-badge)](docs/qw-results/RESULTS.md)
+  [![CI](https://github.com/Collaboration95/qw-hk/actions/workflows/ci.yml/badge.svg)](https://github.com/Collaboration95/qw-hk/actions/workflows/ci.yml)
+  <!-- TODO: replace with the YouTube link when the demo film is published -->
+  [![Demo film](https://img.shields.io/badge/Demo_film-coming_Sunday-9ca3af?style=for-the-badge)](DEMO.md#watch)
 
-When agents turn one statistic into dozens of documents, published facts need a recall address. An editor registers a slide once. When the official figure changes, the map brings the editor back to the exact sentence with a source and an editable replacement.
+  <p>
+    <a href="DEMO.md#watch"><strong>Watch</strong></a> ·
+    <a href="https://revisionpedia.geo.hashmeta.tech/revisions/sg-gdp-manufacturing-yoy-2025-q3/"><strong>Try</strong></a> ·
+    <a href="docs/qw-results/RESULTS.md"><strong>Inspect</strong></a> ·
+    <a href="DEMO.md">3-minute judge path</a>
+  </p>
+</div>
 
-**See it in 60 seconds.** Run `./demo.sh` from this checkout. Open the first map it prints, select the sample members’ briefing and download the corrected deck. On slide four, “Manufacturing stalled year on year in Q3 2025” becomes “Manufacturing grew 5.0% year on year in Q3 2025.” The October estimate was flat. The 21 November survey changed the headline.
+QwenWork × Hashmeta AI One-Person Company Hackathon, Singapore · Track 1, Business Operations & Automation.
 
-![Publication map from the 21 November 2025 historical replay on the founder’s sample publications](web/examples/replays/2025-11-21.png)
+An editor registers a slide or briefing once. When Singapore revises an official figure, Recall Press brings the editor to the exact sentence, with the dated source and a corrected PowerPoint the editor can still edit. Revisionpedia is its public directory on Hashmeta: one page per figure and quarter, with every reading and its source.
 
-[Open the saved map locally](web/examples/replays/2025-11-21.html) · [Inspect the dated sources](data/SOURCES.md) · [Browse Revisionpedia locally](site/preview/index.html)
+## One revision, two answers
 
-## What the editor receives
+On 14 October 2025 the advance estimate put Q3 2025 manufacturing growth at 0.0% year on year. On 21 November 2025 the Economic Survey said: “The manufacturing sector expanded by 5.0 per cent year-on-year” ([MTI release, 21 Nov 2025](https://www.singstat.gov.sg/files/a84a38d1-e0d8-4db9-bcf0-e95696170755.pdf)). The same revision gives two different editorial answers.
 
-The 14 October 2025 manufacturing estimate was 0.0%, the November survey said 5.0%, and a later release put the same quarter at 4.6%. A board paper reporting *what October’s estimate said* is still true. For Q2 2026 GDP, 5.7% became 5.9% and then 6.2%. A sentence saying growth stayed below 6% first needs a new number, then a new conclusion.
+| Sentence (sample publications written by the founder) | Verdict after 21 Nov 2025 | What Recall Press does |
+|---|---|---|
+| Members’ briefing, slide 4: “Manufacturing stalled year on year in Q3 2025.” | **Now wrong.** It describes the quarter as it is now understood. | Proposes “Manufacturing grew 5.0% year on year in Q3 2025.” and an editable PPTX with the November source. |
+| Board paper: “As first reported in the October advance estimate, manufacturing output was flat year on year in Q3 2025.” | **Still true.** It reports what October’s estimate said. | Leaves it alone. Changing its number would introduce an error. |
 
-Choose **Apply fix**, **Skip** or **Edit first** on the map. The download is the proposed copy. To keep a choice or rebuild a deck with the editor’s wording, export the decisions and import them into the original workspace. The editor distributes the replacement. A copy someone already downloaded cannot be recalled. [Map controls and commands](web/README.md)
+<table>
+  <tr>
+    <td><img src="docs/qw-results/slide4-before.png" alt="Slide 4 before: Manufacturing stalled year on year in Q3 2025." width="400" /></td>
+    <td><img src="docs/qw-results/slide4-after.png" alt="Slide 4 after: Manufacturing grew 5.0% year on year in Q3 2025, with the November source line" width="400" /></td>
+  </tr>
+  <tr>
+    <td>Before. Sample slide, as registered on 20 October 2025.</td>
+    <td>After. QwenWork Job 001, replay run <code>2025-11-21-8d43d94969a0</code>. The November source line is added at the foot; the slide’s original October footer is still shown.</td>
+  </tr>
+</table>
 
-## How the QwenWork task is designed to run
+The images are drawn from the PPTX shapes with python-pptx and Pillow, not exported from PowerPoint, so line wrapping is approximate. The editable file is embedded in [the Job 001 map](docs/qw-results/map-2025-11-21.html).
 
-Nothing has run inside QwenWork yet. The founder’s Friday checks are numbered on the [desktop test card](docs/TEST-CARD.md).
+The [live Revisionpedia record](https://revisionpedia.geo.hashmeta.tech/revisions/sg-gdp-manufacturing-yoy-2025-q3/) shows the full history for that quarter: 0.0% (14 Oct 2025) → 5.0% (21 Nov 2025) → 4.9% → 5.3% → 4.6% (14 Apr 2026, unchanged through 14 Oct 2026).
 
-1. Install the bundled Skill with `./scripts/install-skill.sh`, then select it in a fresh task [VERIFY: test 1]. It asks the agent to read the slide, link each claim to a series, period and dated source, and give a reason for each verdict. The rules alone found three of four claims on an unseen deck. The agent must read for the fourth [VERIFY: test 3].
-2. A nightly task should check data.gov.sg in the same workspace and record changes or a quiet run [VERIFY: test 4]. Alternatively, the editor forwards a release, selects it in Mail and asks the task to check the affected publications [VERIFY: test 5].
-3. The task should deliver the map and corrected slide [VERIFY: test 2]. Opening a hosted QwenWork Page and downloading its replacement are separate checks [VERIFY: test 7]. [Task prompts](skills/recall-press/PROMPTS.md) · [Fallbacks](docs/FALLBACKS.md)
+## The problem in public
 
-## What is real / what is replayed / what is simulated
+On 19 November 2026 a claim-specific screen checked 48 public records across 47 URLs that quoted Singapore figures. Two still presented a superseded figure as current. 27 were still true, 18 were not a match and 1 was ambiguous. It is a screen, not a census.
 
-| Status | Evidence |
+One example: a commercial data platform page, updated 20 October 2026, still gave Singapore’s Q2 2026 GDP growth as 5.9% and called it the latest data. The 14 October 2026 release had revised it to 6.2%. The other case is a news article that attributes an 11.8% construction figure to MTI; the attribution may describe an older statement. The 6 and 57 days in the memo are the gap between revision and the page’s publication or update, not how long a wrong figure stayed up. [Screen memo and data](qwenwork-out/02-stale-census/stale-census-memo.md)
+
+## What QwenWork does
+
+| Part | What ran | Evidence |
+|---|---|---|
+| **Skill** | The `recall-press` Skill loaded through the Skill tool in a QwenWork Desktop task (session `mwq2wb75y5x1adbq`, Qwen4-Max, 21 Nov 2026 15:24–15:58 SGT). The agent read the members’ briefing, registered its own claim list, replayed 21 Nov 2025, judged each sentence and produced the corrected deck. | [Job 001 report](docs/qw-outbox/001-acceptance-tests/REPORT.md) · [full results](docs/qw-results/RESULTS.md) · [claims](docs/qw-results/claims-members-briefing.json) |
+| **First read of an unseen deck** | The agent wrote down 4 verifiable sentences and their verdicts before opening the answer key. All 4 matched. The rules alone found 3. Caveat: the Skill contains a worked example for the zero-growth wording the rules miss, so this is not a test on an unknown customer deck. | [Results, step 3](docs/qw-results/RESULTS.md) · [claims](docs/qw-results/claims-roundtable.json) |
+| **Live checks** | Two checks against data.gov.sg (8 series). Check 1, run `2026-11-21-68013a314ad1`, found 2 later revisions for the members’ briefing: services Q1 2025 0.6% → 0.7% (published 10 Feb 2026) and manufacturing Q3 2025 now 4.6% (published 14 Apr 2026). Both are later readings already published, not a new release that day. It produced 2 corrected drafts. Check 2, run `2026-11-21-98bbcfe8ff96`, was quiet and issued nothing twice. **Both were started manually with Run now after the scheduler missed their slots.** | [clock-1](docs/qw-results/clock-1.md) · [clock-2](docs/qw-results/clock-2.md) |
+| **Automatic watch** | <!-- TODO: fill when job 004/005 report --> Job 004 sets up a recurring watch at :15 and :45 SGT with no manual trigger. Result pending. | [watch log](docs/qw-results/watch-log.md) |
+| **Release notice** | The agent matched a pasted release notice to the affected documents and recognised the correction already issued. This was pasted text, not Mail. | [Results, step 5](docs/qw-results/RESULTS.md) · [notice](docs/qw-results/release-notice.txt) |
+| **Bridge** | A QwenWork scheduled task polls `docs/qw-inbox` every 10 minutes. It claimed Job 002 by itself at 21:10 SGT. Job 003, a handshake on QwenWork’s Standard tier, ran the test suite in 13 s (116 passed). | [Bridge](docs/qw-outbox/BRIDGE.md) · [Job 003](docs/qw-outbox/003-handshake/REPORT.md) |
+| **Pages** | Job 002 rebuilt pitch slide 4 and published the deck as a public QwenWork Page (deployment `25c259ae-29b1-441a-a7e8-931283b5ec06`). Job 001 also created a Page for the correction map, but the publisher withheld its URL, so that one is unverified. | [Pitch Page](https://zsg5gl36.qwenwork.page/) · [Job 002 report](docs/qw-outbox/002-deck-slide4-and-page/REPORT.md) |
+| **Correction Page** | <!-- TODO: fill when job 004/005 report --> Job 005 publishes the live run’s correction as a public Page with the corrected PPTX to download. URL to come. | — |
+
+Research, screening and media from other QwenWork jobs are in [`qwenwork-out/`](qwenwork-out/).
+
+## Status
+
+| Status | What |
 |---|---|
-| Real | Official releases, archived readings, working local engine, editable files. Of 60 series–quarters with multiple readings, 57 changed at least once and 21 crossed zero or an illustrative briefing threshold somewhere in their history. [Revision highlights](site/revision-highlights.md) |
-| Replayed | Five dated local maps use only figures available by each check date. The last shows a quiet check. [Saved runs](web/examples/replays/) |
-| Simulated | The founder wrote the sample publications. Standalone illustrative maps outside the replay folder use fixtures. There is no paying customer yet. |
+| **Real** | Official figures and dated sources. The live [Revisionpedia](https://revisionpedia.geo.hashmeta.tech) on Hashmeta: 5 pages, Revisions and Indicators lists, 60 revision and 10 indicator record pages. The QwenWork runs above, with their run IDs. The [pitch Page](https://zsg5gl36.qwenwork.page/) published by QwenWork. 116 tests passing locally. |
+| **Replayed** | The 21 Nov 2025 slide correction uses only figures published by that date. The five local dated maps in [`web/examples/replays/`](web/examples/replays/) do the same; the last one is a quiet check. |
+| **Simulated** | The briefings, board paper and other publications are samples written by the founder. The release notice was pasted, not read from Mail. |
+| **Manual** | Both live checks were started with Run now after the scheduler missed their slots. |
+| **Pending or unverified** | Automatic recurring watch (Job 004). Public correction Page with download (Job 005). The Job 001 map Page URL. The “Cover my briefing” form has no forwarding rule and no verified test submission. Demo film. No editor has used it on their own briefing; there is no paying customer, and price and demand are unvalidated. |
 
-## Revisionpedia
+## Track 1 criteria
 
-The directory prepared for Hashmeta AI gives each figure and quarter its own page with the release history, official sources and a “Cover my briefing” enquiry. The local edition has 10 indicators and 60 comparable records. One page shows Q1 2025 manufacturing moving from a 4.9% quarterly contraction to 0.6% growth. The preview form is disabled. Friday tests whether QwenWork can list a site and create an unpublished draft [VERIFY: test 6]. Public hosting and receipt of a test enquiry in CRM still need independent evidence. [Example record](site/preview/revisions/sg-gdp-manufacturing-yoy-2025-q3/index.html) · [Publishing checks](site/PUBLISH.md)
-
-## Track 1 judging evidence
-
-| Criterion | What to inspect |
+| Criterion | Where to look |
 |---|---|
-| Innovation · 25% | On the November map, compare the “stalled” headline with the dated board-paper statement. One revision warrants two editorial decisions. |
-| Feasibility & viability · 25% | Open the replacement PPTX. A recurring briefing editor could pay for coverage across editions. Price and demand are unvalidated. [First pilot invitation](docs/submission/first-customer-message.md) |
-| Use of QwenWork · 20% | [Skill](skills/recall-press/SKILL.md) and numbered desktop checks above. The local replay establishes the underlying workflow. |
-| Demo · 15% | Five runnable maps and a [timed film script](docs/submission/video-script.md). The required QwenWork movie export awaits a playable test [VERIFY: test 8] and final YouTube link. |
-| Hashmeta website · 15% | Browse the sourced Revisionpedia record above and follow its enquiry link. Public CMS and CRM delivery are pending. |
+| Innovation · 25% | The table above: one revision makes the headline wrong and leaves the dated board-paper sentence true. |
+| Feasibility & viability · 25% | Open the corrected PPTX. Read the [screen of public pages](qwenwork-out/02-stale-census/stale-census-memo.md) and the [rules test](docs/HARDENING.md): of 40 labelled claims, 28 correct automatic verdicts, 9 left for the agent with a reason, 3 missed. [Pilot offer](docs/submission/first-customer-message.md). |
+| Use of QwenWork · 20% | [What QwenWork does](#what-qwenwork-does), with run IDs and reports. |
+| Demo · 15% | [DEMO.md](DEMO.md): public links first, then the local replay. The film is not made yet. |
+| Hashmeta website · 15% | The [live directory](https://revisionpedia.geo.hashmeta.tech) and its [build log](docs/HASHMETA-LOG.md). |
 
-The next GDP release is scheduled for **24 November 2026 at 08:00 SGT**, about eight hours after Monday’s 23:59 submission deadline. It offers a prospective check before the top ten pitch on 11 December. A new release can leave a registered value unchanged. [Release calendar](data/release-calendar.json)
+The next GDP release is scheduled for **24 November 2026 at 08:00 SGT**, about eight hours after the submission deadline. [Release calendar](data/release-calendar.json)
+
+## Quickstart
+
+Python 3.10 or later (CI uses 3.14; tested locally on 3.14.7). From a clean checkout:
+
+```sh
+python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements-dev.txt && ./demo.sh && python -m pytest -q
+```
+
+`./demo.sh` replays the sample publications offline in a fresh workspace and prints each map and corrected file. Open the map for 2025-11-21, select the members’ briefing and download the corrected deck. Map controls: [web/README.md](web/README.md). Code map: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Skill and task prompts: [skills/recall-press/](skills/recall-press/SKILL.md).
+
+The editor chooses **Apply fix**, **Skip** or **Edit first**. The download is the proposed copy; the editor sends it out. A copy someone already downloaded stays with them.
 
 ## Sources and credits
 

@@ -1,27 +1,43 @@
-# Recall Press
+# Recall Press · submission form answers
 
-QwenWork × Hashmeta AI One-Person Company Hackathon, Singapore · Track 1, Business Operations & Automation. Word counts exclude headings and Friday verification tags.
+QwenWork × Hashmeta AI One-Person Company Hackathon, Singapore · Track 1, Business Operations & Automation. Word counts exclude headings.
+
+## Title
+
+Recall Press
+
+## One sentence
+
+Recall Press checks Singapore’s revised economic figures against a briefing and gives its editor the exact sentence, dated source and editable correction.
+
+## Links
+
+- Demo film: <!-- TODO: YouTube link when the film is made in QwenWork on Sunday -->
+- Live directory on Hashmeta: https://revisionpedia.geo.hashmeta.tech
+- Pitch, published as a QwenWork Page: https://zsg5gl36.qwenwork.page/
+- Correction Page: <!-- TODO: fill when job 004/005 report -->
+- Code: https://github.com/Collaboration95/qw-hk (access for organisers on request)
 
 ## 50 words
 
-Recall Press gives a slide its next correction. An editor registers it once. When Singapore revises a figure, a map shows which sentence broke, which needs a new number and which still tells the truth. The editor gets an editable replacement. Try the historical replay on the founder’s sample briefing.
+An editor registers a briefing once. When Singapore revises a figure, Recall Press finds the exact sentence, says whether it is now wrong or still true, and returns an editable corrected PowerPoint with the dated source. QwenWork runs the reading and checks. Revisionpedia, on Hashmeta, publishes each tracked figure’s history.
 
 ## 150 words
 
-On 14 October 2025, Singapore reported flat manufacturing output for the third quarter. A month later, the same quarter showed 5.0% growth. An editor putting last month’s slide into tomorrow’s briefing needs to know that “stalled” now says the wrong thing.
+On 14 October 2025 Singapore reported flat Q3 manufacturing. On 21 November the same quarter showed 5.0% growth. A slide saying “manufacturing stalled” became wrong. A board paper reporting what October’s estimate said stayed true.
 
-Recall Press links the sentence to its source when the editor registers the slide. The local replay delivers a map with the original wording, a proposed sentence and an editable deck. The editor can apply the fix, skip it or edit first. A dated account of October’s estimate stays intact.
+Recall Press links the sentences in a registered briefing to a series, a quarter and a dated release. When the figure changes, it gives the editor the sentence, a verdict with a reason, and an editable corrected PPTX. The editor applies, skips or edits it.
 
-The founder prepared a QwenWork Skill for scheduled checks [VERIFY: test 4] or a forwarded release [VERIFY: test 5]. Platform testing starts Friday. Revisionpedia, prepared for Hashmeta AI, gives each figure a page with its release history and an enquiry route. The demo uses official figures and the founder’s sample publications. There is no paying customer yet. Previously downloaded copies remain with their readers.
+In QwenWork, a Skill-led task read a sample briefing and corrected slide 4. It read an unseen deck and found all four claims. Two live data.gov.sg checks ran, both started manually: the first found two later revisions, the second was quiet. Revisionpedia is live on Hashmeta with 60 revision records and sources. The publications are founder-written samples. There is no paying customer yet. Next step: one editor with one real slide.
 
 ## 300 words
 
-“Manufacturing stalled” was a fair headline for Singapore on 14 October 2025. The advance estimate put third quarter manufacturing growth at 0.0% year on year. On 21 November the survey put it at 5.0%. The slide still opened and the chart still looked plausible. The headline said the opposite of what the editor now needed to tell members.
+“Manufacturing stalled” was a fair headline for Singapore on 14 October 2025. The advance estimate put Q3 manufacturing growth at 0.0% year on year. On 21 November the Economic Survey put it at 5.0%. The slide still opened. Its headline now said the opposite of the facts. A board paper sentence reporting what October’s estimate said was still true, and changing it would introduce an error.
 
-Recall Press is a slide that comes with its next correction. An editor registers the publication once. Each linked sentence has an address in the file, a series, a period and the release it relied on. When agents turn one statistic into dozens of documents, published facts need a recall address.
+Recall Press handles both cases. An editor registers a briefing once. Each sentence it can link to a figure gets a series, quarter and dated release. When the figure is revised, the editor gets the exact sentence, a verdict with a reason, and an editable corrected PowerPoint with the new source. The editor applies, skips or edits the proposal.
 
-In the local replay, open the members’ briefing on the map and read the replacement beside the original. Download slide four in its editable deck, complete with the dated source. The editor can apply the fix, skip it or edit first. An accurate account of what October’s release said stays intact. A downloaded copy stays with its reader.
+QwenWork does the reading and checking. In one Desktop task the recall-press Skill loaded, the agent registered its own claim list, replayed November 2025 and produced the corrected slide. On an unseen sample deck it wrote down four claims before opening the answer key, and all four matched; the Skill includes a worked example for one of them. Two live checks against data.gov.sg ran in the same workspace. Both were started manually after the scheduler missed their slots. The first found two later revisions and drafted two corrections. The second was quiet and issued nothing twice. QwenWork also published the pitch as a public Page. <!-- TODO: fill when job 004/005 report -->
 
-The founder prepared a QwenWork Skill for a nightly check [VERIFY: test 4] or a check requested from a forwarded release [VERIFY: test 5]. Nothing has run inside QwenWork yet. On an unseen deck the rules found three of four claims. The agent must read for the missing one [VERIFY: test 3].
+Revisionpedia, built on Hashmeta, is live. It has a page for each of 60 revision records and 10 indicators, each with dated sources, and a “Cover my briefing” form. A record shows why one quarter is quoted several ways. The form’s delivery is not yet tested.
 
-Across sixty tracked series and quarters with multiple readings, fifty-seven changed at least once. Twenty-one crossed zero or a briefing threshold along the way. Revisionpedia gives each figure a source-linked history and invites editors to register a briefing. The Hashmeta AI edition awaits publication and a verified enquiry. The founder wrote the sample publications and has no paying customer yet. The first field test asks one editor to bring a real slide ahead of Singapore’s next GDP release on 24 November at eight in the morning, Singapore time.
+The publications are samples written by the founder. There is no paying customer. The next step is one editor with one real slide before a GDP release.

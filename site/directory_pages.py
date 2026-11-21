@@ -19,7 +19,7 @@ PROMPTS = [*HIGHLIGHTS[:8], "sg-unemployment-2026-q2", "sg-employment-change-202
            "sg-gdp-services-qoq-2025-q3", "sg-gdp-services-yoy-2026-q2"]
 FORM_COPY = """Ask Recall Press to cover a figure in your briefing. Register the slide once. When a later official figure changes its meaning or number, the service prepares a corrected copy with the source for your review.
 
-Price placeholder — not yet validated. The fee will be agreed before coverage begins.
+**Pilot for one briefing.** For an editor of a recurring Singapore briefing that quotes quarterly GDP or sector growth. Send one slide, Word note or Markdown page you have already published and expect to reuse. Within two working days you get the sentences we linked, each with its series, quarter and dated source. After the next official release you get either a note that nothing changed or a corrected editable copy with the reason, for you to apply, skip or edit. No fee is set for the pilot; any fee for later editions is agreed with you first.
 
 ## Send an enquiry
 
@@ -27,7 +27,7 @@ Choose “Cover my briefing” or “Report a correction”. Give the indicator 
 
 <!-- enquiry-form -->
 
-Your enquiry goes to the directory editor for follow-up. Sending an enquiry does not enrol you in a paid plan."""
+Sending an enquiry does not enrol you in a paid plan."""
 METHOD = """A correction starts with the same indicator, quarter and comparison basis. Real GDP growth from the previous quarter is seasonally adjusted. Growth from a year earlier is a different series.
 
 ## Read the release history
