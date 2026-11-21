@@ -1,0 +1,177 @@
+{
+  "document_id": "chamber-outlook-2026q2",
+  "claims": [
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 2, Headline, paragraph 1",
+      "sentence": "Singapore’s economy was 5.9% larger in the June quarter than a year earlier.",
+      "anchor": {
+        "block": 7,
+        "start": 0
+      },
+      "series_id": "sg-gdp-overall-yoy",
+      "period": "2026-Q2",
+      "value_cited": 5.9,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "detail": "5.9% year on year",
+        "type": "level"
+      },
+      "claim_id": "chamber-outlook-2026q2-c1"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 2, speaker notes, paragraph 1",
+      "sentence": "After seasonal adjustment, real GDP rose 1.4% from the first quarter to the second.",
+      "anchor": {
+        "block": 41,
+        "start": 0
+      },
+      "series_id": "sg-gdp-overall-qoq",
+      "period": "2026-Q2",
+      "vintage_cited": "2026-08-11",
+      "value_cited": 1.4,
+      "stance": "current",
+      "assertion": {
+        "detail": "rose 1.4% quarter on quarter, seasonally adjusted",
+        "type": "level"
+      },
+      "claim_id": "chamber-outlook-2026q2-c2"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 3, Factory customers, paragraph 1",
+      "sentence": "Manufacturing outpaced services on year-on-year growth in the second quarter.",
+      "anchor": {
+        "block": 13,
+        "start": 0
+      },
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2026-Q2",
+      "vintage_cited": "2026-08-11",
+      "value_cited": 12.5,
+      "stance": "current",
+      "assertion": {
+        "detail": "manufacturing outpaced services",
+        "type": "comparison",
+        "operator": ">",
+        "reference": {
+          "series_id": "sg-gdp-services-yoy",
+          "period": "2026-Q2",
+          "value_cited": 4.9,
+          "vintage_cited": "2026-08-11"
+        }
+      },
+      "claim_id": "chamber-outlook-2026q2-c3"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 3, Service customers, paragraph 1",
+      "sentence": "Second-quarter services growth came in just below 5% year on year.",
+      "anchor": {
+        "block": 15,
+        "start": 0
+      },
+      "series_id": "sg-gdp-services-yoy",
+      "period": "2026-Q2",
+      "value_cited": 4.9,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "detail": "below 5%",
+        "type": "threshold",
+        "operator": "<",
+        "threshold": 5
+      },
+      "claim_id": "chamber-outlook-2026q2-c4"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 4, Table 4, row 2, cell 2, paragraph 1",
+      "sentence": "Construction output contracted from the March quarter on a seasonally adjusted basis.",
+      "anchor": {
+        "block": 22,
+        "start": 0
+      },
+      "series_id": "sg-gdp-construction-qoq",
+      "period": "2026-Q2",
+      "vintage_cited": "2026-08-11",
+      "value_cited": -2.5,
+      "stance": "current",
+      "assertion": {
+        "detail": "down",
+        "type": "direction"
+      },
+      "claim_id": "chamber-outlook-2026q2-c5"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 5, Jobs, paragraph 1",
+      "sentence": "Total employment rose by 14,000 in the June quarter.",
+      "anchor": {
+        "block": 28,
+        "start": 0
+      },
+      "series_id": "sg-employment-change",
+      "period": "2026-Q2",
+      "value_cited": 14000.0,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "detail": "up",
+        "type": "direction"
+      },
+      "claim_id": "chamber-outlook-2026q2-c6"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 5, Unemployment, paragraph 1",
+      "sentence": "At the end of June, the seasonally adjusted overall unemployment rate stood at 2.0%.",
+      "anchor": {
+        "block": 29,
+        "start": 0
+      },
+      "series_id": "sg-unemployment",
+      "period": "2026-Q2",
+      "value_cited": 2.0,
+      "vintage_cited": "2026-08-11",
+      "stance": "current",
+      "assertion": {
+        "detail": "2.0% at end of June",
+        "type": "level"
+      },
+      "claim_id": "chamber-outlook-2026q2-c7"
+    },
+    {
+      "document_id": "chamber-outlook-2026q2",
+      "location": "slide 6, July estimate, paragraph 1",
+      "sentence": "MTI’s advance estimate on 14 July 2026 put second-quarter manufacturing growth at 12.2% year on year.",
+      "anchor": {
+        "block": 33,
+        "start": 0
+      },
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2026-Q2",
+      "value_cited": 12.2,
+      "vintage_cited": "2026-07-14",
+      "stance": "dated",
+      "assertion": {
+        "detail": "advance estimate of 12.2% on 14 July 2026",
+        "type": "level"
+      },
+      "claim_id": "chamber-outlook-2026q2-c8"
+    }
+  ],
+  "unlinked": [
+    {
+      "sentence": "Our freight scenario allows for a 7% rise in spot haulage quotes by September.",
+      "location": "slide 7, Freight scenario, paragraph 1",
+      "anchor": {
+        "block": 38,
+        "start": 0
+      },
+      "reason": "Choose the official series that this sentence describes."
+    }
+  ]
+}

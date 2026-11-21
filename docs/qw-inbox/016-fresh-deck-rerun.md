@@ -1,0 +1,10 @@
+# Job 016 · Re-run the fresh deck in QwenWork with the fixed engine
+
+Project folder: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk (cd there first). Output folder: docs/qw-outbox/016-fresh-deck-rerun/ ("OUT"). Never ask questions; record problems and continue. Do not commit or push. **Do not open docs/qw-results/fresh-deck-answer-key.json or anything under hack/** — the scoring is done afterwards by someone else.
+`rp` = `.venv/bin/python /Users/speedpowermac/.qwenwork/skills/recall-press/run.py` (the installed Skill now reads speaker notes and has fixed wording rules), `RECALLPRESS_SERIES=$PWD/data/series`.
+
+1. OUT/started.txt with the time.
+2. Rules-only: `rp register samples/fresh/chamber-outlook-2026q2.pptx --registered-on 2026-08-14 --workspace "$PWD/workspace/fresh2-rules"` → OUT/rules.json. Count linked claims and unlinked sentences.
+3. Use your own reading as before (you may reuse docs/qw-outbox/010-fresh-deck-read/first-pass.json as your reading, but re-check each sentence against the deck), including the slide-2 speaker-note claim, which is now registrable. Save OUT/claims.json and register: `rp register samples/fresh/chamber-outlook-2026q2.pptx --registered-on 2026-08-14 --claims OUT/claims.json --workspace "$PWD/workspace/fresh2"`. Record the registered count (expected 8 if the notes claim registers).
+4. `RECALLPRESS_WORKSPACE=$PWD/workspace/fresh2 rp check --offline --trigger replay --as-of 2026-11-21 --record`; record the rule-proposed status per claim; record your own verdict per claim with `rp judge` (reason + replacement for fixable ones; leave figure-free sentences whose meaning still holds as unaffected); `rp fix` and `rp map`; copy map to OUT/map.html. Confirm the notes claim's corrected deck has the new sentence in the slide-2 notes and the slide face unchanged (python-pptx check, print both).
+5. OUT/finished.txt, then REPORT.md: minutes, rules-only count, registered count, per-claim rule status and your verdict, replacement files, notes check output, model if visible. Then DONE.

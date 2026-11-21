@@ -1,0 +1,11 @@
+# Job 014 · Fresh live check, then an honest "Last checked" stamp on Revisionpedia
+
+Project folder: /Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk (cd there first). Output folder: docs/qw-outbox/014-honest-stamp/. Never ask questions; record problems and continue. Do not commit or push. Hashmeta: use the **hashmeta** connector, direct tools only. Site projectId 6b7c9fea-8970-469b-871a-1eb4f8db9601; Indicators templateId f8b3b501-eaf8-4edf-a676-eb7e48b9f750.
+
+Why: the current stamp on 8 indicator pages says "by the Recall Press watch, a QwenWork scheduled task (run 2026-11-21-98bbcfe8ff96)", but that run was started manually with Run now. Replace it with an accurate stamp from a fresh check run by this task.
+
+1. START=$(date "+%Y-%m-%d %H:%M:%S"). Run a LIVE check: `RECALLPRESS_SERIES=$PWD/data/series RECALLPRESS_WORKSPACE=$PWD/workspace/qw-morning .venv/bin/python /Users/speedpowermac/.qwenwork/skills/recall-press/run.py check --trigger manual --record`. Save its JSON output to the output folder as check.json. If any source request failed, stop after writing the report (verdict FAILED) and do not stamp.
+2. For each Indicators entry whose slug is one of the distinct series_id values this check covered: set `last_checked` to `<START as YYYY-MM-DD HH:MM> SGT`, and replace the whole body_html paragraph that starts with `<p>Last checked` with `<p>Last checked <START as D Mon YYYY, HH:MM> SGT in a live check of the official data by Recall Press on QwenWork: <"no new revision" if changes is empty, else "new revision found, see the record pages">.</p>`. Change nothing else. Build the collection pages and publish; wait until publish completes.
+3. Verify signed out: `curl -sL --noproxy '*' https://revisionpedia.geo.hashmeta.tech/indicators/sg-gdp-manufacturing-yoy/` contains "by Recall Press on QwenWork" and not "scheduled task". Record the line.
+4. Edit the scheduled task `recall-press-watch` (id d5fbdc2b-2c50-4ea0-af3e-984e688f83f8) prompt: replace the words "by the Recall Press watch, a QwenWork scheduled task:" with "by the Recall Press watch, a QwenWork scheduled task, started automatically:" (only that phrase; it stays accurate for scheduled runs). Keep everything else. Read back and record.
+5. REPORT.md (PASS/FAIL per step + outputs), then DONE.
