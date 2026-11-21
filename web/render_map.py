@@ -65,7 +65,7 @@ def trigger_line(result):
             dates = ", ".join(nice_date(day) for day in sorted(published))
             return "Replay of real revisions published " + dates
         return "Historical replay · " + nice_date(result["as_of"])
-    return {"schedule": "Nightly run", "email": "Forwarded release email", "manual": "Manual check"}.get(
+    return {"schedule": "Scheduled check", "email": "Check from a release email", "manual": "Manual check"}.get(
         result["trigger"], "Publication check"
     )
 

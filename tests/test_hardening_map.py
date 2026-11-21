@@ -2,7 +2,10 @@
 import sys
 from pathlib import Path
 
+import pytest
+
 from test_hardening_language import command
+from web.render_map import trigger_line
 
 
 def make_map(folder, count):
@@ -16,6 +19,17 @@ def make_map(folder, count):
     run = command(work, "check", "--offline", "--as-of", "2025-11-21", "--record")["run_id"]
     command(work, "fix", "--run", run)
     return Path(command(work, "map", "--run", run)["map"])
+
+
+@pytest.mark.parametrize(("trigger", "expected"), [
+    ("schedule", "Scheduled check"),
+    ("manual", "Manual check"),
+    ("email", "Check from a release email"),
+    ("replay", "Historical replay · 21 Nov 2025"),
+])
+def test_map_header_names_recorded_trigger(trigger, expected):
+    result = {"trigger": trigger, "changes": [], "as_of": "2025-11-21"}
+    assert trigger_line(result) == expected
 
 
 def test_empty_map(tmp_path):
