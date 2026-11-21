@@ -149,8 +149,7 @@ def read_office(path):
                         for shape in descendants(notes, P, "sp"):
                             if any(p.getAttribute("type") == "body" for p in descendants(shape, P, "ph")):
                                 for frame in children(shape, P, "txBody"):
-                                    extra.extend(drawing_paragraphs(frame, f"slide {i}, speaker notes", target,
-                                                                    "Check the speaker notes in the presentation before editing."))
+                                    extra.extend(drawing_paragraphs(frame, f"slide {i}, speaker notes", target))
                     elif role == "chart":
                         chart = minidom.parseString(package.read(target))
                         for j, p in enumerate(descendants(chart, A, "p"), 1):
@@ -199,6 +198,12 @@ def patch_office(path, target, block, size, start, old, new, source):
         body, = descendants(tree, W, "body")
         sections = children(body, W, "sectPr")
         body.insertBefore(minidom.parseString(fragment).documentElement, sections[0] if sections else None)
+    elif tree.documentElement.localName == "notes":
+        frame = next(n for n, _ in block.spans if n is not None)
+        while frame.localName != "txBody":
+            frame = frame.parentNode
+        fragment = f'<a:p xmlns:a="{A}"><a:r><a:t>{text}</a:t></a:r></a:p>'
+        frame.appendChild(minidom.parseString(fragment).documentElement)
     else:
         width, height = size
         sid = 1 + max(int(n.getAttribute("id")) for n in descendants(tree, P, "cNvPr"))

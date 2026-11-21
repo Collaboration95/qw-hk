@@ -41,7 +41,7 @@ def test_all_publications_against_releases(day, replay):
         "members-briefing-2025q3": [key("A", a, "a3") if day == a else number, flat],
         "sales-outlook-2025q3": [flat, same if day == a else number],
         "board-paper-2025q3": [dated],
-        "members-newsletter-2025q3": [number, dated],
+        "members-newsletter-2025q3": [same, dated],
     }
     if gdp:
         expected = {doc: [same] * len(statuses) for doc, statuses in expected.items()}

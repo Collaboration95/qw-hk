@@ -160,3 +160,30 @@ def test_invalid_deck_message(tmp_path, kind):
     assert out.returncode and "Traceback" not in out.stderr
     assert ("has no slides" if kind=="empty" else "could not be opened") in out.stderr
     assert not (tmp_path / "register.json").exists()
+
+
+def test_notes_only_replay_and_fix(tmp_path):
+    deck = Presentation()
+    slide = deck.slides.add_slide(deck.slide_layouts[6])
+    slide.shapes.add_textbox(0, 0, Inches(3), Inches(1)).text = "Outlook"
+    p = slide.notes_slide.notes_text_frame.paragraphs[0]
+    p.add_run().text = "GDP expanded by "
+    amount = p.add_run()
+    amount.text = "5.7"
+    amount.font.bold = True
+    p.add_run().text = "% year on year in Q2 2026."
+    path = tmp_path / "brief.pptx"
+    deck.save(path)
+    reg = command(tmp_path, "register", path, "--registered-on", "2026-07-18")
+    claim, = reg["claims"]
+    assert claim["location"] == "slide 1, speaker notes, paragraph 1"
+    run = command(tmp_path, "check", "--offline", "--trigger", "replay", "--as-of", "2026-08-11")
+    report = command(tmp_path, "fix", "--run", run["run_id"])
+    verdict, = load(Path(report["result"]))["verdicts"]
+    draft = tmp_path / verdict["replacement_file"]
+    paragraphs = Presentation(draft).slides[0].notes_slide.notes_text_frame.paragraphs
+    assert [p.text for p in paragraphs] == [claim["sentence"].replace("5.7", "5.9"), verdict["source_line"]]
+    assert paragraphs[0].runs[1].font.bold and paragraphs[0].runs[1].text == "5.9"
+    with ZipFile(path) as before, ZipFile(draft) as after:
+        assert [n for n in before.namelist() if before.read(n) != after.read(n)] == ["ppt/notesSlides/notesSlide1.xml"]
+    assert "slide 1, speaker notes" in Path(command(tmp_path, "map", "--run", run["run_id"])["map"]).read_text()

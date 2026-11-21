@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .documents import make_copy
 from .registration import read_register
-from .rules import VERDICTS, evaluate, replacement
+from .rules import VERDICTS, evaluate, replacement, states_figure
 from .storage import ROOT, fingerprint, load, safe_id, save, visible
 
 FIXABLE = ("number_only", "now_wrong")
@@ -148,10 +148,12 @@ def judge(workspace, run, claim_id, status, reason, proposed=None):
         raise ValueError("This revision already belongs to an earlier run")
     disagreement = status != verdict["rule_status"]
     blocked = status in FIXABLE and (claim["stance"] == "dated" or verdict["rule_status"] == "unaffected")
+    if status == "number_only" and not states_figure(claim):
+        raise ValueError("A number-only correction requires a figure in the sentence.")
     effective = verdict["rule_status"] if blocked else status
     detail = verdict["rule_reason"] if blocked else reason.strip()
     labels = {"now_wrong": "the claim needs a correction", "number_only": "only the number changed",
-              "still_true": "the claim still holds", "unaffected": "the figure has no new revision",
+              "still_true": "the claim still holds", "unaffected": "the sentence needs no change",
               "unchecked": "a reader needs to check", "needs_review": "a reader needs to check"}
     if disagreement:
         detail += f" Editor review: the rule says {labels[verdict['rule_status']]}. The agent says {labels[status]}. {reason.strip()}" if blocked else f" Editor review: the rule says {labels[verdict['rule_status']]}. {verdict['rule_reason']}"

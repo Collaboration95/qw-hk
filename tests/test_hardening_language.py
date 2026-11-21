@@ -67,3 +67,20 @@ def test_bound_language(tmp_path, phrase, status):
         assert actual == "unchecked" or any(phrase in u["sentence"] for u in reg["unlinked"])
     else:
         assert actual == status
+
+
+@pytest.mark.parametrize("sentence,assertion,new,peer,expected", [
+    ("Manufacturing outpaced services in Q2 2026.", {"type": "comparison"}, 3, 2, "unaffected"),
+    ("Manufacturing outpaced services in Q2 2026.", {"type": "comparison"}, 3, 3, "now_wrong"),
+    ("Employment rose in the second quarter.", {"type": "direction", "detail": "up"}, 3, None, "unaffected"),
+    ("Employment rose in the second quarter.", {"type": "direction", "detail": "up"}, -1, None, "now_wrong"),
+    ("Growth exceeded the target.", {"type": "threshold", "operator": ">", "threshold": 1}, 3, None, "unaffected"),
+    ("Growth exceeded the target.", {"type": "threshold", "operator": ">", "threshold": 1}, 1, None, "now_wrong"),
+    ("Employment rose by two percent.", {"type": "direction", "detail": "up"}, 3, None, "number_only"),
+])
+def test_figure_and_qualitative_verdicts(sentence, assertion, new, peer, expected):
+    from recallpress.rules import evaluate
+    if peer is not None:
+        assertion = dict(assertion, operator=">", reference={"value_cited": 1, "period": "2026-Q2"})
+    claim = dict(sentence=sentence, assertion=assertion, value_cited=2, stance="current", period="2026-Q2")
+    assert evaluate(claim, new, peer)[0] == expected

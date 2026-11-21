@@ -305,11 +305,31 @@ def extract(sentence, context, archive, day):
                 stance="dated" if dated else "current", assertion=assertion), None
 
 
+def states_figure(claim):
+    sentence = claim["sentence"]
+    if measurements(sentence):
+        return True
+    # A bare count can follow the verb ("rose by 14,000"). Period labels
+    # such as Q2 and 2026 are context, even when the cited value is 2.
+    text = re.sub(r"\b(?:[12][0-9]{3}[- ]?)?(?:q[1-4]|[1-4]q)\b|\b(?:19|20)\d{2}\b", "", sentence, flags=re.I)
+    values = {abs(claim["value_cited"])}
+    reference = claim["assertion"].get("reference")
+    if reference:
+        values.add(abs(reference["value_cited"]))
+    if any(abs(numeric(n)) in values for n in re.findall(r"(?<![\w.])[−+-]?\d[\d,]*(?:\.\d+)?(?!\w)", text)):
+        return True
+    words = (r"zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+             r"\w+teen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion")
+    return bool(re.search(rf"\b(?:{words})\s+(?:per\s*cent|percent|percentage points?|people|persons|jobs|workers)\b"
+                          rf"|\bby\s+(?:{words})\b(?!\s+(?:quarters?|months?|years?)\b)", text, re.I))
+
+
 def evaluate(claim, new, peer=None):
     old = claim["value_cited"]
     if claim["stance"] == "dated":
         return "still_true", f"The release of {claim['vintage_cited']} reported {old}. The sentence still describes that release correctly."
     a = claim["assertion"]
+    holding_status = "number_only" if states_figure(claim) else "unaffected"
     if old != new and re.search(r"\b(?:exactly|equal to)\b", claim["sentence"], re.I) and measured_values(claim["sentence"]):
         return "now_wrong", f"The sentence gives an exact figure of {old}. The revised figure is {new}."
     if a["type"] == "comparison" and peer is not None and a.get("operator") in OPERATORS:
@@ -318,7 +338,7 @@ def evaluate(claim, new, peer=None):
         if OPERATORS[op](old, other["value_cited"]):
             holds = OPERATORS[op](new, peer)
             relation = "still holds" if holds else "no longer holds"
-            return ("number_only" if holds else "now_wrong",
+            return (holding_status if holds else "now_wrong",
                     f"The comparison {relation}. The figure for {claim['period']} is {new}, and the figure for {other['period']} is {peer}.")
     if old == new and peer is None:
         return "still_true", f"The latest revision returns to the cited value {old}."
@@ -327,14 +347,14 @@ def evaluate(claim, new, peer=None):
         relation = {"<": "below", "<=": "at most", ">": "above", ">=": "at least"}[op]
         if OPERATORS[op](old, bound):
             if OPERATORS[op](new, bound):
-                return "number_only", f"The figure changed from {old} to {new}. Both readings are {relation} {bound}."
+                return holding_status, f"The figure changed from {old} to {new}. Both readings are {relation} {bound}."
             return "now_wrong", f"The original figure of {old} was {relation} {bound}. The revised figure of {new} falls outside that limit."
     if a["type"] == "direction" and a["detail"] == sign(old):
         if sign(old) != sign(new):
             return "now_wrong", f"The original figure was {old} ({sign(old)}). The revised figure is {new} ({sign(new)})."
         if re.search(r"\bstrong growth\b", claim["sentence"], re.I) and new < old:
             return "needs_review", f"Growth remains positive at {new}. The sentence gives no cutoff for strong growth."
-        return "number_only", f"The figure moves from {old} to {new} and the direction remains {sign(new)}."
+        return holding_status, f"The figure moves from {old} to {new} and the direction remains {sign(new)}."
     if a["type"] == "level" and a.get("detail") != "needs_review" and measured_values(claim["sentence"]) == [old]:
         return "number_only", f"The sentence reports a level. Update its figure from {old} to {new}."
     return "needs_review", f"The figures {old} and {new} alone cannot settle this claim. Check the wording and its supporting evidence."
