@@ -1,0 +1,26 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-head)__
+.rp2-head{background:var(--rp-paper);border-bottom:1px solid var(--rp-line)}
+.rp2-head .in{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.rp2-head .mark{font-size:26px;font-weight:650;letter-spacing:-.02em;color:var(--rp-ink);text-decoration:none;line-height:1}
+.rp2-head .mark i{color:var(--rp-red);font-weight:500;letter-spacing:-.01em}
+.rp2-head nav{display:flex;align-items:center;gap:8px}
+.rp2-head nav a{color:var(--rp-ink);text-decoration:none;font-size:17px;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:2px}
+.rp2-head nav a.btn{border:1.5px solid var(--rp-ink);padding:0 16px;margin-left:8px;font-weight:600}
+.rp2-head nav a:focus-visible,.rp2-head .mark:focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
+@media (hover:hover){.rp2-head nav a:not(.btn):hover{text-decoration:underline;text-decoration-color:var(--rp-red);text-underline-offset:5px}
+.rp2-head nav a.btn:hover{background:var(--rp-ink);color:var(--rp-paper)}}
+@media (max-width:720px){.rp2-head .in{padding:0 16px;height:60px}.rp2-head .mark{font-size:22px}
+.rp2-head nav a:not(.btn){display:none}.rp2-head nav a.btn{font-size:16px;padding:0 12px}}
+</style>
+<header class="rp2-head">
+  <div class="in">
+    <a class="mark" href="/" aria-label="Revisionpedia home">Revision<i>pedia</i></a>
+    <nav aria-label="Main">
+      <a href="/indicators/">Figures</a>
+      <a href="/how-corrections-work/">How it works</a>
+      <a class="btn" href="/cover-my-briefing/">Send a deck</a>
+    </nav>
+  </div>
+</header>

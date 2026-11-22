@@ -1,0 +1,68 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-recall)__
+.rp2-recall{background:var(--rp-night);color:var(--rp-paper);padding:112px 32px 120px}
+.rp2-recall .in{max-width:1200px;margin:0 auto}
+.rp2-recall h2{font-size:clamp(32px,3.6vw,50px);line-height:1.08;letter-spacing:-.022em;font-weight:600;margin:0;text-wrap:balance;max-width:20ch}
+.rp2-recall h2 i{font-weight:500;color:var(--rp-red-light)}
+.rp2-recall .lede{margin:20px 0 0;font-size:20px;color:var(--rp-night-quiet);max-width:52ch}
+.rp2-recall ol{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:1fr auto 1fr auto 1.25fr;gap:24px;align-items:start}
+.rp2-recall li.ar{align-self:center;margin-top:-56px;color:var(--rp-night-quiet)}
+.rp2-recall .pic{height:120px;display:flex;align-items:flex-end}
+.rp2-recall .pic svg{height:100%;width:auto;overflow:visible}
+.rp2-recall .st{margin:20px 0 0;font-size:19px;line-height:1.4}
+.rp2-recall .st small{display:block;font-size:15px;color:var(--rp-night-quiet);margin-top:4px}
+.rp2-recall .act{margin-top:72px;display:flex;align-items:center;flex-wrap:wrap;gap:12px 32px;padding-top:32px;border-top:1px solid rgba(244,239,230,.16)}
+.rp2-recall .go{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;background:var(--rp-paper);color:var(--rp-ink);font-weight:600;
+  text-decoration:none;border-radius:2px;font-size:18px;transition:background-color .2s var(--rp-ease)}
+.rp2-recall .txt{color:var(--rp-paper);min-height:44px;display:inline-flex;align-items:center;text-underline-offset:5px;text-decoration-thickness:1px;text-decoration-color:var(--rp-night-quiet)}
+.rp2-recall .terms{margin-left:auto;color:var(--rp-night-quiet);font-size:16px}
+.rp2-recall a:focus-visible{outline:2px dotted var(--rp-red-light);outline-offset:4px}
+@media (hover:hover){.rp2-recall .go:hover{background:#fff}.rp2-recall .txt:hover{text-decoration-color:var(--rp-red-light)}}
+.rp2-recall .sheet{fill:#F4EFE6}.rp2-recall .sheet2{fill:#CFC7B9}.rp2-recall .sheet3{fill:#A79F92}
+.rp2-recall .ln{stroke:#C9C0B1;stroke-width:5;stroke-linecap:round}
+.rp2-recall .lnd{stroke:#1D1B18;stroke-width:6;stroke-linecap:round}
+.rp2-recall .red{stroke:#F08A7E;fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.rp2-recall .redk{stroke:#B0271B;fill:none;stroke-width:3.5;stroke-linecap:round}
+.rp2-recall .ink{stroke:#F4EFE6;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.rp2-recall .tag{fill:#B0271B}.rp2-recall .tagt{fill:#fff;font:600 13px/1 var(--rp-serif);letter-spacing:.06em}
+.rp2-recall .hand{fill:#B0271B;font:italic 600 17px/1 var(--rp-serif)}
+@media (max-width:900px){
+  .rp2-recall{padding:72px 16px 80px}
+  .rp2-recall .lede{font-size:18px}
+  .rp2-recall ol{grid-template-columns:1fr;gap:8px;margin-top:40px}
+  .rp2-recall li:not(.ar){display:grid;grid-template-columns:112px 1fr;gap:20px;align-items:center}
+  .rp2-recall .pic{height:72px;justify-content:center}
+  .rp2-recall .st{margin:0;font-size:18px}
+  .rp2-recall li.ar{margin:0 0 0 44px;transform:rotate(90deg);width:24px}
+  .rp2-recall .act{margin-top:48px}
+  .rp2-recall .terms{margin-left:0;width:100%}
+}
+</style>
+<section class="rp2-recall" id="recall-press" aria-labelledby="rp2-recall-h">
+  <div class="in">
+    <h2 id="rp2-recall-h">Get told when a figure in your deck <i>changes</i>.</h2>
+    <p class="lede">Send your deck once. When a figure in it is revised, Recall Press, the team behind this site, sends you the sentence, its source and a corrected PPTX.</p>
+    <ol>
+      <li>
+        <div class="pic" aria-hidden="true"><svg viewBox="0 0 160 112"><rect class="sheet3" x="24" y="0" width="136" height="88" rx="3"/><rect class="sheet2" x="12" y="10" width="136" height="88" rx="3"/><rect class="sheet" x="0" y="22" width="136" height="88" rx="3"/><line class="lnd" x1="16" y1="48" x2="96" y2="48"/><line class="ln" x1="16" y1="66" x2="112" y2="66"/><line class="ln" x1="16" y1="82" x2="80" y2="82"/></svg></div>
+        <p class="st">Your deck</p>
+      </li>
+      <li class="ar" aria-hidden="true"><svg width="40" height="16" viewBox="0 0 40 16"><path d="M1 8h36M30 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></li>
+      <li>
+        <div class="pic" aria-hidden="true"><svg viewBox="0 0 170 112"><path class="ink" d="M4 92H50M50 30H104M104 44H166" opacity=".55"/><path class="red" d="M50 92V30M104 30V44"/><circle cx="4" cy="92" r="5" fill="#1D1B18" stroke="#F4EFE6" stroke-width="2.5"/><circle cx="166" cy="44" r="5.5" fill="#F08A7E"/></svg></div>
+        <p class="st">A figure is revised</p>
+      </li>
+      <li class="ar" aria-hidden="true"><svg width="40" height="16" viewBox="0 0 40 16"><path d="M1 8h36M30 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></li>
+      <li>
+        <div class="pic" aria-hidden="true"><svg viewBox="0 0 176 112"><rect class="sheet" x="0" y="22" width="136" height="88" rx="3"/><text class="hand" x="52" y="44">grew 4.6%</text><line class="lnd" x1="16" y1="60" x2="104" y2="60"/><path class="redk" d="M46 61c14-1.5 30-1 46-2"/><line class="ln" x1="16" y1="80" x2="112" y2="80"/><line class="ln" x1="16" y1="94" x2="72" y2="94"/><rect class="tag" x="112" y="0" width="58" height="26" rx="2" transform="rotate(4 141 13)"/><text class="tagt" x="121" y="18" transform="rotate(4 141 13)">PPTX</text></svg></div>
+        <p class="st">The sentence, its source and a corrected PPTX</p>
+      </li>
+    </ol>
+    <div class="act">
+      <a class="go" href="/cover-my-briefing/">Send a deck</a>
+      <a class="txt" href="https://ka62nv48.qwenwork.page/" rel="noopener">See a real correction</a>
+      <p class="terms">Pilot: free, results in two working days.</p>
+    </div>
+  </div>
+</section>

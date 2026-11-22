@@ -1,0 +1,201 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-check)__
+.rp2-check{background:var(--rp-paper);padding:112px 32px;border-top:1px solid var(--rp-line);scroll-margin-top:24px}
+.rp2-check .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:start}
+.rp2-check h2{font-size:clamp(30px,3.2vw,44px);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0;text-wrap:balance}
+.rp2-check form{margin-top:40px;display:grid;gap:24px}
+.rp2-check label{display:block;font-size:15px;color:var(--rp-quiet);margin-bottom:6px}
+.rp2-check select,.rp2-check input{width:100%;min-height:52px;font:inherit;font-size:18px;color:var(--rp-ink);background:var(--rp-sheet);
+  border:1px solid var(--rp-line);border-bottom:2px solid var(--rp-ink);border-radius:2px;padding:0 14px}
+.rp2-check select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231D1B18' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center}
+.rp2-check .two{display:grid;grid-template-columns:1fr;gap:16px}.rp2-check .two>div:last-child{max-width:180px}
+.rp2-check .or{display:flex;align-items:center;gap:16px;color:var(--rp-quiet);font-size:15px;font-style:italic}
+.rp2-check .or::before,.rp2-check .or::after{content:"";height:1px;background:var(--rp-line);flex:1}
+.rp2-check .ask{display:grid;grid-template-columns:1fr auto;gap:0}
+.rp2-check .ask input{border-right:0;border-radius:2px 0 0 2px}
+.rp2-check .ask button{min-height:52px;padding:0 22px;font:inherit;font-size:17px;font-weight:600;background:var(--rp-ink);color:var(--rp-paper);border:0;border-radius:0 2px 2px 0;cursor:pointer}
+.rp2-check input::placeholder{color:#6B6458;font-style:italic}
+.rp2-check :is(select,input,button,a):focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
+.rp2-check .hint{font-size:15px;color:var(--rp-quiet);margin:8px 0 0;min-height:24px}
+
+/* the answer sheet */
+.rp2-check .out{background:var(--rp-sheet);border-radius:3px;padding:40px 44px 36px;min-height:520px;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -8px rgba(60,40,20,.16)}
+.rp2-check .lab{font-size:16px;color:var(--rp-quiet);margin:0}
+.rp2-check .fn{margin:8px 0 0;font-size:clamp(40px,4.4vw,60px);line-height:1.05;letter-spacing:-.03em;font-weight:600;font-variant-numeric:lining-nums tabular-nums}
+.rp2-check .fn s{color:var(--rp-quiet);font-weight:400;text-decoration:none;position:relative}
+.rp2-check .fn s::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:4px;background:var(--rp-red);border-radius:2px;transform:rotate(-2deg)}
+.rp2-check .fn .ar{color:var(--rp-quiet);font-weight:400;margin:0 .2em}
+.rp2-check .dts{font-size:15px;color:var(--rp-quiet);margin:6px 0 0}
+.rp2-check .said{margin:20px 0 0;font-size:20px;line-height:1.7}
+.rp2-check .said del{text-decoration-color:var(--rp-red);text-decoration-thickness:2px;color:var(--rp-quiet)}
+.rp2-check .said ins{text-decoration:none;font-style:italic;color:var(--rp-red);font-weight:600;margin-left:4px}
+.rp2-check .chart{margin:24px 0 0}
+.rp2-check .verdict{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--rp-line);font-size:19px;font-weight:600}
+.rp2-check .verdict.bad{color:var(--rp-red)}
+.rp2-check .more{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;color:var(--rp-ink);text-underline-offset:5px;text-decoration-thickness:1px}
+@media (hover:hover){.rp2-check .more:hover{text-decoration-color:var(--rp-red)}.rp2-check .ask button:hover{background:#000}}
+.rp2-check .rp2-step text{fill:var(--rp-quiet)}
+.rp2-check .rp2-step .l0{fill:var(--rp-quiet)}
+.rp2-check .rp2-step .ln{fill:var(--rp-ink);font-weight:600}
+.rp2-check .rp2-step .lnow{fill:var(--rp-quiet);font-weight:400}
+.rp2-check .rp2-step .flat{fill:none;stroke:var(--rp-ink);stroke-width:2}
+.rp2-check .rp2-step .jump{fill:none;stroke:var(--rp-red);stroke-width:2.5;stroke-linecap:round}
+.rp2-check .rp2-step .z{stroke:var(--rp-line);stroke-dasharray:3 4}
+.rp2-check .rp2-step circle{fill:var(--rp-ink)}
+.rp2-check .rp2-step .p0{fill:var(--rp-sheet);stroke:var(--rp-ink);stroke-width:2}
+.rp2-check .rp2-step .pn{fill:var(--rp-red)}
+@media (prefers-reduced-motion:no-preference){
+  .rp2-check .out.fresh .jump{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:rp2c-draw .45s var(--rp-ease) .1s forwards}
+  .rp2-check .out.fresh .fn s::after{transform-origin:left;animation:rp2c-strike .3s var(--rp-ease) both}
+}
+@keyframes rp2c-draw{to{stroke-dashoffset:0}}
+@keyframes rp2c-strike{from{transform:rotate(-2deg) scaleX(0)}to{transform:rotate(-2deg) scaleX(1)}}
+@media (max-width:900px){
+  .rp2-check{padding:72px 16px}
+  .rp2-check .in{grid-template-columns:1fr;gap:32px}
+  .rp2-check form{margin-top:28px}
+  .rp2-check .out{padding:28px 20px 24px;min-height:0}
+  .rp2-check .said{font-size:18px}
+}
+</style>
+<section class="rp2-check" id="check" aria-labelledby="rp2-check-h">
+  <div class="in">
+    <div>
+      <h2 id="rp2-check-h">Check a figure before you quote it.</h2>
+      <form novalidate>
+        <div class="two">
+          <div><label for="rp2-k">Figure</label><select id="rp2-k"></select></div>
+          <div><label for="rp2-p">Quarter</label><select id="rp2-p"></select></div>
+        </div>
+        <div class="or">or paste a sentence from your deck</div>
+        <div>
+          <label for="rp2-s" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Sentence from your slide</label>
+          <div class="ask"><input id="rp2-s" type="text" autocomplete="off" placeholder="Services grew 4.7% in Q1 2026"><button type="submit">Check</button></div>
+          <p class="hint" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+    <div class="out" aria-live="polite">
+      <p class="lab"></p>
+      <p class="fn"></p>
+      <p class="dts"></p>
+      <p class="said" hidden></p>
+      <div class="chart"></div>
+      <p class="verdict"></p>
+      <a class="more" href="#">All releases and sources →</a>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="rp2-check-data">__DATA__</script>
+<script>
+(function(){
+  var root=document.getElementById('check'), D=JSON.parse(document.getElementById('rp2-check-data').textContent);
+  var $=function(s){return root.querySelector(s)}, K=$('#rp2-k'), P=$('#rp2-p'), S=$('#rp2-s'), out=$('.out');
+  var names={}; D.series.forEach(function(s){names[s[0]]=s[1];K.add(new Option(s[1],s[0]))});
+  var periods=[...new Set(D.rows.map(function(r){return r.p}))].sort();
+  var Q=function(p){var a=p.split('-');return a[1]+' '+a[0]};
+  periods.forEach(function(p){P.add(new Option(Q(p),p))});
+  var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var dt=function(s){var a=s.split('-');return (+a[2])+' '+M[a[1]-1]+' '+a[0]};
+  var fmt=function(v,u){var a=Math.abs(v);var s=u==='persons'?a.toLocaleString('en-SG',{maximumFractionDigits:0}):a.toFixed(1)+'%';return (v<0?'−':'')+s};
+  var esc=function(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var find=function(k,p){return D.rows.find(function(r){return r.k===k&&r.p===p})};
+  var verb=function(v){return v>0?'grew':v<0?'shrank':'stalled'};
+  var day=function(s){return Date.parse(s)/864e5};
+
+  function chart(r,w){
+    var h=w<480?190:230, fs=w<480?13:15, vs=r.v, vals=vs.map(function(v){return v[0]});
+    var lo=Math.min.apply(0,vals), hi=Math.max.apply(0,vals);
+    if(lo>0&&lo<(hi-lo)*1.2)lo=0; if(hi<0)hi=0;
+    var sp=(hi-lo)||Math.abs(hi)||1; lo-=sp*.12; hi+=sp*.12;
+    var pl=8,pr=w<480?92:100,pt=fs*2.2,pb=fs*2.4,t0=day(vs[0][1]),t1=Math.max(day(vs[vs.length-1][1])+40,t0+60);
+    var X=function(t){return pl+(t-t0)/(t1-t0)*(w-pl-pr)}, Y=function(v){return pt+(hi-v)/(hi-lo)*(h-pt-pb)};
+    var pts=vs.map(function(v){return [X(day(v[1])),Y(v[0]),v]}), flat='', jump='', len=0, o='';
+    pts.forEach(function(p,i){var xe=i+1<pts.length?pts[i+1][0]:w-pr+18;flat+='M'+p[0].toFixed(1)+' '+p[1].toFixed(1)+'H'+xe.toFixed(1);
+      if(i+1<pts.length&&Math.abs(pts[i+1][2][0]-p[2][0])>1e-9){jump+='M'+xe.toFixed(1)+' '+p[1].toFixed(1)+'V'+pts[i+1][1].toFixed(1);len=Math.max(len,Math.abs(pts[i+1][1]-p[1]))}});
+    if(lo<0&&hi>0){var z=Y(0),zl=Math.abs(z-Y(vs[vs.length-1][0]))>fs*1.3;o+='<line class="z" x1="'+pl+'" x2="'+(w-pr+18)+'" y1="'+z+'" y2="'+z+'"/>'+(zl?'<text x="'+(w-pr+24)+'" y="'+(z+fs*.35)+'">0</text>':'')}
+    o+='<path class="flat" d="'+flat+'"/>'+(jump?'<path class="jump" style="--len:'+Math.ceil(len+1)+'" d="'+jump+'"/>':'');
+    pts.forEach(function(p,i){o+='<circle class="'+(i===0?'p0':i===pts.length-1?'pn':'p')+'" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+(i===0||i===pts.length-1?4.5:3)+'"><title>'+fmt(p[2][0],r.u)+' · '+dt(p[2][1])+'</title></circle>'});
+    var a=pts[0], b=pts[pts.length-1], ly=a[1]-fs*1.6>0?a[1]-fs*.8:a[1]+fs*1.6;
+    o+='<text class="l0" x="'+a[0]+'" y="'+ly+'">'+fmt(a[2][0],r.u)+'</text>';
+    o+='<text class="ln" x="'+(w-pr+24)+'" y="'+(b[1]+fs*.35)+'">'+fmt(b[2][0],r.u)+'<tspan class="lnow" dx="6">now</tspan></text>';
+    o+='<text x="'+pl+'" y="'+(h-fs*.5)+'">'+dt(vs[0][1])+'</text><text x="'+(w-pr+18)+'" y="'+(h-fs*.5)+'" text-anchor="end">'+dt(vs[vs.length-1][1])+'</text>';
+    return '<svg class="rp2-step" viewBox="0 0 '+w+' '+h+'" width="100%" style="font-size:'+fs+'px;display:block" role="img" aria-label="'+vs.length+' releases, first '+fmt(r.f,r.u)+', now '+fmt(r.n,r.u)+'">'+o+'</svg>';
+  }
+
+  function verdict(r){
+    if(Math.abs(r.n-r.f)<1e-9) return [r.v.some(function(v){return Math.abs(v[0]-r.f)>1e-9})?'It moved, then came back. The first estimate holds today.':'The first estimate still holds.',false];
+    if(r.x) return ['A slide using the first estimate is now wrong.',true];
+    var d=Math.abs(r.n-r.f), dd=r.u==='persons'?d.toLocaleString('en-SG')+' people':d.toFixed(1)+' points';
+    return ['A slide using the first estimate is out by '+dd+'.',false];
+  }
+
+  function show(r,said){
+    $('.lab').textContent=names[r.k]+' · '+Q(r.p);
+    var same=Math.abs(r.n-r.f)<1e-9;
+    $('.fn').innerHTML=same?fmt(r.n,r.u):'<s>'+fmt(r.f,r.u)+'</s><span class="ar">→</span>'+fmt(r.n,r.u);
+    $('.dts').textContent=same?'Since '+dt(r.v[0][1]):'First estimate '+dt(r.v[0][1])+' · now '+dt(r.v[r.v.length-1][1]);
+    var sp=$('.said'); sp.hidden=!said; sp.innerHTML=said||'';
+    var ch=$('.chart'); ch.innerHTML=chart(r,Math.round(ch.clientWidth||600));
+    var v=verdict(r), vv=$('.verdict'); vv.textContent=v[0]; vv.classList.toggle('bad',v[1]);
+    if(said&&said.verdict){vv.textContent=said.verdict;vv.classList.toggle('bad',said.bad)}
+    $('.more').href=r.path;
+    out.classList.remove('fresh'); void out.offsetWidth; out.classList.add('fresh');
+  }
+
+  function pick(){var r=find(K.value,P.value); if(r){$('.hint').textContent='';show(r)}}
+  K.addEventListener('change',pick); P.addEventListener('change',pick);
+
+  // a small reader for slide sentences
+  function parse(t){
+    var s=t.toLowerCase(), k;
+    var sec=/manufactur|factor/.test(s)?'manufacturing':/service/.test(s)?'services':/construct|building/.test(s)?'construction':null;
+    if(/unemploy|jobless/.test(s))k='sg-unemployment';
+    else if(/employ|jobs|hiring|workers/.test(s))k='sg-employment-change';
+    else{
+      var qoq=/quarter[- ]on[- ]quarter|q-?o-?q|previous quarter|last quarter|on the quarter|from the quarter|quarterly|seasonally/.test(s);
+      k='sg-gdp-'+(sec||'overall')+'-'+(qoq?'qoq':'yoy');
+    }
+    var m=s.match(/\bq([1-4])\s*'?(20\d\d|\d\d)\b/)||s.match(/\b([1-4])q\s*'?(20\d\d|\d\d)\b/), p=null;
+    if(m)p=(m[2].length===2?'20'+m[2]:m[2])+'-Q'+m[1];
+    var w=s.match(/\b(first|second|third|fourth)\s+quarter\s+(?:of\s+)?(20\d\d)/);
+    if(!p&&w)p=w[2]+'-Q'+(['first','second','third','fourth'].indexOf(w[1])+1);
+    var num=k==='sg-employment-change'?t.match(/(-?\d{1,3}(?:,\d{3})+|-?\d{4,6})/):t.match(/(-?\d+(?:\.\d+)?)\s*(?:%|per ?cent)/i);
+    var dir=/stall|flat|stagnat|no growth/.test(s)?0:/shr[ai]nk|contract|fell|fall|declin|dropped|slump/.test(s)?-1:/grew|grow|rose|expand|increas|up\b/.test(s)?1:null;
+    return {k:k,p:p,num:num,dir:dir};
+  }
+  function ask(e){
+    if(e)e.preventDefault();
+    var t=S.value.trim(); if(!t){pick();return}
+    var a=parse(t);
+    if(!a.p){$('.hint').textContent='Add a quarter, like Q3 2025 or 3Q25.';return}
+    var r=find(a.k,a.p);
+    if(!r){$('.hint').textContent='We follow Q1 2025 to Q2 2026. Try a quarter in that range.';return}
+    K.value=r.k; P.value=r.p; $('.hint').textContent='';
+    var html=esc(t), bad=false, msg=null, tol=r.u==='persons'?50:.05, fix=fmt(Math.abs(r.n),r.u);
+    var VB='(stalled|stagnated|was flat|grew|rose|expanded|increased|shrank|shrunk|contracted|fell|declined|dropped|slumped)';
+    var rx=function(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')};
+    var dirBad=a.dir!==null&&r.u==='%'&&r.k!=='sg-unemployment'&&(r.n>0?1:r.n<0?-1:0)!==a.dir;
+    var numBad=false, sv=null;
+    if(a.num){sv=parseFloat(a.num[1].replace(/,/g,''));if(a.dir===-1)sv=-Math.abs(sv);numBad=Math.abs(sv-r.n)>=tol}
+    var said=a.num?esc(a.num[0]):null, both=dirBad&&numBad&&new RegExp(VB+'(\\s+(?:by\\s+)?)'+rx(said),'i');
+    if(both&&both.test(html)){html=html.replace(both,function(m){return '<del>'+m+'</del><ins>'+verb(r.n)+' '+fix+'</ins>'})}
+    else{
+      if(dirBad)html=html.replace(new RegExp('\\b'+VB+'\\b','i'),function(m){return '<del>'+m+'</del><ins>'+verb(r.n)+(a.num||!r.n?'':' '+fix)+'</ins>'});
+      if(numBad)html=html.replace(said,'<del>'+said+'</del><ins>'+(a.dir!==null&&r.u==='%'?fix:fmt(r.n,r.u))+'</ins>');
+    }
+    if(dirBad){bad=true;msg='The direction is wrong now. It '+verb(r.n)+(r.n?' '+fix:'')+'.'}
+    else if(numBad){bad=true;var hit=r.v.findIndex(function(v){return Math.abs(v[0]-sv)<tol});
+      msg=(hit===0?'That was the first estimate, from '+dt(r.v[0][1])+'.':hit>0?'That was the '+dt(r.v[hit][1])+' number.':'No release gave that number.')+' It is now '+fmt(r.n,r.u)+'.'}
+    else if(a.num)msg='Your number matches the latest release.';
+    show(r,{toString:function(){return html},verdict:msg,bad:bad});
+  }
+  root.querySelector('form').addEventListener('submit',ask);
+  K.value='sg-gdp-manufacturing-qoq'; P.value='2025-Q1'; pick();
+  var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){var r=find(K.value,P.value);if(r&&!S.value.trim())pick();else if(r)ask()},150)});
+})();
+</script>

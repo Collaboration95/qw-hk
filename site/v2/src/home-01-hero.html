@@ -1,0 +1,99 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-hero)__
+.rp2-hero{background:var(--rp-paper);padding:88px 32px 96px;overflow:hidden}
+.rp2-hero .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+.rp2-hero h1{font-size:clamp(38px,4.6vw,62px);line-height:1.04;letter-spacing:-.025em;font-weight:600;margin:0;text-wrap:balance;max-width:12ch}
+.rp2-hero .lede{font-size:20px;line-height:1.5;color:var(--rp-quiet);margin:24px 0 0;max-width:36ch}
+.rp2-hero .lede b{color:var(--rp-ink);font-weight:600}
+.rp2-hero .act{display:flex;align-items:center;flex-wrap:wrap;gap:8px 32px;margin-top:40px}
+.rp2-hero .go{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;background:var(--rp-ink);color:var(--rp-paper);
+  text-decoration:none;font-size:18px;font-weight:600;border-radius:2px;transition:background-color .2s var(--rp-ease)}
+.rp2-hero .go svg{transition:transform .2s var(--rp-ease)}
+.rp2-hero .txt{color:var(--rp-ink);font-size:18px;min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--rp-quiet)}
+.rp2-hero a:focus-visible{outline:2px dotted var(--rp-red);outline-offset:4px}
+@media (hover:hover){.rp2-hero .go:hover{background:#000}.rp2-hero .go:hover svg{transform:translateY(3px)}
+  .rp2-hero .txt:hover{text-decoration-color:var(--rp-red)}}
+
+/* the slide */
+.rp2-hero .desk{position:relative;margin:0}
+.rp2-hero .sheet{position:relative;background:var(--rp-sheet);border-radius:3px;padding:28px 40px 44px;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -8px rgba(60,40,20,.18),0 32px 64px -24px rgba(60,40,20,.16)}
+.rp2-hero .meta{display:flex;justify-content:space-between;font-size:14px;color:var(--rp-quiet);letter-spacing:.02em;border-bottom:1px solid var(--rp-line);padding-bottom:12px}
+.rp2-hero .say{font-size:clamp(27px,3.3vw,46px);line-height:1.25;letter-spacing:-.022em;font-weight:600;margin:64px 0 0;position:relative}
+.rp2-hero .w{position:relative;display:inline-block;white-space:nowrap}
+.rp2-hero .strike{position:absolute;left:-4%;top:30%;width:108%;height:40%;overflow:visible;pointer-events:none}
+.rp2-hero .strike path{fill:none;stroke:var(--rp-red);stroke-linecap:round}
+.rp2-hero .strike .a{stroke-width:4.5}.rp2-hero .strike .b{stroke-width:2;opacity:.55}
+.rp2-hero .fix{position:absolute;left:4%;bottom:86%;font-family:var(--rp-hand);font-weight:600;color:var(--rp-red);
+  font-size:.86em;letter-spacing:0;white-space:nowrap;transform:rotate(-3deg);transform-origin:left bottom;line-height:1}
+.rp2-hero .caret{position:absolute;right:-.42em;bottom:-.08em;width:.4em;height:.36em;overflow:visible}
+.rp2-hero .caret path{fill:none;stroke:var(--rp-red);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.rp2-hero .bars{margin-top:36px;width:62%;display:grid;gap:10px}
+.rp2-hero .bars i{display:block;height:7px;border-radius:4px;background:#ECE6DA}
+.rp2-hero .bars i:nth-child(2){width:72%}
+.rp2-hero .pg{position:absolute;right:24px;bottom:20px;font-size:14px;color:var(--rp-quiet)}
+
+/* the trail of readings */
+.rp2-hero .trail{list-style:none;margin:16px 0 0;padding:0;display:flex;align-items:flex-start;gap:0;font-variant-numeric:lining-nums tabular-nums}
+.rp2-hero .trail li{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
+.rp2-hero .trail li.ar{color:var(--rp-quiet);font-size:22px;padding:0 20px;line-height:30px}
+.rp2-hero .trail b{font-size:24px;line-height:30px;font-weight:600}
+.rp2-hero .trail span{font-size:15px;color:var(--rp-quiet)}
+.rp2-hero .trail .first b{text-decoration:line-through;text-decoration-color:var(--rp-red);text-decoration-thickness:2px;color:var(--rp-quiet)}
+.rp2-hero .trail .now b{color:var(--rp-red)}
+
+/* one entrance: the pencil */
+@media (prefers-reduced-motion:no-preference){
+  .rp2-hero .strike path{stroke-dasharray:1;stroke-dashoffset:1;animation:rp2-draw .5s var(--rp-ease) .45s forwards}
+  .rp2-hero .strike .b{animation-delay:.72s;animation-duration:.4s}
+  .rp2-hero .fix{clip-path:inset(-20% 100% -20% 0);animation:rp2-write .7s steps(9,end) 1s forwards}
+  .rp2-hero .caret path{stroke-dasharray:1;stroke-dashoffset:1;animation:rp2-draw .25s ease-out .9s forwards}
+  .rp2-hero .trail li{opacity:0;transform:translateY(4px);animation:rp2-in .4s var(--rp-ease) forwards}
+  .rp2-hero .trail li:nth-child(1){animation-delay:1.55s}.rp2-hero .trail li:nth-child(2),.rp2-hero .trail li:nth-child(3){animation-delay:1.7s}
+  .rp2-hero .trail li:nth-child(4),.rp2-hero .trail li:nth-child(5){animation-delay:1.85s}
+}
+@keyframes rp2-draw{to{stroke-dashoffset:0}}
+@keyframes rp2-write{to{clip-path:inset(-20% -10% -20% 0)}}
+@keyframes rp2-in{to{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .rp2-hero{padding:48px 16px 64px}
+  .rp2-hero .in{grid-template-columns:1fr;gap:48px}
+  .rp2-hero h1{max-width:14ch}
+  .rp2-hero .lede{font-size:18px}
+  .rp2-hero .act{margin-top:32px}
+  .rp2-hero .meta{font-size:12px}
+  .rp2-hero .meta{padding-bottom:8px}
+  .rp2-hero .trail li.ar{padding:0 8px;font-size:18px}
+  .rp2-hero .sheet{padding:16px 20px 28px}.rp2-hero .say{margin-top:44px}
+  .rp2-hero .trail b{font-size:20px}
+  .rp2-hero .trail span{font-size:13px}
+}
+</style>
+<section class="rp2-hero" aria-labelledby="rp2-hero-h">
+  <div class="in">
+    <div>
+      <h1 id="rp2-hero-h">Singapore’s official figures change after you quote them.</h1>
+      <p class="lede"><b>Revisionpedia</b> logs every revision to Singapore’s GDP, jobs and unemployment figures, with the official source.</p>
+      <div class="act">
+        <a class="go" href="#check">Check a figure
+          <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 1v13M1.5 8.5 7 14l5.5-5.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+      </div>
+    </div>
+    <figure class="desk" aria-label="A slide written on 14 Oct 2025 said manufacturing stalled in Q3 2025. The figure was revised: manufacturing grew 4.6%.">
+      <div class="sheet">
+        <div class="meta" aria-hidden="true"><span>A slide, written Oct 2025</span><span></span></div>
+        <p class="say">Manufacturing&nbsp;<span class="w"><s style="text-decoration:none">stalled</s><svg class="strike" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path class="a" pathLength="1" d="M1 11C20 9.5 41 10.5 60 9.2S88 8.5 99 9.6"/><path class="b" pathLength="1" d="M3 13.5C30 12.4 62 12.8 97 11.6"/></svg><span class="fix">grew 4.6%</span><svg class="caret" viewBox="0 0 10 10" aria-hidden="true"><path pathLength="1" d="M1 9 5 2l4 7"/></svg></span><br>in Q3&nbsp;2025.</p>
+      </div>
+      <ol class="trail" aria-label="Manufacturing growth, year on year, Q3 2025">
+        <li class="first"><b>0.0%</b><span>first estimate, 14 Oct 2025</span></li>
+        <li class="ar" aria-hidden="true">→</li>
+        <li><b>5.0%</b><span>21 Nov 2025</span></li>
+        <li class="ar" aria-hidden="true">→</li>
+        <li class="now"><b>4.6%</b><span>now</span></li>
+      </ol>
+    </figure>
+  </div>
+</section>

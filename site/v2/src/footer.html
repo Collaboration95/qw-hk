@@ -1,0 +1,26 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-foot)__
+.rp2-foot{background:var(--rp-paper);border-top:1px solid var(--rp-line);padding:48px 32px 56px;font-size:15px;color:var(--rp-quiet)}
+.rp2-foot .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px 48px;align-items:start}
+.rp2-foot p{margin:0;max-width:72ch}
+.rp2-foot .mark{font-size:20px;font-weight:650;letter-spacing:-.02em;color:var(--rp-ink);margin-bottom:8px}
+.rp2-foot .mark i{color:var(--rp-red);font-weight:500}
+.rp2-foot a{color:var(--rp-quiet);text-underline-offset:4px;text-decoration-thickness:1px}
+.rp2-foot nav{display:flex;gap:4px 20px;flex-wrap:wrap;grid-row:1/4;grid-column:2;justify-content:flex-end}
+.rp2-foot nav a{color:var(--rp-ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.rp2-foot a:focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
+.rp2-foot time{color:var(--rp-ink)}
+@media (hover:hover){.rp2-foot nav a:hover{text-decoration:underline;text-decoration-color:var(--rp-red);text-underline-offset:5px}}
+@media (max-width:900px){.rp2-foot{padding:40px 16px 48px}.rp2-foot .in{grid-template-columns:1fr}.rp2-foot nav{grid-row:auto;grid-column:auto;justify-content:flex-start;margin-top:8px}}
+</style>
+<footer class="rp2-foot">
+  <div class="in">
+    <p class="mark">Revision<i>pedia</i></p>
+    <p>Sources: SingStat via data.gov.sg (<a href="https://data.gov.sg/open-data-licence" rel="noopener">Singapore Open Data Licence v1.0</a>) and MTI. Independent, not government.</p>
+    <p>Figures checked <time datetime="2026-11-22">22 Nov 2026</time></p>
+    <nav aria-label="Footer">
+      <a href="/indicators/">Figures</a><a href="/how-corrections-work/">How it works</a><a href="/sources-and-licences/">Sources</a><a href="/about/">About</a>
+    </nav>
+  </div>
+</footer>

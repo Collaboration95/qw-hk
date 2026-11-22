@@ -60,3 +60,12 @@ Date: 2026-11-21 (SGT). Built through the hashmeta MCP. The owner approved the l
 ## Credits
 
 The site generation task used 263.1 credits. Planning and analysis cost was not reported separately. Collection builds, direct page and form edits and publishing used 0. No creditNotice (70% threshold) was returned. Usage: app → subscription and usage pages.
+
+## 22 Nov 2026 · Revisionpedia v2 redesign (live)
+
+The first version read like a data dictionary. v2 is a plain-language redesign: one idea per screen, real data only.
+- Source: `site/v2/` (copy and visual rules in `BRIEF.md`, generator `render_v2.py`, Hashmeta port builders in `port/`).
+- Applied with direct Hashmeta MCP edits (`update_global_styles`, `update_header`, `update_footer`, `update_page` for 77 pages, `update_form`), then three `publish_changes` releases. No AI page builds; 0 Hashmeta credits.
+- Live: home (hero, a grid of all 60 figures, an interactive checker, the Recall Press offer), 60 figure pages with step charts and QAPage JSON-LD, 10 indicator pages, Figures index, all-figures list, How it works, About, Sources, the "Send a deck" page with the native form relabelled in plain words.
+- Checked from outside after publishing: text on 71 of 72 ported pages matched the payloads, and the home page was checked by eye. Screenshots at 1440 and 390 px; no horizontal scroll.
+- The indicator pages no longer carry job 014's per-page stamp. The site-wide footer now says "Figures checked 22 Nov 2026"; the job 014 evidence stays in docs/qw-outbox/014-honest-stamp/.

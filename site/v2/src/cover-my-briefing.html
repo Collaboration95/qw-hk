@@ -1,0 +1,40 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-cover)__
+.rp2-cover{background:var(--rp-paper);padding:72px 32px 112px}
+.rp2-cover .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
+.rp2-cover h1{font-size:clamp(36px,4.4vw,58px);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0;text-wrap:balance}
+.rp2-cover dl{margin:40px 0 0;display:grid;gap:24px}
+.rp2-cover dt{font-size:15px;color:var(--rp-quiet);font-weight:600;line-height:1.2}
+.rp2-cover dd{margin:6px 0 0;font-size:19px;max-width:34ch}
+.rp2-cover form{background:var(--rp-sheet);border-radius:3px;padding:40px;display:grid;gap:20px;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -8px rgba(60,40,20,.16)}
+.rp2-cover label{display:block;font-size:15px;color:var(--rp-quiet);margin-bottom:6px}
+.rp2-cover input{width:100%;min-height:52px;font:inherit;font-size:18px;background:#fff;border:1.5px solid #8A8172;border-radius:2px;padding:0 14px;color:var(--rp-ink)}
+.rp2-cover input[type=file]{padding:12px 14px;font-size:16px}
+.rp2-cover .note{margin:8px 0 0;font-size:15px;color:var(--rp-quiet)}
+.rp2-cover input:focus{border-color:var(--rp-ink)}
+.rp2-cover button{min-height:52px;font:inherit;font-size:18px;font-weight:600;background:var(--rp-ink);color:var(--rp-paper);border:0;border-radius:2px;cursor:pointer;justify-self:start;padding:0 28px}
+.rp2-cover :is(input,button):focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
+@media (max-width:900px){.rp2-cover{padding:40px 16px 72px}.rp2-cover .in{grid-template-columns:1fr;gap:40px}.rp2-cover form{padding:24px 20px}}
+</style>
+<section class="rp2-cover">
+  <div class="in">
+    <div>
+      <h1>Send one briefing. We watch every figure in it.</h1>
+      <dl>
+        <div><dt>You send</dt><dd>A published deck or briefing, as PPTX or PDF.</dd></div>
+        <div><dt>You get</dt><dd>Each sentence a revision broke, its dated official source, and a corrected PPTX.</dd></div>
+        <div><dt>Pilot</dt><dd>No fee. Results within two working days.</dd></div>
+      </dl>
+    </div>
+    <!-- Stand-in: the live page keeps the existing Hashmeta form here. -->
+    <form action="/cover-my-briefing/" method="post">
+      <div><label for="cv-n">Name</label><input id="cv-n" name="name" autocomplete="name"></div>
+      <div><label for="cv-e">Work email</label><input id="cv-e" name="email" type="email" autocomplete="email"></div>
+      <div><label for="cv-o">Organisation</label><input id="cv-o" name="organisation" autocomplete="organization"></div>
+      <div><label for="cv-f">Your deck or briefing</label><input id="cv-f" name="file" type="file" accept=".pptx,.pdf"><p class="note">We only read the figures in your deck. Delete it any time.</p></div>
+      <button type="submit">Send my briefing</button>
+    </form>
+  </div>
+</section>

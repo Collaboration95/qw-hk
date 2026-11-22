@@ -1,0 +1,91 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-grid)__
+.rp2-grid{background:var(--rp-paper);padding:112px 32px;border-top:1px solid var(--rp-line)}
+.rp2-grid .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:start}
+.rp2-grid h2{font-size:clamp(30px,3.2vw,44px);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0;text-wrap:balance}
+.rp2-grid .big{margin:32px 0 0;font-variant-numeric:lining-nums;line-height:.9;letter-spacing:-.04em;font-weight:500}
+.rp2-grid .big b{font-size:clamp(96px,11vw,152px);font-weight:500}
+.rp2-grid .big span{font-size:clamp(28px,2.6vw,36px);color:var(--rp-quiet);letter-spacing:-.01em;margin-left:12px}
+.rp2-grid .sub{margin:24px 0 0;color:var(--rp-quiet);max-width:30ch}
+.rp2-grid .sub b{color:var(--rp-red);font-weight:600}
+.rp2-grid .key{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:8px;font-size:15px;color:var(--rp-quiet)}
+.rp2-grid .key li{display:flex;align-items:center;gap:12px;max-width:40ch}
+.rp2-grid .key li:first-child{align-items:flex-start}
+.rp2-grid .key li span{line-height:1.4}
+.rp2-grid .key li b{color:var(--rp-ink);font-weight:600}
+.rp2-grid .key i{width:36px;height:24px;border-radius:2px;position:relative;flex:none}
+
+/* the 60 */
+.rp2-grid .rows{display:grid;gap:4px;font-variant-numeric:lining-nums tabular-nums}
+.rp2-grid .row,.rp2-grid .hd{display:grid;grid-template-columns:168px repeat(6,minmax(0,1fr));gap:4px;align-items:center}
+.rp2-grid .row.g{margin-top:12px}
+.rp2-grid .hd{font-size:13px;color:var(--rp-quiet);text-align:center;line-height:1.2;padding-bottom:4px}
+.rp2-grid .rl{font-size:14px;color:var(--rp-quiet);line-height:1.2;padding-right:8px}
+.rp2-grid .rl b{display:block;color:var(--rp-ink);font-weight:600;font-size:15px}
+.rp2-grid .c,.rp2-grid .key i{display:flex;align-items:center;justify-content:center;height:44px;border-radius:2px;text-decoration:none;
+  background:var(--rp-sheet);box-shadow:0 0 0 1px var(--rp-line) inset;color:var(--rp-ink);font-size:15px;position:relative;
+  transition:transform .15s var(--rp-ease),box-shadow .15s var(--rp-ease)}
+.rp2-grid .key i{height:24px}
+.rp2-grid .c.same{background:transparent;color:var(--rp-quiet);box-shadow:0 0 0 1px var(--rp-line) inset}
+/* changed: the red pencil tick in the corner */
+.rp2-grid .c.chg::after,.rp2-grid .c.flip::after,.rp2-grid .key .chg::after,.rp2-grid .key .flip::after{content:"";position:absolute;top:5px;right:5px;width:9px;height:2px;
+  background:var(--rp-red);transform:rotate(-38deg);border-radius:1px}
+.rp2-grid .key i::after{top:3px!important;right:3px!important;width:7px!important}
+/* flipped a headline: the number itself is in red, on a wash */
+.rp2-grid .c.flip,.rp2-grid .key .flip{background:var(--rp-red-wash);color:var(--rp-red);font-weight:600;box-shadow:0 0 0 1.5px var(--rp-red) inset}
+.rp2-grid .key .same{background:transparent}
+.rp2-grid .c:focus-visible{outline:2px dotted var(--rp-red);outline-offset:2px}
+.rp2-grid .c.on{box-shadow:0 0 0 2px var(--rp-ink) inset}
+@media (hover:hover){.rp2-grid .c:hover{transform:translateY(-1px);box-shadow:0 0 0 2px var(--rp-ink) inset,0 6px 14px -6px rgba(60,40,20,.3)}}
+.rp2-grid .read{margin:24px 0 0;min-height:56px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;border-top:1px solid var(--rp-line);padding-top:16px}
+.rp2-grid .read .t{font-size:16px;color:var(--rp-quiet)}
+.rp2-grid .read .v{font-size:22px;font-variant-numeric:lining-nums tabular-nums;font-weight:600}
+.rp2-grid .read .v s{color:var(--rp-quiet);font-weight:400;text-decoration-color:var(--rp-red);text-decoration-thickness:2px}
+
+@media (max-width:900px){
+  .rp2-grid{padding:72px 16px}
+  .rp2-grid .in{grid-template-columns:1fr;gap:40px}
+  .rp2-grid .row,.rp2-grid .hd{grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+  .rp2-grid .hd span:first-child{display:none}
+  .rp2-grid .rl{grid-column:1/-1;font-size:13px;padding:8px 0 2px}
+  .rp2-grid .rl b{display:inline;font-size:14px;margin-right:4px}
+  .rp2-grid .row.g{margin-top:8px}
+  .rp2-grid .c{font-size:13px;height:40px}
+  .rp2-grid .c.chg::after,.rp2-grid .c.flip::after{top:4px;right:3px;width:7px}
+  .rp2-grid .hd{position:sticky;top:0;background:var(--rp-paper);z-index:1;padding-top:6px}
+}
+</style>
+<section class="rp2-grid" id="figures" aria-labelledby="rp2-grid-h">
+  <div class="in">
+    <div>
+      <h2 id="rp2-grid-h">It happens to most figures.</h2>
+      <p class="big"><b>57</b><span>of 60</span></p>
+      <p class="sub">changed after first publication. <b>18</b> flipped a headline.</p>
+      <ul class="key" aria-label="Key">
+        <li><i class="flip"></i><span><b>Flipped a headline:</b> a fall became growth, or it crossed a round number like 5%.</span></li>
+        <li><i class="chg"></i>Changed</li>
+        <li><i class="same"></i>Unchanged</li>
+      </ul>
+    </div>
+    <div>
+      __GRID__
+      <p class="read" aria-live="polite"><span class="t">Manufacturing annual · Q3 2025</span><span class="v"><s>0.0%</s> → 4.6%</span></p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var s=document.currentScript.previousElementSibling, read=s.querySelector('.read'), on=null;
+  function show(c){
+    if(on)on.classList.remove('on'); on=c; c.classList.add('on');
+    var f=c.dataset.f,n=c.dataset.n;
+    read.querySelector('.t').textContent=c.dataset.t;
+    read.querySelector('.v').innerHTML=f===n?n+' <span class="t">· never changed</span>':'<s>'+f+'</s> → '+n;
+  }
+  s.querySelectorAll('.c').forEach(function(c){
+    c.addEventListener('mouseenter',function(){show(c)});
+    c.addEventListener('focus',function(){show(c)});
+  });
+})();
+</script>

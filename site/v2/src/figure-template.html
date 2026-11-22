@@ -1,0 +1,74 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-fig)__
+.rp2-fig{background:var(--rp-paper);padding:72px 32px 0}
+.rp2-fig .in{max-width:760px;margin:0 auto}
+.rp2-fig h1{font-size:clamp(26px,2.6vw,34px);line-height:1.2;letter-spacing:-.015em;font-weight:500;margin:0;text-wrap:balance;color:var(--rp-ink)}
+.rp2-fig .rp2-answer{margin:28px 0 0;font-size:clamp(40px,5vw,64px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;font-variant-numeric:lining-nums}
+.rp2-fig .rp2-answer strong{font-weight:650;display:block}
+.rp2-fig .rp2-answer span{font-weight:400;color:var(--rp-quiet);font-size:.58em;letter-spacing:-.015em;display:block;margin-top:10px}
+.rp2-fig .rp2-pencil{text-decoration:none;position:relative;color:var(--rp-ink);white-space:nowrap}
+.rp2-fig .rp2-pencil::after{content:"";position:absolute;left:-6%;right:-6%;top:54%;height:4px;background:var(--rp-red);border-radius:2px;transform:rotate(-3deg)}
+.rp2-fig .rp2-dates{margin:16px 0 0;font-size:16px;color:var(--rp-quiet)}
+.rp2-fig .rp2-chart{margin:40px 0 0;padding:28px 28px 20px;background:var(--rp-sheet);border-radius:3px;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -10px rgba(60,40,20,.14)}
+.rp2-fig .rp2-step{display:block;width:100%;height:auto;overflow:visible}
+.rp2-fig .rp2-step.narrow{display:none}
+.rp2-fig .rp2-step text{fill:var(--rp-quiet);font-family:var(--rp-serif)}
+.rp2-fig .rp2-step .ln{fill:var(--rp-ink);font-weight:600}
+.rp2-fig .rp2-step .lnow{fill:var(--rp-quiet);font-weight:400}
+.rp2-fig .rp2-step .flat{fill:none;stroke:var(--rp-ink);stroke-width:2}
+.rp2-fig .rp2-step .jump{fill:none;stroke:var(--rp-red);stroke-width:2.5;stroke-linecap:round}
+.rp2-fig .rp2-step .z{stroke:var(--rp-line);stroke-dasharray:3 4}
+.rp2-fig .rp2-step circle{fill:var(--rp-ink)}
+.rp2-fig .rp2-step .p0{fill:var(--rp-sheet);stroke:var(--rp-ink);stroke-width:2}
+.rp2-fig .rp2-step .pn{fill:var(--rp-red)}
+.rp2-fig .rp2-slide{margin:32px 0 0;font-size:21px;line-height:1.45;font-weight:500;max-width:40ch}
+.rp2-fig .rp2-slide span{display:block;font-family:var(--rp-hand);color:var(--rp-red);font-size:24px;font-weight:600;line-height:1;margin-bottom:6px;transform:rotate(-1.5deg);transform-origin:left}
+.rp2-fig .rp2-history{margin:40px 0 0;border-top:1px solid var(--rp-line);border-bottom:1px solid var(--rp-line)}
+.rp2-fig .rp2-history summary{min-height:56px;display:flex;align-items:center;cursor:pointer;font-size:18px;font-weight:600;list-style:none}
+.rp2-fig .rp2-history summary::-webkit-details-marker{display:none}
+.rp2-fig .rp2-history summary::after{content:"+";margin-left:auto;font-weight:400;font-size:24px;color:var(--rp-quiet);transition:transform .2s var(--rp-ease)}
+.rp2-fig .rp2-history[open] summary::after{transform:rotate(45deg)}
+.rp2-fig .rp2-history summary:focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
+.rp2-fig .rp2-history ol{list-style:none;margin:0 0 20px;padding:0;font-size:16px}
+.rp2-fig .rp2-history li{display:grid;grid-template-columns:72px 112px 96px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--rp-line);align-items:baseline;font-variant-numeric:lining-nums tabular-nums}
+.rp2-fig .rp2-history li b{font-weight:600}
+.rp2-fig .rp2-history li .dd,.rp2-fig .rp2-history li .nt{color:var(--rp-quiet)}
+.rp2-fig .rp2-history li.chg .nt{color:var(--rp-red)}
+.rp2-fig .rp2-history li a{color:var(--rp-ink);text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:var(--rp-quiet)}
+.rp2-fig .rp2-source{margin:20px 0 0;font-size:15px;color:var(--rp-quiet)}
+.rp2-fig .rp2-source a{color:var(--rp-quiet);text-underline-offset:3px}
+.rp2-fig .cta{margin:72px 0 0;padding:40px 0 72px;border-top:2px solid var(--rp-ink);display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.rp2-fig .cta p{margin:0;font-size:22px;font-weight:500;letter-spacing:-.01em}
+.rp2-fig .cta a{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;background:var(--rp-ink);color:var(--rp-paper);font-weight:600;text-decoration:none;border-radius:2px;transition:background-color .2s var(--rp-ease)}
+.rp2-fig .cta a:focus-visible{outline:2px dotted var(--rp-red);outline-offset:4px}
+@media (hover:hover){.rp2-fig .cta a:hover{background:#000}}
+@media (prefers-reduced-motion:no-preference){
+  .rp2-fig .rp2-pencil::after{transform-origin:left;animation:rp2f-strike .4s var(--rp-ease) .35s both}
+  .rp2-fig .rp2-step .jump{animation:rp2f-fade .5s var(--rp-ease) .6s both}
+}
+@keyframes rp2f-strike{from{transform:rotate(-3deg) scaleX(0)}to{transform:rotate(-3deg) scaleX(1)}}
+@keyframes rp2f-fade{from{opacity:0}to{opacity:1}}
+@media (max-width:720px){
+  .rp2-fig{padding:40px 16px 0}
+  .rp2-fig .rp2-chart{padding:16px 12px 10px;margin-top:32px}
+  .rp2-fig .rp2-step.wide{display:none}.rp2-fig .rp2-step.narrow{display:block}
+  .rp2-fig .rp2-slide{font-size:19px}
+  .rp2-fig .rp2-history li{grid-template-columns:64px 1fr auto;gap:2px 12px}
+  .rp2-fig .rp2-history li a{grid-column:1/-1;font-size:15px}
+  .rp2-fig .cta{margin-top:56px;padding-bottom:56px}
+  .rp2-fig .cta p{font-size:20px}
+}
+</style>
+<article class="rp2-fig">
+  <div class="in">
+    <h1>{{title}}</h1>
+    {{body_html}}
+    <div class="cta">
+      <p>Quoted this figure? We will tell you when it changes.</p>
+      <a href="/cover-my-briefing/">Send a deck</a>
+    </div>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"QAPage","mainEntity":{"@type":"Question","name":"{{title}}","acceptedAnswer":{"@type":"Answer","text":"{{answer}}"}}}</script>
+</article>
