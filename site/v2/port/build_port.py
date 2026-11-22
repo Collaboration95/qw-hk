@@ -33,10 +33,11 @@ SITE = "https://revisionpedia.geo.hashmeta.tech"
 LIVE = PORT / "live"
 e_ = html.escape
 
-FONTS_HREF = ("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;"
-              "1,6..72,400..600&family=Caveat:wght@500;600&display=swap")
-ROOTS = [".rp2-head", ".rp2-foot", ".rp2-hero", ".rp2-grid", ".rp2-check", ".rp2-recall",
-         ".rp2-fig", ".rp2-ind", ".rp2-cover"]
+FONTS_HREF = R.FONTS_HREF
+ROOTS = [".rp2-head", ".rp2-foot", ".rp2-hero", ".rp2-run", ".rp2-hist", ".rp2-grid", ".rp2-end",
+         ".rp2-fig", ".rp2-ind", ".rp2-cover", ".rp2-pg"]
+HOME = [("hero", "home-01-hero"), ("run", "home-02-run"), ("history", "home-03-history"), ("grid", "home-04-grid"),
+        ("end", "home-05-end")]
 ALL = ",".join(ROOTS)
 
 # Hashmeta/Next wrappers observed on the live site (live/fig.html, live/cover.html):
@@ -50,11 +51,11 @@ ALL = ",".join(ROOTS)
 # ol/ul list-style none, svg display block), the Tailwind v4 browser runtime (layered utilities + preflight), then
 # /global-styles.css (Hashmeta global CSS: h1-h6 font-family/size, a colour + a:hover, .btn ...).
 SHIELD = f"""
-/* ---- Revisionpedia v2 · appended. Every rule below is scoped to a .rp2-* root or to a page that contains one. ---- */
+/* ---- Recall Press v3 · appended. Every rule below is scoped to a .rp2-* root or to a page that contains one. ---- */
 .site-header-wrapper{{position:sticky;top:0;z-index:50}}
-body:has(.rp2-hero,.rp2-fig,.rp2-ind,.rp2-cover){{background:#F4EFE6}}
+html:has(.rp2-head),body:has(.rp2-hero,.rp2-fig,.rp2-ind,.rp2-cover,.rp2-pg){{background:#fff;color-scheme:light}}
 /* undo the platform preflight + global element rules inside v2 blocks, so they render as designed */
-:where({ALL}) :is(h1,h2,h3,h4,p,ol,ul,li,dl,dt,dd,figure,a,b,strong,em,i,s,small,button,input,select,textarea,label,summary,details,hr){{all:revert}}
+:where({ALL}) :is(h1,h2,h3,h4,p,ol,ul,li,dl,dt,dd,figure,a,b,strong,em,i,s,small,span,time,nav,aside,button,input,select,textarea,label,summary,details,hr){{all:revert}}
 :where({ALL}) svg{{display:revert;vertical-align:revert}}
 :where({ALL}) a:hover{{color:inherit;text-decoration:revert}}
 html:has(.rp2-hero){{scroll-padding-top:72px}}
@@ -64,25 +65,80 @@ html:has(.rp2-hero){{scroll-padding-top:72px}}
 # copy and restyle its form to the v2 look without touching its HTML. Scoped to pages that contain .rp2-cover.
 FORM_BLOCK_ID = "6b014fa164950600078336ae"
 COVER_FORM_CSS = """
-main.page-main-content:has(.rp2-cover){display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:72px;align-items:start;max-width:1200px;width:100%;margin:0 auto;padding:72px 32px 112px;box-sizing:border-box}
+main.page-main-content:has(.rp2-cover){display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:72px;align-items:start;max-width:1216px;width:100%;margin:0 auto;padding:80px 32px 128px;box-sizing:border-box}
 main.page-main-content:has(.rp2-cover)>:not(.w-full){display:none}
 main.page-main-content:has(.rp2-cover) .rp2-cover{padding:0;background:none}
 main.page-main-content:has(.rp2-cover) .rp2-cover .in{display:block}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry{background:none;padding:0;font-family:var(--rp-serif);color:#1D1B18;--rp-serif:'Newsreader',Georgia,'Times New Roman',serif}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry section{max-width:none;padding:0;animation:none}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry{background:none;padding:0;font-family:'Inter',ui-sans-serif,system-ui,sans-serif;color:#111110;letter-spacing:-.011em}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry section{max-width:none;padding:0;animation:none;opacity:1;transform:none}
 main.page-main-content:has(.rp2-cover) .page-block-send-enquiry :is(h2,.instruction){display:none}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .enquiry-form{border:0;padding:40px;background:#FCFAF6;border-radius:3px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -8px rgba(60,40,20,.16)}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry label{font-family:inherit;font-size:15px;font-weight:400;color:#5B5449}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .input{min-height:52px;font-family:inherit;font-size:18px;background:#fff;border:1.5px solid #8A8172;border-radius:2px;padding:10px 14px;color:#1D1B18}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .input:focus{border-color:#1D1B18}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry :is(.input,.btn,input[type=checkbox]):focus-visible{outline:2px dotted #B0271B;outline-offset:3px}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry input[type=checkbox]{width:20px;height:20px;accent-color:#1D1B18}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .btn{min-height:52px;font-family:inherit;font-size:18px;font-weight:600;background:#1D1B18;color:#F4EFE6;border:0;border-radius:2px;padding:0 28px;filter:none}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .btn:hover{background:#000;color:#F4EFE6}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .form-status{font-family:inherit;font-size:16px}
-@media (max-width:900px){main.page-main-content:has(.rp2-cover){grid-template-columns:1fr;row-gap:40px;padding:40px 16px 72px}
-main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .enquiry-form{padding:24px 20px}}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .enquiry-form{border:0;padding:32px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px rgba(17,17,16,.07),0 1px 2px rgba(17,17,16,.05),0 24px 60px -24px rgba(60,35,20,.22)}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .form-grid{display:grid;gap:18px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .form-field{display:flex;flex-direction:column;gap:6px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry label{font-family:inherit;font-size:13px;font-weight:500;color:#111110}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry label .opt{font-weight:400;color:#6B6862;margin-left:4px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .input{min-height:44px;font-family:inherit;font-size:15px;background:#fff;border:0;box-shadow:inset 0 0 0 1px rgba(17,17,16,.14),0 1px 2px rgba(17,17,16,.04);border-radius:9px;padding:10px 12px;color:#111110}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry textarea.input{min-height:96px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .input::placeholder{color:#8A8780}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .input:focus{box-shadow:inset 0 0 0 1px #111110;outline:none}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry :is(.input,.btn):focus-visible{outline:2px solid #C93A1B;outline-offset:3px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .btn{margin-top:22px;min-height:44px;font-family:inherit;font-size:15px;font-weight:550;background:#111110;color:#fff;border:0;border-radius:10px;padding:0 18px;filter:none}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .btn:hover{background:#2A2926;color:#fff}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .form-note{margin:12px 0 0;font-size:13px;color:#6B6862}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .form-status{font-family:inherit;font-size:14px}
+@media (max-width:900px){main.page-main-content:has(.rp2-cover){grid-template-columns:1fr;row-gap:32px;padding:48px 16px 88px}
+main.page-main-content:has(.rp2-cover) .page-block-send-enquiry .enquiry-form{padding:20px}
+main.page-main-content:has(.rp2-cover) :is(.w-full:has(.rp2-cover),.rp2-cover,.rp2-cover .in,.rp2-cover .cp){display:contents}
+main.page-main-content:has(.rp2-cover) .rp2-cover h1{order:1}
+main.page-main-content:has(.rp2-cover) .w-full:has(.page-block-send-enquiry){order:2}
+main.page-main-content:has(.rp2-cover) .rp2-cover dl{order:3;margin:8px 0 0}
+main.page-main-content:has(.rp2-cover) .rp2-cover .eg{order:4;margin:0}}
 """
+
+# The live form block's markup, rewritten to three visible fields. Field names are the ones the block's own submit
+# script already posts (it sends every FormData entry to /api/form-submissions, form "1"); the fields the pilot no
+# longer asks for stay as hidden inputs with defaults, so a server that requires them still gets a value.
+COVER_FORM = """<form class="site-form" data-payload-form-id="1">
+  <input type="hidden" name="intent" value="coverage">
+  <input type="hidden" name="name" value="Not given">
+  <input type="hidden" name="organisation" value="">
+  <input type="hidden" name="record" value="">
+  <input type="hidden" name="consent" value="true">
+  <div class="form-grid">
+  <div class="form-field"><label for="fe-email">Email</label><input class="input" type="email" id="fe-email" name="email" autocomplete="email" placeholder="you@company.com" required></div>
+  <div class="form-field"><label for="fe-publication">Link to your deck</label><input class="input" type="text" inputmode="url" id="fe-publication" name="publication" placeholder="https://" required></div>
+  <div class="form-field"><label for="fe-message">Anything we should check? <span class="opt">Optional</span></label><textarea class="input" id="fe-message" name="message" rows="4"></textarea></div>
+  </div>
+  <button type="submit" class="btn btn-primary">Send a deck</button>
+  <p class="form-status" role="status" aria-live="polite" hidden></p>
+</form>"""
+
+
+def cover_form(block: dict) -> dict:
+    h = block["html"]
+    a = h.index('<form class="site-form" data-payload-form-id="1">')
+    b = h.index("</form>", a) + len("</form>")
+    h = h[:a] + COVER_FORM + h[b:]
+    subs = [
+        # a report-a-correction link (?intent=correction) needs no deck: relabel the two fields
+        ("if (intent === 'correction' || intent === 'coverage') f.querySelector('[name=\"intent\"]').value = intent;",
+         "if (intent === 'correction' || intent === 'coverage') f.querySelector('[name=\"intent\"]').value = intent;\n"
+         "    if (intent === 'correction') { var pu = f.querySelector('[name=\"publication\"]'); pu.required = false;"
+         " f.querySelector('label[for=\"fe-publication\"]').innerHTML = 'Link to the figure <span class=\"opt\">Optional</span>';"
+         " f.querySelector('label[for=\"fe-message\"]').textContent = 'What should we correct? Give the official link and release date.';"
+         " f.querySelector('[name=\"message\"]').required = true; f.querySelector('[type=\"submit\"]').textContent = 'Send correction'; }"),
+        ("new FormData(f).forEach(function (v, k) { sd.push({ field: k, value: String(v) }); });\n    sd.push({ field: 'source'",
+         "new FormData(f).forEach(function (v, k) { sd.push({ field: k, value: String(v) }); });\n"
+         "    sd.forEach(function (x) { if (x.field === 'message' && !x.value.trim()) x.value = 'Please check every figure in this deck.'; });\n"
+         "    sd.push({ field: 'source'"),
+        ("show('Thank you. Your enquiry has been received and goes to the directory editor for follow-up. Sending an enquiry does not enrol you in a paid plan.', 'success');",
+         "show('Thank you. We will reply to your email within two working days.', 'success');"),
+    ]
+    for x, y in subs:
+        assert x in h, x[:60]
+        h = h.replace(x, y)
+    return {**block, "html": h}
+
 
 
 # ---------- helpers ----------
@@ -97,7 +153,8 @@ def minify_css(css: str) -> str:
 
 def minify_html(h: str) -> str:
     h = re.sub(r"<!--(?!\s*HASHMETA).*?-->", "", h, flags=re.S)
-    h = re.sub(r">\s+<", "><", h)
+    h = re.sub(r">\s*\n\s*<", "><", h)  # line breaks between tags go; a space inside a line is kept (it is text)
+    h = re.sub(r">[ \t]{2,}<", "> <", h)
     h = re.sub(r"\n\s*", "\n", h)
     return h.strip()
 
@@ -191,18 +248,18 @@ def build():
     indicators = json.loads((REPO / "site" / "collections" / "indicators.json").read_text())
     ids = page_ids()
     css_parts, bodies = [], {}
-    for name in ["header", "footer", "home-01-hero", "home-02-grid", "home-03-checker", "home-04-recall",
-                 "figure-template", "indicator-template", "cover-my-briefing"]:
+    for name in ["header", "footer", *(src for _, src in HOME), "figure-template", "indicator-template",
+                 "cover-my-briefing"]:
         css, body = split_block(name)
         css_parts.append(f"/* {name} */\n{css}")
         bodies[name] = body
-    subs = {"__GRID__": R.grid_html(entries), "__DATA__": R.checker_data(entries)}
+    subs = R.home_subs(entries)
     for k in bodies:
         for a, b in subs.items():
             bodies[k] = bodies[k].replace(a, b)
 
     # --- global.css ---
-    tokens = R.TOKENS.format(cls=f":is({ALL})")
+    tokens = R.tokens(f":is({ALL})")
     css = "\n".join(css_parts)
     css = re.sub(r"\.btn\b", ".cta", css)  # header button: .btn collides with Hashmeta's global .btn
     glob = SHIELD + minify_css(tokens) + "\n" + minify_css(css) + "\n/* cover page: live form block */\n" + \
@@ -227,11 +284,10 @@ def build():
     out["footer.html"] = write("footer.html", minify_html(fb))
 
     # --- home ---
-    grid = bodies["home-02-grid"].replace("document.currentScript.previousElementSibling",
-                                          "document.getElementById('figures')")
+    bodies["home-04-grid"] = bodies["home-04-grid"].replace("document.currentScript.previousElementSibling",
+                                                            "document.getElementById('figures')")
     home_blocks = []
-    for name, body in [("hero", bodies["home-01-hero"]), ("grid", grid), ("checker", bodies["home-03-checker"]),
-                       ("recall-press", bodies["home-04-recall"])]:
+    for name, body in [(n, bodies[src]) for n, src in HOME]:
         home_blocks.append({"blockType": "rawHtml", "blockName": name, "html": minify_html(body),
                             "containerWidth": "full"})
     home_json = json.dumps(home_blocks, ensure_ascii=False, indent=1)
@@ -262,19 +318,8 @@ def build():
     ind_sizes = []
     by_slug = {i["slug"]: i for i in indicators}
     for sid in R.ORDER:
-        six = sorted((e for e in entries if e["series_id"] == sid), key=lambda e: e["period"])
-        t_all = [R._days(v["published"]) for e in six for v in e["vintages"]]
-        t_range = (min(t_all), max(t_all) + 40, max(t_all))
-        cards = "".join(
-            f'<a class="q" href="{e["path"]}"><span class="qq">{R.q(e["period"])}</span>'
-            f'<span class="fn">{"<s class=\"rp2-pencil\">" + e_(R.fmt(e["first_value"], e["unit"])) + "</s> → " if abs(e["first_value"] - e["current_value"]) > 1e-9 else ""}'
-            f'<b>{e_(R.fmt(e["current_value"], e["unit"]))}</b></span>'
-            f'{clean_copy(round_svg(R.step_svg(e, 360, 160, 15, "mini", "now", t_range)))}</a>' for e in six)
-        long = R.LONG[sid]
-        lede = (f"{long.split(', ')[1].capitalize() if ', ' in long else long}, "
-                f"{R.q(six[0]['period'])} to {R.q(six[-1]['period'])}. <b>Red</b> marks each change.")
         head = R.indicator_headline(sid, entries)
-        body = (itpl.replace("__CARDS__", cards).replace("__HEADLINE__", e_(head)).replace("__LEDE__", lede))
+        body = R.indicator_body(sid, entries, itpl, post=lambda s: clean_copy(round_svg(s)))
         rel = f"indicators/{sid}.html"
         n = write(rel, body)
         ind = by_slug[sid]
@@ -298,7 +343,7 @@ def build():
     cover_html = minify_html(cb)
     write("cover.html", cover_html)
     live3 = json.loads((LIVE / "get_page_3.json").read_text())
-    form_block = next(b for b in live3["layout"] if b["id"] == FORM_BLOCK_ID)
+    form_block = cover_form(next(b for b in live3["layout"] if b["id"] == FORM_BLOCK_ID))
     cover_layout = [{"blockType": "rawHtml", "blockName": "rp2-cover",
                      "html": re.sub(r"<!-- HASHMETA.*?-->", "", cover_html), "containerWidth": "full"},
                     form_block]
@@ -307,7 +352,7 @@ def build():
                      "bytes": bytes_(cover_layout[0]["html"]), "kept_block_ids": [FORM_BLOCK_ID],
                      "dropped_block_ids": [b["id"] for b in live3["layout"] if b["id"] != FORM_BLOCK_ID],
                      "meta": {"title": "Cover my briefing",
-                              "description": "Send one briefing and Recall Press watches every Singapore figure in it. "
+                              "description": "Send one deck and Recall Press watches every source it cites. "
                                              "Pilot: no fee, results within two working days."}})
 
     for k, f in [("header", "header.html"), ("footer", "footer.html"), ("global_css_appended", "global.css")]:

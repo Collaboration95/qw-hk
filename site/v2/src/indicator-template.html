@@ -1,39 +1,33 @@
 <style>
 __FONTS__
 __TOKENS(.rp2-ind)__
-.rp2-ind{background:var(--rp-paper);padding:72px 32px 112px}
-.rp2-ind .in{max-width:1200px;margin:0 auto}
-.rp2-ind h1{font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.022em;font-weight:600;margin:0;text-wrap:balance}
-.rp2-ind .lede{margin:16px 0 0;font-size:20px;color:var(--rp-quiet);max-width:48ch}
-.rp2-ind .lede b{color:var(--rp-red);font-weight:600}
+.rp2-ind{background:var(--rp-paper);padding:80px 32px 128px}
+.rp2-ind .in{max-width:1152px;margin:0 auto}
+.rp2-ind h1{font-size:clamp(34px,4.2vw,56px);line-height:1.06;letter-spacing:-.03em;font-weight:580;margin:0;max-width:18ch;text-wrap:balance}
+.rp2-ind .lede{margin:16px 0 0;font-size:18px;color:var(--rp-quiet);max-width:60ch}
 .rp2-ind .six{margin:48px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.rp2-ind .q{display:block;background:var(--rp-sheet);border-radius:3px;padding:20px 20px 12px;color:var(--rp-ink);text-decoration:none;
-  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 8px 24px -10px rgba(60,40,20,.14);transition:transform .2s var(--rp-ease),box-shadow .2s var(--rp-ease)}
-.rp2-ind .q:focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
-@media (hover:hover){.rp2-ind .q:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 2px 4px rgba(60,40,20,.08),0 16px 32px -12px rgba(60,40,20,.22)}}
-.rp2-ind .qq{display:block;font-size:15px;color:var(--rp-quiet)}
-.rp2-ind .fn{display:block;font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 12px;font-variant-numeric:lining-nums tabular-nums}
-.rp2-ind .fn s{color:var(--rp-quiet);font-weight:400}
-.rp2-ind .rp2-pencil{text-decoration:line-through;text-decoration-color:var(--rp-red);text-decoration-thickness:3px}
-.rp2-ind .rp2-step{display:block;width:100%;height:auto;overflow:visible}
-.rp2-ind .rp2-step text{fill:var(--rp-quiet)}
-.rp2-ind .rp2-step .zl{display:none}
-.rp2-ind .rp2-step .l0{fill:var(--rp-quiet)}
-.rp2-ind .rp2-step .ln{fill:var(--rp-ink);font-weight:600}
-.rp2-ind .rp2-step .lnow{fill:var(--rp-quiet);font-weight:400}
-.rp2-ind .rp2-step .flat{fill:none;stroke:var(--rp-ink);stroke-width:2}
-.rp2-ind .rp2-step .jump{fill:none;stroke:var(--rp-red);stroke-width:2.5;stroke-linecap:round}
-.rp2-ind .rp2-step .z{stroke:var(--rp-line);stroke-dasharray:3 4}
-.rp2-ind .rp2-step circle{fill:var(--rp-ink)}
-.rp2-ind .rp2-step .p0{fill:var(--rp-sheet);stroke:var(--rp-ink);stroke-width:2}
-.rp2-ind .rp2-step .pn{fill:var(--rp-red)}
-@media (max-width:900px){.rp2-ind{padding:40px 16px 72px}.rp2-ind .six{grid-template-columns:1fr 1fr;gap:12px}.rp2-ind .q{padding:14px 12px 8px}.rp2-ind .fn{font-size:22px}}
-@media (max-width:560px){.rp2-ind .six{grid-template-columns:1fr}}
+.rp2-ind .q{display:block;border-radius:12px;padding:18px 20px 12px;color:var(--rp-ink);text-decoration:none;position:relative;background:#fff;
+  box-shadow:0 0 0 1px rgba(17,17,16,.08),0 1px 2px rgba(17,17,16,.04);transition:box-shadow .2s var(--rp-ease)}
+@media (hover:hover){.rp2-ind .q:hover{box-shadow:0 0 0 1px rgba(17,17,16,.16),0 16px 36px -18px rgba(60,35,20,.25)}}
+.rp2-ind .qq{display:block;font-size:13px;color:var(--rp-dim)}
+.rp2-ind .fn{display:flex;align-items:baseline;gap:10px;margin:4px 0 10px;font-variant-numeric:tabular-nums}
+.rp2-ind .fn b{font-size:28px;font-weight:600;letter-spacing:-.03em}
+.rp2-ind .fn small{font-size:13px;color:var(--rp-dim)}
+.rp2-ind .rp2-step .sc{font-size:.8em}
+.rp2-ind .scale{margin:8px 0 0;font-size:14px;color:var(--rp-dim)}
+.rp2-ind .end{margin-top:64px}
+@media (max-width:900px){.rp2-ind{padding:48px 16px 88px}.rp2-ind .end{margin-top:48px}.rp2-ind .six{grid-template-columns:1fr 1fr;gap:10px}.rp2-ind .q{padding:14px 12px 8px}.rp2-ind .fn b{font-size:22px}.rp2-ind .six{margin-top:36px}}
+@media (max-width:600px){.rp2-ind .six{grid-template-columns:1fr}}
 </style>
 <section class="rp2-ind">
   <div class="in">
     <h1>__HEADLINE__</h1>
     <p class="lede">__LEDE__</p>
+    <p class="scale">__SCALE__</p>
     <div class="six">__CARDS__</div>
+    <div class="end">
+      <div><h2 class="h2">Quoted one of these&nbsp;six?</h2><p class="sub">Send the deck. We tell you when any of them changes.</p></div>
+      <a class="b1" href="/cover-my-briefing/">Send a deck</a>
+    </div>
   </div>
 </section>

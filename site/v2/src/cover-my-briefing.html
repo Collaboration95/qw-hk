@@ -1,40 +1,56 @@
 <style>
 __FONTS__
 __TOKENS(.rp2-cover)__
-.rp2-cover{background:var(--rp-paper);padding:72px 32px 112px}
-.rp2-cover .in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
-.rp2-cover h1{font-size:clamp(36px,4.4vw,58px);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0;text-wrap:balance}
-.rp2-cover dl{margin:40px 0 0;display:grid;gap:24px}
-.rp2-cover dt{font-size:15px;color:var(--rp-quiet);font-weight:600;line-height:1.2}
-.rp2-cover dd{margin:6px 0 0;font-size:19px;max-width:34ch}
-.rp2-cover form{background:var(--rp-sheet);border-radius:3px;padding:40px;display:grid;gap:20px;
-  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 1px 2px rgba(60,40,20,.08),0 12px 32px -8px rgba(60,40,20,.16)}
-.rp2-cover label{display:block;font-size:15px;color:var(--rp-quiet);margin-bottom:6px}
-.rp2-cover input{width:100%;min-height:52px;font:inherit;font-size:18px;background:#fff;border:1.5px solid #8A8172;border-radius:2px;padding:0 14px;color:var(--rp-ink)}
-.rp2-cover input[type=file]{padding:12px 14px;font-size:16px}
-.rp2-cover .note{margin:8px 0 0;font-size:15px;color:var(--rp-quiet)}
-.rp2-cover input:focus{border-color:var(--rp-ink)}
-.rp2-cover button{min-height:52px;font:inherit;font-size:18px;font-weight:600;background:var(--rp-ink);color:var(--rp-paper);border:0;border-radius:2px;cursor:pointer;justify-self:start;padding:0 28px}
-.rp2-cover :is(input,button):focus-visible{outline:2px dotted var(--rp-red);outline-offset:3px}
-@media (max-width:900px){.rp2-cover{padding:40px 16px 72px}.rp2-cover .in{grid-template-columns:1fr;gap:40px}.rp2-cover form{padding:24px 20px}}
+.rp2-cover{background:var(--rp-paper);padding:80px 32px 128px}
+.rp2-cover .in{max-width:1152px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
+.rp2-cover h1{font-size:clamp(36px,4.4vw,58px);line-height:1.05;letter-spacing:-.03em;font-weight:580;margin:0;text-wrap:balance}
+.rp2-cover dl{margin:40px 0 0;display:grid;gap:0;border-top:1px solid var(--rp-line)}
+.rp2-cover dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--rp-line)}
+.rp2-cover dt{font-size:13px;color:var(--rp-dim);font-weight:500;line-height:1.5;padding-top:2px}
+.rp2-cover dd{margin:0;font-size:16px;color:var(--rp-ink);max-width:38ch}
+.rp2-cover dd span{display:block}
+.rp2-cover dd span+span{margin-top:4px}
+.rp2-cover form{border-radius:12px;padding:32px;display:grid;gap:18px;background:#fff;box-shadow:var(--rp-shadow)}
+.rp2-cover label{display:block;font-size:13px;font-weight:500;color:var(--rp-ink);margin-bottom:6px}
+.rp2-cover label small{font-weight:400;color:var(--rp-dim);font-size:13px}
+.rp2-cover input,.rp2-cover textarea{width:100%;min-height:44px;font:inherit;font-size:15px;background:#fff;border:0;box-shadow:inset 0 0 0 1px var(--rp-line2),0 1px 2px rgba(17,17,16,.04);border-radius:9px;padding:10px 12px;color:var(--rp-ink)}
+.rp2-cover textarea{min-height:96px;resize:vertical}
+.rp2-cover :is(input,textarea):focus{box-shadow:inset 0 0 0 1px var(--rp-ink);outline:none}
+.rp2-cover button{min-height:44px;font:inherit;font-size:15px;font-weight:550;background:var(--rp-ink);color:#fff;border:0;border-radius:10px;cursor:pointer;justify-self:start;padding:0 18px}
+.rp2-cover .note{margin:0;font-size:13px;color:var(--rp-dim)}
+.rp2-cover :is(input,textarea,button):focus-visible{outline:2px solid var(--rp-red);outline-offset:3px}
+.rp2-cover .eg{margin-top:40px}
+.rp2-cover .eb{padding:20px 22px 18px}
+.rp2-cover .say{margin:0;font-size:18px;line-height:1.4;font-weight:550;letter-spacing:-.02em}
+.rp2-cover .src{margin:10px 0 0;font-size:12.5px;color:var(--rp-dim)}
+.rp2-cover .fl{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--rp-line);display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--rp-quiet)}
+.rp2-cover .fl .sd{width:6px;height:6px}
+@media (max-width:900px){.rp2-cover{padding:48px 16px 88px}.rp2-cover .in{grid-template-columns:1fr;gap:32px}.rp2-cover form{padding:20px}.rp2-cover dl>div{grid-template-columns:80px 1fr}}
 </style>
 <section class="rp2-cover">
   <div class="in">
-    <div>
-      <h1>Send one briefing. We watch every figure in it.</h1>
+    <div class="cp">
+      <h1>Send one deck.<br> We watch every source in&nbsp;it.</h1>
       <dl>
-        <div><dt>You send</dt><dd>A published deck or briefing, as PPTX or PDF.</dd></div>
-        <div><dt>You get</dt><dd>Each sentence a revision broke, its dated official source, and a corrected PPTX.</dd></div>
+        <div><dt>You send</dt><dd>A link to a deck or briefing, PPTX or PDF.</dd></div>
+        <div><dt>You get</dt><dd><span>The sentence that broke</span><span>The new figure and its dated release</span><span>A corrected PPTX</span></dd></div>
         <div><dt>Pilot</dt><dd>No fee. Results within two working days.</dd></div>
       </dl>
+      <div class="win eg" role="img" aria-label="Example of what you get back: slide 4 corrected from stalled to grew 4.6%, with the MTI source dated 14 Apr 2026.">
+        <div class="bar tab" aria-hidden="true"><span class="ttl">What you get back · slide 4</span></div>
+        <div class="eb" aria-hidden="true">
+          <p class="say">Manufacturing <span class="sx">stalled</span> <span class="nw">grew 4.6%</span> year on year in Q3&nbsp;2025.</p>
+          <p class="src">MTI · Advance GDP estimates · 14 Apr 2026</p>
+          <p class="fl"><span class="sd ok"></span>members-briefing-2025q3.pptx · corrected</p>
+        </div>
+      </div>
     </div>
-    <!-- Stand-in: the live page keeps the existing Hashmeta form here. -->
+    <!-- Stand-in: the live page keeps the Hashmeta form block here (rewritten by build_port.cover_form). -->
     <form action="/cover-my-briefing/" method="post">
-      <div><label for="cv-n">Name</label><input id="cv-n" name="name" autocomplete="name"></div>
-      <div><label for="cv-e">Work email</label><input id="cv-e" name="email" type="email" autocomplete="email"></div>
-      <div><label for="cv-o">Organisation</label><input id="cv-o" name="organisation" autocomplete="organization"></div>
-      <div><label for="cv-f">Your deck or briefing</label><input id="cv-f" name="file" type="file" accept=".pptx,.pdf"><p class="note">We only read the figures in your deck. Delete it any time.</p></div>
-      <button type="submit">Send my briefing</button>
+      <div><label for="cv-e">Email</label><input id="cv-e" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+      <div><label for="cv-p">Link to your deck</label><input id="cv-p" name="publication" type="url" placeholder="https://"></div>
+      <div><label for="cv-m">Anything we should check? <small>Optional</small></label><textarea id="cv-m" name="message" rows="3"></textarea></div>
+      <button type="submit">Send a deck</button>
     </form>
   </div>
 </section>

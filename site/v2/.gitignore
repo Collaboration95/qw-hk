@@ -20,3 +20,11 @@ __pycache__/
 !/out/home-390.png
 !/out/figure-1440.png
 !/out/checker-mid-use.png
+port/payload3/
+!/out/v3/
+/out/v3/*
+!/out/v3/home-1440-fold.png
+!/out/v3/home-1440.png
+!/out/v3/home-390.png
+!/out/v3/how-1440.png
+!/out/v3/figure-1440.png

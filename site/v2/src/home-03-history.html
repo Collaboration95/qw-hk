@@ -1,0 +1,73 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-hist)__
+.rp2-hist{background:var(--rp-paper)}
+.rp2-hist .pg{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.rp2-hist .l{padding:28px 32px 24px;border-right:1px solid var(--rp-line);min-width:0}
+.rp2-hist .ql{margin:0;color:var(--rp-quiet);font-size:13px}
+.rp2-hist .v{margin:10px 0 0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.rp2-hist .v b{font-size:44px;line-height:1;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.rp2-hist .v span{color:var(--rp-dim);font-size:14px}
+.rp2-hist .cr{color:var(--rp-dim);font-weight:400}
+.rp2-hist .chart{margin-top:24px}
+.rp2-hist .rp2-step.narrow{display:none}
+.rp2-hist .rp2-step .zl{display:none}
+.rp2-hist .rc{padding:24px 0 12px;min-width:0}
+.rp2-hist .rh{margin:0 24px 8px;font-size:12px;color:var(--rp-dim)}
+.rp2-hist .rel{list-style:none;margin:0;padding:0;font-variant-numeric:tabular-nums}
+.rp2-hist .rel li{display:grid;grid-template-columns:92px 48px minmax(0,1fr) 40px;gap:10px;align-items:baseline;padding:10px 24px;border-top:1px solid var(--rp-line);font-size:13px}
+.rp2-hist .rel .d{color:var(--rp-dim);font-size:12px}
+.rp2-hist .rel b{font-weight:600}
+.rp2-hist .rel .r{color:var(--rp-quiet);padding:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp2-hist .rel .c{text-align:right;color:var(--rp-quiet);font-size:12px}
+.rp2-hist .rel li:first-child .c{color:var(--rp-dim)}
+.rp2-hist .rel li.more{display:block;color:var(--rp-dim);font-size:12px}
+.rp2-hist .go{margin:24px 0 0}
+@media (prefers-reduced-motion:no-preference){
+  .rp2-hist.armed .rp2-step .jump.w{opacity:0}
+  .rp2-hist.armed.go .rp2-step .jump.w{animation:rp3-show .5s var(--rp-ease) .3s forwards}
+}
+@keyframes rp3-show{to{opacity:1}}
+@media (max-width:860px){
+  .rp2-hist .pg{grid-template-columns:1fr}
+  .rp2-hist .l{padding:20px 16px 16px;border-right:0;border-bottom:1px solid var(--rp-line)}
+  .rp2-hist .v b{font-size:36px}
+  .rp2-hist .rp2-step.wide{display:none}.rp2-hist .rp2-step.narrow{display:block}
+  .rp2-hist .rc{padding:16px 0 4px}
+  .rp2-hist .rh{margin:0 16px 6px}
+  .rp2-hist .rel li{grid-template-columns:84px 44px minmax(0,1fr) 36px;padding:10px 16px;gap:8px}
+  .rp2-hist .cr{display:none}
+}
+</style>
+<section class="rp2-hist band" id="history" aria-labelledby="rp2-hist-h">
+  <div class="wrap split">
+    <h2 class="h2" id="rp2-hist-h">Each change, dated and sourced.</h2>
+    <p class="sd2">One free public page per figure: what it first said, what it says now, and the release behind each change.</p>
+  </div>
+  <div class="wrap">
+    <div class="win">
+      <div class="bar tab" aria-hidden="true"><span class="ttl">Figures <span class="cr">› Manufacturing › Q3 2025</span></span></div>
+      <div class="pg">
+        <div class="l">
+          <p class="ql">Manufacturing growth, year on year · Q3 2025</p>
+          <p class="v"><b>4.6%</b><span>First estimate 0.0%, 14 Oct 2025</span></p>
+          __HIST_CHART__
+        </div>
+        <div class="rc">
+          <p class="rh">Releases that changed it</p>
+          __HIST_LIST__
+        </div>
+      </div>
+    </div>
+    <a class="b3 go" href="/revisions/sg-gdp-manufacturing-yoy-2025-q3/">Open this figure</a>
+  </div>
+</section>
+<script>
+(function(){
+  var s=document.getElementById('history');
+  if(!s||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  s.classList.add('armed');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){s.classList.add('go');io.disconnect();}})},{threshold:.4});
+  io.observe(s.querySelector('.win'));
+})();
+</script>

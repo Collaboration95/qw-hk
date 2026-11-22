@@ -69,3 +69,18 @@ The first version read like a data dictionary. v2 is a plain-language redesign: 
 - Live: home (hero, a grid of all 60 figures, an interactive checker, the Recall Press offer), 60 figure pages with step charts and QAPage JSON-LD, 10 indicator pages, Figures index, all-figures list, How it works, About, Sources, the "Send a deck" page with the native form relabelled in plain words.
 - Checked from outside after publishing: text on 71 of 72 ported pages matched the payloads, and the home page was checked by eye. Screenshots at 1440 and 390 px; no horizontal scroll.
 - The indicator pages no longer carry job 014's per-page stamp. The site-wide footer now says "Figures checked 22 Nov 2026"; the job 014 evidence stays in docs/qw-outbox/014-honest-stamp/.
+
+## 22 Nov 2026 · v3 product redesign (live)
+
+The owner found v2 bland and Singapore-specific. v3 turns the site into a product landing page for Recall Press:
+- **Headline:** "Your sources change. Your deck should too." Singapore appears only as the live proof ("Live today for 10 Singapore indicators").
+- **Look:** a light theme in Inter, one correction red, and real-data product windows: the Recall desk, the agent run log ("runs on QwenWork"), a figure's history and the 60-figure grid.
+- **Source and rounds:** source in `site/v2/` (`BRIEF-v3.md`, `NOTES-v3.md`, fix rounds `FIXES-v3-r1..r3.md`). Three blind-critic rounds; scores rose from 4–7 to 6–8.
+- **Ported:** direct Hashmeta MCP edits.
+  - Payloads come from `port/compose_payloads.py`.
+  - Pages: 77 via `update_page`.
+  - Site-wide: global CSS, header, footer.
+  - Form 1 labels: "Link to your deck", "Send a deck".
+  - Terms and privacy page meta, so they re-bake the chrome.
+- **Released:** one `publish_changes` release (82 items). 0 Hashmeta credits.
+- **Verified:** `port/verify_live.py` reports 77 of 77 pages matching. Live screenshots at 1440 and 390 show no horizontal scroll.

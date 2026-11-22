@@ -1,0 +1,92 @@
+<style>
+__FONTS__
+__TOKENS(.rp2-grid)__
+.rp2-grid{background:var(--rp-paper)}
+.rp2-grid .big{display:flex;align-items:baseline;gap:6px;margin:0 0 6px;font-variant-numeric:tabular-nums}
+.rp2-grid .key{list-style:none;margin:0;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;border-bottom:1px solid var(--rp-line);font-size:12.5px;color:var(--rp-quiet);background:var(--rp-bg2)}
+.rp2-grid .key .kt{margin-right:auto;color:var(--rp-ink);font-weight:500}
+.rp2-grid .key li{display:flex;align-items:center;gap:8px}
+.rp2-grid .key .hint{display:none;margin-left:auto;color:var(--rp-dim)}
+.rp2-grid .key i{flex:none}
+.rp2-grid .sc{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#ccc transparent}
+.rp2-grid .rows{display:grid;gap:4px;padding:16px 20px 20px;min-width:720px;font-variant-numeric:tabular-nums}
+.rp2-grid .row,.rp2-grid .hd{display:grid;grid-template-columns:172px repeat(6,minmax(0,1fr));gap:4px;align-items:center}
+.rp2-grid .row.g{margin-top:10px}
+.rp2-grid .hd{font-size:11.5px;color:var(--rp-dim);text-align:center;line-height:1.25;padding-bottom:6px}
+.rp2-grid .rl{font-size:12px;color:var(--rp-dim);line-height:1.2;padding-right:10px;position:sticky;left:0;z-index:3;background:#fff;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.rp2-grid .hd>span:first-child{position:sticky;left:0;z-index:3;align-self:stretch;background:#fff}
+.rp2-grid .rl b{color:var(--rp-ink);font-weight:550;font-size:13px}
+.rp2-grid .c,.rp2-grid .key i{display:flex;align-items:center;justify-content:center;height:44px;border-radius:7px;text-decoration:none;
+  font-size:13px;font-weight:550;color:var(--rp-ink);position:relative;transition:background-color .15s,box-shadow .15s}
+.rp2-grid .key i{display:inline-grid;place-items:center;height:22px;min-width:34px;padding:0 5px;border-radius:5px;font-size:12px;font-style:normal;box-shadow:inset 0 0 0 1px var(--rp-line)}
+.rp2-grid .c.same,.rp2-grid .key .same{color:var(--rp-dim);font-weight:450}
+.rp2-grid .c.flip,.rp2-grid .key .flip{background:rgba(201,58,27,.06);color:var(--rp-red);font-weight:650;box-shadow:none}
+.rp2-grid .c.on{box-shadow:inset 0 0 0 1.5px var(--rp-ink)}
+.rp2-grid .rl::after{content:"";position:absolute;top:-4px;bottom:-4px;right:0;width:1px;background:var(--rp-line)}
+.rp2-grid .rl{position:sticky}
+.rp2-grid .c:focus-visible{outline:2px solid var(--rp-red);outline-offset:2px}
+@media (hover:hover){.rp2-grid .c:hover{box-shadow:inset 0 0 0 1.5px var(--rp-ink)}}
+.rp2-grid .read{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;padding:14px 20px;border-top:1px solid var(--rp-line);min-height:52px}
+.rp2-grid .read .t{font-size:12.5px;color:var(--rp-quiet)}
+.rp2-grid .read .v{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.rp2-grid .read .v .n{color:var(--rp-dim);font-weight:400;font-size:12.5px}
+.rp2-grid .read .v .sx{font-weight:400}
+.rp2-grid .stat{display:flex;gap:48px;margin:0;justify-self:end}
+.rp2-grid .stat p{margin:0}
+.rp2-grid .stat b{display:block;font-size:44px;line-height:1;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.rp2-grid .stat span{display:block;margin-top:8px;font-size:14px;color:var(--rp-quiet)}
+.rp2-grid .stat span i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;background:rgba(201,58,27,.22)}
+.rp2-grid .stat small{font-size:.5em;color:var(--rp-dim);font-weight:500;letter-spacing:-.02em}
+@media (max-width:860px){
+  .rp2-grid .rows{padding:12px 12px 16px 0;min-width:600px}
+  .rp2-grid .rl,.rp2-grid .hd>span:first-child{padding-left:12px}
+  .rp2-grid .row,.rp2-grid .hd{grid-template-columns:112px repeat(6,minmax(0,1fr));gap:3px}
+  .rp2-grid .c{height:44px;font-size:12.5px}
+  .rp2-grid .key{padding:12px 14px;gap:6px 16px}
+  .rp2-grid .read{padding:12px 14px}
+  .rp2-grid .stat{gap:32px;justify-self:start}
+  .rp2-grid .key .kt{flex-basis:100%}
+  .rp2-grid .key .hint{display:flex}
+  .rp2-grid .stat b{font-size:36px}
+}
+</style>
+<section class="rp2-grid band" id="figures" aria-labelledby="rp2-grid-h">
+  <div class="wrap split">
+    <h2 class="h2" id="rp2-grid-h">Most figures change after you cite them.</h2>
+    <div class="stat">
+      <p><b>57<small> / 60</small></b><span>revised at least once</span></p>
+      <p class="a"><b>18<small> / 60</small></b><span><i></i>now make the sentence wrong</span></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="win">
+            <ul class="key" aria-label="Key">
+        <li class="kt">Singapore · 10 indicators × 6 quarters</li>
+        <li><i class="flip">0.6</i>Sentence now wrong</li>
+        <li><i class="chg">4.5</i>Number changed</li>
+        <li><i class="same">2.0</i>Never revised</li>
+        <li class="hint">← earlier quarters</li>
+      </ul>
+      <div class="sc" tabindex="0" aria-label="60 figures, scroll sideways for earlier quarters">__GRID__</div>
+      <p class="read" aria-live="polite"><span class="t">Manufacturing, year on year · Q3 2025</span><span class="v"><span class="sx">0.0%</span> → 4.6%</span></p>
+    </div>
+    <a class="b3 go" href="/revisions/" style="margin-top:24px">All 60 figures</a>
+  </div>
+</section>
+<script>
+(function(){
+  var s=document.currentScript.previousElementSibling, read=s.querySelector('.read'), sc=s.querySelector('.sc'), on=null;
+  var cap=s.querySelector('.c.on');
+  if(cap){on=cap;if(sc.scrollWidth>sc.clientWidth){var lab=cap.parentNode.querySelector('.rl');sc.scrollLeft=0;sc.scrollLeft=Math.max(0,Math.round(cap.getBoundingClientRect().left-lab.getBoundingClientRect().right-3));}}
+  function show(c){
+    if(on)on.classList.remove('on'); on=c; c.classList.add('on');
+    var f=c.dataset.f,n=c.dataset.n;
+    read.querySelector('.t').textContent=c.dataset.t;
+    read.querySelector('.v').innerHTML=f===n?n+' <span class="n">· same as first estimate</span>':'<span class="sx">'+f+'</span> → '+n;
+  }
+  s.querySelectorAll('.c').forEach(function(c){
+    c.addEventListener('mouseenter',function(){show(c)});
+    c.addEventListener('focus',function(){show(c)});
+  });
+})();
+</script>
