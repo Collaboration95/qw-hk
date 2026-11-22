@@ -1,7 +1,7 @@
 <div align="center">
   <img src="qwenwork-out/08-media/recall-press-mark-1024.png" alt="Recall Press mark" width="120" height="120" />
   <h1>Recall Press</h1>
-  <p><strong>Recall Press checks Singapore’s revised economic figures against a briefing and gives its editor the exact sentence, dated source and editable correction.</strong></p>
+  <p><strong>Your sources change. Your deck updates itself. When a figure a briefing cites is revised, Recall Press rewrites the sentence and hands back the updated, editable deck with its dated source. The editor only approves.</strong></p>
 
   <p><a href="https://j3jvce39.qwenwork.page/"><strong>Try the live recall desk</strong></a> · sample run <code>2026-11-21-68013a314ad1</code><br>Job 011 desk · Job 001 Desktop session <code>mwq2wb75y5x1adbq</code> · manual live check, 21 Nov at 15:48 SGT</p>
 

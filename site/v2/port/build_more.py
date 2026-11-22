@@ -215,7 +215,7 @@ def end(h2, sub="Pilot: no fee, results within two working days."):
             '<a class="b1" href="/cover-my-briefing/">Send a deck</a></div>')
 
 
-END = end("Send one deck.<br> We watch every source in&nbsp;it.")
+END = end("Send a deck once.<br> It keeps itself&nbsp;current.")
 
 
 def cell(e):
@@ -245,7 +245,7 @@ def page_figures(entries, by):
     html_ = (f'<section class="rp2-pg figs"><div class="in"><h1>{e_(head)}</h1>'
              f'<p class="lede">Ten Singapore indicators, six quarters each. Pick one to see every release.</p>{KEY}'
              f'<p class="qh" aria-hidden="true"><span></span><span class="cs">{qh}</span><span></span><span></span></p><ol class="ledger">{"".join(rows)}</ol>'
-             f'<a class="b3 more" href="/revisions/">All {len(entries)} figures as a list</a>{end("Cited any of these&nbsp;60?", "Send the deck. We check each figure in it against every new release.")}</div></section>')
+             f'<a class="b3 more" href="/revisions/">All {len(entries)} figures as a list</a>{end("Cited any of these&nbsp;60?", "Send the deck. It updates itself when any of them change.")}</div></section>')
     meta = {"title": "Figures: how often Singapore's economic numbers are revised",
             "description": f"{head} Ten Singapore indicators (GDP by sector, jobs, unemployment), six quarters each, "
                            "first estimate against the latest release."}
@@ -278,7 +278,7 @@ def page_all(entries, by):
     html_ = (f'<section class="rp2-pg all"><div class="in"><h1>{e_(head)}</h1>'
              f'<p class="lede"><b class="num">{n_ch}</b> still differ from their first estimate. First estimate → now, newest quarter first.</p>'
              f'{key}<div class="groups">{"".join(groups)}</div>'
-             f'{end("Found one you quoted?", "Send the deck. We tell you the next time it changes.")}</div></section>')
+             f'{end("Found one you quoted?", "Send the deck. It updates itself next time.")}</div></section>')
     meta = {"title": "All 60 figures: first estimate and now",
             "description": f"{head} {n_ch} still differ from their first estimate. Every Singapore GDP, jobs and "
                            "unemployment figure Recall Press follows, first estimate against the latest release."}
@@ -304,14 +304,14 @@ def page_how(entries, by):
     h = next(e for e in entries if e["slug"] == HERO)
     chart = (B.round_svg(R.step_svg(h, 560, 210, 13, "wide", step_labels=True, tips=False))
              + B.round_svg(R.step_svg(h, 358, 220, 13, "narrow", step_labels=True, tips=False)))
-    head = "We watch the sources your deck cites."
+    head = "Your deck keeps itself current."
     f1 = win("Send a deck",
              '<div class="file"><span class="ic">PPTX</span><span><b>members-briefing-2025q3.pptx</b>'
              '<span>6 slides · received 20 Oct 2025</span></span><span class="st"><span class="sd ok"></span>Watching</span></div>'
              '<div class="slides">' + "".join(
                  f'<i{" class=bad" if n == 4 else " class=on" if n == 3 else ""}><em>{t}</em>{"<b>" + v + "</b>" if v else ""}<span>{n}</span></i>'
                  for n, (t, v) in enumerate(SLIDES, 1)) + '</div>',
-             "A deck received on 20 Oct 2025: members-briefing-2025q3.pptx, 6 slides, now watched.")
+             "A deck received on 20 Oct 2025: members-briefing-2025q3.pptx, 6 slides, now kept current.")
     f2 = ('<div class="panel" role="img" aria-label="Slide 3 and slide 4 are linked to the figures they quote, as published on 14 Oct 2025; slide 5 has no matching figure.">'
           '<div class="fb" aria-hidden="true"><ul class="map">'
           '<li><span class="s"><small>Slide 3</small>Services grew 0.6% quarter on quarter in Q1 2025.</span><span class="a">→</span>'
@@ -326,35 +326,35 @@ def page_how(entries, by):
              '<li><span>Slide 3</span><span class="mv"><s>0.6%</s> → 0.7%<em>still growing</em></span><span class="out">Number only</span></li></ul>',
              "Manufacturing Q3 2025 went from 0.0% to 4.6%: it no longer stalled, it grew, so the words on slide 4 change. "
              "Services went from 0.6% to 0.7%, still growing, so only slide 3's number changes.")
-    f4 = win("Slide 4 · fix ready",
+    f4 = win("Slide 4 · rewritten",
              '<p class="say">Manufacturing <s>stalled</s> <span class="nw">grew 4.6%</span> year on year in Q3&nbsp;2025.</p>'
              '<p class="src">MTI · Advance GDP estimates · 14 Apr 2026</p>'
-             '<p class="acts"><span class="b1">Apply fix <span class="kbd">↵</span></span><span class="b2">Skip <span class="kbd">S</span></span></p>'
+             '<p class="acts"><span class="b1">Approve <span class="kbd">↵</span></span><span class="b2">Skip <span class="kbd">S</span></span></p>'
              '<div class="vd"><div class="file" style="grid-template-columns:40px minmax(0,1fr)"><span class="ic">PPTX</span><span>'
-             '<b>members-briefing-2025q3.pptx</b><span>corrected copy · slide 4 updated</span></span></div></div>',
-             "The corrected sentence: Manufacturing grew 4.6% year on year in Q3 2025, source MTI, 14 Apr 2026, with a corrected PPTX.")
+             '<b>members-briefing-2025q3.pptx</b><span>updated copy · slide 4 rewritten</span></span></div></div>',
+             "The rewritten sentence: Manufacturing grew 4.6% year on year in Q3 2025, source MTI, 14 Apr 2026, with the updated PPTX.")
     feats = [
-        ("Send a deck once.", "PPTX or PDF. We keep watching it, with no\u00a0re-upload.", f1),
-        ("Each sentence is linked to its source.", "The figure it quotes, its quarter and the release it came from.", f2),
-        ("A revised source flags the sentence it breaks.",
-         "If the change breaks the words, you get a new sentence. If not, just the new number.", f3),
-        ("You get the fix, its source and a corrected PPTX.",
-         "Apply or skip, slide by slide. The rest of the deck stays as it was.", f4),
+        ("Send a deck once.", "PPTX or PDF. No re-uploads, no reminders to\u00a0set.", f1),
+        ("Every sentence is linked to its source.", "The figure it quotes, its quarter and the release it came from.", f2),
+        ("Checked the day a release lands.",
+         "If it breaks the words, the sentence is rewritten. If not, only the number\u00a0changes.", f3),
+        ("You approve. The deck updates.",
+         "One click per slide. The rest of the deck stays as it\u00a0was.", f4),
     ]
     rows = "".join(f'<li class="feat"><div><h2>{e_(t)}</h2><p class="fs">{e_(s)}</p></div>{w}</li>' for t, s, w in feats)
     html_ = (
         f'<section class="rp2-pg how"><div class="in"><h1>{head}</h1>'
-        f'<p class="lede">One sample briefing, from upload to the corrected slide.</p>'
+        f'<p class="lede">One sample briefing, from upload to the updated slide. Your only step is the last one.</p>'
         f'<ol class="feats">{rows}</ol>'
         f'{end("Try it on your next&nbsp;deck.")}</div></section>')
-    meta = {"title": "How Recall Press works: we watch the sources your deck cites",
-            "description": "Send a deck once. Recall Press links each sentence to the source it cites, flags the "
-                           "sentence a revision breaks and returns the fix with its dated source and a corrected PPTX."}
+    meta = {"title": "How Recall Press works: your deck keeps itself current",
+            "description": "Send a deck once. Recall Press links each sentence to the source it cites, rewrites the "
+                           "sentence a revision breaks and hands back the updated PPTX for you to approve."}
     return html_, meta, head
 
 
 def page_about():
-    head = "Recall Press watches the sources your decks cite."
+    head = "Recall Press keeps your decks current on its own."
     facts = [("Who", "Independent, based in Singapore."),
              ("For", "Anyone who quotes official figures, reports or releases in decks and briefings."),
              ("Examples", "Figures and sources are public. The example deck is a sample."),
@@ -363,8 +363,8 @@ def page_about():
              f'<ul class="facts">' + "".join(f"<li><span>{a}</span><p style=\"margin:0\">{b}</p></li>" for a, b in facts) +
              f'</ul>{end("Start with one&nbsp;deck.")}</div></section>')
     meta = {"title": "About Recall Press",
-            "description": "Recall Press watches the sources your decks and briefings cite and sends the fix when one "
-                           "is revised. Independent, based in Singapore."}
+            "description": "Recall Press keeps your decks and briefings current: when a source they cite "
+                           "is revised, it rewrites the sentence for you to approve. Independent, based in Singapore."}
     return html_, meta, head
 
 

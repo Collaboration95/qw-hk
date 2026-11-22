@@ -516,9 +516,9 @@ def build():
 
     home = "\n".join(blocks[k] for k in sorted(blocks) if k.startswith("home-"))
     (HERE / "preview" / "index.html").write_text(page(
-        "Recall Press · Your sources change. Your deck should too.",
-        "When a report or release your deck cites is revised, Recall Press finds the sentence it broke and sends "
-        "the fix. Live today for 10 Singapore indicators.", home))
+        "Recall Press · Your sources change. Your deck updates itself.",
+        "When a report or release your deck cites is revised, Recall Press rewrites the sentence and hands "
+        "back the updated deck. Live today for 10 Singapore indicators.", home))
 
     tpl = blocks["figure-template"]
     fields = {

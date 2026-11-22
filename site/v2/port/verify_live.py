@@ -8,7 +8,7 @@ def text(h):
     h=re.sub(r'<(script|style)[^>]*>.*?</\1>','',h,flags=re.S)
     return re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',h))).strip()
 for i in range(30):
-    if 'Your sources change' in get(SITE+"/"): break
+    if 'Your deck updates itself' in get(SITE+"/"): break
     time.sleep(10)
 bad=[]; ok=0
 for f in sorted(Path('payload3').glob('*.json')):

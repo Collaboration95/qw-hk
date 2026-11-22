@@ -8,7 +8,7 @@ Recall Press
 
 ## One sentence
 
-Recall Press checks Singapore’s revised economic figures against a briefing and gives its editor the exact sentence, dated source and editable correction.
+Your sources change. Your deck updates itself. When a figure a briefing cites is revised, Recall Press rewrites the sentence and hands back the updated, editable deck with its dated source. The editor only approves.
 
 ## Links
 
@@ -21,7 +21,7 @@ Recall Press checks Singapore’s revised economic figures against a briefing an
 
 ## 50 words
 
-An editor registers a briefing once. When Singapore revises a figure, Recall Press finds the exact sentence, says whether it is now wrong or still true, and returns an editable corrected PowerPoint with the dated source. QwenWork runs the reading and checks. Revisionpedia, on Hashmeta, publishes each tracked figure’s history.
+An editor sends a briefing once. When Singapore revises a figure it cites, Recall Press finds the sentence, judges it wrong or still true, and rewrites it in an updated, editable PowerPoint with the dated source. The editor approves. QwenWork runs the checks. Revisionpedia, on Hashmeta, publishes each figure’s history.
 
 ## 150 words
 

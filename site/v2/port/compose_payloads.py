@@ -25,7 +25,11 @@ def main():
             ]
             d = {"pageId": p["pageId"], "slug": p["slug"], "layout": layout, "meta": meta["meta"]}
         elif k == "home":
-            d = {"pageId": 1, "slug": "home", "layout": json.loads((HERE / "home.json").read_text())}
+            d = {"pageId": 1, "slug": "home", "layout": json.loads((HERE / "home.json").read_text()),
+                 "meta": {"title": "Recall Press · Your sources change. Your deck updates itself.",
+                          "description": "When a report or release you cited is revised, Recall Press rewrites "
+                                         "the sentence and hands back the updated deck with its dated source. "
+                                         "You just approve. Live for 10 Singapore indicators."}}
         elif k == "cover":
             d = {"pageId": 3, "slug": "cover-my-briefing",
                  "layout": json.loads((HERE / "cover.json").read_text()), "meta": p["meta"]}

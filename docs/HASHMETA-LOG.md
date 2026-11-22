@@ -84,3 +84,17 @@ The owner found v2 bland and Singapore-specific. v3 turns the site into a produc
   - Terms and privacy page meta, so they re-bake the chrome.
 - **Released:** one `publish_changes` release (82 items). 0 Hashmeta credits.
 - **Verified:** `port/verify_live.py` reports 77 of 77 pages matching. Live screenshots at 1440 and 390 show no horizontal scroll.
+
+## 22 Nov 2026 · Automation copy (live)
+
+- **Headline:** "Your sources change. Your deck updates itself." Subline: Recall Press rewrites the sentence and hands back the updated deck; the editor only approves.
+- **Copy across the site:**
+  - Hero mock: "To approve", "Updated for you", Approve button, "Updated PPTX".
+  - Run band: "Runs on its own, every release."
+  - Closing band and Send a deck page: "Send a deck once. It keeps itself current."
+  - How it works: "Your deck keeps itself current." Steps end on "You approve. The deck updates."
+  - About, Figures, All figures, figure and indicator closers say the deck updates itself.
+- **Released:** one `publish_changes` release of 77 pages. 0 Hashmeta credits.
+- **Verified:**
+  - `port/verify_live.py` reports 77 of 77 pages matching.
+  - A browser submission of the live Send a deck form was stored as submission 2 (labelled TEST, example.com address) and showed the thank-you message.

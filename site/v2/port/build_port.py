@@ -352,7 +352,7 @@ def build():
                      "bytes": bytes_(cover_layout[0]["html"]), "kept_block_ids": [FORM_BLOCK_ID],
                      "dropped_block_ids": [b["id"] for b in live3["layout"] if b["id"] != FORM_BLOCK_ID],
                      "meta": {"title": "Cover my briefing",
-                              "description": "Send one deck and Recall Press watches every source it cites. "
+                              "description": "Send a deck once and it keeps itself current as its sources change. "
                                              "Pilot: no fee, results within two working days."}})
 
     for k, f in [("header", "header.html"), ("footer", "footer.html"), ("global_css_appended", "global.css")]:
