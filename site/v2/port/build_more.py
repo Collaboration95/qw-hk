@@ -334,7 +334,7 @@ def page_how(entries, by):
              '<b>members-briefing-2025q3.pptx</b><span>updated copy · slide 4 rewritten</span></span></div></div>',
              "The rewritten sentence: Manufacturing grew 4.6% year on year in Q3 2025, source MTI, 14 Apr 2026, with the updated PPTX.")
     feats = [
-        ("Send a deck once.", "PPTX or PDF. No re-uploads, no reminders to\u00a0set.", f1),
+        ("Send a deck once.", "PowerPoint or Word. No re-uploads, no reminders to\u00a0set.", f1),
         ("Every sentence is linked to its source.", "The figure it quotes, its quarter and the release it came from.", f2),
         ("Checked the day a release lands.",
          "If it breaks the words, the sentence is rewritten. If not, only the number\u00a0changes.", f3),
