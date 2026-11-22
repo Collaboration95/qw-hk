@@ -1,0 +1,89 @@
+{
+  "documents": [
+    {
+      "document_id": "members-briefing-2025q3",
+      "title": "Members’ quarterly economy briefing",
+      "path": "/Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk/samples/members-briefing-2025q3.pptx",
+      "registered": "2025-10-20",
+      "sha256": "3e8348a853a65ad46c34f6168941b3e11701121fcb87c8da10a691e11ffbd9de",
+      "unlinked": [
+        {
+          "sentence": "Electronics output expanded.",
+          "location": "slide 5, Body, paragraph 1",
+          "anchor": {
+            "block": 27,
+            "start": 0
+          },
+          "reason": "Choose the official series that this sentence describes."
+        }
+      ]
+    },
+    {
+      "document_id": "board-paper-2025q3",
+      "title": "Board paper on member enquiries",
+      "path": "/Users/speedpowermac/Documents/projects/CODE_MAIN/personal/qw-hk/samples/board-paper-2025q3.docx",
+      "registered": "2025-10-20",
+      "sha256": "c7bb2a87a9d198bd14b2855bba300234c97268031a4ad90e6746a9d2e7d2c346",
+      "unlinked": []
+    }
+  ],
+  "claims": [
+    {
+      "document_id": "members-briefing-2025q3",
+      "location": "slide 3, Headline, paragraph 1",
+      "sentence": "Services grew 0.6% quarter on quarter in Q1 2025, seasonally adjusted.",
+      "anchor": {
+        "block": 14,
+        "start": 0
+      },
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q1",
+      "value_cited": 0.6,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "up"
+      },
+      "claim_id": "members-briefing-2025q3-c1"
+    },
+    {
+      "document_id": "members-briefing-2025q3",
+      "location": "slide 4, Headline, paragraph 1",
+      "sentence": "Manufacturing stalled year on year in Q3 2025.",
+      "anchor": {
+        "block": 20,
+        "start": 0
+      },
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "current",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      },
+      "claim_id": "members-briefing-2025q3-c2"
+    },
+    {
+      "document_id": "board-paper-2025q3",
+      "location": "paragraph 7",
+      "sentence": "As first reported in the October advance estimate, manufacturing output was flat year on year in Q3 2025.",
+      "anchor": {
+        "block": 6,
+        "start": 0
+      },
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "value_cited": 0.0,
+      "vintage_cited": "2025-10-14",
+      "stance": "dated",
+      "assertion": {
+        "type": "direction",
+        "detail": "flat"
+      },
+      "claim_id": "board-paper-2025q3-c1"
+    }
+  ]
+}

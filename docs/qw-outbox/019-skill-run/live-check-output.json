@@ -1,0 +1,267 @@
+{
+  "started": "2026-11-23T01:04:51+08:00",
+  "finished": "2026-11-23T01:04:51+08:00",
+  "trigger": "manual",
+  "as_of": "2026-11-23",
+  "replay": false,
+  "series_checked": 2,
+  "changes": [
+    {
+      "series_id": "sg-gdp-services-qoq",
+      "period": "2025-Q1",
+      "old": 0.6,
+      "new": 0.7,
+      "old_published": "2025-10-14",
+      "new_published": "2026-02-10",
+      "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+      "old_release": "Advance GDP estimates — 2025-Q3",
+      "new_release": "Economic Survey of Singapore — 2025-Q4",
+      "title": "Services Producing Industries, real GDP growth, quarter on quarter, seasonally adjusted",
+      "unit": "%",
+      "source": {
+        "agency": "Singapore Department of Statistics",
+        "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Seasonally Adjusted, Quarter On Quarter",
+        "dataset_id": "d_17702de81b268ab5d6100a1aab3805bf",
+        "dataset_url": "https://data.gov.sg/datasets/d_17702de81b268ab5d6100a1aab3805bf/view",
+        "api_resource_id": "d_17702de81b268ab5d6100a1aab3805bf",
+        "api_row": "Services Producing Industries",
+        "api_row_field": "DataSeries",
+        "frequency": "quarterly",
+        "licence": "Singapore Open Data Licence v1.0",
+        "licence_url": "https://data.gov.sg/open-data-licence",
+        "accessed": "2026-11-19"
+      },
+      "evidence": {
+        "value": 0.7,
+        "published": "2026-02-10",
+        "release": "Economic Survey of Singapore — 2025-Q4",
+        "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+        "quote": "0.7",
+        "accessed": "2026-11-19",
+        "locator": "Annex B, Real Sectoral Growth Rates, seasonally adjusted quarter-on-quarter, Services Producing Industries, column 1Q25",
+        "agency": "Ministry of Trade and Industry",
+        "licence": "Official release distributed by SingStat under its website terms",
+        "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+      }
+    },
+    {
+      "series_id": "sg-gdp-manufacturing-yoy",
+      "period": "2025-Q3",
+      "old": 5.0,
+      "new": 4.6,
+      "old_published": "2025-11-21",
+      "new_published": "2026-04-14",
+      "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+      "old_release": "Economic Survey of Singapore — 2025-Q3",
+      "new_release": "Advance GDP estimates — 2026-Q1",
+      "title": "Manufacturing, real GDP growth, year on year",
+      "unit": "%",
+      "source": {
+        "agency": "Singapore Department of Statistics",
+        "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly",
+        "dataset_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+        "dataset_url": "https://data.gov.sg/datasets/d_1506368f0e7928ac18e42f84d1c450a3/view",
+        "api_resource_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+        "api_row": "Manufacturing",
+        "api_row_field": "DataSeries",
+        "frequency": "quarterly",
+        "licence": "Singapore Open Data Licence v1.0",
+        "licence_url": "https://data.gov.sg/open-data-licence",
+        "accessed": "2026-11-19"
+      },
+      "evidence": {
+        "value": 4.6,
+        "published": "2026-04-14",
+        "release": "Advance GDP estimates — 2026-Q1",
+        "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+        "quote": "4.6",
+        "accessed": "2026-11-19",
+        "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Manufacturing, column 3Q25",
+        "agency": "Ministry of Trade and Industry",
+        "licence": "Official release distributed by SingStat under its website terms",
+        "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "claim_id": "members-briefing-2025q3-c1",
+      "status": "number_only",
+      "reason": "The sentence reports a level. Update its figure from 0.6 to 0.7.",
+      "decided_by": "rule",
+      "rule_status": "number_only",
+      "rule_reason": "The sentence reports a level. Update its figure from 0.6 to 0.7.",
+      "needs_review": false,
+      "figures": [
+        {
+          "series_id": "sg-gdp-services-qoq",
+          "period": "2025-Q1",
+          "old": 0.6,
+          "new": 0.7,
+          "old_published": "2025-10-14",
+          "new_published": "2026-02-10",
+          "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+          "old_release": "Advance GDP estimates — 2025-Q3",
+          "new_release": "Economic Survey of Singapore — 2025-Q4",
+          "title": "Services Producing Industries, real GDP growth, quarter on quarter, seasonally adjusted",
+          "unit": "%",
+          "source": {
+            "agency": "Singapore Department of Statistics",
+            "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Seasonally Adjusted, Quarter On Quarter",
+            "dataset_id": "d_17702de81b268ab5d6100a1aab3805bf",
+            "dataset_url": "https://data.gov.sg/datasets/d_17702de81b268ab5d6100a1aab3805bf/view",
+            "api_resource_id": "d_17702de81b268ab5d6100a1aab3805bf",
+            "api_row": "Services Producing Industries",
+            "api_row_field": "DataSeries",
+            "frequency": "quarterly",
+            "licence": "Singapore Open Data Licence v1.0",
+            "licence_url": "https://data.gov.sg/open-data-licence",
+            "accessed": "2026-11-19"
+          },
+          "evidence": {
+            "value": 0.7,
+            "published": "2026-02-10",
+            "release": "Economic Survey of Singapore — 2025-Q4",
+            "url": "https://www.singstat.gov.sg/files/e59f8f48-dca7-4666-ae74-b322882624ac.pdf",
+            "quote": "0.7",
+            "accessed": "2026-11-19",
+            "locator": "Annex B, Real Sectoral Growth Rates, seasonally adjusted quarter-on-quarter, Services Producing Industries, column 1Q25",
+            "agency": "Ministry of Trade and Industry",
+            "licence": "Official release distributed by SingStat under its website terms",
+            "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+          }
+        }
+      ],
+      "already_issued": false,
+      "previously_skipped": false,
+      "decision": "pending"
+    },
+    {
+      "claim_id": "members-briefing-2025q3-c2",
+      "status": "now_wrong",
+      "reason": "The original figure was 0.0 (flat). The revised figure is 4.6 (up).",
+      "decided_by": "rule",
+      "rule_status": "now_wrong",
+      "rule_reason": "The original figure was 0.0 (flat). The revised figure is 4.6 (up).",
+      "needs_review": false,
+      "figures": [
+        {
+          "series_id": "sg-gdp-manufacturing-yoy",
+          "period": "2025-Q3",
+          "old": 5.0,
+          "new": 4.6,
+          "old_published": "2025-11-21",
+          "new_published": "2026-04-14",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "old_release": "Economic Survey of Singapore — 2025-Q3",
+          "new_release": "Advance GDP estimates — 2026-Q1",
+          "title": "Manufacturing, real GDP growth, year on year",
+          "unit": "%",
+          "source": {
+            "agency": "Singapore Department of Statistics",
+            "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly",
+            "dataset_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+            "dataset_url": "https://data.gov.sg/datasets/d_1506368f0e7928ac18e42f84d1c450a3/view",
+            "api_resource_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+            "api_row": "Manufacturing",
+            "api_row_field": "DataSeries",
+            "frequency": "quarterly",
+            "licence": "Singapore Open Data Licence v1.0",
+            "licence_url": "https://data.gov.sg/open-data-licence",
+            "accessed": "2026-11-19"
+          },
+          "evidence": {
+            "value": 4.6,
+            "published": "2026-04-14",
+            "release": "Advance GDP estimates — 2026-Q1",
+            "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+            "quote": "4.6",
+            "accessed": "2026-11-19",
+            "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Manufacturing, column 3Q25",
+            "agency": "Ministry of Trade and Industry",
+            "licence": "Official release distributed by SingStat under its website terms",
+            "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+          }
+        }
+      ],
+      "already_issued": false,
+      "previously_skipped": false,
+      "decision": "pending"
+    },
+    {
+      "claim_id": "board-paper-2025q3-c1",
+      "status": "still_true",
+      "reason": "The release of 2025-10-14 reported 0.0. The sentence still describes that release correctly.",
+      "decided_by": "rule",
+      "rule_status": "still_true",
+      "rule_reason": "The release of 2025-10-14 reported 0.0. The sentence still describes that release correctly.",
+      "needs_review": false,
+      "figures": [
+        {
+          "series_id": "sg-gdp-manufacturing-yoy",
+          "period": "2025-Q3",
+          "old": 5.0,
+          "new": 4.6,
+          "old_published": "2025-11-21",
+          "new_published": "2026-04-14",
+          "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+          "old_release": "Economic Survey of Singapore — 2025-Q3",
+          "new_release": "Advance GDP estimates — 2026-Q1",
+          "title": "Manufacturing, real GDP growth, year on year",
+          "unit": "%",
+          "source": {
+            "agency": "Singapore Department of Statistics",
+            "dataset": "Key Data Of Gross Domestic Product In Chained (2015) Dollars, By Industry (SSIC 2020), Year On Year Growth Rate, Quarterly",
+            "dataset_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+            "dataset_url": "https://data.gov.sg/datasets/d_1506368f0e7928ac18e42f84d1c450a3/view",
+            "api_resource_id": "d_1506368f0e7928ac18e42f84d1c450a3",
+            "api_row": "Manufacturing",
+            "api_row_field": "DataSeries",
+            "frequency": "quarterly",
+            "licence": "Singapore Open Data Licence v1.0",
+            "licence_url": "https://data.gov.sg/open-data-licence",
+            "accessed": "2026-11-19"
+          },
+          "evidence": {
+            "value": 4.6,
+            "published": "2026-04-14",
+            "release": "Advance GDP estimates — 2026-Q1",
+            "url": "https://www.singstat.gov.sg/files/678ec3aa-30e5-4a67-8de3-1349182b4d15.pdf",
+            "quote": "4.6",
+            "accessed": "2026-11-19",
+            "locator": "Gross Domestic Product in Chained (2015) Dollars, year-on-year, Manufacturing, column 3Q25",
+            "agency": "Ministry of Trade and Industry",
+            "licence": "Official release distributed by SingStat under its website terms",
+            "licence_url": "https://www.singstat.gov.sg/terms-of-use"
+          }
+        }
+      ],
+      "already_issued": false,
+      "previously_skipped": false,
+      "decision": "pending"
+    }
+  ],
+  "no_change": false,
+  "unlinked_count": 1,
+  "run_id": "2026-11-23-36b23a221c29",
+  "issued": [
+    {
+      "key": "69b597aceba73b68501de3e66c43ea92b8cbdaa446b01c9c46e4d3423b875109",
+      "claim_id": "members-briefing-2025q3-c1",
+      "published": "2026-02-10",
+      "value": 0.7
+    },
+    {
+      "key": "ee330e3cd8ca86d6548e18e3a85b67d7b5825914cb5e240b55647e3da39f438e",
+      "claim_id": "members-briefing-2025q3-c2",
+      "published": "2026-04-14",
+      "value": 4.6
+    },
+    {
+      "key": "4225bb205fad4ac6d5a49a9154a2c7d0286ea890a6721145d015339f79a3b8f0",
+      "claim_id": "board-paper-2025q3-c1",
+      "published": "2026-04-14",
+      "value": 4.6
+    }
+  ]
+}
