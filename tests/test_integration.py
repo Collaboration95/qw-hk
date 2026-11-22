@@ -58,7 +58,7 @@ def test_all_publications_against_releases(day, replay):
     for doc, title in docs.items():
         assert (title in unescape(html)) == (doc in expected)
     if day == c:
-        assert "No new revision" in html and "Checked 3 series" in html
+        assert "No new revision" in html and "Checked 3 official figures" in html
         assert not (page.parent / "out").exists()
         assert all(v["status"] == same for v in run["verdicts"])
         return

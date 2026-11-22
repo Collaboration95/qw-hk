@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 from test_hardening_language import command
-from web.render_map import trigger_line
+from web.render_map import checked_line
 
 
 def make_map(folder, count):
@@ -22,14 +22,14 @@ def make_map(folder, count):
 
 
 @pytest.mark.parametrize(("trigger", "expected"), [
-    ("schedule", "Scheduled check"),
-    ("manual", "Manual check"),
-    ("email", "Check from a release email"),
-    ("replay", "Historical replay · 21 Nov 2025"),
+    ("schedule", "Checked 21 Nov 2025"),
+    ("manual", "Checked 21 Nov 2025"),
+    ("email", "Checked 21 Nov 2025"),
+    ("replay", "Replay as of 21 Nov 2025"),
 ])
-def test_map_header_names_recorded_trigger(trigger, expected):
+def test_map_header_is_one_quiet_date(trigger, expected):
     result = {"trigger": trigger, "changes": [], "as_of": "2025-11-21"}
-    assert trigger_line(result) == expected
+    assert checked_line(result) == expected
 
 
 def test_empty_map(tmp_path):
