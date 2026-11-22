@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>Recall Press · Film A · Shot 01</title>
+<style>
+/* Recall Press · Film A shot 01 · 1920×1080 · one 6s looping animation.
+   Colours, type and ease lifted from site/v2/src/system.css (v3 light system).
+   Markup adapted from site/v2/src/home-01-hero.html (.say / .sx / .nw / .chip). */
+:root{
+  --rp-paper:#FFFFFF;--rp-bg2:#FAFAF8;--rp-ink:#111110;--rp-quiet:#5B5953;--rp-dim:#6B6862;
+  --rp-line:rgba(17,17,16,.08);--rp-line2:rgba(17,17,16,.14);--rp-red:#C93A1B;
+  --rp-red-wash:rgba(201,58,27,.07);--rp-red-line:rgba(201,58,27,.42);
+  --rp-ease:cubic-bezier(.22,1,.36,1);
+  --rp-sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--rp-paper)}
+body{font-family:var(--rp-sans);font-optical-sizing:auto;color:var(--rp-ink);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  display:grid;place-items:center;min-height:100vh;overflow:hidden}
+
+/* the frame: exactly 1920×1080, scaled to fit the preview window */
+.frame{position:relative;width:1920px;height:1080px;flex:none;background:var(--rp-paper);
+  overflow:hidden;isolation:isolate;transform-origin:center center}
+/* the one tinge: the hero's faint warm wash from the top */
+.frame::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 55% at 50% 46%,rgba(255,214,190,.42),rgba(255,236,224,.22) 45%,transparent 75%),
+             linear-gradient(180deg,#FFFBF8,#fff 46%)}
+
+/* top-left: the product's own mark + wordmark, small */
+.brand{position:absolute;top:84px;left:120px;display:flex;align-items:center;gap:16px;
+  font-size:26px;font-weight:600;letter-spacing:-.02em}
+.brand svg{flex:none}
+
+/* the sentence, large and alone */
+.stage{position:absolute;left:120px;right:120px;top:300px}
+.crumb{color:var(--rp-dim);font-size:26px;letter-spacing:-.01em;margin-bottom:36px}
+.say{font-size:84px;line-height:1.16;font-weight:550;letter-spacing:-.028em;max-width:1600px}
+.say .sx{position:relative;color:var(--rp-quiet);white-space:nowrap}
+.say .sx::after{content:"";position:absolute;left:-6px;right:-6px;top:54%;height:5px;border-radius:3px;
+  background:var(--rp-red);transform-origin:left center;transform:scaleX(0)}
+.say .nw{color:var(--rp-red);font-weight:600;white-space:nowrap;display:inline-block;
+  clip-path:inset(-20% 100% -20% 0)}
+
+/* the source chips */
+.src{margin-top:56px;display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;
+  color:var(--rp-dim);font-size:26px}
+.chip{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:6px 20px;border-radius:12px;
+  background:#fff;box-shadow:inset 0 0 0 1.5px var(--rp-line2);color:var(--rp-quiet);white-space:nowrap}
+.chip svg{color:var(--rp-dim);flex:none}
+.chip.new{box-shadow:inset 0 0 0 1.5px var(--rp-red-line);background:#FFFAF8;opacity:0}
+.quoted{font-variant-numeric:tabular-nums}
+
+/* bottom caption: the product line */
+.cap{position:absolute;left:120px;bottom:96px;display:flex;align-items:baseline;gap:28px}
+.cap .line{font-size:34px;font-weight:550;letter-spacing:-.02em}
+.cap .sub{font-size:26px;color:var(--rp-quiet)}
+
+/* ---- one 6s loop: rest → strike → write → source lands → hold → reset ---- */
+@media (prefers-reduced-motion:no-preference){
+  .say .sx::after{animation:rp-strike 6s var(--rp-ease) infinite}
+  .say .nw{animation:rp-write 6s steps(10,end) infinite}
+  .chip.new{animation:rp-land 6s var(--rp-ease) infinite}
+  .chip.old{animation:rp-dim 6s var(--rp-ease) infinite}
+  .quoted{animation:rp-dim 6s var(--rp-ease) infinite}
+}
+/* 0–12% rest · 12–24% strike draws · 24–40% rewrite types · 36–48% source lands · 48–86% hold · 86–96% reset */
+@keyframes rp-strike{
+  0%,12%{transform:scaleX(0)}
+  24%,86%{transform:scaleX(1)}
+  94%,100%{transform:scaleX(0)}
+}
+@keyframes rp-write{
+  0%,24%{clip-path:inset(-20% 100% -20% 0)}
+  40%,86%{clip-path:inset(-20% -4% -20% 0)}
+  92%,100%{clip-path:inset(-20% 100% -20% 0)}
+}
+@keyframes rp-land{
+  0%,36%{opacity:0;transform:translateY(8px)}
+  48%,86%{opacity:1;transform:none}
+  92%,100%{opacity:0;transform:translateY(8px)}
+}
+@keyframes rp-dim{
+  0%,36%{opacity:1}
+  48%,86%{opacity:.45}
+  92%,100%{opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .say .sx::after{transform:scaleX(1)}
+  .say .nw{clip-path:inset(-20% -4% -20% 0)}
+  .chip.new{opacity:1}
+  .chip.old,.quoted{opacity:.45}
+}
+</style>
+</head>
+<body>
+<div class="frame" role="img" aria-label="Slide 4 of a members' briefing said manufacturing stalled in Q3 2025, quoting MTI's advance estimate of 0.0% on 14 October 2025. The word stalled is struck through and grew 4.6% is written in, with the revised source: MTI advance GDP estimates, 14 April 2026. Caption: Your sources change. Your deck updates itself.">
+  <div class="brand" aria-hidden="true">
+    <svg width="40" height="40" viewBox="0 0 20 20"><rect width="20" height="20" rx="6" fill="#111110"/><path d="M5 8h10M5 12.5h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M4 9.6 16 6.2" stroke="#E2502E" stroke-width="2" stroke-linecap="round"/></svg>
+    Recall Press
+  </div>
+  <div class="stage" aria-hidden="true">
+    <p class="crumb">Members’ quarterly economy briefing · Slide 4</p>
+    <p class="say">Manufacturing <span class="sx">stalled</span> <span class="nw">grew 4.6%</span><br>year on year in Q3&nbsp;2025.</p>
+    <p class="src">
+      <span class="chip old"><svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2.5h5.5L12 5v8.5H4z"/><path d="M9.5 2.5V5H12"/></svg>MTI · Advance GDP estimates · 14 Oct 2025</span>
+      <span class="quoted">Quoted 0.0%</span>
+      <span class="chip new"><svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2.5h5.5L12 5v8.5H4z"/><path d="M9.5 2.5V5H12"/></svg>MTI · Advance GDP estimates · 14 Apr 2026</span>
+    </p>
+  </div>
+  <div class="cap" aria-hidden="true">
+    <span class="line">Your sources change. Your deck updates itself.</span>
+    <span class="sub">The editor approves every change.</span>
+  </div>
+</div>
+<script>
+/* scale the fixed 1920×1080 frame to fit the preview window; 1:1 at full size */
+(function(){
+  var f=document.querySelector('.frame');
+  function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080,1);f.style.transform='scale('+s+')';}
+  addEventListener('resize',fit);fit();
+})();
+</script>
+</body>
+</html>

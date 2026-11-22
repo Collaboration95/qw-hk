@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your sources change. Your deck stands still.</title>
+<style>
+:root{--rp-paper:#FFFFFF;--rp-bg2:#FAFAF8;--rp-sheet2:#F6F5F2;--rp-ink:#111110;--rp-quiet:#5B5953;--rp-dim:#6B6862;--rp-line:rgba(17,17,16,.08);--rp-line2:rgba(17,17,16,.14);--rp-red:#C93A1B;--rp-red-line:rgba(201,58,27,.42);--rp-ease:cubic-bezier(.22,1,.36,1);--rp-sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--rp-shadow:0 0 0 1px rgba(17,17,16,.07),0 1px 2px rgba(17,17,16,.05),0 24px 60px -24px rgba(60,35,20,.22)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#FFFBF8}body{font-family:var(--rp-sans);color:var(--rp-ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;overflow:hidden;background:#FFFBF8;transform:translate(-50%,-50%) scale(var(--scale,1));transform-origin:center}
+h1{position:absolute;left:120px;top:110px;margin:0;font-size:90px;line-height:1.06;letter-spacing:-.04em;font-weight:800}h1 span{display:block}
+.stage{position:absolute;left:120px;top:400px;width:1680px;height:550px}
+/* Adapted from the site's win / bar / app / side / rows hierarchy. */
+.win{height:100%;background:var(--rp-paper);border-radius:14px;overflow:hidden;box-shadow:var(--rp-shadow);font-size:24px;line-height:1.45;letter-spacing:-.011em}
+.bar{display:flex;align-items:center;gap:18px;height:54px;padding:0 24px;border-bottom:1px solid var(--rp-line);background:var(--rp-bg2)}.dots{display:flex;gap:9px;width:70px}.dots i{width:12px;height:12px;border-radius:50%;background:#E6E4DF;box-shadow:inset 0 0 0 .5px var(--rp-line2)}.ttl{flex:1;text-align:center;font-size:22px;color:var(--rp-quiet)}.r{width:70px}
+.app{display:grid;grid-template-columns:250px minmax(0,1fr);height:496px}.side{display:flex;flex-direction:column;gap:8px;padding:26px 18px;background:var(--rp-bg2);border-right:1px solid var(--rp-line)}.ws{margin:0 12px 20px;font-weight:600;font-size:24px}.nv{display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 14px;border-radius:8px;color:var(--rp-quiet);font-size:22px}.nv.on{background:var(--rp-paper);color:var(--rp-ink);box-shadow:0 0 0 1px var(--rp-line)}.n{color:var(--rp-red)}.gp{margin:22px 14px 6px;color:var(--rp-dim);font-size:22px}.dc{display:flex;gap:10px;align-items:center;padding:12px 14px;background:var(--rp-sheet2);border-radius:8px;font-size:22px;line-height:1.35}.sd{display:inline-block;flex:none;width:9px;height:9px;border-radius:50%;background:var(--rp-red)}
+.main{min-width:0;overflow:hidden}.hd{display:flex;align-items:center;justify-content:space-between;padding:24px 34px 20px;border-bottom:1px solid var(--rp-line)}.crumb{margin:0 0 4px;color:var(--rp-dim);font-size:22px}.dn{margin:0;font-size:28px;font-weight:600;letter-spacing:-.025em}.tabs{display:flex;gap:12px;font-size:22px;color:var(--rp-dim)}.tabs span{padding:8px 12px}.tabs .on{background:var(--rp-sheet2);border-radius:8px;color:var(--rp-ink)}
+.rows{list-style:none;margin:0;padding:10px 20px 24px}.rows>li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:18px;align-items:center;padding:12px 16px;min-height:54px}.no{font-size:22px;color:var(--rp-dim);font-variant-numeric:tabular-nums}.tx{min-width:0}.st{font-size:22px;color:var(--rp-dim)}.rows>li.flag{align-items:start;padding:24px 16px;margin:4px 0;background:#FFFAF8;border-radius:10px;box-shadow:inset 0 0 0 1px var(--rp-red-line)}.flag .no{padding-top:7px}.flag .st{display:flex;align-items:center;gap:10px;padding-top:7px;color:var(--rp-red)}
+.say{margin:0;max-width:830px;font-size:38px;line-height:1.22;letter-spacing:-.03em;font-weight:550}.src{display:flex;align-items:center;gap:18px;margin:20px 0 0;font-size:22px;color:var(--rp-quiet)}.chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:6px;background:var(--rp-paper);box-shadow:inset 0 0 0 1px var(--rp-line2)}.change{display:flex;align-items:baseline;gap:16px;margin:16px 0 0;font-size:42px;line-height:1.1;letter-spacing:-.03em;font-weight:600;font-variant-numeric:tabular-nums}.old{color:var(--rp-dim);font-weight:400}.arrow{font-size:32px;color:var(--rp-dim)}.nw{color:var(--rp-red)}.held{margin-left:12px;font-size:22px;letter-spacing:-.011em;color:var(--rp-quiet);font-weight:400}.rows>li:last-child{border-top:1px solid var(--rp-line);margin-top:10px;color:var(--rp-quiet)}
+@media(prefers-reduced-motion:no-preference){.stage{animation:arrive .8s var(--rp-ease) both}.nw{animation:source-arrive .45s var(--rp-ease) .35s both}}@keyframes arrive{from{transform:translateY(18px)}to{transform:translateY(0)}}@keyframes source-arrive{from{transform:translateY(5px)}to{transform:translateY(0)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="slide" aria-labelledby="headline">
+<h1 id="headline"><span>Your sources change.</span><span>Your deck stands still.</span></h1>
+<div class="stage">
+<section class="win" aria-label="Recall Press desk: the stale manufacturing sentence remains unchanged. Its source changed from 0.0% to 4.6%. Review is pending; no change has been approved.">
+<div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ttl">Recall Press</span><span class="r" aria-hidden="true"></span></div>
+<div class="app">
+<aside class="side" aria-label="Workspace"><p class="ws">Your workspace</p><div class="nv on">Decks</div><div class="nv">Alerts <span class="n">1</span></div><p class="gp">Watching</p><div class="dc"><span class="sd" aria-hidden="true"></span>Members' quarterly briefing</div></aside>
+<div class="main">
+<header class="hd"><div><p class="crumb">Decks / Q3 2025</p><p class="dn">Members' quarterly economy briefing</p></div><div class="tabs"><span class="on">All slides</span><span>To review <b>1</b></span></div></header>
+<ol class="rows" aria-label="Deck excerpt" start="3">
+<li><span class="no">3</span><span class="tx">Reading the October estimate</span><span class="st">Text only</span></li>
+<li class="flag"><span class="no">4</span><div class="tx"><p class="say">Manufacturing stalled year on year in Q3 2025.</p><p class="src"><span class="chip">MTI / Manufacturing growth</span><span>Source revised</span></p><p class="change"><span class="old">0.0%</span><span class="arrow" aria-label="changed to">&#8594;</span><span class="nw">4.6%</span><span class="held">Deck unchanged</span></p></div><span class="st"><span class="sd" aria-hidden="true"></span>Pending review</span></li>
+<li><span class="no">5</span><span class="tx">Electronics output expanded.</span><span class="st">No matching figure</span></li>
+</ol>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+(() => {
+  const fit = () => document.documentElement.style.setProperty('--scale', Math.min(window.innerWidth / 1920, window.innerHeight / 1080));
+  fit();
+  window.addEventListener('resize', fit, {passive:true});
+})();
+</script>
+</body>
+</html>
