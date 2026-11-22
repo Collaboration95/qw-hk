@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 493">
+<path d="M85 388H1095" stroke="#dcd8d2"/>
+<text x="63" y="398" font-size="29" fill="#555" text-anchor="end">0%</text>
+<path d="M85 284H1095" stroke="#dcd8d2"/>
+<text x="63" y="294" font-size="29" fill="#555" text-anchor="end">2%</text>
+<path d="M85 180H1095" stroke="#dcd8d2"/>
+<text x="63" y="190" font-size="29" fill="#555" text-anchor="end">4%</text>
+<path d="M85 76H1095" stroke="#dcd8d2"/>
+<text x="63" y="86" font-size="29" fill="#555" text-anchor="end">6%</text>
+<path d="M85 76V388" stroke="#dcd8d2"/>
+<path d="M109 388H301.7V128.0H514.7V133.2H712.5V112.4H1032.0V148.8H1095" fill="none" stroke="#111110" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="109.0" cy="388.0" r="7" fill="#fff" stroke="#111110" stroke-width="3"/>
+<text x="109.0" y="362.0" font-size="38" font-weight="650" text-anchor="middle">0.0%</text>
+<path d="M109.0 402v9" stroke="#b7b3ad" stroke-width="2"/>
+<text x="109.0" y="450" font-size="31" fill="#555" text-anchor="middle">14 Oct</text>
+<text x="109.0" y="483" font-size="26" fill="#555" text-anchor="middle">2025</text>
+<text x="109.0" y="315.0" font-size="29" fill="#555">First estimate</text>
+<circle cx="301.7" cy="128.0" r="7" fill="#111110" stroke="#111110" stroke-width="3"/>
+<text x="301.7" y="102.0" font-size="38" font-weight="650" text-anchor="middle">5.0%</text>
+<path d="M301.7 402v9" stroke="#b7b3ad" stroke-width="2"/>
+<text x="301.7" y="450" font-size="31" fill="#555" text-anchor="middle">21 Nov</text>
+<text x="301.7" y="483" font-size="26" fill="#555" text-anchor="middle">2025</text>
+<circle cx="514.7" cy="133.2" r="7" fill="#111110" stroke="#111110" stroke-width="3"/>
+<text x="514.7" y="107.2" font-size="38" font-weight="650" text-anchor="middle">4.9%</text>
+<path d="M514.7 402v9" stroke="#b7b3ad" stroke-width="2"/>
+<text x="514.7" y="450" font-size="31" fill="#555" text-anchor="middle">2 Jan</text>
+<text x="514.7" y="483" font-size="26" fill="#555" text-anchor="middle">2026</text>
+<circle cx="712.5" cy="112.4" r="7" fill="#111110" stroke="#111110" stroke-width="3"/>
+<text x="712.5" y="86.4" font-size="38" font-weight="650" text-anchor="middle">5.3%</text>
+<path d="M712.5 402v9" stroke="#b7b3ad" stroke-width="2"/>
+<text x="712.5" y="450" font-size="31" fill="#555" text-anchor="middle">10 Feb</text>
+<text x="712.5" y="483" font-size="26" fill="#555" text-anchor="middle">2026</text>
+<circle cx="1032.0" cy="148.8" r="7" fill="#111110" stroke="#111110" stroke-width="3"/>
+<text x="1032.0" y="196.8" font-size="38" font-weight="650" text-anchor="middle">4.6%</text>
+<path d="M1032.0 402v9" stroke="#b7b3ad" stroke-width="2"/>
+<text x="1032.0" y="450" font-size="31" fill="#555" text-anchor="middle">14 Apr</text>
+<text x="1032.0" y="483" font-size="26" fill="#555" text-anchor="middle">2026</text>
+</svg>

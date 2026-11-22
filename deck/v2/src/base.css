@@ -1,0 +1,184 @@
+:root{
+  /* the colour journey: theme.css sets one field per slide (--f0 … --f9). Defaults are a neutral dusk. */
+  --f0:linear-gradient(180deg,#EAE0EB,#F2B893); --f1:linear-gradient(180deg,#D8C3D8,#DDA196);
+  --f2:linear-gradient(180deg,#504383,#745690); --f3:linear-gradient(180deg,#4F4586,#6B528E);
+  --f4:linear-gradient(180deg,#463F82,#7C5A94); --f5:linear-gradient(180deg,#3B3B7E,#62538E);
+  --f6:linear-gradient(180deg,#161A3E,#33306C); --f7:linear-gradient(180deg,#0F1230,#1C1F4C);
+  --f8:linear-gradient(180deg,#0F1230,#1C1F4C); --f9:linear-gradient(180deg,#0F1230,#1C1F4C);
+  --page:#070B22;                         /* outside the stage */
+
+  --accent:#F5622A;                       /* the one warm accent: the problem, the marker */
+  --accent-2:#2244D2;  --accent-3:#0B8762;
+  --marker:var(--accent);
+
+  --ink:#0D1330; --ink-2:#4F5779; --ink-3:#8A91AD; --line:#E5E8F1; --soft:#F4F5F9;   /* on white cards */
+  --on:#fff; --on-2:rgba(255,255,255,.88); --on-line:rgba(255,255,255,.26);           /* on a coloured field */
+
+  --f:Geist,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --m:"Geist Mono",ui-monospace,Menlo,monospace;
+  --t-display:122px; --t-h2:92px; --t-h3:52px; --t-body:38px; --t-small:28px; --t-label:22px;
+
+  --r-card:28px; --r-row:20px; --r-tile:16px; --r-pill:999px;
+  --sh-card:0 1px 0 rgba(255,255,255,.9) inset,0 1px 2px rgba(40,20,60,.06),0 28px 56px -28px rgba(40,22,70,.5);
+  --sh-lift:0 10px 24px -10px rgba(8,14,44,.4);
+  --pad-x:100px; --pad-y:88px;
+  --ease:cubic-bezier(.2,.7,.2,1); --spring:cubic-bezier(.3,1.5,.5,1);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--page);overflow:hidden}
+body{font-family:var(--f);color:var(--on);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body.idle{cursor:none}
+
+/* ---------- stage ---------- */
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:50% 50%}
+.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;padding:var(--pad-y) var(--pad-x);isolation:isolate}
+.slide.active{visibility:visible}
+/* hidden slides also go transparent and inert: SVG filter layers and children with visibility:visible can otherwise
+   paint over the active slide. Layout stays (measurements work); CSS animations keep their one clock. */
+html:not(.print) .slide:not(.active){opacity:0;pointer-events:none}
+/* each slide's field: theme.css or the slide sets background; this gives a default from the journey */
+.slide{background:var(--field,var(--f0))}
+
+/* nav pill: in a band under the stage, never on a slide, never printed */
+.nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:2px;height:36px;padding:0 4px;border-radius:999px;
+  background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 0 0 1px rgba(255,255,255,.14) inset;
+  font:500 14px/1 var(--f);color:rgba(255,255,255,.72);font-variant-numeric:tabular-nums;user-select:none}
+.nav button{all:unset;cursor:pointer;width:32px;height:28px;border-radius:999px;display:grid;place-items:center;font-size:15px;color:rgba(255,255,255,.72)}
+.nav button:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav .pos{min-width:52px;text-align:center;letter-spacing:.02em}
+html.print .nav{display:none}
+
+/* speaker notes: <aside class="notes"> inside a slide; `n` shows the current slide's notes in a panel. Never printed. */
+.slide aside.notes{display:none}
+#notes{position:fixed;left:0;right:0;bottom:64px;z-index:9;display:none;max-height:34vh;overflow:auto;padding:16px 40px 20px;
+  background:rgba(14,16,28,.94);color:#F2F0EC;font:400 20px/1.45 var(--f)}
+#notes b{display:block;margin:6px 0 2px;color:#FFC24A;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+body.notes #notes{display:block}
+html.print #notes{display:none}
+
+/* ---------- ambient layers (optional) ----------
+   .drift  > i   a seamless tile (--img, width --t) moving right to left at constant speed on ONE clock (deck.js pins
+                 startTime to 0), so navigation never restarts, eases or speeds it. Period --d = t / speed.
+   .parallax     children with data-depth (0…1) shift with the pointer by up to ±20·depth px (oversize planes by 24 px).
+                 Off in print and reduced motion.
+   ::after       optional grain: set --grain:url("…svg") in theme.css. */
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:var(--grain,none) 0 0/260px 260px;mix-blend-mode:soft-light;opacity:.5}
+@keyframes sky-drift{to{transform:translateX(calc(-1 * var(--t)))}}
+.drift{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;contain:strict}
+.drift i{position:absolute;left:0;top:0;width:calc(2 * var(--t));height:1080px;--t:1920px;background:var(--img) 0 0/var(--t) 1080px repeat-x;will-change:transform;animation:sky-drift var(--d,480s) linear infinite}
+.parallax{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.parallax>*{position:absolute;transition:transform .9s var(--ease);will-change:transform}
+html.print :is(.drift i){animation:none;will-change:auto}
+html.print .parallax>*{transform:none!important}
+html.print *{will-change:auto!important}
+
+/* ---------- type ---------- */
+h1,h2,h3{margin:0;font-weight:800;line-height:1.04}
+h1,.display{font-size:var(--t-display);letter-spacing:-.05em;line-height:1}
+h2{font-size:var(--t-h2);letter-spacing:-.045em}
+h3{font-size:var(--t-h3);letter-spacing:-.03em;line-height:1.08}
+p{margin:0;text-wrap:balance}
+.mono{font-family:var(--m);letter-spacing:-.01em}
+.num{font-weight:800;letter-spacing:-.05em;font-variant-numeric:tabular-nums;line-height:.9}
+.label{font:500 var(--t-label)/1.3 var(--f);color:var(--on-2)}
+.card .label{color:var(--ink-2)}
+
+/* ---------- components ---------- */
+.card{position:relative;background:linear-gradient(180deg,#fff 0%,#FCFCFE 100%);color:var(--ink);border-radius:var(--r-card);box-shadow:var(--sh-card)}
+.ghost{background:rgba(255,255,255,.08);box-shadow:0 0 0 1px var(--on-line) inset;border-radius:var(--r-row);color:var(--on-2)}
+.struck{text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:currentColor;opacity:.7}
+.rows>.row+.row{border-top:1px solid var(--line)}
+.icon-tile{flex:none;width:64px;height:64px;border-radius:var(--r-tile);display:grid;place-items:center;font-size:32px;color:var(--ink);
+  background:linear-gradient(180deg,#fff,#F1F3F8);box-shadow:0 0 0 1px var(--line) inset,0 1px 2px rgba(8,14,44,.06)}
+.pill{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font:600 26px/1 var(--f);letter-spacing:-.01em;padding:11px 18px 11px 14px;border-radius:var(--r-pill);
+  color:var(--ink);background:linear-gradient(180deg,#fff,#F5F6FA);box-shadow:0 0 0 1px var(--line) inset}
+.pill.on-field{color:#fff;background:rgba(255,255,255,.12);box-shadow:0 0 0 1px var(--on-line) inset}
+.pill.code{font-family:var(--m);font-weight:600}
+svg.i{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.conn{position:relative;height:2px;min-width:48px;background:currentColor;color:var(--ink-3);opacity:.55}
+.conn::after{content:"";position:absolute;right:0;top:50%;width:11px;height:11px;border:solid currentColor;border-width:2px 2px 0 0;transform:translate(1px,-50%) rotate(45deg)}
+.qr{background:#fff;border-radius:var(--r-card);padding:28px;box-shadow:var(--sh-card)}
+.qr img,.qr svg{display:block;width:420px;height:420px}
+
+/* iPhone frame: every app screen on a slide goes in one. <div class="phone"><img src="…"></div>
+   9:19.5, black bezel, Dynamic Island, home indicator. Width via --w (default 380px). */
+.phone{--w:380px;position:relative;width:var(--w);aspect-ratio:9/19.5;border-radius:calc(var(--w)*.15);background:#0B0B0F;padding:calc(var(--w)*.035);
+  box-shadow:0 0 0 2px #2A2A31 inset,0 40px 80px -30px rgba(0,0,0,.55),0 10px 24px -12px rgba(0,0,0,.4)}
+.phone>img,.phone>.screen{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:calc(var(--w)*.12);background:#fff;overflow:hidden}
+.phone::before{content:"";position:absolute;z-index:2;left:50%;top:calc(var(--w)*.06);width:calc(var(--w)*.3);height:calc(var(--w)*.085);transform:translateX(-50%);border-radius:999px;background:#0B0B0F}
+.phone::after{content:"";position:absolute;z-index:2;left:50%;bottom:calc(var(--w)*.05);width:calc(var(--w)*.34);height:5px;transform:translateX(-50%);border-radius:999px;background:rgba(0,0,0,.55)}
+/* browser frame: for desktop/web products */
+.browser{position:relative;border-radius:22px;background:#fff;overflow:hidden;box-shadow:var(--sh-card)}
+.browser::before{content:"";display:block;height:44px;background:radial-gradient(circle at 26px 22px,#FF5F57 6px,transparent 7px),radial-gradient(circle at 48px 22px,#FEBC2E 6px,transparent 7px),radial-gradient(circle at 70px 22px,#28C840 6px,transparent 7px),#F1F2F6;border-bottom:1px solid var(--line)}
+.browser>img{display:block;width:100%}
+
+/* marker: the deck's ONE emphasis device, a hand-drawn loop deck.js fits around one phrase. 1–3 per deck.
+   <span class="mk">words</span> · colour --mk-c. Draws on 0.25 s after arrival in 0.5 s; static in print. */
+.mk{position:relative;display:inline-block;white-space:nowrap;--mk-c:var(--marker)}
+.mk>svg{position:absolute;overflow:visible;pointer-events:none;z-index:2}
+.mk path{fill:none;stroke:var(--mk-c);stroke-linecap:round;stroke-linejoin:round}
+.mk.draw path{stroke-dasharray:var(--len);animation:mk-draw .5s cubic-bezier(.55,.05,.35,1) .25s both}
+@keyframes mk-draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+
+/* ---------- arrival motion ----------
+   deck.js adds .play on a FORWARD arrival only. Keyframes are from-only with backwards fill, so the resting CSS is
+   the final state. Delays from --t (s). Keep every slide's motion finished by ~1.5 s, readable on the first frame.
+     [data-enter] fade up · .pop spring in (origin --o) · .stamp · .run from --dist left · .bump knocked back
+     .shake x shake --a · .rise frame rises in (any element, e.g. .browser) · .wiggle phone rises, tilts, settles · .draw SVG stroke (path.draw) or scaleX (scaleY with .draw.v) · .sweep clip reveal
+     .strike line-through drawn on · .count number counts up (data-to, deck.js)
+   Gotcha: these animate `transform`, so an element positioned with transform (translate(-50%)) jumps on arrival.
+   Put the primitive on a wrapper, or position with left/top/margins. */
+.slide.play [data-enter]{animation:enter .35s var(--ease) calc(var(--t,0)*1s) backwards}
+.slide.play .pop{transform-origin:var(--o,50% 50%);animation:pop .24s var(--spring) calc(var(--t,0)*1s) backwards}
+.slide.play .stamp{animation:stamp .2s var(--ease) calc(var(--t,0)*1s) backwards}
+.slide.play .run{animation:run var(--d,.4s) cubic-bezier(.5,0,.9,.6) calc(var(--t,0)*1s) backwards}
+.slide.play .bump{animation:bump var(--d,.26s) linear calc(var(--t,0)*1s) backwards}
+.slide.play .shake{animation:shake .18s linear calc(var(--t,0)*1s) backwards}
+.slide.play .rise{animation:ph-in .5s var(--spring) calc(var(--t,0)*1s) backwards}
+.slide.play .wiggle{animation:ph-in .5s var(--spring) calc(var(--t,0)*1s) backwards,ph-wig .7s ease-in-out calc(var(--t,0)*1s + .5s) 1}
+.slide.play .draw:not(.mk):not(path):not(line){transform-origin:var(--o,0 50%);animation:draw-x var(--d,.2s) var(--ease) calc(var(--t,0)*1s) backwards}
+.slide.play :is(path,line,polyline,circle).draw{stroke-dasharray:var(--len);animation:draw-s var(--d,.45s) var(--ease) calc(var(--t,0)*1s) backwards}
+.slide.play .sweep{animation:sweep var(--d,.7s) steps(var(--n,20),end) calc(var(--t,0)*1s) backwards}
+.slide.play .strike{background:linear-gradient(currentColor,currentColor) 0 55%/100% 3px no-repeat;animation:strike .35s var(--ease) calc(var(--t,0)*1s) backwards}
+.strike{background:linear-gradient(currentColor,currentColor) 0 55%/100% 3px no-repeat;opacity:.7}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}}
+@keyframes stamp{from{opacity:0;transform:scale(1.25)}}
+@keyframes run{from{transform:translateX(calc(var(--dist,120px)*-1))}}
+@keyframes bump{from{transform:none;animation-timing-function:cubic-bezier(.2,.8,.3,1)}38%{transform:translateX(calc(var(--back,26px)*-1)) rotate(var(--tilt,-8deg));animation-timing-function:cubic-bezier(.4,0,.3,1)}}
+@keyframes shake{from{transform:none}20%{transform:translateX(var(--a,5px))}45%{transform:translateX(calc(var(--a,5px)*-.6))}72%{transform:translateX(calc(var(--a,5px)*.4))}to{transform:none}}
+@keyframes ph-in{from{opacity:0;transform:translateY(40px) rotate(var(--r,0deg))}}
+@keyframes ph-wig{25%{transform:rotate(calc(var(--r,0deg) - 3deg))}60%{transform:rotate(calc(var(--r,0deg) + 2deg))}}
+.slide.play .draw.v:not(path):not(line){transform-origin:var(--o,50% 0);animation-name:draw-y}
+@keyframes draw-x{from{transform:scaleX(0)}}
+@keyframes draw-y{from{transform:scaleY(0)}}
+@keyframes draw-s{from{stroke-dashoffset:var(--from,var(--len))}}
+@keyframes sweep{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes strike{from{background-size:0 3px}}
+
+/* ---------- appendix: the one interactive slide ----------
+   <section class="slide appendix"> with .tiles>.tile-q[data-card="1"] and .acard[data-card="1"] panels.
+   Digits 1–9, 0, −, = open cards 1–12; Esc closes; #N.k deep-links. Print shows the tile grid. */
+.appendix .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.appendix .tile-q{all:unset;box-sizing:border-box;cursor:pointer;background:#fff;color:var(--ink);border-radius:22px;padding:22px 26px;min-height:200px;box-shadow:var(--sh-card);display:flex;flex-direction:column;justify-content:space-between}
+.appendix .tile-q .k{font:700 22px/1 var(--f);width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--soft);box-shadow:0 0 0 1px var(--line) inset}
+.appendix .tile-q b{display:block;font:800 44px/1.05 var(--f);letter-spacing:-.04em}
+.appendix .tile-q span:not(.k){display:block;margin-top:8px;font:600 24px/1.2 var(--f);color:var(--ink-2)}
+.appendix .acard{position:absolute;inset:80px 100px;z-index:5;display:none;background:#fff;color:var(--ink);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:56px 64px}
+.appendix.open .acard.on{display:block}
+html.print .appendix .acard{display:none}
+
+/* ---------- print and ?print=1: every slide in its final state, one per page ---------- */
+@page{size:1920px 1080px;margin:0}
+html.print,html.print body{height:auto;overflow:visible;background:#fff}
+html.print #stage{position:static;transform:none!important;width:1920px;height:auto}
+html.print .slide{position:relative;visibility:visible;break-after:page;page-break-after:always}
+@media print{
+  .nav,#notes{display:none!important}
+  html,body{height:auto;overflow:visible;background:#fff}
+  #stage{position:static;transform:none!important;width:1920px;height:auto}
+  .slide{position:relative;visibility:visible;break-after:page;page-break-after:always}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important;transition:none!important}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

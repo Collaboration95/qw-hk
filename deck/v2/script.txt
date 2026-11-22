@@ -1,0 +1,31 @@
+Recall Press  |  ~2:00
+
+00:00   01   Your sources change. Your deck updates itself.
+Send a briefing once. When an official figure changes, Recall Press finds the affected sentence and prepares a correction for you to approve. Here, manufacturing grew 4.6 percent.
+
+00:13   02   Decks quote numbers that keep changing.
+The first estimate was zero. Growth for that same quarter reached 5.3 percent before it was revised to 4.6. Fifty-seven of the sixty figures we tracked were revised.
+
+00:25   03   The figure changed. The dated claim stayed true.
+At the November 2025 release, growth was revised to five percent. That broke slide 4. The board paper still accurately reported what October’s estimate had said.
+
+00:37   04   Every tracked sentence links to its source.
+Here’s where the correction comes from. The sentence points to the figure history and the April release where 4.6 percent first appeared.
+
+00:47   05   QwenWork recorded an automatic release check.
+The November 21 watch was due at 23:15 and started at 23:16:37 Singapore time. It checked eight official series and found no new revisions.
+
+00:59   06   Approved fixes land in one PowerPoint.
+Here the editor approves the services and manufacturing corrections. Recall Press puts both in one editable PowerPoint and adds each dated citation.
+
+01:09   07   Revisionpedia publishes every revision, free, on Hashmeta.
+Anyone can open Revisionpedia on Hashmeta, see which figures changed, and trace each reading back to its release.
+
+01:18   08   Recall Press runs on QwenWork and Hashmeta.
+QwenWork runs the Skill and the release checks. Its Pages deliver the corrections and save review decisions. Hashmeta hosts the public record and the enquiry form.
+
+01:31   09   We need one editor for the 24 Nov release.
+The GDP release is on November 24 at eight in the morning, Singapore time. We’re looking for one editor at a trade association with one deck to check against that release. We wrote the samples, and nobody is paying for coverage yet.
+
+01:50   10   Send a deck once. It keeps itself current.
+If your team publishes briefings from official data, scan here to send one. You stay in control of every edit.
