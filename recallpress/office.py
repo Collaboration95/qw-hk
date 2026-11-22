@@ -187,7 +187,7 @@ def edit_spans(block, offset, old, new):
                 node.setAttribute("xml:space", "preserve")
 
 
-def patch_office(path, target, block, size, start, old, new, source):
+def patch_office(path, target, block, size, start, old, new, source, source_slot):
     if block.review:
         raise ValueError(block.review)
     edit_spans(block, start, old, new)
@@ -209,7 +209,7 @@ def patch_office(path, target, block, size, start, old, new, source):
         sid = 1 + max(int(n.getAttribute("id")) for n in descendants(tree, P, "cNvPr"))
         fragment = f'''<p:sp xmlns:p="{P}" xmlns:a="{A}">
 <p:nvSpPr><p:cNvPr id="{sid}" name="Source {sid}"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
-<p:spPr><a:xfrm><a:off x="182880" y="{height-274320}"/><a:ext cx="{width-365760}" cy="237744"/></a:xfrm>
+<p:spPr><a:xfrm><a:off x="182880" y="{height-274320-source_slot*237744}"/><a:ext cx="{width-365760}" cy="237744"/></a:xfrm>
 <a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:noFill/></p:spPr>
 <p:txBody><a:bodyPr tIns="0" bIns="0"/><a:lstStyle/><a:p><a:r><a:rPr sz="800"/><a:t>{text}</a:t></a:r></a:p></p:txBody></p:sp>'''
         group, = descendants(tree, P, "spTree")

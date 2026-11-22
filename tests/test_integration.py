@@ -68,6 +68,10 @@ def test_all_publications_against_releases(day, replay):
         assert f'href="#publication-{doc}" class="doc-link {priority}"' in html
     files = [work / v["replacement_file"] for v in run["verdicts"] if v.get("replacement_file")]
     assert len(files) == sum(s in ("now_wrong", "number_only") for s in statuses.values())
+    eligible_docs = {doc for doc, values in expected.items() if any(s in ("now_wrong", "number_only") for s in values)}
+    assert {item["document_id"] for item in run["updated_files"]} == eligible_docs
+    assert html.count("Updated deck (all fixes)") == len(eligible_docs)
+    files.extend(work / item["file"] for item in run["updated_files"])
     assert {base64.b64decode(s) for s in re.findall(r';base64,([^"]+)"', html)} == {p.read_bytes() for p in files}
     if day == a:
         assert [(ch["period"], ch["old"], ch["new"]) for ch in run["changes"]] == [

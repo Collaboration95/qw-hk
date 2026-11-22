@@ -25,7 +25,7 @@ def sentences(block):
             yield text, block.text.index(text, match.start())
 
 
-def make_copy(path: Path, target, claim, replacement, source):
+def make_copy(path: Path, target, claim, replacement, source, source_slot=0):
     doc, blocks = open_document(path)
     anchor = claim["anchor"]
     block = blocks[anchor["block"]] if anchor["block"] < len(blocks) else None
@@ -44,4 +44,4 @@ def make_copy(path: Path, target, claim, replacement, source):
         separator = newline if body.endswith(newline) else newline * 2
         target.write_bytes((body + separator + source + newline).encode())
         return
-    patch_office(path, target, block, doc, start, old, replacement, source)
+    patch_office(path, target, block, doc, start, old, replacement, source, source_slot)

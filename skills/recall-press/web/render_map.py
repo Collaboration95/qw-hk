@@ -126,8 +126,7 @@ def sentence_diff(before, after):
     return "".join(old), "".join(new)
 
 
-def attachment(verdict, result_dir, workspace):
-    name = verdict.get("replacement_file")
+def attachment(name, result_dir, workspace, label=None):
     if not name:
         return ""
     path = Path(name)
@@ -139,7 +138,7 @@ def attachment(verdict, result_dir, workspace):
             data = base64.b64encode(candidate.read_bytes()).decode("ascii")
             suffix = candidate.suffix.lower()
             return f'''<a class="download" download="{esc(candidate.name)}" href="data:{MIME[suffix]};base64,{data}">
-                <span aria-hidden="true">↓</span> Replacement {suffix[1:].upper()}</a>'''
+                <span aria-hidden="true">↓</span> {label or ("Replacement " + suffix[1:].upper())}</a>'''
     return '<span class="missing">Replacement file unavailable</span>'
 
 
@@ -194,7 +193,7 @@ def claim_section(claim, verdict, result_dir, workspace, changes):
 
     proposed = verdict["replacement_sentence"]
     old, new = sentence_diff(claim["sentence"], proposed)
-    file_link = attachment(verdict, result_dir, workspace)
+    file_link = attachment(verdict.get("replacement_file"), result_dir, workspace)
     decision = verdict.get("decision", "pending")
     claim_id = esc(claim["claim_id"])
     change = matching_change(claim, changes)
@@ -273,6 +272,7 @@ def map_body(result, register, result_dir, workspace):
     by_doc = defaultdict(list)
     for claim in register["claims"]:
         by_doc[claim["document_id"]].append((claim, verdicts.get(claim["claim_id"], {})))
+    updated = {item["document_id"]: item["file"] for item in result.get("updated_files", [])}
     order = ("now_wrong", "unchecked", "number_only", "still_true", "unaffected")
     counts = defaultdict(int)
     fixes = 0
@@ -315,8 +315,9 @@ def map_body(result, register, result_dir, workspace):
         state = "Needs a fix" if fixable else VERDICTS[primary]
         link = f'''<a href="#{anchor}" class="doc-link {primary}"><span>{title}</span>
             <small>{esc(state)}</small></a>'''
+        download = attachment(updated.get(doc["document_id"]), result_dir, workspace, "Updated deck (all fixes)")
         card = f'''<article class="document" id="{anchor}" tabindex="-1"><header class="doc-head">
-            <div class="filetype"><i aria-hidden="true"></i>{esc(ext)}</div><h3>{title}</h3>{summary_line}{unlinked}</header>
+            <div class="filetype"><i aria-hidden="true"></i>{esc(ext)}</div><h3>{title}</h3>{summary_line}{unlinked}{download}</header>
             {sections}</article>'''
         docs.append((order.index(primary), link, card))
     n = len(docs)

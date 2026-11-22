@@ -102,6 +102,13 @@ def main():
         print(f"Recall Press stopped: {exc}", file=sys.stderr)
         return 1
     print(json.dumps({k: v for k, v in result.items() if k != "register_snapshot"}, ensure_ascii=False, indent=2))
+    if args.command == "fix":
+        saved = json.loads(Path(result["result"]).read_text(encoding="utf-8"))
+        for verdict in saved["verdicts"]:
+            if verdict.get("replacement_file"):
+                print("Corrected:", args.workspace.resolve() / verdict["replacement_file"], file=sys.stderr)
+        for item in saved["updated_files"]:
+            print("Updated deck:", args.workspace.resolve() / item["file"], file=sys.stderr)
     return 0
 
 

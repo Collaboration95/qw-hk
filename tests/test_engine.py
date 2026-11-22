@@ -204,3 +204,60 @@ def test_agent_review_removes_superseded_draft(cli, tmp_path):
     reviewed = cli("judge", *args, "--claim", v["claim_id"], "--status", "still_true", "--reason", "Editor's dated context.")
     assert reviewed["rule_status"] == "now_wrong" and reviewed["disagreement"]
     assert not draft.exists() and "replacement_file" not in reviewed
+
+
+@pytest.mark.parametrize("layout", ["separate-slides", "shared-paragraph", "docx"])
+def test_combined_corrections(cli, tmp_path, layout):
+    first = "GDP grew 5.7% in Q2 2026."
+    second = "GDP growth stayed under 6% in Q2 2026, at 5.7% year on year."
+    dated = "As first reported in July, GDP grew 5.7% in Q2 2026."
+    path = tmp_path / ("brief.docx" if layout == "docx" else "brief.pptx")
+    if layout == "docx":
+        doc = Document()
+        for text in (first, second, dated):
+            doc.add_paragraph(text)
+    else:
+        doc = Presentation()
+        texts = (first, second, dated) if layout == "separate-slides" else (" ".join((first, second, dated)),)
+        for text in texts:
+            slide = doc.slides.add_slide(doc.slide_layouts[6])
+            slide.shapes.add_textbox(0, 0, Inches(9), Inches(2)).text = text
+    doc.save(path)
+    cli("register", path, "--registered-on", "2026-07-15")
+    run = check(cli, "2026-10-14")
+    args = ["--run", run["run_id"]]
+    fixed = cli("fix", *args)
+    assert (fixed["replacement_files"], fixed["updated_files"]) == (2, 1)
+    result_path = Path(fixed["result"])
+    result = load(result_path)
+    item, = result["updated_files"]
+    target = tmp_path / "workspace" / item["file"]
+    assert target == result_path.parent / "out/brief-updated" / path.name
+    a, b, historic = result["verdicts"]
+    assert item["claims"] == [b["claim_id"], a["claim_id"]]
+    assert historic["status"] == "still_true"
+
+    # A partial map import must retain the other eligible correction.
+    edited = "The latest figures put GDP growth at 6.2% in Q2 2026."
+    decisions = tmp_path / "decisions.json"
+    decisions.write_text(json.dumps({"run_id": run["run_id"], "decisions": [{
+        "claim_id": a["claim_id"], "decision": "apply", "replacement_sentence": edited}]}))
+    cli("decide", "--from", decisions)
+    if layout == "docx":
+        lines = [p.text for p in Document(target).paragraphs]
+    else:
+        slides = Presentation(target).slides
+        lines = [shape.text for slide in slides for shape in slide.shapes]
+        if layout == "separate-slides":
+            assert slides[0].shapes[0].text == edited
+            assert slides[1].shapes[0].text == b["replacement_sentence"]
+        else:
+            assert slides[0].shapes[1].top != slides[0].shapes[2].top
+    body = "\n".join(lines)
+    assert all(text in body for text in (edited, b["replacement_sentence"], dated))
+    assert first not in body.replace(dated, "") and second not in body
+    assert [s for s in lines if s.startswith("Source:")] == [b["source_line"], a["source_line"]]
+    for verdict in (a, b):
+        cli("judge", *args, "--claim", verdict["claim_id"], "--hold", "--reason", "Under review.")
+    assert cli("fix", *args)["updated_files"] == 0
+    assert not target.exists()

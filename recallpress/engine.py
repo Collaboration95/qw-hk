@@ -2,6 +2,7 @@ import hashlib
 import html
 import json
 import runpy
+import shutil
 import tempfile
 from datetime import datetime
 from pathlib import Path
@@ -161,23 +162,26 @@ def judge(workspace, run, claim_id, status, reason, proposed=None):
     verdict.update(status=effective, reason=detail, decided_by="rule" if blocked else "agent",
                    agent_status=status, agent_reason=reason.strip(), disagreement=disagreement,
                    needs_review=disagreement or status == "unchecked", agent_replacement=proposed if effective in FIXABLE else None)
+    stale_files = []
     if old_edit != (effective, verdict["agent_replacement"]):
         verdict.pop("editor_replacement", None)
-        obsolete = verdict.pop("replacement_file", None)
+        previous = verdict.pop("replacement_file", None)
+        if previous:
+            stale_files.append(previous)
+        for item in result.get("updated_files", [])[:]:
+            if item["document_id"] == claim["document_id"]:
+                result["updated_files"].remove(item)
+                stale_files.append(item["file"])
         verdict.pop("replacement_sentence", None)
         verdict["decision"] = "pending"
-    else:
-        obsolete = None
     save(path, result)
-    if obsolete:
-        (workspace / obsolete).unlink(missing_ok=True)
+    for stale in stale_files:
+        (workspace / stale).unlink(missing_ok=True)
     (path.parent / "map.html").unlink(missing_ok=True)
     return verdict
 
 
-def stage_copy(workspace, path, reg, claim, verdict, scratch):
-    doc = find(reg["documents"], "document_id", claim["document_id"])
-    original = Path(doc["path"])
+def correction(claim, verdict):
     change = verdict["figures"][0]
     wording = verdict.get("editor_replacement") or verdict.get("agent_replacement")
     sentence = wording or replacement(claim, change, change["new"], verdict["status"])
@@ -193,12 +197,23 @@ def stage_copy(workspace, path, reg, claim, verdict, scratch):
     if len(verdict["figures"]) == 2:
         peer = verdict["figures"][1]
         source += f" · {peer['period']}: {peer['new']}{gap}{peer['unit']}, {peer['new_release']}, {peer['new_published']}"
+    return sentence, source
+
+
+def verify_original(original, doc):
+    if fingerprint(original) != doc["sha256"]:
+        raise ValueError(f"{Path(doc['path']).name} changed after registration; register the new edition first")
+
+
+def stage_copy(workspace, path, reg, claim, verdict, scratch):
+    doc = find(reg["documents"], "document_id", claim["document_id"])
+    original = Path(doc["path"])
+    sentence, source = correction(claim, verdict)
     target = path.parent / "out" / safe_id(claim["claim_id"]) / original.name
     if verdict.get("editor_replacement"):
         version = hashlib.sha256(sentence.encode()).hexdigest()[:16]
         target = target.parent / ("edit-" + version) / original.name
-    if fingerprint(original) != doc["sha256"]:
-        raise ValueError(f"{original.name} changed after registration; register the new edition first")
+    verify_original(original, doc)
     staged = None
     if verdict.get("replacement_sentence") != sentence or not target.is_file():
         staged = scratch / safe_id(claim["claim_id"]) / original.name
@@ -212,16 +227,50 @@ def save_drafts(workspace, path, result, verdicts):
     reg = result["register_snapshot"]
     prepared, obsolete = [], []
     with tempfile.TemporaryDirectory(dir=path.parent) as tmp:
-        for verdict in verdicts:
+        requested = {v["claim_id"] for v in verdicts}
+        by_doc = {}
+        for verdict in result["verdicts"]:
             if verdict["status"] not in FIXABLE or verdict["already_issued"]:
                 continue
             claim = find(reg["claims"], "claim_id", verdict["claim_id"])
             if claim["stance"] == "dated":
                 continue
-            previous = verdict.get("replacement_file")
-            prepared.append(stage_copy(workspace, path, reg, claim, verdict, Path(tmp)))
-            if previous and previous != verdict["replacement_file"]:
-                obsolete.append(workspace / previous)
+            by_doc.setdefault(claim["document_id"], []).append((claim, verdict))
+            if claim["claim_id"] in requested:
+                previous = verdict.get("replacement_file")
+                prepared.append(stage_copy(workspace, path, reg, claim, verdict, Path(tmp)))
+                if previous and previous != verdict["replacement_file"]:
+                    obsolete.append(workspace / previous)
+        count = len(prepared)
+        claim_ids = {claim["claim_id"].casefold() for claim in reg["claims"]}
+        updated = []
+        for doc_id, pairs in by_doc.items():
+            doc = find(reg["documents"], "document_id", doc_id)
+            original = Path(doc["path"])
+            target = path.parent / "out" / (safe_id(doc_id) + "-updated") / original.name
+            if target.parent.name.casefold() in claim_ids:
+                target = target.parent / "combined" / original.name
+            scratch = Path(tempfile.mkdtemp(dir=tmp))
+            current = scratch / ("original" + original.suffix)
+            shutil.copyfile(original, current)
+            verify_original(current, doc)
+            pairs.sort(key=lambda pair: (pair[0]["anchor"]["block"], pair[0]["anchor"]["start"]), reverse=True)
+            source_slots = {}
+            for index, (claim, verdict) in enumerate(pairs):
+                staged = scratch / f"{index}{original.suffix}"
+                slide = claim["location"].split(",")[0]
+                slot = source_slots.get(slide, 0)
+                make_copy(current, staged, claim, *correction(claim, verdict), source_slot=slot)
+                if ", speaker notes," not in claim["location"]:
+                    source_slots[slide] = slot + 1
+                current.unlink()
+                current = staged
+            prepared.append((current, target))
+            updated.append(dict(document_id=doc_id, file=str(target.relative_to(workspace)),
+                                claims=[claim["claim_id"] for claim, _ in pairs]))
+        obsolete.extend(workspace / item["file"] for item in result.get("updated_files", [])
+                        if item["document_id"] not in by_doc)
+        result["updated_files"] = updated
         # New editor wording has its own destination. Keep existing downloads valid
         # until every original has been checked and all requested files are ready.
         for staged, target in prepared:
@@ -231,14 +280,14 @@ def save_drafts(workspace, path, result, verdicts):
         save(path, result)
     for old in obsolete:
         old.unlink(missing_ok=True)
-    return len(prepared)
+    return count
 
 
 def fix(workspace, run):
     path = result_path(workspace, run)
     result = load(path)
     count = save_drafts(workspace, path, result, result["verdicts"])
-    return {"run_id": run, "replacement_files": count, "result": str(path)}
+    return {"run_id": run, "replacement_files": count, "updated_files": len(result["updated_files"]), "result": str(path)}
 
 
 def decide(workspace, run, claim_id, choice):

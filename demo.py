@@ -51,4 +51,6 @@ if __name__ == "__main__":
         for v in result["verdicts"]:
             if v.get("replacement_file"):
                 print("Corrected:", project / "workspace" / v["replacement_file"])
+        for item in result["updated_files"]:
+            print("Updated deck:", project / "workspace" / item["file"])
     print(f"\nOctober 2026 briefing registered for live checks in {project}")
