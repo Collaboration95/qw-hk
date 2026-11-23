@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recall Press — Network 2 · Organic Web</title>
+<style>
+  html,body{margin:0;padding:0;background:#FAF8F4;}
+  canvas{display:block;width:1920px;height:1080px;}
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+"use strict";
+/* Recall Press · network-2 · organic web
+   Deterministic: window.seek(t) draws the exact state at t seconds (0..10).
+   Palette: paper #FAF8F4, ink #111110, accent red #C93A1B. */
+const PAPER="#FAF8F4", INK="#111110", RED="#C93A1B";
+const FONT='Inter, -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif';
+const cv=document.getElementById("c"), ctx=cv.getContext("2d");
+const W=1920,H=1080,DUR=10;
+
+/* ---------- organic layout ---------- */
+const SRC={x:400,y:560,r:92};
+const R=76;
+const docs=[
+  {id:"d1",name:"members' briefing",ext:".pptx",x:920, y:240,rot:-0.05},
+  {id:"d2",name:"board paper",      ext:".docx",x:1300,y:170,rot:0.04},
+  {id:"d3",name:"client note",      ext:".pptx",x:1600,y:450,rot:-0.03},
+  {id:"d4",name:"investor update",  ext:".docx",x:1460,y:800,rot:0.05},
+  {id:"d5",name:"internal memo",    ext:".md",  x:1020,y:900,rot:-0.04},
+  {id:"d6",name:"newsletter",       ext:".docx",x:700, y:800,rot:0.03},
+];
+const byId={};docs.forEach(d=>byId[d.id]=d);
+function nodePos(id){return id==="src"?SRC:byId[id];}
+
+/* curved edges: quadratic bezier bowed perpendicular to the chord */
+function curvePts(a,b,bow){
+  const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,L=Math.hypot(dx,dy);
+  const nx=-dy/L,ny=dx/L,cx=mx+nx*bow,cy=my+ny*bow;
+  const pts=[];for(let i=0;i<=48;i++){const u=i/48,v=1-u;
+    pts.push([v*v*a.x+2*v*u*cx+u*u*b.x, v*v*a.y+2*v*u*cy+u*u*b.y]);}
+  return pts;}
+const edges=[
+  {from:"src",to:"d1",bow:-70, depart:2.0,dur:1.00},
+  {from:"src",to:"d6",bow: 60, depart:2.0,dur:0.80},
+  {from:"src",to:"d5",bow:-40, depart:2.0,dur:1.25},
+  {from:"d1",to:"d2",bow:-50, depart:0,dur:0.85},
+  {from:"d2",to:"d3",bow:-60, depart:0,dur:0.95},
+  {from:"d3",to:"d4",bow:-70, depart:0,dur:1.10},
+  {from:"d6",to:"d5",bow: 45, depart:0,dur:0.75},
+  {from:"d5",to:"d4",bow: 55, depart:0,dur:1.05},
+];
+edges.forEach(e=>{const a=nodePos(e.from),b=nodePos(e.to);
+  const raw=curvePts(a,b,e.bow);
+  e.pts=raw.filter(p=>Math.hypot(p[0]-a.x,p[1]-a.y)>a.r+6&&Math.hypot(p[0]-b.x,p[1]-b.y)>b.r+6);
+  if(e.pts.length<2)e.pts=raw;});
+const arrival={};
+edges.forEach(e=>{if(e.from==="src")arrival[e.to]=e.depart+e.dur;});
+let changed=true;
+while(changed){changed=false;edges.forEach(e=>{
+  if(e.from!=="src"&&arrival[e.from]!==undefined&&arrival[e.to]===undefined){
+    e.depart=arrival[e.from];arrival[e.to]=e.depart+e.dur;changed=true;}});}
+const order=docs.slice().sort((a,b)=>arrival[a.id]-arrival[b.id]);
+const settle={};let prev=0;
+order.forEach(d=>{const s=Math.max(arrival[d.id]+0.9,prev+0.45);settle[d.id]=s;prev=s;});
+
+/* ---------- helpers ---------- */
+function pathLen(pts){let L=0;for(let i=1;i<pts.length;i++)L+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);return L;}
+function pointAt(pts,u){const L=pathLen(pts);let target=u*L;
+  for(let i=1;i<pts.length;i++){const seg=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);
+    if(target<=seg||i===pts.length-1){const f=seg?Math.min(1,target/seg):1;
+      return [pts[i-1][0]+(pts[i][0]-pts[i-1][0])*f,pts[i-1][1]+(pts[i][1]-pts[i-1][1])*f];}
+    target-=seg;}return pts[pts.length-1];}
+function strokePoly(pts,color,width,alpha){ctx.save();ctx.globalAlpha=alpha===undefined?1:alpha;
+  ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap="round";ctx.lineJoin="round";
+  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.stroke();ctx.restore();}
+function partialPoly(pts,u,color,width){const L=pathLen(pts);let target=u*L;const out=[pts[0]];
+  for(let i=1;i<pts.length;i++){const seg=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);
+    if(target>=seg){out.push(pts[i]);target-=seg;}
+    else{const f=seg?target/seg:0;out.push([pts[i-1][0]+(pts[i][0]-pts[i-1][0])*f,pts[i-1][1]+(pts[i][1]-pts[i-1][1])*f]);break;}}
+  strokePoly(out,color,width);}
+function check(x,y,s,color){ctx.save();ctx.strokeStyle=color;ctx.lineWidth=3.6;ctx.lineCap="round";ctx.lineJoin="round";
+  ctx.beginPath();ctx.moveTo(x,y+s*0.55);ctx.lineTo(x+s*0.38,y+s);ctx.lineTo(x+s,y);ctx.stroke();ctx.restore();}
+function fileGlyph(x,y,s,color){ctx.save();ctx.strokeStyle=color;ctx.lineWidth=2.8;ctx.lineJoin="round";
+  ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+s*0.62,y);ctx.lineTo(x+s,y+s*0.36);ctx.lineTo(x+s,y+s);ctx.lineTo(x,y+s);ctx.closePath();ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x+s*0.62,y);ctx.lineTo(x+s*0.62,y+s*0.36);ctx.lineTo(x+s,y+s*0.36);ctx.stroke();ctx.restore();}
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+/* ---------- draw ---------- */
+function draw(t){
+  t=clamp(t,0,DUR);
+  ctx.clearRect(0,0,W,H);ctx.fillStyle=PAPER;ctx.fillRect(0,0,W,H);
+
+  /* bold magazine shapes bleeding off frame */
+  ctx.save();ctx.strokeStyle="#e7e3da";ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(1750,-150,520,0,7);ctx.stroke();
+  ctx.beginPath();ctx.arc(1750,-150,430,0,7);ctx.stroke();ctx.restore();
+
+  /* header */
+  ctx.fillStyle=INK;ctx.textBaseline="alphabetic";
+  ctx.font="600 22px "+FONT;ctx.fillText("RECALL PRESS",90,84);
+  ctx.font="700 44px "+FONT;ctx.fillText("One revision, rippling outward",90,138);
+  ctx.font="400 22px "+FONT;ctx.fillStyle="#6b6a66";
+  ctx.fillText(" organic web · citations of citations",90,172);
+
+  /* edges */
+  edges.forEach(e=>{
+    const dep=e.depart,arr=dep+e.dur;
+    strokePoly(e.pts,"#d9d5cc",2);
+    if(t>=dep&&t<arr){partialPoly(e.pts,(t-dep)/e.dur,RED,3);}
+    else if(t>=arr){const fade=clamp(1-(t-arr)/0.6,0,1);
+      if(fade>0)strokePoly(e.pts,RED,3,fade);}
+    if(t>=dep&&t<arr){
+      const u=(t-dep)/e.dur;
+      for(let k=6;k>=1;k--){const uu=u-k*0.02;if(uu<0)continue;
+        const q=pointAt(e.pts,uu);ctx.save();ctx.globalAlpha=0.10*(7-k)/6;
+        ctx.fillStyle=RED;ctx.beginPath();ctx.arc(q[0],q[1],9,0,7);ctx.fill();ctx.restore();}
+      const p=pointAt(e.pts,u);
+      ctx.save();ctx.fillStyle=RED;ctx.beginPath();ctx.arc(p[0],p[1],7,0,7);ctx.fill();
+      ctx.globalAlpha=0.25;ctx.beginPath();ctx.arc(p[0],p[1],15,0,7);ctx.fill();ctx.restore();}
+  });
+
+  /* source disc */
+  const srcRed=t>=2;
+  ctx.save();
+  ctx.setLineDash([7,7]);ctx.strokeStyle=srcRed?RED:"#b9b5aa";ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(SRC.x,SRC.y,SRC.r+16,0,7);ctx.stroke();ctx.setLineDash([]);
+  ctx.beginPath();ctx.arc(SRC.x,SRC.y,SRC.r,0,7);
+  ctx.fillStyle=srcRed?"#f7e4de":"#ffffff";ctx.fill();
+  ctx.lineWidth=srcRed?4.5:2.6;ctx.strokeStyle=srcRed?RED:INK;ctx.stroke();
+  fileGlyph(SRC.x-20,SRC.y-40,40,srcRed?RED:INK);
+  ctx.textAlign="center";
+  ctx.fillStyle=INK;ctx.font="700 24px "+FONT;ctx.fillText("official",SRC.x,SRC.y+30);
+  ctx.fillText("release",SRC.x,SRC.y+56);
+  ctx.font="600 20px "+FONT;
+  if(srcRed){ctx.fillStyle=RED;ctx.fillText("REVISED",SRC.x,SRC.y+SRC.r+48);}
+  else{ctx.fillStyle="#8a887f";ctx.fillText("source",SRC.x,SRC.y+SRC.r+48);}
+  ctx.restore();
+  if(srcRed){const p=clamp((t-2)/0.5,0,1);ctx.save();ctx.globalAlpha=(1-p)*0.5;
+    ctx.strokeStyle=RED;ctx.lineWidth=3;ctx.beginPath();ctx.arc(SRC.x,SRC.y,SRC.r+16+40*p,0,7);ctx.stroke();ctx.restore();}
+
+  /* document discs */
+  docs.forEach(d=>{
+    const arr=arrival[d.id],st=settle[d.id];
+    const isRed=t>=arr&&t<st,done=t>=st;
+    const col=isRed?RED:INK;
+    ctx.save();ctx.translate(d.x,d.y);ctx.rotate(d.rot);
+    ctx.beginPath();ctx.arc(0,0,R,0,7);
+    ctx.fillStyle=isRed?"#f7e4de":"#ffffff";ctx.fill();
+    ctx.lineWidth=isRed?4.5:2.4;ctx.strokeStyle=col;ctx.stroke();
+    fileGlyph(-17,-34,34,col);
+    ctx.textAlign="center";ctx.fillStyle=col;ctx.font="600 21px "+FONT;
+    ctx.fillText(d.ext,0,34);
+    ctx.restore();
+    ctx.save();ctx.textAlign="center";
+    ctx.fillStyle=INK;ctx.font="600 24px "+FONT;ctx.fillText(d.name,d.x,d.y+R+36);
+    ctx.font="600 20px "+FONT;
+    if(isRed){ctx.fillStyle=RED;ctx.fillText("now wrong",d.x,d.y+R+64);}
+    else if(done){const w=ctx.measureText("updated").width;
+      check(d.x-w/2-26,d.y+R+48,17,INK);ctx.fillStyle=INK;ctx.fillText("updated",d.x,d.y+R+64);}
+    else{ctx.fillStyle="#a3a19a";ctx.fillText("cites source",d.x,d.y+R+64);}
+    ctx.restore();
+    if(isRed){const p=clamp((t-arr)/0.4,0,1);ctx.save();ctx.globalAlpha=(1-p)*0.45;
+      ctx.strokeStyle=RED;ctx.lineWidth=3;ctx.beginPath();ctx.arc(d.x,d.y,R+34*p,0,7);ctx.stroke();ctx.restore();}
+  });
+
+  /* footer */
+  ctx.textAlign="left";
+  ctx.fillStyle="#e7e3da";ctx.fillRect(90,H-56,W-180,4);
+  ctx.fillStyle=t>=2?RED:INK;ctx.fillRect(90,H-56,(W-180)*(t/DUR),4);
+  ctx.font="500 18px "+FONT;ctx.fillStyle="#8a887f";
+  ctx.fillText(t.toFixed(1)+" s / 10 s",90,H-26);
+  ctx.fillText("Your sources change. Your deck updates itself.",W-560,H-26);
+}
+
+/* ---------- deterministic seek + normal playback ---------- */
+window.seek=function(seconds){if(raf!==null){cancelAnimationFrame(raf);raf=null;}draw(seconds);};
+let start=null,raf=null;
+function frame(now){
+  if(start===null)start=now;
+  const t=(now-start)/1000;
+  if(t>=DUR){draw(DUR);raf=null;return;}
+  draw(t);raf=requestAnimationFrame(frame);
+}
+draw(0);raf=requestAnimationFrame(frame);
+</script>
+</body>
+</html>
