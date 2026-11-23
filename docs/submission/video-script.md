@@ -1,6 +1,6 @@
 # Recall Press · Submission film scripts
 
-Film D is the submission film. A, B and H are alternate cuts.
+Film D is the submission film: [watch it on YouTube](https://youtu.be/u_WRPNRtmmI) (1:27). A, B and H are alternate cuts.
 
 Job 019 provides the recorded QwenWork Desktop Skill run. Its November 2025 replay produced the 5.0% deck. Its manual check on 23 November 2026 confirmed the 4.6% April reading for editor review. The 4.6% replacement PowerPoint in the films comes from the public correction Page.
 

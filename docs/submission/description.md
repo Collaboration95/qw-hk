@@ -13,7 +13,7 @@ Your sources change. Your deck updates itself. When a figure a briefing cites is
 ## Links
 
 - Try the live recall desk: https://j3jvce39.qwenwork.page/ · sample run `2026-11-21-68013a314ad1`
-- Demo film: <!-- TODO: YouTube link when the film is made in QwenWork on Sunday -->
+- Demo film (1:27): https://youtu.be/u_WRPNRtmmI
 - Live directory on Hashmeta: https://revisionpedia.geo.hashmeta.tech
 - Pitch, published as a QwenWork Page: https://vtzcv3g2.qwenwork.page/
 - Correction Page: https://ka62nv48.qwenwork.page/

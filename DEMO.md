@@ -6,8 +6,9 @@ The desk, correction Page and Revisionpedia are public. The replay map, images a
 
 ## Watch
 
-<!-- TODO: add the YouTube link and runtime when the demo film is made in QwenWork (Sunday) -->
-QwenWork generated opening and transition footage. The 50-second draft used local ffmpeg and speech synthesis. The final QwenWork product demo and submission link are pending.
+**[Watch the film on YouTube](https://youtu.be/u_WRPNRtmmI)** · 1:27.
+
+One quarter's manufacturing figure was published five times in six months. The film follows the slide it broke ("Manufacturing stalled…"), the board paper it didn't, the editor's approval and the updated PowerPoint, then Revisionpedia on Hashmeta and the Recall Press Skill in QwenWork. The illustrations were generated in QwenWork; the QwenWork screens are recorded stills, sped up; the sample briefing and board paper are founder-written, and every figure, date and source is real. Script and shot list: [docs/submission/video-script.md](docs/submission/video-script.md).
 
 ## 1 · See the revision in public · 45 s
 

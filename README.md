@@ -22,7 +22,7 @@
     <a href="https://revisionpedia.geo.hashmeta.tech">Live site</a> ·
     <a href="https://ka62nv48.qwenwork.page/">Download the updated PowerPoint</a> ·
     <a href="https://vtzcv3g2.qwenwork.page/">Pitch slides</a> ·
-    <a href="DEMO.md#watch">Demo film</a>
+    <a href="https://youtu.be/u_WRPNRtmmI">Watch the film (1:27)</a>
   </p>
 
   <p>
@@ -32,6 +32,12 @@
     <a href="#quickstart"><img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-24211E?style=flat-square"></a>
   </p>
 </div>
+
+## Watch the film
+
+<a href="https://youtu.be/u_WRPNRtmmI"><img src="docs/media/film.png" width="880" alt="Watch the Recall Press film on YouTube (1:27): slide 4 rewritten from stalled to grew 4.6%, with its April 2026 source."></a>
+
+A minute and a half: one official figure revised five times, the slide it broke, the board paper it didn't, the approved fix, and Revisionpedia on Hashmeta. Illustrations were generated in QwenWork; the QwenWork screens are recorded stills.
 
 ## The problem
 
